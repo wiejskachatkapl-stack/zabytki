@@ -1,12 +1,14 @@
 (() => {
-  const APP_VERSION = 'v1011';
+  const APP_VERSION = 'v1012';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OVERPASS_URLS = [
-    'https://overpass-api.de/api/interpreter',
-    'https://overpass.kumi.systems/api/interpreter'
+    'https://overpass.private.coffee/api/interpreter',
+    'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
+    'https://overpass-api.de/api/interpreter'
   ];
+  const OVERPASS_BROWSER_TIMEOUT_MS = 30000;
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const ROUTE_CORRIDOR_RADIUS = 5000;
@@ -106,6 +108,7 @@
   let osmMarkerById = new Map();
   let viewportFetchTimer = null;
   let viewportFetchSequence = 0;
+  let viewportRetryUsed = false;
   const viewportCache = new Map();
 
   let proximityWatchId = null;
@@ -268,14 +271,15 @@
   }
 
   function buildOverpassQuery(scope) {
-    return `[out:json][timeout:25];
+    return `[out:json][timeout:30];
 (
   nwr["historic"="castle"]${scope};
   nwr["historic"="manor"]${scope};
   nwr["historic"="ruins"]${scope};
   nwr["ruins"="yes"]["historic"]${scope};
   nwr["tourism"="museum"]${scope};
-  nwr["denotation"="natural_monument"]${scope};
+  nwr["natural"="tree"]["denotation"="natural_monument"]${scope};
+  nwr["natural"="rock"]["denotation"="natural_monument"]${scope};
   nwr["tourism"~"^(alpine_hut|wilderness_hut)$"]["operator"~"PTTK",i]${scope};
   nwr["tourism"~"^(alpine_hut|wilderness_hut)$"]["name"~"PTTK",i]${scope};
 );
@@ -286,18 +290,20 @@ out center tags;`;
     const query = buildOverpassQuery(scope);
     let lastError = null;
 
+    // Publiczne serwery Overpass potrafią być chwilowo przeciążone.
+    // Używamy kilku aktualnych instancji i prostego żądania GET, które
+    // jest bardziej odporne na problemy CORS/preflight w przeglądarkach mobilnych.
     for (const endpoint of OVERPASS_URLS) {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 18000);
+      const timeoutId = setTimeout(() => controller.abort(), OVERPASS_BROWSER_TIMEOUT_MS);
+      const requestUrl = `${endpoint}?data=${encodeURIComponent(query)}`;
 
       try {
-        const response = await fetch(endpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-            'Accept': 'application/json'
-          },
-          body: `data=${encodeURIComponent(query)}`,
+        const response = await fetch(requestUrl, {
+          method: 'GET',
+          headers: { 'Accept': 'application/json' },
+          cache: 'no-store',
+          credentials: 'omit',
           signal: controller.signal
         });
 
@@ -484,6 +490,7 @@ out center tags;`;
       if (sequence !== viewportFetchSequence) return;
 
       viewportAttractions = attractions;
+      viewportRetryUsed = false;
       viewportCache.set(key, { time: Date.now(), items: attractions });
       while (viewportCache.size > 8) {
         viewportCache.delete(viewportCache.keys().next().value);
@@ -495,17 +502,35 @@ out center tags;`;
       console.warn('Nie udało się pobrać atrakcji z OpenStreetMap:', error);
       viewportAttractions = [];
       updateMainAttractionLayer();
-      updateOsmStatus(
-        nearbyAttractions.length
-          ? `Widok mapy chwilowo niedostępny · atrakcje w pobliżu GPS: ${nearbyAttractions.length}`
-          : 'Atrakcje OSM: chwilowo niedostępne',
-        true
-      );
+      if (!viewportRetryUsed) {
+        viewportRetryUsed = true;
+        updateOsmStatus(
+          nearbyAttractions.length
+            ? `Widok mapy chwilowo niedostępny · atrakcje w pobliżu GPS: ${nearbyAttractions.length}`
+            : 'Atrakcje OSM: ponawiam pobieranie…',
+          true
+        );
+
+        // Tylko jedna automatyczna próba po krótkiej przerwie.
+        window.setTimeout(() => {
+          if (!mapScreen?.hidden && currentMapMode === 'all' && !routeActive) {
+            scheduleViewportAttractions(0, false);
+          }
+        }, 4500);
+      } else {
+        updateOsmStatus(
+          nearbyAttractions.length
+            ? `Atrakcje w pobliżu GPS: ${nearbyAttractions.length}`
+            : 'Atrakcje OSM: chwilowo niedostępne',
+          !nearbyAttractions.length
+        );
+      }
     }
   }
 
-  function scheduleViewportAttractions(delay = 650) {
+  function scheduleViewportAttractions(delay = 650, resetRetry = true) {
     clearTimeout(viewportFetchTimer);
+    if (resetRetry) viewportRetryUsed = false;
     if (currentMapMode !== 'all' || routeActive) return;
     viewportFetchTimer = setTimeout(loadViewportAttractions, delay);
   }
