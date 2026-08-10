@@ -20,7 +20,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png?v=1002" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png?v=1002" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link rel="stylesheet" href="styles.css?v=1004" />
+  <link rel="stylesheet" href="styles.css?v=1005" />
 </head>
 <body>
   <main class="start-screen" aria-label="Turystyczna mapa Polski">
@@ -29,8 +29,83 @@
       <button class="main-button" id="mapButton" type="button">MAPA</button>
     </div>
 
-    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1004</div>
+    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1005</div>
   </main>
+
+  <section class="add-screen" id="addScreen" aria-label="Dodaj miejsce" hidden>
+    <div class="add-panel">
+      <div class="add-header">
+        <button class="add-back-button" id="addBackButton" type="button" aria-label="Wróć do ekranu startowego">← COFNIJ</button>
+        <div class="add-title-wrap">
+          <h1 class="add-title">Dodaj miejsce</h1>
+          <div class="add-version" aria-hidden="true">v1005</div>
+        </div>
+      </div>
+
+      <div class="add-content">
+        <label class="field-label" for="placeName">Nazwa miejsca (opcjonalnie)</label>
+        <input class="text-field" id="placeName" type="text" maxlength="100" autocomplete="off" placeholder="np. Zamek w Czorsztynie" />
+
+        <div class="section-label">Sposób podania lokalizacji</div>
+        <div class="location-methods" role="group" aria-label="Sposób podania lokalizacji">
+          <button class="method-button is-active" id="manualMethodButton" type="button" data-method="manual">RĘCZNIE</button>
+          <button class="method-button" id="autoMethodButton" type="button" data-method="auto">MOJA LOKALIZACJA</button>
+        </div>
+
+        <div class="coordinates-box" id="coordinatesBox">
+          <div class="coordinate-field">
+            <label class="field-label" for="latitudeInput">Szerokość geograficzna</label>
+            <input class="text-field" id="latitudeInput" type="text" inputmode="decimal" autocomplete="off" placeholder="np. 49.4356" />
+          </div>
+          <div class="coordinate-field">
+            <label class="field-label" for="longitudeInput">Długość geograficzna</label>
+            <input class="text-field" id="longitudeInput" type="text" inputmode="decimal" autocomplete="off" placeholder="np. 20.3136" />
+          </div>
+        </div>
+
+        <div class="auto-location-box" id="autoLocationBox" hidden>
+          <button class="gps-add-button" id="gpsAddButton" type="button">
+            <span class="gps-target" aria-hidden="true">◎</span>
+            POBIERZ MOJĄ LOKALIZACJĘ
+          </button>
+          <div class="gps-result" id="gpsResult" role="status" aria-live="polite">Lokalizacja nie została jeszcze pobrana.</div>
+        </div>
+
+        <div class="section-label">Co to jest?</div>
+        <div class="category-grid" id="categoryGrid" role="group" aria-label="Kategoria miejsca">
+          <button class="category-button is-active" type="button" data-category="castle">
+            <img src="assets/markers/castle.png?v=1005" alt="" aria-hidden="true" />
+            <span>Zamek</span>
+          </button>
+          <button class="category-button" type="button" data-category="ruins">
+            <img src="assets/markers/ruins.png?v=1005" alt="" aria-hidden="true" />
+            <span>Ruiny</span>
+          </button>
+          <button class="category-button" type="button" data-category="museum">
+            <img src="assets/markers/museum.png?v=1005" alt="" aria-hidden="true" />
+            <span>Muzeum</span>
+          </button>
+          <button class="category-button" type="button" data-category="nature">
+            <img src="assets/markers/nature.png?v=1005" alt="" aria-hidden="true" />
+            <span>Pomnik przyrody</span>
+          </button>
+          <button class="category-button" type="button" data-category="pttk">
+            <img src="assets/markers/pttk.png?v=1005" alt="" aria-hidden="true" />
+            <span>Schronisko PTTK</span>
+          </button>
+        </div>
+
+        <label class="field-label date-label" for="dateInput">Data dodania</label>
+        <div class="date-field-wrap">
+          <input class="date-field" id="dateInput" type="date" />
+        </div>
+
+        <div class="add-message" id="addMessage" role="status" aria-live="polite" hidden></div>
+
+        <button class="save-place-button" id="savePlaceButton" type="button">ZAPISZ PUNKT</button>
+      </div>
+    </div>
+  </section>
 
   <section class="map-screen" id="mapScreen" aria-label="Mapa Polski" hidden>
     <div id="map" class="map-container" aria-label="Interaktywna mapa OpenStreetMap"></div>
@@ -44,10 +119,10 @@
     </button>
 
     <div class="location-message" id="locationMessage" role="status" aria-live="polite" hidden></div>
-    <div class="map-version" aria-hidden="true">v1004</div>
+    <div class="map-version" aria-hidden="true">v1005</div>
   </section>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="app.js?v=1004"></script>
+  <script src="app.js?v=1005"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-const APP_VERSION = 'v1004';
+const APP_VERSION = 'v1005';
 const CACHE_NAME = `turystyczna-mapa-polski-${APP_VERSION}`;
 
 const APP_SHELL = [
@@ -12,7 +12,12 @@ const APP_SHELL = [
   './assets/icons/icon-192.png',
   './assets/icons/icon-512.png',
   './assets/icons/icon-maskable-512.png',
-  './assets/icons/apple-touch-icon.png'
+  './assets/icons/apple-touch-icon.png',
+  './assets/markers/castle.png',
+  './assets/markers/ruins.png',
+  './assets/markers/museum.png',
+  './assets/markers/nature.png',
+  './assets/markers/pttk.png'
 ];
 
 self.addEventListener('install', (event) => {
@@ -40,8 +45,6 @@ self.addEventListener('fetch', (event) => {
   const requestUrl = new URL(event.request.url);
   if (requestUrl.origin !== self.location.origin) return;
 
-  // Dokument HTML zawsze próbujemy pobrać z sieci jako pierwszy,
-  // aby po zmianie wersji GitHub Pages od razu podawał nową aplikację.
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request, { cache: 'no-store' })
@@ -55,7 +58,6 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Dla pozostałych plików: sieć najpierw, cache jako tryb offline.
   event.respondWith(
     fetch(event.request, { cache: 'no-store' })
       .then((response) => {
