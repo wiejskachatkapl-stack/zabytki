@@ -1,29 +1,386 @@
 {
-  "version": "v1016-starter-1",
+  "version": "v1017-mazowsze-corridor-1",
   "updatedAt": "2026-08-10",
-  "description": "Startowa lokalna baza atrakcji dla aplikacji Mapa atrakcji Polski. Baza będzie rozszerzana w kolejnych wersjach.",
+  "description": "Rozszerzona lokalna baza atrakcji dla aplikacji Mapa atrakcji Polski. Dodano większy zestaw punktów w korytarzu Radom–Grójec–Warszawa oraz Mszczonów–Warszawa.",
   "attractions": [
-    {"id":"base/palac-radziejowice","name":"Pałac w Radziejowicach","category":"castle","lat":52.003611,"lon":20.550833,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zesp%C3%B3%C5%82_pa%C5%82acowo-parkowy_w_Radziejowicach"},
-    {"id":"base/zamek-krolewski-warszawa","name":"Zamek Królewski w Warszawie","category":"castle","lat":52.247778,"lon":21.014167,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_Kr%C3%B3lewski_w_Warszawie"},
-    {"id":"base/zamek-czersk","name":"Zamek książąt mazowieckich w Czersku","category":"ruins","lat":51.958615,"lon":21.234500,"source":"Wikimedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_ksi%C4%85%C5%BC%C4%85t_mazowieckich_w_Czersku"},
-    {"id":"base/wawel","name":"Zamek Królewski na Wawelu","category":"castle","lat":50.054167,"lon":19.935278,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_Kr%C3%B3lewski_na_Wawelu"},
-    {"id":"base/ogrodzieniec","name":"Zamek Ogrodzieniec","category":"ruins","lat":50.453247,"lon":19.553378,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_Ogrodzieniec"},
-    {"id":"base/olsztyn-jura","name":"Ruiny zamku w Olsztynie koło Częstochowy","category":"ruins","lat":50.749664,"lon":19.274130,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_w_Olsztynie_%28wojew%C3%B3dztwo_%C5%9Bl%C4%85skie%29"},
-    {"id":"base/bobolice","name":"Zamek w Bobolicach","category":"castle","lat":50.613329,"lon":19.492988,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_w_Bobolicach"},
-    {"id":"base/czorsztyn","name":"Ruiny zamku w Czorsztynie","category":"ruins","lat":49.434967,"lon":20.313203,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_Czorsztyn"},
-    {"id":"base/malbork","name":"Zamek w Malborku","category":"castle","lat":54.040064,"lon":19.028394,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_w_Malborku"},
-
-    {"id":"base/muzeum-powstania-warszawskiego","name":"Muzeum Powstania Warszawskiego","category":"museum","lat":52.232222,"lon":20.980833,"source":"Wikipedia/Wikimedia","sourceUrl":"https://pl.wikipedia.org/wiki/Muzeum_Powstania_Warszawskiego"},
-    {"id":"base/muzeum-lniarstwa-zyrardow","name":"Muzeum Lniarstwa w Żyrardowie","category":"museum","lat":52.060722,"lon":20.430583,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Muzeum_Lniarstwa_im._Filipa_de_Girarda_w_%C5%BByrardowie"},
-    {"id":"base/muzeum-kolei-sochaczew","name":"Muzeum Kolei Wąskotorowej w Sochaczewie","category":"museum","lat":52.217306,"lon":20.237319,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Muzeum_Kolei_W%C4%85skotorowej_w_Sochaczewie"},
-    {"id":"base/muzeum-ii-wojny-gdansk","name":"Muzeum II Wojny Światowej w Gdańsku","category":"museum","lat":54.355833,"lon":18.660556,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Muzeum_II_Wojny_%C5%9Awiatowej_w_Gda%C5%84sku"},
-    {"id":"base/muzeum-narodowe-krakow","name":"Muzeum Narodowe w Krakowie","category":"museum","lat":50.060380,"lon":19.923750,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Muzeum_Narodowe_w_Krakowie"},
-
-    {"id":"base/dab-bartek","name":"Dąb Bartek","category":"nature","lat":50.987463,"lon":20.650145,"source":"Wikipedia/Wikimedia","sourceUrl":"https://pl.wikipedia.org/wiki/D%C4%85b_Bartek"},
-    {"id":"base/maczuga-herkulesa","name":"Maczuga Herkulesa","category":"nature","lat":50.242882,"lon":19.782912,"source":"Wikipedia/Wikimedia","sourceUrl":"https://pl.wikipedia.org/wiki/Maczuga_Herkulesa"},
-
-    {"id":"base/pttk-morskie-oko","name":"Schronisko PTTK nad Morskim Okiem","category":"pttk","lat":49.201428,"lon":20.071260,"source":"Wikipedia/Wikimedia","sourceUrl":"https://pl.wikipedia.org/wiki/Morskie_Oko"},
-    {"id":"base/pttk-hala-ornak","name":"Schronisko PTTK na Hali Ornak","category":"pttk","lat":49.229167,"lon":19.858750,"source":"Wikipedia/Wikimedia","sourceUrl":"https://pl.wikipedia.org/wiki/Schronisko_PTTK_na_Hali_Ornak"},
-    {"id":"base/pttk-markowe-szczawiny","name":"Schronisko PTTK Markowe Szczawiny","category":"pttk","lat":49.587831,"lon":19.516533,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Schronisko_PTTK_Markowe_Szczawiny"}
-  ]
+    {
+      "id": "base/palac-radziejowice",
+      "name": "Pałac w Radziejowicach",
+      "category": "castle",
+      "lat": 52.003611,
+      "lon": 20.550833,
+      "source": "Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zesp%C3%B3%C5%82_pa%C5%82acowo-parkowy_w_Radziejowicach"
+    },
+    {
+      "id": "base/zamek-krolewski-warszawa",
+      "name": "Zamek Królewski w Warszawie",
+      "category": "castle",
+      "lat": 52.247778,
+      "lon": 21.014167,
+      "source": "Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_Kr%C3%B3lewski_w_Warszawie"
+    },
+    {
+      "id": "base/zamek-czersk",
+      "name": "Zamek książąt mazowieckich w Czersku",
+      "category": "ruins",
+      "lat": 51.958615,
+      "lon": 21.2345,
+      "source": "Wikimedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_ksi%C4%85%C5%BC%C4%85t_mazowieckich_w_Czersku"
+    },
+    {
+      "id": "base/wawel",
+      "name": "Zamek Królewski na Wawelu",
+      "category": "castle",
+      "lat": 50.054167,
+      "lon": 19.935278,
+      "source": "Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_Kr%C3%B3lewski_na_Wawelu"
+    },
+    {
+      "id": "base/ogrodzieniec",
+      "name": "Zamek Ogrodzieniec",
+      "category": "ruins",
+      "lat": 50.453247,
+      "lon": 19.553378,
+      "source": "Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_Ogrodzieniec"
+    },
+    {
+      "id": "base/olsztyn-jura",
+      "name": "Ruiny zamku w Olsztynie koło Częstochowy",
+      "category": "ruins",
+      "lat": 50.749664,
+      "lon": 19.27413,
+      "source": "Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Olsztynie_%28wojew%C3%B3dztwo_%C5%9Bl%C4%85skie%29"
+    },
+    {
+      "id": "base/bobolice",
+      "name": "Zamek w Bobolicach",
+      "category": "castle",
+      "lat": 50.613329,
+      "lon": 19.492988,
+      "source": "Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Bobolicach"
+    },
+    {
+      "id": "base/czorsztyn",
+      "name": "Ruiny zamku w Czorsztynie",
+      "category": "ruins",
+      "lat": 49.434967,
+      "lon": 20.313203,
+      "source": "Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_Czorsztyn"
+    },
+    {
+      "id": "base/malbork",
+      "name": "Zamek w Malborku",
+      "category": "castle",
+      "lat": 54.040064,
+      "lon": 19.028394,
+      "source": "Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Malborku"
+    },
+    {
+      "id": "base/muzeum-powstania-warszawskiego",
+      "name": "Muzeum Powstania Warszawskiego",
+      "category": "museum",
+      "lat": 52.232222,
+      "lon": 20.980833,
+      "source": "Wikipedia/Wikimedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Powstania_Warszawskiego"
+    },
+    {
+      "id": "base/muzeum-lniarstwa-zyrardow",
+      "name": "Muzeum Lniarstwa w Żyrardowie",
+      "category": "museum",
+      "lat": 52.060722,
+      "lon": 20.430583,
+      "source": "Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Lniarstwa_im._Filipa_de_Girarda_w_%C5%BByrardowie"
+    },
+    {
+      "id": "base/muzeum-kolei-sochaczew",
+      "name": "Muzeum Kolei Wąskotorowej w Sochaczewie",
+      "category": "museum",
+      "lat": 52.217306,
+      "lon": 20.237319,
+      "source": "Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Kolei_W%C4%85skotorowej_w_Sochaczewie"
+    },
+    {
+      "id": "base/muzeum-ii-wojny-gdansk",
+      "name": "Muzeum II Wojny Światowej w Gdańsku",
+      "category": "museum",
+      "lat": 54.355833,
+      "lon": 18.660556,
+      "source": "Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_II_Wojny_%C5%9Awiatowej_w_Gda%C5%84sku"
+    },
+    {
+      "id": "base/muzeum-narodowe-krakow",
+      "name": "Muzeum Narodowe w Krakowie",
+      "category": "museum",
+      "lat": 50.06038,
+      "lon": 19.92375,
+      "source": "Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Narodowe_w_Krakowie"
+    },
+    {
+      "id": "base/dab-bartek",
+      "name": "Dąb Bartek",
+      "category": "nature",
+      "lat": 50.987463,
+      "lon": 20.650145,
+      "source": "Wikipedia/Wikimedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/D%C4%85b_Bartek"
+    },
+    {
+      "id": "base/maczuga-herkulesa",
+      "name": "Maczuga Herkulesa",
+      "category": "nature",
+      "lat": 50.242882,
+      "lon": 19.782912,
+      "source": "Wikipedia/Wikimedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Maczuga_Herkulesa"
+    },
+    {
+      "id": "base/pttk-morskie-oko",
+      "name": "Schronisko PTTK nad Morskim Okiem",
+      "category": "pttk",
+      "lat": 49.201428,
+      "lon": 20.07126,
+      "source": "Wikipedia/Wikimedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Morskie_Oko"
+    },
+    {
+      "id": "base/pttk-hala-ornak",
+      "name": "Schronisko PTTK na Hali Ornak",
+      "category": "pttk",
+      "lat": 49.229167,
+      "lon": 19.85875,
+      "source": "Wikipedia/Wikimedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Schronisko_PTTK_na_Hali_Ornak"
+    },
+    {
+      "id": "base/pttk-markowe-szczawiny",
+      "name": "Schronisko PTTK Markowe Szczawiny",
+      "category": "pttk",
+      "lat": 49.587831,
+      "lon": 19.516533,
+      "source": "Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Schronisko_PTTK_Markowe_Szczawiny"
+    },
+    {
+      "id": "base/muzeum-wsi-radomskiej",
+      "name": "Muzeum Wsi Radomskiej",
+      "category": "museum",
+      "lat": 51.3644611,
+      "lon": 21.0816522,
+      "source": "Mapy.com / OpenStreetMap",
+      "sourceUrl": "https://mapy.com/pl/?id=1003406668&source=osm"
+    },
+    {
+      "id": "base/muzeum-malczewskiego-radom",
+      "name": "Muzeum im. Jacka Malczewskiego w Radomiu",
+      "category": "museum",
+      "lat": 51.4026,
+      "lon": 21.14216,
+      "source": "Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_im._Jacka_Malczewskiego_w_Radomiu"
+    },
+    {
+      "id": "base/elektrownia-radom",
+      "name": "Mazowieckie Centrum Sztuki Współczesnej Elektrownia",
+      "category": "museum",
+      "lat": 51.3980508,
+      "lon": 21.1497464,
+      "source": "Mapy.com / OpenStreetMap",
+      "sourceUrl": "https://mapy.com/pl/?id=74303579&source=osm"
+    },
+    {
+      "id": "base/centrum-rzezby-oronsko",
+      "name": "Centrum Rzeźby Polskiej w Orońsku",
+      "category": "museum",
+      "lat": 51.3123889,
+      "lon": 20.9843889,
+      "source": "Centrum Rzeźby Polskiej / dane turystyczne",
+      "sourceUrl": "https://rzezba-oronsko.pl/"
+    },
+    {
+      "id": "base/zamek-ilza",
+      "name": "Ruiny Zamku Biskupów Krakowskich w Iłży",
+      "category": "ruins",
+      "lat": 51.1625,
+      "lon": 21.2404764,
+      "source": "Mapy.com / OpenStreetMap",
+      "sourceUrl": "https://mapy.com/en/?id=94508481&source=osm"
+    },
+    {
+      "id": "base/zamek-szydlowiec",
+      "name": "Zamek w Szydłowcu – Muzeum Ludowych Instrumentów Muzycznych",
+      "category": "castle",
+      "lat": 51.22643,
+      "lon": 20.85319,
+      "source": "Nawycieczke.pl",
+      "sourceUrl": "https://www.nawycieczke.pl/pl/atrakcja/muzeum-ludowych-instrumentow-muzycznych"
+    },
+    {
+      "id": "base/huta-chlewiska",
+      "name": "Zabytkowa Huta Żelaza w Chlewiskach",
+      "category": "museum",
+      "lat": 51.2356217,
+      "lon": 20.7560189,
+      "source": "Mapy.com / OpenStreetMap",
+      "sourceUrl": "https://mapy.com/cs/?id=1188045997&source=osm"
+    },
+    {
+      "id": "base/muzeum-pulaskiego-warka",
+      "name": "Muzeum im. Kazimierza Pułaskiego w Warce",
+      "category": "museum",
+      "lat": 51.7841,
+      "lon": 21.1873,
+      "source": "Polskie Zabytki / Muzeum Pułaskiego",
+      "sourceUrl": "https://www.muzeumpulaski.pl/"
+    },
+    {
+      "id": "base/palac-mala-wies",
+      "name": "Pałac w Małej Wsi",
+      "category": "castle",
+      "lat": 51.824619,
+      "lon": 20.790274,
+      "source": "Mała Chmurka / Wikimedia",
+      "sourceUrl": "https://www.malachmurka.pl/2018/11/27/odkrycia-pl-1/"
+    },
+    {
+      "id": "base/rezerwat-modrzewina",
+      "name": "Rezerwat przyrody Modrzewina",
+      "category": "nature",
+      "lat": 51.83881,
+      "lon": 20.77246,
+      "source": "Dioblina",
+      "sourceUrl": "https://www.dioblina.eu/Rezerwat_Modrzewina"
+    },
+    {
+      "id": "base/kolejka-piaseczno",
+      "name": "Piaseczyńsko-Grójecka Kolej Wąskotorowa – stacja Piaseczno",
+      "category": "museum",
+      "lat": 52.066861,
+      "lon": 21.016972,
+      "source": "Atlas Kolejowy / Kolejka Piaseczno",
+      "sourceUrl": "https://www.kolejka-piaseczno.pl/"
+    },
+    {
+      "id": "base/dworek-chelmonskiego-kuklowka",
+      "name": "Dworek Józefa Chełmońskiego w Kuklówce Zarzecznej",
+      "category": "castle",
+      "lat": 52.042991,
+      "lon": 20.600079,
+      "source": "Szlaki turystyczne Mazowsza PTTK",
+      "sourceUrl": "https://mazowsze.szlaki.pttk.pl/341-pttk-mazowsze-dworek-chelmonskiego"
+    },
+    {
+      "id": "base/palac-guzow",
+      "name": "Pałac Sobańskich w Guzowie",
+      "category": "castle",
+      "lat": 52.115556,
+      "lon": 20.334722,
+      "source": "Wikimedia Commons",
+      "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pa%C5%82ac_w_Guzowie_i_otoczenie.jpg"
+    },
+    {
+      "id": "base/muzeum-motoryzacji-otrebusy",
+      "name": "Muzeum Motoryzacji i Techniki w Otrębusach",
+      "category": "museum",
+      "lat": 52.13052,
+      "lon": 20.75055,
+      "source": "Nawycieczke.pl / Muzeum Motoryzacji",
+      "sourceUrl": "https://www.muzeum-motoryzacji.com.pl/"
+    },
+    {
+      "id": "base/muzeum-dulag-121",
+      "name": "Muzeum Dulag 121 w Pruszkowie",
+      "category": "museum",
+      "lat": 52.173066,
+      "lon": 20.807589,
+      "source": "Znaczki Turystyczne",
+      "sourceUrl": "https://dulag121.pl/"
+    },
+    {
+      "id": "base/muzeum-hutnictwa-pruszkow",
+      "name": "Muzeum Starożytnego Hutnictwa Mazowieckiego w Pruszkowie",
+      "category": "museum",
+      "lat": 52.1627,
+      "lon": 20.8199,
+      "source": "Muzeum / dane lokalizacyjne",
+      "sourceUrl": "https://mshm.pl/"
+    },
+    {
+      "id": "base/palac-wilanow",
+      "name": "Pałac w Wilanowie",
+      "category": "castle",
+      "lat": 52.16513,
+      "lon": 21.08998,
+      "source": "Dioblina / Muzeum Pałacu",
+      "sourceUrl": "https://wilanow-palac.pl/"
+    },
+    {
+      "id": "base/lazienki-krolewskie",
+      "name": "Łazienki Królewskie w Warszawie",
+      "category": "castle",
+      "lat": 52.214444,
+      "lon": 21.031667,
+      "source": "Wikipedia / Muzeum Łazienki Królewskie",
+      "sourceUrl": "https://www.lazienki-krolewskie.pl/pl/"
+    },
+    {
+      "id": "base/muzeum-narodowe-warszawa",
+      "name": "Muzeum Narodowe w Warszawie",
+      "category": "museum",
+      "lat": 52.2318,
+      "lon": 21.02459,
+      "source": "Dioblina / Mapy.com",
+      "sourceUrl": "https://www.mnw.art.pl/"
+    },
+    {
+      "id": "base/polin-warszawa",
+      "name": "Muzeum Historii Żydów Polskich POLIN",
+      "category": "museum",
+      "lat": 52.249444,
+      "lon": 20.992778,
+      "source": "Wikipedia / POLIN",
+      "sourceUrl": "https://polin.pl/"
+    },
+    {
+      "id": "base/muzeum-chopina-warszawa",
+      "name": "Muzeum Fryderyka Chopina w Warszawie",
+      "category": "museum",
+      "lat": 52.23647,
+      "lon": 21.02292,
+      "source": "Dioblina / NIFC",
+      "sourceUrl": "https://chopin.museum/"
+    },
+    {
+      "id": "base/muzeum-warszawy",
+      "name": "Muzeum Warszawy",
+      "category": "museum",
+      "lat": 52.250354,
+      "lon": 21.011857,
+      "source": "Znaczki Turystyczne / Muzeum Warszawy",
+      "sourceUrl": "https://muzeumwarszawy.pl/"
+    },
+    {
+      "id": "base/narodowe-muzeum-techniki",
+      "name": "Narodowe Muzeum Techniki w Warszawie",
+      "category": "museum",
+      "lat": 52.23056,
+      "lon": 21.00586,
+      "source": "Nawycieczke.pl / NMT",
+      "sourceUrl": "https://nmt.waw.pl/"
+    }
+  ],
+  "count": 42
 }
