@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1016';
+  const APP_VERSION = 'v1017';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1016';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1017';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const ROUTE_CORRIDOR_RADIUS = 5000;
@@ -1809,7 +1809,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1016', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1017', {
           scope: './',
           updateViaCache: 'none'
         });
