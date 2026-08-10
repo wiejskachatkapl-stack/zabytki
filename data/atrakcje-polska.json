@@ -1,0 +1,29 @@
+{
+  "version": "v1016-starter-1",
+  "updatedAt": "2026-08-10",
+  "description": "Startowa lokalna baza atrakcji dla aplikacji Mapa atrakcji Polski. Baza będzie rozszerzana w kolejnych wersjach.",
+  "attractions": [
+    {"id":"base/palac-radziejowice","name":"Pałac w Radziejowicach","category":"castle","lat":52.003611,"lon":20.550833,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zesp%C3%B3%C5%82_pa%C5%82acowo-parkowy_w_Radziejowicach"},
+    {"id":"base/zamek-krolewski-warszawa","name":"Zamek Królewski w Warszawie","category":"castle","lat":52.247778,"lon":21.014167,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_Kr%C3%B3lewski_w_Warszawie"},
+    {"id":"base/zamek-czersk","name":"Zamek książąt mazowieckich w Czersku","category":"ruins","lat":51.958615,"lon":21.234500,"source":"Wikimedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_ksi%C4%85%C5%BC%C4%85t_mazowieckich_w_Czersku"},
+    {"id":"base/wawel","name":"Zamek Królewski na Wawelu","category":"castle","lat":50.054167,"lon":19.935278,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_Kr%C3%B3lewski_na_Wawelu"},
+    {"id":"base/ogrodzieniec","name":"Zamek Ogrodzieniec","category":"ruins","lat":50.453247,"lon":19.553378,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_Ogrodzieniec"},
+    {"id":"base/olsztyn-jura","name":"Ruiny zamku w Olsztynie koło Częstochowy","category":"ruins","lat":50.749664,"lon":19.274130,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_w_Olsztynie_%28wojew%C3%B3dztwo_%C5%9Bl%C4%85skie%29"},
+    {"id":"base/bobolice","name":"Zamek w Bobolicach","category":"castle","lat":50.613329,"lon":19.492988,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_w_Bobolicach"},
+    {"id":"base/czorsztyn","name":"Ruiny zamku w Czorsztynie","category":"ruins","lat":49.434967,"lon":20.313203,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_Czorsztyn"},
+    {"id":"base/malbork","name":"Zamek w Malborku","category":"castle","lat":54.040064,"lon":19.028394,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Zamek_w_Malborku"},
+
+    {"id":"base/muzeum-powstania-warszawskiego","name":"Muzeum Powstania Warszawskiego","category":"museum","lat":52.232222,"lon":20.980833,"source":"Wikipedia/Wikimedia","sourceUrl":"https://pl.wikipedia.org/wiki/Muzeum_Powstania_Warszawskiego"},
+    {"id":"base/muzeum-lniarstwa-zyrardow","name":"Muzeum Lniarstwa w Żyrardowie","category":"museum","lat":52.060722,"lon":20.430583,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Muzeum_Lniarstwa_im._Filipa_de_Girarda_w_%C5%BByrardowie"},
+    {"id":"base/muzeum-kolei-sochaczew","name":"Muzeum Kolei Wąskotorowej w Sochaczewie","category":"museum","lat":52.217306,"lon":20.237319,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Muzeum_Kolei_W%C4%85skotorowej_w_Sochaczewie"},
+    {"id":"base/muzeum-ii-wojny-gdansk","name":"Muzeum II Wojny Światowej w Gdańsku","category":"museum","lat":54.355833,"lon":18.660556,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Muzeum_II_Wojny_%C5%9Awiatowej_w_Gda%C5%84sku"},
+    {"id":"base/muzeum-narodowe-krakow","name":"Muzeum Narodowe w Krakowie","category":"museum","lat":50.060380,"lon":19.923750,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Muzeum_Narodowe_w_Krakowie"},
+
+    {"id":"base/dab-bartek","name":"Dąb Bartek","category":"nature","lat":50.987463,"lon":20.650145,"source":"Wikipedia/Wikimedia","sourceUrl":"https://pl.wikipedia.org/wiki/D%C4%85b_Bartek"},
+    {"id":"base/maczuga-herkulesa","name":"Maczuga Herkulesa","category":"nature","lat":50.242882,"lon":19.782912,"source":"Wikipedia/Wikimedia","sourceUrl":"https://pl.wikipedia.org/wiki/Maczuga_Herkulesa"},
+
+    {"id":"base/pttk-morskie-oko","name":"Schronisko PTTK nad Morskim Okiem","category":"pttk","lat":49.201428,"lon":20.071260,"source":"Wikipedia/Wikimedia","sourceUrl":"https://pl.wikipedia.org/wiki/Morskie_Oko"},
+    {"id":"base/pttk-hala-ornak","name":"Schronisko PTTK na Hali Ornak","category":"pttk","lat":49.229167,"lon":19.858750,"source":"Wikipedia/Wikimedia","sourceUrl":"https://pl.wikipedia.org/wiki/Schronisko_PTTK_na_Hali_Ornak"},
+    {"id":"base/pttk-markowe-szczawiny","name":"Schronisko PTTK Markowe Szczawiny","category":"pttk","lat":49.587831,"lon":19.516533,"source":"Wikipedia","sourceUrl":"https://pl.wikipedia.org/wiki/Schronisko_PTTK_Markowe_Szczawiny"}
+  ]
+}
