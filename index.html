@@ -20,7 +20,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png?v=1002" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png?v=1002" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link rel="stylesheet" href="styles.css?v=1005" />
+  <link rel="stylesheet" href="styles.css?v=1006" />
 </head>
 <body>
   <main class="start-screen" aria-label="Turystyczna mapa Polski">
@@ -29,7 +29,7 @@
       <button class="main-button" id="mapButton" type="button">MAPA</button>
     </div>
 
-    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1005</div>
+    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1006</div>
   </main>
 
   <section class="add-screen" id="addScreen" aria-label="Dodaj miejsce" hidden>
@@ -38,7 +38,7 @@
         <button class="add-back-button" id="addBackButton" type="button" aria-label="Wróć do ekranu startowego">← COFNIJ</button>
         <div class="add-title-wrap">
           <h1 class="add-title">Dodaj miejsce</h1>
-          <div class="add-version" aria-hidden="true">v1005</div>
+          <div class="add-version" aria-hidden="true">v1006</div>
         </div>
       </div>
 
@@ -74,23 +74,23 @@
         <div class="section-label">Co to jest?</div>
         <div class="category-grid" id="categoryGrid" role="group" aria-label="Kategoria miejsca">
           <button class="category-button is-active" type="button" data-category="castle">
-            <img src="assets/markers/castle.png?v=1005" alt="" aria-hidden="true" />
+            <img src="assets/markers/castle.png?v=1006" alt="" aria-hidden="true" />
             <span>Zamek</span>
           </button>
           <button class="category-button" type="button" data-category="ruins">
-            <img src="assets/markers/ruins.png?v=1005" alt="" aria-hidden="true" />
+            <img src="assets/markers/ruins.png?v=1006" alt="" aria-hidden="true" />
             <span>Ruiny</span>
           </button>
           <button class="category-button" type="button" data-category="museum">
-            <img src="assets/markers/museum.png?v=1005" alt="" aria-hidden="true" />
+            <img src="assets/markers/museum.png?v=1006" alt="" aria-hidden="true" />
             <span>Muzeum</span>
           </button>
           <button class="category-button" type="button" data-category="nature">
-            <img src="assets/markers/nature.png?v=1005" alt="" aria-hidden="true" />
+            <img src="assets/markers/nature.png?v=1006" alt="" aria-hidden="true" />
             <span>Pomnik przyrody</span>
           </button>
           <button class="category-button" type="button" data-category="pttk">
-            <img src="assets/markers/pttk.png?v=1005" alt="" aria-hidden="true" />
+            <img src="assets/markers/pttk.png?v=1006" alt="" aria-hidden="true" />
             <span>Schronisko PTTK</span>
           </button>
         </div>
@@ -107,6 +107,73 @@
     </div>
   </section>
 
+  <section class="edit-screen" id="editScreen" aria-label="Edytuj miejsce" hidden>
+    <div class="edit-panel">
+      <div class="edit-header">
+        <button class="edit-back-button" id="editBackButton" type="button" aria-label="Wróć do mapy">← COFNIJ</button>
+        <div class="edit-title-wrap">
+          <h1 class="edit-title">Edytuj punkt</h1>
+          <div class="edit-version" aria-hidden="true">v1006</div>
+        </div>
+      </div>
+
+      <div class="edit-content">
+        <label class="field-label" for="editPlaceName">Nazwa miejsca</label>
+        <input class="text-field" id="editPlaceName" type="text" maxlength="100" autocomplete="off" />
+
+        <div class="coordinates-box edit-coordinates-box">
+          <div class="coordinate-field">
+            <label class="field-label" for="editLatitudeInput">Szerokość geograficzna</label>
+            <input class="text-field" id="editLatitudeInput" type="text" inputmode="decimal" autocomplete="off" />
+          </div>
+          <div class="coordinate-field">
+            <label class="field-label" for="editLongitudeInput">Długość geograficzna</label>
+            <input class="text-field" id="editLongitudeInput" type="text" inputmode="decimal" autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="section-label">Co to jest?</div>
+        <div class="category-grid edit-category-grid" id="editCategoryGrid" role="group" aria-label="Kategoria miejsca">
+          <button class="category-button edit-category-button" type="button" data-category="castle">
+            <img src="assets/markers/castle.png?v=1006" alt="" aria-hidden="true" />
+            <span>Zamek</span>
+          </button>
+          <button class="category-button edit-category-button" type="button" data-category="ruins">
+            <img src="assets/markers/ruins.png?v=1006" alt="" aria-hidden="true" />
+            <span>Ruiny</span>
+          </button>
+          <button class="category-button edit-category-button" type="button" data-category="museum">
+            <img src="assets/markers/museum.png?v=1006" alt="" aria-hidden="true" />
+            <span>Muzeum</span>
+          </button>
+          <button class="category-button edit-category-button" type="button" data-category="nature">
+            <img src="assets/markers/nature.png?v=1006" alt="" aria-hidden="true" />
+            <span>Pomnik przyrody</span>
+          </button>
+          <button class="category-button edit-category-button" type="button" data-category="pttk">
+            <img src="assets/markers/pttk.png?v=1006" alt="" aria-hidden="true" />
+            <span>Schronisko PTTK</span>
+          </button>
+        </div>
+
+        <label class="field-label" for="editDateInput">Data dodania</label>
+        <div class="date-field-wrap">
+          <input class="date-field" id="editDateInput" type="date" />
+        </div>
+
+        <label class="field-label" for="editNoteInput">Wiadomość / notatka</label>
+        <textarea class="note-field" id="editNoteInput" maxlength="2000" rows="5" placeholder="Tu możesz dopisać informacje o tym miejscu, np. co warto zobaczyć, godziny wejścia, własne uwagi..."></textarea>
+
+        <div class="edit-message" id="editMessage" role="status" aria-live="polite" hidden></div>
+
+        <div class="edit-actions">
+          <button class="delete-place-button" id="deletePlaceButton" type="button">USUŃ PUNKT</button>
+          <button class="save-edit-button" id="saveEditButton" type="button">ZAPISZ ZMIANY</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="map-screen" id="mapScreen" aria-label="Mapa Polski" hidden>
     <div id="map" class="map-container" aria-label="Interaktywna mapa OpenStreetMap"></div>
     <button class="map-back-button" id="mapBackButton" type="button" aria-label="Wróć do ekranu startowego">← COFNIJ</button>
@@ -119,10 +186,10 @@
     </button>
 
     <div class="location-message" id="locationMessage" role="status" aria-live="polite" hidden></div>
-    <div class="map-version" aria-hidden="true">v1005</div>
+    <div class="map-version" aria-hidden="true">v1006</div>
   </section>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="app.js?v=1005"></script>
+  <script src="app.js?v=1006"></script>
 </body>
 </html>

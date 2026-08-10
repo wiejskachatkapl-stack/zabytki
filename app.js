@@ -1,13 +1,13 @@
 (() => {
-  const APP_VERSION = 'v1005';
+  const APP_VERSION = 'v1006';
   const STORAGE_KEY = 'tourmap_points_v1';
 
   const CATEGORY_INFO = {
-    castle: { label: 'Zamek', icon: 'assets/markers/castle.png?v=1005' },
-    ruins: { label: 'Ruiny', icon: 'assets/markers/ruins.png?v=1005' },
-    museum: { label: 'Muzeum', icon: 'assets/markers/museum.png?v=1005' },
-    nature: { label: 'Pomnik przyrody', icon: 'assets/markers/nature.png?v=1005' },
-    pttk: { label: 'Schronisko PTTK', icon: 'assets/markers/pttk.png?v=1005' }
+    castle: { label: 'Zamek', icon: 'assets/markers/castle.png?v=1006' },
+    ruins: { label: 'Ruiny', icon: 'assets/markers/ruins.png?v=1006' },
+    museum: { label: 'Muzeum', icon: 'assets/markers/museum.png?v=1006' },
+    nature: { label: 'Pomnik przyrody', icon: 'assets/markers/nature.png?v=1006' },
+    pttk: { label: 'Schronisko PTTK', icon: 'assets/markers/pttk.png?v=1006' }
   };
 
   const startScreen = document.querySelector('.start-screen');
@@ -31,6 +31,18 @@
   const addMessage = document.getElementById('addMessage');
   const savePlaceButton = document.getElementById('savePlaceButton');
 
+  const editScreen = document.getElementById('editScreen');
+  const editBackButton = document.getElementById('editBackButton');
+  const editPlaceName = document.getElementById('editPlaceName');
+  const editLatitudeInput = document.getElementById('editLatitudeInput');
+  const editLongitudeInput = document.getElementById('editLongitudeInput');
+  const editCategoryGrid = document.getElementById('editCategoryGrid');
+  const editDateInput = document.getElementById('editDateInput');
+  const editNoteInput = document.getElementById('editNoteInput');
+  const editMessage = document.getElementById('editMessage');
+  const saveEditButton = document.getElementById('saveEditButton');
+  const deletePlaceButton = document.getElementById('deletePlaceButton');
+
   const mapScreen = document.getElementById('mapScreen');
   const mapBackButton = document.getElementById('mapBackButton');
   const mapLocationButton = document.getElementById('mapLocationButton');
@@ -41,11 +53,14 @@
   let userAccuracyCircle = null;
   let locationMessageTimer = null;
   let addMessageTimer = null;
+  let editMessageTimer = null;
   let currentMethod = 'manual';
   let currentCategory = 'castle';
+  let editCategory = 'castle';
   let autoCoords = null;
   let pointLayer = null;
   let pointMarkerById = new Map();
+  let editingPointId = null;
 
   if (versionElement) versionElement.textContent = APP_VERSION;
 
@@ -72,6 +87,10 @@
       .replaceAll("'", '&#039;');
   }
 
+  function noteHtml(value) {
+    return escapeHtml(value || '').replaceAll('\n', '<br>');
+  }
+
   function loadPoints() {
     try {
       const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
@@ -84,6 +103,10 @@
 
   function savePoints(points) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(points));
+  }
+
+  function findPoint(id) {
+    return loadPoints().find((point) => String(point.id) === String(id)) || null;
   }
 
   function createCategoryIcon(category) {
@@ -101,6 +124,7 @@
   function popupHtml(point) {
     const info = CATEGORY_INFO[point.category] || CATEGORY_INFO.castle;
     const title = point.name?.trim() || info.label;
+    const note = point.note?.trim();
     return `
       <div class="place-popup">
         <div class="place-popup-head">
@@ -112,6 +136,8 @@
         </div>
         <div class="place-popup-date">Dodano: ${escapeHtml(formatDisplayDate(point.date))}</div>
         <div class="place-popup-coords">${Number(point.lat).toFixed(6)}, ${Number(point.lon).toFixed(6)}</div>
+        ${note ? `<div class="place-popup-note">${noteHtml(note)}</div>` : ''}
+        <button class="place-popup-edit" type="button" data-edit-point-id="${escapeHtml(point.id)}">EDYTUJ</button>
       </div>
     `;
   }
@@ -127,9 +153,10 @@
       if (!Number.isFinite(Number(point.lat)) || !Number.isFinite(Number(point.lon))) return;
       const marker = L.marker([Number(point.lat), Number(point.lon)], {
         icon: createCategoryIcon(point.category),
-        title: point.name || (CATEGORY_INFO[point.category]?.label ?? 'Miejsce')
+        title: point.name || (CATEGORY_INFO[point.category]?.label ?? 'Miejsce'),
+        riseOnHover: true
       }).addTo(pointLayer);
-      marker.bindPopup(popupHtml(point), { maxWidth: 300 });
+      marker.bindPopup(popupHtml(point), { maxWidth: 320, minWidth: 210 });
       pointMarkerById.set(String(point.id), marker);
     });
   }
@@ -177,6 +204,17 @@
     addMessage.hidden = false;
     addMessageTimer = setTimeout(() => {
       addMessage.hidden = true;
+    }, 4000);
+  }
+
+  function showEditMessage(text, isError = false) {
+    if (!editMessage) return;
+    clearTimeout(editMessageTimer);
+    editMessage.textContent = text;
+    editMessage.classList.toggle('is-error', isError);
+    editMessage.hidden = false;
+    editMessageTimer = setTimeout(() => {
+      editMessage.hidden = true;
     }, 4000);
   }
 
@@ -276,6 +314,16 @@
     });
   }
 
+  function setEditCategory(category) {
+    if (!CATEGORY_INFO[category]) return;
+    editCategory = category;
+    editCategoryGrid?.querySelectorAll('.edit-category-button').forEach((button) => {
+      const active = button.dataset.category === category;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  }
+
   async function fetchAddLocation() {
     if (!gpsAddButton || !gpsResult) return;
     gpsAddButton.disabled = true;
@@ -324,6 +372,7 @@
     resetAddForm();
     startScreen.hidden = true;
     if (mapScreen) mapScreen.hidden = true;
+    if (editScreen) editScreen.hidden = true;
     addScreen.hidden = false;
     requestAnimationFrame(() => placeName?.focus({ preventScroll: true }));
   }
@@ -338,6 +387,7 @@
     if (!mapScreen || !startScreen) return;
     startScreen.hidden = true;
     if (addScreen) addScreen.hidden = true;
+    if (editScreen) editScreen.hidden = true;
     mapScreen.hidden = false;
     createMap();
     renderStoredPoints();
@@ -346,6 +396,8 @@
       map?.invalidateSize();
       if (Number.isFinite(options.lat) && Number.isFinite(options.lon)) {
         map?.setView([options.lat, options.lon], options.zoom || 16, { animate: true });
+      }
+      if (options.openPointId != null) {
         setTimeout(() => pointMarkerById.get(String(options.openPointId))?.openPopup(), 250);
       }
     });
@@ -390,10 +442,12 @@
       name: placeName?.value.trim() || info.label,
       category: currentCategory,
       date,
+      note: '',
       lat,
       lon,
       source: currentMethod,
-      createdAt: new Date().toISOString()
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
     };
 
     const points = loadPoints();
@@ -404,6 +458,103 @@
     setTimeout(() => {
       showMap({ lat, lon, zoom: 16, openPointId: point.id });
     }, 250);
+  }
+
+  function showEditScreen(pointId) {
+    const point = findPoint(pointId);
+    if (!point || !editScreen) return;
+
+    editingPointId = String(point.id);
+    if (editPlaceName) editPlaceName.value = point.name || '';
+    if (editLatitudeInput) editLatitudeInput.value = Number(point.lat).toFixed(6);
+    if (editLongitudeInput) editLongitudeInput.value = Number(point.lon).toFixed(6);
+    if (editDateInput) editDateInput.value = point.date || localDateString();
+    if (editNoteInput) editNoteInput.value = point.note || '';
+    setEditCategory(point.category || 'castle');
+    if (editMessage) editMessage.hidden = true;
+
+    if (startScreen) startScreen.hidden = true;
+    if (addScreen) addScreen.hidden = true;
+    if (mapScreen) mapScreen.hidden = true;
+    editScreen.hidden = false;
+
+    requestAnimationFrame(() => editPlaceName?.focus({ preventScroll: true }));
+  }
+
+  function closeEditToMap(openPoint = true) {
+    const point = editingPointId ? findPoint(editingPointId) : null;
+    if (editScreen) editScreen.hidden = true;
+    editingPointId = null;
+    if (point && openPoint) {
+      showMap({ lat: Number(point.lat), lon: Number(point.lon), zoom: Math.max(map?.getZoom() || 15, 15), openPointId: point.id });
+    } else {
+      showMap();
+    }
+  }
+
+  function saveEditedPoint() {
+    if (!editingPointId) return;
+    const lat = parseCoordinate(editLatitudeInput?.value);
+    const lon = parseCoordinate(editLongitudeInput?.value);
+
+    if (!Number.isFinite(lat) || lat < -90 || lat > 90) {
+      showEditMessage('Podaj prawidłową szerokość geograficzną od -90 do 90.', true);
+      editLatitudeInput?.focus();
+      return;
+    }
+    if (!Number.isFinite(lon) || lon < -180 || lon > 180) {
+      showEditMessage('Podaj prawidłową długość geograficzną od -180 do 180.', true);
+      editLongitudeInput?.focus();
+      return;
+    }
+
+    const points = loadPoints();
+    const index = points.findIndex((point) => String(point.id) === String(editingPointId));
+    if (index < 0) {
+      showEditMessage('Nie znaleziono tego punktu.', true);
+      return;
+    }
+
+    const info = CATEGORY_INFO[editCategory] || CATEGORY_INFO.castle;
+    points[index] = {
+      ...points[index],
+      name: editPlaceName?.value.trim() || info.label,
+      category: editCategory,
+      date: editDateInput?.value || localDateString(),
+      note: editNoteInput?.value.trim() || '',
+      lat,
+      lon,
+      updatedAt: new Date().toISOString()
+    };
+
+    const saved = points[index];
+    savePoints(points);
+    renderStoredPoints();
+    showEditMessage('Zmiany zostały zapisane.');
+
+    setTimeout(() => {
+      if (editScreen) editScreen.hidden = true;
+      editingPointId = null;
+      showMap({ lat, lon, zoom: 16, openPointId: saved.id });
+    }, 250);
+  }
+
+  function deleteEditedPoint() {
+    if (!editingPointId) return;
+    const point = findPoint(editingPointId);
+    if (!point) return;
+
+    const title = point.name?.trim() || (CATEGORY_INFO[point.category]?.label ?? 'ten punkt');
+    const confirmed = window.confirm(`Czy na pewno usunąć punkt „${title}”?\n\nTej operacji nie można cofnąć.`);
+    if (!confirmed) return;
+
+    const points = loadPoints().filter((item) => String(item.id) !== String(editingPointId));
+    savePoints(points);
+    editingPointId = null;
+    if (editScreen) editScreen.hidden = true;
+    renderStoredPoints();
+    showMap();
+    setTimeout(() => showLocationMessage('Punkt został usunięty.'), 150);
   }
 
   addButton?.addEventListener('click', showAddScreen);
@@ -417,6 +568,23 @@
     button.addEventListener('click', () => setCategory(button.dataset.category));
   });
 
+  editCategoryGrid?.querySelectorAll('.edit-category-button').forEach((button) => {
+    button.addEventListener('click', () => setEditCategory(button.dataset.category));
+  });
+
+  editBackButton?.addEventListener('click', () => closeEditToMap(true));
+  saveEditButton?.addEventListener('click', saveEditedPoint);
+  deletePlaceButton?.addEventListener('click', deleteEditedPoint);
+
+  document.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-edit-point-id]');
+    if (!button) return;
+    event.preventDefault();
+    event.stopPropagation();
+    map?.closePopup();
+    showEditScreen(button.dataset.editPointId);
+  });
+
   mapButton?.addEventListener('click', () => showMap());
   mapBackButton?.addEventListener('click', hideMap);
   mapLocationButton?.addEventListener('click', locateUser);
@@ -427,12 +595,13 @@
 
   if (dateInput && !dateInput.value) dateInput.value = localDateString();
   setCategory(currentCategory);
+  setEditCategory(editCategory);
 
   // PWA: rejestracja Service Workera i szybkie wykrywanie nowej wersji.
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1005', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1006', {
           scope: './',
           updateViaCache: 'none'
         });
