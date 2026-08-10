@@ -1,15 +1,17 @@
 (() => {
-  const APP_VERSION = 'v1014';
+  const APP_VERSION = 'v1015';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
+  // v1015: niezależne instancje Overpass. Nie używamy już lz4/z jako
+  // "awaryjnych", bo należą do tej samej infrastruktury co overpass-api.de.
   const OVERPASS_URLS = [
-    'https://overpass-api.de/api/interpreter',
-    'https://lz4.overpass-api.de/api/interpreter',
-    'https://z.overpass-api.de/api/interpreter'
+    'https://overpass.private.coffee/api/interpreter',
+    'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
+    'https://overpass-api.de/api/interpreter'
   ];
-  const OVERPASS_BROWSER_TIMEOUT_MS = 45000;
+  const OVERPASS_BROWSER_TIMEOUT_MS = 20000;
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const ROUTE_CORRIDOR_RADIUS = 5000;
@@ -345,7 +347,7 @@ out center tags;`;
   async function fetchOverpassAttractions(scope) {
     const query = buildOverpassQuery(scope);
 
-    // v1014: wracamy do sposobu, który działał w v1007 — POST form-urlencoded.
+    // v1015: wracamy do sposobu, który działał w v1007 — POST form-urlencoded.
     // Zapytania są wykonywane kolejno, aby GPS i widok mapy nie wysyłały
     // równocześnie kilku zapytań do publicznego serwera Overpass.
     const runRequest = async () => {
@@ -370,6 +372,7 @@ out center tags;`;
 
           if (!response.ok) throw new Error(`Overpass HTTP ${response.status}`);
           const data = await response.json();
+          console.info(`Overpass OK: ${endpoint} · ${(data.elements || []).length} elementów`);
           const result = new Map();
 
           (data.elements || []).forEach((element) => {
@@ -571,29 +574,38 @@ out center tags;`;
       updateMainAttractionLayer(`Atrakcje OSM: ${total}`);
     } catch (error) {
       console.warn('Nie udało się pobrać atrakcji z OpenStreetMap:', error);
-      viewportAttractions = [];
+
+      // v1015: NIE kasujemy danych, które już wcześniej udało się pobrać.
+      // Publiczny Overpass potrafi chwilowo zwrócić timeout/429/504. W takim
+      // przypadku zostawiamy istniejące znaczniki na mapie i tylko ponawiamy
+      // próbę w tle. To usuwa efekt: "pojawiły się i po chwili zniknęły".
       updateMainAttractionLayer();
+      const keptCount = new Set(
+        [...nearbyAttractions, ...viewportAttractions]
+          .filter((item) => item?.osmId)
+          .map((item) => item.osmId)
+      ).size;
+
       if (!viewportRetryUsed) {
         viewportRetryUsed = true;
         updateOsmStatus(
-          nearbyAttractions.length
-            ? `Widok mapy chwilowo niedostępny · atrakcje w pobliżu GPS: ${nearbyAttractions.length}`
+          keptCount
+            ? `Atrakcje OSM: ${keptCount} · odświeżenie nieudane, zachowuję punkty i ponawiam…`
             : 'Atrakcje OSM: ponawiam pobieranie…',
-          true
+          !keptCount
         );
 
-        // Tylko jedna automatyczna próba po krótkiej przerwie.
         window.setTimeout(() => {
-          if (!mapScreen?.hidden && currentMapMode === 'all' && !routeActive) {
+          if (!mapScreen?.hidden && currentMapMode === 'all' && !routeActive && osmEnabled) {
             scheduleViewportAttractions(0, false);
           }
-        }, 4500);
+        }, 5000);
       } else {
         updateOsmStatus(
-          nearbyAttractions.length
-            ? `Atrakcje w pobliżu GPS: ${nearbyAttractions.length}`
-            : 'Atrakcje OSM: chwilowo niedostępne',
-          !nearbyAttractions.length
+          keptCount
+            ? `Atrakcje OSM: ${keptCount} · zachowano ostatnio pobrane dane`
+            : 'Atrakcje OSM: serwer chwilowo niedostępny · naciśnij OSM, aby spróbować ponownie',
+          !keptCount
         );
       }
     }
@@ -1054,7 +1066,20 @@ out center tags;`;
       checkProximity(position);
     } catch (error) {
       console.warn('Nie udało się pobrać atrakcji w pobliżu:', error);
-      showLocationMessage('Nie udało się teraz pobrać atrakcji w pobliżu.', true);
+      // Nie usuwamy poprzedniej listy nearbyAttractions przy chwilowym błędzie.
+      // Dzięki temu istniejące znaczniki i alerty pozostają dostępne.
+      const keptCount = new Set(
+        [...nearbyAttractions, ...viewportAttractions]
+          .filter((item) => item?.osmId)
+          .map((item) => item.osmId)
+      ).size;
+      if (currentMapMode === 'all' && !routeActive) updateMainAttractionLayer();
+      showLocationMessage(
+        keptCount
+          ? `Nie udało się odświeżyć OSM. Zachowuję ${keptCount} wcześniej pobranych punktów.`
+          : 'Nie udało się teraz pobrać atrakcji OSM. Naciśnij OSM, aby spróbować ponownie.',
+        !keptCount
+      );
     } finally {
       nearbyFetchInFlight = false;
     }
