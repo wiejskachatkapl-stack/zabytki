@@ -1,13 +1,16 @@
 {
   "id": "./",
-  "name": "Turystyczna mapa Polski",
-  "short_name": "Mapa Polski",
-  "description": "Katalog odwiedzonych miejsc, zamków, ruin, zabytków i innych ciekawych miejsc w Polsce.",
+  "name": "Mapa atrakcji Polski",
+  "short_name": "Mapa atrakcji Polski",
+  "description": "Mapa atrakcji Polski: własne odwiedzone miejsca, zamki, ruiny, muzea, pomniki przyrody i schroniska.",
   "lang": "pl-PL",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "display_override": ["standalone", "minimal-ui"],
+  "display_override": [
+    "standalone",
+    "minimal-ui"
+  ],
   "background_color": "#152319",
   "theme_color": "#152319",
   "orientation": "any",

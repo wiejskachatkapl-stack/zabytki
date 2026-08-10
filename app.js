@@ -1,20 +1,21 @@
 (() => {
-  const APP_VERSION = 'v1010';
+  const APP_VERSION = 'v1011';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
-  const OVERPASS_URL = 'https://overpass-api.de/api/interpreter';
+  const OVERPASS_URLS = [
+    'https://overpass-api.de/api/interpreter',
+    'https://overpass.kumi.systems/api/interpreter'
+  ];
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const ROUTE_CORRIDOR_RADIUS = 5000;
-  const OSM_MIN_ZOOM = 10;
+  const OSM_MIN_ZOOM = 9;
   const ALERT_COOLDOWN_MS = 12 * 60 * 60 * 1000;
   const NEARBY_FETCH_MIN_RADIUS = 12000;
   const NEARBY_REFRESH_DISTANCE = 2500;
   const NEARBY_REFRESH_TIME = 8 * 60 * 1000;
-  const AUTO_FOLLOW_RESUME_MS = 8000;
-  const AUTO_FOLLOW_TARGET_PAUSE_MS = 12000;
-
+  
   const CATEGORY_INFO = {
     castle: { label: 'Zamek', icon: 'assets/markers/castle.png?v=1007' },
     ruins: { label: 'Ruiny', icon: 'assets/markers/ruins.png?v=1007' },
@@ -101,6 +102,7 @@
 
   let externalLayer = null;
   let osmAttractions = new Map();
+  let viewportAttractions = [];
   let osmMarkerById = new Map();
   let viewportFetchTimer = null;
   let viewportFetchSequence = 0;
@@ -114,9 +116,6 @@
   let lastNearbyFetchPosition = null;
   let lastNearbyFetchAt = 0;
   let currentNearbyAlertId = null;
-  let autoFollowPausedUntil = 0;
-  let autoFollowResumeTimer = null;
-  let lastFollowPosition = null;
 
   let routeLayer = null;
   let routeDestinationMarker = null;
@@ -285,67 +284,82 @@ out center tags;`;
 
   async function fetchOverpassAttractions(scope) {
     const query = buildOverpassQuery(scope);
-    const response = await fetch(OVERPASS_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-      },
-      body: `data=${encodeURIComponent(query)}`
-    });
+    let lastError = null;
 
-    if (!response.ok) {
-      throw new Error(`Overpass HTTP ${response.status}`);
+    for (const endpoint of OVERPASS_URLS) {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 18000);
+
+      try {
+        const response = await fetch(endpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+            'Accept': 'application/json'
+          },
+          body: `data=${encodeURIComponent(query)}`,
+          signal: controller.signal
+        });
+
+        if (!response.ok) throw new Error(`Overpass HTTP ${response.status}`);
+        const data = await response.json();
+        const result = new Map();
+
+        (data.elements || []).forEach((element) => {
+          const tags = element.tags || {};
+          const lat = Number.isFinite(Number(element.lat)) ? Number(element.lat) : Number(element.center?.lat);
+          const lon = Number.isFinite(Number(element.lon)) ? Number(element.lon) : Number(element.center?.lon);
+          if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
+
+          const pttkText = `${tags.operator || ''} ${tags.name || ''} ${tags['name:pl'] || ''}`.toUpperCase();
+          let category = null;
+
+          if (
+            (tags.tourism === 'alpine_hut' || tags.tourism === 'wilderness_hut') &&
+            pttkText.includes('PTTK')
+          ) {
+            category = 'pttk';
+          } else if (tags.historic === 'ruins' || tags.ruins === 'yes') {
+            category = 'ruins';
+          } else if (tags.tourism === 'museum') {
+            category = 'museum';
+          } else if (tags.denotation === 'natural_monument') {
+            category = 'nature';
+          } else if (tags.historic === 'castle' || tags.historic === 'manor') {
+            category = 'castle';
+          }
+
+          if (!category) return;
+
+          const osmId = `${element.type}/${element.id}`;
+          const info = CATEGORY_INFO[category] || CATEGORY_INFO.castle;
+          const fallbackName =
+            category === 'castle' && tags.historic === 'manor'
+              ? 'Pałac / dwór'
+              : info.label;
+
+          result.set(osmId, {
+            osmId,
+            type: element.type,
+            osmNumericId: element.id,
+            category,
+            name: tags['name:pl'] || tags.name || tags.official_name || fallbackName,
+            lat,
+            lon,
+            tags
+          });
+        });
+
+        return [...result.values()];
+      } catch (error) {
+        lastError = error;
+        console.warn(`Overpass niedostępny: ${endpoint}`, error);
+      } finally {
+        clearTimeout(timeoutId);
+      }
     }
 
-    const data = await response.json();
-    const result = new Map();
-
-    (data.elements || []).forEach((element) => {
-      const tags = element.tags || {};
-      const lat = Number.isFinite(Number(element.lat)) ? Number(element.lat) : Number(element.center?.lat);
-      const lon = Number.isFinite(Number(element.lon)) ? Number(element.lon) : Number(element.center?.lon);
-      if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
-
-      const pttkText = `${tags.operator || ''} ${tags.name || ''} ${tags['name:pl'] || ''}`.toUpperCase();
-      let category = null;
-
-      if (
-        (tags.tourism === 'alpine_hut' || tags.tourism === 'wilderness_hut') &&
-        pttkText.includes('PTTK')
-      ) {
-        category = 'pttk';
-      } else if (tags.historic === 'ruins' || tags.ruins === 'yes') {
-        category = 'ruins';
-      } else if (tags.tourism === 'museum') {
-        category = 'museum';
-      } else if (tags.denotation === 'natural_monument') {
-        category = 'nature';
-      } else if (tags.historic === 'castle' || tags.historic === 'manor') {
-        category = 'castle';
-      }
-
-      if (!category) return;
-
-      const osmId = `${element.type}/${element.id}`;
-      const info = CATEGORY_INFO[category] || CATEGORY_INFO.castle;
-      const fallbackName =
-        category === 'castle' && tags.historic === 'manor'
-          ? 'Pałac / dwór'
-          : info.label;
-
-      result.set(osmId, {
-        osmId,
-        type: element.type,
-        osmNumericId: element.id,
-        category,
-        name: tags['name:pl'] || tags.name || tags.official_name || fallbackName,
-        lat,
-        lon,
-        tags
-      });
-    });
-
-    return [...result.values()];
+    throw lastError || new Error('Brak dostępnego serwera Overpass');
   }
 
   function externalPopupHtml(attraction) {
@@ -397,6 +411,31 @@ out center tags;`;
     });
   }
 
+  function updateMainAttractionLayer(statusText = '') {
+    if (!map || currentMapMode !== 'all') return;
+
+    if (routeActive) {
+      osmAttractions = new Map(routeAttractions.map((item) => [item.osmId, item]));
+      renderExternalAttractions(routeAttractions);
+      if (statusText) updateOsmStatus(statusText);
+      return;
+    }
+
+    const merged = new Map();
+    [...nearbyAttractions, ...viewportAttractions].forEach((item) => {
+      if (item?.osmId) merged.set(item.osmId, item);
+    });
+
+    osmAttractions = merged;
+    renderExternalAttractions([...merged.values()]);
+
+    if (statusText) {
+      updateOsmStatus(statusText);
+    } else if (merged.size) {
+      updateOsmStatus(`Atrakcje OSM: ${merged.size}`);
+    }
+  }
+
   function viewportCacheKey() {
     if (!map) return '';
     const bounds = map.getBounds();
@@ -413,25 +452,25 @@ out center tags;`;
   async function loadViewportAttractions() {
     if (!map || mapScreen?.hidden || currentMapMode !== 'all') return;
     if (routeActive) {
-      renderExternalAttractions(routeAttractions);
-      updateOsmStatus(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
+      updateMainAttractionLayer(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
       return;
     }
 
     if (map.getZoom() < OSM_MIN_ZOOM) {
-      osmAttractions = new Map();
-      externalLayer?.clearLayers();
-      osmMarkerById = new Map();
-      updateOsmStatus(`Atrakcje OSM: powiększ mapę do poziomu ${OSM_MIN_ZOOM}.`);
+      viewportAttractions = [];
+      updateMainAttractionLayer(
+        nearbyAttractions.length
+          ? `Atrakcje w pobliżu GPS: ${nearbyAttractions.length} · użyj WYCENTRUJ, aby je zobaczyć z bliska.`
+          : `Atrakcje OSM: pobieram w pobliżu Twojej pozycji…`
+      );
       return;
     }
 
     const key = viewportCacheKey();
     const cached = viewportCache.get(key);
     if (cached && Date.now() - cached.time < 10 * 60 * 1000) {
-      osmAttractions = new Map(cached.items.map((item) => [item.osmId, item]));
-      renderExternalAttractions(cached.items);
-      updateOsmStatus(`Atrakcje OSM: ${cached.items.length}`);
+      viewportAttractions = cached.items;
+      updateMainAttractionLayer(`Atrakcje OSM: ${new Set([...nearbyAttractions, ...viewportAttractions].map((item) => item.osmId)).size}`);
       return;
     }
 
@@ -444,17 +483,24 @@ out center tags;`;
       const attractions = await fetchOverpassAttractions(scope);
       if (sequence !== viewportFetchSequence) return;
 
-      osmAttractions = new Map(attractions.map((item) => [item.osmId, item]));
+      viewportAttractions = attractions;
       viewportCache.set(key, { time: Date.now(), items: attractions });
       while (viewportCache.size > 8) {
         viewportCache.delete(viewportCache.keys().next().value);
       }
 
-      renderExternalAttractions(attractions);
-      updateOsmStatus(`Atrakcje OSM: ${attractions.length}`);
+      const total = new Set([...nearbyAttractions, ...viewportAttractions].map((item) => item.osmId)).size;
+      updateMainAttractionLayer(`Atrakcje OSM: ${total}`);
     } catch (error) {
       console.warn('Nie udało się pobrać atrakcji z OpenStreetMap:', error);
-      updateOsmStatus('Atrakcje OSM: chwilowo niedostępne', true);
+      viewportAttractions = [];
+      updateMainAttractionLayer();
+      updateOsmStatus(
+        nearbyAttractions.length
+          ? `Widok mapy chwilowo niedostępny · atrakcje w pobliżu GPS: ${nearbyAttractions.length}`
+          : 'Atrakcje OSM: chwilowo niedostępne',
+        true
+      );
     }
   }
 
@@ -745,7 +791,6 @@ out center tags;`;
       const duration = formatRouteDuration(Number(route.duration));
       setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Pobieram atrakcje do 5 km od trasy…`);
 
-      scheduleAutoFollowResume(AUTO_FOLLOW_TARGET_PAUSE_MS);
       map.fitBounds(routeLayer.getBounds(), { padding: [45, 45], animate: true });
 
       try {
@@ -785,74 +830,6 @@ out center tags;`;
       );
     }
     if (proximityRadiusWrap) proximityRadiusWrap.classList.toggle('is-active', proximityActive);
-  }
-
-  function isAutoFollowPaused() {
-    return Date.now() < autoFollowPausedUntil;
-  }
-
-  function clearAutoFollowResumeTimer() {
-    if (autoFollowResumeTimer != null) {
-      clearTimeout(autoFollowResumeTimer);
-      autoFollowResumeTimer = null;
-    }
-  }
-
-  function scheduleAutoFollowResume(delay = AUTO_FOLLOW_RESUME_MS) {
-    clearAutoFollowResumeTimer();
-    autoFollowPausedUntil = Date.now() + delay;
-    autoFollowResumeTimer = setTimeout(() => {
-      autoFollowResumeTimer = null;
-      autoFollowPausedUntil = 0;
-      if (!mapScreen?.hidden && lastMonitorPosition?.coords) {
-        followMonitoredPosition(lastMonitorPosition, true);
-        showLocationMessage('Automatyczne śledzenie wznowione.');
-      }
-    }, delay);
-  }
-
-  function pauseAutoFollowForMapBrowsing(delay = AUTO_FOLLOW_RESUME_MS) {
-    if (!proximityActive || mapScreen?.hidden) return;
-    scheduleAutoFollowResume(delay);
-  }
-
-  function followMonitoredPosition(position, force = false) {
-    if (!map || mapScreen?.hidden || !position?.coords || isAutoFollowPaused()) return;
-
-    const { latitude, longitude, accuracy } = position.coords;
-    const latlng = [latitude, longitude];
-    const minMove = Math.max(7, Math.min(25, Number(accuracy || 0) * 0.18));
-    const moved = lastFollowPosition
-      ? distanceMeters(latitude, longitude, lastFollowPosition.lat, lastFollowPosition.lon)
-      : Infinity;
-
-    if (!force && moved < minMove) return;
-
-    lastFollowPosition = { lat: latitude, lon: longitude };
-    if (map.getZoom() < 14) {
-      map.setView(latlng, 15, { animate: true });
-    } else {
-      map.panTo(latlng, { animate: true, duration: 0.35 });
-    }
-  }
-
-  function resumeAutoFollow(showMessage = true) {
-    clearAutoFollowResumeTimer();
-    autoFollowPausedUntil = 0;
-
-    if (proximityWatchId == null) {
-      startProximityMonitoring(false);
-      if (showMessage) showLocationMessage('Uruchamiam automatyczne śledzenie…');
-      return;
-    }
-
-    if (lastMonitorPosition?.coords) {
-      followMonitoredPosition(lastMonitorPosition, true);
-      setLocationButtonState('active');
-      if (showMessage) showLocationMessage('Automatyczne śledzenie aktywne.');
-    } else if (showMessage) {
-      showLocationMessage('Ustalam Twoją lokalizację…');
-    }
   }
 
   function updateMonitoredLocationVisual(position) {
@@ -942,6 +919,9 @@ out center tags;`;
       nearbyAttractions = await fetchOverpassAttractions(scope);
       lastNearbyFetchPosition = { lat: latitude, lon: longitude };
       lastNearbyFetchAt = Date.now();
+      if (currentMapMode === 'all' && !routeActive) {
+        updateMainAttractionLayer(`Atrakcje w pobliżu GPS: ${nearbyAttractions.length}`);
+      }
       checkProximity(position);
     } catch (error) {
       console.warn('Nie udało się pobrać atrakcji w pobliżu:', error);
@@ -955,7 +935,6 @@ out center tags;`;
     lastMonitorPosition = position;
     updateMonitoredLocationVisual(position);
     setLocationButtonState('active');
-    followMonitoredPosition(position);
 
     const { latitude, longitude } = position.coords;
     const movedSinceFetch = lastNearbyFetchPosition
@@ -996,7 +975,7 @@ out center tags;`;
     setProximityUi(true);
     setLocationButtonState('locating');
     if (showMessage) {
-      showLocationMessage(`Automatyczne śledzenie włączone · alert ${formatDistance(getProximityRadiusMeters())}.`);
+      showLocationMessage(`Monitoring GPS włączony · alert ${formatDistance(getProximityRadiusMeters())}.`);
     }
 
     proximityWatchId = navigator.geolocation.watchPosition(
@@ -1017,11 +996,8 @@ out center tags;`;
     proximityWatchId = null;
     setProximityUi(false);
     setLocationButtonState('idle');
-    clearAutoFollowResumeTimer();
-    autoFollowPausedUntil = 0;
-    lastFollowPosition = null;
     hideNearbyAlert();
-    if (showMessage) showLocationMessage('Automatyczne śledzenie zostało zatrzymane.');
+    if (showMessage) showLocationMessage('Monitoring GPS został zatrzymany.');
   }
 
   function popupHtml(point) {
@@ -1096,7 +1072,6 @@ out center tags;`;
     renderStoredPoints();
 
     map.on('moveend zoomend', () => scheduleViewportAttractions());
-    map.on('dragstart', () => pauseAutoFollowForMapBrowsing());
     scheduleViewportAttractions(250);
   }
 
@@ -1161,46 +1136,27 @@ out center tags;`;
     mapLocationButton.disabled = state === 'locating';
   }
 
-  async function locateUser() {
+  async function centerOnCurrentLocation() {
     if (!map) return;
     setLocationButtonState('locating');
     showLocationMessage('Ustalam Twoją lokalizację…');
 
     try {
-      const position = await getCurrentPosition();
+      let position = lastMonitorPosition;
+      if (!position?.coords) {
+        position = await getCurrentPosition();
+        lastMonitorPosition = position;
+        updateMonitoredLocationVisual(position);
+        if (!routeActive) {
+          lastNearbyFetchAt = 0;
+          refreshNearbyAttractions(position);
+        }
+      }
+
       const { latitude, longitude, accuracy } = position.coords;
-      const latlng = [latitude, longitude];
-
-      if (userAccuracyCircle) {
-        userAccuracyCircle.setLatLng(latlng).setRadius(Math.max(accuracy, 5));
-      } else {
-        userAccuracyCircle = L.circle(latlng, {
-          radius: Math.max(accuracy, 5),
-          color: '#2f80ed',
-          weight: 1,
-          opacity: 0.55,
-          fillColor: '#2f80ed',
-          fillOpacity: 0.12,
-          interactive: false
-        }).addTo(map);
-      }
-
-      if (userLocationMarker) {
-        userLocationMarker.setLatLng(latlng);
-      } else {
-        userLocationMarker = L.circleMarker(latlng, {
-          radius: 8,
-          color: '#ffffff',
-          weight: 3,
-          fillColor: '#1677ff',
-          fillOpacity: 1
-        }).addTo(map);
-        userLocationMarker.bindTooltip('Twoja lokalizacja', { direction: 'top', offset: [0, -8] });
-      }
-
-      map.setView(latlng, Math.max(map.getZoom(), 15), { animate: true });
+      map.setView([latitude, longitude], 15, { animate: true });
       setLocationButtonState('active');
-      showLocationMessage(`Lokalizacja znaleziona (dokładność ok. ${Math.round(accuracy)} m).`);
+      showLocationMessage(`Wycentrowano na Twojej pozycji (dokładność ok. ${Math.round(accuracy || 0)} m).`);
     } catch (error) {
       setLocationButtonState('idle');
       showLocationMessage(geolocationErrorText(error), true);
@@ -1309,7 +1265,7 @@ out center tags;`;
 
     if (mapLocationButton) mapLocationButton.hidden = mineOnly;
     if (routeButton) routeButton.hidden = mineOnly;
-    if (proximityButton) proximityButton.hidden = mineOnly;
+    if (proximityButton) proximityButton.hidden = true;
     if (proximityRadiusWrap) proximityRadiusWrap.hidden = mineOnly;
     if (osmStatus) osmStatus.hidden = true;
 
@@ -1318,6 +1274,7 @@ out center tags;`;
       clearTimeout(viewportFetchTimer);
       viewportFetchSequence += 1;
       osmAttractions = new Map();
+      viewportAttractions = [];
       externalLayer?.clearLayers();
       osmMarkerById = new Map();
       hideNearbyAlert();
@@ -1352,12 +1309,6 @@ out center tags;`;
     const showingRequestedPoint = Number.isFinite(options.lat) && Number.isFinite(options.lon);
     const mineOnly = currentMapMode === 'mine';
 
-    if (!mineOnly && showingRequestedPoint) {
-      scheduleAutoFollowResume(AUTO_FOLLOW_TARGET_PAUSE_MS);
-    } else {
-      clearAutoFollowResumeTimer();
-      autoFollowPausedUntil = 0;
-    }
 
     requestAnimationFrame(() => {
       map?.invalidateSize();
@@ -1389,8 +1340,9 @@ out center tags;`;
         scheduleViewportAttractions(300);
       }
       startProximityMonitoring(true);
-      if (!showingRequestedPoint && lastMonitorPosition?.coords) {
-        followMonitoredPosition(lastMonitorPosition, true);
+      if (lastMonitorPosition?.coords && !routeActive) {
+        lastNearbyFetchAt = 0;
+        refreshNearbyAttractions(lastMonitorPosition);
       }
     });
   }
@@ -1605,7 +1557,7 @@ out center tags;`;
   });
   routeClearButton?.addEventListener('click', () => clearRoute({ refreshMap: true }));
 
-  proximityButton?.addEventListener('click', () => resumeAutoFollow(true));
+  proximityButton?.addEventListener('click', () => startProximityMonitoring(true));
 
   proximityRadius?.addEventListener('change', () => {
     const radius = getProximityRadiusMeters();
@@ -1638,7 +1590,7 @@ out center tags;`;
   mapButton?.addEventListener('click', () => showMap({ mode: 'all' }));
   myPlacesButton?.addEventListener('click', showMyPlacesMap);
   mapBackButton?.addEventListener('click', hideMap);
-  mapLocationButton?.addEventListener('click', () => resumeAutoFollow(true));
+  mapLocationButton?.addEventListener('click', centerOnCurrentLocation);
 
   window.addEventListener('resize', () => {
     if (mapScreen && !mapScreen.hidden) map?.invalidateSize();
@@ -1659,7 +1611,7 @@ out center tags;`;
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1010', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1011', {
           scope: './',
           updateViaCache: 'none'
         });

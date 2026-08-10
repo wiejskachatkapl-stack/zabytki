@@ -1923,3 +1923,46 @@ button {
     max-height: none;
   }
 }
+
+
+/* v1011 — ręczne centrowanie mapy. GPS aktualizuje pozycję i alerty bez automatycznego przesuwania mapy. */
+.map-location-button {
+  width: auto;
+  min-width: 122px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 12px;
+  border-radius: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.map-location-button span {
+  display: inline-block;
+}
+
+.map-location-button.is-active {
+  color: #145ebc;
+}
+
+@media (orientation: portrait) {
+  .map-location-button {
+    width: auto;
+    min-width: 112px;
+    height: 44px;
+    padding: 0 10px;
+    gap: 5px;
+    font-size: 11px;
+  }
+
+  .map-location-button svg {
+    width: 22px;
+    height: 22px;
+  }
+}
