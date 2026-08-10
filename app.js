@@ -1,5 +1,5 @@
 (() => {
-  const APP_VERSION = 'v1008';
+  const APP_VERSION = 'v1009';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
@@ -23,6 +23,7 @@
   const startScreen = document.querySelector('.start-screen');
   const addButton = document.getElementById('addButton');
   const mapButton = document.getElementById('mapButton');
+  const myPlacesButton = document.getElementById('myPlacesButton');
   const versionElement = document.getElementById('appVersion');
 
   const addScreen = document.getElementById('addScreen');
@@ -61,6 +62,7 @@
   const proximityRadius = document.getElementById('proximityRadius');
   const proximityRadiusWrap = document.getElementById('proximityRadiusWrap');
   const osmStatus = document.getElementById('osmStatus');
+  const mapModeBadge = document.getElementById('mapModeBadge');
 
   const nearbyAlert = document.getElementById('nearbyAlert');
   const nearbyAlertIcon = document.getElementById('nearbyAlertIcon');
@@ -83,6 +85,8 @@
   let pointLayer = null;
   let pointMarkerById = new Map();
   let editingPointId = null;
+  let currentMapMode = 'all';
+  let editReturnMapMode = 'all';
 
   let externalLayer = null;
   let osmAttractions = new Map();
@@ -389,7 +393,7 @@ out center tags;`;
   }
 
   async function loadViewportAttractions() {
-    if (!map || mapScreen?.hidden) return;
+    if (!map || mapScreen?.hidden || currentMapMode !== 'all') return;
 
     if (map.getZoom() < OSM_MIN_ZOOM) {
       osmAttractions = new Map();
@@ -433,6 +437,7 @@ out center tags;`;
 
   function scheduleViewportAttractions(delay = 650) {
     clearTimeout(viewportFetchTimer);
+    if (currentMapMode !== 'all') return;
     viewportFetchTimer = setTimeout(loadViewportAttractions, delay);
   }
 
@@ -803,8 +808,11 @@ out center tags;`;
       pointMarkerById.set(String(point.id), marker);
     });
 
-    if (osmAttractions.size) {
+    if (currentMapMode === 'all' && osmAttractions.size) {
       renderExternalAttractions([...osmAttractions.values()]);
+    } else if (currentMapMode === 'mine') {
+      externalLayer?.clearLayers();
+      osmMarkerById = new Map();
     }
   }
 
@@ -1035,8 +1043,48 @@ out center tags;`;
     startScreen.hidden = false;
   }
 
+  function applyMapMode(mode) {
+    currentMapMode = mode === 'mine' ? 'mine' : 'all';
+    const mineOnly = currentMapMode === 'mine';
+
+    if (mapModeBadge) {
+      mapModeBadge.textContent = mineOnly ? `MOJE MIEJSCA · ${loadPoints().length}` : 'MAPA';
+      mapModeBadge.classList.toggle('is-my-places', mineOnly);
+    }
+
+    if (mapLocationButton) mapLocationButton.hidden = mineOnly;
+    if (proximityButton) proximityButton.hidden = mineOnly;
+    if (proximityRadiusWrap) proximityRadiusWrap.hidden = mineOnly;
+    if (osmStatus) osmStatus.hidden = true;
+
+    if (mineOnly) {
+      clearTimeout(viewportFetchTimer);
+      viewportFetchSequence += 1;
+      osmAttractions = new Map();
+      externalLayer?.clearLayers();
+      osmMarkerById = new Map();
+      hideNearbyAlert();
+      stopProximityMonitoring(false);
+      setProximityUi(false);
+
+      if (map && userLocationMarker) {
+        map.removeLayer(userLocationMarker);
+        userLocationMarker = null;
+      }
+      if (map && userAccuracyCircle) {
+        map.removeLayer(userAccuracyCircle);
+        userAccuracyCircle = null;
+      }
+    }
+  }
+
+  function showMyPlacesMap() {
+    showMap({ mode: 'mine' });
+  }
+
   function showMap(options = {}) {
     if (!mapScreen || !startScreen) return;
+    applyMapMode(options.mode || 'all');
     startScreen.hidden = true;
     if (addScreen) addScreen.hidden = true;
     if (editScreen) editScreen.hidden = true;
@@ -1045,7 +1093,9 @@ out center tags;`;
     renderStoredPoints();
 
     const showingRequestedPoint = Number.isFinite(options.lat) && Number.isFinite(options.lon);
-    if (showingRequestedPoint) {
+    const mineOnly = currentMapMode === 'mine';
+
+    if (!mineOnly && showingRequestedPoint) {
       scheduleAutoFollowResume(AUTO_FOLLOW_TARGET_PAUSE_MS);
     } else {
       clearAutoFollowResumeTimer();
@@ -1054,12 +1104,26 @@ out center tags;`;
 
     requestAnimationFrame(() => {
       map?.invalidateSize();
+
       if (showingRequestedPoint) {
         map?.setView([options.lat, options.lon], options.zoom || 16, { animate: true });
+      } else if (mineOnly) {
+        map?.setView([52.05, 19.15], 6, { animate: false });
       }
+
       if (options.openPointId != null) {
         setTimeout(() => pointMarkerById.get(String(options.openPointId))?.openPopup(), 250);
       }
+
+      if (mineOnly) {
+        externalLayer?.clearLayers();
+        updateOsmStatus('');
+        if (loadPoints().length === 0) {
+          showLocationMessage('Nie masz jeszcze zapisanych miejsc. Dodaj pierwszy punkt przyciskiem DODAJ.');
+        }
+        return;
+      }
+
       scheduleViewportAttractions(300);
       startProximityMonitoring(true);
       if (!showingRequestedPoint && lastMonitorPosition?.coords) {
@@ -1131,6 +1195,7 @@ out center tags;`;
     if (!point || !editScreen) return;
 
     editingPointId = String(point.id);
+    editReturnMapMode = currentMapMode;
     if (editPlaceName) editPlaceName.value = point.name || '';
     if (editLatitudeInput) editLatitudeInput.value = Number(point.lat).toFixed(6);
     if (editLongitudeInput) editLongitudeInput.value = Number(point.lon).toFixed(6);
@@ -1153,9 +1218,9 @@ out center tags;`;
     if (editScreen) editScreen.hidden = true;
     editingPointId = null;
     if (point && openPoint) {
-      showMap({ lat: Number(point.lat), lon: Number(point.lon), zoom: Math.max(map?.getZoom() || 15, 15), openPointId: point.id });
+      showMap({ mode: editReturnMapMode, lat: Number(point.lat), lon: Number(point.lon), zoom: Math.max(map?.getZoom() || 15, 15), openPointId: point.id });
     } else {
-      showMap();
+      showMap({ mode: editReturnMapMode });
     }
   }
 
@@ -1202,7 +1267,7 @@ out center tags;`;
     setTimeout(() => {
       if (editScreen) editScreen.hidden = true;
       editingPointId = null;
-      showMap({ lat, lon, zoom: 16, openPointId: saved.id });
+      showMap({ mode: editReturnMapMode, lat, lon, zoom: 16, openPointId: saved.id });
     }, 250);
   }
 
@@ -1220,7 +1285,7 @@ out center tags;`;
     editingPointId = null;
     if (editScreen) editScreen.hidden = true;
     renderStoredPoints();
-    showMap();
+    showMap({ mode: editReturnMapMode });
     setTimeout(() => showLocationMessage('Punkt został usunięty.'), 150);
   }
 
@@ -1292,7 +1357,8 @@ out center tags;`;
 
   nearbyAlertDismiss?.addEventListener('click', hideNearbyAlert);
 
-  mapButton?.addEventListener('click', () => showMap());
+  mapButton?.addEventListener('click', () => showMap({ mode: 'all' }));
+  myPlacesButton?.addEventListener('click', showMyPlacesMap);
   mapBackButton?.addEventListener('click', hideMap);
   mapLocationButton?.addEventListener('click', () => resumeAutoFollow(true));
 
@@ -1315,7 +1381,7 @@ out center tags;`;
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1008', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1009', {
           scope: './',
           updateViaCache: 'none'
         });

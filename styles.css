@@ -76,15 +76,15 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(12px, 2.2vw, 42px);
-  width: min(760px, calc(100% - max(24px, 5vw)));
+  gap: clamp(10px, 1.5vw, 26px);
+  width: min(1080px, calc(100% - max(24px, 5vw)));
   padding-left: var(--safe-left);
   padding-right: var(--safe-right);
 }
 
 .main-button {
   flex: 1 1 0;
-  width: min(310px, 42vw);
+  width: min(310px, 30vw);
   max-width: 310px;
   min-width: 0;
   min-height: clamp(50px, 7.5dvh, 68px);
@@ -131,6 +131,11 @@ button {
   outline-offset: 4px;
 }
 
+/* v1009 — trzeci przycisk startowy „Moje miejsca”. */
+.main-button-my-places {
+  font-size: clamp(17px, min(1.65vw, 3.6dvh), 28px);
+}
+
 /* Telefon / tablet w pionie — automatycznie używa grafiki pionowej. */
 @media (orientation: portrait) {
   .start-screen {
@@ -147,17 +152,26 @@ button {
       clamp(14px, 3.2dvh, 36px),
       calc(10px + var(--safe-bottom))
     );
-    gap: clamp(8px, 3vw, 14px);
-    width: calc(100% - max(18px, 5vw));
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(8px, 2vw, 12px);
+    width: min(520px, calc(100% - max(18px, 5vw)));
   }
 
   .main-button {
-    width: auto;
-    max-width: 220px;
-    min-height: clamp(48px, 7dvh, 62px);
-    padding: 10px 8px;
+    width: 100%;
+    max-width: none;
+    min-height: clamp(46px, 6.4dvh, 58px);
+    padding: 9px 8px;
     border-radius: 14px;
-    font-size: clamp(18px, 5.4vw, 28px);
+    font-size: clamp(17px, 5vw, 25px);
+  }
+
+  .main-button-my-places {
+    grid-column: 1 / -1;
+    width: min(100%, 360px);
+    justify-self: center;
+    font-size: clamp(16px, 4.7vw, 23px);
   }
 }
 
@@ -278,6 +292,40 @@ button {
   outline-offset: 3px;
 }
 
+.map-mode-badge {
+  position: absolute;
+  z-index: 999;
+  top: max(14px, calc(10px + var(--safe-top)));
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(55vw, 420px);
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  color: #ffffff;
+  background: rgba(21, 35, 25, 0.86);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(12px, 1.1vw, 16px);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.map-mode-badge.is-my-places {
+  background: rgba(91, 55, 17, 0.9);
+}
+
+@media (orientation: portrait) {
+  .map-mode-badge {
+    top: max(66px, calc(62px + var(--safe-top)));
+    max-width: calc(100% - 32px);
+    font-size: 12px;
+  }
+}
+
 .map-version {
   position: absolute;
   z-index: 1000;
@@ -321,7 +369,41 @@ button {
     font-size: clamp(13px, 3.8vw, 16px);
   }
 
-  .map-version {
+  .map-mode-badge {
+  position: absolute;
+  z-index: 999;
+  top: max(14px, calc(10px + var(--safe-top)));
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(55vw, 420px);
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  color: #ffffff;
+  background: rgba(21, 35, 25, 0.86);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(12px, 1.1vw, 16px);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-align: center;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.map-mode-badge.is-my-places {
+  background: rgba(91, 55, 17, 0.9);
+}
+
+@media (orientation: portrait) {
+  .map-mode-badge {
+    top: max(66px, calc(62px + var(--safe-top)));
+    max-width: calc(100% - 32px);
+    font-size: 12px;
+  }
+}
+
+.map-version {
     font-size: 11px;
   }
 }
