@@ -20,7 +20,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png?v=1002" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png?v=1002" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link rel="stylesheet" href="styles.css?v=1003" />
+  <link rel="stylesheet" href="styles.css?v=1004" />
 </head>
 <body>
   <main class="start-screen" aria-label="Turystyczna mapa Polski">
@@ -29,16 +29,25 @@
       <button class="main-button" id="mapButton" type="button">MAPA</button>
     </div>
 
-    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1003</div>
+    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1004</div>
   </main>
 
   <section class="map-screen" id="mapScreen" aria-label="Mapa Polski" hidden>
     <div id="map" class="map-container" aria-label="Interaktywna mapa OpenStreetMap"></div>
     <button class="map-back-button" id="mapBackButton" type="button" aria-label="Wróć do ekranu startowego">← COFNIJ</button>
-    <div class="map-version" aria-hidden="true">v1003</div>
+
+    <button class="map-location-button" id="mapLocationButton" type="button" aria-label="Pokaż moją lokalizację" title="Moja lokalizacja">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 8.25a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Zm0 5.5a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5Z"/>
+        <path d="M13 2.05V4.1a8.02 8.02 0 0 1 6.9 6.9h2.05v2H19.9a8.02 8.02 0 0 1-6.9 6.9v2.05h-2V19.9A8.02 8.02 0 0 1 4.1 13H2.05v-2H4.1A8.02 8.02 0 0 1 11 4.1V2.05h2ZM12 6a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/>
+      </svg>
+    </button>
+
+    <div class="location-message" id="locationMessage" role="status" aria-live="polite" hidden></div>
+    <div class="map-version" aria-hidden="true">v1004</div>
   </section>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="app.js?v=1003"></script>
+  <script src="app.js?v=1004"></script>
 </body>
 </html>
