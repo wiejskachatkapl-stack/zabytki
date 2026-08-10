@@ -1,13 +1,21 @@
 (() => {
-  const APP_VERSION = 'v1006';
+  const APP_VERSION = 'v1007';
   const STORAGE_KEY = 'tourmap_points_v1';
+  const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
+  const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
+  const OVERPASS_URL = 'https://overpass-api.de/api/interpreter';
+  const OSM_MIN_ZOOM = 10;
+  const ALERT_COOLDOWN_MS = 12 * 60 * 60 * 1000;
+  const NEARBY_FETCH_MIN_RADIUS = 12000;
+  const NEARBY_REFRESH_DISTANCE = 2500;
+  const NEARBY_REFRESH_TIME = 8 * 60 * 1000;
 
   const CATEGORY_INFO = {
-    castle: { label: 'Zamek', icon: 'assets/markers/castle.png?v=1006' },
-    ruins: { label: 'Ruiny', icon: 'assets/markers/ruins.png?v=1006' },
-    museum: { label: 'Muzeum', icon: 'assets/markers/museum.png?v=1006' },
-    nature: { label: 'Pomnik przyrody', icon: 'assets/markers/nature.png?v=1006' },
-    pttk: { label: 'Schronisko PTTK', icon: 'assets/markers/pttk.png?v=1006' }
+    castle: { label: 'Zamek', icon: 'assets/markers/castle.png?v=1007' },
+    ruins: { label: 'Ruiny', icon: 'assets/markers/ruins.png?v=1007' },
+    museum: { label: 'Muzeum', icon: 'assets/markers/museum.png?v=1007' },
+    nature: { label: 'Pomnik przyrody', icon: 'assets/markers/nature.png?v=1007' },
+    pttk: { label: 'Schronisko PTTK', icon: 'assets/markers/pttk.png?v=1007' }
   };
 
   const startScreen = document.querySelector('.start-screen');
@@ -47,6 +55,18 @@
   const mapBackButton = document.getElementById('mapBackButton');
   const mapLocationButton = document.getElementById('mapLocationButton');
   const locationMessage = document.getElementById('locationMessage');
+  const proximityButton = document.getElementById('proximityButton');
+  const proximityRadius = document.getElementById('proximityRadius');
+  const proximityRadiusWrap = document.getElementById('proximityRadiusWrap');
+  const osmStatus = document.getElementById('osmStatus');
+
+  const nearbyAlert = document.getElementById('nearbyAlert');
+  const nearbyAlertIcon = document.getElementById('nearbyAlertIcon');
+  const nearbyAlertTitle = document.getElementById('nearbyAlertTitle');
+  const nearbyAlertMeta = document.getElementById('nearbyAlertMeta');
+  const nearbyAlertShow = document.getElementById('nearbyAlertShow');
+  const nearbyAlertAdd = document.getElementById('nearbyAlertAdd');
+  const nearbyAlertDismiss = document.getElementById('nearbyAlertDismiss');
 
   let map = null;
   let userLocationMarker = null;
@@ -61,6 +81,22 @@
   let pointLayer = null;
   let pointMarkerById = new Map();
   let editingPointId = null;
+
+  let externalLayer = null;
+  let osmAttractions = new Map();
+  let osmMarkerById = new Map();
+  let viewportFetchTimer = null;
+  let viewportFetchSequence = 0;
+  const viewportCache = new Map();
+
+  let proximityWatchId = null;
+  let proximityActive = false;
+  let nearbyAttractions = [];
+  let nearbyFetchInFlight = false;
+  let lastMonitorPosition = null;
+  let lastNearbyFetchPosition = null;
+  let lastNearbyFetchAt = 0;
+  let currentNearbyAlertId = null;
 
   if (versionElement) versionElement.textContent = APP_VERSION;
 
@@ -121,6 +157,535 @@
     });
   }
 
+
+  function createExternalCategoryIcon(category) {
+    const info = CATEGORY_INFO[category] || CATEGORY_INFO.castle;
+    return L.icon({
+      iconUrl: info.icon,
+      iconSize: [40, 40],
+      iconAnchor: [20, 38],
+      popupAnchor: [0, -34],
+      tooltipAnchor: [0, -31],
+      className: 'tourism-marker-icon osm-marker-icon'
+    });
+  }
+
+  function loadAlertHistory() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(ALERT_HISTORY_KEY) || '{}');
+      return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : {};
+    } catch {
+      return {};
+    }
+  }
+
+  function saveAlertHistory(history) {
+    try {
+      localStorage.setItem(ALERT_HISTORY_KEY, JSON.stringify(history));
+    } catch (error) {
+      console.warn('Nie udało się zapisać historii alertów:', error);
+    }
+  }
+
+  function markAttractionAlerted(osmId) {
+    if (!osmId) return;
+    const history = loadAlertHistory();
+    history[String(osmId)] = Date.now();
+
+    const oldestAllowed = Date.now() - (7 * 24 * 60 * 60 * 1000);
+    Object.keys(history).forEach((key) => {
+      if (Number(history[key]) < oldestAllowed) delete history[key];
+    });
+
+    saveAlertHistory(history);
+  }
+
+  function wasAttractionAlertedRecently(osmId) {
+    const history = loadAlertHistory();
+    const timestamp = Number(history[String(osmId)] || 0);
+    return timestamp > 0 && (Date.now() - timestamp) < ALERT_COOLDOWN_MS;
+  }
+
+  function isOsmSaved(osmId) {
+    if (!osmId) return false;
+    return loadPoints().some((point) => String(point.osmId || '') === String(osmId));
+  }
+
+  function getProximityRadiusMeters() {
+    const selected = Number(proximityRadius?.value || localStorage.getItem(PROXIMITY_RADIUS_KEY) || 2000);
+    return [500, 1000, 2000, 5000].includes(selected) ? selected : 2000;
+  }
+
+  function formatDistance(meters) {
+    if (!Number.isFinite(meters)) return '';
+    if (meters < 1000) return `${Math.max(1, Math.round(meters))} m`;
+    return `${(meters / 1000).toFixed(meters < 10000 ? 1 : 0)} km`;
+  }
+
+  function distanceMeters(lat1, lon1, lat2, lon2) {
+    const toRad = (value) => value * Math.PI / 180;
+    const earthRadius = 6371000;
+    const dLat = toRad(lat2 - lat1);
+    const dLon = toRad(lon2 - lon1);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return 2 * earthRadius * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  function updateOsmStatus(text, isError = false) {
+    if (!osmStatus) return;
+    osmStatus.textContent = text;
+    osmStatus.classList.toggle('is-error', isError);
+    osmStatus.hidden = !text;
+  }
+
+  function buildOverpassQuery(scope) {
+    return `[out:json][timeout:25];
+(
+  nwr["historic"="castle"]${scope};
+  nwr["historic"="manor"]${scope};
+  nwr["historic"="ruins"]${scope};
+  nwr["ruins"="yes"]["historic"]${scope};
+  nwr["tourism"="museum"]${scope};
+  nwr["denotation"="natural_monument"]${scope};
+  nwr["tourism"~"^(alpine_hut|wilderness_hut)$"]["operator"~"PTTK",i]${scope};
+  nwr["tourism"~"^(alpine_hut|wilderness_hut)$"]["name"~"PTTK",i]${scope};
+);
+out center tags;`;
+  }
+
+  async function fetchOverpassAttractions(scope) {
+    const query = buildOverpassQuery(scope);
+    const response = await fetch(OVERPASS_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      body: `data=${encodeURIComponent(query)}`
+    });
+
+    if (!response.ok) {
+      throw new Error(`Overpass HTTP ${response.status}`);
+    }
+
+    const data = await response.json();
+    const result = new Map();
+
+    (data.elements || []).forEach((element) => {
+      const tags = element.tags || {};
+      const lat = Number.isFinite(Number(element.lat)) ? Number(element.lat) : Number(element.center?.lat);
+      const lon = Number.isFinite(Number(element.lon)) ? Number(element.lon) : Number(element.center?.lon);
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
+
+      const pttkText = `${tags.operator || ''} ${tags.name || ''} ${tags['name:pl'] || ''}`.toUpperCase();
+      let category = null;
+
+      if (
+        (tags.tourism === 'alpine_hut' || tags.tourism === 'wilderness_hut') &&
+        pttkText.includes('PTTK')
+      ) {
+        category = 'pttk';
+      } else if (tags.historic === 'ruins' || tags.ruins === 'yes') {
+        category = 'ruins';
+      } else if (tags.tourism === 'museum') {
+        category = 'museum';
+      } else if (tags.denotation === 'natural_monument') {
+        category = 'nature';
+      } else if (tags.historic === 'castle' || tags.historic === 'manor') {
+        category = 'castle';
+      }
+
+      if (!category) return;
+
+      const osmId = `${element.type}/${element.id}`;
+      const info = CATEGORY_INFO[category] || CATEGORY_INFO.castle;
+      const fallbackName =
+        category === 'castle' && tags.historic === 'manor'
+          ? 'Pałac / dwór'
+          : info.label;
+
+      result.set(osmId, {
+        osmId,
+        type: element.type,
+        osmNumericId: element.id,
+        category,
+        name: tags['name:pl'] || tags.name || tags.official_name || fallbackName,
+        lat,
+        lon,
+        tags
+      });
+    });
+
+    return [...result.values()];
+  }
+
+  function externalPopupHtml(attraction) {
+    const info = CATEGORY_INFO[attraction.category] || CATEGORY_INFO.castle;
+    const saved = isOsmSaved(attraction.osmId);
+    const sublabel =
+      attraction.category === 'castle' && attraction.tags?.historic === 'manor'
+        ? 'Pałac / dwór'
+        : info.label;
+
+    return `
+      <div class="place-popup osm-place-popup">
+        <div class="place-popup-head">
+          <img src="${info.icon}" alt="" />
+          <div>
+            <strong>${escapeHtml(attraction.name)}</strong>
+            <span>${escapeHtml(sublabel)} · OpenStreetMap</span>
+          </div>
+        </div>
+        <div class="place-popup-coords">${Number(attraction.lat).toFixed(6)}, ${Number(attraction.lon).toFixed(6)}</div>
+        ${
+          saved
+            ? '<div class="osm-saved-badge">TEN PUNKT JEST JUŻ W TWOICH MIEJSCACH</div>'
+            : `<button class="place-popup-add-osm" type="button" data-add-osm-id="${escapeHtml(attraction.osmId)}">DODAJ DO MOICH</button>`
+        }
+      </div>
+    `;
+  }
+
+  function renderExternalAttractions(attractions) {
+    if (!map || !window.L) return;
+    if (!externalLayer) externalLayer = L.layerGroup().addTo(map);
+
+    externalLayer.clearLayers();
+    osmMarkerById = new Map();
+
+    attractions.forEach((attraction) => {
+      if (isOsmSaved(attraction.osmId)) return;
+
+      const marker = L.marker([attraction.lat, attraction.lon], {
+        icon: createExternalCategoryIcon(attraction.category),
+        title: attraction.name,
+        riseOnHover: true,
+        opacity: 0.86
+      }).addTo(externalLayer);
+
+      marker.bindPopup(externalPopupHtml(attraction), { maxWidth: 320, minWidth: 210 });
+      osmMarkerById.set(String(attraction.osmId), marker);
+    });
+  }
+
+  function viewportCacheKey() {
+    if (!map) return '';
+    const bounds = map.getBounds();
+    const z = map.getZoom();
+    return [
+      z,
+      bounds.getSouth().toFixed(2),
+      bounds.getWest().toFixed(2),
+      bounds.getNorth().toFixed(2),
+      bounds.getEast().toFixed(2)
+    ].join(':');
+  }
+
+  async function loadViewportAttractions() {
+    if (!map || mapScreen?.hidden) return;
+
+    if (map.getZoom() < OSM_MIN_ZOOM) {
+      osmAttractions = new Map();
+      externalLayer?.clearLayers();
+      osmMarkerById = new Map();
+      updateOsmStatus(`Atrakcje OSM: powiększ mapę do poziomu ${OSM_MIN_ZOOM}.`);
+      return;
+    }
+
+    const key = viewportCacheKey();
+    const cached = viewportCache.get(key);
+    if (cached && Date.now() - cached.time < 10 * 60 * 1000) {
+      osmAttractions = new Map(cached.items.map((item) => [item.osmId, item]));
+      renderExternalAttractions(cached.items);
+      updateOsmStatus(`Atrakcje OSM: ${cached.items.length}`);
+      return;
+    }
+
+    const bounds = map.getBounds();
+    const scope = `(${bounds.getSouth().toFixed(6)},${bounds.getWest().toFixed(6)},${bounds.getNorth().toFixed(6)},${bounds.getEast().toFixed(6)})`;
+    const sequence = ++viewportFetchSequence;
+    updateOsmStatus('Atrakcje OSM: pobieranie…');
+
+    try {
+      const attractions = await fetchOverpassAttractions(scope);
+      if (sequence !== viewportFetchSequence) return;
+
+      osmAttractions = new Map(attractions.map((item) => [item.osmId, item]));
+      viewportCache.set(key, { time: Date.now(), items: attractions });
+      while (viewportCache.size > 8) {
+        viewportCache.delete(viewportCache.keys().next().value);
+      }
+
+      renderExternalAttractions(attractions);
+      updateOsmStatus(`Atrakcje OSM: ${attractions.length}`);
+    } catch (error) {
+      console.warn('Nie udało się pobrać atrakcji z OpenStreetMap:', error);
+      updateOsmStatus('Atrakcje OSM: chwilowo niedostępne', true);
+    }
+  }
+
+  function scheduleViewportAttractions(delay = 650) {
+    clearTimeout(viewportFetchTimer);
+    viewportFetchTimer = setTimeout(loadViewportAttractions, delay);
+  }
+
+  function addOsmAttractionToMine(attraction, openAfter = true) {
+    if (!attraction) return null;
+
+    const existing = loadPoints().find((point) => String(point.osmId || '') === String(attraction.osmId));
+    if (existing) {
+      if (openAfter) {
+        showMap({
+          lat: Number(existing.lat),
+          lon: Number(existing.lon),
+          zoom: 16,
+          openPointId: existing.id
+        });
+      }
+      return existing;
+    }
+
+    const info = CATEGORY_INFO[attraction.category] || CATEGORY_INFO.castle;
+    const point = {
+      id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+      name: attraction.name || info.label,
+      category: attraction.category,
+      date: localDateString(),
+      note: '',
+      lat: Number(attraction.lat),
+      lon: Number(attraction.lon),
+      source: 'osm',
+      osmId: attraction.osmId,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    };
+
+    const points = loadPoints();
+    points.push(point);
+    savePoints(points);
+    renderStoredPoints();
+    renderExternalAttractions([...osmAttractions.values()]);
+    showLocationMessage('Punkt został dodany do Twoich miejsc.');
+
+    if (openAfter) {
+      showMap({ lat: point.lat, lon: point.lon, zoom: 16, openPointId: point.id });
+    }
+
+    return point;
+  }
+
+  function getOsmAttractionById(osmId) {
+    return (
+      osmAttractions.get(String(osmId)) ||
+      nearbyAttractions.find((item) => String(item.osmId) === String(osmId)) ||
+      null
+    );
+  }
+
+  function focusOsmAttraction(attraction) {
+    if (!attraction) return;
+
+    showMap({ lat: attraction.lat, lon: attraction.lon, zoom: 16 });
+
+    setTimeout(() => {
+      let marker = osmMarkerById.get(String(attraction.osmId));
+      if (!marker && map && externalLayer) {
+        osmAttractions.set(attraction.osmId, attraction);
+        marker = L.marker([attraction.lat, attraction.lon], {
+          icon: createExternalCategoryIcon(attraction.category),
+          title: attraction.name,
+          riseOnHover: true,
+          opacity: 0.9
+        }).addTo(externalLayer);
+        marker.bindPopup(externalPopupHtml(attraction), { maxWidth: 320, minWidth: 210 });
+        osmMarkerById.set(String(attraction.osmId), marker);
+      }
+      marker?.openPopup();
+    }, 280);
+  }
+
+  function setProximityUi(active) {
+    proximityActive = Boolean(active);
+    proximityButton?.classList.toggle('is-active', proximityActive);
+    proximityButton?.setAttribute('aria-pressed', proximityActive ? 'true' : 'false');
+    if (proximityButton) {
+      proximityButton.title = proximityActive
+        ? 'Wyłącz ostrzeganie o atrakcjach w pobliżu'
+        : 'Włącz ostrzeganie o atrakcjach w pobliżu';
+      proximityButton.setAttribute(
+        'aria-label',
+        proximityActive
+          ? 'Wyłącz ostrzeganie o atrakcjach w pobliżu'
+          : 'Włącz ostrzeganie o atrakcjach w pobliżu'
+      );
+    }
+    if (proximityRadiusWrap) proximityRadiusWrap.classList.toggle('is-active', proximityActive);
+  }
+
+  function updateMonitoredLocationVisual(position) {
+    if (!map || !position?.coords) return;
+    const { latitude, longitude, accuracy } = position.coords;
+    const latlng = [latitude, longitude];
+
+    if (userAccuracyCircle) {
+      userAccuracyCircle.setLatLng(latlng).setRadius(Math.max(accuracy || 5, 5));
+    } else {
+      userAccuracyCircle = L.circle(latlng, {
+        radius: Math.max(accuracy || 5, 5),
+        color: '#2f80ed',
+        weight: 1,
+        opacity: 0.55,
+        fillColor: '#2f80ed',
+        fillOpacity: 0.12,
+        interactive: false
+      }).addTo(map);
+    }
+
+    if (userLocationMarker) {
+      userLocationMarker.setLatLng(latlng);
+    } else {
+      userLocationMarker = L.circleMarker(latlng, {
+        radius: 8,
+        color: '#ffffff',
+        weight: 3,
+        fillColor: '#1677ff',
+        fillOpacity: 1
+      }).addTo(map);
+      userLocationMarker.bindTooltip('Twoja lokalizacja', { direction: 'top', offset: [0, -8] });
+    }
+  }
+
+  function hideNearbyAlert() {
+    if (nearbyAlert) nearbyAlert.hidden = true;
+    currentNearbyAlertId = null;
+  }
+
+  function showNearbyAttractionAlert(attraction, distance) {
+    if (!nearbyAlert || !attraction) return;
+
+    const info = CATEGORY_INFO[attraction.category] || CATEGORY_INFO.castle;
+    currentNearbyAlertId = attraction.osmId;
+
+    if (nearbyAlertIcon) nearbyAlertIcon.src = info.icon;
+    if (nearbyAlertTitle) nearbyAlertTitle.textContent = attraction.name;
+    if (nearbyAlertMeta) {
+      nearbyAlertMeta.textContent = `${info.label} · około ${formatDistance(distance)} od Ciebie`;
+    }
+
+    markAttractionAlerted(attraction.osmId);
+    nearbyAlert.hidden = false;
+  }
+
+  function checkProximity(position) {
+    if (!proximityActive || !position?.coords || !nearbyAttractions.length) return;
+    if (currentNearbyAlertId && nearbyAlert && !nearbyAlert.hidden) return;
+
+    const radius = getProximityRadiusMeters();
+    const { latitude, longitude } = position.coords;
+
+    const candidate = nearbyAttractions
+      .filter((attraction) => !isOsmSaved(attraction.osmId))
+      .map((attraction) => ({
+        attraction,
+        distance: distanceMeters(latitude, longitude, attraction.lat, attraction.lon)
+      }))
+      .filter((item) => item.distance <= radius && !wasAttractionAlertedRecently(item.attraction.osmId))
+      .sort((a, b) => a.distance - b.distance)[0];
+
+    if (candidate) {
+      showNearbyAttractionAlert(candidate.attraction, candidate.distance);
+    }
+  }
+
+  async function refreshNearbyAttractions(position) {
+    if (!position?.coords || nearbyFetchInFlight) return;
+    nearbyFetchInFlight = true;
+
+    const { latitude, longitude } = position.coords;
+    const radius = Math.max(NEARBY_FETCH_MIN_RADIUS, getProximityRadiusMeters() + 5000);
+    const scope = `(around:${Math.round(radius)},${latitude.toFixed(6)},${longitude.toFixed(6)})`;
+
+    try {
+      nearbyAttractions = await fetchOverpassAttractions(scope);
+      lastNearbyFetchPosition = { lat: latitude, lon: longitude };
+      lastNearbyFetchAt = Date.now();
+      checkProximity(position);
+    } catch (error) {
+      console.warn('Nie udało się pobrać atrakcji w pobliżu:', error);
+      showLocationMessage('Nie udało się teraz pobrać atrakcji w pobliżu.', true);
+    } finally {
+      nearbyFetchInFlight = false;
+    }
+  }
+
+  function handleMonitoredPosition(position) {
+    lastMonitorPosition = position;
+    updateMonitoredLocationVisual(position);
+
+    const { latitude, longitude } = position.coords;
+    const movedSinceFetch = lastNearbyFetchPosition
+      ? distanceMeters(
+          latitude,
+          longitude,
+          lastNearbyFetchPosition.lat,
+          lastNearbyFetchPosition.lon
+        )
+      : Infinity;
+    const fetchExpired = Date.now() - lastNearbyFetchAt > NEARBY_REFRESH_TIME;
+
+    if (movedSinceFetch >= NEARBY_REFRESH_DISTANCE || fetchExpired || !nearbyAttractions.length) {
+      refreshNearbyAttractions(position);
+    } else {
+      checkProximity(position);
+    }
+  }
+
+  function handleMonitoredLocationError(error) {
+    showLocationMessage(geolocationErrorText(error), true);
+    if (error?.code === 1) stopProximityMonitoring(false);
+  }
+
+  function startProximityMonitoring() {
+    if (!navigator.geolocation) {
+      showLocationMessage('To urządzenie nie obsługuje geolokalizacji.', true);
+      return;
+    }
+    if (proximityWatchId != null) return;
+
+    setProximityUi(true);
+    showLocationMessage(`Alerty w pobliżu włączone: ${formatDistance(getProximityRadiusMeters())}.`);
+
+    proximityWatchId = navigator.geolocation.watchPosition(
+      handleMonitoredPosition,
+      handleMonitoredLocationError,
+      {
+        enableHighAccuracy: true,
+        timeout: 20000,
+        maximumAge: 10000
+      }
+    );
+  }
+
+  function stopProximityMonitoring(showMessage = true) {
+    if (proximityWatchId != null && navigator.geolocation) {
+      navigator.geolocation.clearWatch(proximityWatchId);
+    }
+    proximityWatchId = null;
+    setProximityUi(false);
+    hideNearbyAlert();
+    if (showMessage) showLocationMessage('Alerty o atrakcjach w pobliżu zostały wyłączone.');
+  }
+
+  function toggleProximityMonitoring() {
+    if (proximityActive) {
+      stopProximityMonitoring();
+    } else {
+      startProximityMonitoring();
+    }
+  }
+
   function popupHtml(point) {
     const info = CATEGORY_INFO[point.category] || CATEGORY_INFO.castle;
     const title = point.name?.trim() || info.label;
@@ -159,6 +724,10 @@
       marker.bindPopup(popupHtml(point), { maxWidth: 320, minWidth: 210 });
       pointMarkerById.set(String(point.id), marker);
     });
+
+    if (osmAttractions.size) {
+      renderExternalAttractions([...osmAttractions.values()]);
+    }
   }
 
   function createMap() {
@@ -182,7 +751,11 @@
       position: 'bottomleft'
     }).addTo(map);
 
+    externalLayer = L.layerGroup().addTo(map);
     renderStoredPoints();
+
+    map.on('moveend zoomend', () => scheduleViewportAttractions());
+    scheduleViewportAttractions(250);
   }
 
   function showLocationMessage(text, isError = false) {
@@ -400,6 +973,7 @@
       if (options.openPointId != null) {
         setTimeout(() => pointMarkerById.get(String(options.openPointId))?.openPopup(), 250);
       }
+      scheduleViewportAttractions(300);
     });
   }
 
@@ -577,13 +1151,53 @@
   deletePlaceButton?.addEventListener('click', deleteEditedPoint);
 
   document.addEventListener('click', (event) => {
-    const button = event.target.closest('[data-edit-point-id]');
-    if (!button) return;
-    event.preventDefault();
-    event.stopPropagation();
-    map?.closePopup();
-    showEditScreen(button.dataset.editPointId);
+    const editButton = event.target.closest('[data-edit-point-id]');
+    if (editButton) {
+      event.preventDefault();
+      event.stopPropagation();
+      map?.closePopup();
+      showEditScreen(editButton.dataset.editPointId);
+      return;
+    }
+
+    const addOsmButton = event.target.closest('[data-add-osm-id]');
+    if (addOsmButton) {
+      event.preventDefault();
+      event.stopPropagation();
+      const attraction = getOsmAttractionById(addOsmButton.dataset.addOsmId);
+      if (attraction) {
+        map?.closePopup();
+        addOsmAttractionToMine(attraction, true);
+      }
+    }
   });
+
+  proximityButton?.addEventListener('click', toggleProximityMonitoring);
+
+  proximityRadius?.addEventListener('change', () => {
+    const radius = getProximityRadiusMeters();
+    localStorage.setItem(PROXIMITY_RADIUS_KEY, String(radius));
+
+    if (proximityActive) {
+      showLocationMessage(`Odległość alertu: ${formatDistance(radius)}.`);
+      lastNearbyFetchAt = 0;
+      if (lastMonitorPosition) refreshNearbyAttractions(lastMonitorPosition);
+    }
+  });
+
+  nearbyAlertShow?.addEventListener('click', () => {
+    const attraction = getOsmAttractionById(currentNearbyAlertId);
+    hideNearbyAlert();
+    if (attraction) focusOsmAttraction(attraction);
+  });
+
+  nearbyAlertAdd?.addEventListener('click', () => {
+    const attraction = getOsmAttractionById(currentNearbyAlertId);
+    hideNearbyAlert();
+    if (attraction) addOsmAttractionToMine(attraction, true);
+  });
+
+  nearbyAlertDismiss?.addEventListener('click', hideNearbyAlert);
 
   mapButton?.addEventListener('click', () => showMap());
   mapBackButton?.addEventListener('click', hideMap);
@@ -594,14 +1208,21 @@
   });
 
   if (dateInput && !dateInput.value) dateInput.value = localDateString();
+
+  if (proximityRadius) {
+    const savedRadius = Number(localStorage.getItem(PROXIMITY_RADIUS_KEY) || 2000);
+    proximityRadius.value = String([500, 1000, 2000, 5000].includes(savedRadius) ? savedRadius : 2000);
+  }
+
   setCategory(currentCategory);
   setEditCategory(editCategory);
+  setProximityUi(false);
 
   // PWA: rejestracja Service Workera i szybkie wykrywanie nowej wersji.
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1006', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1007', {
           scope: './',
           updateViaCache: 'none'
         });

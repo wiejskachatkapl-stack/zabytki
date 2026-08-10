@@ -29,7 +29,7 @@
       <button class="main-button" id="mapButton" type="button">MAPA</button>
     </div>
 
-    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1006</div>
+    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1007</div>
   </main>
 
   <section class="add-screen" id="addScreen" aria-label="Dodaj miejsce" hidden>
@@ -38,7 +38,7 @@
         <button class="add-back-button" id="addBackButton" type="button" aria-label="Wróć do ekranu startowego">← COFNIJ</button>
         <div class="add-title-wrap">
           <h1 class="add-title">Dodaj miejsce</h1>
-          <div class="add-version" aria-hidden="true">v1006</div>
+          <div class="add-version" aria-hidden="true">v1007</div>
         </div>
       </div>
 
@@ -113,7 +113,7 @@
         <button class="edit-back-button" id="editBackButton" type="button" aria-label="Wróć do mapy">← COFNIJ</button>
         <div class="edit-title-wrap">
           <h1 class="edit-title">Edytuj punkt</h1>
-          <div class="edit-version" aria-hidden="true">v1006</div>
+          <div class="edit-version" aria-hidden="true">v1007</div>
         </div>
       </div>
 
@@ -185,9 +185,43 @@
       </svg>
     </button>
 
+    <button class="proximity-button" id="proximityButton" type="button" aria-pressed="false" aria-label="Włącz ostrzeganie o atrakcjach w pobliżu" title="Alerty o atrakcjach w pobliżu">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 3a9 9 0 1 0 9 9h-2a7 7 0 1 1-7-7V3Z"/>
+        <path d="M12 7a5 5 0 1 0 5 5h-2a3 3 0 1 1-3-3V7Z"/>
+        <path d="M12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/>
+        <path d="M13 3h8v8h-2V6.41l-5.3 5.3-1.4-1.42L17.59 5H13V3Z"/>
+      </svg>
+    </button>
+
+    <div class="proximity-radius-wrap" id="proximityRadiusWrap">
+      <label for="proximityRadius">Alert</label>
+      <select id="proximityRadius" aria-label="Odległość ostrzegania o atrakcjach">
+        <option value="500">500 m</option>
+        <option value="1000">1 km</option>
+        <option value="2000" selected>2 km</option>
+        <option value="5000">5 km</option>
+      </select>
+    </div>
+
+    <div class="osm-status" id="osmStatus" role="status" aria-live="polite" hidden></div>
     <div class="location-message" id="locationMessage" role="status" aria-live="polite" hidden></div>
-    <div class="map-version" aria-hidden="true">v1006</div>
+    <div class="map-version" aria-hidden="true">v1007</div>
   </section>
+
+  <aside class="nearby-alert" id="nearbyAlert" role="alertdialog" aria-live="assertive" aria-label="Atrakcja w pobliżu" hidden>
+    <img class="nearby-alert-icon" id="nearbyAlertIcon" src="assets/markers/castle.png?v=1007" alt="" aria-hidden="true" />
+    <div class="nearby-alert-copy">
+      <div class="nearby-alert-kicker">ATRAKCJA W POBLIŻU</div>
+      <strong class="nearby-alert-title" id="nearbyAlertTitle">Ciekawe miejsce</strong>
+      <div class="nearby-alert-meta" id="nearbyAlertMeta"></div>
+    </div>
+    <div class="nearby-alert-actions">
+      <button id="nearbyAlertShow" type="button">POKAŻ</button>
+      <button id="nearbyAlertAdd" type="button">DODAJ</button>
+      <button id="nearbyAlertDismiss" type="button">POMIŃ</button>
+    </div>
+  </aside>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="app.js?v=1006"></script>
