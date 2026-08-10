@@ -187,3 +187,34 @@ button {
     letter-spacing: 0.05em;
   }
 }
+
+/* v1002 — numer wersji aplikacji, zawsze widoczny na ekranie startowym. */
+.app-version {
+  position: absolute;
+  z-index: 3;
+  right: max(10px, calc(8px + var(--safe-right)));
+  bottom: max(7px, calc(5px + var(--safe-bottom)));
+  padding: 4px 8px;
+  border: 1px solid rgba(255, 240, 205, 0.42);
+  border-radius: 9px;
+  color: rgba(255, 244, 216, 0.92);
+  background: rgba(7, 17, 10, 0.58);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(11px, 1.1vw, 14px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (orientation: portrait) {
+  .app-version {
+    right: max(8px, calc(6px + var(--safe-right)));
+    bottom: max(6px, calc(4px + var(--safe-bottom)));
+    font-size: clamp(10px, 3vw, 12px);
+  }
+}
