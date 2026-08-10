@@ -1,21 +1,14 @@
 (() => {
-  const APP_VERSION = 'v1015';
+  const APP_VERSION = 'v1016';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
-  // v1015: niezależne instancje Overpass. Nie używamy już lz4/z jako
-  // "awaryjnych", bo należą do tej samej infrastruktury co overpass-api.de.
-  const OVERPASS_URLS = [
-    'https://overpass.private.coffee/api/interpreter',
-    'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
-    'https://overpass-api.de/api/interpreter'
-  ];
-  const OVERPASS_BROWSER_TIMEOUT_MS = 20000;
+  const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1016';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const ROUTE_CORRIDOR_RADIUS = 5000;
-  const OSM_MIN_ZOOM = 9;
   const ALERT_COOLDOWN_MS = 12 * 60 * 60 * 1000;
   const NEARBY_FETCH_MIN_RADIUS = 12000;
   const NEARBY_REFRESH_DISTANCE = 2500;
@@ -116,7 +109,9 @@
   let viewportRetryUsed = false;
   const viewportCache = new Map();
   let osmEnabled = loadOsmEnabled();
-  let overpassQueue = Promise.resolve();
+  let attractionDatabase = [];
+  let attractionDatabaseLoaded = false;
+  let attractionDatabasePromise = null;
 
   let proximityWatchId = null;
   let proximityActive = false;
@@ -132,10 +127,12 @@
   let routeActive = false;
   let routeDestination = null;
   let routeAttractions = [];
+  let routeCoordinates = [];
   let routeSearchSequence = 0;
 
   if (versionElement) versionElement.textContent = APP_VERSION;
   updateOsmButtonUi();
+  migrateSavedPointsIntoUserDatabase();
 
   function localDateString(date = new Date()) {
     const y = date.getFullYear();
@@ -289,8 +286,8 @@
     if (!osmRefreshButton) return;
     osmRefreshButton.classList.toggle('is-active', osmEnabled);
     osmRefreshButton.setAttribute('aria-pressed', String(osmEnabled));
-    osmRefreshButton.setAttribute('aria-label', osmEnabled ? 'Atrakcje OpenStreetMap włączone' : 'Atrakcje OpenStreetMap wyłączone');
-    osmRefreshButton.title = osmEnabled ? 'Atrakcje OSM: włączone' : 'Atrakcje OSM: wyłączone';
+    osmRefreshButton.setAttribute('aria-label', osmEnabled ? 'Baza atrakcji włączona' : 'Baza atrakcji wyłączona');
+    osmRefreshButton.title = osmEnabled ? 'Baza atrakcji: włączona' : 'Baza atrakcji: wyłączona';
     if (osmButtonState) osmButtonState.textContent = osmEnabled ? 'ON' : 'OFF';
   }
 
@@ -312,11 +309,11 @@
 
     if (!osmEnabled) {
       clearOsmAttractions();
-      updateOsmStatus('Atrakcje OSM: wyłączone');
+      updateOsmStatus('Baza atrakcji: wyłączona');
       return;
     }
 
-    updateOsmStatus('Atrakcje OSM: włączone');
+    updateOsmStatus('Baza atrakcji: włączona');
     if (fetchNow && currentMapMode === 'all' && !mapScreen?.hidden) {
       refreshOsmManually();
     }
@@ -329,112 +326,173 @@
     osmStatus.hidden = !text;
   }
 
-  function buildOverpassQuery(scope) {
-    return `[out:json][timeout:25];
-(
-  nwr["historic"="castle"]${scope};
-  nwr["historic"="manor"]${scope};
-  nwr["historic"="ruins"]${scope};
-  nwr["ruins"="yes"]["historic"]${scope};
-  nwr["tourism"="museum"]${scope};
-  nwr["denotation"="natural_monument"]${scope};
-  nwr["tourism"~"^(alpine_hut|wilderness_hut)$"]["operator"~"PTTK",i]${scope};
-  nwr["tourism"~"^(alpine_hut|wilderness_hut)$"]["name"~"PTTK",i]${scope};
-);
-out center tags;`;
+  function loadUserAttractionDb() {
+    try {
+      const parsed = JSON.parse(localStorage.getItem(USER_DB_KEY) || '[]');
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (error) {
+      console.warn('Nie udało się odczytać lokalnego rozszerzenia bazy atrakcji:', error);
+      return [];
+    }
   }
 
-  async function fetchOverpassAttractions(scope) {
-    const query = buildOverpassQuery(scope);
+  function saveUserAttractionDb(items) {
+    try {
+      localStorage.setItem(USER_DB_KEY, JSON.stringify(items));
+    } catch (error) {
+      console.warn('Nie udało się zapisać lokalnego rozszerzenia bazy atrakcji:', error);
+    }
+  }
 
-    // v1015: wracamy do sposobu, który działał w v1007 — POST form-urlencoded.
-    // Zapytania są wykonywane kolejno, aby GPS i widok mapy nie wysyłały
-    // równocześnie kilku zapytań do publicznego serwera Overpass.
-    const runRequest = async () => {
-      let lastError = null;
+  function normalizeDatabaseAttraction(item) {
+    if (!item) return null;
+    const id = String(item.id || item.osmId || '').trim();
+    const lat = Number(item.lat);
+    const lon = Number(item.lon);
+    const category = CATEGORY_INFO[item.category] ? item.category : null;
+    if (!id || !category || !Number.isFinite(lat) || !Number.isFinite(lon)) return null;
 
-      for (const endpoint of OVERPASS_URLS) {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), OVERPASS_BROWSER_TIMEOUT_MS);
+    return {
+      osmId: id,
+      category,
+      name: String(item.name || CATEGORY_INFO[category].label),
+      lat,
+      lon,
+      tags: item.tags && typeof item.tags === 'object' ? item.tags : {},
+      source: item.source || 'Baza lokalna',
+      sourceUrl: item.sourceUrl || '',
+      userAdded: Boolean(item.userAdded)
+    };
+  }
 
-        try {
-          const response = await fetch(endpoint, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
-              'Accept': 'application/json'
-            },
-            body: `data=${encodeURIComponent(query)}`,
-            cache: 'no-store',
-            credentials: 'omit',
-            signal: controller.signal
-          });
+  function rebuildAttractionDatabase(baseItems = null) {
+    const merged = new Map();
+    const base = Array.isArray(baseItems) ? baseItems : attractionDatabase.filter((item) => !item.userAdded);
 
-          if (!response.ok) throw new Error(`Overpass HTTP ${response.status}`);
-          const data = await response.json();
-          console.info(`Overpass OK: ${endpoint} · ${(data.elements || []).length} elementów`);
-          const result = new Map();
+    base.forEach((item) => {
+      const normalized = normalizeDatabaseAttraction(item);
+      if (normalized) merged.set(normalized.osmId, normalized);
+    });
 
-          (data.elements || []).forEach((element) => {
-            const tags = element.tags || {};
-            const lat = Number.isFinite(Number(element.lat)) ? Number(element.lat) : Number(element.center?.lat);
-            const lon = Number.isFinite(Number(element.lon)) ? Number(element.lon) : Number(element.center?.lon);
-            if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
+    loadUserAttractionDb().forEach((item) => {
+      const normalized = normalizeDatabaseAttraction({ ...item, userAdded: true });
+      if (normalized) merged.set(normalized.osmId, normalized);
+    });
 
-            const pttkText = `${tags.operator || ''} ${tags.name || ''} ${tags['name:pl'] || ''}`.toUpperCase();
-            let category = null;
+    attractionDatabase = [...merged.values()];
+    attractionDatabaseLoaded = true;
+    return attractionDatabase;
+  }
 
-            if (
-              (tags.tourism === 'alpine_hut' || tags.tourism === 'wilderness_hut') &&
-              pttkText.includes('PTTK')
-            ) {
-              category = 'pttk';
-            } else if (tags.historic === 'ruins' || tags.ruins === 'yes') {
-              category = 'ruins';
-            } else if (tags.tourism === 'museum') {
-              category = 'museum';
-            } else if (tags.denotation === 'natural_monument') {
-              category = 'nature';
-            } else if (tags.historic === 'castle' || tags.historic === 'manor') {
-              category = 'castle';
-            }
+  async function ensureAttractionDatabase(force = false) {
+    if (attractionDatabaseLoaded && !force) return attractionDatabase;
+    if (attractionDatabasePromise && !force) return attractionDatabasePromise;
 
-            if (!category) return;
-
-            const osmId = `${element.type}/${element.id}`;
-            const info = CATEGORY_INFO[category] || CATEGORY_INFO.castle;
-            const fallbackName =
-              category === 'castle' && tags.historic === 'manor'
-                ? 'Pałac / dwór'
-                : info.label;
-
-            result.set(osmId, {
-              osmId,
-              type: element.type,
-              osmNumericId: element.id,
-              category,
-              name: tags['name:pl'] || tags.name || tags.official_name || fallbackName,
-              lat,
-              lon,
-              tags
-            });
-          });
-
-          return [...result.values()];
-        } catch (error) {
-          lastError = error;
-          console.warn(`Overpass niedostępny: ${endpoint}`, error);
-        } finally {
-          clearTimeout(timeoutId);
-        }
+    attractionDatabasePromise = (async () => {
+      let baseItems = [];
+      try {
+        const response = await fetch(ATTRACTION_DB_URL, { cache: 'no-store', headers: { Accept: 'application/json' } });
+        if (!response.ok) throw new Error(`Baza HTTP ${response.status}`);
+        const data = await response.json();
+        baseItems = Array.isArray(data) ? data : (Array.isArray(data?.attractions) ? data.attractions : []);
+      } catch (error) {
+        console.warn('Nie udało się wczytać pliku bazy atrakcji:', error);
+        // Jeśli baza była już wcześniej wczytana, zachowaj ją. Dzięki temu ręczne
+        // odświeżenie nie może wyczyścić znaczników przy chwilowym błędzie pliku/cache.
+        baseItems = attractionDatabase.filter((item) => !item.userAdded);
       }
 
-      throw lastError || new Error('Brak dostępnego serwera Overpass');
+      return rebuildAttractionDatabase(baseItems);
+    })();
+
+    try {
+      return await attractionDatabasePromise;
+    } finally {
+      attractionDatabasePromise = null;
+    }
+  }
+
+  function upsertUserAttractionFromPoint(point) {
+    if (!point) return;
+    const attractionId = String(point.osmId || `user/${point.id}`);
+    point.osmId = attractionId;
+
+    const items = loadUserAttractionDb();
+    const index = items.findIndex((item) => String(item.id) === attractionId);
+    const dbItem = {
+      id: attractionId,
+      name: point.name || CATEGORY_INFO[point.category]?.label || 'Atrakcja',
+      category: point.category,
+      lat: Number(point.lat),
+      lon: Number(point.lon),
+      source: 'Dodane przez użytkownika',
+      userAdded: true,
+      updatedAt: new Date().toISOString()
     };
 
-    const queuedRequest = overpassQueue.then(runRequest, runRequest);
-    overpassQueue = queuedRequest.catch(() => {});
-    return queuedRequest;
+    if (index >= 0) items[index] = { ...items[index], ...dbItem };
+    else items.push({ ...dbItem, createdAt: point.createdAt || new Date().toISOString() });
+    saveUserAttractionDb(items);
+
+    if (attractionDatabaseLoaded) rebuildAttractionDatabase();
+  }
+
+  function removeUserAttractionForPoint(point) {
+    const id = String(point?.osmId || '');
+    if (!id) return;
+    const current = loadUserAttractionDb();
+    if (!current.some((item) => String(item.id) === id)) return;
+    saveUserAttractionDb(current.filter((item) => String(item.id) !== id));
+    if (attractionDatabaseLoaded) rebuildAttractionDatabase();
+  }
+
+  function migrateSavedPointsIntoUserDatabase() {
+    const points = loadPoints();
+    let pointsChanged = false;
+    let userItems = loadUserAttractionDb();
+    const byId = new Map(userItems.map((item) => [String(item.id), item]));
+
+    points.forEach((point) => {
+      // Obiekty z nowej bazy statycznej już są w pliku JSON i nie trzeba ich dublować.
+      if (String(point.osmId || '').startsWith('base/')) return;
+      if (!point.osmId) {
+        point.osmId = `user/${point.id}`;
+        pointsChanged = true;
+      }
+      const id = String(point.osmId);
+      byId.set(id, {
+        ...(byId.get(id) || {}),
+        id,
+        name: point.name || CATEGORY_INFO[point.category]?.label || 'Atrakcja',
+        category: point.category,
+        lat: Number(point.lat),
+        lon: Number(point.lon),
+        source: 'Dodane przez użytkownika',
+        userAdded: true,
+        createdAt: point.createdAt || new Date().toISOString(),
+        updatedAt: point.updatedAt || new Date().toISOString()
+      });
+    });
+
+    userItems = [...byId.values()].filter((item) => CATEGORY_INFO[item.category] && Number.isFinite(Number(item.lat)) && Number.isFinite(Number(item.lon)));
+    saveUserAttractionDb(userItems);
+    if (pointsChanged) savePoints(points);
+  }
+
+  async function getDatabaseAttractions() {
+    await ensureAttractionDatabase();
+    return attractionDatabase;
+  }
+
+  async function getAttractionsInBounds(bounds) {
+    const attractions = await getDatabaseAttractions();
+    if (!bounds) return attractions;
+    return attractions.filter((item) => bounds.contains([item.lat, item.lon]));
+  }
+
+  async function getAttractionsNear(lat, lon, radius) {
+    const attractions = await getDatabaseAttractions();
+    return attractions.filter((item) => distanceMeters(lat, lon, item.lat, item.lon) <= radius);
   }
 
   function externalPopupHtml(attraction) {
@@ -451,7 +509,7 @@ out center tags;`;
           <img src="${info.icon}" alt="" />
           <div>
             <strong>${escapeHtml(attraction.name)}</strong>
-            <span>${escapeHtml(sublabel)} · OpenStreetMap</span>
+            <span>${escapeHtml(sublabel)} · Baza atrakcji</span>
           </div>
         </div>
         <div class="place-popup-coords">${Number(attraction.lat).toFixed(6)}, ${Number(attraction.lon).toFixed(6)}</div>
@@ -490,7 +548,7 @@ out center tags;`;
     if (!map || currentMapMode !== 'all') return;
     if (!osmEnabled) {
       clearOsmAttractions();
-      updateOsmStatus('Atrakcje OSM: wyłączone');
+      updateOsmStatus('Baza atrakcji: wyłączona');
       return;
     }
 
@@ -512,7 +570,7 @@ out center tags;`;
     if (statusText) {
       updateOsmStatus(statusText);
     } else if (merged.size) {
-      updateOsmStatus(`Atrakcje OSM: ${merged.size}`);
+      updateOsmStatus(`Baza atrakcji: ${merged.size}`);
     }
   }
 
@@ -536,78 +594,42 @@ out center tags;`;
       return;
     }
 
-    if (map.getZoom() < OSM_MIN_ZOOM) {
-      viewportAttractions = [];
-      updateMainAttractionLayer(
-        nearbyAttractions.length
-          ? `Atrakcje w pobliżu GPS: ${nearbyAttractions.length} · użyj WYCENTRUJ, aby je zobaczyć z bliska.`
-          : `Atrakcje OSM: pobieram w pobliżu Twojej pozycji…`
-      );
-      return;
-    }
-
     const key = viewportCacheKey();
     const cached = viewportCache.get(key);
     if (cached && Date.now() - cached.time < 10 * 60 * 1000) {
       viewportAttractions = cached.items;
-      updateMainAttractionLayer(`Atrakcje OSM: ${new Set([...nearbyAttractions, ...viewportAttractions].map((item) => item.osmId)).size}`);
+      updateMainAttractionLayer(`Baza atrakcji: ${new Set([...nearbyAttractions, ...viewportAttractions].map((item) => item.osmId)).size}`);
       return;
     }
 
-    const bounds = map.getBounds();
-    const scope = `(${bounds.getSouth().toFixed(6)},${bounds.getWest().toFixed(6)},${bounds.getNorth().toFixed(6)},${bounds.getEast().toFixed(6)})`;
     const sequence = ++viewportFetchSequence;
-    updateOsmStatus('Atrakcje OSM: pobieranie…');
+    updateOsmStatus('Baza atrakcji: wczytywanie…');
 
     try {
-      const attractions = await fetchOverpassAttractions(scope);
+      const attractions = await getAttractionsInBounds(map.getBounds());
       if (sequence !== viewportFetchSequence) return;
 
       viewportAttractions = attractions;
       viewportRetryUsed = false;
       viewportCache.set(key, { time: Date.now(), items: attractions });
-      while (viewportCache.size > 8) {
-        viewportCache.delete(viewportCache.keys().next().value);
-      }
+      while (viewportCache.size > 8) viewportCache.delete(viewportCache.keys().next().value);
 
       const total = new Set([...nearbyAttractions, ...viewportAttractions].map((item) => item.osmId)).size;
-      updateMainAttractionLayer(`Atrakcje OSM: ${total}`);
+      updateMainAttractionLayer(`Baza atrakcji: ${total}`);
     } catch (error) {
-      console.warn('Nie udało się pobrać atrakcji z OpenStreetMap:', error);
-
-      // v1015: NIE kasujemy danych, które już wcześniej udało się pobrać.
-      // Publiczny Overpass potrafi chwilowo zwrócić timeout/429/504. W takim
-      // przypadku zostawiamy istniejące znaczniki na mapie i tylko ponawiamy
-      // próbę w tle. To usuwa efekt: "pojawiły się i po chwili zniknęły".
+      console.warn('Nie udało się wczytać lokalnej bazy atrakcji:', error);
       updateMainAttractionLayer();
       const keptCount = new Set(
         [...nearbyAttractions, ...viewportAttractions]
           .filter((item) => item?.osmId)
           .map((item) => item.osmId)
       ).size;
-
-      if (!viewportRetryUsed) {
-        viewportRetryUsed = true;
-        updateOsmStatus(
-          keptCount
-            ? `Atrakcje OSM: ${keptCount} · odświeżenie nieudane, zachowuję punkty i ponawiam…`
-            : 'Atrakcje OSM: ponawiam pobieranie…',
-          !keptCount
-        );
-
-        window.setTimeout(() => {
-          if (!mapScreen?.hidden && currentMapMode === 'all' && !routeActive && osmEnabled) {
-            scheduleViewportAttractions(0, false);
-          }
-        }, 5000);
-      } else {
-        updateOsmStatus(
-          keptCount
-            ? `Atrakcje OSM: ${keptCount} · zachowano ostatnio pobrane dane`
-            : 'Atrakcje OSM: serwer chwilowo niedostępny · naciśnij OSM, aby spróbować ponownie',
-          !keptCount
-        );
-      }
+      updateOsmStatus(
+        keptCount
+          ? `Baza atrakcji: ${keptCount} · zachowano wcześniej wczytane punkty`
+          : 'Nie udało się wczytać pliku data/atrakcje-polska.json',
+        !keptCount
+      );
     }
   }
 
@@ -623,14 +645,15 @@ out center tags;`;
 
     osmRefreshButton?.classList.add('is-loading');
     if (osmRefreshButton) osmRefreshButton.disabled = true;
-    viewportRetryUsed = false;
     viewportCache.clear();
-    updateOsmStatus('Atrakcje OSM: szukam ponownie…');
+    updateOsmStatus('Baza atrakcji: odświeżam…');
 
     try {
-      if (routeActive) {
-        renderExternalAttractions(routeAttractions);
-        updateOsmStatus(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
+      await ensureAttractionDatabase(true);
+      if (routeActive && routeCoordinates.length) {
+        routeAttractions = await fetchRouteAttractions(routeCoordinates);
+        nearbyAttractions = routeAttractions;
+        updateMainAttractionLayer(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
         return;
       }
 
@@ -641,10 +664,6 @@ out center tags;`;
       }
 
       await loadViewportAttractions();
-
-      if (!lastMonitorPosition?.coords && map.getZoom() < OSM_MIN_ZOOM) {
-        showLocationMessage('Aby wyszukać atrakcje OSM bez GPS, powiększ mapę i naciśnij OSM ponownie.');
-      }
     } finally {
       osmRefreshButton?.classList.remove('is-loading');
       if (osmRefreshButton) osmRefreshButton.disabled = false;
@@ -676,7 +695,7 @@ out center tags;`;
       note: '',
       lat: Number(attraction.lat),
       lon: Number(attraction.lon),
-      source: 'osm',
+      source: 'database',
       osmId: attraction.osmId,
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString()
@@ -745,7 +764,7 @@ out center tags;`;
       const segment = distanceMeters(last[1], last[0], current[1], current[0]);
       accumulated += segment;
       last = current;
-      if (accumulated >= 6000) {
+      if (accumulated >= 2000) {
         result.push(current);
         accumulated = 0;
       }
@@ -755,17 +774,18 @@ out center tags;`;
     const previous = result[result.length - 1];
     if (!previous || previous[0] !== end[0] || previous[1] !== end[1]) result.push(end);
 
-    if (result.length <= 120) return result;
-    const step = (result.length - 1) / 119;
-    return Array.from({ length: 120 }, (_, index) => result[Math.round(index * step)]);
+    if (result.length <= 500) return result;
+    const step = (result.length - 1) / 499;
+    return Array.from({ length: 500 }, (_, index) => result[Math.round(index * step)]);
   }
 
   async function fetchRouteAttractions(routeCoordinates) {
     const sampled = routeSampleCoordinates(routeCoordinates);
     if (sampled.length < 2) return [];
-    const line = sampled.map(([lon, lat]) => `${Number(lat).toFixed(6)},${Number(lon).toFixed(6)}`).join(',');
-    const scope = `(around:${ROUTE_CORRIDOR_RADIUS},${line})`;
-    return fetchOverpassAttractions(scope);
+    const attractions = await getDatabaseAttractions();
+    return attractions.filter((attraction) =>
+      sampled.some(([lon, lat]) => distanceMeters(lat, lon, attraction.lat, attraction.lon) <= ROUTE_CORRIDOR_RADIUS)
+    );
   }
 
   function setRouteInfo(text, isError = false) {
@@ -853,6 +873,7 @@ out center tags;`;
     routeActive = false;
     routeDestination = null;
     routeAttractions = [];
+    routeCoordinates = [];
     nearbyAttractions = [];
 
     if (map && routeLayer) map.removeLayer(routeLayer);
@@ -919,6 +940,7 @@ out center tags;`;
 
       routeActive = true;
       routeDestination = destination;
+      routeCoordinates = coordinates;
       if (routeClearButton) routeClearButton.hidden = false;
       if (proximityRadius) proximityRadius.value = '5000';
       localStorage.setItem(PROXIMITY_RADIUS_KEY, '5000');
@@ -930,7 +952,7 @@ out center tags;`;
 
       const distance = formatDistance(Number(route.distance));
       const duration = formatRouteDuration(Number(route.duration));
-      setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Pobieram atrakcje do 5 km od trasy…`);
+      setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Wyszukuję w bazie atrakcje do 5 km od trasy…`);
 
       map.fitBounds(routeLayer.getBounds(), { padding: [45, 45], animate: true });
 
@@ -943,11 +965,11 @@ out center tags;`;
         setRouteInfo(`${destination.name} · ${distance} · około ${duration} · atrakcji przy trasie: ${routeAttractions.length}`);
         checkProximity(position);
       } catch (error) {
-        console.warn('Nie udało się pobrać atrakcji przy trasie:', error);
+        console.warn('Nie udało się odczytać atrakcji przy trasie:', error);
         routeAttractions = [];
         nearbyAttractions = [];
-        updateOsmStatus('Atrakcje przy trasie: chwilowo niedostępne', true);
-        setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Trasa działa, ale atrakcji nie udało się teraz pobrać.`, true);
+        updateOsmStatus('Atrakcje przy trasie: brak danych z bazy', true);
+        setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Trasa działa, ale atrakcji nie udało się odczytać z bazy.`, true);
       }
     } catch (error) {
       console.warn('Nie udało się wyznaczyć trasy:', error);
@@ -1054,10 +1076,8 @@ out center tags;`;
 
     const { latitude, longitude } = position.coords;
     const radius = Math.max(NEARBY_FETCH_MIN_RADIUS, getProximityRadiusMeters() + 5000);
-    const scope = `(around:${Math.round(radius)},${latitude.toFixed(6)},${longitude.toFixed(6)})`;
-
     try {
-      nearbyAttractions = await fetchOverpassAttractions(scope);
+      nearbyAttractions = await getAttractionsNear(latitude, longitude, radius);
       lastNearbyFetchPosition = { lat: latitude, lon: longitude };
       lastNearbyFetchAt = Date.now();
       if (currentMapMode === 'all' && !routeActive) {
@@ -1065,7 +1085,7 @@ out center tags;`;
       }
       checkProximity(position);
     } catch (error) {
-      console.warn('Nie udało się pobrać atrakcji w pobliżu:', error);
+      console.warn('Nie udało się odczytać atrakcji w pobliżu:', error);
       // Nie usuwamy poprzedniej listy nearbyAttractions przy chwilowym błędzie.
       // Dzięki temu istniejące znaczniki i alerty pozostają dostępne.
       const keptCount = new Set(
@@ -1076,8 +1096,8 @@ out center tags;`;
       if (currentMapMode === 'all' && !routeActive) updateMainAttractionLayer();
       showLocationMessage(
         keptCount
-          ? `Nie udało się odświeżyć OSM. Zachowuję ${keptCount} wcześniej pobranych punktów.`
-          : 'Nie udało się teraz pobrać atrakcji OSM. Naciśnij OSM, aby spróbować ponownie.',
+          ? `Nie udało się odświeżyć bazy. Zachowuję ${keptCount} wcześniej wczytanych punktów.`
+          : 'Nie udało się odczytać bazy atrakcji. Naciśnij BAZA, aby spróbować ponownie.',
         !keptCount
       );
     } finally {
@@ -1494,16 +1514,12 @@ out center tags;`;
         updateOsmStatus(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
         if (mapModeBadge) mapModeBadge.textContent = 'TRASA · ALERT 5 KM';
       } else if (osmEnabled) {
-        // Najpierw czekamy na GPS. Jeśli pozycja nie nadejdzie, pobieramy
-        // atrakcje z aktualnie oglądanego obszaru mapy.
-        window.setTimeout(() => {
-          if (!lastMonitorPosition?.coords && currentMapMode === 'all' && osmEnabled && !routeActive) {
-            scheduleViewportAttractions(0);
-          }
-        }, 2500);
+        // Baza jest lokalna, więc od razu pokaż atrakcje z aktualnie widocznego obszaru.
+        // GPS niezależnie od tego będzie później aktualizował listę atrakcji w pobliżu.
+        scheduleViewportAttractions(0);
       } else {
         clearOsmAttractions();
-        updateOsmStatus('Atrakcje OSM: wyłączone');
+        updateOsmStatus('Baza atrakcji: wyłączona');
       }
       startProximityMonitoring(true);
       if (osmEnabled && lastMonitorPosition?.coords && !routeActive) {
@@ -1549,8 +1565,10 @@ out center tags;`;
 
     const date = dateInput?.value || localDateString();
     const info = CATEGORY_INFO[currentCategory] || CATEGORY_INFO.castle;
+    const pointId = `${Date.now()}-${Math.random().toString(16).slice(2)}`;
     const point = {
-      id: `${Date.now()}-${Math.random().toString(16).slice(2)}`,
+      id: pointId,
+      osmId: `user/${pointId}`,
       name: placeName?.value.trim() || info.label,
       category: currentCategory,
       date,
@@ -1565,7 +1583,8 @@ out center tags;`;
     const points = loadPoints();
     points.push(point);
     savePoints(points);
-    showAddMessage('Punkt został zapisany.');
+    upsertUserAttractionFromPoint(point);
+    showAddMessage('Punkt został zapisany i dopisany do Twojej lokalnej bazy atrakcji.');
 
     setTimeout(() => {
       showMap({ lat, lon, zoom: 16, openPointId: point.id });
@@ -1643,6 +1662,9 @@ out center tags;`;
 
     const saved = points[index];
     savePoints(points);
+    if (loadUserAttractionDb().some((item) => String(item.id) === String(saved.osmId || ''))) {
+      upsertUserAttractionFromPoint(saved);
+    }
     renderStoredPoints();
     showEditMessage('Zmiany zostały zapisane.');
 
@@ -1662,6 +1684,7 @@ out center tags;`;
     const confirmed = window.confirm(`Czy na pewno usunąć punkt „${title}”?\n\nTej operacji nie można cofnąć.`);
     if (!confirmed) return;
 
+    removeUserAttractionForPoint(point);
     const points = loadPoints().filter((item) => String(item.id) !== String(editingPointId));
     savePoints(points);
     editingPointId = null;
@@ -1786,7 +1809,7 @@ out center tags;`;
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1011', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1016', {
           scope: './',
           updateViaCache: 'none'
         });
