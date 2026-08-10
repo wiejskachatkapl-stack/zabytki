@@ -1,5 +1,5 @@
 (() => {
-  const APP_VERSION = 'v1012';
+  const APP_VERSION = 'v1013';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
@@ -67,6 +67,7 @@
   const proximityButton = document.getElementById('proximityButton');
   const proximityRadius = document.getElementById('proximityRadius');
   const proximityRadiusWrap = document.getElementById('proximityRadiusWrap');
+  const osmRefreshButton = document.getElementById('osmRefreshButton');
   const routeButton = document.getElementById('routeButton');
   const routePanel = document.getElementById('routePanel');
   const routePanelClose = document.getElementById('routePanelClose');
@@ -533,6 +534,39 @@ out center tags;`;
     if (resetRetry) viewportRetryUsed = false;
     if (currentMapMode !== 'all' || routeActive) return;
     viewportFetchTimer = setTimeout(loadViewportAttractions, delay);
+  }
+
+  async function refreshOsmManually() {
+    if (!map || currentMapMode !== 'all') return;
+
+    osmRefreshButton?.classList.add('is-loading');
+    if (osmRefreshButton) osmRefreshButton.disabled = true;
+    viewportRetryUsed = false;
+    viewportCache.clear();
+    updateOsmStatus('Atrakcje OSM: szukam ponownie…');
+
+    try {
+      if (routeActive) {
+        renderExternalAttractions(routeAttractions);
+        updateOsmStatus(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
+        return;
+      }
+
+      if (lastMonitorPosition?.coords) {
+        lastNearbyFetchAt = 0;
+        lastNearbyFetchPosition = null;
+        await refreshNearbyAttractions(lastMonitorPosition);
+      }
+
+      await loadViewportAttractions();
+
+      if (!lastMonitorPosition?.coords && map.getZoom() < OSM_MIN_ZOOM) {
+        showLocationMessage('Aby wyszukać atrakcje OSM bez GPS, powiększ mapę i naciśnij OSM ponownie.');
+      }
+    } finally {
+      osmRefreshButton?.classList.remove('is-loading');
+      if (osmRefreshButton) osmRefreshButton.disabled = false;
+    }
   }
 
   function addOsmAttractionToMine(attraction, openAfter = true) {
@@ -1291,6 +1325,7 @@ out center tags;`;
     if (mapLocationButton) mapLocationButton.hidden = mineOnly;
     if (routeButton) routeButton.hidden = mineOnly;
     if (proximityButton) proximityButton.hidden = true;
+    if (osmRefreshButton) osmRefreshButton.hidden = mineOnly;
     if (proximityRadiusWrap) proximityRadiusWrap.hidden = mineOnly;
     if (osmStatus) osmStatus.hidden = true;
 
@@ -1581,6 +1616,8 @@ out center tags;`;
     }
   });
   routeClearButton?.addEventListener('click', () => clearRoute({ refreshMap: true }));
+
+  osmRefreshButton?.addEventListener('click', refreshOsmManually);
 
   proximityButton?.addEventListener('click', () => startProximityMonitoring(true));
 

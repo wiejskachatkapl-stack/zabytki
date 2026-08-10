@@ -1966,3 +1966,75 @@ button {
     height: 22px;
   }
 }
+
+
+/* v1013 — ręczne ponowne wyszukiwanie punktów OpenStreetMap. */
+.osm-refresh-button {
+  position: absolute;
+  z-index: 1001;
+  top: max(108px, calc(104px + var(--safe-top)));
+  left: max(12px, calc(8px + var(--safe-left)));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  padding: 8px 11px;
+  border: 2px solid rgba(255, 255, 255, 0.96);
+  border-radius: 14px;
+  color: #fff;
+  background: rgba(34, 105, 57, 0.95);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.28);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.osm-refresh-button svg {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+
+.osm-refresh-button:active {
+  transform: translateY(1px) scale(0.985);
+}
+
+.osm-refresh-button:disabled {
+  cursor: wait;
+  opacity: 0.82;
+}
+
+.osm-refresh-button.is-loading svg {
+  animation: osm-refresh-spin 900ms linear infinite;
+}
+
+@keyframes osm-refresh-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (orientation: portrait) {
+  .osm-refresh-button {
+    top: max(96px, calc(92px + var(--safe-top)));
+    left: max(8px, calc(6px + var(--safe-left)));
+    min-height: 42px;
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  /* Robimy miejsce pod przyciskiem OSM, aby nie nachodził na +/- Leaflet. */
+  .map-screen .leaflet-top.leaflet-left {
+    top: max(146px, calc(140px + var(--safe-top)));
+  }
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .osm-refresh-button {
+    top: max(64px, calc(58px + var(--safe-top)));
+    left: max(8px, calc(6px + var(--safe-left)));
+  }
+}
