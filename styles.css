@@ -3,6 +3,7 @@
   --safe-right: env(safe-area-inset-right, 0px);
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-left: env(safe-area-inset-left, 0px);
+  --screen-h: 100dvh;
 }
 
 * {
@@ -15,9 +16,12 @@ body {
   height: 100%;
   margin: 0;
   overflow: hidden;
+  overscroll-behavior: none;
 }
 
 body {
+  min-height: 100vh;
+  min-height: 100svh;
   min-height: 100dvh;
   font-family: Georgia, "Times New Roman", serif;
   background: #152319;
@@ -27,29 +31,35 @@ button {
   font: inherit;
 }
 
+/*
+  v1001 — baza automatycznej responsywności.
+  Grafika zawsze wypełnia dokładnie obszar ekranu, bez obcinania tytułu.
+  Osobne tło jest wybierane automatycznie dla pionu i poziomu.
+*/
 .start-screen {
-  position: relative;
-  width: 100vw;
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
   height: 100dvh;
-  min-height: 100vh;
   overflow: hidden;
+  background-color: #152319;
   background-image: url("assets/bg-desktop.png");
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background-position: center;
+  background-size: 100% 100%;
 }
 
-/* Delikatne przyciemnienie dołu poprawia czytelność przycisków,
-   bez zasłaniania grafiki. */
 .start-screen::after {
   content: "";
   position: absolute;
-  inset: 48% 0 0;
+  inset: 52% 0 0;
   pointer-events: none;
   background: linear-gradient(
     to bottom,
     rgba(7, 17, 10, 0),
-    rgba(7, 17, 10, 0.12) 35%,
+    rgba(7, 17, 10, 0.10) 36%,
     rgba(7, 17, 10, 0.48) 100%
   );
 }
@@ -58,22 +68,29 @@ button {
   position: absolute;
   z-index: 2;
   left: 50%;
-  bottom: max(5.5vh, calc(18px + var(--safe-bottom)));
+  bottom: max(
+    clamp(14px, 4.5dvh, 54px),
+    calc(12px + var(--safe-bottom))
+  );
   transform: translateX(-50%);
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: clamp(18px, 2.5vw, 42px);
-  width: min(760px, calc(100vw - 48px));
+  gap: clamp(12px, 2.2vw, 42px);
+  width: min(760px, calc(100% - max(24px, 5vw)));
   padding-left: var(--safe-left);
   padding-right: var(--safe-right);
 }
 
 .main-button {
-  width: clamp(220px, 23vw, 310px);
-  min-height: 68px;
-  padding: 14px 28px;
+  flex: 1 1 0;
+  width: min(310px, 42vw);
+  max-width: 310px;
+  min-width: 0;
+  min-height: clamp(50px, 7.5dvh, 68px);
+  padding: clamp(9px, 1.6dvh, 14px) clamp(14px, 2.2vw, 28px);
   border: 2px solid rgba(255, 240, 205, 0.92);
-  border-radius: 18px;
+  border-radius: clamp(12px, 1.2vw, 18px);
   color: #fff4d8;
   background: linear-gradient(
     180deg,
@@ -85,13 +102,16 @@ button {
     inset 0 1px 0 rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  font-size: clamp(24px, 2vw, 34px);
+  font-size: clamp(20px, min(2vw, 4.2dvh), 34px);
   font-weight: 800;
+  line-height: 1;
   letter-spacing: 0.08em;
+  white-space: nowrap;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
   cursor: pointer;
   transition: transform 140ms ease, filter 140ms ease, box-shadow 140ms ease;
   touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .main-button:hover {
@@ -111,40 +131,59 @@ button {
   outline-offset: 4px;
 }
 
-@media (max-width: 700px), (orientation: portrait) {
+/* Telefon / tablet w pionie — automatycznie używa grafiki pionowej. */
+@media (orientation: portrait) {
   .start-screen {
     background-image: url("assets/bg-mobile.png");
-    background-position: center center;
+    background-size: 100% 100%;
   }
 
   .start-screen::after {
-    inset: 58% 0 0;
+    inset: 62% 0 0;
   }
 
   .actions {
-    bottom: max(4vh, calc(14px + var(--safe-bottom)));
-    gap: 12px;
-    width: calc(100vw - 24px);
+    bottom: max(
+      clamp(14px, 3.2dvh, 36px),
+      calc(10px + var(--safe-bottom))
+    );
+    gap: clamp(8px, 3vw, 14px);
+    width: calc(100% - max(18px, 5vw));
   }
 
   .main-button {
-    flex: 1 1 0;
     width: auto;
     max-width: 220px;
-    min-height: 58px;
-    padding: 12px 10px;
-    border-radius: 15px;
-    font-size: clamp(21px, 6vw, 28px);
+    min-height: clamp(48px, 7dvh, 62px);
+    padding: 10px 8px;
+    border-radius: 14px;
+    font-size: clamp(18px, 5.4vw, 28px);
   }
 }
 
-@media (max-height: 520px) and (orientation: landscape) {
+/* Bardzo niski ekran poziomy, np. telefon obrócony bokiem. */
+@media (orientation: landscape) and (max-height: 520px) {
   .actions {
-    bottom: max(14px, calc(8px + var(--safe-bottom)));
+    bottom: max(8px, calc(6px + var(--safe-bottom)));
   }
 
   .main-button {
-    min-height: 52px;
-    font-size: 22px;
+    min-height: clamp(42px, 11dvh, 52px);
+    padding-top: 7px;
+    padding-bottom: 7px;
+    font-size: clamp(17px, 4.8dvh, 22px);
+  }
+}
+
+/* Bardzo wąskie telefony — oba przyciski nadal mieszczą się w jednym rzędzie. */
+@media (max-width: 360px) and (orientation: portrait) {
+  .actions {
+    gap: 7px;
+    width: calc(100% - 14px);
+  }
+
+  .main-button {
+    font-size: clamp(16px, 5vw, 20px);
+    letter-spacing: 0.05em;
   }
 }
