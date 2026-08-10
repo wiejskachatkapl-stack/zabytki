@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1019';
+  const APP_VERSION = 'v1020';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1019';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1020';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;
@@ -131,6 +131,7 @@
   let routeAttractions = [];
   let routeCoordinates = [];
   let routeSearchSequence = 0;
+  let routeAlertedIds = new Set();
 
   if (versionElement) versionElement.textContent = APP_VERSION;
   updateOsmButtonUi();
@@ -515,6 +516,10 @@
           </div>
         </div>
         <div class="place-popup-coords">${Number(attraction.lat).toFixed(6)}, ${Number(attraction.lon).toFixed(6)}</div>
+        ${routeActive && Number.isFinite(Number(attraction.routeDistanceMeters))
+          ? `<div class="place-popup-date">Od trasy: ${escapeHtml(formatDistance(Number(attraction.routeDistanceMeters)))}</div>`
+          : ''}
+        <button class="place-popup-add-osm" type="button" data-route-osm-id="${escapeHtml(attraction.osmId)}">USTAW TRASĘ DO TEJ ATRAKCJI</button>
         ${
           saved
             ? '<div class="osm-saved-badge">TEN PUNKT JEST JUŻ W TWOICH MIEJSCACH</div>'
@@ -592,7 +597,7 @@
   async function loadViewportAttractions() {
     if (!map || mapScreen?.hidden || currentMapMode !== 'all' || !osmEnabled) return;
     if (routeActive) {
-      updateMainAttractionLayer(`Atrakcje w pasie ${formatDistance(ROUTE_DISPLAY_RADIUS)} od trasy: ${routeAttractions.length} · alert ${formatDistance(getProximityRadiusMeters())}`);
+      updateMainAttractionLayer(`Atrakcje do ${formatDistance(getProximityRadiusMeters())} od trasy: ${routeAttractions.length} · alert aktywny`);
       return;
     }
 
@@ -653,9 +658,9 @@
     try {
       await ensureAttractionDatabase(true);
       if (routeActive && routeCoordinates.length) {
-        routeAttractions = await fetchRouteAttractions(routeCoordinates, ROUTE_DISPLAY_RADIUS);
+        routeAttractions = await fetchRouteAttractions(routeCoordinates, getProximityRadiusMeters());
         nearbyAttractions = routeAttractions;
-        updateMainAttractionLayer(`Atrakcje w pasie ${formatDistance(ROUTE_DISPLAY_RADIUS)} od trasy: ${routeAttractions.length} · alert ${formatDistance(getProximityRadiusMeters())}`);
+        updateMainAttractionLayer(`Atrakcje do ${formatDistance(getProximityRadiusMeters())} od trasy: ${routeAttractions.length} · alert aktywny`);
         return;
       }
 
@@ -728,6 +733,12 @@
   function focusOsmAttraction(attraction) {
     if (!attraction) return;
 
+    const savedPoint = loadPoints().find((point) => String(point.osmId || '') === String(attraction.osmId));
+    if (savedPoint) {
+      showMap({ lat: Number(savedPoint.lat), lon: Number(savedPoint.lon), zoom: 16, openPointId: savedPoint.id });
+      return;
+    }
+
     showMap({ lat: attraction.lat, lon: attraction.lon, zoom: 16 });
 
     setTimeout(() => {
@@ -755,45 +766,61 @@
     return hours ? `${hours} h ${minutes} min` : `${minutes} min`;
   }
 
-  function routeSampleCoordinates(coordinates) {
-    if (!Array.isArray(coordinates) || !coordinates.length) return [];
-    const result = [coordinates[0]];
-    let last = coordinates[0];
-    let accumulated = 0;
+  function routeDistanceToPointMeters(routeCoordinates, pointLat, pointLon) {
+    if (!Array.isArray(routeCoordinates) || routeCoordinates.length < 2) return Infinity;
 
-    for (let i = 1; i < coordinates.length; i += 1) {
-      const current = coordinates[i];
-      const segment = distanceMeters(last[1], last[0], current[1], current[0]);
-      accumulated += segment;
-      last = current;
-      if (accumulated >= 2000) {
-        result.push(current);
-        accumulated = 0;
-      }
+    const earthRadius = 6371000;
+    const toRad = (value) => value * Math.PI / 180;
+    const refLat = toRad(Number(pointLat));
+    const cosLat = Math.cos(refLat);
+    let minimum = Infinity;
+
+    for (let index = 1; index < routeCoordinates.length; index += 1) {
+      const a = routeCoordinates[index - 1];
+      const b = routeCoordinates[index];
+      if (!Array.isArray(a) || !Array.isArray(b)) continue;
+
+      const ax = toRad(Number(a[0]) - Number(pointLon)) * earthRadius * cosLat;
+      const ay = toRad(Number(a[1]) - Number(pointLat)) * earthRadius;
+      const bx = toRad(Number(b[0]) - Number(pointLon)) * earthRadius * cosLat;
+      const by = toRad(Number(b[1]) - Number(pointLat)) * earthRadius;
+      const vx = bx - ax;
+      const vy = by - ay;
+      const lengthSquared = vx * vx + vy * vy;
+      const t = lengthSquared > 0
+        ? Math.max(0, Math.min(1, -(ax * vx + ay * vy) / lengthSquared))
+        : 0;
+      const closestX = ax + t * vx;
+      const closestY = ay + t * vy;
+      const distance = Math.hypot(closestX, closestY);
+      if (distance < minimum) minimum = distance;
+      if (minimum < 1) return minimum;
     }
 
-    const end = coordinates[coordinates.length - 1];
-    const previous = result[result.length - 1];
-    if (!previous || previous[0] !== end[0] || previous[1] !== end[1]) result.push(end);
-
-    if (result.length <= 500) return result;
-    const step = (result.length - 1) / 499;
-    return Array.from({ length: 500 }, (_, index) => result[Math.round(index * step)]);
+    return minimum;
   }
 
-  async function fetchRouteAttractions(routeCoordinates, radiusMeters = ROUTE_DISPLAY_RADIUS) {
-    const sampled = routeSampleCoordinates(routeCoordinates);
-    if (sampled.length < 2) return [];
-    const radius = Math.max(1000, Number(radiusMeters) || ROUTE_DISPLAY_RADIUS);
+  async function fetchRouteAttractions(routeCoordinates, radiusMeters = getProximityRadiusMeters()) {
+    if (!Array.isArray(routeCoordinates) || routeCoordinates.length < 2) return [];
+    const radius = Math.max(1000, Number(radiusMeters) || getProximityRadiusMeters());
     const attractions = await getDatabaseAttractions();
-    return attractions.filter((attraction) =>
-      sampled.some(([lon, lat]) => distanceMeters(lat, lon, attraction.lat, attraction.lon) <= radius)
-    );
+
+    return attractions
+      .map((attraction) => ({
+        ...attraction,
+        routeDistanceMeters: routeDistanceToPointMeters(
+          routeCoordinates,
+          Number(attraction.lat),
+          Number(attraction.lon)
+        )
+      }))
+      .filter((attraction) => attraction.routeDistanceMeters <= radius)
+      .sort((a, b) => a.routeDistanceMeters - b.routeDistanceMeters);
   }
 
   async function refreshRouteAttractionsForRadius({ showStatus = true } = {}) {
     if (!routeActive || !routeCoordinates.length) return;
-    const radius = ROUTE_DISPLAY_RADIUS;
+    const radius = getProximityRadiusMeters();
     if (showStatus) updateOsmStatus(`Atrakcje w pasie ${formatDistance(radius)} od trasy: wczytywanie…`);
 
     try {
@@ -803,6 +830,7 @@
       renderExternalAttractions(routeAttractions);
       updateOsmStatus(`Atrakcje w pasie ${formatDistance(radius)} od trasy: ${routeAttractions.length} · alert ${formatDistance(getProximityRadiusMeters())}`);
       if (mapModeBadge) mapModeBadge.textContent = `TRASA · ALERT ${formatDistance(radius).toUpperCase()}`;
+      showLocationMessage(`Na trasie: ${routeAttractions.length} atrakcji w odległości do ${formatDistance(radius)} od przebiegu trasy.`);
       if (lastMonitorPosition) checkProximity(lastMonitorPosition);
     } catch (error) {
       console.warn('Nie udało się odczytać atrakcji przy trasie:', error);
@@ -897,6 +925,7 @@
     routeAttractions = [];
     routeCoordinates = [];
     nearbyAttractions = [];
+    routeAlertedIds = new Set();
 
     if (map && routeLayer) map.removeLayer(routeLayer);
     routeLayer = null;
@@ -963,6 +992,7 @@
       routeActive = true;
       routeDestination = destination;
       routeCoordinates = coordinates;
+      routeAlertedIds = new Set();
       if (routeClearButton) routeClearButton.hidden = false;
 
       clearTimeout(viewportFetchTimer);
@@ -973,17 +1003,22 @@
       const distance = formatDistance(Number(route.distance));
       const duration = formatRouteDuration(Number(route.duration));
       const routeRadius = getProximityRadiusMeters();
-      setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Pokazuję atrakcje do ${formatDistance(ROUTE_DISPLAY_RADIUS)} od trasy · alert ${formatDistance(routeRadius)}.`);
+      setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Szukam atrakcji do ${formatDistance(routeRadius)} od przebiegu trasy…`);
 
       map.fitBounds(routeLayer.getBounds(), { padding: [45, 45], animate: true });
 
       try {
-        routeAttractions = await fetchRouteAttractions(coordinates, ROUTE_DISPLAY_RADIUS);
+        routeAttractions = await fetchRouteAttractions(coordinates, routeRadius);
         nearbyAttractions = routeAttractions;
         osmAttractions = new Map(routeAttractions.map((item) => [item.osmId, item]));
         renderExternalAttractions(routeAttractions);
-        updateOsmStatus(`Atrakcje w pasie ${formatDistance(ROUTE_DISPLAY_RADIUS)} od trasy: ${routeAttractions.length} · alert ${formatDistance(getProximityRadiusMeters())}`);
-        setRouteInfo(`${destination.name} · ${distance} · około ${duration} · atrakcji w pasie 20 km: ${routeAttractions.length} · alert ${formatDistance(routeRadius)}`);
+        updateOsmStatus(`Atrakcje do ${formatDistance(getProximityRadiusMeters())} od trasy: ${routeAttractions.length} · alert aktywny`);
+        setRouteInfo(`${destination.name} · ${distance} · około ${duration} · atrakcji do ${formatDistance(routeRadius)} od trasy: ${routeAttractions.length}. Alert podczas jazdy: ${formatDistance(routeRadius)}.`);
+        showLocationMessage(`Trasa gotowa · ${routeAttractions.length} atrakcji w zasięgu do ${formatDistance(routeRadius)} od trasy. Alerty podczas jazdy są aktywne.`);
+        // Po wyznaczeniu trasy odsłaniamy mapę i znaczniki atrakcji.
+        hideRoutePanel();
+        startProximityMonitoring(false);
+
         // Po pokazaniu całej trasy przejdź do widoku jazdy przy bieżącej pozycji.
         setTimeout(() => {
           if (!routeActive || !map || !lastMonitorPosition?.coords) return;
@@ -1072,7 +1107,11 @@
       nearbyAlertMeta.textContent = `${info.label} · około ${formatDistance(distance)} od Ciebie`;
     }
 
-    markAttractionAlerted(attraction.osmId);
+    if (routeActive) {
+      routeAlertedIds.add(String(attraction.osmId));
+    } else {
+      markAttractionAlerted(attraction.osmId);
+    }
     nearbyAlert.hidden = false;
   }
 
@@ -1084,12 +1123,15 @@
     const { latitude, longitude } = position.coords;
 
     const candidate = nearbyAttractions
-      .filter((attraction) => !isOsmSaved(attraction.osmId))
       .map((attraction) => ({
         attraction,
         distance: distanceMeters(latitude, longitude, attraction.lat, attraction.lon)
       }))
-      .filter((item) => item.distance <= radius && !wasAttractionAlertedRecently(item.attraction.osmId))
+      .filter((item) => {
+        if (item.distance > radius) return false;
+        if (routeActive) return !routeAlertedIds.has(String(item.attraction.osmId));
+        return !wasAttractionAlertedRecently(item.attraction.osmId);
+      })
       .sort((a, b) => a.distance - b.distance)[0];
 
     if (candidate) {
@@ -1242,6 +1284,7 @@
         <div class="place-popup-date">Dodano: ${escapeHtml(formatDisplayDate(point.date))}</div>
         <div class="place-popup-coords">${Number(point.lat).toFixed(6)}, ${Number(point.lon).toFixed(6)}</div>
         ${note ? `<div class="place-popup-note">${noteHtml(note)}</div>` : ''}
+        <button class="place-popup-edit" type="button" data-route-point-id="${escapeHtml(point.id)}">USTAW TRASĘ DO TEGO MIEJSCA</button>
         <button class="place-popup-edit" type="button" data-edit-point-id="${escapeHtml(point.id)}">EDYTUJ</button>
       </div>
     `;
@@ -1563,7 +1606,7 @@
       updateOsmButtonUi();
       if (routeActive && osmEnabled) {
         renderExternalAttractions(routeAttractions);
-        updateOsmStatus(`Atrakcje w pasie ${formatDistance(ROUTE_DISPLAY_RADIUS)} od trasy: ${routeAttractions.length} · alert ${formatDistance(getProximityRadiusMeters())}`);
+        updateOsmStatus(`Atrakcje do ${formatDistance(getProximityRadiusMeters())} od trasy: ${routeAttractions.length} · alert aktywny`);
         if (mapModeBadge) mapModeBadge.textContent = `TRASA · ALERT ${formatDistance(getProximityRadiusMeters()).toUpperCase()}`;
       } else if (osmEnabled) {
         // Baza jest lokalna, więc od razu pokaż atrakcje z aktualnie widocznego obszaru.
@@ -1766,6 +1809,40 @@
   deletePlaceButton?.addEventListener('click', deleteEditedPoint);
 
   document.addEventListener('click', (event) => {
+    const routeOsmButton = event.target.closest('[data-route-osm-id]');
+    if (routeOsmButton) {
+      event.preventDefault();
+      event.stopPropagation();
+      const attraction = getOsmAttractionById(routeOsmButton.dataset.routeOsmId);
+      if (attraction) {
+        map?.closePopup();
+        if (routeDestinationInput) routeDestinationInput.value = attraction.name || '';
+        planRouteToDestination({
+          name: attraction.name || 'Atrakcja',
+          lat: Number(attraction.lat),
+          lon: Number(attraction.lon)
+        });
+      }
+      return;
+    }
+
+    const routePointButton = event.target.closest('[data-route-point-id]');
+    if (routePointButton) {
+      event.preventDefault();
+      event.stopPropagation();
+      const point = findPoint(routePointButton.dataset.routePointId);
+      if (point) {
+        map?.closePopup();
+        if (routeDestinationInput) routeDestinationInput.value = point.name || '';
+        planRouteToDestination({
+          name: point.name || (CATEGORY_INFO[point.category]?.label ?? 'Moje miejsce'),
+          lat: Number(point.lat),
+          lon: Number(point.lon)
+        });
+      }
+      return;
+    }
+
     const editButton = event.target.closest('[data-edit-point-id]');
     if (editButton) {
       event.preventDefault();
