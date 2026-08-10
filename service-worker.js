@@ -1,4 +1,4 @@
-const APP_VERSION = 'v1018';
+const APP_VERSION = 'v1019';
 const CACHE_NAME = `turystyczna-mapa-polski-${APP_VERSION}`;
 
 const APP_SHELL = [

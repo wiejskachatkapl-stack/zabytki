@@ -1,14 +1,16 @@
 (() => {
-  const APP_VERSION = 'v1018';
+  const APP_VERSION = 'v1019';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1018';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1019';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
-  const ROUTE_CORRIDOR_RADIUS = 5000;
+  const FOLLOW_EDGE_MARGIN_PX = 92;
+  const ROUTE_DRIVE_ZOOM = 14;
+  const ROUTE_DISPLAY_RADIUS = 20000;
   const ALERT_COOLDOWN_MS = 12 * 60 * 60 * 1000;
   const NEARBY_FETCH_MIN_RADIUS = 12000;
   const NEARBY_REFRESH_DISTANCE = 2500;
@@ -590,7 +592,7 @@
   async function loadViewportAttractions() {
     if (!map || mapScreen?.hidden || currentMapMode !== 'all' || !osmEnabled) return;
     if (routeActive) {
-      updateMainAttractionLayer(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
+      updateMainAttractionLayer(`Atrakcje w pasie ${formatDistance(ROUTE_DISPLAY_RADIUS)} od trasy: ${routeAttractions.length} · alert ${formatDistance(getProximityRadiusMeters())}`);
       return;
     }
 
@@ -651,9 +653,9 @@
     try {
       await ensureAttractionDatabase(true);
       if (routeActive && routeCoordinates.length) {
-        routeAttractions = await fetchRouteAttractions(routeCoordinates);
+        routeAttractions = await fetchRouteAttractions(routeCoordinates, ROUTE_DISPLAY_RADIUS);
         nearbyAttractions = routeAttractions;
-        updateMainAttractionLayer(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
+        updateMainAttractionLayer(`Atrakcje w pasie ${formatDistance(ROUTE_DISPLAY_RADIUS)} od trasy: ${routeAttractions.length} · alert ${formatDistance(getProximityRadiusMeters())}`);
         return;
       }
 
@@ -779,13 +781,33 @@
     return Array.from({ length: 500 }, (_, index) => result[Math.round(index * step)]);
   }
 
-  async function fetchRouteAttractions(routeCoordinates) {
+  async function fetchRouteAttractions(routeCoordinates, radiusMeters = ROUTE_DISPLAY_RADIUS) {
     const sampled = routeSampleCoordinates(routeCoordinates);
     if (sampled.length < 2) return [];
+    const radius = Math.max(1000, Number(radiusMeters) || ROUTE_DISPLAY_RADIUS);
     const attractions = await getDatabaseAttractions();
     return attractions.filter((attraction) =>
-      sampled.some(([lon, lat]) => distanceMeters(lat, lon, attraction.lat, attraction.lon) <= ROUTE_CORRIDOR_RADIUS)
+      sampled.some(([lon, lat]) => distanceMeters(lat, lon, attraction.lat, attraction.lon) <= radius)
     );
+  }
+
+  async function refreshRouteAttractionsForRadius({ showStatus = true } = {}) {
+    if (!routeActive || !routeCoordinates.length) return;
+    const radius = ROUTE_DISPLAY_RADIUS;
+    if (showStatus) updateOsmStatus(`Atrakcje w pasie ${formatDistance(radius)} od trasy: wczytywanie…`);
+
+    try {
+      routeAttractions = await fetchRouteAttractions(routeCoordinates, radius);
+      nearbyAttractions = routeAttractions;
+      osmAttractions = new Map(routeAttractions.map((item) => [item.osmId, item]));
+      renderExternalAttractions(routeAttractions);
+      updateOsmStatus(`Atrakcje w pasie ${formatDistance(radius)} od trasy: ${routeAttractions.length} · alert ${formatDistance(getProximityRadiusMeters())}`);
+      if (mapModeBadge) mapModeBadge.textContent = `TRASA · ALERT ${formatDistance(radius).toUpperCase()}`;
+      if (lastMonitorPosition) checkProximity(lastMonitorPosition);
+    } catch (error) {
+      console.warn('Nie udało się odczytać atrakcji przy trasie:', error);
+      updateOsmStatus('Atrakcje przy trasie: nie udało się odczytać bazy', true);
+    }
   }
 
   function setRouteInfo(text, isError = false) {
@@ -942,27 +964,32 @@
       routeDestination = destination;
       routeCoordinates = coordinates;
       if (routeClearButton) routeClearButton.hidden = false;
-      if (proximityRadius) proximityRadius.value = '5000';
-      localStorage.setItem(PROXIMITY_RADIUS_KEY, '5000');
 
       clearTimeout(viewportFetchTimer);
       externalLayer?.clearLayers();
       osmMarkerById = new Map();
-      if (mapModeBadge) mapModeBadge.textContent = 'TRASA · ALERT 5 KM';
+      if (mapModeBadge) mapModeBadge.textContent = `TRASA · ALERT ${formatDistance(getProximityRadiusMeters()).toUpperCase()}`;
 
       const distance = formatDistance(Number(route.distance));
       const duration = formatRouteDuration(Number(route.duration));
-      setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Wyszukuję w bazie atrakcje do 5 km od trasy…`);
+      const routeRadius = getProximityRadiusMeters();
+      setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Pokazuję atrakcje do ${formatDistance(ROUTE_DISPLAY_RADIUS)} od trasy · alert ${formatDistance(routeRadius)}.`);
 
       map.fitBounds(routeLayer.getBounds(), { padding: [45, 45], animate: true });
 
       try {
-        routeAttractions = await fetchRouteAttractions(coordinates);
+        routeAttractions = await fetchRouteAttractions(coordinates, ROUTE_DISPLAY_RADIUS);
         nearbyAttractions = routeAttractions;
         osmAttractions = new Map(routeAttractions.map((item) => [item.osmId, item]));
         renderExternalAttractions(routeAttractions);
-        updateOsmStatus(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
-        setRouteInfo(`${destination.name} · ${distance} · około ${duration} · atrakcji przy trasie: ${routeAttractions.length}`);
+        updateOsmStatus(`Atrakcje w pasie ${formatDistance(ROUTE_DISPLAY_RADIUS)} od trasy: ${routeAttractions.length} · alert ${formatDistance(getProximityRadiusMeters())}`);
+        setRouteInfo(`${destination.name} · ${distance} · około ${duration} · atrakcji w pasie 20 km: ${routeAttractions.length} · alert ${formatDistance(routeRadius)}`);
+        // Po pokazaniu całej trasy przejdź do widoku jazdy przy bieżącej pozycji.
+        setTimeout(() => {
+          if (!routeActive || !map || !lastMonitorPosition?.coords) return;
+          const { latitude, longitude } = lastMonitorPosition.coords;
+          map.setView([latitude, longitude], Math.max(map.getZoom(), ROUTE_DRIVE_ZOOM), { animate: true });
+        }, 1200);
         checkProximity(position);
       } catch (error) {
         console.warn('Nie udało się odczytać atrakcji przy trasie:', error);
@@ -1105,10 +1132,35 @@
     }
   }
 
+  function keepMonitoredPositionVisible(position) {
+    if (!map || mapScreen?.hidden || currentMapMode !== 'all' || !position?.coords) return;
+
+    const lat = Number(position.coords.latitude);
+    const lon = Number(position.coords.longitude);
+    if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
+
+    // Podczas jazdy nie zmieniamy samoczynnie skali mapy. Przesuwamy ją tylko
+    // wtedy, gdy niebieski punkt zbliża się do krawędzi, aby pozostawał widoczny.
+    const point = map.latLngToContainerPoint([lat, lon]);
+    const size = map.getSize();
+    const marginX = Math.min(FOLLOW_EDGE_MARGIN_PX, Math.max(48, size.x * 0.22));
+    const marginY = Math.min(FOLLOW_EDGE_MARGIN_PX, Math.max(48, size.y * 0.22));
+    const outsideSafeArea =
+      point.x < marginX ||
+      point.x > size.x - marginX ||
+      point.y < marginY ||
+      point.y > size.y - marginY;
+
+    if (outsideSafeArea) {
+      map.panTo([lat, lon], { animate: true, duration: 0.35, noMoveStart: true });
+    }
+  }
+
   function handleMonitoredPosition(position) {
     lastMonitorPosition = position;
     updateMonitoredLocationVisual(position);
     setLocationButtonState('active');
+    keepMonitoredPositionVisible(position);
 
     const { latitude, longitude } = position.coords;
     const movedSinceFetch = lastNearbyFetchPosition
@@ -1511,8 +1563,8 @@
       updateOsmButtonUi();
       if (routeActive && osmEnabled) {
         renderExternalAttractions(routeAttractions);
-        updateOsmStatus(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
-        if (mapModeBadge) mapModeBadge.textContent = 'TRASA · ALERT 5 KM';
+        updateOsmStatus(`Atrakcje w pasie ${formatDistance(ROUTE_DISPLAY_RADIUS)} od trasy: ${routeAttractions.length} · alert ${formatDistance(getProximityRadiusMeters())}`);
+        if (mapModeBadge) mapModeBadge.textContent = `TRASA · ALERT ${formatDistance(getProximityRadiusMeters()).toUpperCase()}`;
       } else if (osmEnabled) {
         // Baza jest lokalna, więc od razu pokaż atrakcje z aktualnie widocznego obszaru.
         // GPS niezależnie od tego będzie później aktualizował listę atrakcji w pobliżu.
@@ -1764,9 +1816,10 @@
     if (proximityActive) {
       showLocationMessage(`Odległość alertu: ${formatDistance(radius)}.`);
       lastNearbyFetchAt = 0;
-      if (lastMonitorPosition) {
-        if (routeActive) checkProximity(lastMonitorPosition);
-        else refreshNearbyAttractions(lastMonitorPosition);
+      if (routeActive && routeCoordinates.length) {
+        refreshRouteAttractionsForRadius();
+      } else if (lastMonitorPosition) {
+        refreshNearbyAttractions(lastMonitorPosition);
       }
     }
   });
@@ -1809,7 +1862,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1018', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1019', {
           scope: './',
           updateViaCache: 'none'
         });
