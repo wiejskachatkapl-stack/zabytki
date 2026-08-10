@@ -20,7 +20,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png?v=1002" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png?v=1002" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link rel="stylesheet" href="styles.css?v=1009" />
+  <link rel="stylesheet" href="styles.css?v=1010" />
 </head>
 <body>
   <main class="start-screen" aria-label="Turystyczna mapa Polski">
@@ -30,7 +30,7 @@
       <button class="main-button main-button-my-places" id="myPlacesButton" type="button">MOJE MIEJSCA</button>
     </div>
 
-    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1009</div>
+    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1010</div>
   </main>
 
   <section class="add-screen" id="addScreen" aria-label="Dodaj miejsce" hidden>
@@ -39,7 +39,7 @@
         <button class="add-back-button" id="addBackButton" type="button" aria-label="Wróć do ekranu startowego">← COFNIJ</button>
         <div class="add-title-wrap">
           <h1 class="add-title">Dodaj miejsce</h1>
-          <div class="add-version" aria-hidden="true">v1009</div>
+          <div class="add-version" aria-hidden="true">v1010</div>
         </div>
       </div>
 
@@ -114,7 +114,7 @@
         <button class="edit-back-button" id="editBackButton" type="button" aria-label="Wróć do mapy">← COFNIJ</button>
         <div class="edit-title-wrap">
           <h1 class="edit-title">Edytuj punkt</h1>
-          <div class="edit-version" aria-hidden="true">v1009</div>
+          <div class="edit-version" aria-hidden="true">v1010</div>
         </div>
       </div>
 
@@ -187,6 +187,14 @@
       </svg>
     </button>
 
+    <button class="route-button" id="routeButton" type="button" aria-label="Zaplanuj trasę" title="Zaplanuj trasę">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm10 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z"/>
+        <path d="M8 10h2.5a3.5 3.5 0 0 1 3.5 3.5V14h-2v-.5a1.5 1.5 0 0 0-1.5-1.5H8v-2Zm6 4h2v-3h-2v3Z"/>
+      </svg>
+      <span>TRASA</span>
+    </button>
+
     <button class="proximity-button" id="proximityButton" type="button" aria-pressed="false" aria-label="Automatyczne śledzenie i alerty" title="Automatyczne śledzenie i alerty">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 3a9 9 0 1 0 9 9h-2a7 7 0 1 1-7-7V3Z"/>
@@ -206,9 +214,28 @@
       </select>
     </div>
 
+    <section class="route-panel" id="routePanel" aria-label="Planowanie trasy" hidden>
+      <div class="route-panel-head">
+        <div>
+          <strong>PLANUJ TRASĘ</strong>
+          <span>Start: moja aktualna lokalizacja</span>
+        </div>
+        <button class="route-panel-close" id="routePanelClose" type="button" aria-label="Zamknij planowanie trasy">×</button>
+      </div>
+      <label class="route-label" for="routeDestinationInput">Cel podróży</label>
+      <div class="route-search-row">
+        <input id="routeDestinationInput" class="route-destination-input" type="search" maxlength="120" autocomplete="off" placeholder="np. Zamek w Malborku, Zakopane..." />
+        <button id="routeSearchButton" class="route-search-button" type="button">SZUKAJ</button>
+      </div>
+      <div class="route-results" id="routeResults" role="list" aria-live="polite"></div>
+      <div class="route-info" id="routeInfo" role="status" aria-live="polite" hidden></div>
+      <button id="routeClearButton" class="route-clear-button" type="button" hidden>USUŃ TRASĘ</button>
+      <div class="route-source">Trasa: OSRM / OpenStreetMap · wyszukiwanie celu: Nominatim</div>
+    </section>
+
     <div class="osm-status" id="osmStatus" role="status" aria-live="polite" hidden></div>
     <div class="location-message" id="locationMessage" role="status" aria-live="polite" hidden></div>
-    <div class="map-version" aria-hidden="true">v1009</div>
+    <div class="map-version" aria-hidden="true">v1010</div>
   </section>
 
   <aside class="nearby-alert" id="nearbyAlert" role="alertdialog" aria-live="assertive" aria-label="Atrakcja w pobliżu" hidden>
@@ -226,6 +253,6 @@
   </aside>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="app.js?v=1008"></script>
+  <script src="app.js?v=1010"></script>
 </body>
 </html>

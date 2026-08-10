@@ -1696,3 +1696,230 @@ button {
     padding: 5px 8px;
   }
 }
+
+
+/* v1010 — planowanie trasy: moja lokalizacja -> cel + atrakcje w korytarzu 5 km. */
+.route-button {
+  position: absolute;
+  z-index: 1000;
+  top: max(108px, calc(104px + var(--safe-top)));
+  right: max(12px, calc(8px + var(--safe-right)));
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  color: #fff;
+  background: rgba(25, 89, 165, 0.94);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.28);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.route-button svg {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+
+.route-button:active {
+  transform: translateY(1px) scale(0.985);
+}
+
+.route-panel {
+  position: absolute;
+  z-index: 1200;
+  top: max(160px, calc(156px + var(--safe-top)));
+  right: max(12px, calc(8px + var(--safe-right)));
+  width: min(430px, calc(100vw - 24px - var(--safe-left) - var(--safe-right)));
+  max-height: calc(100dvh - 150px - var(--safe-top) - var(--safe-bottom));
+  overflow-y: auto;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  border-radius: 16px;
+  color: #102015;
+  background: rgba(250, 248, 239, 0.97);
+  box-shadow: 0 9px 30px rgba(0, 0, 0, 0.33);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.route-panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.route-panel-head strong {
+  display: block;
+  font-size: 17px;
+  letter-spacing: 0.04em;
+}
+
+.route-panel-head span {
+  display: block;
+  margin-top: 3px;
+  color: #4c5d50;
+  font-size: 13px;
+}
+
+.route-panel-close {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 10px;
+  color: #fff;
+  background: #223b29;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 38px;
+  cursor: pointer;
+}
+
+.route-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.route-search-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+}
+
+.route-destination-input {
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #9ca89f;
+  border-radius: 11px;
+  background: #fff;
+  color: #162119;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.route-search-button,
+.route-clear-button {
+  min-height: 44px;
+  padding: 9px 13px;
+  border: 0;
+  border-radius: 11px;
+  color: #fff;
+  background: #1d6bbd;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.route-search-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.route-results {
+  display: grid;
+  gap: 6px;
+  margin-top: 9px;
+}
+
+.route-result-button {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #c5cec7;
+  border-radius: 10px;
+  color: #162119;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.25;
+  text-align: left;
+  cursor: pointer;
+}
+
+.route-result-button:hover {
+  background: #eef5f0;
+}
+
+.route-result-empty {
+  padding: 9px 10px;
+  border-radius: 10px;
+  background: #f2eee5;
+  color: #6b4c34;
+  font-size: 13px;
+}
+
+.route-info {
+  margin-top: 10px;
+  padding: 9px 10px;
+  border-radius: 10px;
+  color: #17311d;
+  background: #e4f3e8;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.route-info.is-error {
+  color: #7a261f;
+  background: #fde7e4;
+}
+
+.route-clear-button {
+  width: 100%;
+  margin-top: 9px;
+  background: #8b3428;
+}
+
+.route-source {
+  margin-top: 9px;
+  color: #6a756c;
+  font-size: 10px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+@media (orientation: portrait) {
+  .route-button {
+    top: max(96px, calc(92px + var(--safe-top)));
+    right: max(8px, calc(6px + var(--safe-right)));
+    min-height: 42px;
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .route-panel {
+    top: auto;
+    right: max(8px, calc(6px + var(--safe-right)));
+    bottom: max(10px, calc(8px + var(--safe-bottom)));
+    left: max(8px, calc(6px + var(--safe-left)));
+    width: auto;
+    max-height: min(68dvh, 560px);
+  }
+
+  .route-search-row {
+    grid-template-columns: minmax(0, 1fr) 82px;
+  }
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .route-panel {
+    top: max(64px, calc(58px + var(--safe-top)));
+    bottom: max(8px, calc(6px + var(--safe-bottom)));
+    max-height: none;
+  }
+}

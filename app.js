@@ -1,9 +1,12 @@
 (() => {
-  const APP_VERSION = 'v1009';
+  const APP_VERSION = 'v1010';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OVERPASS_URL = 'https://overpass-api.de/api/interpreter';
+  const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
+  const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
+  const ROUTE_CORRIDOR_RADIUS = 5000;
   const OSM_MIN_ZOOM = 10;
   const ALERT_COOLDOWN_MS = 12 * 60 * 60 * 1000;
   const NEARBY_FETCH_MIN_RADIUS = 12000;
@@ -61,6 +64,14 @@
   const proximityButton = document.getElementById('proximityButton');
   const proximityRadius = document.getElementById('proximityRadius');
   const proximityRadiusWrap = document.getElementById('proximityRadiusWrap');
+  const routeButton = document.getElementById('routeButton');
+  const routePanel = document.getElementById('routePanel');
+  const routePanelClose = document.getElementById('routePanelClose');
+  const routeDestinationInput = document.getElementById('routeDestinationInput');
+  const routeSearchButton = document.getElementById('routeSearchButton');
+  const routeResults = document.getElementById('routeResults');
+  const routeInfo = document.getElementById('routeInfo');
+  const routeClearButton = document.getElementById('routeClearButton');
   const osmStatus = document.getElementById('osmStatus');
   const mapModeBadge = document.getElementById('mapModeBadge');
 
@@ -106,6 +117,13 @@
   let autoFollowPausedUntil = 0;
   let autoFollowResumeTimer = null;
   let lastFollowPosition = null;
+
+  let routeLayer = null;
+  let routeDestinationMarker = null;
+  let routeActive = false;
+  let routeDestination = null;
+  let routeAttractions = [];
+  let routeSearchSequence = 0;
 
   if (versionElement) versionElement.textContent = APP_VERSION;
 
@@ -394,6 +412,11 @@ out center tags;`;
 
   async function loadViewportAttractions() {
     if (!map || mapScreen?.hidden || currentMapMode !== 'all') return;
+    if (routeActive) {
+      renderExternalAttractions(routeAttractions);
+      updateOsmStatus(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
+      return;
+    }
 
     if (map.getZoom() < OSM_MIN_ZOOM) {
       osmAttractions = new Map();
@@ -437,7 +460,7 @@ out center tags;`;
 
   function scheduleViewportAttractions(delay = 650) {
     clearTimeout(viewportFetchTimer);
-    if (currentMapMode !== 'all') return;
+    if (currentMapMode !== 'all' || routeActive) return;
     viewportFetchTimer = setTimeout(loadViewportAttractions, delay);
   }
 
@@ -514,6 +537,236 @@ out center tags;`;
       }
       marker?.openPopup();
     }, 280);
+  }
+
+  function formatRouteDuration(seconds) {
+    if (!Number.isFinite(Number(seconds))) return '';
+    const totalMinutes = Math.max(1, Math.round(Number(seconds) / 60));
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+    return hours ? `${hours} h ${minutes} min` : `${minutes} min`;
+  }
+
+  function routeSampleCoordinates(coordinates) {
+    if (!Array.isArray(coordinates) || !coordinates.length) return [];
+    const result = [coordinates[0]];
+    let last = coordinates[0];
+    let accumulated = 0;
+
+    for (let i = 1; i < coordinates.length; i += 1) {
+      const current = coordinates[i];
+      const segment = distanceMeters(last[1], last[0], current[1], current[0]);
+      accumulated += segment;
+      last = current;
+      if (accumulated >= 6000) {
+        result.push(current);
+        accumulated = 0;
+      }
+    }
+
+    const end = coordinates[coordinates.length - 1];
+    const previous = result[result.length - 1];
+    if (!previous || previous[0] !== end[0] || previous[1] !== end[1]) result.push(end);
+
+    if (result.length <= 120) return result;
+    const step = (result.length - 1) / 119;
+    return Array.from({ length: 120 }, (_, index) => result[Math.round(index * step)]);
+  }
+
+  async function fetchRouteAttractions(routeCoordinates) {
+    const sampled = routeSampleCoordinates(routeCoordinates);
+    if (sampled.length < 2) return [];
+    const line = sampled.map(([lon, lat]) => `${Number(lat).toFixed(6)},${Number(lon).toFixed(6)}`).join(',');
+    const scope = `(around:${ROUTE_CORRIDOR_RADIUS},${line})`;
+    return fetchOverpassAttractions(scope);
+  }
+
+  function setRouteInfo(text, isError = false) {
+    if (!routeInfo) return;
+    routeInfo.textContent = text || '';
+    routeInfo.classList.toggle('is-error', Boolean(isError));
+    routeInfo.hidden = !text;
+  }
+
+  function showRoutePanel() {
+    if (!routePanel || currentMapMode !== 'all') return;
+    routePanel.hidden = false;
+    if (routeDestinationInput && !routeActive) {
+      setTimeout(() => routeDestinationInput.focus({ preventScroll: true }), 30);
+    }
+    if (!lastMonitorPosition?.coords) {
+      startProximityMonitoring(false);
+      setRouteInfo('Ustalam Twoją lokalizację startową…');
+    } else if (!routeActive) {
+      setRouteInfo('Wpisz cel podróży i wybierz go z listy.');
+    }
+  }
+
+  function hideRoutePanel() {
+    if (routePanel) routePanel.hidden = true;
+    if (routeResults) routeResults.replaceChildren();
+  }
+
+  function renderRouteSearchResults(results) {
+    if (!routeResults) return;
+    routeResults.replaceChildren();
+
+    if (!results.length) {
+      const empty = document.createElement('div');
+      empty.className = 'route-result-empty';
+      empty.textContent = 'Nie znaleziono takiego celu w Polsce.';
+      routeResults.append(empty);
+      return;
+    }
+
+    results.forEach((result) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'route-result-button';
+      button.setAttribute('role', 'listitem');
+      button.textContent = result.display_name || result.name || 'Wybrany cel';
+      button.addEventListener('click', () => planRouteToDestination({
+        name: result.display_name || result.name || 'Cel podróży',
+        lat: Number(result.lat),
+        lon: Number(result.lon)
+      }));
+      routeResults.append(button);
+    });
+  }
+
+  async function searchRouteDestination() {
+    const query = routeDestinationInput?.value.trim() || '';
+    if (query.length < 2) {
+      setRouteInfo('Wpisz nazwę miejscowości, obiektu lub adres celu.', true);
+      return;
+    }
+
+    const sequence = ++routeSearchSequence;
+    if (routeSearchButton) routeSearchButton.disabled = true;
+    setRouteInfo('Szukam celu podróży…');
+    if (routeResults) routeResults.replaceChildren();
+
+    try {
+      const url = `${NOMINATIM_URL}?format=jsonv2&limit=5&countrycodes=pl&accept-language=pl&q=${encodeURIComponent(query)}`;
+      const response = await fetch(url, { headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error(`Nominatim HTTP ${response.status}`);
+      const results = await response.json();
+      if (sequence !== routeSearchSequence) return;
+      renderRouteSearchResults(Array.isArray(results) ? results : []);
+      setRouteInfo(results?.length ? 'Wybierz właściwy cel z listy.' : 'Nie znaleziono celu.', !results?.length);
+    } catch (error) {
+      console.warn('Nie udało się wyszukać celu:', error);
+      setRouteInfo('Wyszukiwanie celu jest chwilowo niedostępne.', true);
+    } finally {
+      if (routeSearchButton) routeSearchButton.disabled = false;
+    }
+  }
+
+  function clearRoute({ refreshMap = true } = {}) {
+    routeActive = false;
+    routeDestination = null;
+    routeAttractions = [];
+    nearbyAttractions = [];
+
+    if (map && routeLayer) map.removeLayer(routeLayer);
+    routeLayer = null;
+    if (map && routeDestinationMarker) map.removeLayer(routeDestinationMarker);
+    routeDestinationMarker = null;
+
+    if (routeClearButton) routeClearButton.hidden = true;
+    if (routeDestinationInput) routeDestinationInput.value = '';
+    if (routeResults) routeResults.replaceChildren();
+    setRouteInfo('Wpisz cel podróży i wybierz go z listy.');
+
+    if (refreshMap && currentMapMode === 'all') {
+      scheduleViewportAttractions(150);
+      if (lastMonitorPosition?.coords) {
+        lastNearbyFetchAt = 0;
+        refreshNearbyAttractions(lastMonitorPosition);
+      }
+    }
+  }
+
+  async function planRouteToDestination(destination) {
+    if (!map || !destination || !Number.isFinite(destination.lat) || !Number.isFinite(destination.lon)) return;
+
+    let position = lastMonitorPosition;
+    if (!position?.coords) {
+      setRouteInfo('Ustalam Twoją lokalizację startową…');
+      try {
+        position = await getCurrentPosition();
+        handleMonitoredPosition(position);
+      } catch (error) {
+        setRouteInfo(geolocationErrorText(error), true);
+        return;
+      }
+    }
+
+    const startLat = Number(position.coords.latitude);
+    const startLon = Number(position.coords.longitude);
+    setRouteInfo('Wyznaczam trasę…');
+    if (routeResults) routeResults.replaceChildren();
+
+    try {
+      const url = `${OSRM_ROUTE_URL}/${startLon.toFixed(6)},${startLat.toFixed(6)};${destination.lon.toFixed(6)},${destination.lat.toFixed(6)}?overview=full&geometries=geojson&steps=false`;
+      const response = await fetch(url, { headers: { Accept: 'application/json' } });
+      if (!response.ok) throw new Error(`OSRM HTTP ${response.status}`);
+      const data = await response.json();
+      const route = data?.routes?.[0];
+      const coordinates = route?.geometry?.coordinates;
+      if (!route || !Array.isArray(coordinates) || coordinates.length < 2) throw new Error('Brak trasy');
+
+      if (routeLayer) map.removeLayer(routeLayer);
+      routeLayer = L.geoJSON(route.geometry, {
+        style: {
+          color: '#1f6fd5',
+          weight: 6,
+          opacity: 0.86
+        }
+      }).addTo(map);
+
+      if (routeDestinationMarker) map.removeLayer(routeDestinationMarker);
+      routeDestinationMarker = L.marker([destination.lat, destination.lon], {
+        title: destination.name || 'Cel podróży'
+      }).addTo(map).bindPopup(`<strong>${escapeHtml(destination.name || 'Cel podróży')}</strong><br>Cel podróży`);
+
+      routeActive = true;
+      routeDestination = destination;
+      if (routeClearButton) routeClearButton.hidden = false;
+      if (proximityRadius) proximityRadius.value = '5000';
+      localStorage.setItem(PROXIMITY_RADIUS_KEY, '5000');
+
+      clearTimeout(viewportFetchTimer);
+      externalLayer?.clearLayers();
+      osmMarkerById = new Map();
+      if (mapModeBadge) mapModeBadge.textContent = 'TRASA · ALERT 5 KM';
+
+      const distance = formatDistance(Number(route.distance));
+      const duration = formatRouteDuration(Number(route.duration));
+      setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Pobieram atrakcje do 5 km od trasy…`);
+
+      scheduleAutoFollowResume(AUTO_FOLLOW_TARGET_PAUSE_MS);
+      map.fitBounds(routeLayer.getBounds(), { padding: [45, 45], animate: true });
+
+      try {
+        routeAttractions = await fetchRouteAttractions(coordinates);
+        nearbyAttractions = routeAttractions;
+        osmAttractions = new Map(routeAttractions.map((item) => [item.osmId, item]));
+        renderExternalAttractions(routeAttractions);
+        updateOsmStatus(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
+        setRouteInfo(`${destination.name} · ${distance} · około ${duration} · atrakcji przy trasie: ${routeAttractions.length}`);
+        checkProximity(position);
+      } catch (error) {
+        console.warn('Nie udało się pobrać atrakcji przy trasie:', error);
+        routeAttractions = [];
+        nearbyAttractions = [];
+        updateOsmStatus('Atrakcje przy trasie: chwilowo niedostępne', true);
+        setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Trasa działa, ale atrakcji nie udało się teraz pobrać.`, true);
+      }
+    } catch (error) {
+      console.warn('Nie udało się wyznaczyć trasy:', error);
+      setRouteInfo('Nie udało się wyznaczyć trasy do tego celu.', true);
+    }
   }
 
   function setProximityUi(active) {
@@ -715,7 +968,9 @@ out center tags;`;
       : Infinity;
     const fetchExpired = Date.now() - lastNearbyFetchAt > NEARBY_REFRESH_TIME;
 
-    if (movedSinceFetch >= NEARBY_REFRESH_DISTANCE || fetchExpired || !nearbyAttractions.length) {
+    if (routeActive) {
+      checkProximity(position);
+    } else if (movedSinceFetch >= NEARBY_REFRESH_DISTANCE || fetchExpired || !nearbyAttractions.length) {
       refreshNearbyAttractions(position);
     } else {
       checkProximity(position);
@@ -1053,11 +1308,13 @@ out center tags;`;
     }
 
     if (mapLocationButton) mapLocationButton.hidden = mineOnly;
+    if (routeButton) routeButton.hidden = mineOnly;
     if (proximityButton) proximityButton.hidden = mineOnly;
     if (proximityRadiusWrap) proximityRadiusWrap.hidden = mineOnly;
     if (osmStatus) osmStatus.hidden = true;
 
     if (mineOnly) {
+      hideRoutePanel();
       clearTimeout(viewportFetchTimer);
       viewportFetchSequence += 1;
       osmAttractions = new Map();
@@ -1124,7 +1381,13 @@ out center tags;`;
         return;
       }
 
-      scheduleViewportAttractions(300);
+      if (routeActive) {
+        renderExternalAttractions(routeAttractions);
+        updateOsmStatus(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
+        if (mapModeBadge) mapModeBadge.textContent = 'TRASA · ALERT 5 KM';
+      } else {
+        scheduleViewportAttractions(300);
+      }
       startProximityMonitoring(true);
       if (!showingRequestedPoint && lastMonitorPosition?.coords) {
         followMonitoredPosition(lastMonitorPosition, true);
@@ -1135,6 +1398,7 @@ out center tags;`;
   function hideMap() {
     if (!mapScreen || !startScreen) return;
     stopProximityMonitoring(false);
+    hideRoutePanel();
     mapScreen.hidden = true;
     startScreen.hidden = false;
   }
@@ -1330,6 +1594,17 @@ out center tags;`;
     }
   });
 
+  routeButton?.addEventListener('click', showRoutePanel);
+  routePanelClose?.addEventListener('click', hideRoutePanel);
+  routeSearchButton?.addEventListener('click', searchRouteDestination);
+  routeDestinationInput?.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      searchRouteDestination();
+    }
+  });
+  routeClearButton?.addEventListener('click', () => clearRoute({ refreshMap: true }));
+
   proximityButton?.addEventListener('click', () => resumeAutoFollow(true));
 
   proximityRadius?.addEventListener('change', () => {
@@ -1339,7 +1614,10 @@ out center tags;`;
     if (proximityActive) {
       showLocationMessage(`Odległość alertu: ${formatDistance(radius)}.`);
       lastNearbyFetchAt = 0;
-      if (lastMonitorPosition) refreshNearbyAttractions(lastMonitorPosition);
+      if (lastMonitorPosition) {
+        if (routeActive) checkProximity(lastMonitorPosition);
+        else refreshNearbyAttractions(lastMonitorPosition);
+      }
     }
   });
 
@@ -1381,7 +1659,7 @@ out center tags;`;
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1009', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1010', {
           scope: './',
           updateViaCache: 'none'
         });
