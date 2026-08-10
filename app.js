@@ -1,5 +1,5 @@
 (() => {
-  const APP_VERSION = 'v1007';
+  const APP_VERSION = 'v1008';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
@@ -9,6 +9,8 @@
   const NEARBY_FETCH_MIN_RADIUS = 12000;
   const NEARBY_REFRESH_DISTANCE = 2500;
   const NEARBY_REFRESH_TIME = 8 * 60 * 1000;
+  const AUTO_FOLLOW_RESUME_MS = 8000;
+  const AUTO_FOLLOW_TARGET_PAUSE_MS = 12000;
 
   const CATEGORY_INFO = {
     castle: { label: 'Zamek', icon: 'assets/markers/castle.png?v=1007' },
@@ -97,6 +99,9 @@
   let lastNearbyFetchPosition = null;
   let lastNearbyFetchAt = 0;
   let currentNearbyAlertId = null;
+  let autoFollowPausedUntil = 0;
+  let autoFollowResumeTimer = null;
+  let lastFollowPosition = null;
 
   if (versionElement) versionElement.textContent = APP_VERSION;
 
@@ -512,16 +517,84 @@ out center tags;`;
     proximityButton?.setAttribute('aria-pressed', proximityActive ? 'true' : 'false');
     if (proximityButton) {
       proximityButton.title = proximityActive
-        ? 'Wyłącz ostrzeganie o atrakcjach w pobliżu'
-        : 'Włącz ostrzeganie o atrakcjach w pobliżu';
+        ? 'Śledzenie i alerty działają automatycznie – kliknij, aby wrócić do swojej pozycji'
+        : 'Automatyczne śledzenie lokalizacji';
       proximityButton.setAttribute(
         'aria-label',
         proximityActive
-          ? 'Wyłącz ostrzeganie o atrakcjach w pobliżu'
-          : 'Włącz ostrzeganie o atrakcjach w pobliżu'
+          ? 'Automatyczne śledzenie aktywne. Kliknij, aby wrócić do swojej pozycji'
+          : 'Automatyczne śledzenie lokalizacji'
       );
     }
     if (proximityRadiusWrap) proximityRadiusWrap.classList.toggle('is-active', proximityActive);
+  }
+
+  function isAutoFollowPaused() {
+    return Date.now() < autoFollowPausedUntil;
+  }
+
+  function clearAutoFollowResumeTimer() {
+    if (autoFollowResumeTimer != null) {
+      clearTimeout(autoFollowResumeTimer);
+      autoFollowResumeTimer = null;
+    }
+  }
+
+  function scheduleAutoFollowResume(delay = AUTO_FOLLOW_RESUME_MS) {
+    clearAutoFollowResumeTimer();
+    autoFollowPausedUntil = Date.now() + delay;
+    autoFollowResumeTimer = setTimeout(() => {
+      autoFollowResumeTimer = null;
+      autoFollowPausedUntil = 0;
+      if (!mapScreen?.hidden && lastMonitorPosition?.coords) {
+        followMonitoredPosition(lastMonitorPosition, true);
+        showLocationMessage('Automatyczne śledzenie wznowione.');
+      }
+    }, delay);
+  }
+
+  function pauseAutoFollowForMapBrowsing(delay = AUTO_FOLLOW_RESUME_MS) {
+    if (!proximityActive || mapScreen?.hidden) return;
+    scheduleAutoFollowResume(delay);
+  }
+
+  function followMonitoredPosition(position, force = false) {
+    if (!map || mapScreen?.hidden || !position?.coords || isAutoFollowPaused()) return;
+
+    const { latitude, longitude, accuracy } = position.coords;
+    const latlng = [latitude, longitude];
+    const minMove = Math.max(7, Math.min(25, Number(accuracy || 0) * 0.18));
+    const moved = lastFollowPosition
+      ? distanceMeters(latitude, longitude, lastFollowPosition.lat, lastFollowPosition.lon)
+      : Infinity;
+
+    if (!force && moved < minMove) return;
+
+    lastFollowPosition = { lat: latitude, lon: longitude };
+    if (map.getZoom() < 14) {
+      map.setView(latlng, 15, { animate: true });
+    } else {
+      map.panTo(latlng, { animate: true, duration: 0.35 });
+    }
+  }
+
+  function resumeAutoFollow(showMessage = true) {
+    clearAutoFollowResumeTimer();
+    autoFollowPausedUntil = 0;
+
+    if (proximityWatchId == null) {
+      startProximityMonitoring(false);
+      if (showMessage) showLocationMessage('Uruchamiam automatyczne śledzenie…');
+      return;
+    }
+
+    if (lastMonitorPosition?.coords) {
+      followMonitoredPosition(lastMonitorPosition, true);
+      setLocationButtonState('active');
+      if (showMessage) showLocationMessage('Automatyczne śledzenie aktywne.');
+    } else if (showMessage) {
+      showLocationMessage('Ustalam Twoją lokalizację…');
+    }
   }
 
   function updateMonitoredLocationVisual(position) {
@@ -623,6 +696,8 @@ out center tags;`;
   function handleMonitoredPosition(position) {
     lastMonitorPosition = position;
     updateMonitoredLocationVisual(position);
+    setLocationButtonState('active');
+    followMonitoredPosition(position);
 
     const { latitude, longitude } = position.coords;
     const movedSinceFetch = lastNearbyFetchPosition
@@ -643,19 +718,26 @@ out center tags;`;
   }
 
   function handleMonitoredLocationError(error) {
+    setLocationButtonState('idle');
     showLocationMessage(geolocationErrorText(error), true);
     if (error?.code === 1) stopProximityMonitoring(false);
   }
 
-  function startProximityMonitoring() {
+  function startProximityMonitoring(showMessage = true) {
     if (!navigator.geolocation) {
       showLocationMessage('To urządzenie nie obsługuje geolokalizacji.', true);
       return;
     }
-    if (proximityWatchId != null) return;
+    if (proximityWatchId != null) {
+      setProximityUi(true);
+      return;
+    }
 
     setProximityUi(true);
-    showLocationMessage(`Alerty w pobliżu włączone: ${formatDistance(getProximityRadiusMeters())}.`);
+    setLocationButtonState('locating');
+    if (showMessage) {
+      showLocationMessage(`Automatyczne śledzenie włączone · alert ${formatDistance(getProximityRadiusMeters())}.`);
+    }
 
     proximityWatchId = navigator.geolocation.watchPosition(
       handleMonitoredPosition,
@@ -663,27 +745,23 @@ out center tags;`;
       {
         enableHighAccuracy: true,
         timeout: 20000,
-        maximumAge: 10000
+        maximumAge: 5000
       }
     );
   }
 
-  function stopProximityMonitoring(showMessage = true) {
+  function stopProximityMonitoring(showMessage = false) {
     if (proximityWatchId != null && navigator.geolocation) {
       navigator.geolocation.clearWatch(proximityWatchId);
     }
     proximityWatchId = null;
     setProximityUi(false);
+    setLocationButtonState('idle');
+    clearAutoFollowResumeTimer();
+    autoFollowPausedUntil = 0;
+    lastFollowPosition = null;
     hideNearbyAlert();
-    if (showMessage) showLocationMessage('Alerty o atrakcjach w pobliżu zostały wyłączone.');
-  }
-
-  function toggleProximityMonitoring() {
-    if (proximityActive) {
-      stopProximityMonitoring();
-    } else {
-      startProximityMonitoring();
-    }
+    if (showMessage) showLocationMessage('Automatyczne śledzenie zostało zatrzymane.');
   }
 
   function popupHtml(point) {
@@ -755,6 +833,7 @@ out center tags;`;
     renderStoredPoints();
 
     map.on('moveend zoomend', () => scheduleViewportAttractions());
+    map.on('dragstart', () => pauseAutoFollowForMapBrowsing());
     scheduleViewportAttractions(250);
   }
 
@@ -965,20 +1044,33 @@ out center tags;`;
     createMap();
     renderStoredPoints();
 
+    const showingRequestedPoint = Number.isFinite(options.lat) && Number.isFinite(options.lon);
+    if (showingRequestedPoint) {
+      scheduleAutoFollowResume(AUTO_FOLLOW_TARGET_PAUSE_MS);
+    } else {
+      clearAutoFollowResumeTimer();
+      autoFollowPausedUntil = 0;
+    }
+
     requestAnimationFrame(() => {
       map?.invalidateSize();
-      if (Number.isFinite(options.lat) && Number.isFinite(options.lon)) {
+      if (showingRequestedPoint) {
         map?.setView([options.lat, options.lon], options.zoom || 16, { animate: true });
       }
       if (options.openPointId != null) {
         setTimeout(() => pointMarkerById.get(String(options.openPointId))?.openPopup(), 250);
       }
       scheduleViewportAttractions(300);
+      startProximityMonitoring(true);
+      if (!showingRequestedPoint && lastMonitorPosition?.coords) {
+        followMonitoredPosition(lastMonitorPosition, true);
+      }
     });
   }
 
   function hideMap() {
     if (!mapScreen || !startScreen) return;
+    stopProximityMonitoring(false);
     mapScreen.hidden = true;
     startScreen.hidden = false;
   }
@@ -1047,6 +1139,7 @@ out center tags;`;
     setEditCategory(point.category || 'castle');
     if (editMessage) editMessage.hidden = true;
 
+    stopProximityMonitoring(false);
     if (startScreen) startScreen.hidden = true;
     if (addScreen) addScreen.hidden = true;
     if (mapScreen) mapScreen.hidden = true;
@@ -1172,7 +1265,7 @@ out center tags;`;
     }
   });
 
-  proximityButton?.addEventListener('click', toggleProximityMonitoring);
+  proximityButton?.addEventListener('click', () => resumeAutoFollow(true));
 
   proximityRadius?.addEventListener('change', () => {
     const radius = getProximityRadiusMeters();
@@ -1201,7 +1294,7 @@ out center tags;`;
 
   mapButton?.addEventListener('click', () => showMap());
   mapBackButton?.addEventListener('click', hideMap);
-  mapLocationButton?.addEventListener('click', locateUser);
+  mapLocationButton?.addEventListener('click', () => resumeAutoFollow(true));
 
   window.addEventListener('resize', () => {
     if (mapScreen && !mapScreen.hidden) map?.invalidateSize();
@@ -1222,7 +1315,7 @@ out center tags;`;
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1007', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1008', {
           scope: './',
           updateViaCache: 'none'
         });
