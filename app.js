@@ -1,14 +1,15 @@
 (() => {
-  const APP_VERSION = 'v1013';
+  const APP_VERSION = 'v1014';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
+  const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const OVERPASS_URLS = [
-    'https://overpass.private.coffee/api/interpreter',
-    'https://maps.mail.ru/osm/tools/overpass/api/interpreter',
-    'https://overpass-api.de/api/interpreter'
+    'https://overpass-api.de/api/interpreter',
+    'https://lz4.overpass-api.de/api/interpreter',
+    'https://z.overpass-api.de/api/interpreter'
   ];
-  const OVERPASS_BROWSER_TIMEOUT_MS = 30000;
+  const OVERPASS_BROWSER_TIMEOUT_MS = 45000;
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const ROUTE_CORRIDOR_RADIUS = 5000;
@@ -68,6 +69,7 @@
   const proximityRadius = document.getElementById('proximityRadius');
   const proximityRadiusWrap = document.getElementById('proximityRadiusWrap');
   const osmRefreshButton = document.getElementById('osmRefreshButton');
+  const osmButtonState = document.getElementById('osmButtonState');
   const routeButton = document.getElementById('routeButton');
   const routePanel = document.getElementById('routePanel');
   const routePanelClose = document.getElementById('routePanelClose');
@@ -111,6 +113,8 @@
   let viewportFetchSequence = 0;
   let viewportRetryUsed = false;
   const viewportCache = new Map();
+  let osmEnabled = loadOsmEnabled();
+  let overpassQueue = Promise.resolve();
 
   let proximityWatchId = null;
   let proximityActive = false;
@@ -129,6 +133,7 @@
   let routeSearchSequence = 0;
 
   if (versionElement) versionElement.textContent = APP_VERSION;
+  updateOsmButtonUi();
 
   function localDateString(date = new Date()) {
     const y = date.getFullYear();
@@ -264,6 +269,57 @@
     return 2 * earthRadius * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   }
 
+  function loadOsmEnabled() {
+    try {
+      return localStorage.getItem(OSM_ENABLED_KEY) !== '0';
+    } catch (_) {
+      return true;
+    }
+  }
+
+  function saveOsmEnabled() {
+    try {
+      localStorage.setItem(OSM_ENABLED_KEY, osmEnabled ? '1' : '0');
+    } catch (_) {}
+  }
+
+  function updateOsmButtonUi() {
+    if (!osmRefreshButton) return;
+    osmRefreshButton.classList.toggle('is-active', osmEnabled);
+    osmRefreshButton.setAttribute('aria-pressed', String(osmEnabled));
+    osmRefreshButton.setAttribute('aria-label', osmEnabled ? 'Atrakcje OpenStreetMap włączone' : 'Atrakcje OpenStreetMap wyłączone');
+    osmRefreshButton.title = osmEnabled ? 'Atrakcje OSM: włączone' : 'Atrakcje OSM: wyłączone';
+    if (osmButtonState) osmButtonState.textContent = osmEnabled ? 'ON' : 'OFF';
+  }
+
+  function clearOsmAttractions() {
+    clearTimeout(viewportFetchTimer);
+    viewportFetchSequence += 1;
+    viewportAttractions = [];
+    nearbyAttractions = [];
+    osmAttractions = new Map();
+    externalLayer?.clearLayers();
+    osmMarkerById = new Map();
+    hideNearbyAlert();
+  }
+
+  function setOsmEnabled(enabled, { fetchNow = true } = {}) {
+    osmEnabled = Boolean(enabled);
+    saveOsmEnabled();
+    updateOsmButtonUi();
+
+    if (!osmEnabled) {
+      clearOsmAttractions();
+      updateOsmStatus('Atrakcje OSM: wyłączone');
+      return;
+    }
+
+    updateOsmStatus('Atrakcje OSM: włączone');
+    if (fetchNow && currentMapMode === 'all' && !mapScreen?.hidden) {
+      refreshOsmManually();
+    }
+  }
+
   function updateOsmStatus(text, isError = false) {
     if (!osmStatus) return;
     osmStatus.textContent = text;
@@ -272,15 +328,14 @@
   }
 
   function buildOverpassQuery(scope) {
-    return `[out:json][timeout:30];
+    return `[out:json][timeout:25];
 (
   nwr["historic"="castle"]${scope};
   nwr["historic"="manor"]${scope};
   nwr["historic"="ruins"]${scope};
   nwr["ruins"="yes"]["historic"]${scope};
   nwr["tourism"="museum"]${scope};
-  nwr["natural"="tree"]["denotation"="natural_monument"]${scope};
-  nwr["natural"="rock"]["denotation"="natural_monument"]${scope};
+  nwr["denotation"="natural_monument"]${scope};
   nwr["tourism"~"^(alpine_hut|wilderness_hut)$"]["operator"~"PTTK",i]${scope};
   nwr["tourism"~"^(alpine_hut|wilderness_hut)$"]["name"~"PTTK",i]${scope};
 );
@@ -289,84 +344,94 @@ out center tags;`;
 
   async function fetchOverpassAttractions(scope) {
     const query = buildOverpassQuery(scope);
-    let lastError = null;
 
-    // Publiczne serwery Overpass potrafią być chwilowo przeciążone.
-    // Używamy kilku aktualnych instancji i prostego żądania GET, które
-    // jest bardziej odporne na problemy CORS/preflight w przeglądarkach mobilnych.
-    for (const endpoint of OVERPASS_URLS) {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), OVERPASS_BROWSER_TIMEOUT_MS);
-      const requestUrl = `${endpoint}?data=${encodeURIComponent(query)}`;
+    // v1014: wracamy do sposobu, który działał w v1007 — POST form-urlencoded.
+    // Zapytania są wykonywane kolejno, aby GPS i widok mapy nie wysyłały
+    // równocześnie kilku zapytań do publicznego serwera Overpass.
+    const runRequest = async () => {
+      let lastError = null;
 
-      try {
-        const response = await fetch(requestUrl, {
-          method: 'GET',
-          headers: { 'Accept': 'application/json' },
-          cache: 'no-store',
-          credentials: 'omit',
-          signal: controller.signal
-        });
+      for (const endpoint of OVERPASS_URLS) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), OVERPASS_BROWSER_TIMEOUT_MS);
 
-        if (!response.ok) throw new Error(`Overpass HTTP ${response.status}`);
-        const data = await response.json();
-        const result = new Map();
-
-        (data.elements || []).forEach((element) => {
-          const tags = element.tags || {};
-          const lat = Number.isFinite(Number(element.lat)) ? Number(element.lat) : Number(element.center?.lat);
-          const lon = Number.isFinite(Number(element.lon)) ? Number(element.lon) : Number(element.center?.lon);
-          if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
-
-          const pttkText = `${tags.operator || ''} ${tags.name || ''} ${tags['name:pl'] || ''}`.toUpperCase();
-          let category = null;
-
-          if (
-            (tags.tourism === 'alpine_hut' || tags.tourism === 'wilderness_hut') &&
-            pttkText.includes('PTTK')
-          ) {
-            category = 'pttk';
-          } else if (tags.historic === 'ruins' || tags.ruins === 'yes') {
-            category = 'ruins';
-          } else if (tags.tourism === 'museum') {
-            category = 'museum';
-          } else if (tags.denotation === 'natural_monument') {
-            category = 'nature';
-          } else if (tags.historic === 'castle' || tags.historic === 'manor') {
-            category = 'castle';
-          }
-
-          if (!category) return;
-
-          const osmId = `${element.type}/${element.id}`;
-          const info = CATEGORY_INFO[category] || CATEGORY_INFO.castle;
-          const fallbackName =
-            category === 'castle' && tags.historic === 'manor'
-              ? 'Pałac / dwór'
-              : info.label;
-
-          result.set(osmId, {
-            osmId,
-            type: element.type,
-            osmNumericId: element.id,
-            category,
-            name: tags['name:pl'] || tags.name || tags.official_name || fallbackName,
-            lat,
-            lon,
-            tags
+        try {
+          const response = await fetch(endpoint, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
+              'Accept': 'application/json'
+            },
+            body: `data=${encodeURIComponent(query)}`,
+            cache: 'no-store',
+            credentials: 'omit',
+            signal: controller.signal
           });
-        });
 
-        return [...result.values()];
-      } catch (error) {
-        lastError = error;
-        console.warn(`Overpass niedostępny: ${endpoint}`, error);
-      } finally {
-        clearTimeout(timeoutId);
+          if (!response.ok) throw new Error(`Overpass HTTP ${response.status}`);
+          const data = await response.json();
+          const result = new Map();
+
+          (data.elements || []).forEach((element) => {
+            const tags = element.tags || {};
+            const lat = Number.isFinite(Number(element.lat)) ? Number(element.lat) : Number(element.center?.lat);
+            const lon = Number.isFinite(Number(element.lon)) ? Number(element.lon) : Number(element.center?.lon);
+            if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
+
+            const pttkText = `${tags.operator || ''} ${tags.name || ''} ${tags['name:pl'] || ''}`.toUpperCase();
+            let category = null;
+
+            if (
+              (tags.tourism === 'alpine_hut' || tags.tourism === 'wilderness_hut') &&
+              pttkText.includes('PTTK')
+            ) {
+              category = 'pttk';
+            } else if (tags.historic === 'ruins' || tags.ruins === 'yes') {
+              category = 'ruins';
+            } else if (tags.tourism === 'museum') {
+              category = 'museum';
+            } else if (tags.denotation === 'natural_monument') {
+              category = 'nature';
+            } else if (tags.historic === 'castle' || tags.historic === 'manor') {
+              category = 'castle';
+            }
+
+            if (!category) return;
+
+            const osmId = `${element.type}/${element.id}`;
+            const info = CATEGORY_INFO[category] || CATEGORY_INFO.castle;
+            const fallbackName =
+              category === 'castle' && tags.historic === 'manor'
+                ? 'Pałac / dwór'
+                : info.label;
+
+            result.set(osmId, {
+              osmId,
+              type: element.type,
+              osmNumericId: element.id,
+              category,
+              name: tags['name:pl'] || tags.name || tags.official_name || fallbackName,
+              lat,
+              lon,
+              tags
+            });
+          });
+
+          return [...result.values()];
+        } catch (error) {
+          lastError = error;
+          console.warn(`Overpass niedostępny: ${endpoint}`, error);
+        } finally {
+          clearTimeout(timeoutId);
+        }
       }
-    }
 
-    throw lastError || new Error('Brak dostępnego serwera Overpass');
+      throw lastError || new Error('Brak dostępnego serwera Overpass');
+    };
+
+    const queuedRequest = overpassQueue.then(runRequest, runRequest);
+    overpassQueue = queuedRequest.catch(() => {});
+    return queuedRequest;
   }
 
   function externalPopupHtml(attraction) {
@@ -420,6 +485,11 @@ out center tags;`;
 
   function updateMainAttractionLayer(statusText = '') {
     if (!map || currentMapMode !== 'all') return;
+    if (!osmEnabled) {
+      clearOsmAttractions();
+      updateOsmStatus('Atrakcje OSM: wyłączone');
+      return;
+    }
 
     if (routeActive) {
       osmAttractions = new Map(routeAttractions.map((item) => [item.osmId, item]));
@@ -457,7 +527,7 @@ out center tags;`;
   }
 
   async function loadViewportAttractions() {
-    if (!map || mapScreen?.hidden || currentMapMode !== 'all') return;
+    if (!map || mapScreen?.hidden || currentMapMode !== 'all' || !osmEnabled) return;
     if (routeActive) {
       updateMainAttractionLayer(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
       return;
@@ -532,12 +602,12 @@ out center tags;`;
   function scheduleViewportAttractions(delay = 650, resetRetry = true) {
     clearTimeout(viewportFetchTimer);
     if (resetRetry) viewportRetryUsed = false;
-    if (currentMapMode !== 'all' || routeActive) return;
+    if (currentMapMode !== 'all' || routeActive || !osmEnabled) return;
     viewportFetchTimer = setTimeout(loadViewportAttractions, delay);
   }
 
   async function refreshOsmManually() {
-    if (!map || currentMapMode !== 'all') return;
+    if (!map || currentMapMode !== 'all' || !osmEnabled) return;
 
     osmRefreshButton?.classList.add('is-loading');
     if (osmRefreshButton) osmRefreshButton.disabled = true;
@@ -946,7 +1016,7 @@ out center tags;`;
   }
 
   function checkProximity(position) {
-    if (!proximityActive || !position?.coords || !nearbyAttractions.length) return;
+    if (!osmEnabled || !proximityActive || !position?.coords || !nearbyAttractions.length) return;
     if (currentNearbyAlertId && nearbyAlert && !nearbyAlert.hidden) return;
 
     const radius = getProximityRadiusMeters();
@@ -967,7 +1037,7 @@ out center tags;`;
   }
 
   async function refreshNearbyAttractions(position) {
-    if (!position?.coords || nearbyFetchInFlight) return;
+    if (!osmEnabled || !position?.coords || nearbyFetchInFlight) return;
     nearbyFetchInFlight = true;
 
     const { latitude, longitude } = position.coords;
@@ -1326,6 +1396,7 @@ out center tags;`;
     if (routeButton) routeButton.hidden = mineOnly;
     if (proximityButton) proximityButton.hidden = true;
     if (osmRefreshButton) osmRefreshButton.hidden = mineOnly;
+    updateOsmButtonUi();
     if (proximityRadiusWrap) proximityRadiusWrap.hidden = mineOnly;
     if (osmStatus) osmStatus.hidden = true;
 
@@ -1392,15 +1463,25 @@ out center tags;`;
         return;
       }
 
-      if (routeActive) {
+      updateOsmButtonUi();
+      if (routeActive && osmEnabled) {
         renderExternalAttractions(routeAttractions);
         updateOsmStatus(`Atrakcje do 5 km od trasy: ${routeAttractions.length}`);
         if (mapModeBadge) mapModeBadge.textContent = 'TRASA · ALERT 5 KM';
+      } else if (osmEnabled) {
+        // Najpierw czekamy na GPS. Jeśli pozycja nie nadejdzie, pobieramy
+        // atrakcje z aktualnie oglądanego obszaru mapy.
+        window.setTimeout(() => {
+          if (!lastMonitorPosition?.coords && currentMapMode === 'all' && osmEnabled && !routeActive) {
+            scheduleViewportAttractions(0);
+          }
+        }, 2500);
       } else {
-        scheduleViewportAttractions(300);
+        clearOsmAttractions();
+        updateOsmStatus('Atrakcje OSM: wyłączone');
       }
       startProximityMonitoring(true);
-      if (lastMonitorPosition?.coords && !routeActive) {
+      if (osmEnabled && lastMonitorPosition?.coords && !routeActive) {
         lastNearbyFetchAt = 0;
         refreshNearbyAttractions(lastMonitorPosition);
       }
@@ -1617,7 +1698,14 @@ out center tags;`;
   });
   routeClearButton?.addEventListener('click', () => clearRoute({ refreshMap: true }));
 
-  osmRefreshButton?.addEventListener('click', refreshOsmManually);
+  osmRefreshButton?.addEventListener('click', () => {
+    if (osmRefreshButton?.classList.contains('is-loading')) return;
+    if (osmEnabled) {
+      setOsmEnabled(false, { fetchNow: false });
+    } else {
+      setOsmEnabled(true, { fetchNow: true });
+    }
+  });
 
   proximityButton?.addEventListener('click', () => startProximityMonitoring(true));
 
