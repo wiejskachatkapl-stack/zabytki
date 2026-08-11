@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1027';
+  const APP_VERSION = 'v1028';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1027';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1028';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;
@@ -105,7 +105,7 @@
   let editingPointId = null;
   let currentMapMode = 'all';
   let editReturnMapMode = 'all';
-  // v1027: legenda pozwala zaznaczyć kilka kategorii jednocześnie.
+  // v1028: legenda pozwala zaznaczyć kilka kategorii jednocześnie.
   const CATEGORY_KEYS = Object.keys(CATEGORY_INFO);
   let activeAttractionFilters = new Set(CATEGORY_KEYS);
 
