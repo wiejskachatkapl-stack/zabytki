@@ -1,7 +1,7 @@
 {
-  "version": "v1028",
+  "version": "v1029",
   "updatedAt": "2026-08-11",
-  "description": "Lokalna baza atrakcji Polski. W v1028 rozszerzona o szeroki zestaw atrakcji województwa świętokrzyskiego w 9 kategoriach; baza działa bez Overpass podczas korzystania z aplikacji.",
+  "description": "Lokalna baza atrakcji Polski. W v1029 rozszerzona o szeroki zestaw atrakcji województwa mazowieckiego w 9 kategoriach; baza działa bez Overpass podczas korzystania z aplikacji.",
   "attractions": [
     {
       "id": "base/palac-radziejowice",
@@ -6360,7 +6360,2357 @@
       "source": "Świętokrzyskie Travel / dane mapowe",
       "sourceUrl": "https://swietokrzyskie.travel/",
       "region": "świętokrzyskie"
+    },
+    {
+      "id": "mazowieckie/zamek-ksiazat-mazowieckich-w-ciechanowie",
+      "name": "Zamek Książąt Mazowieckich w Ciechanowie",
+      "category": "castle",
+      "lat": 52.88144,
+      "lon": 20.61969,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/zamek-w-liwie",
+      "name": "Zamek w Liwie",
+      "category": "castle",
+      "lat": 52.37535,
+      "lon": 21.9671,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/zamek-w-putusku",
+      "name": "Zamek w Pułtusku",
+      "category": "castle",
+      "lat": 52.70425,
+      "lon": 21.08645,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-w-jabonnie",
+      "name": "Pałac w Jabłonnie",
+      "category": "castle",
+      "lat": 52.37936,
+      "lon": 20.91635,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-bielinskich-w-otwocku-wielkim",
+      "name": "Pałac Bielińskich w Otwocku Wielkim",
+      "category": "castle",
+      "lat": 52.0104,
+      "lon": 21.24515,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-w-sannikach",
+      "name": "Pałac w Sannikach",
+      "category": "castle",
+      "lat": 52.33072,
+      "lon": 19.86694,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-w-korczewie",
+      "name": "Pałac w Korczewie",
+      "category": "castle",
+      "lat": 52.3535,
+      "lon": 22.6137,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-w-patrykozach",
+      "name": "Pałac w Patrykozach",
+      "category": "castle",
+      "lat": 52.1927,
+      "lon": 22.3842,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-krasinskich-w-opinogorze",
+      "name": "Pałac Krasińskich w Opinogórze",
+      "category": "castle",
+      "lat": 52.90555,
+      "lon": 20.71658,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-w-kozienicach",
+      "name": "Pałac w Kozienicach",
+      "category": "castle",
+      "lat": 51.58236,
+      "lon": 21.56547,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-w-chrzesnem",
+      "name": "Pałac w Chrzęsnem",
+      "category": "castle",
+      "lat": 52.4341,
+      "lon": 21.4956,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-w-starejwsi",
+      "name": "Pałac w Starejwsi",
+      "category": "castle",
+      "lat": 52.39025,
+      "lon": 21.84615,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-w-sterdyni",
+      "name": "Pałac w Sterdyni",
+      "category": "castle",
+      "lat": 52.58,
+      "lon": 22.2941,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-w-korytnicy",
+      "name": "Pałac w Korytnicy",
+      "category": "castle",
+      "lat": 52.4152,
+      "lon": 21.8486,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-w-ceranowie",
+      "name": "Pałac w Ceranowie",
+      "category": "castle",
+      "lat": 52.6304,
+      "lon": 22.2255,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-w-ochowie",
+      "name": "Pałac w Łochowie",
+      "category": "castle",
+      "lat": 52.53125,
+      "lon": 21.68085,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-w-zegrzynku",
+      "name": "Pałac w Zegrzynku",
+      "category": "castle",
+      "lat": 52.5096,
+      "lon": 21.0933,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-w-zaborowku",
+      "name": "Pałac w Zaborówku",
+      "category": "castle",
+      "lat": 52.2571,
+      "lon": 20.6739,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-lasotow-w-zielonce",
+      "name": "Pałac Lasotów w Zielonce",
+      "category": "castle",
+      "lat": 52.3051,
+      "lon": 21.161,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-dernaowiczow-w-minsku-mazowieckim",
+      "name": "Pałac Dernałowiczów w Mińsku Mazowieckim",
+      "category": "castle",
+      "lat": 52.17986,
+      "lon": 21.56745,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-w-rudnie",
+      "name": "Pałac w Rudnie",
+      "category": "castle",
+      "lat": 52.1977,
+      "lon": 21.4602,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/dwor-w-suchej-skansen",
+      "name": "Dwór w Suchej – skansen",
+      "category": "castle",
+      "lat": 52.28145,
+      "lon": 21.9357,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/dwor-w-petrykozach",
+      "name": "Dwór w Petrykozach",
+      "category": "castle",
+      "lat": 51.9979,
+      "lon": 20.561,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/dwor-w-zelazowej-woli",
+      "name": "Dwór w Żelazowej Woli",
+      "category": "castle",
+      "lat": 52.25736,
+      "lon": 20.31313,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/krolikarnia-paac-krolikarnia",
+      "name": "Królikarnia – Pałac Królikarnia",
+      "category": "castle",
+      "lat": 52.18889,
+      "lon": 21.02833,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-natolinski",
+      "name": "Pałac Natoliński",
+      "category": "castle",
+      "lat": 52.13775,
+      "lon": 21.07944,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-szustra-w-warszawie",
+      "name": "Pałac Szustra w Warszawie",
+      "category": "castle",
+      "lat": 52.2013,
+      "lon": 21.0231,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-krasinskich-w-warszawie",
+      "name": "Pałac Krasińskich w Warszawie",
+      "category": "castle",
+      "lat": 52.24952,
+      "lon": 21.00503,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-prezydencki-w-warszawie",
+      "name": "Pałac Prezydencki w Warszawie",
+      "category": "castle",
+      "lat": 52.24217,
+      "lon": 21.01561,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/belweder-w-warszawie",
+      "name": "Belweder w Warszawie",
+      "category": "castle",
+      "lat": 52.21325,
+      "lon": 21.02783,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/twierdza-modlin",
+      "name": "Twierdza Modlin",
+      "category": "ruins",
+      "lat": 52.44455,
+      "lon": 20.68072,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/cytadela-warszawska",
+      "name": "Cytadela Warszawska",
+      "category": "ruins",
+      "lat": 52.26125,
+      "lon": 20.99455,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/fort-bema-w-warszawie",
+      "name": "Fort Bema w Warszawie",
+      "category": "ruins",
+      "lat": 52.25455,
+      "lon": 20.9442,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/fort-czerniakow",
+      "name": "Fort Czerniaków",
+      "category": "ruins",
+      "lat": 52.19412,
+      "lon": 21.04143,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/fort-sokolnickiego",
+      "name": "Fort Sokolnickiego",
+      "category": "ruins",
+      "lat": 52.26831,
+      "lon": 20.98952,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/fort-legionow",
+      "name": "Fort Legionów",
+      "category": "ruins",
+      "lat": 52.26028,
+      "lon": 21.00185,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/fort-traugutta",
+      "name": "Fort Traugutta",
+      "category": "ruins",
+      "lat": 52.2582,
+      "lon": 21.0037,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/fort-wochy",
+      "name": "Fort Włochy",
+      "category": "ruins",
+      "lat": 52.20635,
+      "lon": 20.91895,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/fort-szczesliwice",
+      "name": "Fort Szczęśliwice",
+      "category": "ruins",
+      "lat": 52.20585,
+      "lon": 20.94755,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/fort-mokotow",
+      "name": "Fort Mokotów",
+      "category": "ruins",
+      "lat": 52.20005,
+      "lon": 20.9968,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/fort-pisudskiego",
+      "name": "Fort Piłsudskiego",
+      "category": "ruins",
+      "lat": 52.19225,
+      "lon": 21.0176,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/fort-augustowka",
+      "name": "Fort Augustówka",
+      "category": "ruins",
+      "lat": 52.1857,
+      "lon": 21.0757,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/fort-wawrzyszew",
+      "name": "Fort Wawrzyszew",
+      "category": "ruins",
+      "lat": 52.29175,
+      "lon": 20.91705,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/fort-beniaminow",
+      "name": "Fort Beniaminów",
+      "category": "ruins",
+      "lat": 52.49055,
+      "lon": 21.10845,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/fort-janowek",
+      "name": "Fort Janówek",
+      "category": "ruins",
+      "lat": 52.4762,
+      "lon": 20.7948,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/twierdza-zegrze-fort-zegrze",
+      "name": "Twierdza Zegrze – Fort Zegrze",
+      "category": "ruins",
+      "lat": 52.50145,
+      "lon": 21.036,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/ruiny-zamku-biskupow-pockich-w-broku",
+      "name": "Ruiny Zamku Biskupów Płockich w Broku",
+      "category": "ruins",
+      "lat": 52.69825,
+      "lon": 21.8501,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/ruiny-paacu-w-mochowie",
+      "name": "Ruiny pałacu w Młochowie",
+      "category": "ruins",
+      "lat": 52.0393,
+      "lon": 20.7589,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/schrony-pozycji-mawskiej-uniszki-zawadzkie",
+      "name": "Schrony Pozycji Mławskiej – Uniszki Zawadzkie",
+      "category": "ruins",
+      "lat": 53.1471,
+      "lon": 20.3901,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/bunkry-przedmoscia-warszawa-dabrowiecka-gora",
+      "name": "Bunkry Przedmościa Warszawa – Dąbrowiecka Góra",
+      "category": "ruins",
+      "lat": 52.0628,
+      "lon": 21.3042,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/centrum-nauki-kopernik",
+      "name": "Centrum Nauki Kopernik",
+      "category": "museum",
+      "lat": 52.24191,
+      "lon": 21.02815,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-neonow-w-warszawie",
+      "name": "Muzeum Neonów w Warszawie",
+      "category": "museum",
+      "lat": 52.25305,
+      "lon": 21.06355,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-polskiej-wodki",
+      "name": "Muzeum Polskiej Wódki",
+      "category": "museum",
+      "lat": 52.25556,
+      "lon": 21.04697,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-zycia-w-prl",
+      "name": "Muzeum Życia w PRL",
+      "category": "museum",
+      "lat": 52.22652,
+      "lon": 21.01224,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/stacja-muzeum-w-warszawie",
+      "name": "Stacja Muzeum w Warszawie",
+      "category": "museum",
+      "lat": 52.22784,
+      "lon": 20.98755,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-wiezienia-pawiak",
+      "name": "Muzeum Więzienia Pawiak",
+      "category": "museum",
+      "lat": 52.24718,
+      "lon": 20.99047,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-katynskie",
+      "name": "Muzeum Katyńskie",
+      "category": "museum",
+      "lat": 52.26407,
+      "lon": 20.99908,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-wojska-polskiego-cytadela",
+      "name": "Muzeum Wojska Polskiego – Cytadela",
+      "category": "museum",
+      "lat": 52.26237,
+      "lon": 20.99843,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-sportu-i-turystyki-w-warszawie",
+      "name": "Muzeum Sportu i Turystyki w Warszawie",
+      "category": "museum",
+      "lat": 52.23444,
+      "lon": 20.99486,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-marii-skodowskiej-curie",
+      "name": "Muzeum Marii Skłodowskiej-Curie",
+      "category": "museum",
+      "lat": 52.25256,
+      "lon": 21.00808,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-literatury-im-adama-mickiewicza",
+      "name": "Muzeum Literatury im. Adama Mickiewicza",
+      "category": "museum",
+      "lat": 52.24945,
+      "lon": 21.01235,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-etnograficzne-w-warszawie",
+      "name": "Muzeum Etnograficzne w Warszawie",
+      "category": "museum",
+      "lat": 52.2382,
+      "lon": 21.01215,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-azji-i-pacyfiku",
+      "name": "Muzeum Azji i Pacyfiku",
+      "category": "museum",
+      "lat": 52.23135,
+      "lon": 21.03815,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-karykatury-w-warszawie",
+      "name": "Muzeum Karykatury w Warszawie",
+      "category": "museum",
+      "lat": 52.24275,
+      "lon": 21.02105,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-geologiczne-pig-pib",
+      "name": "Muzeum Geologiczne PIG-PIB",
+      "category": "museum",
+      "lat": 52.21083,
+      "lon": 21.00667,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-domkow-lalek-gier-i-zabawek",
+      "name": "Muzeum Domków Lalek, Gier i Zabawek",
+      "category": "museum",
+      "lat": 52.24515,
+      "lon": 21.01405,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-gazowni-warszawskiej",
+      "name": "Muzeum Gazowni Warszawskiej",
+      "category": "museum",
+      "lat": 52.2262,
+      "lon": 20.9547,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-warszawskiej-pragi",
+      "name": "Muzeum Warszawskiej Pragi",
+      "category": "museum",
+      "lat": 52.2541,
+      "lon": 21.0398,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-jana-pawa-ii-i-prymasa-wyszynskiego",
+      "name": "Muzeum Jana Pawła II i Prymasa Wyszyńskiego",
+      "category": "museum",
+      "lat": 52.15817,
+      "lon": 21.072,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/dom-urodzenia-fryderyka-chopina-w-zelazowej-woli",
+      "name": "Dom Urodzenia Fryderyka Chopina w Żelazowej Woli",
+      "category": "museum",
+      "lat": 52.25736,
+      "lon": 20.31313,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-romantyzmu-w-opinogorze",
+      "name": "Muzeum Romantyzmu w Opinogórze",
+      "category": "museum",
+      "lat": 52.90565,
+      "lon": 20.7166,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-szlachty-mazowieckiej-w-ciechanowie",
+      "name": "Muzeum Szlachty Mazowieckiej w Ciechanowie",
+      "category": "museum",
+      "lat": 52.8811,
+      "lon": 20.6209,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-mazowieckie-w-pocku",
+      "name": "Muzeum Mazowieckie w Płocku",
+      "category": "museum",
+      "lat": 52.5459,
+      "lon": 19.7053,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-zydow-mazowieckich-w-pocku",
+      "name": "Muzeum Żydów Mazowieckich w Płocku",
+      "category": "museum",
+      "lat": 52.5481,
+      "lon": 19.701,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/skansen-osadnictwa-nadwislanskiego-w-wiaczeminie-polskim",
+      "name": "Skansen Osadnictwa Nadwiślańskiego w Wiączeminie Polskim",
+      "category": "museum",
+      "lat": 52.3939,
+      "lon": 19.9652,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-wsi-mazowieckiej-w-sierpcu",
+      "name": "Muzeum Wsi Mazowieckiej w Sierpcu",
+      "category": "museum",
+      "lat": 52.8561,
+      "lon": 19.6642,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-kultury-kurpiowskiej-w-ostroece",
+      "name": "Muzeum Kultury Kurpiowskiej w Ostrołęce",
+      "category": "museum",
+      "lat": 53.08265,
+      "lon": 21.5746,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-zbrojownia-na-zamku-w-liwie",
+      "name": "Muzeum Zbrojownia na Zamku w Liwie",
+      "category": "museum",
+      "lat": 52.37535,
+      "lon": 21.9671,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-regionalne-w-siedlcach",
+      "name": "Muzeum Regionalne w Siedlcach",
+      "category": "museum",
+      "lat": 52.16795,
+      "lon": 22.2891,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-treblinka",
+      "name": "Muzeum Treblinka",
+      "category": "museum",
+      "lat": 52.63185,
+      "lon": 22.0536,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-im-zofii-i-wacawa-nakowskich-w-woominie",
+      "name": "Muzeum im. Zofii i Wacława Nałkowskich w Wołominie",
+      "category": "museum",
+      "lat": 52.3432,
+      "lon": 21.2425,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-jozefa-pisudskiego-w-sulejowku",
+      "name": "Muzeum Józefa Piłsudskiego w Sulejówku",
+      "category": "museum",
+      "lat": 52.2468,
+      "lon": 21.2772,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-2-korpusu-polskiego-w-jozefowie",
+      "name": "Muzeum 2 Korpusu Polskiego w Józefowie",
+      "category": "museum",
+      "lat": 52.1307,
+      "lon": 21.2252,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-ziemi-minskiej",
+      "name": "Muzeum Ziemi Mińskiej",
+      "category": "museum",
+      "lat": 52.1794,
+      "lon": 21.5699,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-starozytnego-hutnictwa-mazowieckiego-ekspozycja-archeologiczna",
+      "name": "Muzeum Starożytnego Hutnictwa Mazowieckiego – ekspozycja archeologiczna",
+      "category": "museum",
+      "lat": 52.1627,
+      "lon": 20.8199,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-dulag-121-teren-obozu-przejsciowego",
+      "name": "Muzeum Dulag 121 – teren obozu przejściowego",
+      "category": "museum",
+      "lat": 52.17307,
+      "lon": 20.80759,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-im-anny-i-jarosawa-iwaszkiewiczow-w-stawisku",
+      "name": "Muzeum im. Anny i Jarosława Iwaszkiewiczów w Stawisku",
+      "category": "museum",
+      "lat": 52.1024,
+      "lon": 20.7623,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-motoryzacji-w-otrebusach",
+      "name": "Muzeum Motoryzacji w Otrębusach",
+      "category": "museum",
+      "lat": 52.13052,
+      "lon": 20.75055,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-ziemi-sochaczewskiej-i-pola-bitwy-nad-bzura",
+      "name": "Muzeum Ziemi Sochaczewskiej i Pola Bitwy nad Bzurą",
+      "category": "museum",
+      "lat": 52.2297,
+      "lon": 20.2389,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-kolei-waskotorowej-sochaczew",
+      "name": "Muzeum Kolei Wąskotorowej – Sochaczew",
+      "category": "museum",
+      "lat": 52.21731,
+      "lon": 20.23732,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-im-kazimierza-puaskiego-warka",
+      "name": "Muzeum im. Kazimierza Pułaskiego – Warka",
+      "category": "museum",
+      "lat": 51.7841,
+      "lon": 21.1873,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-jana-kochanowskiego-w-czarnolesie",
+      "name": "Muzeum Jana Kochanowskiego w Czarnolesie",
+      "category": "museum",
+      "lat": 51.4313,
+      "lon": 21.4569,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-witolda-gombrowicza-we-wsoli",
+      "name": "Muzeum Witolda Gombrowicza we Wsoli",
+      "category": "museum",
+      "lat": 51.4887,
+      "lon": 21.0989,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-regionalne-w-kozienicach",
+      "name": "Muzeum Regionalne w Kozienicach",
+      "category": "museum",
+      "lat": 51.58235,
+      "lon": 21.56545,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-regionalne-w-putusku",
+      "name": "Muzeum Regionalne w Pułtusku",
+      "category": "museum",
+      "lat": 52.70375,
+      "lon": 21.08355,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-regionalne-w-izy",
+      "name": "Muzeum Regionalne w Iłży",
+      "category": "museum",
+      "lat": 51.16255,
+      "lon": 21.2394,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/muzeum-ludowych-instrumentow-muzycznych-w-szydowcu",
+      "name": "Muzeum Ludowych Instrumentów Muzycznych w Szydłowcu",
+      "category": "museum",
+      "lat": 51.22643,
+      "lon": 20.85319,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-las-kabacki-im-stefana-starzynskiego",
+      "name": "Rezerwat Las Kabacki im. Stefana Starzyńskiego",
+      "category": "reserve",
+      "lat": 52.1025,
+      "lon": 21.0372,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-las-bielanski",
+      "name": "Rezerwat Las Bielański",
+      "category": "reserve",
+      "lat": 52.2941,
+      "lon": 20.9582,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-skarpa-ursynowska",
+      "name": "Rezerwat Skarpa Ursynowska",
+      "category": "reserve",
+      "lat": 52.1616,
+      "lon": 21.0472,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-morysin",
+      "name": "Rezerwat Morysin",
+      "category": "reserve",
+      "lat": 52.1706,
+      "lon": 21.1071,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-olszynka-grochowska",
+      "name": "Rezerwat Olszynka Grochowska",
+      "category": "reserve",
+      "lat": 52.2382,
+      "lon": 21.0912,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-kaweczyn",
+      "name": "Rezerwat Kawęczyn",
+      "category": "reserve",
+      "lat": 52.2668,
+      "lon": 21.1468,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-osiowe-bota",
+      "name": "Rezerwat Łosiowe Błota",
+      "category": "reserve",
+      "lat": 52.2756,
+      "lon": 20.8518,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-bagno-jacka",
+      "name": "Rezerwat Bagno Jacka",
+      "category": "reserve",
+      "lat": 52.252,
+      "lon": 21.176,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-jeziorko-czerniakowskie",
+      "name": "Rezerwat Jeziorko Czerniakowskie",
+      "category": "reserve",
+      "lat": 52.1844,
+      "lon": 21.0737,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-wyspy-zawadowskie",
+      "name": "Rezerwat Wyspy Zawadowskie",
+      "category": "reserve",
+      "lat": 52.1074,
+      "lon": 21.173,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-achy-brzeskie",
+      "name": "Rezerwat Łachy Brzeskie",
+      "category": "reserve",
+      "lat": 52.025,
+      "lon": 21.22667,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-jezioro-kiepinskie",
+      "name": "Rezerwat Jezioro Kiełpińskie",
+      "category": "reserve",
+      "lat": 52.3446,
+      "lon": 20.8665,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-kepy-kazunskie",
+      "name": "Rezerwat Kępy Kazuńskie",
+      "category": "reserve",
+      "lat": 52.409,
+      "lon": 20.632,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-zakole-zakroczymskie",
+      "name": "Rezerwat Zakole Zakroczymskie",
+      "category": "reserve",
+      "lat": 52.4516,
+      "lon": 20.6058,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-stawy-raszynskie",
+      "name": "Rezerwat Stawy Raszyńskie",
+      "category": "reserve",
+      "lat": 52.1516,
+      "lon": 20.9141,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-biele-chojnowskie",
+      "name": "Rezerwat Biele Chojnowskie",
+      "category": "reserve",
+      "lat": 52.0688,
+      "lon": 21.0226,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-chojnow",
+      "name": "Rezerwat Chojnów",
+      "category": "reserve",
+      "lat": 52.0207,
+      "lon": 21.0457,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-pilawski-grad",
+      "name": "Rezerwat Pilawski Grąd",
+      "category": "reserve",
+      "lat": 51.947,
+      "lon": 21.183,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-uroczysko-stephana",
+      "name": "Rezerwat Uroczysko Stephana",
+      "category": "reserve",
+      "lat": 52.0765,
+      "lon": 21.0634,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-swider",
+      "name": "Rezerwat Świder",
+      "category": "reserve",
+      "lat": 52.108,
+      "lon": 21.305,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-na-torfach-im-janusza-kozowskiego",
+      "name": "Rezerwat Na Torfach im. Janusza Kozłowskiego",
+      "category": "reserve",
+      "lat": 52.0805,
+      "lon": 21.2685,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-pogorzelski-mszar",
+      "name": "Rezerwat Pogorzelski Mszar",
+      "category": "reserve",
+      "lat": 52.118,
+      "lon": 21.349,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-szerokie-bagno",
+      "name": "Rezerwat Szerokie Bagno",
+      "category": "reserve",
+      "lat": 52.1295,
+      "lon": 21.294,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-celestynowski-grad",
+      "name": "Rezerwat Celestynowski Grąd",
+      "category": "reserve",
+      "lat": 52.06,
+      "lon": 21.392,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-czarci-do",
+      "name": "Rezerwat Czarci Dół",
+      "category": "reserve",
+      "lat": 52.048,
+      "lon": 21.492,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-puszcza-marianska",
+      "name": "Rezerwat Puszcza Mariańska",
+      "category": "reserve",
+      "lat": 51.979,
+      "lon": 20.356,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-dabrowa-radziejowska",
+      "name": "Rezerwat Dąbrowa Radziejowska",
+      "category": "reserve",
+      "lat": 52.025,
+      "lon": 20.536,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-tomczyce",
+      "name": "Rezerwat Tomczyce",
+      "category": "reserve",
+      "lat": 51.826,
+      "lon": 20.842,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-soko",
+      "name": "Rezerwat Sokół",
+      "category": "reserve",
+      "lat": 51.842,
+      "lon": 20.949,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-majdan",
+      "name": "Rezerwat Majdan",
+      "category": "reserve",
+      "lat": 51.812,
+      "lon": 21.015,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-egi-oborskie",
+      "name": "Rezerwat Łęgi Oborskie",
+      "category": "reserve",
+      "lat": 52.067,
+      "lon": 21.129,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-obory",
+      "name": "Rezerwat Obory",
+      "category": "reserve",
+      "lat": 52.068,
+      "lon": 21.136,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-skarpa-oborska",
+      "name": "Rezerwat Skarpa Oborska",
+      "category": "reserve",
+      "lat": 52.072,
+      "lon": 21.142,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-wolczanska-gora",
+      "name": "Rezerwat Wólczańska Góra",
+      "category": "reserve",
+      "lat": 52.003,
+      "lon": 21.057,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-czapliniec",
+      "name": "Rezerwat Czapliniec",
+      "category": "reserve",
+      "lat": 51.96,
+      "lon": 21.112,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-horowe-bagno",
+      "name": "Rezerwat Horowe Bagno",
+      "category": "reserve",
+      "lat": 52.356,
+      "lon": 21.292,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-debina",
+      "name": "Rezerwat Dębina",
+      "category": "reserve",
+      "lat": 52.409,
+      "lon": 21.34,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-debniak-w-korczewie",
+      "name": "Rezerwat Dębniak w Korczewie",
+      "category": "reserve",
+      "lat": 52.354,
+      "lon": 22.61,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-krolewskie-zroda",
+      "name": "Rezerwat Królewskie Źródła",
+      "category": "reserve",
+      "lat": 51.555,
+      "lon": 21.5265,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-ponty",
+      "name": "Rezerwat Ponty",
+      "category": "reserve",
+      "lat": 51.466,
+      "lon": 21.35,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-ponty-deby",
+      "name": "Rezerwat Ponty-Dęby",
+      "category": "reserve",
+      "lat": 51.461,
+      "lon": 21.347,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-zagozdzon",
+      "name": "Rezerwat Zagożdżon",
+      "category": "reserve",
+      "lat": 51.447,
+      "lon": 21.354,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-ciszek",
+      "name": "Rezerwat Ciszek",
+      "category": "reserve",
+      "lat": 51.397,
+      "lon": 21.442,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-brzezniczka",
+      "name": "Rezerwat Brzeźniczka",
+      "category": "reserve",
+      "lat": 51.452,
+      "lon": 21.573,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-zaamanek",
+      "name": "Rezerwat Załamanek",
+      "category": "reserve",
+      "lat": 51.421,
+      "lon": 21.505,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-leniwa",
+      "name": "Rezerwat Leniwa",
+      "category": "reserve",
+      "lat": 51.333,
+      "lon": 21.425,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-miodne",
+      "name": "Rezerwat Miodne",
+      "category": "reserve",
+      "lat": 51.302,
+      "lon": 21.146,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-jedlnia",
+      "name": "Rezerwat Jedlnia",
+      "category": "reserve",
+      "lat": 51.429,
+      "lon": 21.347,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-pionki",
+      "name": "Rezerwat Pionki",
+      "category": "reserve",
+      "lat": 51.486,
+      "lon": 21.45,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-piotrowe-pole",
+      "name": "Rezerwat Piotrowe Pole",
+      "category": "reserve",
+      "lat": 51.08992,
+      "lon": 21.28289,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-borowiec",
+      "name": "Rezerwat Borowiec",
+      "category": "reserve",
+      "lat": 51.369,
+      "lon": 21.661,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-okolny-ug",
+      "name": "Rezerwat Okólny Ług",
+      "category": "reserve",
+      "lat": 51.33,
+      "lon": 21.57,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-ugi-helenowskie",
+      "name": "Rezerwat Ługi Helenowskie",
+      "category": "reserve",
+      "lat": 51.322,
+      "lon": 21.5,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-policzna",
+      "name": "Rezerwat Policzna",
+      "category": "reserve",
+      "lat": 51.449,
+      "lon": 21.626,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-zwierzyniec",
+      "name": "Rezerwat Zwierzyniec",
+      "category": "reserve",
+      "lat": 52.684,
+      "lon": 21.765,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-brudzenskie-jary",
+      "name": "Rezerwat Brudzeńskie Jary",
+      "category": "reserve",
+      "lat": 52.681,
+      "lon": 19.522,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-brwilno",
+      "name": "Rezerwat Brwilno",
+      "category": "reserve",
+      "lat": 52.606,
+      "lon": 19.591,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-sikorz",
+      "name": "Rezerwat Sikórz",
+      "category": "reserve",
+      "lat": 52.603,
+      "lon": 19.58,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-kepa-wykowska",
+      "name": "Rezerwat Kępa Wykowska",
+      "category": "reserve",
+      "lat": 52.482,
+      "lon": 19.868,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rezerwat-dzierzeninska-kepa",
+      "name": "Rezerwat Dzierżenińska Kępa",
+      "category": "reserve",
+      "lat": 52.628,
+      "lon": 21.108,
+      "source": "RDOŚ Warszawa / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-warszawa/rezerwaty-przyrody",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/stare-miasto-w-warszawie",
+      "name": "Stare Miasto w Warszawie",
+      "category": "historic",
+      "lat": 52.2498,
+      "lon": 21.0122,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/barbakan-warszawski",
+      "name": "Barbakan Warszawski",
+      "category": "historic",
+      "lat": 52.2507,
+      "lon": 21.0106,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/kolumna-zygmunta-iii-wazy",
+      "name": "Kolumna Zygmunta III Wazy",
+      "category": "historic",
+      "lat": 52.24765,
+      "lon": 21.01325,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/grob-nieznanego-zonierza",
+      "name": "Grób Nieznanego Żołnierza",
+      "category": "historic",
+      "lat": 52.2407,
+      "lon": 21.01175,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/pomnik-powstania-warszawskiego",
+      "name": "Pomnik Powstania Warszawskiego",
+      "category": "historic",
+      "lat": 52.2493,
+      "lon": 21.0061,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/cmentarz-powazkowski",
+      "name": "Cmentarz Powązkowski",
+      "category": "historic",
+      "lat": 52.2556,
+      "lon": 20.9713,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/cmentarz-wojskowy-na-powazkach",
+      "name": "Cmentarz Wojskowy na Powązkach",
+      "category": "historic",
+      "lat": 52.259,
+      "lon": 20.9525,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/cmentarz-mauzoleum-w-palmirach",
+      "name": "Cmentarz-mauzoleum w Palmirach",
+      "category": "historic",
+      "lat": 52.3392,
+      "lon": 20.7441,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/miejsce-pamieci-palmiry",
+      "name": "Miejsce Pamięci Palmiry",
+      "category": "historic",
+      "lat": 52.3392,
+      "lon": 20.7441,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/miejsce-bitwy-warszawskiej-1920-w-ossowie",
+      "name": "Miejsce Bitwy Warszawskiej 1920 w Ossowie",
+      "category": "historic",
+      "lat": 52.3079,
+      "lon": 21.2816,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/cmentarz-polegych-w-bitwie-warszawskiej-w-radzyminie",
+      "name": "Cmentarz Poległych w Bitwie Warszawskiej w Radzyminie",
+      "category": "historic",
+      "lat": 52.417,
+      "lon": 21.184,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/pomnik-polegym-i-pomordowanym-na-wschodzie",
+      "name": "Pomnik Poległym i Pomordowanym na Wschodzie",
+      "category": "historic",
+      "lat": 52.2549,
+      "lon": 20.9968,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/miejsce-pamieci-treblinka-ii",
+      "name": "Miejsce pamięci Treblinka II",
+      "category": "historic",
+      "lat": 52.6317,
+      "lon": 22.0537,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/treblinka-i-teren-byego-karnego-obozu-pracy",
+      "name": "Treblinka I – teren byłego karnego obozu pracy",
+      "category": "historic",
+      "lat": 52.622,
+      "lon": 22.046,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/twierdza-modlin-brama-ostroecka",
+      "name": "Twierdza Modlin – Brama Ostrołęcka",
+      "category": "historic",
+      "lat": 52.446,
+      "lon": 20.681,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/osada-fabryczna-w-zyrardowie",
+      "name": "Osada Fabryczna w Żyrardowie",
+      "category": "historic",
+      "lat": 52.0549,
+      "lon": 20.4452,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/stara-przedzalnia-w-zyrardowie",
+      "name": "Stara Przędzalnia w Żyrardowie",
+      "category": "historic",
+      "lat": 52.0559,
+      "lon": 20.4442,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/resursa-obywatelska-w-radomiu",
+      "name": "Resursa Obywatelska w Radomiu",
+      "category": "historic",
+      "lat": 51.4043,
+      "lon": 21.1511,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rynek-w-radomiu",
+      "name": "Rynek w Radomiu",
+      "category": "historic",
+      "lat": 51.4025,
+      "lon": 21.1419,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rynek-w-putusku",
+      "name": "Rynek w Pułtusku",
+      "category": "historic",
+      "lat": 52.704,
+      "lon": 21.0838,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/rynek-w-pocku",
+      "name": "Rynek w Płocku",
+      "category": "historic",
+      "lat": 52.546,
+      "lon": 19.6997,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/wzgorze-tumskie-w-pocku",
+      "name": "Wzgórze Tumskie w Płocku",
+      "category": "historic",
+      "lat": 52.5427,
+      "lon": 19.7008,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/bazylika-katedralna-w-pocku",
+      "name": "Bazylika Katedralna w Płocku",
+      "category": "historic",
+      "lat": 52.5428,
+      "lon": 19.7001,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/opactwo-w-czerwinsku-nad-wisa",
+      "name": "Opactwo w Czerwińsku nad Wisłą",
+      "category": "historic",
+      "lat": 52.3988,
+      "lon": 20.3091,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/bazylika-w-czerwinsku-nad-wisa",
+      "name": "Bazylika w Czerwińsku nad Wisłą",
+      "category": "historic",
+      "lat": 52.3988,
+      "lon": 20.3091,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/katedra-w-siedlcach",
+      "name": "Katedra w Siedlcach",
+      "category": "historic",
+      "lat": 52.1648,
+      "lon": 22.2792,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/koscio-sw-anny-w-wilanowie",
+      "name": "Kościół św. Anny w Wilanowie",
+      "category": "historic",
+      "lat": 52.166,
+      "lon": 21.0872,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/zespo-klasztorny-bernardynow-w-radomiu",
+      "name": "Zespół klasztorny Bernardynów w Radomiu",
+      "category": "historic",
+      "lat": 51.4029,
+      "lon": 21.1533,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/ratusz-w-szydowcu",
+      "name": "Ratusz w Szydłowcu",
+      "category": "historic",
+      "lat": 51.2282,
+      "lon": 20.8616,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/synagoga-w-przysusze",
+      "name": "Synagoga w Przysusze",
+      "category": "historic",
+      "lat": 51.3573,
+      "lon": 20.6272,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/koscio-sw-jana-chrzciciela-w-radomiu-fara",
+      "name": "Kościół św. Jana Chrzciciela w Radomiu (Fara)",
+      "category": "historic",
+      "lat": 51.4017,
+      "lon": 21.1439,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/katedra-polowa-wojska-polskiego",
+      "name": "Katedra polowa Wojska Polskiego",
+      "category": "historic",
+      "lat": 52.2471,
+      "lon": 21.007,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/koscio-sw-anny-w-warszawie",
+      "name": "Kościół św. Anny w Warszawie",
+      "category": "historic",
+      "lat": 52.2467,
+      "lon": 21.014,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/paac-kultury-i-nauki",
+      "name": "Pałac Kultury i Nauki",
+      "category": "historic",
+      "lat": 52.2318,
+      "lon": 21.006,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/hala-koszyki",
+      "name": "Hala Koszyki",
+      "category": "historic",
+      "lat": 52.2223,
+      "lon": 21.0091,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/filtry-warszawskie-zespo-stacji-filtrow",
+      "name": "Filtry Warszawskie – Zespół Stacji Filtrów",
+      "category": "historic",
+      "lat": 52.222,
+      "lon": 20.9912,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/elektrownia-powisle-zabytkowy-kompleks",
+      "name": "Elektrownia Powiśle – zabytkowy kompleks",
+      "category": "historic",
+      "lat": 52.241,
+      "lon": 21.0259,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/stacja-kolejowa-warszawa-gowna-historyczny-kompleks",
+      "name": "Stacja kolejowa Warszawa Główna – historyczny kompleks",
+      "category": "historic",
+      "lat": 52.229,
+      "lon": 20.985,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/skansen-fortyfikacji-przedmoscie-warszawa",
+      "name": "Skansen Fortyfikacji Przedmoście Warszawa",
+      "category": "historic",
+      "lat": 52.061,
+      "lon": 21.303,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/zalew-zegrzynski",
+      "name": "Zalew Zegrzyński",
+      "category": "water",
+      "lat": 52.496,
+      "lon": 21.062,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/molo-w-serocku",
+      "name": "Molo w Serocku",
+      "category": "water",
+      "lat": 52.51155,
+      "lon": 21.06975,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/plaza-miejska-w-serocku",
+      "name": "Plaża miejska w Serocku",
+      "category": "water",
+      "lat": 52.5106,
+      "lon": 21.0714,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/plaza-w-nieporecie-nad-zalewem-zegrzynskim",
+      "name": "Plaża w Nieporęcie nad Zalewem Zegrzyńskim",
+      "category": "water",
+      "lat": 52.427,
+      "lon": 21.041,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/port-pilawa-nad-zalewem-zegrzynskim",
+      "name": "Port Pilawa nad Zalewem Zegrzyńskim",
+      "category": "water",
+      "lat": 52.487,
+      "lon": 21.074,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/zalew-domaniowski",
+      "name": "Zalew Domaniowski",
+      "category": "water",
+      "lat": 51.336,
+      "lon": 20.877,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/zalew-siczki",
+      "name": "Zalew Siczki",
+      "category": "water",
+      "lat": 51.45,
+      "lon": 21.142,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/zalew-borki-w-radomiu",
+      "name": "Zalew Borki w Radomiu",
+      "category": "water",
+      "lat": 51.3902,
+      "lon": 21.1192,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/zalew-jagodno",
+      "name": "Zalew Jagodno",
+      "category": "water",
+      "lat": 51.352,
+      "lon": 21.277,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/zalew-ruda-koo-mawy",
+      "name": "Zalew Ruda koło Mławy",
+      "category": "water",
+      "lat": 53.148,
+      "lon": 20.421,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/kapielisko-krubin-w-ciechanowie",
+      "name": "Kąpielisko Krubin w Ciechanowie",
+      "category": "water",
+      "lat": 52.862,
+      "lon": 20.648,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/zalew-nowomiejski",
+      "name": "Zalew Nowomiejski",
+      "category": "water",
+      "lat": 52.661,
+      "lon": 20.625,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/jezioro-zdworskie",
+      "name": "Jezioro Zdworskie",
+      "category": "water",
+      "lat": 52.438,
+      "lon": 19.773,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/jezioro-ackie-duze",
+      "name": "Jezioro Łąckie Duże",
+      "category": "water",
+      "lat": 52.469,
+      "lon": 19.618,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/jezioro-biae-koo-gostynina",
+      "name": "Jezioro Białe koło Gostynina",
+      "category": "water",
+      "lat": 52.493,
+      "lon": 19.532,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/jezioro-lucienskie",
+      "name": "Jezioro Lucieńskie",
+      "category": "water",
+      "lat": 52.481,
+      "lon": 19.372,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/plaza-miejska-w-pocku",
+      "name": "Plaża miejska w Płocku",
+      "category": "water",
+      "lat": 52.5406,
+      "lon": 19.6977,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/bulwary-wislane-w-pocku",
+      "name": "Bulwary Wiślane w Płocku",
+      "category": "water",
+      "lat": 52.5418,
+      "lon": 19.6995,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/plaza-nad-pilica-w-warce",
+      "name": "Plaża nad Pilicą w Warce",
+      "category": "water",
+      "lat": 51.7808,
+      "lon": 21.19,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/przystan-nad-narwia-w-putusku",
+      "name": "Przystań nad Narwią w Pułtusku",
+      "category": "water",
+      "lat": 52.708,
+      "lon": 21.092,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/plaza-miejska-nad-narwia-w-ostroece",
+      "name": "Plaża miejska nad Narwią w Ostrołęce",
+      "category": "water",
+      "lat": 53.084,
+      "lon": 21.567,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/park-wodny-suntago-we-wreczy",
+      "name": "Park Wodny Suntago we Wręczy",
+      "category": "water",
+      "lat": 51.9908,
+      "lon": 20.4592,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/termy-mszczonow",
+      "name": "Termy Mszczonów",
+      "category": "water",
+      "lat": 51.9759,
+      "lon": 20.5196,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/park-wodny-warszawianka",
+      "name": "Park Wodny Warszawianka",
+      "category": "water",
+      "lat": 52.1951,
+      "lon": 21.0233,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/wodny-park-moczydo",
+      "name": "Wodny Park Moczydło",
+      "category": "water",
+      "lat": 52.2396,
+      "lon": 20.9566,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/dab-mieszko-i-w-warszawie",
+      "name": "Dąb Mieszko I w Warszawie",
+      "category": "nature",
+      "lat": 52.1003,
+      "lon": 21.039,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/gaz-narzutowy-kamien-pisudskiego-w-warszawie",
+      "name": "Głaz narzutowy „Kamień Piłsudskiego” w Warszawie",
+      "category": "nature",
+      "lat": 52.284,
+      "lon": 21.127,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/gaz-kamien-uanow-jazowieckich",
+      "name": "Głaz „Kamień Ułanów Jazłowieckich”",
+      "category": "nature",
+      "lat": 52.105,
+      "lon": 21.048,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/dab-napoleon-w-puszczy-kozienickiej-miejsce-pamieci-przyrodniczej",
+      "name": "Dąb „Napoleon” w Puszczy Kozienickiej – miejsce pamięci przyrodniczej",
+      "category": "nature",
+      "lat": 51.47,
+      "lon": 21.46,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/dab-krolewski-w-puszczy-kozienickiej",
+      "name": "Dąb „Królewski” w Puszczy Kozienickiej",
+      "category": "nature",
+      "lat": 51.52,
+      "lon": 21.49,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/aleja-zabytkowych-lip-w-opinogorze",
+      "name": "Aleja zabytkowych lip w Opinogórze",
+      "category": "nature",
+      "lat": 52.9052,
+      "lon": 20.718,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/park-paacowy-w-radziejowicach-pomnikowe-drzewa",
+      "name": "Park pałacowy w Radziejowicach – pomnikowe drzewa",
+      "category": "nature",
+      "lat": 52.0042,
+      "lon": 20.5518,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/pomnikowe-deby-w-kampinoskim-parku-narodowym-granica",
+      "name": "Pomnikowe dęby w Kampinoskim Parku Narodowym – Granica",
+      "category": "nature",
+      "lat": 52.286,
+      "lon": 20.451,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/kampinoski-park-narodowy-centrum-edukacji-w-izabelinie",
+      "name": "Kampinoski Park Narodowy – Centrum Edukacji w Izabelinie",
+      "category": "historic",
+      "lat": 52.2993,
+      "lon": 20.8187,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/skansen-budownictwa-puszczanskiego-w-granicy",
+      "name": "Skansen Budownictwa Puszczańskiego w Granicy",
+      "category": "museum",
+      "lat": 52.2867,
+      "lon": 20.4508,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/park-kulturowy-ossow-wrota-bitwy-warszawskiej-1920",
+      "name": "Park Kulturowy Ossów – Wrota Bitwy Warszawskiej 1920",
+      "category": "historic",
+      "lat": 52.309,
+      "lon": 21.2805,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/teznia-solankowa-w-konstancinie-jeziornie",
+      "name": "Tężnia solankowa w Konstancinie-Jeziornie",
+      "category": "historic",
+      "lat": 52.082,
+      "lon": 21.1168,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/amfiteatr-w-parku-zdrojowym-w-konstancinie",
+      "name": "Amfiteatr w Parku Zdrojowym w Konstancinie",
+      "category": "historic",
+      "lat": 52.0825,
+      "lon": 21.118,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
+    },
+    {
+      "id": "mazowieckie/obserwatorium-astronomiczne-w-ostrowiku",
+      "name": "Obserwatorium astronomiczne w Ostrowiku",
+      "category": "historic",
+      "lat": 52.091,
+      "lon": 21.42,
+      "source": "Mazowsze.travel / dane mapowe",
+      "sourceUrl": "https://mazowsze.travel/",
+      "region": "mazowieckie"
     }
   ],
-  "count": 640
+  "count": 875
 }
