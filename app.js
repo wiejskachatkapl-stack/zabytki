@@ -1,5 +1,5 @@
 (() => {
-  const APP_VERSION = 'v1038';
+  const APP_VERSION = 'v1039';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
@@ -7,7 +7,29 @@
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
   const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1037';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
-  const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
+  const ROUTE_MODE_KEY = 'tourmap_route_mode_v1';
+  const ROUTE_MODES = {
+    car: {
+      label: 'AUTO', icon: '🚗',
+      endpoint: 'https://routing.openstreetmap.de/routed-car/route/v1/driving',
+      activity: 'jazda samochodem'
+    },
+    foot: {
+      label: 'PIESZO', icon: '🚶',
+      endpoint: 'https://routing.openstreetmap.de/routed-foot/route/v1/driving',
+      activity: 'trasa piesza'
+    },
+    hiking: {
+      label: 'GÓRY', icon: '🥾',
+      endpoint: 'https://routing.openstreetmap.de/routed-foot/route/v1/driving',
+      activity: 'trasa piesza / górska'
+    },
+    bike: {
+      label: 'ROWER', icon: '🚲',
+      endpoint: 'https://routing.openstreetmap.de/routed-bike/route/v1/driving',
+      activity: 'trasa rowerowa'
+    }
+  };
   const FOLLOW_EDGE_MARGIN_PX = 92;
   const ROUTE_DISPLAY_RADIUS = 20000;
   const ALERT_COOLDOWN_MS = 12 * 60 * 60 * 1000;
@@ -79,6 +101,8 @@
   const routeResults = document.getElementById('routeResults');
   const routeInfo = document.getElementById('routeInfo');
   const routeClearButton = document.getElementById('routeClearButton');
+  const routeModeButtons = [...document.querySelectorAll('[data-route-mode]')];
+  const routeSource = document.getElementById('routeSource');
   const osmStatus = document.getElementById('osmStatus');
   const mapModeBadge = document.getElementById('mapModeBadge');
   const mapLegend = document.getElementById('mapLegend');
@@ -100,6 +124,7 @@
   const navigationVoiceButton = document.getElementById('navigationVoiceButton');
   const navigationStopButton = document.getElementById('navigationStopButton');
   const navigationDestination = document.getElementById('navigationDestination');
+  const navigationMode = document.getElementById('navigationMode');
   const mapManeuverOverlay = document.getElementById('mapManeuverOverlay');
   const mapManeuverArrow = document.getElementById('mapManeuverArrow');
   const mapManeuverDistance = document.getElementById('mapManeuverDistance');
@@ -174,8 +199,11 @@
   let routeCoordinates = [];
   let routeSearchSequence = 0;
   let routeAlertedIds = new Set();
+  // v1039: wybrany tryb trasy jest zapamiętywany, a aktywna nawigacja zachowuje swój profil przy przeliczaniu.
+  let routeTravelMode = 'car';
+  let activeRouteMode = 'car';
 
-  // v1038: nawigacja zintegrowana z panelem mapy + wizualizacja manewrów i pasów.
+  // v1039: nawigacja zintegrowana z panelem mapy + profile AUTO / PIESZO / GÓRY / ROWER.
   let navigationActive = false;
   let navigationVoiceEnabled = true;
   let navigationSteps = [];
@@ -1068,6 +1096,57 @@
     }
   }
 
+  function normalizeRouteMode(mode) {
+    return Object.prototype.hasOwnProperty.call(ROUTE_MODES, mode) ? mode : 'car';
+  }
+
+  function routeModeMeta(mode = routeTravelMode) {
+    return ROUTE_MODES[normalizeRouteMode(mode)] || ROUTE_MODES.car;
+  }
+
+  function isWalkingRouteMode(mode = activeRouteMode) {
+    const value = normalizeRouteMode(mode);
+    return value === 'foot' || value === 'hiking';
+  }
+
+  function routeOffRouteThreshold(mode = activeRouteMode) {
+    const value = normalizeRouteMode(mode);
+    if (value === 'hiking') return 45;
+    if (value === 'foot') return 60;
+    if (value === 'bike') return 100;
+    return 180;
+  }
+
+  function routeArrivalThreshold(mode = activeRouteMode) {
+    return isWalkingRouteMode(mode) ? 20 : 35;
+  }
+
+  function updateRouteModeUi() {
+    routeModeButtons.forEach((button) => {
+      const active = normalizeRouteMode(button.dataset.routeMode) === routeTravelMode;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    const meta = routeModeMeta(routeTravelMode);
+    if (routeSource) {
+      routeSource.textContent = routeTravelMode === 'hiking'
+        ? 'GÓRY: profil pieszy OpenStreetMap.de / OSRM · wyszukiwanie: Nominatim'
+        : `${meta.label}: OpenStreetMap.de / OSRM · wyszukiwanie: Nominatim`;
+    }
+  }
+
+  function setRouteTravelMode(mode, { persist = true } = {}) {
+    routeTravelMode = normalizeRouteMode(mode);
+    if (persist) localStorage.setItem(ROUTE_MODE_KEY, routeTravelMode);
+    updateRouteModeUi();
+  }
+
+  function updateNavigationModeUi() {
+    const meta = routeModeMeta(activeRouteMode);
+    if (navigationMode) navigationMode.textContent = `${meta.icon} ${meta.label}`;
+    navigationPanel?.setAttribute('data-route-mode', activeRouteMode);
+  }
+
   function setRouteInfo(text, isError = false) {
     if (!routeInfo) return;
     routeInfo.textContent = text || '';
@@ -1077,6 +1156,7 @@
 
   function showRoutePanel() {
     if (!routePanel || currentMapMode !== 'all') return;
+    updateRouteModeUi();
     routePanel.hidden = false;
     if (routeDestinationInput && !routeActive) {
       setTimeout(() => routeDestinationInput.focus({ preventScroll: true }), 30);
@@ -1116,7 +1196,7 @@
         name: result.display_name || result.name || 'Cel podróży',
         lat: Number(result.lat),
         lon: Number(result.lon)
-      }, { startNavigation: true }));
+      }, { startNavigation: true, mode: routeTravelMode }));
       routeResults.append(button);
     });
   }
@@ -1180,31 +1260,38 @@
     const type = String(maneuver.type || '');
     const modifier = String(maneuver.modifier || '');
     const exit = Number(maneuver.exit);
+    const walking = isWalkingRouteMode(activeRouteMode);
+    const continueText = walking ? 'idź dalej' : 'jedź dalej';
     const direction = {
       'sharp left': 'skręć ostro w lewo',
       'left': 'skręć w lewo',
       'slight left': 'skręć lekko w lewo',
-      'straight': 'jedź prosto',
+      'straight': walking ? 'idź prosto' : 'jedź prosto',
       'slight right': 'skręć lekko w prawo',
       'right': 'skręć w prawo',
       'sharp right': 'skręć ostro w prawo',
       'uturn': 'zawróć'
-    }[modifier] || 'jedź dalej';
+    }[modifier] || continueText;
 
     if (type === 'arrive') return 'Dotrzesz do celu';
-    if (type === 'depart') return direction === 'jedź dalej' ? 'Ruszaj trasą' : direction;
+    if (type === 'depart') {
+      if (direction === continueText) return walking ? 'Ruszaj pieszo zgodnie z trasą' : 'Ruszaj zgodnie z trasą';
+      return direction;
+    }
     if (type === 'roundabout' || type === 'rotary' || type === 'roundabout turn') {
       return Number.isFinite(exit) && exit > 0
         ? `Na rondzie wybierz ${exit}. zjazd`
-        : 'Wjedź na rondo i jedź zgodnie z trasą';
+        : 'Wjedź na rondo i poruszaj się zgodnie z trasą';
     }
     if (type === 'exit roundabout' || type === 'exit rotary') return 'Zjedź z ronda';
     if (type === 'merge') return modifier.includes('left') ? 'Włącz się do ruchu z lewej strony' : modifier.includes('right') ? 'Włącz się do ruchu z prawej strony' : 'Włącz się do ruchu';
-    if (type === 'fork') return modifier.includes('left') ? 'Na rozwidleniu trzymaj się lewej strony' : modifier.includes('right') ? 'Na rozwidleniu trzymaj się prawej strony' : 'Na rozwidleniu jedź zgodnie z trasą';
+    if (type === 'fork') return modifier.includes('left') ? 'Na rozwidleniu trzymaj się lewej strony' : modifier.includes('right') ? 'Na rozwidleniu trzymaj się prawej strony' : 'Na rozwidleniu poruszaj się zgodnie z trasą';
     if (type === 'on ramp' || type === 'ramp') return modifier.includes('left') ? 'Wjedź na łącznicę w lewo' : modifier.includes('right') ? 'Wjedź na łącznicę w prawo' : 'Wjedź na łącznicę';
     if (type === 'off ramp') return modifier.includes('left') ? 'Zjedź z drogi w lewo' : modifier.includes('right') ? 'Zjedź z drogi w prawo' : 'Zjedź z drogi';
     if (type === 'end of road') return modifier.includes('left') ? 'Na końcu drogi skręć w lewo' : modifier.includes('right') ? 'Na końcu drogi skręć w prawo' : direction;
-    if (type === 'new name' || type === 'continue' || type === 'notification') return direction === 'jedź dalej' ? 'Kontynuuj jazdę' : direction;
+    if (type === 'new name' || type === 'continue' || type === 'notification') {
+      return direction === continueText ? (walking ? 'Kontynuuj marsz' : 'Kontynuuj jazdę') : direction;
+    }
     return direction.charAt(0).toUpperCase() + direction.slice(1);
   }
 
@@ -1265,7 +1352,7 @@
     }
     if (mapLanes) {
       mapLanes.replaceChildren();
-      const lanes = laneGuidanceForStep(stepIndex);
+      const lanes = isWalkingRouteMode(activeRouteMode) ? [] : laneGuidanceForStep(stepIndex);
       lanes.forEach((lane) => {
         const laneEl = document.createElement('span');
         laneEl.className = `map-lane${lane?.valid ? ' is-valid' : ' is-invalid'}`;
@@ -1405,7 +1492,8 @@
     mapAutoFollowEnabled = true;
     if (navigationPanel) navigationPanel.hidden = false;
     if (navigationDestination) navigationDestination.textContent = routeDestination.name || 'Cel podróży';
-    if (navigationKicker) navigationKicker.textContent = 'NAWIGACJA';
+    updateNavigationModeUi();
+    if (navigationKicker) navigationKicker.textContent = `NAWIGACJA · ${routeModeMeta(activeRouteMode).label}`;
     if (lastMonitorPosition?.coords) {
       const { latitude, longitude } = lastMonitorPosition.coords;
       mapProgrammaticMove = true;
@@ -1417,7 +1505,7 @@
 
   async function maybeRerouteNavigation(position, offRouteDistance) {
     if (!navigationActive || navigationArrived || navigationRerouteInFlight || !routeDestination) return;
-    if (offRouteDistance < 180) return;
+    if (offRouteDistance < routeOffRouteThreshold(activeRouteMode)) return;
     if (Date.now() - navigationLastRerouteAt < 20000) return;
 
     navigationRerouteInFlight = true;
@@ -1426,12 +1514,13 @@
     try {
       await planRouteToDestination(routeDestination, {
         startNavigation: true,
-        recalculating: true
+        recalculating: true,
+        mode: activeRouteMode
       });
     } finally {
       navigationRerouteInFlight = false;
       if (navigationActive && !navigationArrived && navigationKicker?.textContent === 'PRZELICZAM TRASĘ…') {
-        navigationKicker.textContent = 'NAWIGACJA';
+        navigationKicker.textContent = `NAWIGACJA · ${routeModeMeta(activeRouteMode).label}`;
       }
     }
   }
@@ -1445,9 +1534,9 @@
     const remaining = Math.max(0, navigationRouteDistance - nearest.progress);
     const destinationDistance = distanceMeters(lat, lon, Number(routeDestination.lat), Number(routeDestination.lon));
 
-    if (destinationDistance <= 35 || remaining <= 25) {
+    if (destinationDistance <= routeArrivalThreshold(activeRouteMode) || remaining <= 20) {
       navigationArrived = true;
-      if (navigationKicker) navigationKicker.textContent = 'CEL OSIĄGNIĘTY';
+      if (navigationKicker) navigationKicker.textContent = `CEL OSIĄGNIĘTY · ${routeModeMeta(activeRouteMode).label}`;
       if (navigationArrow) navigationArrow.textContent = '●';
       if (navigationInstruction) navigationInstruction.textContent = 'Jesteś na miejscu';
       if (navigationRoad) navigationRoad.textContent = routeDestination.name || 'Cel podróży';
@@ -1476,7 +1565,7 @@
       ? navigationRouteDuration * (remaining / navigationRouteDistance)
       : 0;
 
-    if (navigationKicker) navigationKicker.textContent = nearest.distance >= 180 ? 'POZA TRASĄ' : 'NAWIGACJA';
+    if (navigationKicker) navigationKicker.textContent = nearest.distance >= routeOffRouteThreshold(activeRouteMode) ? `POZA TRASĄ · ${routeModeMeta(activeRouteMode).label}` : `NAWIGACJA · ${routeModeMeta(activeRouteMode).label}`;
     if (navigationArrow) navigationArrow.textContent = navigationArrowForStep(step);
     if (navigationInstruction) navigationInstruction.textContent = instruction;
     if (navigationRoad) navigationRoad.textContent = road || (routeDestination.name ? `Kierunek: ${routeDestination.name}` : '');
@@ -1540,8 +1629,12 @@
     }
   }
 
-  async function planRouteToDestination(destination, { startNavigation: shouldStartNavigation = false, recalculating = false } = {}) {
+  async function planRouteToDestination(destination, { startNavigation: shouldStartNavigation = false, recalculating = false, mode = null } = {}) {
     if (!map || !destination || !Number.isFinite(destination.lat) || !Number.isFinite(destination.lon)) return;
+
+    const requestedMode = normalizeRouteMode(recalculating ? activeRouteMode : (mode || routeTravelMode));
+    const requestedModeMeta = routeModeMeta(requestedMode);
+    if (!recalculating) setRouteTravelMode(requestedMode);
 
     let position = lastMonitorPosition;
     if (!position?.coords) {
@@ -1557,11 +1650,11 @@
 
     const startLat = Number(position.coords.latitude);
     const startLon = Number(position.coords.longitude);
-    setRouteInfo('Wyznaczam trasę…');
+    setRouteInfo(`Wyznaczam trasę · ${requestedModeMeta.icon} ${requestedModeMeta.label}…`);
     if (routeResults) routeResults.replaceChildren();
 
     try {
-      const url = `${OSRM_ROUTE_URL}/${startLon.toFixed(6)},${startLat.toFixed(6)};${destination.lon.toFixed(6)},${destination.lat.toFixed(6)}?overview=full&geometries=geojson&steps=true`;
+      const url = `${requestedModeMeta.endpoint}/${startLon.toFixed(6)},${startLat.toFixed(6)};${destination.lon.toFixed(6)},${destination.lat.toFixed(6)}?overview=full&geometries=geojson&steps=true&annotations=false`;
       const response = await fetch(url, { headers: { Accept: 'application/json' } });
       if (!response.ok) throw new Error(`OSRM HTTP ${response.status}`);
       const data = await response.json();
@@ -1585,6 +1678,8 @@
 
       routeActive = true;
       routeDestination = destination;
+      activeRouteMode = requestedMode;
+      updateNavigationModeUi();
       routeCoordinates = coordinates;
       if (!recalculating) routeAlertedIds = new Set();
       const routeSteps = (Array.isArray(route.legs) ? route.legs : [])
@@ -1599,7 +1694,7 @@
       const distance = formatDistance(Number(route.distance));
       const duration = formatRouteDuration(Number(route.duration));
       const routeRadius = getProximityRadiusMeters();
-      setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Szukam atrakcji do ${formatDistance(routeRadius)} od przebiegu trasy…`);
+      setRouteInfo(`${requestedModeMeta.icon} ${requestedModeMeta.label} · ${destination.name} · ${distance} · około ${duration}. Szukam atrakcji do ${formatDistance(routeRadius)} od przebiegu trasy…`);
 
       // v1021: wyznaczenie trasy nie może samoczynnie zmieniać skali ani środka mapy.
       // Tylko przycisk WYCENTRUJ ustawia jednorazowo zoom na bieżącej pozycji.
@@ -1610,8 +1705,8 @@
         osmAttractions = new Map(routeAttractions.map((item) => [item.osmId, item]));
         renderExternalAttractions(routeAttractions);
         updateOsmStatus(`Atrakcje do ${formatDistance(getProximityRadiusMeters())} od trasy: ${routeAttractions.length} · alert aktywny`);
-        setRouteInfo(`${destination.name} · ${distance} · około ${duration} · atrakcji do ${formatDistance(routeRadius)} od trasy: ${routeAttractions.length}. Alert podczas jazdy: ${formatDistance(routeRadius)}.`);
-        showLocationMessage(`Trasa gotowa · ${routeAttractions.length} atrakcji w zasięgu do ${formatDistance(routeRadius)} od trasy. Alerty podczas jazdy są aktywne.`);
+        setRouteInfo(`${requestedModeMeta.icon} ${requestedModeMeta.label} · ${destination.name} · ${distance} · około ${duration} · atrakcji do ${formatDistance(routeRadius)} od trasy: ${routeAttractions.length}. Alert: ${formatDistance(routeRadius)}.`);
+        showLocationMessage(`Trasa gotowa · ${routeAttractions.length} atrakcji w zasięgu do ${formatDistance(routeRadius)} od trasy. Alerty są aktywne.`);
         // Po wyznaczeniu trasy odsłaniamy mapę i znaczniki atrakcji.
         // Nie zmieniamy zoomu ani środka — użytkownik steruje skalą ręcznie.
         hideRoutePanel();
@@ -1623,14 +1718,14 @@
         routeAttractions = [];
         nearbyAttractions = [];
         updateOsmStatus('Atrakcje przy trasie: brak danych z bazy', true);
-        setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Trasa działa, ale atrakcji nie udało się odczytać z bazy.`, true);
+        setRouteInfo(`${requestedModeMeta.icon} ${requestedModeMeta.label} · ${destination.name} · ${distance} · około ${duration}. Trasa działa, ale atrakcji nie udało się odczytać z bazy.`, true);
         hideRoutePanel();
         startProximityMonitoring(false);
         if (shouldStartNavigation || recalculating) startNavigation();
       }
     } catch (error) {
       console.warn('Nie udało się wyznaczyć trasy:', error);
-      setRouteInfo('Nie udało się wyznaczyć trasy do tego celu.', true);
+      setRouteInfo(`Nie udało się wyznaczyć trasy w trybie ${requestedModeMeta.label}.`, true);
     }
   }
 
@@ -2501,7 +2596,7 @@
           name: attraction.name || 'Atrakcja',
           lat: Number(attraction.lat),
           lon: Number(attraction.lon)
-        }, { startNavigation: true });
+        }, { startNavigation: true, mode: routeTravelMode });
       }
       return;
     }
@@ -2518,7 +2613,7 @@
           name: point.name || (CATEGORY_INFO[point.category]?.label ?? 'Moje miejsce'),
           lat: Number(point.lat),
           lon: Number(point.lon)
-        }, { startNavigation: true });
+        }, { startNavigation: true, mode: routeTravelMode });
       }
       return;
     }
@@ -2548,6 +2643,10 @@
     button.addEventListener('click', () => toggleAttractionFilter(button.dataset.mapFilter));
   });
   updateMapLegendUi();
+
+  routeModeButtons.forEach((button) => {
+    button.addEventListener('click', () => setRouteTravelMode(button.dataset.routeMode));
+  });
 
   routeButton?.addEventListener('click', showRoutePanel);
   routePanelClose?.addEventListener('click', hideRoutePanel);
@@ -2608,7 +2707,7 @@
       name: item.attraction.name || (CATEGORY_INFO[item.attraction.category]?.label ?? 'Atrakcja'),
       lat: Number(item.attraction.lat),
       lon: Number(item.attraction.lon)
-    }, { startNavigation: true });
+    }, { startNavigation: true, mode: routeTravelMode });
   });
 
   nearbyAlertShow?.addEventListener('click', () => {
@@ -2654,6 +2753,10 @@
   osmEnabled = true;
   saveOsmEnabled();
 
+  setRouteTravelMode(localStorage.getItem(ROUTE_MODE_KEY) || 'car', { persist: false });
+  activeRouteMode = routeTravelMode;
+  updateNavigationModeUi();
+
   setCategory(currentCategory);
   setEditCategory(editCategory);
   setProximityUi(false);
@@ -2663,7 +2766,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1037', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1039', {
           scope: './',
           updateViaCache: 'none'
         });
