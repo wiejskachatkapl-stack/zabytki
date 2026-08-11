@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1023';
+  const APP_VERSION = 'v1024';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1023';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1024';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;
@@ -20,7 +20,11 @@
     ruins: { label: 'Ruiny', icon: 'assets/markers/ruins.png?v=1007' },
     museum: { label: 'Muzeum', icon: 'assets/markers/museum.png?v=1007' },
     nature: { label: 'Pomnik przyrody', icon: 'assets/markers/nature.png?v=1007' },
-    pttk: { label: 'Schronisko PTTK', icon: 'assets/markers/pttk.png?v=1007' }
+    pttk: { label: 'Schronisko PTTK', icon: 'assets/markers/pttk.png?v=1007' },
+    cave: { label: 'Jaskinia', icon: 'assets/markers/cave.png?v=1024' },
+    reserve: { label: 'Rezerwat przyrody', icon: 'assets/markers/reserve.png?v=1024' },
+    historic: { label: 'Zabytkowe miejsce', icon: 'assets/markers/historic.png?v=1024' },
+    water: { label: 'Atrakcja wodna', icon: 'assets/markers/water.png?v=1024' }
   };
 
   const startScreen = document.querySelector('.start-screen');

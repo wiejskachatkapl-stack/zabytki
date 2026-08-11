@@ -1,4 +1,4 @@
-const APP_VERSION = 'v1023';
+const APP_VERSION = 'v1024';
 const CACHE_NAME = `turystyczna-mapa-polski-${APP_VERSION}`;
 
 const APP_SHELL = [
@@ -18,6 +18,10 @@ const APP_SHELL = [
   './assets/markers/museum.png',
   './assets/markers/nature.png',
   './assets/markers/pttk.png',
+  './assets/markers/cave.png',
+  './assets/markers/reserve.png',
+  './assets/markers/historic.png',
+  './assets/markers/water.png',
   './data/atrakcje-polska.json'
 ];
 

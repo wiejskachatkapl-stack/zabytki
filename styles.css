@@ -2423,3 +2423,46 @@ button {
     top: max(108px, calc(102px + var(--safe-top)));
   }
 }
+
+
+/* v1024 — 4 nowe kategorie atrakcji. Na telefonie siatka 3×3 i przewijana legenda, aby wszystkie pozycje były dostępne. */
+@media (max-width: 760px) {
+  .category-grid,
+  .edit-category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .category-button {
+    min-height: 78px;
+    font-size: clamp(9px, 2.8vw, 11px);
+  }
+
+  .category-button img {
+    width: clamp(42px, 12vw, 54px);
+    height: clamp(42px, 12vw, 54px);
+  }
+
+  .map-legend {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .map-legend::-webkit-scrollbar {
+    display: none;
+  }
+
+  .map-legend-title,
+  .map-legend-item {
+    flex: 0 0 auto;
+  }
+}
+
+@media (max-width: 390px) {
+  .map-legend-item:nth-of-type(n+6) {
+    display: inline-flex;
+  }
+}
