@@ -1,7 +1,7 @@
 {
-  "version": "v1030",
+  "version": "v1041",
   "updatedAt": "2026-08-11",
-  "description": "Lokalna baza atrakcji Polski. W v1030 rozszerzona o szeroki zestaw atrakcji województwa lubelskiego w 9 kategoriach, w tym rezerwaty przyrody z danych przestrzennych GDOŚ oraz najważniejsze obiekty turystyczne regionu.",
+  "description": "Statyczna baza atrakcji Polski rozszerzona o szeroki zestaw atrakcji województwa warmińsko-mazurskiego.",
   "attractions": [
     {
       "id": "base/palac-radziejowice",
@@ -10440,7 +10440,2467 @@
       "source": "Lubelskie.travel / Wikipedia / dane mapowe",
       "sourceUrl": "https://lubelskie.travel/pl/",
       "region": "lubelskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-bagno-koziana",
+      "name": "Rezerwat przyrody Bagno Koziana",
+      "category": "reserve",
+      "lat": 53.304167,
+      "lon": 19.838889,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bagno_Koziana",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-bagno-mostki",
+      "name": "Rezerwat przyrody Bagno Mostki",
+      "category": "reserve",
+      "lat": 53.36,
+      "lon": 19.483333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bagno_Mostki",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-bagno-nadrowskie",
+      "name": "Rezerwat przyrody Bagno Nadrowskie",
+      "category": "reserve",
+      "lat": 53.53,
+      "lon": 20.36,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bagno_Nadrowskie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-bajory",
+      "name": "Rezerwat przyrody Bajory",
+      "category": "reserve",
+      "lat": 54.280556,
+      "lon": 21.505556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bajory_(rezerwat_przyrody)",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-bartosze",
+      "name": "Rezerwat przyrody Bartosze",
+      "category": "reserve",
+      "lat": 53.815,
+      "lon": 22.3025,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Bartosze",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-boczki",
+      "name": "Rezerwat przyrody Boczki",
+      "category": "reserve",
+      "lat": 54.336667,
+      "lon": 22.508889,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Boczki",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-borki",
+      "name": "Rezerwat przyrody Borki",
+      "category": "reserve",
+      "lat": 54.123333,
+      "lon": 22.089444,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Borki",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-buki-wysoczyzny-elblaskiej",
+      "name": "Rezerwat przyrody Buki Wysoczyzny Elbląskiej",
+      "category": "reserve",
+      "lat": 54.278333,
+      "lon": 19.507778,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Buki_Wysoczyzny_Elbl%C4%85skiej",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-bukowy",
+      "name": "Rezerwat przyrody Bukowy",
+      "category": "reserve",
+      "lat": 53.963889,
+      "lon": 21.082778,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Bukowy",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-cieletnik",
+      "name": "Rezerwat przyrody Cielętnik",
+      "category": "reserve",
+      "lat": 54.380833,
+      "lon": 19.748889,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Ciel%C4%99tnik",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-cisowy-jar",
+      "name": "Rezerwat przyrody Cisowy Jar",
+      "category": "reserve",
+      "lat": 54.158333,
+      "lon": 22.350278,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Cisowy_Jar",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-czapliniec-werski",
+      "name": "Rezerwat przyrody Czapliniec Werski",
+      "category": "reserve",
+      "lat": 53.35975,
+      "lon": 19.892083,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Czapliniec_Werski",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-czarcia-kepa",
+      "name": "Rezerwat przyrody Czarcia Kępa",
+      "category": "reserve",
+      "lat": 54.282222,
+      "lon": 22.668611,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Czarcia_K%C4%99pa",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-czarnowko",
+      "name": "Rezerwat przyrody Czarnówko",
+      "category": "reserve",
+      "lat": 54.331667,
+      "lon": 22.466111,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Czarn%C3%B3wko",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-czerwica",
+      "name": "Rezerwat przyrody Czerwica",
+      "category": "reserve",
+      "lat": 53.727778,
+      "lon": 19.514444,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Czerwica",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-czerwona-struga",
+      "name": "Rezerwat przyrody Czerwona Struga",
+      "category": "reserve",
+      "lat": 54.331389,
+      "lon": 22.552222,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Czerwona_Struga",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-debowo",
+      "name": "Rezerwat przyrody Dębowo",
+      "category": "reserve",
+      "lat": 53.929167,
+      "lon": 21.0,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_D%C4%99bowo",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-deby-napiwodzkie",
+      "name": "Rezerwat przyrody Dęby Napiwodzkie",
+      "category": "reserve",
+      "lat": 53.5025,
+      "lon": 20.650833,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_D%C4%99by_Napiwodzkie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-deby-w-krukach-paseckich",
+      "name": "Rezerwat przyrody Dęby w Krukach Pasłęckich",
+      "category": "reserve",
+      "lat": 54.032222,
+      "lon": 19.784722,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_D%C4%99by_w_Krukach_Pas%C5%82%C4%99ckich",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-dolina-rzeki-waszy",
+      "name": "Rezerwat przyrody Dolina Rzeki Wałszy",
+      "category": "reserve",
+      "lat": 54.217778,
+      "lon": 20.095833,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dolina_Rzeki_Wa%C5%82szy",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-dolina-stradanki",
+      "name": "Rezerwat przyrody Dolina Stradanki",
+      "category": "reserve",
+      "lat": 54.293056,
+      "lon": 19.564167,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Dolina_Stradanki",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-dylewo",
+      "name": "Rezerwat przyrody Dylewo",
+      "category": "reserve",
+      "lat": 53.540833,
+      "lon": 19.981667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Dylewo",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-dziki-kat",
+      "name": "Rezerwat przyrody Dziki Kąt",
+      "category": "reserve",
+      "lat": 54.343333,
+      "lon": 22.597778,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Dziki_K%C4%85t",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-galwica",
+      "name": "Rezerwat przyrody Galwica",
+      "category": "reserve",
+      "lat": 53.493333,
+      "lon": 20.845,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Galwica",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-gazwa",
+      "name": "Rezerwat przyrody Gązwa",
+      "category": "reserve",
+      "lat": 53.871667,
+      "lon": 21.221667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_G%C4%85zwa",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-gora-debowa",
+      "name": "Rezerwat przyrody Góra Dębowa",
+      "category": "reserve",
+      "lat": 53.1525,
+      "lon": 20.265556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_G%C3%B3ra_D%C4%99bowa",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jar-brynicy",
+      "name": "Rezerwat przyrody Jar Brynicy",
+      "category": "reserve",
+      "lat": 53.232222,
+      "lon": 19.72,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jar_Brynicy_(wojew%C3%B3dztwo_warmi%C5%84sko-mazurskie)",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jasne",
+      "name": "Rezerwat przyrody Jasne",
+      "category": "reserve",
+      "lat": 53.743333,
+      "lon": 19.5525,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jasne",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jeziorko-koo-drozdowa",
+      "name": "Rezerwat przyrody Jeziorko koło Drozdowa",
+      "category": "reserve",
+      "lat": 53.843333,
+      "lon": 21.814722,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jeziorko_ko%C5%82o_Drozdowa",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-czarne",
+      "name": "Rezerwat przyrody Jezioro Czarne",
+      "category": "reserve",
+      "lat": 53.705556,
+      "lon": 19.910833,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Czarne",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-dugie",
+      "name": "Rezerwat przyrody Jezioro Długie",
+      "category": "reserve",
+      "lat": 53.815,
+      "lon": 20.02,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_D%C5%82ugie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-dobskie",
+      "name": "Rezerwat przyrody Jezioro Dobskie",
+      "category": "reserve",
+      "lat": 54.095,
+      "lon": 21.621667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Dobskie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-druzno",
+      "name": "Rezerwat przyrody Jezioro Drużno",
+      "category": "reserve",
+      "lat": 54.081667,
+      "lon": 19.475,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Dru%C5%BCno",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-francuskie",
+      "name": "Rezerwat przyrody Jezioro Francuskie",
+      "category": "reserve",
+      "lat": 53.558333,
+      "lon": 19.956667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Francuskie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-gaudy",
+      "name": "Rezerwat przyrody Jezioro Gaudy",
+      "category": "reserve",
+      "lat": 53.763333,
+      "lon": 19.425,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Gaudy",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-igi",
+      "name": "Rezerwat przyrody Jezioro Iłgi",
+      "category": "reserve",
+      "lat": 53.695556,
+      "lon": 19.733333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_I%C5%82gi",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-karas",
+      "name": "Rezerwat przyrody Jezioro Karaś",
+      "category": "reserve",
+      "lat": 53.558333,
+      "lon": 19.476667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Kara%C5%9B",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-kosno",
+      "name": "Rezerwat przyrody Jezioro Kośno",
+      "category": "reserve",
+      "lat": 53.638889,
+      "lon": 20.69,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Ko%C5%9Bno",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-kozuchy",
+      "name": "Rezerwat przyrody Jezioro Kożuchy",
+      "category": "reserve",
+      "lat": 54.033333,
+      "lon": 21.894444,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Ko%C5%BCuchy",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-lisunie",
+      "name": "Rezerwat przyrody Jezioro Lisunie",
+      "category": "reserve",
+      "lat": 53.783333,
+      "lon": 21.506667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Lisunie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-uknajno",
+      "name": "Rezerwat przyrody Jezioro Łuknajno",
+      "category": "reserve",
+      "lat": 53.816667,
+      "lon": 21.633333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_%C5%81uknajno",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-martwe",
+      "name": "Rezerwat przyrody Jezioro Martwe",
+      "category": "reserve",
+      "lat": 54.376667,
+      "lon": 20.434167,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_Martwe_(rezerwat_przyrody_w_wojew%C3%B3dztwie_warmi%C5%84sko-mazurskim)",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-mscin",
+      "name": "Rezerwat przyrody Jezioro Mścin",
+      "category": "reserve",
+      "lat": 53.395556,
+      "lon": 19.441944,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_M%C5%9Bcin",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-nidzkie",
+      "name": "Rezerwat przyrody Jezioro Nidzkie",
+      "category": "reserve",
+      "lat": 53.573333,
+      "lon": 21.541667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Nidzkie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-orowo-mae",
+      "name": "Rezerwat przyrody Jezioro Orłowo Małe",
+      "category": "reserve",
+      "lat": 53.455833,
+      "lon": 20.466667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Or%C5%82owo_Ma%C5%82e",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-pogubie-wielkie",
+      "name": "Rezerwat przyrody Jezioro Pogubie Wielkie",
+      "category": "reserve",
+      "lat": 53.58,
+      "lon": 21.746667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Pogubie_Wielkie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-siedmiu-wysp",
+      "name": "Rezerwat przyrody Jezioro Siedmiu Wysp",
+      "category": "reserve",
+      "lat": 54.3,
+      "lon": 21.583333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Siedmiu_Wysp",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-warnoty",
+      "name": "Rezerwat przyrody Jezioro Warnołty",
+      "category": "reserve",
+      "lat": 53.713889,
+      "lon": 21.630556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Warno%C5%82ty",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-zdedy",
+      "name": "Rezerwat przyrody Jezioro Zdedy",
+      "category": "reserve",
+      "lat": 53.761667,
+      "lon": 22.163333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Zdedy",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-kadynski-las",
+      "name": "Rezerwat przyrody Kadyński Las",
+      "category": "reserve",
+      "lat": 54.294444,
+      "lon": 19.490278,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Kady%C5%84ski_Las",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-kaeckie-bota",
+      "name": "Rezerwat przyrody Kałeckie Błota",
+      "category": "reserve",
+      "lat": 54.296667,
+      "lon": 21.481111,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Ka%C5%82eckie_B%C5%82ota",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-kamienna-gora",
+      "name": "Rezerwat przyrody Kamienna Góra",
+      "category": "reserve",
+      "lat": 53.848333,
+      "lon": 20.283333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Kamienna_G%C3%B3ra",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-klonowo",
+      "name": "Rezerwat przyrody Klonowo",
+      "category": "reserve",
+      "lat": 53.248333,
+      "lon": 19.774444,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Klonowo",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-kocioek",
+      "name": "Rezerwat przyrody Kociołek",
+      "category": "reserve",
+      "lat": 53.491944,
+      "lon": 19.4075,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Kocio%C5%82ek",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-koniuszanka-i",
+      "name": "Rezerwat przyrody Koniuszanka I",
+      "category": "reserve",
+      "lat": 53.4275,
+      "lon": 20.531667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Koniuszanka_I",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-koniuszanka-ii",
+      "name": "Rezerwat przyrody Koniuszanka II",
+      "category": "reserve",
+      "lat": 53.4625,
+      "lon": 20.518889,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Koniuszanka_II",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-krolewska-sosna",
+      "name": "Rezerwat przyrody Królewska Sosna",
+      "category": "reserve",
+      "lat": 53.6625,
+      "lon": 21.4,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kr%C3%B3lewska_Sosna",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-krutynia-dolna",
+      "name": "Rezerwat przyrody Krutynia Dolna",
+      "category": "reserve",
+      "lat": 53.716667,
+      "lon": 21.523333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Krutynia_Dolna",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-krutynia-gorna",
+      "name": "Rezerwat przyrody Krutynia Górna",
+      "category": "reserve",
+      "lat": 53.705,
+      "lon": 21.423333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Krutynia_G%C3%B3rna",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-kulka",
+      "name": "Rezerwat przyrody Kulka",
+      "category": "reserve",
+      "lat": 53.658889,
+      "lon": 21.066667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Kulka",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-kwiecewo",
+      "name": "Rezerwat przyrody Kwiecewo",
+      "category": "reserve",
+      "lat": 53.934444,
+      "lon": 20.308889,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Kwiecewo",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-las-warminski-im-prof-benona-polakowskiego",
+      "name": "Rezerwat przyrody Las Warmiński im. prof. Benona Polakowskiego",
+      "category": "reserve",
+      "lat": 53.646111,
+      "lon": 20.511667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Las_Warmi%C5%84ski_im._prof._Benona_Polakowskiego",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-lenki",
+      "name": "Rezerwat przyrody Lenki",
+      "category": "reserve",
+      "lat": 54.134444,
+      "lon": 19.690833,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Lenki",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-lipowy-jar",
+      "name": "Rezerwat przyrody Lipowy Jar",
+      "category": "reserve",
+      "lat": 54.124167,
+      "lon": 22.143333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Lipowy_Jar",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-abedz",
+      "name": "Rezerwat przyrody Łabędź",
+      "category": "reserve",
+      "lat": 53.496667,
+      "lon": 19.433889,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_%C5%81ab%C4%99d%C5%BA",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-awny-lasek",
+      "name": "Rezerwat przyrody Ławny Lasek",
+      "category": "reserve",
+      "lat": 53.643889,
+      "lon": 21.376667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/%C5%81awny_Lasek",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-maga",
+      "name": "Rezerwat przyrody Małga",
+      "category": "reserve",
+      "lat": 53.46,
+      "lon": 20.7525,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Ma%C5%82ga",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-mazury",
+      "name": "Rezerwat przyrody Mazury",
+      "category": "reserve",
+      "lat": 54.109444,
+      "lon": 22.192222,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Mazury",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-mechacz-wielki",
+      "name": "Rezerwat przyrody Mechacz Wielki",
+      "category": "reserve",
+      "lat": 54.331667,
+      "lon": 22.443333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Mechacz_Wielki",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-mokrada-zegockie",
+      "name": "Rezerwat przyrody Mokradła Żegockie",
+      "category": "reserve",
+      "lat": 54.0425,
+      "lon": 20.686667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Mokrad%C5%82a_%C5%BBegockie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-mokre",
+      "name": "Rezerwat przyrody Mokre",
+      "category": "reserve",
+      "lat": 54.130556,
+      "lon": 21.708889,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Mokre",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-mszar-w-olsztynie",
+      "name": "Rezerwat przyrody Mszar w Olsztynie",
+      "category": "reserve",
+      "lat": 53.789722,
+      "lon": 20.463056,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Mszar_w_Olsztynie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-jezioro-neliwa",
+      "name": "Rezerwat przyrody Jezioro Neliwa",
+      "category": "reserve",
+      "lat": 53.374722,
+      "lon": 19.924167,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Neliwa",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-niedzwiedzie-wielkie",
+      "name": "Rezerwat przyrody Niedźwiedzie Wielkie",
+      "category": "reserve",
+      "lat": 53.928333,
+      "lon": 19.784444,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Nied%C5%BAwiedzie_Wielkie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-nietlickie-bagno",
+      "name": "Rezerwat przyrody Nietlickie Bagno",
+      "category": "reserve",
+      "lat": 53.881667,
+      "lon": 21.801111,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Nietlickie_Bagno",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-nowinka",
+      "name": "Rezerwat przyrody Nowinka",
+      "category": "reserve",
+      "lat": 54.314444,
+      "lon": 19.551667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Nowinka",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-osiek",
+      "name": "Rezerwat przyrody Osiek",
+      "category": "reserve",
+      "lat": 54.121667,
+      "lon": 19.833333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Osiek",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-ostoja-bobrow-na-rzece-pasece",
+      "name": "Rezerwat przyrody Ostoja bobrów na rzece Pasłęce",
+      "category": "reserve",
+      "lat": 54.245,
+      "lon": 19.866667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Ostoja_bobr%C3%B3w_na_rzece_Pas%C5%82%C4%99ce",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-ostrow-tarczynski",
+      "name": "Rezerwat przyrody Ostrów Tarczyński",
+      "category": "reserve",
+      "lat": 53.342222,
+      "lon": 19.878611,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Ostr%C3%B3w_Tarczy%C5%84ski",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-perkuny",
+      "name": "Rezerwat przyrody Perkuny",
+      "category": "reserve",
+      "lat": 54.079167,
+      "lon": 21.738333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Perkuny",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-piekieko",
+      "name": "Rezerwat przyrody Piekiełko",
+      "category": "reserve",
+      "lat": 53.330833,
+      "lon": 19.775556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Piekie%C5%82ko",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-pierwos",
+      "name": "Rezerwat przyrody Pierwos",
+      "category": "reserve",
+      "lat": 53.745833,
+      "lon": 21.480556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Pierwos",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-piackie-wzgorza",
+      "name": "Rezerwat przyrody Piłackie Wzgórza",
+      "category": "reserve",
+      "lat": 54.185,
+      "lon": 21.971667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Pi%C5%82ackie_Wzg%C3%B3rza",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-piaki",
+      "name": "Rezerwat przyrody Piłaki",
+      "category": "reserve",
+      "lat": 53.765278,
+      "lon": 21.19,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Pi%C5%82aki",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-pioropusznikowy-jar",
+      "name": "Rezerwat przyrody Pióropusznikowy Jar",
+      "category": "reserve",
+      "lat": 54.251667,
+      "lon": 19.6375,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Pi%C3%B3ropusznikowy_Jar",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-polder-satopy-samulewo",
+      "name": "Rezerwat przyrody Polder Sątopy-Samulewo",
+      "category": "reserve",
+      "lat": 54.088889,
+      "lon": 21.053333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Polder_S%C4%85topy-Samulewo",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-powysep-i-wyspy-na-jeziorze-rydzewskim",
+      "name": "Rezerwat przyrody Półwysep i Wyspy na Jeziorze Rydzewskim",
+      "category": "reserve",
+      "lat": 54.238889,
+      "lon": 21.574722,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_P%C3%B3%C5%82wysep_i_Wyspy_na_Jeziorze_Rydzewskim",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-ptasia-wyspa",
+      "name": "Rezerwat przyrody Ptasia Wyspa",
+      "category": "reserve",
+      "lat": 53.920833,
+      "lon": 21.508056,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Ptasia_Wyspa",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-pupy",
+      "name": "Rezerwat przyrody Pupy",
+      "category": "reserve",
+      "lat": 53.566111,
+      "lon": 21.354722,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Pupy",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-redykajny",
+      "name": "Rezerwat przyrody Redykajny",
+      "category": "reserve",
+      "lat": 53.796667,
+      "lon": 20.45,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Redykajny",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-rzeka-drweca",
+      "name": "Rezerwat przyrody Rzeka Drwęca",
+      "category": "reserve",
+      "lat": 53.363722,
+      "lon": 19.523583,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Rzeka_Drw%C4%99ca",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-sotysek",
+      "name": "Rezerwat przyrody Sołtysek",
+      "category": "reserve",
+      "lat": 53.601667,
+      "lon": 20.842222,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_So%C5%82tysek",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-sosny-taborskie",
+      "name": "Rezerwat przyrody Sosny Taborskie",
+      "category": "reserve",
+      "lat": 53.775,
+      "lon": 20.021667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Sosny_Taborskie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-spytkowo",
+      "name": "Rezerwat przyrody Spytkowo",
+      "category": "reserve",
+      "lat": 54.076667,
+      "lon": 21.839444,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Spytkowo",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-stary-czapliniec",
+      "name": "Rezerwat przyrody Stary Czapliniec",
+      "category": "reserve",
+      "lat": 53.799444,
+      "lon": 21.675,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Stary_Czapliniec",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-struga-zytkiejmska",
+      "name": "Rezerwat przyrody Struga Żytkiejmska",
+      "category": "reserve",
+      "lat": 54.348333,
+      "lon": 22.643333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Struga_%C5%BBytkiejmska",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-strzaowo",
+      "name": "Rezerwat przyrody Strzałowo",
+      "category": "reserve",
+      "lat": 53.766111,
+      "lon": 21.450833,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Strza%C5%82owo",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-sztynort",
+      "name": "Rezerwat przyrody Sztynort",
+      "category": "reserve",
+      "lat": 54.143333,
+      "lon": 21.686667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Sztynort",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-swinskie-bagno",
+      "name": "Rezerwat przyrody Świńskie Bagno",
+      "category": "reserve",
+      "lat": 53.223611,
+      "lon": 20.379444,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_%C5%9Awi%C5%84skie_Bagno",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-torfowisko-na-tatarskiej-gorze",
+      "name": "Rezerwat przyrody Torfowisko na Tatarskiej Górze",
+      "category": "reserve",
+      "lat": 54.2425,
+      "lon": 22.325,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Torfowisko_na_Tatarskiej_G%C3%B3rze",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-ujscie-nogatu",
+      "name": "Rezerwat przyrody Ujście Nogatu",
+      "category": "reserve",
+      "lat": 54.268333,
+      "lon": 19.276667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Uj%C5%9Bcie_Nogatu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-uroczysko-kramnik",
+      "name": "Rezerwat przyrody Uroczysko Kramnik",
+      "category": "reserve",
+      "lat": 54.307778,
+      "lon": 22.773889,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Uroczysko_Kramnik",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-uroczysko-piotrowice",
+      "name": "Rezerwat przyrody Uroczysko Piotrowice",
+      "category": "reserve",
+      "lat": 53.551944,
+      "lon": 19.345,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Uroczysko_Piotrowice",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-ustnik",
+      "name": "Rezerwat przyrody Ustnik",
+      "category": "reserve",
+      "lat": 53.997222,
+      "lon": 20.701111,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Ustnik",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-wyspa-lipowa-na-jeziorze-szwak-wielki",
+      "name": "Rezerwat przyrody Wyspa lipowa na jeziorze Szwałk Wielki",
+      "category": "reserve",
+      "lat": 54.113611,
+      "lon": 22.208611,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Wyspa_lipowa_na_jeziorze_Szwa%C5%82k_Wielki",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-wyspa-lipowa",
+      "name": "Rezerwat przyrody Wyspa Lipowa",
+      "category": "reserve",
+      "lat": 53.834167,
+      "lon": 20.079167,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Wyspa_Lipowa",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-wyspa-na-jeziorze-parteczyny-wielkie",
+      "name": "Rezerwat przyrody Wyspa na Jeziorze Partęczyny Wielkie",
+      "category": "reserve",
+      "lat": 53.397778,
+      "lon": 19.40775,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Wyspa_na_Jeziorze_Part%C4%99czyny_Wielkie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-wyspy-na-jeziorze-mamry-i-kisajno",
+      "name": "Rezerwat przyrody Wyspy na jeziorze Mamry i Kisajno",
+      "category": "reserve",
+      "lat": 54.174444,
+      "lon": 21.673333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Wyspy_na_jeziorze_Mamry_i_Kisajno",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-zabrodzie",
+      "name": "Rezerwat przyrody Zabrodzie",
+      "category": "reserve",
+      "lat": 53.831111,
+      "lon": 20.968333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Zabrodzie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-zakret",
+      "name": "Rezerwat przyrody Zakręt",
+      "category": "reserve",
+      "lat": 53.685,
+      "lon": 21.41,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zakr%C4%99t",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-zatoka-elblaska",
+      "name": "Rezerwat przyrody Zatoka Elbląska",
+      "category": "reserve",
+      "lat": 54.261667,
+      "lon": 19.381667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Zatoka_Elbl%C4%85ska",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-zielony-mechacz",
+      "name": "Rezerwat przyrody Zielony Mechacz",
+      "category": "reserve",
+      "lat": 53.905,
+      "lon": 19.695,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Zielony_Mechacz",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-zroda-rzeki-yny-im-prof-romana-kobendzy",
+      "name": "Rezerwat przyrody Źródła rzeki Łyny im. prof. Romana Kobendzy",
+      "category": "reserve",
+      "lat": 53.449444,
+      "lon": 20.425,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_%C5%B9r%C3%B3d%C5%82a_rzeki_%C5%81yny_im._prof._Romana_Kobendzy",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/rezerwat-przyrody-zurawie-bagno",
+      "name": "Rezerwat przyrody Żurawie Bagno",
+      "category": "reserve",
+      "lat": 53.409444,
+      "lon": 19.422778,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_%C5%BBurawie_Bagno_(wojew%C3%B3dztwo_warmi%C5%84sko-mazurskie)",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-barcianach",
+      "name": "Zamek w Barcianach",
+      "category": "castle",
+      "lat": 54.21395,
+      "lon": 21.347981,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Barcianach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-barczewie",
+      "name": "Zamek w Barczewie",
+      "category": "ruins",
+      "lat": 53.828889,
+      "lon": 20.691667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Barczewie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-bartoszycach",
+      "name": "Zamek w Bartoszycach",
+      "category": "ruins",
+      "lat": 54.255,
+      "lon": 20.810556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Bartoszycach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-bezawkach",
+      "name": "Zamek w Bezławkach",
+      "category": "historic",
+      "lat": 54.015278,
+      "lon": 21.266667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Bez%C5%82awkach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-braniewie",
+      "name": "Zamek w Braniewie",
+      "category": "ruins",
+      "lat": 54.381778,
+      "lon": 19.825683,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Braniewie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-bratianie",
+      "name": "Zamek w Bratianie",
+      "category": "ruins",
+      "lat": 53.464167,
+      "lon": 19.607778,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Bratianie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-dabrownie",
+      "name": "Zamek w Dąbrównie",
+      "category": "historic",
+      "lat": 53.433333,
+      "lon": 20.036944,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_D%C4%85br%C3%B3wnie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-dziadowie",
+      "name": "Zamek w Działdowie",
+      "category": "castle",
+      "lat": 53.234569,
+      "lon": 20.182003,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Dzia%C5%82dowie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-krzyzacki-w-elblagu",
+      "name": "Zamek krzyżacki w Elblągu",
+      "category": "ruins",
+      "lat": 54.155833,
+      "lon": 19.395278,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_krzy%C5%BCacki_w_Elbl%C4%85gu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-eku",
+      "name": "Zamek w Ełku",
+      "category": "ruins",
+      "lat": 53.818819,
+      "lon": 22.341639,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_E%C5%82ku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-gizycku",
+      "name": "Zamek w Giżycku",
+      "category": "castle",
+      "lat": 54.035278,
+      "lon": 21.759444,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Gi%C5%BCycku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-jezioranach",
+      "name": "Zamek w Jezioranach",
+      "category": "ruins",
+      "lat": 53.976389,
+      "lon": 20.743056,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Jezioranach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-ketrzynie",
+      "name": "Zamek w Kętrzynie",
+      "category": "castle",
+      "lat": 54.074172,
+      "lon": 21.376839,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_K%C4%99trzynie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-kurzetniku",
+      "name": "Zamek w Kurzętniku",
+      "category": "ruins",
+      "lat": 53.395789,
+      "lon": 19.5765,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Kurz%C4%99tniku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-biskupow-warminskich-w-lidzbarku-warminskim",
+      "name": "Zamek Biskupów Warmińskich w Lidzbarku Warmińskim",
+      "category": "castle",
+      "lat": 54.125761,
+      "lon": 20.582856,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_Biskup%C3%B3w_Warmi%C5%84skich_w_Lidzbarku_Warmi%C5%84skim",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-biskupow-cheminskich-w-lubawie",
+      "name": "Zamek biskupów chełmińskich w Lubawie",
+      "category": "ruins",
+      "lat": 53.504722,
+      "lon": 19.754167,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_biskup%C3%B3w_che%C5%82mi%C5%84skich_w_Lubawie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-miakowie",
+      "name": "Zamek w Miłakowie",
+      "category": "ruins",
+      "lat": 54.010833,
+      "lon": 20.071944,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Mi%C5%82akowie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-moragu",
+      "name": "Zamek w Morągu",
+      "category": "ruins",
+      "lat": 53.91,
+      "lon": 19.926667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Mor%C4%85gu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-narzymiu",
+      "name": "Zamek w Narzymiu",
+      "category": "ruins",
+      "lat": 53.180472,
+      "lon": 20.253917,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Narzymiu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-nidzicy",
+      "name": "Zamek w Nidzicy",
+      "category": "castle",
+      "lat": 53.359544,
+      "lon": 20.429119,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Nidzicy",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-kapituy-warminskiej-w-olsztynie",
+      "name": "Zamek Kapituły Warmińskiej w Olsztynie",
+      "category": "castle",
+      "lat": 53.777667,
+      "lon": 20.474289,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_Kapitu%C5%82y_Warmi%C5%84skiej_w_Olsztynie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-olsztynku",
+      "name": "Zamek w Olsztynku",
+      "category": "historic",
+      "lat": 53.583611,
+      "lon": 20.283889,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Olsztynku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-biskupow-warminskich-w-ornecie",
+      "name": "Zamek biskupów warmińskich w Ornecie",
+      "category": "ruins",
+      "lat": 54.115278,
+      "lon": 20.127778,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_biskup%C3%B3w_warmi%C5%84skich_w_Ornecie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-krzyzacki-w-ostrodzie",
+      "name": "Zamek krzyżacki w Ostródzie",
+      "category": "castle",
+      "lat": 53.703442,
+      "lon": 19.961214,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_krzy%C5%BCacki_w_Ostr%C3%B3dzie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-krzyzacki-w-paseku",
+      "name": "Zamek krzyżacki w Pasłęku",
+      "category": "castle",
+      "lat": 54.066867,
+      "lon": 19.659128,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_krzy%C5%BCacki_w_Pas%C5%82%C4%99ku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-kapituy-warminskiej-w-pienieznie",
+      "name": "Zamek Kapituły Warmińskiej w Pieniężnie",
+      "category": "ruins",
+      "lat": 54.233333,
+      "lon": 20.123611,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_Kapitu%C5%82y_Warmi%C5%84skiej_w_Pieni%C4%99%C5%BCnie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-piszu",
+      "name": "Zamek w Piszu",
+      "category": "ruins",
+      "lat": 53.630278,
+      "lon": 21.81,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Piszu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-reszlu",
+      "name": "Zamek w Reszlu",
+      "category": "castle",
+      "lat": 54.048353,
+      "lon": 21.147825,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Reszlu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-rynie",
+      "name": "Zamek w Rynie",
+      "category": "castle",
+      "lat": 53.938431,
+      "lon": 21.5459,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Rynie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-szczytnie",
+      "name": "Zamek w Szczytnie",
+      "category": "ruins",
+      "lat": 53.566667,
+      "lon": 20.99,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Szczytnie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-szymbarku",
+      "name": "Zamek w Szymbarku",
+      "category": "ruins",
+      "lat": 53.645,
+      "lon": 19.481667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Szymbarku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-wegorzewie",
+      "name": "Zamek w Węgorzewie",
+      "category": "castle",
+      "lat": 54.210567,
+      "lon": 21.741694,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_W%C4%99gorzewie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zamek-w-bemowiznie",
+      "name": "Zamek w Bemowiźnie",
+      "category": "historic",
+      "lat": 54.313611,
+      "lon": 19.858056,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Bemowi%C5%BAnie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-barzynie",
+      "name": "Pałac w Barzynie",
+      "category": "castle",
+      "lat": 53.98441,
+      "lon": 19.57086,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Barzynie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/dwor-w-badkach",
+      "name": "Dwór w Bądkach",
+      "category": "castle",
+      "lat": 53.87337,
+      "lon": 19.624,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dw%C3%B3r_w_B%C4%85dkach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-drogoszach",
+      "name": "Pałac w Drogoszach",
+      "category": "castle",
+      "lat": 54.208068,
+      "lon": 21.243213,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Drogoszach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-drulitach",
+      "name": "Pałac w Drulitach",
+      "category": "castle",
+      "lat": 53.97071,
+      "lon": 19.63564,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Drulitach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/dwor-w-montowie",
+      "name": "Dwór w Montowie",
+      "category": "castle",
+      "lat": 53.42425,
+      "lon": 19.780194,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dw%C3%B3r_w_Montowie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-augusta-abbega-w-elblagu",
+      "name": "Pałac Augusta Abbega w Elblągu",
+      "category": "castle",
+      "lat": 54.17414,
+      "lon": 19.46196,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_Augusta_Abbega_w_Elbl%C4%85gu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-galinach",
+      "name": "Pałac w Galinach",
+      "category": "castle",
+      "lat": 54.16418,
+      "lon": 20.82332,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Galinach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-gadyszach",
+      "name": "Pałac w Gładyszach",
+      "category": "castle",
+      "lat": 54.156618,
+      "lon": 19.920136,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_G%C5%82adyszach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/dwor-w-jarkowie",
+      "name": "Dwór w Jarkowie",
+      "category": "castle",
+      "lat": 54.267022,
+      "lon": 20.791728,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dw%C3%B3r_w_Jarkowie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-jegawkach",
+      "name": "Pałac w Jegławkach",
+      "category": "castle",
+      "lat": 54.238739,
+      "lon": 21.441069,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Jeg%C5%82awkach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-judytach",
+      "name": "Pałac w Judytach",
+      "category": "castle",
+      "lat": 54.324143,
+      "lon": 20.894637,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Judytach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/dwor-w-kakach",
+      "name": "Dwór w Kałkach",
+      "category": "castle",
+      "lat": 54.305167,
+      "lon": 21.467944,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dw%C3%B3r_w_Ka%C5%82kach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-kamiencu",
+      "name": "Pałac w Kamieńcu",
+      "category": "castle",
+      "lat": 53.77156,
+      "lon": 19.37708,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Kamie%C5%84cu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-abedniku",
+      "name": "Pałac w Łabędniku",
+      "category": "castle",
+      "lat": 54.181183,
+      "lon": 20.968964,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_%C5%81ab%C4%99dniku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-ezanach",
+      "name": "Pałac w Łężanach",
+      "category": "castle",
+      "lat": 53.96925,
+      "lon": 21.14431,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_%C5%81%C4%99%C5%BCanach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-ojdach",
+      "name": "Pałac w Łojdach",
+      "category": "castle",
+      "lat": 54.266389,
+      "lon": 20.760833,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_%C5%81ojdach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/dwor-w-utynowku",
+      "name": "Dwór w Łutynówku",
+      "category": "castle",
+      "lat": 53.5625,
+      "lon": 20.331111,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dw%C3%B3r_w_%C5%81utyn%C3%B3wku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-masunach",
+      "name": "Pałac w Masunach",
+      "category": "castle",
+      "lat": 54.317411,
+      "lon": 21.056264,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Masunach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-moragu",
+      "name": "Pałac w Morągu",
+      "category": "castle",
+      "lat": 53.911833,
+      "lon": 19.925556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Mor%C4%85gu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-nakomiadach",
+      "name": "Pałac w Nakomiadach",
+      "category": "castle",
+      "lat": 54.00455,
+      "lon": 21.44823,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Nakomiadach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-archiprezbitera-w-olsztynie",
+      "name": "Pałac Archiprezbitera w Olsztynie",
+      "category": "castle",
+      "lat": 53.775478,
+      "lon": 20.477575,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_Archiprezbitera_w_Olsztynie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-osiece",
+      "name": "Pałac w Osiece",
+      "category": "castle",
+      "lat": 54.21153,
+      "lon": 20.78714,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Osiece",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-bogatynskich",
+      "name": "Pałac w Bogatyńskich",
+      "category": "castle",
+      "lat": 54.087778,
+      "lon": 20.070556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Bogaty%C5%84skich",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-kadynach",
+      "name": "Pałac w Kadynach",
+      "category": "castle",
+      "lat": 54.296806,
+      "lon": 19.489528,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Kadynach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-klonowie",
+      "name": "Pałac w Klonowie",
+      "category": "castle",
+      "lat": 53.518333,
+      "lon": 19.953611,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Klonowie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-kwitajnach",
+      "name": "Pałac w Kwitajnach",
+      "category": "castle",
+      "lat": 54.018056,
+      "lon": 19.803611,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Kwitajnach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-ostrowiniu",
+      "name": "Pałac w Ostrowiniu",
+      "category": "castle",
+      "lat": 53.646667,
+      "lon": 20.104444,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Ostrowiniu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-ponarach",
+      "name": "Pałac w Ponarach",
+      "category": "castle",
+      "lat": 53.938699,
+      "lon": 20.029035,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Ponarach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-satopach-samulewie",
+      "name": "Pałac w Sątopach-Samulewie",
+      "category": "castle",
+      "lat": 54.075286,
+      "lon": 21.03993,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_S%C4%85topach-Samulewie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-prosnie",
+      "name": "Pałac w Prośnie",
+      "category": "castle",
+      "lat": 54.236103,
+      "lon": 21.0778,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Pro%C5%9Bnie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-rodelach",
+      "name": "Pałac w Rodelach",
+      "category": "castle",
+      "lat": 54.183617,
+      "lon": 21.376336,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Rodelach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/dwor-w-sedawkach",
+      "name": "Dwór w Sędławkach",
+      "category": "castle",
+      "lat": 54.229358,
+      "lon": 20.838633,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dw%C3%B3r_w_S%C4%99d%C5%82awkach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/dwor-w-siejniku",
+      "name": "Dwór w Siejniku",
+      "category": "castle",
+      "lat": 54.021431,
+      "lon": 22.4877,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dw%C3%B3r_w_Siejniku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-sobitach",
+      "name": "Pałac w Słobitach",
+      "category": "castle",
+      "lat": 54.141281,
+      "lon": 19.786007,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_S%C5%82obitach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-smolajnach",
+      "name": "Pałac w Smolajnach",
+      "category": "castle",
+      "lat": 54.026111,
+      "lon": 20.389167,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Smolajnach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-sorkwitach",
+      "name": "Pałac w Sorkwitach",
+      "category": "castle",
+      "lat": 53.841778,
+      "lon": 21.139028,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Sorkwitach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-baoszycach",
+      "name": "Pałac w Bałoszycach",
+      "category": "castle",
+      "lat": 53.675278,
+      "lon": 19.281111,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Ba%C5%82oszycach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-sztynorcie",
+      "name": "Pałac w Sztynorcie",
+      "category": "castle",
+      "lat": 54.133611,
+      "lon": 21.681667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Sztynorcie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/paac-w-tolku",
+      "name": "Pałac w Tolku",
+      "category": "castle",
+      "lat": 54.242861,
+      "lon": 20.709494,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_w_Tolku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/zespo-paacowy-w-rudowie",
+      "name": "Zespół pałacowy w Rudłowie",
+      "category": "castle",
+      "lat": 54.369861,
+      "lon": 19.834639,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zesp%C3%B3%C5%82_pa%C5%82acowy_w_Rud%C5%82owie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-budownictwa-ludowego-w-olsztynku",
+      "name": "Muzeum Budownictwa Ludowego w Olsztynku",
+      "category": "museum",
+      "lat": 53.590556,
+      "lon": 20.285556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Budownictwa_Ludowego_w_Olsztynku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-feliksa-nowowiejskiego-w-barczewie",
+      "name": "Muzeum Feliksa Nowowiejskiego w Barczewie",
+      "category": "museum",
+      "lat": 53.8289,
+      "lon": 20.6906,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Feliksa_Nowowiejskiego_w_Barczewie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-mynarstwa-powietrznego-w-besi",
+      "name": "Muzeum Młynarstwa Powietrznego w Bęsi",
+      "category": "museum",
+      "lat": 53.947778,
+      "lon": 20.999422,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_M%C5%82ynarstwa_Powietrznego_w_B%C4%99si",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-bitwy-pod-grunwaldem",
+      "name": "Muzeum Bitwy pod Grunwaldem",
+      "category": "museum",
+      "lat": 53.485981,
+      "lon": 20.125047,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Bitwy_pod_Grunwaldem",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-dobrego-miasta",
+      "name": "Muzeum Dobrego Miasta",
+      "category": "museum",
+      "lat": 53.9876,
+      "lon": 20.4001,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Dobrego_Miasta",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/dom-mrongowiusza-w-olsztynku",
+      "name": "Dom Mrongowiusza w Olsztynku",
+      "category": "museum",
+      "lat": 53.583668,
+      "lon": 20.282766,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dom_Mrongowiusza_w_Olsztynku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-ziemi-godapskiej-w-godapi",
+      "name": "Muzeum Ziemi Gołdapskiej w Gołdapi",
+      "category": "museum",
+      "lat": 54.316111,
+      "lon": 22.309444,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ziemi_Go%C5%82dapskiej_w_Go%C5%82dapi",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-historyczne-w-eku",
+      "name": "Muzeum Historyczne w Ełku",
+      "category": "museum",
+      "lat": 53.826457,
+      "lon": 22.363415,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Historyczne_w_E%C5%82ku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-im-wojciecha-ketrzynskiego-w-ketrzynie",
+      "name": "Muzeum im. Wojciecha Kętrzyńskiego w Kętrzynie",
+      "category": "museum",
+      "lat": 54.074172,
+      "lon": 21.376839,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_im._Wojciecha_K%C4%99trzy%C5%84skiego_w_K%C4%99trzynie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/ksiegarnia-andrzeja-samulowskiego-w-gietrzwadzie",
+      "name": "Księgarnia Andrzeja Samulowskiego w Gietrzwałdzie",
+      "category": "museum",
+      "lat": 53.747649,
+      "lon": 20.234629,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ksi%C4%99garnia_Andrzeja_Samulowskiego_w_Gietrzwa%C5%82dzie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-ziemi-lubawskiej-w-lubawie",
+      "name": "Muzeum Ziemi Lubawskiej w Lubawie",
+      "category": "museum",
+      "lat": 53.50412,
+      "lon": 19.75145,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ziemi_Lubawskiej_w_Lubawie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-lokalne-w-akorzu",
+      "name": "Muzeum Lokalne w Łąkorzu",
+      "category": "museum",
+      "lat": 53.45,
+      "lon": 19.35,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Lokalne_w_%C5%81%C4%85korzu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-mazurskie-w-szczytnie",
+      "name": "Muzeum Mazurskie w Szczytnie",
+      "category": "museum",
+      "lat": 53.566289,
+      "lon": 20.990211,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Mazurskie_w_Szczytnie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-prus-gornych-w-moragu",
+      "name": "Muzeum Prus Górnych w Morągu",
+      "category": "museum",
+      "lat": 53.911833,
+      "lon": 19.925556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Prus_G%C3%B3rnych_w_Mor%C4%85gu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-w-mragowie",
+      "name": "Muzeum w Mrągowie",
+      "category": "museum",
+      "lat": 53.870353,
+      "lon": 21.304117,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_w_Mr%C4%85gowie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-archeologiczno-historyczne-w-elblagu",
+      "name": "Muzeum Archeologiczno-Historyczne w Elblągu",
+      "category": "museum",
+      "lat": 54.156641,
+      "lon": 19.393551,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Archeologiczno-Historyczne_w_Elbl%C4%85gu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-gazownictwa-w-gorowie-iaweckim",
+      "name": "Muzeum Gazownictwa w Górowie Iławeckim",
+      "category": "museum",
+      "lat": 54.285778,
+      "lon": 20.487111,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Gazownictwa_w_G%C3%B3rowie_I%C5%82aweckim",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-kultury-ludowej-w-wegorzewie",
+      "name": "Muzeum Kultury Ludowej w Węgorzewie",
+      "category": "museum",
+      "lat": 54.211067,
+      "lon": 21.737357,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Kultury_Ludowej_w_W%C4%99gorzewie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-ziemi-nidzickiej-w-nidzicy",
+      "name": "Muzeum Ziemi Nidzickiej w Nidzicy",
+      "category": "museum",
+      "lat": 53.359544,
+      "lon": 20.429119,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ziemi_Nidzickiej_w_Nidzicy",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-ziemi-lubawskiej-w-nowym-miescie-lubawskim",
+      "name": "Muzeum Ziemi Lubawskiej w Nowym Mieście Lubawskim",
+      "category": "museum",
+      "lat": 53.422506,
+      "lon": 19.59265,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ziemi_Lubawskiej_w_Nowym_Mie%C5%9Bcie_Lubawskim",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-michaa-kajki-w-ogrodku",
+      "name": "Muzeum Michała Kajki w Ogródku",
+      "category": "museum",
+      "lat": 53.808611,
+      "lon": 22.101389,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Micha%C5%82a_Kajki_w_Ogr%C3%B3dku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/olecka-izba-historyczna-w-olecku",
+      "name": "Olecka Izba Historyczna w Olecku",
+      "category": "museum",
+      "lat": 54.038893,
+      "lon": 22.507233,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Olecka_Izba_Historyczna_w_Olecku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-w-ostrodzie",
+      "name": "Muzeum w Ostródzie",
+      "category": "museum",
+      "lat": 53.703442,
+      "lon": 19.961214,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_w_Ostr%C3%B3dzie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-regionalne-w-pieckach",
+      "name": "Muzeum Regionalne w Pieckach",
+      "category": "museum",
+      "lat": 53.748056,
+      "lon": 21.341111,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Regionalne_w_Pieckach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-misyjno-etnograficzne-ksiezy-werbistow-w-pienieznie",
+      "name": "Muzeum Misyjno-Etnograficzne Księży Werbistów w Pieniężnie",
+      "category": "museum",
+      "lat": 54.236461,
+      "lon": 20.093833,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Misyjno-Etnograficzne_Ksi%C4%99%C5%BCy_Werbist%C3%B3w_w_Pieni%C4%99%C5%BCnie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-ziemi-piskiej-w-piszu",
+      "name": "Muzeum Ziemi Piskiej w Piszu",
+      "category": "museum",
+      "lat": 53.6275,
+      "lon": 21.8075,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ziemi_Piskiej_w_Piszu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/warminsko-mazurskie-muzeum-pozarnictwa-w-lidzbarku",
+      "name": "Warmińsko-Mazurskie Muzeum Pożarnictwa w Lidzbarku",
+      "category": "museum",
+      "lat": 53.261229,
+      "lon": 19.82257,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Warmi%C5%84sko-Mazurskie_Muzeum_Po%C5%BCarnictwa_w_Lidzbarku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-konstantego-ildefonsa-gaczynskiego-w-praniu",
+      "name": "Muzeum Konstantego Ildefonsa Gałczyńskiego w Praniu",
+      "category": "museum",
+      "lat": 53.611111,
+      "lon": 21.5,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Konstantego_Ildefonsa_Ga%C5%82czy%C5%84skiego_w_Praniu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-reformacji-polskiej-w-mikoajkach",
+      "name": "Muzeum Reformacji Polskiej w Mikołajkach",
+      "category": "museum",
+      "lat": 53.800472,
+      "lon": 21.57075,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Reformacji_Polskiej_w_Miko%C5%82ajkach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-regionalne-w-sapatach",
+      "name": "Muzeum Regionalne w Sąpłatach",
+      "category": "museum",
+      "lat": 53.733333,
+      "lon": 20.9,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Regionalne_w_S%C4%85p%C5%82atach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-przyrody-etnografii-i-sztuki-w-srokowie",
+      "name": "Muzeum Przyrody, Etnografii i Sztuki w Srokowie",
+      "category": "museum",
+      "lat": 54.21388,
+      "lon": 21.522313,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Przyrody%2C_Etnografii_i_Sztuki_w_Srokowie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/izba-historii-regionu-w-suszu",
+      "name": "Izba Historii Regionu w Suszu",
+      "category": "museum",
+      "lat": 53.716944,
+      "lon": 19.335278,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Izba_Historii_Regionu_w_Suszu",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/muzeum-tradycji-kolejowej-w-wegorzewie",
+      "name": "Muzeum Tradycji Kolejowej w Węgorzewie",
+      "category": "museum",
+      "lat": 54.217801,
+      "lon": 21.725378,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Tradycji_Kolejowej_w_W%C4%99gorzewie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/jezioro-sniardwy",
+      "name": "Jezioro Śniardwy",
+      "category": "water",
+      "lat": 53.75,
+      "lon": 21.716667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/%C5%9Aniardwy",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/jezioro-mamry",
+      "name": "Jezioro Mamry",
+      "category": "water",
+      "lat": 54.1725,
+      "lon": 21.698333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Mamry",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/jezioro-niegocin",
+      "name": "Jezioro Niegocin",
+      "category": "water",
+      "lat": 53.983333,
+      "lon": 21.784722,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Niegocin",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/jezioro-kisajno",
+      "name": "Jezioro Kisajno",
+      "category": "water",
+      "lat": 54.05,
+      "lon": 21.7,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kisajno",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/jezioro-jeziorak",
+      "name": "Jezioro Jeziorak",
+      "category": "water",
+      "lat": 53.723122,
+      "lon": 19.613,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jeziorak",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/jezioro-drweckie",
+      "name": "Jezioro Drwęckie",
+      "category": "water",
+      "lat": 53.715833,
+      "lon": 19.919722,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_Drw%C4%99ckie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/jezioro-mikoajskie",
+      "name": "Jezioro Mikołajskie",
+      "category": "water",
+      "lat": 53.776111,
+      "lon": 21.596111,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_Miko%C5%82ajskie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/jezioro-bedany",
+      "name": "Jezioro Bełdany",
+      "category": "water",
+      "lat": 53.724444,
+      "lon": 21.566389,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Be%C5%82dany",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/jezioro-wulpinskie",
+      "name": "Jezioro Wulpińskie",
+      "category": "water",
+      "lat": 53.71,
+      "lon": 20.366667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_Wulpi%C5%84skie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/jezioro-anskie",
+      "name": "Jezioro Łańskie",
+      "category": "water",
+      "lat": 53.5875,
+      "lon": 20.485556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_%C5%81a%C5%84skie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/jezioro-narie",
+      "name": "Jezioro Narie",
+      "category": "water",
+      "lat": 53.908611,
+      "lon": 20.024167,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Narie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/jezioro-sasek-wielki",
+      "name": "Jezioro Sasek Wielki",
+      "category": "water",
+      "lat": 53.504167,
+      "lon": 20.907222,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Sasek_Wielki",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/jezioro-eckie",
+      "name": "Jezioro Ełckie",
+      "category": "water",
+      "lat": 53.806667,
+      "lon": 22.349444,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_E%C5%82ckie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/wilczy-szaniec",
+      "name": "Wilczy Szaniec",
+      "category": "historic",
+      "lat": 54.079444,
+      "lon": 21.493611,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wilczy_Szaniec",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/twierdza-boyen",
+      "name": "Twierdza Boyen",
+      "category": "historic",
+      "lat": 54.032124,
+      "lon": 21.748037,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Twierdza_Boyen",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/mamerki-bunkry-kwatery-gownej-niemieckich-wojsk-ladowych",
+      "name": "Mamerki – bunkry Kwatery Głównej Niemieckich Wojsk Lądowych",
+      "category": "historic",
+      "lat": 54.189722,
+      "lon": 21.651111,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Mamerki_%E2%80%93_bunkry_Kwatery_G%C5%82%C3%B3wnej_Niemieckich_Wojsk_L%C4%85dowych",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/mosty-w-stanczykach",
+      "name": "Mosty w Stańczykach",
+      "category": "historic",
+      "lat": 54.297444,
+      "lon": 22.654611,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Mosty_w_Sta%C5%84czykach",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/bazylika-w-swietej-lipce",
+      "name": "Bazylika w Świętej Lipce",
+      "category": "historic",
+      "lat": 54.024689,
+      "lon": 21.218486,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bazylika_w_%C5%9Awi%C4%99tej_Lipce",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/wieza-cisnien-w-gizycku",
+      "name": "Wieża ciśnień w Giżycku",
+      "category": "historic",
+      "lat": 54.036389,
+      "lon": 21.779167,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wie%C5%BCa_ci%C5%9Bnie%C5%84_w_Gi%C5%BCycku",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/dylewska-gora",
+      "name": "Dylewska Góra",
+      "category": "nature",
+      "lat": 53.55,
+      "lon": 19.940278,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dylewska_G%C3%B3ra",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/mazurski-park-krajobrazowy",
+      "name": "Mazurski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 53.723,
+      "lon": 21.603,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Mazurski_Park_Krajobrazowy",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/park-dzikich-zwierzat-w-kadzidowie",
+      "name": "Park Dzikich Zwierząt w Kadzidłowie",
+      "category": "nature",
+      "lat": 53.713333,
+      "lon": 21.49,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Park_Dzikich_Zwierz%C4%85t_w_Kadzid%C5%82owie",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/park-krajobrazowy-wzgorz-dylewskich",
+      "name": "Park Krajobrazowy Wzgórz Dylewskich",
+      "category": "nature",
+      "lat": 53.55,
+      "lon": 19.95,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Park_Krajobrazowy_Wzg%C3%B3rz_Dylewskich",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/puszcza-borecka",
+      "name": "Puszcza Borecka",
+      "category": "nature",
+      "lat": 54.133885,
+      "lon": 22.0942,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Puszcza_Borecka",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/puszcza-piska",
+      "name": "Puszcza Piska",
+      "category": "nature",
+      "lat": 53.667114,
+      "lon": 21.445642,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Puszcza_Piska",
+      "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "warminsko-mazurskie/wysoczyzna-elblaska",
+      "name": "Wysoczyzna Elbląska",
+      "category": "nature",
+      "lat": 54.267233,
+      "lon": 19.667938,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wysoczyzna_Elbl%C4%85ska",
+      "region": "warmińsko-mazurskie"
     }
   ],
-  "count": 1048
+  "count": 1294
 }
