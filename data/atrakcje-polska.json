@@ -1,7 +1,7 @@
 {
-  "version": "v1017-mazowsze-corridor-1",
-  "updatedAt": "2026-08-10",
-  "description": "Rozszerzona lokalna baza atrakcji dla aplikacji Mapa atrakcji Polski. Dodano większy zestaw punktów w korytarzu Radom–Grójec–Warszawa oraz Mszczonów–Warszawa.",
+  "version": "v1026",
+  "updatedAt": "2026-08-11",
+  "description": "Statyczna baza atrakcji Polski rozszerzona o szeroki zestaw atrakcji województwa małopolskiego dla 9 kategorii aplikacji. Punkty własne użytkownika są nadal łączone lokalnie z bazą.",
   "attractions": [
     {
       "id": "base/palac-radziejowice",
@@ -380,7 +380,1977 @@
       "lon": 21.00586,
       "source": "Nawycieczke.pl / NMT",
       "sourceUrl": "https://nmt.waw.pl/"
+    },
+    {
+      "id": "malopolskie/zamek-dunajec-w-niedzicy",
+      "name": "Zamek Dunajec w Niedzicy",
+      "category": "castle",
+      "lat": 49.42264,
+      "lon": 20.31984,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zamek-w-nowym-wisniczu",
+      "name": "Zamek w Nowym Wiśniczu",
+      "category": "castle",
+      "lat": 49.91657,
+      "lon": 20.46154,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zamek-pieskowa-skaa",
+      "name": "Zamek Pieskowa Skała",
+      "category": "castle",
+      "lat": 50.24419,
+      "lon": 19.77977,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zamek-tenczyn-w-rudnie",
+      "name": "Zamek Tenczyn w Rudnie",
+      "category": "castle",
+      "lat": 50.09923,
+      "lon": 19.57656,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zamek-rabsztyn",
+      "name": "Zamek Rabsztyn",
+      "category": "castle",
+      "lat": 50.29924,
+      "lon": 19.59278,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zamek-lipowiec-w-wygiezowie",
+      "name": "Zamek Lipowiec w Wygiełzowie",
+      "category": "castle",
+      "lat": 50.05761,
+      "lon": 19.44036,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zamek-w-korzkwi",
+      "name": "Zamek w Korzkwi",
+      "category": "castle",
+      "lat": 50.16302,
+      "lon": 19.88018,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zamek-suski-w-suchej-beskidzkiej",
+      "name": "Zamek Suski w Suchej Beskidzkiej",
+      "category": "castle",
+      "lat": 49.74073,
+      "lon": 19.59403,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zamek-tropsztyn",
+      "name": "Zamek Tropsztyn",
+      "category": "castle",
+      "lat": 49.79558,
+      "lon": 20.65986,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zamek-w-debnie",
+      "name": "Zamek w Dębnie",
+      "category": "castle",
+      "lat": 49.96416,
+      "lon": 20.71937,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zamek-krolewski-w-niepoomicach",
+      "name": "Zamek Królewski w Niepołomicach",
+      "category": "castle",
+      "lat": 50.0337,
+      "lon": 20.21747,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zamek-w-spytkowicach",
+      "name": "Zamek w Spytkowicach",
+      "category": "castle",
+      "lat": 50.00372,
+      "lon": 19.50757,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/paac-potockich-w-krzeszowicach",
+      "name": "Pałac Potockich w Krzeszowicach",
+      "category": "castle",
+      "lat": 50.13559,
+      "lon": 19.63193,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/paac-goetzow-okocimskich-w-brzesku",
+      "name": "Pałac Goetzów-Okocimskich w Brzesku",
+      "category": "castle",
+      "lat": 49.96867,
+      "lon": 20.60072,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/dwor-w-doedze",
+      "name": "Dwór w Dołędze",
+      "category": "castle",
+      "lat": 50.15152,
+      "lon": 20.80845,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/dwor-w-stryszowie",
+      "name": "Dwór w Stryszowie",
+      "category": "castle",
+      "lat": 49.82537,
+      "lon": 19.61724,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/dwor-w-opusznej",
+      "name": "Dwór w Łopusznej",
+      "category": "castle",
+      "lat": 49.47274,
+      "lon": 20.13133,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/paac-w-pawowicach",
+      "name": "Pałac w Pławowicach",
+      "category": "castle",
+      "lat": 50.2667,
+      "lon": 20.3029,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/paac-dugoszow-w-siarach",
+      "name": "Pałac Długoszów w Siarach",
+      "category": "castle",
+      "lat": 49.64169,
+      "lon": 21.16456,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/dwor-emila-zegadowicza-w-gorzeniu-gornym",
+      "name": "Dwór Emila Zegadłowicza w Gorzeniu Górnym",
+      "category": "castle",
+      "lat": 49.86791,
+      "lon": 19.45022,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/ruiny-zamku-w-dobczycach",
+      "name": "Ruiny zamku w Dobczycach",
+      "category": "ruins",
+      "lat": 49.87986,
+      "lon": 20.08985,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/ruiny-zamku-w-lanckoronie",
+      "name": "Ruiny zamku w Lanckoronie",
+      "category": "ruins",
+      "lat": 49.84323,
+      "lon": 19.71501,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/ruiny-zamku-w-muszynie",
+      "name": "Ruiny zamku w Muszynie",
+      "category": "ruins",
+      "lat": 49.35273,
+      "lon": 20.89476,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/ruiny-zamku-tarnowskich-na-gorze-sw-marcina",
+      "name": "Ruiny zamku Tarnowskich na Górze św. Marcina",
+      "category": "ruins",
+      "lat": 50.01597,
+      "lon": 21.01656,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/ruiny-zamku-w-melsztynie",
+      "name": "Ruiny zamku w Melsztynie",
+      "category": "ruins",
+      "lat": 49.88325,
+      "lon": 20.77166,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/ruiny-zamku-w-rytrze",
+      "name": "Ruiny zamku w Rytrze",
+      "category": "ruins",
+      "lat": 49.48321,
+      "lon": 20.66777,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/ruiny-zamku-w-ojcowie",
+      "name": "Ruiny zamku w Ojcowie",
+      "category": "ruins",
+      "lat": 50.2124,
+      "lon": 19.82991,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/ruiny-zamku-w-bydlinie",
+      "name": "Ruiny zamku w Bydlinie",
+      "category": "ruins",
+      "lat": 50.38376,
+      "lon": 19.64206,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/baszta-i-ruiny-zamku-w-czchowie",
+      "name": "Baszta i ruiny zamku w Czchowie",
+      "category": "ruins",
+      "lat": 49.83307,
+      "lon": 20.67935,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/ruiny-zamku-w-roznowie",
+      "name": "Ruiny zamku w Rożnowie",
+      "category": "ruins",
+      "lat": 49.7759,
+      "lon": 20.68933,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-lotnictwa-polskiego-w-krakowie",
+      "name": "Muzeum Lotnictwa Polskiego w Krakowie",
+      "category": "museum",
+      "lat": 50.0771,
+      "lon": 19.99155,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/fabryka-emalia-oskara-schindlera",
+      "name": "Fabryka Emalia Oskara Schindlera",
+      "category": "museum",
+      "lat": 50.0475,
+      "lon": 19.96019,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/mocak-muzeum-sztuki-wspoczesnej-w-krakowie",
+      "name": "MOCAK Muzeum Sztuki Współczesnej w Krakowie",
+      "category": "museum",
+      "lat": 50.04729,
+      "lon": 19.96135,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rynek-podziemny-w-krakowie",
+      "name": "Rynek Podziemny w Krakowie",
+      "category": "museum",
+      "lat": 50.06162,
+      "lon": 19.93734,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-ksiazat-czartoryskich-w-krakowie",
+      "name": "Muzeum Książąt Czartoryskich w Krakowie",
+      "category": "museum",
+      "lat": 50.06487,
+      "lon": 19.94167,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-etnograficzne-im-seweryna-udzieli-w-krakowie",
+      "name": "Muzeum Etnograficzne im. Seweryna Udzieli w Krakowie",
+      "category": "museum",
+      "lat": 50.04968,
+      "lon": 19.94445,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-archeologiczne-w-krakowie",
+      "name": "Muzeum Archeologiczne w Krakowie",
+      "category": "museum",
+      "lat": 50.05835,
+      "lon": 19.93468,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-sztuki-i-techniki-japonskiej-manggha",
+      "name": "Muzeum Sztuki i Techniki Japońskiej Manggha",
+      "category": "museum",
+      "lat": 50.05215,
+      "lon": 19.93035,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zydowskie-muzeum-galicja-w-krakowie",
+      "name": "Żydowskie Muzeum Galicja w Krakowie",
+      "category": "museum",
+      "lat": 50.05102,
+      "lon": 19.94937,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-armii-krajowej-w-krakowie",
+      "name": "Muzeum Armii Krajowej w Krakowie",
+      "category": "museum",
+      "lat": 50.0722,
+      "lon": 19.9475,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-inzynierii-i-techniki-w-krakowie",
+      "name": "Muzeum Inżynierii i Techniki w Krakowie",
+      "category": "museum",
+      "lat": 50.05017,
+      "lon": 19.94692,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-podgorza-w-krakowie",
+      "name": "Muzeum Podgórza w Krakowie",
+      "category": "museum",
+      "lat": 50.04437,
+      "lon": 19.95262,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-nowej-huty",
+      "name": "Muzeum Nowej Huty",
+      "category": "museum",
+      "lat": 50.07182,
+      "lon": 20.03746,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-auschwitz-birkenau",
+      "name": "Muzeum Auschwitz-Birkenau",
+      "category": "museum",
+      "lat": 50.02673,
+      "lon": 19.20363,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-dom-rodzinny-ojca-swietego-jana-pawa-ii-w-wadowicach",
+      "name": "Muzeum Dom Rodzinny Ojca Świętego Jana Pawła II w Wadowicach",
+      "category": "museum",
+      "lat": 49.88334,
+      "lon": 19.49363,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-zamek-w-oswiecimiu",
+      "name": "Muzeum Zamek w Oświęcimiu",
+      "category": "museum",
+      "lat": 50.03853,
+      "lon": 19.22169,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-maopolski-zachodniej-w-wygiezowie-skansen",
+      "name": "Muzeum Małopolski Zachodniej w Wygiełzowie – skansen",
+      "category": "museum",
+      "lat": 50.05873,
+      "lon": 19.44174,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-regionalne-w-chrzanowie",
+      "name": "Muzeum Regionalne w Chrzanowie",
+      "category": "museum",
+      "lat": 50.14369,
+      "lon": 19.4022,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-regionalne-pttk-w-olkuszu",
+      "name": "Muzeum Regionalne PTTK w Olkuszu",
+      "category": "museum",
+      "lat": 50.27847,
+      "lon": 19.5614,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-ziemi-miechowskiej",
+      "name": "Muzeum Ziemi Miechowskiej",
+      "category": "museum",
+      "lat": 50.35604,
+      "lon": 20.02743,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-okregowe-w-tarnowie-ratusz",
+      "name": "Muzeum Okręgowe w Tarnowie – Ratusz",
+      "category": "museum",
+      "lat": 50.01233,
+      "lon": 20.98838,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-etnograficzne-w-tarnowie",
+      "name": "Muzeum Etnograficzne w Tarnowie",
+      "category": "museum",
+      "lat": 50.00985,
+      "lon": 20.98547,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-diecezjalne-w-tarnowie",
+      "name": "Muzeum Diecezjalne w Tarnowie",
+      "category": "museum",
+      "lat": 50.01129,
+      "lon": 20.98732,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-ziemi-tarnowskiej-dwor-w-doedze",
+      "name": "Muzeum Ziemi Tarnowskiej – Dwór w Dołędze",
+      "category": "museum",
+      "lat": 50.15152,
+      "lon": 20.80845,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-ziemi-sadeckiej-dom-gotycki",
+      "name": "Muzeum Ziemi Sądeckiej – Dom Gotycki",
+      "category": "museum",
+      "lat": 49.62407,
+      "lon": 20.69067,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/sadecki-park-etnograficzny",
+      "name": "Sądecki Park Etnograficzny",
+      "category": "museum",
+      "lat": 49.61538,
+      "lon": 20.72058,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/miasteczko-galicyjskie-w-nowym-saczu",
+      "name": "Miasteczko Galicyjskie w Nowym Sączu",
+      "category": "museum",
+      "lat": 49.61566,
+      "lon": 20.72692,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-nikifora-w-krynicy-zdroju",
+      "name": "Muzeum Nikifora w Krynicy-Zdroju",
+      "category": "museum",
+      "lat": 49.42128,
+      "lon": 20.95828,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-zabawek-w-krynicy-zdroju",
+      "name": "Muzeum Zabawek w Krynicy-Zdroju",
+      "category": "museum",
+      "lat": 49.41814,
+      "lon": 20.9569,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-tatrzanskie-im-dra-tytusa-chaubinskiego",
+      "name": "Muzeum Tatrzańskie im. dra Tytusa Chałubińskiego",
+      "category": "museum",
+      "lat": 49.2966,
+      "lon": 19.94974,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-oscypka-w-zakopanem",
+      "name": "Muzeum Oscypka w Zakopanem",
+      "category": "museum",
+      "lat": 49.29986,
+      "lon": 19.9612,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/willa-atma-muzeum-karola-szymanowskiego",
+      "name": "Willa Atma – Muzeum Karola Szymanowskiego",
+      "category": "museum",
+      "lat": 49.29287,
+      "lon": 19.94845,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-im-wadysawa-orkana-w-rabce-zdroju",
+      "name": "Muzeum im. Władysława Orkana w Rabce-Zdroju",
+      "category": "museum",
+      "lat": 49.61054,
+      "lon": 19.95164,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/orawski-park-etnograficzny-w-zubrzycy-gornej",
+      "name": "Orawski Park Etnograficzny w Zubrzycy Górnej",
+      "category": "museum",
+      "lat": 49.57132,
+      "lon": 19.6497,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/skansen-wsi-pogorzanskiej-w-szymbarku",
+      "name": "Skansen Wsi Pogórzańskiej w Szymbarku",
+      "category": "museum",
+      "lat": 49.62529,
+      "lon": 21.10375,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zagroda-maziarska-w-osiu",
+      "name": "Zagroda Maziarska w Łosiu",
+      "category": "museum",
+      "lat": 49.58162,
+      "lon": 21.05314,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-ziemi-bieckiej-dom-z-baszta",
+      "name": "Muzeum Ziemi Bieckiej – Dom z basztą",
+      "category": "museum",
+      "lat": 49.73139,
+      "lon": 21.26318,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-regionalne-pttk-w-gorlicach",
+      "name": "Muzeum Regionalne PTTK w Gorlicach",
+      "category": "museum",
+      "lat": 49.65507,
+      "lon": 21.15915,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-pieninskie-im-jozefa-szalaya",
+      "name": "Muzeum Pienińskie im. Józefa Szalaya",
+      "category": "museum",
+      "lat": 49.42409,
+      "lon": 20.48239,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-pieninskiego-parku-narodowego-w-kroscienku",
+      "name": "Muzeum Pienińskiego Parku Narodowego w Krościenku",
+      "category": "museum",
+      "lat": 49.44034,
+      "lon": 20.42611,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-zup-krakowskich-wieliczka",
+      "name": "Muzeum Żup Krakowskich Wieliczka",
+      "category": "museum",
+      "lat": 49.98347,
+      "lon": 20.05544,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/muzeum-motyli-arthropoda-w-bochni",
+      "name": "Muzeum Motyli Arthropoda w Bochni",
+      "category": "museum",
+      "lat": 49.96904,
+      "lon": 20.43084,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/skaa-kmity-w-zabierzowie",
+      "name": "Skała Kmity w Zabierzowie",
+      "category": "nature",
+      "lat": 50.10554,
+      "lon": 19.80503,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/brama-krakowska-w-ojcowskim-parku-narodowym",
+      "name": "Brama Krakowska w Ojcowskim Parku Narodowym",
+      "category": "nature",
+      "lat": 50.20594,
+      "lon": 19.82818,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/iga-deotymy-w-ojcowie",
+      "name": "Igła Deotymy w Ojcowie",
+      "category": "nature",
+      "lat": 50.20725,
+      "lon": 19.83098,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rekawica-w-ojcowskim-parku-narodowym",
+      "name": "Rękawica w Ojcowskim Parku Narodowym",
+      "category": "nature",
+      "lat": 50.19886,
+      "lon": 19.82978,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/wodospad-siklawica",
+      "name": "Wodospad Siklawica",
+      "category": "nature",
+      "lat": 49.26042,
+      "lon": 19.93171,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/wodogrzmoty-mickiewicza",
+      "name": "Wodogrzmoty Mickiewicza",
+      "category": "nature",
+      "lat": 49.23386,
+      "lon": 20.08795,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/wielka-siklawa",
+      "name": "Wielka Siklawa",
+      "category": "nature",
+      "lat": 49.21066,
+      "lon": 20.03723,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/gaz-papieski-nad-morskim-okiem",
+      "name": "Głaz Papieski nad Morskim Okiem",
+      "category": "nature",
+      "lat": 49.20109,
+      "lon": 20.07069,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/skaki-twardowskiego",
+      "name": "Skałki Twardowskiego",
+      "category": "nature",
+      "lat": 50.03645,
+      "lon": 19.911,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/diabelski-kamien-w-foluszu",
+      "name": "Diabelski Kamień w Foluszu",
+      "category": "nature",
+      "lat": 49.61271,
+      "lon": 21.3651,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/kamien-grzyb-w-poomiu-duzym",
+      "name": "Kamień Grzyb w Połomiu Dużym",
+      "category": "nature",
+      "lat": 49.8518,
+      "lon": 20.4426,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-murowaniec-na-hali-gasienicowej",
+      "name": "Schronisko PTTK Murowaniec na Hali Gąsienicowej",
+      "category": "pttk",
+      "lat": 49.24339,
+      "lon": 20.00707,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-w-dolinie-pieciu-stawow-polskich",
+      "name": "Schronisko PTTK w Dolinie Pięciu Stawów Polskich",
+      "category": "pttk",
+      "lat": 49.21361,
+      "lon": 20.04805,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-na-polanie-chochoowskiej",
+      "name": "Schronisko PTTK na Polanie Chochołowskiej",
+      "category": "pttk",
+      "lat": 49.23617,
+      "lon": 19.78878,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-w-dolinie-roztoki",
+      "name": "Schronisko PTTK w Dolinie Roztoki",
+      "category": "pttk",
+      "lat": 49.23332,
+      "lon": 20.09526,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-na-hali-kondratowej",
+      "name": "Schronisko PTTK na Hali Kondratowej",
+      "category": "pttk",
+      "lat": 49.25062,
+      "lon": 19.95136,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-na-luboniu-wielkim",
+      "name": "Schronisko PTTK na Luboniu Wielkim",
+      "category": "pttk",
+      "lat": 49.65345,
+      "lon": 19.99019,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-stare-wierchy",
+      "name": "Schronisko PTTK Stare Wierchy",
+      "category": "pttk",
+      "lat": 49.585,
+      "lon": 19.93465,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-na-kudaczach",
+      "name": "Schronisko PTTK na Kudłaczach",
+      "category": "pttk",
+      "lat": 49.76868,
+      "lon": 19.85895,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-na-turbaczu",
+      "name": "Schronisko PTTK na Turbaczu",
+      "category": "pttk",
+      "lat": 49.54315,
+      "lon": 20.11857,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-na-hali-abowskiej",
+      "name": "Schronisko PTTK na Hali Łabowskiej",
+      "category": "pttk",
+      "lat": 49.51889,
+      "lon": 20.85786,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-na-przehybie",
+      "name": "Schronisko PTTK na Przehybie",
+      "category": "pttk",
+      "lat": 49.46894,
+      "lon": 20.55568,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-na-beresniku",
+      "name": "Schronisko PTTK na Bereśniku",
+      "category": "pttk",
+      "lat": 49.41667,
+      "lon": 20.47673,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-trzy-korony",
+      "name": "Schronisko PTTK Trzy Korony",
+      "category": "pttk",
+      "lat": 49.40288,
+      "lon": 20.41464,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/bacowka-pttk-nad-wierchomla",
+      "name": "Bacówka PTTK nad Wierchomlą",
+      "category": "pttk",
+      "lat": 49.40785,
+      "lon": 20.82028,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-na-leskowcu",
+      "name": "Schronisko PTTK na Leskowcu",
+      "category": "pttk",
+      "lat": 49.80735,
+      "lon": 19.44379,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-na-hali-krupowej",
+      "name": "Schronisko PTTK na Hali Krupowej",
+      "category": "pttk",
+      "lat": 49.62504,
+      "lon": 19.57117,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/bacowka-pttk-na-maciejowej",
+      "name": "Bacówka PTTK na Maciejowej",
+      "category": "pttk",
+      "lat": 49.59122,
+      "lon": 19.99514,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/schronisko-pttk-na-jaworzynie-krynickiej",
+      "name": "Schronisko PTTK na Jaworzynie Krynickiej",
+      "category": "pttk",
+      "lat": 49.42055,
+      "lon": 20.89462,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jaskinia-okietka",
+      "name": "Jaskinia Łokietka",
+      "category": "cave",
+      "lat": 50.20386,
+      "lon": 19.82072,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jaskinia-ciemna",
+      "name": "Jaskinia Ciemna",
+      "category": "cave",
+      "lat": 50.19951,
+      "lon": 19.82918,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jaskinia-wierzchowska-gorna",
+      "name": "Jaskinia Wierzchowska Górna",
+      "category": "cave",
+      "lat": 50.17962,
+      "lon": 19.77754,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jaskinia-nietoperzowa",
+      "name": "Jaskinia Nietoperzowa",
+      "category": "cave",
+      "lat": 50.19108,
+      "lon": 19.77182,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/smocza-jama-na-wawelu",
+      "name": "Smocza Jama na Wawelu",
+      "category": "cave",
+      "lat": 50.05327,
+      "lon": 19.93458,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jaskinia-mrozna",
+      "name": "Jaskinia Mroźna",
+      "category": "cave",
+      "lat": 49.2426,
+      "lon": 19.87907,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jaskinia-mylna",
+      "name": "Jaskinia Mylna",
+      "category": "cave",
+      "lat": 49.23568,
+      "lon": 19.85251,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jaskinia-raptawicka",
+      "name": "Jaskinia Raptawicka",
+      "category": "cave",
+      "lat": 49.23777,
+      "lon": 19.85026,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jaskinia-obazkowa",
+      "name": "Jaskinia Obłazkowa",
+      "category": "cave",
+      "lat": 49.23623,
+      "lon": 19.8493,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jaskinia-dziura",
+      "name": "Jaskinia Dziura",
+      "category": "cave",
+      "lat": 49.2742,
+      "lon": 19.9417,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jaskinia-mamutowa",
+      "name": "Jaskinia Mamutowa",
+      "category": "cave",
+      "lat": 50.17657,
+      "lon": 19.79119,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jaskinia-obazowa",
+      "name": "Jaskinia Obłazowa",
+      "category": "cave",
+      "lat": 49.43466,
+      "lon": 20.12645,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-biaa-woda",
+      "name": "Rezerwat przyrody Biała Woda",
+      "category": "reserve",
+      "lat": 49.38484,
+      "lon": 20.58419,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-wawoz-homole",
+      "name": "Rezerwat przyrody Wąwóz Homole",
+      "category": "reserve",
+      "lat": 49.40643,
+      "lon": 20.54869,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-przeom-biaki-pod-krempachami",
+      "name": "Rezerwat przyrody Przełom Białki pod Krempachami",
+      "category": "reserve",
+      "lat": 49.43831,
+      "lon": 20.12675,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-bor-na-czerwonem",
+      "name": "Rezerwat przyrody Bór na Czerwonem",
+      "category": "reserve",
+      "lat": 49.46289,
+      "lon": 20.06208,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-kajasowka",
+      "name": "Rezerwat przyrody Kajasówka",
+      "category": "reserve",
+      "lat": 50.03454,
+      "lon": 19.61629,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-dolina-kluczwody",
+      "name": "Rezerwat przyrody Dolina Kluczwody",
+      "category": "reserve",
+      "lat": 50.17175,
+      "lon": 19.82818,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-dolina-racawki",
+      "name": "Rezerwat przyrody Dolina Racławki",
+      "category": "reserve",
+      "lat": 50.1582,
+      "lon": 19.6581,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-panienskie-skay",
+      "name": "Rezerwat przyrody Panieńskie Skały",
+      "category": "reserve",
+      "lat": 50.06213,
+      "lon": 19.86835,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-bielanskie-skaki",
+      "name": "Rezerwat przyrody Bielańskie Skałki",
+      "category": "reserve",
+      "lat": 50.04822,
+      "lon": 19.84538,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-bonarka",
+      "name": "Rezerwat przyrody Bonarka",
+      "category": "reserve",
+      "lat": 50.02558,
+      "lon": 19.9443,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-skamieniae-miasto-w-ciezkowicach",
+      "name": "Rezerwat Skamieniałe Miasto w Ciężkowicach",
+      "category": "reserve",
+      "lat": 49.78697,
+      "lon": 20.96183,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-diable-skay",
+      "name": "Rezerwat przyrody Diable Skały",
+      "category": "reserve",
+      "lat": 49.73727,
+      "lon": 20.89173,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-kamien-grzyb",
+      "name": "Rezerwat przyrody Kamień Grzyb",
+      "category": "reserve",
+      "lat": 49.8536,
+      "lon": 20.44312,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-wislisko-kobyle",
+      "name": "Rezerwat przyrody Wiślisko Kobyle",
+      "category": "reserve",
+      "lat": 50.03186,
+      "lon": 20.48899,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-skoczanka",
+      "name": "Rezerwat przyrody Skołczanka",
+      "category": "reserve",
+      "lat": 50.01042,
+      "lon": 19.8289,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-zimny-do",
+      "name": "Rezerwat przyrody Zimny Dół",
+      "category": "reserve",
+      "lat": 50.05294,
+      "lon": 19.6933,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-dolina-eliaszowki",
+      "name": "Rezerwat przyrody Dolina Eliaszówki",
+      "category": "reserve",
+      "lat": 50.1662,
+      "lon": 19.6314,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-wawoz-bolechowicki",
+      "name": "Rezerwat przyrody Wąwóz Bolechowicki",
+      "category": "reserve",
+      "lat": 50.15467,
+      "lon": 19.79404,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-mogielica",
+      "name": "Rezerwat przyrody Mogielica",
+      "category": "reserve",
+      "lat": 49.65535,
+      "lon": 20.2761,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-biaowodzka-gora-nad-dunajcem",
+      "name": "Rezerwat przyrody Białowodzka Góra nad Dunajcem",
+      "category": "reserve",
+      "lat": 49.69971,
+      "lon": 20.6503,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-baniska",
+      "name": "Rezerwat przyrody Baniska",
+      "category": "reserve",
+      "lat": 49.48127,
+      "lon": 20.90559,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-las-lipowy-obrozyska",
+      "name": "Rezerwat przyrody Las Lipowy Obrożyska",
+      "category": "reserve",
+      "lat": 49.36569,
+      "lon": 20.89395,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-barnowiec",
+      "name": "Rezerwat przyrody Barnowiec",
+      "category": "reserve",
+      "lat": 49.5461,
+      "lon": 20.9639,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rezerwat-przyrody-madohora",
+      "name": "Rezerwat przyrody Madohora",
+      "category": "reserve",
+      "lat": 49.7819,
+      "lon": 19.3828,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/kopalnia-soli-wieliczka",
+      "name": "Kopalnia Soli Wieliczka",
+      "category": "historic",
+      "lat": 49.98329,
+      "lon": 20.05573,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/kopalnia-soli-bochnia",
+      "name": "Kopalnia Soli Bochnia",
+      "category": "historic",
+      "lat": 49.96925,
+      "lon": 20.43067,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rynek-gowny-w-krakowie",
+      "name": "Rynek Główny w Krakowie",
+      "category": "historic",
+      "lat": 50.06169,
+      "lon": 19.93734,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/sukiennice-w-krakowie",
+      "name": "Sukiennice w Krakowie",
+      "category": "historic",
+      "lat": 50.06165,
+      "lon": 19.93732,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/koscio-mariacki-w-krakowie",
+      "name": "Kościół Mariacki w Krakowie",
+      "category": "historic",
+      "lat": 50.06159,
+      "lon": 19.93906,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/barbakan-w-krakowie",
+      "name": "Barbakan w Krakowie",
+      "category": "historic",
+      "lat": 50.0655,
+      "lon": 19.9415,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/brama-florianska-w-krakowie",
+      "name": "Brama Floriańska w Krakowie",
+      "category": "historic",
+      "lat": 50.06484,
+      "lon": 19.94135,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/collegium-maius-uniwersytetu-jagiellonskiego",
+      "name": "Collegium Maius Uniwersytetu Jagiellońskiego",
+      "category": "historic",
+      "lat": 50.06108,
+      "lon": 19.93444,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/kazimierz-historyczna-dzielnica-krakowa",
+      "name": "Kazimierz – historyczna dzielnica Krakowa",
+      "category": "historic",
+      "lat": 50.05135,
+      "lon": 19.94462,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/plac-centralny-w-nowej-hucie",
+      "name": "Plac Centralny w Nowej Hucie",
+      "category": "historic",
+      "lat": 50.07212,
+      "lon": 20.03714,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/opactwo-benedyktynow-w-tyncu",
+      "name": "Opactwo Benedyktynów w Tyńcu",
+      "category": "historic",
+      "lat": 50.01916,
+      "lon": 19.80203,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/sanktuarium-pasyjno-maryjne-w-kalwarii-zebrzydowskiej",
+      "name": "Sanktuarium pasyjno-maryjne w Kalwarii Zebrzydowskiej",
+      "category": "historic",
+      "lat": 49.86718,
+      "lon": 19.67741,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/koscio-sw-leonarda-w-lipnicy-murowanej",
+      "name": "Kościół św. Leonarda w Lipnicy Murowanej",
+      "category": "historic",
+      "lat": 49.85977,
+      "lon": 20.527,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/koscio-sw-michaa-archanioa-w-debnie-podhalanskim",
+      "name": "Kościół św. Michała Archanioła w Dębnie Podhalańskim",
+      "category": "historic",
+      "lat": 49.46691,
+      "lon": 20.2123,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/koscio-sw-filipa-i-sw-jakuba-w-sekowej",
+      "name": "Kościół św. Filipa i św. Jakuba w Sękowej",
+      "category": "historic",
+      "lat": 49.62046,
+      "lon": 21.19452,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/koscio-sw-michaa-archanioa-w-binarowej",
+      "name": "Kościół św. Michała Archanioła w Binarowej",
+      "category": "historic",
+      "lat": 49.75688,
+      "lon": 21.22934,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/cerkiew-opieki-bogurodzicy-w-owczarach",
+      "name": "Cerkiew Opieki Bogurodzicy w Owczarach",
+      "category": "historic",
+      "lat": 49.6145,
+      "lon": 21.15824,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/cerkiew-sw-paraskewy-w-kwiatoniu",
+      "name": "Cerkiew św. Paraskewy w Kwiatoniu",
+      "category": "historic",
+      "lat": 49.51994,
+      "lon": 21.09143,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/cerkiew-sw-michaa-archanioa-w-brunarach",
+      "name": "Cerkiew św. Michała Archanioła w Brunarach",
+      "category": "historic",
+      "lat": 49.54046,
+      "lon": 21.08097,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/cerkiew-sw-jakuba-modszego-w-powrozniku",
+      "name": "Cerkiew św. Jakuba Młodszego w Powroźniku",
+      "category": "historic",
+      "lat": 49.3653,
+      "lon": 21.0134,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/chochoow-zabytkowa-wies-podhalanska",
+      "name": "Chochołów – zabytkowa wieś podhalańska",
+      "category": "historic",
+      "lat": 49.36969,
+      "lon": 19.81864,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rynek-w-lanckoronie",
+      "name": "Rynek w Lanckoronie",
+      "category": "historic",
+      "lat": 49.84423,
+      "lon": 19.71526,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zalipie-malowana-wies",
+      "name": "Zalipie – malowana wieś",
+      "category": "historic",
+      "lat": 50.23594,
+      "lon": 20.86288,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rynek-w-starym-saczu",
+      "name": "Rynek w Starym Sączu",
+      "category": "historic",
+      "lat": 49.5635,
+      "lon": 20.63527,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rynek-w-bieczu",
+      "name": "Rynek w Bieczu",
+      "category": "historic",
+      "lat": 49.73119,
+      "lon": 21.26324,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rynek-w-tarnowie",
+      "name": "Rynek w Tarnowie",
+      "category": "historic",
+      "lat": 50.01214,
+      "lon": 20.98836,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/rynek-w-nowym-saczu",
+      "name": "Rynek w Nowym Sączu",
+      "category": "historic",
+      "lat": 49.62446,
+      "lon": 20.69134,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/bazylika-grobu-bozego-w-miechowie",
+      "name": "Bazylika Grobu Bożego w Miechowie",
+      "category": "historic",
+      "lat": 50.35602,
+      "lon": 20.02774,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/klasztor-karmelitow-bosych-w-czernej",
+      "name": "Klasztor Karmelitów Bosych w Czernej",
+      "category": "historic",
+      "lat": 50.16516,
+      "lon": 19.59486,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/opactwo-benedyktynek-w-staniatkach",
+      "name": "Opactwo Benedyktynek w Staniątkach",
+      "category": "historic",
+      "lat": 50.01266,
+      "lon": 20.19129,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/bazylika-ofiarowania-nmp-w-wadowicach",
+      "name": "Bazylika Ofiarowania NMP w Wadowicach",
+      "category": "historic",
+      "lat": 49.88329,
+      "lon": 19.49353,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/stary-sacz-klasztor-klarysek",
+      "name": "Stary Sącz – klasztor Klarysek",
+      "category": "historic",
+      "lat": 49.55995,
+      "lon": 20.6331,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/dworzec-kolejowy-nowy-sacz-zabytkowy-gmach",
+      "name": "Dworzec kolejowy Nowy Sącz – zabytkowy gmach",
+      "category": "historic",
+      "lat": 49.60908,
+      "lon": 20.70415,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/ratusz-w-tarnowie",
+      "name": "Ratusz w Tarnowie",
+      "category": "historic",
+      "lat": 50.01222,
+      "lon": 20.98842,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/ratusz-w-nowym-saczu",
+      "name": "Ratusz w Nowym Sączu",
+      "category": "historic",
+      "lat": 49.62447,
+      "lon": 20.69134,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/stara-synagoga-w-krakowie",
+      "name": "Stara Synagoga w Krakowie",
+      "category": "historic",
+      "lat": 50.05183,
+      "lon": 19.94872,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/fabryka-schindlera-teren-dawnej-deutsche-emailwarenfabrik",
+      "name": "Fabryka Schindlera – teren dawnej Deutsche Emailwarenfabrik",
+      "category": "historic",
+      "lat": 50.0475,
+      "lon": 19.96019,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/kopiec-kosciuszki",
+      "name": "Kopiec Kościuszki",
+      "category": "historic",
+      "lat": 50.05491,
+      "lon": 19.89342,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/kopiec-krakusa",
+      "name": "Kopiec Krakusa",
+      "category": "historic",
+      "lat": 50.03812,
+      "lon": 19.95805,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/morskie-oko",
+      "name": "Morskie Oko",
+      "category": "water",
+      "lat": 49.19793,
+      "lon": 20.07065,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jezioro-czorsztynskie-zapora-w-niedzicy",
+      "name": "Jezioro Czorsztyńskie – zapora w Niedzicy",
+      "category": "water",
+      "lat": 49.42073,
+      "lon": 20.33205,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jezioro-roznowskie-grodek-nad-dunajcem",
+      "name": "Jezioro Rożnowskie – Gródek nad Dunajcem",
+      "category": "water",
+      "lat": 49.74493,
+      "lon": 20.7322,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jezioro-klimkowka",
+      "name": "Jezioro Klimkówka",
+      "category": "water",
+      "lat": 49.55776,
+      "lon": 21.07822,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zakrzowek-w-krakowie",
+      "name": "Zakrzówek w Krakowie",
+      "category": "water",
+      "lat": 50.0376,
+      "lon": 19.90942,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/bagry-wielkie-w-krakowie",
+      "name": "Bagry Wielkie w Krakowie",
+      "category": "water",
+      "lat": 50.03222,
+      "lon": 19.99917,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/przylasek-rusiecki-kapielisko",
+      "name": "Przylasek Rusiecki – kąpielisko",
+      "category": "water",
+      "lat": 50.06826,
+      "lon": 20.15776,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zalew-kryspinow",
+      "name": "Zalew Kryspinów",
+      "category": "water",
+      "lat": 50.05305,
+      "lon": 19.79552,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/zalew-checho",
+      "name": "Zalew Chechło",
+      "category": "water",
+      "lat": 50.15368,
+      "lon": 19.48318,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/balaton-w-trzebini",
+      "name": "Balaton w Trzebini",
+      "category": "water",
+      "lat": 50.15985,
+      "lon": 19.48394,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/spyw-dunajcem-przystan-sromowce-katy",
+      "name": "Spływ Dunajcem – przystań Sromowce Kąty",
+      "category": "water",
+      "lat": 49.40529,
+      "lon": 20.36233,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/spyw-dunajcem-przystan-szczawnica",
+      "name": "Spływ Dunajcem – przystań Szczawnica",
+      "category": "water",
+      "lat": 49.4218,
+      "lon": 20.47997,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/chochoowskie-termy",
+      "name": "Chochołowskie Termy",
+      "category": "water",
+      "lat": 49.38913,
+      "lon": 19.82683,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/termy-bukovina",
+      "name": "Termy BUKOVINA",
+      "category": "water",
+      "lat": 49.32544,
+      "lon": 20.09432,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/terma-bania-w-biace-tatrzanskiej",
+      "name": "Terma Bania w Białce Tatrzańskiej",
+      "category": "water",
+      "lat": 49.38935,
+      "lon": 20.10498,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/aqua-park-zakopane",
+      "name": "Aqua Park Zakopane",
+      "category": "water",
+      "lat": 49.2994,
+      "lon": 19.96662,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/pijalnia-gowna-w-krynicy-zdroju",
+      "name": "Pijalnia Główna w Krynicy-Zdroju",
+      "category": "water",
+      "lat": 49.41844,
+      "lon": 20.95785,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/pijalnia-wod-mineralnych-w-szczawnicy",
+      "name": "Pijalnia Wód Mineralnych w Szczawnicy",
+      "category": "water",
+      "lat": 49.42517,
+      "lon": 20.48472,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/ogrody-sensoryczne-w-muszynie",
+      "name": "Ogrody Sensoryczne w Muszynie",
+      "category": "water",
+      "lat": 49.35886,
+      "lon": 20.90358,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/jezioro-czchowskie-zapora-czchow",
+      "name": "Jezioro Czchowskie – zapora Czchów",
+      "category": "water",
+      "lat": 49.80906,
+      "lon": 20.67174,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
+    },
+    {
+      "id": "malopolskie/ruiny-pustelni-b-salomei-w-grodzisku-koo-ojcowa",
+      "name": "Ruiny pustelni bł. Salomei w Grodzisku koło Ojcowa",
+      "category": "historic",
+      "lat": 50.22008,
+      "lon": 19.82745,
+      "source": "Mapy Małopolski / OpenStreetMap",
+      "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
+      "region": "małopolskie"
     }
   ],
-  "count": 42
+  "count": 239
 }
