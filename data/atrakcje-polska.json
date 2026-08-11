@@ -1,7 +1,7 @@
 {
-  "version": "v1047",
+  "version": "v1048",
   "updatedAt": "2026-08-11",
-  "description": "Baza atrakcji Turystycznej Mapy Polski – rozszerzona o województwo lubuskie.",
+  "description": "Baza atrakcji Turystycznej Mapy Polski – rozszerzona o województwo łódzkie.",
   "attractions": [
     {
       "id": "base/palac-radziejowice",
@@ -23280,7 +23280,2727 @@
       "source": "Lubuskie.pl / dane mapowe",
       "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
       "region": "lubuskie"
+    },
+    {
+      "id": "łódzkie/ulica-piotrkowska-w-odzi",
+      "name": "Ulica Piotrkowska w Łodzi",
+      "category": "historic",
+      "lat": 51.7592,
+      "lon": 19.45598,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/plac-wolnosci-w-odzi",
+      "name": "Plac Wolności w Łodzi",
+      "category": "historic",
+      "lat": 51.762336,
+      "lon": 19.452557,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/pomnik-tadeusza-kosciuszki-w-odzi",
+      "name": "Pomnik Tadeusza Kościuszki w Łodzi",
+      "category": "historic",
+      "lat": 51.753508,
+      "lon": 19.45648,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-kanau-detka",
+      "name": "Muzeum Kanału „Dętka”",
+      "category": "museum",
+      "lat": 51.764585,
+      "lon": 19.460109,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/pasaz-rozy",
+      "name": "Pasaż Róży",
+      "category": "historic",
+      "lat": 51.757831,
+      "lon": 19.448243,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/manufaktura-w-odzi",
+      "name": "Manufaktura w Łodzi",
+      "category": "historic",
+      "lat": 51.754408,
+      "lon": 19.463514,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/paac-izraela-poznanskiego",
+      "name": "Pałac Izraela Poznańskiego",
+      "category": "castle",
+      "lat": 51.768857,
+      "lon": 19.453384,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-miasta-odzi",
+      "name": "Muzeum Miasta Łodzi",
+      "category": "museum",
+      "lat": 51.756031,
+      "lon": 19.454334,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-fabryki-w-manufakturze",
+      "name": "Muzeum Fabryki w Manufakturze",
+      "category": "museum",
+      "lat": 51.760793,
+      "lon": 19.460341,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/ms2-muzeum-sztuki-w-odzi",
+      "name": "ms2 – Muzeum Sztuki w Łodzi",
+      "category": "museum",
+      "lat": 51.76138,
+      "lon": 19.450698,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-sztuki-ms1-w-odzi",
+      "name": "Muzeum Sztuki ms1 w Łodzi",
+      "category": "museum",
+      "lat": 51.753054,
+      "lon": 19.458856,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/ec1-odz-miasto-kultury",
+      "name": "EC1 Łódź – Miasto Kultury",
+      "category": "museum",
+      "lat": 51.766697,
+      "lon": 19.458332,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/centrum-nauki-i-techniki-ec1",
+      "name": "Centrum Nauki i Techniki EC1",
+      "category": "museum",
+      "lat": 51.754723,
+      "lon": 19.448255,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/planetarium-ec1",
+      "name": "Planetarium EC1",
+      "category": "museum",
+      "lat": 51.757053,
+      "lon": 19.465747,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/narodowe-centrum-kultury-filmowej",
+      "name": "Narodowe Centrum Kultury Filmowej",
+      "category": "museum",
+      "lat": 51.762122,
+      "lon": 19.453926,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/dworzec-odz-fabryczna",
+      "name": "Dworzec Łódź Fabryczna",
+      "category": "historic",
+      "lat": 51.754596,
+      "lon": 19.455383,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/cerkiew-sw-aleksandra-newskiego-w-odzi",
+      "name": "Cerkiew św. Aleksandra Newskiego w Łodzi",
+      "category": "historic",
+      "lat": 51.762883,
+      "lon": 19.460349,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/archikatedra-sw-stanisawa-kostki-w-odzi",
+      "name": "Archikatedra św. Stanisława Kostki w Łodzi",
+      "category": "historic",
+      "lat": 51.75948,
+      "lon": 19.4492,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/bazylika-archikatedralna-wieza-widokowa",
+      "name": "Bazylika archikatedralna – wieża widokowa",
+      "category": "historic",
+      "lat": 51.753658,
+      "lon": 19.461549,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/biaa-fabryka-ludwika-geyera",
+      "name": "Biała Fabryka Ludwika Geyera",
+      "category": "historic",
+      "lat": 51.768119,
+      "lon": 19.455568,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/centralne-muzeum-wokiennictwa-w-odzi",
+      "name": "Centralne Muzeum Włókiennictwa w Łodzi",
+      "category": "museum",
+      "lat": 51.751522,
+      "lon": 19.449573,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/odzki-park-kultury-miejskiej",
+      "name": "Łódzki Park Kultury Miejskiej",
+      "category": "museum",
+      "lat": 51.759676,
+      "lon": 19.45952,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/ksiezy-myn",
+      "name": "Księży Młyn",
+      "category": "historic",
+      "lat": 51.761852,
+      "lon": 19.452169,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/paac-herbsta",
+      "name": "Pałac Herbsta",
+      "category": "castle",
+      "lat": 51.753625,
+      "lon": 19.457234,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-paac-herbsta",
+      "name": "Muzeum Pałac Herbsta",
+      "category": "museum",
+      "lat": 51.765088,
+      "lon": 19.459354,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/fabryka-karola-scheiblera",
+      "name": "Fabryka Karola Scheiblera",
+      "category": "historic",
+      "lat": 51.756812,
+      "lon": 19.448495,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-zrodliska-i",
+      "name": "Park Źródliska I",
+      "category": "nature",
+      "lat": 51.755455,
+      "lon": 19.464085,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-zrodliska-ii",
+      "name": "Park Źródliska II",
+      "category": "nature",
+      "lat": 51.768425,
+      "lon": 19.452119,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/palmiarnia-ogrodu-botanicznego-w-odzi",
+      "name": "Palmiarnia Ogrodu Botanicznego w Łodzi",
+      "category": "nature",
+      "lat": 51.755839,
+      "lon": 19.454771,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-kinematografii-w-odzi",
+      "name": "Muzeum Kinematografii w Łodzi",
+      "category": "museum",
+      "lat": 51.76136,
+      "lon": 19.46009,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/paac-karola-scheiblera",
+      "name": "Pałac Karola Scheiblera",
+      "category": "castle",
+      "lat": 51.760657,
+      "lon": 19.450454,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/monopolis",
+      "name": "Monopolis",
+      "category": "historic",
+      "lat": 51.753492,
+      "lon": 19.45965,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/off-piotrkowska",
+      "name": "OFF Piotrkowska",
+      "category": "historic",
+      "lat": 51.766944,
+      "lon": 19.457311,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/aleja-gwiazd-na-piotrkowskiej",
+      "name": "Aleja Gwiazd na Piotrkowskiej",
+      "category": "historic",
+      "lat": 51.753733,
+      "lon": 19.448921,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/pomnik-aweczka-tuwima",
+      "name": "Pomnik Ławeczka Tuwima",
+      "category": "historic",
+      "lat": 51.758374,
+      "lon": 19.465946,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/pomnik-misia-uszatka",
+      "name": "Pomnik Misia Uszatka",
+      "category": "historic",
+      "lat": 51.761822,
+      "lon": 19.453555,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/stacja-radegast",
+      "name": "Stacja Radegast",
+      "category": "museum",
+      "lat": 51.754557,
+      "lon": 19.456003,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-tradycji-niepodlegosciowych-radegast",
+      "name": "Muzeum Tradycji Niepodległościowych – Radegast",
+      "category": "museum",
+      "lat": 51.763432,
+      "lon": 19.459819,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/stary-cmentarz-w-odzi",
+      "name": "Stary Cmentarz w Łodzi",
+      "category": "historic",
+      "lat": 51.758574,
+      "lon": 19.449223,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/kaplica-scheiblera-na-starym-cmentarzu",
+      "name": "Kaplica Scheiblera na Starym Cmentarzu",
+      "category": "historic",
+      "lat": 51.75445,
+      "lon": 19.462239,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/cmentarz-zydowski-w-odzi",
+      "name": "Cmentarz Żydowski w Łodzi",
+      "category": "historic",
+      "lat": 51.767984,
+      "lon": 19.454382,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-ocalaych",
+      "name": "Park Ocalałych",
+      "category": "nature",
+      "lat": 51.750736,
+      "lon": 19.450654,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/centrum-dialogu-im-marka-edelmana",
+      "name": "Centrum Dialogu im. Marka Edelmana",
+      "category": "museum",
+      "lat": 51.760144,
+      "lon": 19.459424,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/orientarium-zoo-odz",
+      "name": "Orientarium Zoo Łódź",
+      "category": "nature",
+      "lat": 51.76132,
+      "lon": 19.451849,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/miejski-ogrod-zoologiczny-w-odzi",
+      "name": "Miejski Ogród Zoologiczny w Łodzi",
+      "category": "nature",
+      "lat": 51.753842,
+      "lon": 19.457966,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/ogrod-botaniczny-w-odzi",
+      "name": "Ogród Botaniczny w Łodzi",
+      "category": "nature",
+      "lat": 51.765485,
+      "lon": 19.458539,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-im-jozefa-pisudskiego-na-zdrowiu",
+      "name": "Park im. Józefa Piłsudskiego na Zdrowiu",
+      "category": "nature",
+      "lat": 51.755835,
+      "lon": 19.44888,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/aquapark-fala",
+      "name": "Aquapark Fala",
+      "category": "water",
+      "lat": 51.756569,
+      "lon": 19.464512,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/las-agiewnicki",
+      "name": "Las Łagiewnicki",
+      "category": "nature",
+      "lat": 51.767828,
+      "lon": 19.450924,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-las-agiewnicki",
+      "name": "Rezerwat Las Łagiewnicki",
+      "category": "reserve",
+      "lat": 51.755708,
+      "lon": 19.45523,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/kapliczki-sw-antoniego-i-sw-rocha-w-agiewnikach",
+      "name": "Kapliczki św. Antoniego i św. Rocha w Łagiewnikach",
+      "category": "historic",
+      "lat": 51.761889,
+      "lon": 19.459765,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/arturowek",
+      "name": "Arturówek",
+      "category": "water",
+      "lat": 51.759907,
+      "lon": 19.45031,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-julianowski-im-mickiewicza",
+      "name": "Park Julianowski im. Mickiewicza",
+      "category": "nature",
+      "lat": 51.754033,
+      "lon": 19.460378,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-poniatowskiego-w-odzi",
+      "name": "Park Poniatowskiego w Łodzi",
+      "category": "nature",
+      "lat": 51.767052,
+      "lon": 19.456266,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rudzka-gora",
+      "name": "Rudzka Góra",
+      "category": "nature",
+      "lat": 51.752841,
+      "lon": 19.449713,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/stawy-stefanskiego",
+      "name": "Stawy Stefańskiego",
+      "category": "water",
+      "lat": 51.759711,
+      "lon": 19.465967,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-archeologiczne-i-etnograficzne-w-odzi",
+      "name": "Muzeum Archeologiczne i Etnograficzne w Łodzi",
+      "category": "museum",
+      "lat": 51.761475,
+      "lon": 19.453227,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-przyrodnicze-uniwersytetu-odzkiego",
+      "name": "Muzeum Przyrodnicze Uniwersytetu Łódzkiego",
+      "category": "museum",
+      "lat": 51.754602,
+      "lon": 19.456622,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/dwor-kapituy-krakowskiej-w-pabianicach",
+      "name": "Dwór Kapituły Krakowskiej w Pabianicach",
+      "category": "castle",
+      "lat": 51.6647,
+      "lon": 19.3547,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-miasta-pabianic",
+      "name": "Muzeum Miasta Pabianic",
+      "category": "museum",
+      "lat": 51.665954,
+      "lon": 19.353331,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-mateusza-w-pabianicach",
+      "name": "Kościół św. Mateusza w Pabianicach",
+      "category": "historic",
+      "lat": 51.662423,
+      "lon": 19.3549,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/stary-rynek-w-pabianicach",
+      "name": "Stary Rynek w Pabianicach",
+      "category": "historic",
+      "lat": 51.666854,
+      "lon": 19.356351,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/paac-enderow-w-pabianicach",
+      "name": "Pałac Enderów w Pabianicach",
+      "category": "castle",
+      "lat": 51.664153,
+      "lon": 19.351605,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/fabryka-krusche-i-endera",
+      "name": "Fabryka Krusche i Endera",
+      "category": "historic",
+      "lat": 51.662783,
+      "lon": 19.357713,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-wolnosci-w-pabianicach",
+      "name": "Park Wolności w Pabianicach",
+      "category": "nature",
+      "lat": 51.668563,
+      "lon": 19.353662,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/lewityn-w-pabianicach",
+      "name": "Lewityn w Pabianicach",
+      "category": "water",
+      "lat": 51.663432,
+      "lon": 19.354042,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/mandoria-miasto-przygod-w-rzgowie",
+      "name": "Mandoria Miasto Przygód w Rzgowie",
+      "category": "museum",
+      "lat": 51.6631,
+      "lon": 19.4897,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-stanisawa-w-rzgowie",
+      "name": "Kościół św. Stanisława w Rzgowie",
+      "category": "historic",
+      "lat": 51.663727,
+      "lon": 19.489015,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/miasto-tkaczy-w-zgierzu",
+      "name": "Miasto Tkaczy w Zgierzu",
+      "category": "historic",
+      "lat": 51.8556,
+      "lon": 19.4062,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-kulturowy-miasto-tkaczy",
+      "name": "Park Kulturowy Miasto Tkaczy",
+      "category": "museum",
+      "lat": 51.856854,
+      "lon": 19.404831,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-miasta-zgierza",
+      "name": "Muzeum Miasta Zgierza",
+      "category": "museum",
+      "lat": 51.853323,
+      "lon": 19.4064,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/dom-tkacza-w-zgierzu",
+      "name": "Dom Tkacza w Zgierzu",
+      "category": "historic",
+      "lat": 51.857754,
+      "lon": 19.407851,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-katarzyny-aleksandryjskiej-w-zgierzu",
+      "name": "Kościół św. Katarzyny Aleksandryjskiej w Zgierzu",
+      "category": "historic",
+      "lat": 51.855053,
+      "lon": 19.403105,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-miejski-im-tadeusza-kosciuszki-w-zgierzu",
+      "name": "Park Miejski im. Tadeusza Kościuszki w Zgierzu",
+      "category": "nature",
+      "lat": 51.853683,
+      "lon": 19.409213,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/las-krogulec",
+      "name": "Las Krogulec",
+      "category": "nature",
+      "lat": 51.859463,
+      "lon": 19.405162,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-jozefa-w-ozorkowie",
+      "name": "Kościół św. Józefa w Ozorkowie",
+      "category": "historic",
+      "lat": 51.9639,
+      "lon": 19.2914,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-miejski-w-ozorkowie",
+      "name": "Park Miejski w Ozorkowie",
+      "category": "nature",
+      "lat": 51.964841,
+      "lon": 19.290373,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zalew-miejski-w-ozorkowie",
+      "name": "Zalew Miejski w Ozorkowie",
+      "category": "water",
+      "lat": 51.962192,
+      "lon": 19.29155,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zamek-krolewski-w-eczycy",
+      "name": "Zamek Królewski w Łęczycy",
+      "category": "castle",
+      "lat": 52.059,
+      "lon": 19.1997,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-w-eczycy",
+      "name": "Muzeum w Łęczycy",
+      "category": "museum",
+      "lat": 52.059941,
+      "lon": 19.198673,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rynek-w-eczycy",
+      "name": "Rynek w Łęczycy",
+      "category": "historic",
+      "lat": 52.057292,
+      "lon": 19.19985,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/ratusz-w-eczycy",
+      "name": "Ratusz w Łęczycy",
+      "category": "historic",
+      "lat": 52.060616,
+      "lon": 19.200939,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-andrzeja-apostoa-w-eczycy",
+      "name": "Kościół św. Andrzeja Apostoła w Łęczycy",
+      "category": "historic",
+      "lat": 52.058589,
+      "lon": 19.197379,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/klasztor-bernardynow-w-eczycy",
+      "name": "Klasztor Bernardynów w Łęczycy",
+      "category": "historic",
+      "lat": 52.057562,
+      "lon": 19.20196,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/dawne-wiezienie-w-eczycy",
+      "name": "Dawne więzienie w Łęczycy",
+      "category": "historic",
+      "lat": 52.061897,
+      "lon": 19.198921,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/archikolegiata-w-tumie",
+      "name": "Archikolegiata w Tumie",
+      "category": "historic",
+      "lat": 52.0869,
+      "lon": 19.2326,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/grodzisko-w-tumie",
+      "name": "Grodzisko w Tumie",
+      "category": "historic",
+      "lat": 52.087684,
+      "lon": 19.231744,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/skansen-eczycka-zagroda-chopska-w-kwiatkowku",
+      "name": "Skansen Łęczycka Zagroda Chłopska w Kwiatkówku",
+      "category": "museum",
+      "lat": 52.085477,
+      "lon": 19.232725,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-bonie",
+      "name": "Rezerwat Błonie",
+      "category": "reserve",
+      "lat": 52.038,
+      "lon": 19.201,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/paac-saski-w-kutnie",
+      "name": "Pałac Saski w Kutnie",
+      "category": "castle",
+      "lat": 52.2306,
+      "lon": 19.3641,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-paac-saski-w-kutnie",
+      "name": "Muzeum Pałac Saski w Kutnie",
+      "category": "museum",
+      "lat": 52.231854,
+      "lon": 19.362731,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-regionalne-w-kutnie",
+      "name": "Muzeum Regionalne w Kutnie",
+      "category": "museum",
+      "lat": 52.228323,
+      "lon": 19.3643,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/plac-marszaka-jozefa-pisudskiego-w-kutnie",
+      "name": "Plac Marszałka Józefa Piłsudskiego w Kutnie",
+      "category": "historic",
+      "lat": 52.232754,
+      "lon": 19.365751,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/ratusz-w-kutnie",
+      "name": "Ratusz w Kutnie",
+      "category": "historic",
+      "lat": 52.230053,
+      "lon": 19.361005,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-wiosny-ludow-w-kutnie",
+      "name": "Park Wiosny Ludów w Kutnie",
+      "category": "nature",
+      "lat": 52.228683,
+      "lon": 19.367113,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/paac-gieraty-w-kutnie",
+      "name": "Pałac Gierałty w Kutnie",
+      "category": "castle",
+      "lat": 52.234463,
+      "lon": 19.363062,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-bitwy-nad-bzura",
+      "name": "Muzeum Bitwy nad Bzurą",
+      "category": "museum",
+      "lat": 52.229332,
+      "lon": 19.363442,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zamek-w-oporowie",
+      "name": "Zamek w Oporowie",
+      "category": "castle",
+      "lat": 52.2654,
+      "lon": 19.5642,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-zamek-w-oporowie",
+      "name": "Muzeum Zamek w Oporowie",
+      "category": "museum",
+      "lat": 52.266027,
+      "lon": 19.563515,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-zamkowy-w-oporowie",
+      "name": "Park zamkowy w Oporowie",
+      "category": "nature",
+      "lat": 52.264262,
+      "lon": 19.5643,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-marcina-w-oporowie",
+      "name": "Kościół św. Marcina w Oporowie",
+      "category": "historic",
+      "lat": 52.266477,
+      "lon": 19.565026,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/stary-rynek-w-owiczu",
+      "name": "Stary Rynek w Łowiczu",
+      "category": "historic",
+      "lat": 52.1071,
+      "lon": 19.9453,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/bazylika-katedralna-w-owiczu",
+      "name": "Bazylika Katedralna w Łowiczu",
+      "category": "historic",
+      "lat": 52.108354,
+      "lon": 19.943931,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-w-owiczu",
+      "name": "Muzeum w Łowiczu",
+      "category": "museum",
+      "lat": 52.104823,
+      "lon": 19.9455,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/skansen-przy-muzeum-w-owiczu",
+      "name": "Skansen przy Muzeum w Łowiczu",
+      "category": "museum",
+      "lat": 52.109254,
+      "lon": 19.946951,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/nowy-rynek-w-owiczu",
+      "name": "Nowy Rynek w Łowiczu",
+      "category": "historic",
+      "lat": 52.106553,
+      "lon": 19.942205,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-pijarow-w-owiczu",
+      "name": "Kościół Pijarów w Łowiczu",
+      "category": "historic",
+      "lat": 52.105183,
+      "lon": 19.948313,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/baszta-gen-klickiego-w-owiczu",
+      "name": "Baszta gen. Klickiego w Łowiczu",
+      "category": "historic",
+      "lat": 52.110963,
+      "lon": 19.944262,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/aleja-gwiozd-owickich",
+      "name": "Aleja Gwiozd Łowickich",
+      "category": "historic",
+      "lat": 52.105832,
+      "lon": 19.944642,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/paac-radziwiow-w-nieborowie",
+      "name": "Pałac Radziwiłłów w Nieborowie",
+      "category": "castle",
+      "lat": 52.0775,
+      "lon": 20.0693,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-w-nieborowie-i-arkadii-paac",
+      "name": "Muzeum w Nieborowie i Arkadii – Pałac",
+      "category": "museum",
+      "lat": 52.078284,
+      "lon": 20.068444,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/ogrod-barokowy-w-nieborowie",
+      "name": "Ogród barokowy w Nieborowie",
+      "category": "nature",
+      "lat": 52.076077,
+      "lon": 20.069425,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/manufaktura-majoliki-w-nieborowie",
+      "name": "Manufaktura Majoliki w Nieborowie",
+      "category": "museum",
+      "lat": 52.078846,
+      "lon": 20.070332,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-romantyczny-w-arkadii",
+      "name": "Park Romantyczny w Arkadii",
+      "category": "nature",
+      "lat": 52.0745,
+      "lon": 20.0127,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/akwedukt-w-arkadii",
+      "name": "Akwedukt w Arkadii",
+      "category": "historic",
+      "lat": 52.075284,
+      "lon": 20.011844,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/swiatynia-diany-w-arkadii",
+      "name": "Świątynia Diany w Arkadii",
+      "category": "historic",
+      "lat": 52.073077,
+      "lon": 20.012825,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/dom-murgrabiego-w-arkadii",
+      "name": "Dom Murgrabiego w Arkadii",
+      "category": "historic",
+      "lat": 52.075846,
+      "lon": 20.013732,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/grota-sybilli-w-arkadii",
+      "name": "Grota Sybilli w Arkadii",
+      "category": "historic",
+      "lat": 52.074158,
+      "lon": 20.010766,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-ludowe-rodziny-brzozowskich-w-sromowie",
+      "name": "Muzeum Ludowe Rodziny Brzozowskich w Sromowie",
+      "category": "museum",
+      "lat": 52.1508,
+      "lon": 20.032,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/skansen-w-maurzycach",
+      "name": "Skansen w Maurzycach",
+      "category": "museum",
+      "lat": 52.151898,
+      "lon": 20.030802,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/most-spawany-w-maurzycach",
+      "name": "Most spawany w Maurzycach",
+      "category": "historic",
+      "lat": 52.148808,
+      "lon": 20.032175,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-regionalne-im-wadysawa-reymonta-w-lipcach-reymontowskich",
+      "name": "Muzeum Regionalne im. Władysława Reymonta w Lipcach Reymontowskich",
+      "category": "museum",
+      "lat": 51.8989,
+      "lon": 19.9418,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zagroda-ludowa-w-lipcach-reymontowskich",
+      "name": "Zagroda Ludowa w Lipcach Reymontowskich",
+      "category": "museum",
+      "lat": 51.899527,
+      "lon": 19.941115,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rynek-w-skierniewicach",
+      "name": "Rynek w Skierniewicach",
+      "category": "historic",
+      "lat": 51.9547,
+      "lon": 20.1584,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/ratusz-w-skierniewicach",
+      "name": "Ratusz w Skierniewicach",
+      "category": "historic",
+      "lat": 51.955954,
+      "lon": 20.157031,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/paac-prymasowski-w-skierniewicach",
+      "name": "Pałac Prymasowski w Skierniewicach",
+      "category": "castle",
+      "lat": 51.952423,
+      "lon": 20.1586,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-miejski-w-skierniewicach",
+      "name": "Park Miejski w Skierniewicach",
+      "category": "nature",
+      "lat": 51.956854,
+      "lon": 20.160051,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/parowozownia-skierniewice",
+      "name": "Parowozownia Skierniewice",
+      "category": "museum",
+      "lat": 51.954153,
+      "lon": 20.155305,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-historyczne-skierniewic",
+      "name": "Muzeum Historyczne Skierniewic",
+      "category": "museum",
+      "lat": 51.952783,
+      "lon": 20.161413,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/dworzec-kolejowy-w-skierniewicach",
+      "name": "Dworzec kolejowy w Skierniewicach",
+      "category": "historic",
+      "lat": 51.958563,
+      "lon": 20.157362,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/bolimowski-park-krajobrazowy",
+      "name": "Bolimowski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 52.001,
+      "lon": 20.144,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-rawka",
+      "name": "Rezerwat Rawka",
+      "category": "reserve",
+      "lat": 51.925,
+      "lon": 20.205,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-ruda-chlebacz",
+      "name": "Rezerwat Ruda-Chlebacz",
+      "category": "reserve",
+      "lat": 51.992,
+      "lon": 20.233,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-kopanicha",
+      "name": "Rezerwat Kopanicha",
+      "category": "reserve",
+      "lat": 52.047,
+      "lon": 20.166,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rynek-w-bolimowie",
+      "name": "Rynek w Bolimowie",
+      "category": "historic",
+      "lat": 52.075,
+      "lon": 20.163,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-anny-w-bolimowie",
+      "name": "Kościół św. Anny w Bolimowie",
+      "category": "historic",
+      "lat": 52.075627,
+      "lon": 20.162315,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zamek-arcybiskupow-gnieznienskich-w-uniejowie",
+      "name": "Zamek Arcybiskupów Gnieźnieńskich w Uniejowie",
+      "category": "castle",
+      "lat": 51.9747,
+      "lon": 18.7931,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/termy-uniejow",
+      "name": "Termy Uniejów",
+      "category": "water",
+      "lat": 51.975641,
+      "lon": 18.792073,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-zamkowy-w-uniejowie",
+      "name": "Park Zamkowy w Uniejowie",
+      "category": "nature",
+      "lat": 51.972992,
+      "lon": 18.79325,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/kolegiata-wniebowziecia-nmp-w-uniejowie",
+      "name": "Kolegiata Wniebowzięcia NMP w Uniejowie",
+      "category": "historic",
+      "lat": 51.976316,
+      "lon": 18.794339,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zagroda-mynarska-w-uniejowie",
+      "name": "Zagroda Młynarska w Uniejowie",
+      "category": "museum",
+      "lat": 51.974289,
+      "lon": 18.790779,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/teznia-solankowa-w-uniejowie",
+      "name": "Tężnia solankowa w Uniejowie",
+      "category": "water",
+      "lat": 51.973262,
+      "lon": 18.79536,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/bulwary-nad-warta-w-uniejowie",
+      "name": "Bulwary nad Wartą w Uniejowie",
+      "category": "nature",
+      "lat": 51.977597,
+      "lon": 18.792321,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/dywany-kwiatowe-w-spycimierzu-miejsce-tradycji-unesco",
+      "name": "Dywany kwiatowe w Spycimierzu – miejsce tradycji UNESCO",
+      "category": "historic",
+      "lat": 51.966,
+      "lon": 18.767,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/centrum-spycimierskie-boze-ciao",
+      "name": "Centrum „Spycimierskie Boże Ciało”",
+      "category": "museum",
+      "lat": 51.966627,
+      "lon": 18.766315,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/termy-poddebice",
+      "name": "Termy Poddębice",
+      "category": "water",
+      "lat": 51.8938,
+      "lon": 18.9572,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/ogrod-zmysow-w-poddebicach",
+      "name": "Ogród Zmysłów w Poddębicach",
+      "category": "nature",
+      "lat": 51.894741,
+      "lon": 18.956173,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/paac-grudzinskich-w-poddebicach",
+      "name": "Pałac Grudzińskich w Poddębicach",
+      "category": "castle",
+      "lat": 51.892092,
+      "lon": 18.95735,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-katarzyny-w-poddebicach",
+      "name": "Kościół św. Katarzyny w Poddębicach",
+      "category": "historic",
+      "lat": 51.895416,
+      "lon": 18.958439,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/pijalnia-wod-termalnych-w-poddebicach",
+      "name": "Pijalnia Wód Termalnych w Poddębicach",
+      "category": "water",
+      "lat": 51.893389,
+      "lon": 18.954879,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zoo-safari-borysew",
+      "name": "Zoo Safari Borysew",
+      "category": "nature",
+      "lat": 51.9384,
+      "lon": 19.0087,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rynek-w-sieradzu",
+      "name": "Rynek w Sieradzu",
+      "category": "historic",
+      "lat": 51.5956,
+      "lon": 18.7303,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-okregowe-w-sieradzu",
+      "name": "Muzeum Okręgowe w Sieradzu",
+      "category": "museum",
+      "lat": 51.596854,
+      "lon": 18.728931,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/wzgorze-zamkowe-w-sieradzu",
+      "name": "Wzgórze Zamkowe w Sieradzu",
+      "category": "historic",
+      "lat": 51.593323,
+      "lon": 18.7305,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/bazylika-wszystkich-swietych-w-sieradzu",
+      "name": "Bazylika Wszystkich Świętych w Sieradzu",
+      "category": "historic",
+      "lat": 51.597754,
+      "lon": 18.731951,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/klasztor-dominikanow-w-sieradzu",
+      "name": "Klasztor Dominikanów w Sieradzu",
+      "category": "historic",
+      "lat": 51.595053,
+      "lon": 18.727205,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/sieradzki-park-etnograficzny",
+      "name": "Sieradzki Park Etnograficzny",
+      "category": "museum",
+      "lat": 51.593683,
+      "lon": 18.733313,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-staromiejski-w-sieradzu",
+      "name": "Park Staromiejski w Sieradzu",
+      "category": "nature",
+      "lat": 51.599463,
+      "lon": 18.729262,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rynek-w-warcie",
+      "name": "Rynek w Warcie",
+      "category": "historic",
+      "lat": 51.7106,
+      "lon": 18.6247,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-miasta-i-rzeki-warty",
+      "name": "Muzeum Miasta i Rzeki Warty",
+      "category": "museum",
+      "lat": 51.711541,
+      "lon": 18.623673,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/klasztor-bernardynow-w-warcie",
+      "name": "Klasztor Bernardynów w Warcie",
+      "category": "historic",
+      "lat": 51.708892,
+      "lon": 18.62485,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zbiornik-jeziorsko",
+      "name": "Zbiornik Jeziorsko",
+      "category": "water",
+      "lat": 51.78,
+      "lon": 18.67,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-jeziorsko",
+      "name": "Rezerwat Jeziorsko",
+      "category": "reserve",
+      "lat": 51.82,
+      "lon": 18.66,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-ziemi-wielunskiej",
+      "name": "Muzeum Ziemi Wieluńskiej",
+      "category": "museum",
+      "lat": 51.2203,
+      "lon": 18.5696,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/brama-krakowska-w-wieluniu",
+      "name": "Brama Krakowska w Wieluniu",
+      "category": "historic",
+      "lat": 51.221554,
+      "lon": 18.568231,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/baszta-meczarnia-w-wieluniu",
+      "name": "Baszta Męczarnia w Wieluniu",
+      "category": "historic",
+      "lat": 51.218023,
+      "lon": 18.5698,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-bozego-ciaa-w-wieluniu",
+      "name": "Kościół Bożego Ciała w Wieluniu",
+      "category": "historic",
+      "lat": 51.222454,
+      "lon": 18.571251,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/klasztor-franciszkanow-w-wieluniu",
+      "name": "Klasztor Franciszkanów w Wieluniu",
+      "category": "historic",
+      "lat": 51.219753,
+      "lon": 18.566505,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/ruiny-fary-w-wieluniu",
+      "name": "Ruiny fary w Wieluniu",
+      "category": "ruins",
+      "lat": 51.218383,
+      "lon": 18.572613,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/mury-miejskie-w-wieluniu",
+      "name": "Mury miejskie w Wieluniu",
+      "category": "historic",
+      "lat": 51.224163,
+      "lon": 18.568562,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/paac-mecinskich-w-dziaoszynie",
+      "name": "Pałac Męcińskich w Działoszynie",
+      "category": "castle",
+      "lat": 51.117,
+      "lon": 18.865,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-marii-magdaleny-w-dziaoszynie",
+      "name": "Kościół św. Marii Magdaleny w Działoszynie",
+      "category": "historic",
+      "lat": 51.117784,
+      "lon": 18.864144,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zaeczanski-park-krajobrazowy",
+      "name": "Załęczański Park Krajobrazowy",
+      "category": "nature",
+      "lat": 51.115,
+      "lon": 18.76,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zaeczanski-uk-warty",
+      "name": "Załęczański Łuk Warty",
+      "category": "nature",
+      "lat": 51.1,
+      "lon": 18.78,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-weze",
+      "name": "Rezerwat Węże",
+      "category": "reserve",
+      "lat": 51.087,
+      "lon": 18.79,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/gora-zelce",
+      "name": "Góra Zelce",
+      "category": "nature",
+      "lat": 51.0878,
+      "lon": 18.786,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/jaskinia-szachownica",
+      "name": "Jaskinia Szachownica",
+      "category": "cave",
+      "lat": 51.059,
+      "lon": 18.771,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zrodo-sw-floriana-w-zaeczu-wielkim",
+      "name": "Źródło św. Floriana w Załęczu Wielkim",
+      "category": "nature",
+      "lat": 51.115,
+      "lon": 18.732,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-regionalne-w-bechatowie-dwor-olszewskich",
+      "name": "Muzeum Regionalne w Bełchatowie – Dwór Olszewskich",
+      "category": "museum",
+      "lat": 51.3688,
+      "lon": 19.3564,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/pge-giganty-mocy-w-bechatowie",
+      "name": "PGE Giganty Mocy w Bełchatowie",
+      "category": "museum",
+      "lat": 51.369741,
+      "lon": 19.355373,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/plac-narutowicza-w-bechatowie",
+      "name": "Plac Narutowicza w Bełchatowie",
+      "category": "historic",
+      "lat": 51.367092,
+      "lon": 19.35655,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-olszewskich-w-bechatowie",
+      "name": "Park Olszewskich w Bełchatowie",
+      "category": "nature",
+      "lat": 51.370416,
+      "lon": 19.357639,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/punkt-widokowy-kleszczow-odkrywka-bechatow",
+      "name": "Punkt widokowy Kleszczów – odkrywka Bełchatów",
+      "category": "nature",
+      "lat": 51.221,
+      "lon": 19.304,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/kopalnia-wegla-brunatnego-bechatow-panorama",
+      "name": "Kopalnia Węgla Brunatnego Bełchatów – panorama",
+      "category": "historic",
+      "lat": 51.252,
+      "lon": 19.276,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/gora-kamiensk",
+      "name": "Góra Kamieńsk",
+      "category": "nature",
+      "lat": 51.203,
+      "lon": 19.432,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/osrodek-sportu-i-rekreacji-gora-kamiensk",
+      "name": "Ośrodek Sportu i Rekreacji Góra Kamieńsk",
+      "category": "nature",
+      "lat": 51.204,
+      "lon": 19.432,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/stare-miasto-w-piotrkowie-trybunalskim",
+      "name": "Stare Miasto w Piotrkowie Trybunalskim",
+      "category": "historic",
+      "lat": 51.4052,
+      "lon": 19.7031,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rynek-trybunalski",
+      "name": "Rynek Trybunalski",
+      "category": "historic",
+      "lat": 51.406454,
+      "lon": 19.701731,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-w-piotrkowie-trybunalskim-zamek-krolewski",
+      "name": "Muzeum w Piotrkowie Trybunalskim – Zamek Królewski",
+      "category": "museum",
+      "lat": 51.402923,
+      "lon": 19.7033,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zamek-krolewski-w-piotrkowie-trybunalskim",
+      "name": "Zamek Królewski w Piotrkowie Trybunalskim",
+      "category": "castle",
+      "lat": 51.407354,
+      "lon": 19.704751,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/bazylika-sw-jakuba-w-piotrkowie-trybunalskim",
+      "name": "Bazylika św. Jakuba w Piotrkowie Trybunalskim",
+      "category": "historic",
+      "lat": 51.404653,
+      "lon": 19.700005,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-bernardynow-w-piotrkowie-trybunalskim",
+      "name": "Kościół Bernardynów w Piotrkowie Trybunalskim",
+      "category": "historic",
+      "lat": 51.403283,
+      "lon": 19.706113,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/wielka-synagoga-w-piotrkowie-trybunalskim",
+      "name": "Wielka Synagoga w Piotrkowie Trybunalskim",
+      "category": "historic",
+      "lat": 51.409063,
+      "lon": 19.702062,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-marcepanow-w-piotrkowie-trybunalskim",
+      "name": "Muzeum Marcepanów w Piotrkowie Trybunalskim",
+      "category": "museum",
+      "lat": 51.403932,
+      "lon": 19.702442,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/wieza-cisnien-w-piotrkowie-trybunalskim",
+      "name": "Wieża Ciśnień w Piotrkowie Trybunalskim",
+      "category": "historic",
+      "lat": 51.405837,
+      "lon": 19.704844,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/opactwo-cystersow-w-sulejowie-podklasztorzu",
+      "name": "Opactwo Cystersów w Sulejowie-Podklasztorzu",
+      "category": "historic",
+      "lat": 51.3544,
+      "lon": 19.8857,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-opactwa-cystersow-w-sulejowie",
+      "name": "Muzeum Opactwa Cystersów w Sulejowie",
+      "category": "museum",
+      "lat": 51.355184,
+      "lon": 19.884844,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-tomasza-kantuaryjskiego-w-sulejowie",
+      "name": "Kościół św. Tomasza Kantuaryjskiego w Sulejowie",
+      "category": "historic",
+      "lat": 51.352977,
+      "lon": 19.885825,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/sulejowski-park-krajobrazowy",
+      "name": "Sulejowski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 51.37,
+      "lon": 19.89,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zalew-sulejowski",
+      "name": "Zalew Sulejowski",
+      "category": "water",
+      "lat": 51.42,
+      "lon": 19.95,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zapora-w-smardzewicach",
+      "name": "Zapora w Smardzewicach",
+      "category": "historic",
+      "lat": 51.4705,
+      "lon": 20.0105,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/plaza-w-smardzewicach-nad-zalewem-sulejowskim",
+      "name": "Plaża w Smardzewicach nad Zalewem Sulejowskim",
+      "category": "water",
+      "lat": 51.466,
+      "lon": 20.008,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-las-jaboniowy",
+      "name": "Rezerwat Las Jabłoniowy",
+      "category": "reserve",
+      "lat": 51.446,
+      "lon": 19.996,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-gaik",
+      "name": "Rezerwat Gaik",
+      "category": "reserve",
+      "lat": 51.347,
+      "lon": 19.876,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-lubiaszow",
+      "name": "Rezerwat Lubiaszów",
+      "category": "reserve",
+      "lat": 51.351,
+      "lon": 19.945,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-niebieskie-zroda",
+      "name": "Rezerwat Niebieskie Źródła",
+      "category": "reserve",
+      "lat": 51.5313,
+      "lon": 20.0086,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/skansen-rzeki-pilicy",
+      "name": "Skansen Rzeki Pilicy",
+      "category": "museum",
+      "lat": 51.532868,
+      "lon": 20.006888,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/groty-nagorzyckie",
+      "name": "Groty Nagórzyckie",
+      "category": "cave",
+      "lat": 51.528454,
+      "lon": 20.00885,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-im-antoniego-hr-ostrowskiego-w-tomaszowie-mazowieckim",
+      "name": "Muzeum im. Antoniego hr. Ostrowskiego w Tomaszowie Mazowieckim",
+      "category": "museum",
+      "lat": 51.533993,
+      "lon": 20.010664,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/plac-kosciuszki-w-tomaszowie-mazowieckim",
+      "name": "Plac Kościuszki w Tomaszowie Mazowieckim",
+      "category": "historic",
+      "lat": 51.530616,
+      "lon": 20.004731,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/paac-ostrowskich-w-tomaszowie-mazowieckim",
+      "name": "Pałac Ostrowskich w Tomaszowie Mazowieckim",
+      "category": "castle",
+      "lat": 51.528904,
+      "lon": 20.012367,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-bulwary-w-tomaszowie-mazowieckim",
+      "name": "Park Bulwary w Tomaszowie Mazowieckim",
+      "category": "nature",
+      "lat": 51.536129,
+      "lon": 20.007302,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/spaa-centrum-miejscowosci",
+      "name": "Spała – centrum miejscowości",
+      "category": "historic",
+      "lat": 51.5415,
+      "lon": 20.1395,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/pomnik-zubra-w-spale",
+      "name": "Pomnik Żubra w Spale",
+      "category": "historic",
+      "lat": 51.542441,
+      "lon": 20.138473,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-matki-boskiej-krolowej-korony-polskiej-w-spale",
+      "name": "Kościół Matki Boskiej Królowej Korony Polskiej w Spale",
+      "category": "historic",
+      "lat": 51.539792,
+      "lon": 20.13965,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-prezydencki-w-spale",
+      "name": "Park Prezydencki w Spale",
+      "category": "nature",
+      "lat": 51.543116,
+      "lon": 20.140739,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/dom-pamieci-walki-i-meczenstwa-lesnikow-i-drzewiarzy-polskich",
+      "name": "Dom Pamięci Walki i Męczeństwa Leśników i Drzewiarzy Polskich",
+      "category": "museum",
+      "lat": 51.541089,
+      "lon": 20.137179,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/centralny-osrodek-sportu-w-spale",
+      "name": "Centralny Ośrodek Sportu w Spale",
+      "category": "historic",
+      "lat": 51.540062,
+      "lon": 20.14176,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/spalski-park-krajobrazowy",
+      "name": "Spalski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 51.56,
+      "lon": 20.18,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-spaa",
+      "name": "Rezerwat Spała",
+      "category": "reserve",
+      "lat": 51.553,
+      "lon": 20.167,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-konewka",
+      "name": "Rezerwat Konewka",
+      "category": "reserve",
+      "lat": 51.594,
+      "lon": 20.168,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/schron-kolejowy-w-konewce",
+      "name": "Schron kolejowy w Konewce",
+      "category": "historic",
+      "lat": 51.5973,
+      "lon": 20.1647,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-idziego-w-inowodzu",
+      "name": "Kościół św. Idziego w Inowłodzu",
+      "category": "historic",
+      "lat": 51.5278,
+      "lon": 20.2238,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zamek-kazimierza-wielkiego-w-inowodzu",
+      "name": "Zamek Kazimierza Wielkiego w Inowłodzu",
+      "category": "castle",
+      "lat": 51.528741,
+      "lon": 20.222773,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/synagoga-w-inowodzu",
+      "name": "Synagoga w Inowłodzu",
+      "category": "historic",
+      "lat": 51.529416,
+      "lon": 20.225039,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-zadowice",
+      "name": "Rezerwat Żądłowice",
+      "category": "reserve",
+      "lat": 51.58,
+      "lon": 20.255,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-regionalne-w-opocznie",
+      "name": "Muzeum Regionalne w Opocznie",
+      "category": "museum",
+      "lat": 51.3757,
+      "lon": 20.2783,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zamek-kazimierza-wielkiego-w-opocznie",
+      "name": "Zamek Kazimierza Wielkiego w Opocznie",
+      "category": "castle",
+      "lat": 51.376641,
+      "lon": 20.277273,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/dom-esterki-w-opocznie",
+      "name": "Dom Esterki w Opocznie",
+      "category": "historic",
+      "lat": 51.373992,
+      "lon": 20.27845,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rynek-w-opocznie",
+      "name": "Rynek w Opocznie",
+      "category": "historic",
+      "lat": 51.377316,
+      "lon": 20.279539,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/kolegiata-sw-bartomieja-w-opocznie",
+      "name": "Kolegiata św. Bartłomieja w Opocznie",
+      "category": "historic",
+      "lat": 51.375289,
+      "lon": 20.275979,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-ludowe-ziemi-przedborskiej",
+      "name": "Muzeum Ludowe Ziemi Przedborskiej",
+      "category": "museum",
+      "lat": 51.0879,
+      "lon": 19.8738,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rynek-w-przedborzu",
+      "name": "Rynek w Przedborzu",
+      "category": "historic",
+      "lat": 51.088684,
+      "lon": 19.872944,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-aleksego-w-przedborzu",
+      "name": "Kościół św. Aleksego w Przedborzu",
+      "category": "historic",
+      "lat": 51.086477,
+      "lon": 19.873925,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/przedborski-park-krajobrazowy",
+      "name": "Przedborski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 50.98,
+      "lon": 19.94,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/fajna-ryba-najwyzsze-wzniesienie-pasma",
+      "name": "Fajna Ryba – najwyższe wzniesienie pasma",
+      "category": "nature",
+      "lat": 50.945,
+      "lon": 19.906,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-murawy-dobromierskie",
+      "name": "Rezerwat Murawy Dobromierskie",
+      "category": "reserve",
+      "lat": 50.953,
+      "lon": 19.92,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-piskorzeniec",
+      "name": "Rezerwat Piskorzeniec",
+      "category": "reserve",
+      "lat": 50.997,
+      "lon": 19.99,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-regionalne-im-stanisawa-sankowskiego-w-radomsku",
+      "name": "Muzeum Regionalne im. Stanisława Sankowskiego w Radomsku",
+      "category": "museum",
+      "lat": 51.0674,
+      "lon": 19.4448,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-lamberta-w-radomsku",
+      "name": "Kościół św. Lamberta w Radomsku",
+      "category": "historic",
+      "lat": 51.068341,
+      "lon": 19.443773,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/ratusz-w-radomsku",
+      "name": "Ratusz w Radomsku",
+      "category": "historic",
+      "lat": 51.065692,
+      "lon": 19.44495,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/bazylika-wniebowziecia-nmp-w-gidlach",
+      "name": "Bazylika Wniebowzięcia NMP w Gidlach",
+      "category": "historic",
+      "lat": 50.9614,
+      "lon": 19.4718,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/klasztor-dominikanow-w-gidlach",
+      "name": "Klasztor Dominikanów w Gidlach",
+      "category": "historic",
+      "lat": 50.962027,
+      "lon": 19.471115,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-marii-magdaleny-w-gidlach",
+      "name": "Kościół św. Marii Magdaleny w Gidlach",
+      "category": "historic",
+      "lat": 50.960262,
+      "lon": 19.4719,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-rafaa-i-michaa-archanioow-w-aleksandrowie-odzkim",
+      "name": "Kościół św. Rafała i Michała Archaniołów w Aleksandrowie Łódzkim",
+      "category": "historic",
+      "lat": 51.820184,
+      "lon": 19.302944,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-miejski-w-aleksandrowie-odzkim",
+      "name": "Park Miejski w Aleksandrowie Łódzkim",
+      "category": "nature",
+      "lat": 51.817977,
+      "lon": 19.303925,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-regionalne-w-brzezinach",
+      "name": "Muzeum Regionalne w Brzezinach",
+      "category": "museum",
+      "lat": 51.746784,
+      "lon": 19.818844,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-podwyzszenia-swietego-krzyza-w-brzezinach",
+      "name": "Kościół Podwyższenia Świętego Krzyża w Brzezinach",
+      "category": "historic",
+      "lat": 51.744577,
+      "lon": 19.819825,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-krajobrazowy-wzniesien-odzkich",
+      "name": "Park Krajobrazowy Wzniesień Łódzkich",
+      "category": "nature",
+      "lat": 51.8002,
+      "lon": 19.7545,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-las-agiewnicki-czesc-pkw",
+      "name": "Rezerwat Las Łagiewnicki – część PKWŁ",
+      "category": "reserve",
+      "lat": 51.802709,
+      "lon": 19.751761,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-struga-dobieszkowska",
+      "name": "Rezerwat Struga Dobieszkowska",
+      "category": "reserve",
+      "lat": 51.795646,
+      "lon": 19.7549,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-parowy-janinowskie",
+      "name": "Rezerwat Parowy Janinowskie",
+      "category": "reserve",
+      "lat": 51.804508,
+      "lon": 19.757803,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zamek-ksiazat-mazowieckich-w-rawie-mazowieckiej-ruiny",
+      "name": "Zamek Książąt Mazowieckich w Rawie Mazowieckiej – ruiny",
+      "category": "ruins",
+      "lat": 51.7887,
+      "lon": 20.4737,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-ziemi-rawskiej",
+      "name": "Muzeum Ziemi Rawskiej",
+      "category": "museum",
+      "lat": 51.789641,
+      "lon": 20.472673,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rynek-w-rawie-mazowieckiej",
+      "name": "Rynek w Rawie Mazowieckiej",
+      "category": "historic",
+      "lat": 51.786992,
+      "lon": 20.47385,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-niepokalanego-poczecia-nmp-w-rawie-mazowieckiej",
+      "name": "Kościół Niepokalanego Poczęcia NMP w Rawie Mazowieckiej",
+      "category": "historic",
+      "lat": 51.790316,
+      "lon": 20.474939,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-babsk",
+      "name": "Rezerwat Babsk",
+      "category": "reserve",
+      "lat": 51.839,
+      "lon": 20.343,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rezerwat-trebaczew",
+      "name": "Rezerwat Trębaczew",
+      "category": "reserve",
+      "lat": 51.809,
+      "lon": 20.355,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/paac-w-biaej-rawskiej",
+      "name": "Pałac w Białej Rawskiej",
+      "category": "castle",
+      "lat": 51.8172,
+      "lon": 20.3023,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rynek-w-biaej-rawskiej",
+      "name": "Rynek w Białej Rawskiej",
+      "category": "historic",
+      "lat": 51.817827,
+      "lon": 20.301615,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-nawiedzenia-nmp-w-regnowie",
+      "name": "Kościół Nawiedzenia NMP w Regnowie",
+      "category": "historic",
+      "lat": 51.763527,
+      "lon": 20.254015,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-miejski-w-koluszkach",
+      "name": "Park Miejski w Koluszkach",
+      "category": "nature",
+      "lat": 51.622827,
+      "lon": 19.935315,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/arboretum-sggw-w-rogowie",
+      "name": "Arboretum SGGW w Rogowie",
+      "category": "nature",
+      "lat": 51.8177,
+      "lon": 19.8872,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-lasu-i-drewna-w-rogowie",
+      "name": "Muzeum Lasu i Drewna w Rogowie",
+      "category": "museum",
+      "lat": 51.8172,
+      "lon": 19.8864,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/rogowska-kolej-waskotorowa",
+      "name": "Rogowska Kolej Wąskotorowa",
+      "category": "museum",
+      "lat": 51.8179,
+      "lon": 19.8818,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-im-jerzego-dunin-borkowskiego-w-krosniewicach",
+      "name": "Muzeum im. Jerzego Dunin-Borkowskiego w Krośniewicach",
+      "category": "museum",
+      "lat": 52.2558,
+      "lon": 19.1706,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/zespo-paacowo-parkowy-rembielinskich-w-krosniewicach",
+      "name": "Zespół pałacowo-parkowy Rembielińskich w Krośniewicach",
+      "category": "castle",
+      "lat": 52.2573,
+      "lon": 19.1689,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/park-krajobrazowy-miedzyrzecza-warty-i-widawki",
+      "name": "Park Krajobrazowy Międzyrzecza Warty i Widawki",
+      "category": "nature",
+      "lat": 51.55,
+      "lon": 18.82,
+      "source": "Parki Krajobrazowe Województwa Łódzkiego / dane mapowe",
+      "sourceUrl": "https://parkilodzkie.pl/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/kolegiata-niepokalanego-poczecia-nmp-i-sw-michaa-archanioa-w-asku",
+      "name": "Kolegiata Niepokalanego Poczęcia NMP i św. Michała Archanioła w Łasku",
+      "category": "historic",
+      "lat": 51.5907,
+      "lon": 19.1327,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/koscio-sw-urszuli-i-jedenastu-tysiecy-dziewic-w-stronsku",
+      "name": "Kościół św. Urszuli i Jedenastu Tysięcy Dziewic w Strońsku",
+      "category": "historic",
+      "lat": 51.5647,
+      "lon": 18.8932,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/muzeum-koluszek",
+      "name": "Muzeum Koluszek",
+      "category": "museum",
+      "lat": 51.7386,
+      "lon": 19.8195,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
+    },
+    {
+      "id": "łódzkie/bibua-tajna-drukarnia-jozefa-i-marii-pisudskich-w-odzi",
+      "name": "Bibuła – Tajna Drukarnia Józefa i Marii Piłsudskich w Łodzi",
+      "category": "museum",
+      "lat": 51.7916,
+      "lon": 19.4689,
+      "source": "Łódzkie Travel / dane mapowe",
+      "sourceUrl": "https://lodzkie.travel/",
+      "region": "łódzkie"
     }
   ],
-  "count": 2332
+  "count": 2604
 }
