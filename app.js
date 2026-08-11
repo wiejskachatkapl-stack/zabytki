@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1051';
+  const APP_VERSION = 'v1052';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1051';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1052';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const ROUTE_MODE_KEY = 'tourmap_route_mode_v1';
   const ROUTE_MODES = {
@@ -325,7 +325,7 @@
     return Number.isFinite(value) ? value : 0;
   }
 
-  async function exportMyPlaces() {
+  function exportMyPlaces() {
     const places = loadPoints();
     if (!places.length) {
       showLocationMessage('Nie masz jeszcze miejsc do zapisania.');
@@ -341,40 +341,37 @@
       places
     };
     const json = JSON.stringify(payload, null, 2);
-    const now = new Date();
-    const stamp = `${localDateString(now)}_${String(now.getHours()).padStart(2, '0')}-${String(now.getMinutes()).padStart(2, '0')}`;
-    const filename = `moje-miejsca_${stamp}.json`;
+    const filename = `atrakcje polski ${localDateString(new Date())}.json`;
 
     try {
-      if (typeof File !== 'undefined' && navigator.share && navigator.canShare) {
-        const file = new File([json], filename, { type: 'application/json' });
-        if (navigator.canShare({ files: [file] })) {
-          await navigator.share({
-            title: 'Kopia moich miejsc',
-            text: `Kopia ${places.length} miejsc z aplikacji Mapa atrakcji Polski`,
-            files: [file]
-          });
-          showLocationMessage(`Kopia ${places.length} miejsc została przygotowana.`);
-          return;
-        }
-      }
-
-      const blob = new Blob([json], { type: 'application/json' });
+      // Najbardziej przewidywalna metoda dla PWA na Androidzie/PC:
+      // zwykłe pobranie pliku do folderu Pobrane/Downloads.
+      const blob = new Blob([json], { type: 'application/json;charset=utf-8' });
       const url = URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
       link.download = filename;
+      link.rel = 'noopener';
       link.style.display = 'none';
       document.body.appendChild(link);
       link.click();
       link.remove();
-      setTimeout(() => URL.revokeObjectURL(url), 1500);
-      showLocationMessage(`Zapisano kopię ${places.length} miejsc.`);
+      setTimeout(() => URL.revokeObjectURL(url), 10000);
+      showLocationMessage(`Zapisano ${places.length} miejsc. Plik: ${filename}`);
     } catch (error) {
-      if (error?.name === 'AbortError') return;
       console.error('Nie udało się zapisać kopii miejsc:', error);
-      showLocationMessage('Nie udało się zapisać pliku z miejscami.');
+      showLocationMessage('Nie udało się rozpocząć zapisu pliku. Spróbuj ponownie.');
     }
+  }
+
+  function readBackupFileText(file) {
+    if (file && typeof file.text === 'function') return file.text();
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result || ''));
+      reader.onerror = () => reject(reader.error || new Error('Nie udało się odczytać pliku'));
+      reader.readAsText(file, 'utf-8');
+    });
   }
 
   async function importMyPlacesFile(file) {
@@ -386,8 +383,11 @@
 
     if (importMyPlacesButton) importMyPlacesButton.disabled = true;
     try {
-      const text = await file.text();
+      const text = await readBackupFileText(file);
       const parsed = JSON.parse(text);
+      if (!Array.isArray(parsed) && parsed?.format && parsed.format !== 'turystyczna-mapa-polski-my-places') {
+        throw new Error('To nie jest plik kopii Moich miejsc');
+      }
       const rawPlaces = Array.isArray(parsed) ? parsed : parsed?.places;
       if (!Array.isArray(rawPlaces)) throw new Error('Nieprawidłowy format kopii');
 
@@ -437,7 +437,7 @@
       showLocationMessage(`Wczytano kopię: dodano ${added}, zaktualizowano ${updated}, bez zmian ${skipped}. Razem: ${result.length}.`);
     } catch (error) {
       console.error('Nie udało się wczytać kopii miejsc:', error);
-      showLocationMessage('Nie udało się wczytać pliku. Wybierz kopię utworzoną przez tę aplikację.');
+      showLocationMessage('Nie udało się wczytać tego pliku. Wybierz plik atrakcje polski YYYY-MM-DD.json zapisany przez aplikację.');
     } finally {
       if (importMyPlacesInput) importMyPlacesInput.value = '';
       if (importMyPlacesButton) importMyPlacesButton.disabled = false;
@@ -3173,7 +3173,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1051', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1052', {
           scope: './',
           updateViaCache: 'none'
         });
