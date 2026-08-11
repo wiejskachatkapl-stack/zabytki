@@ -1,7 +1,7 @@
 {
-  "version": "v1029",
+  "version": "v1030",
   "updatedAt": "2026-08-11",
-  "description": "Lokalna baza atrakcji Polski. W v1029 rozszerzona o szeroki zestaw atrakcji województwa mazowieckiego w 9 kategoriach; baza działa bez Overpass podczas korzystania z aplikacji.",
+  "description": "Lokalna baza atrakcji Polski. W v1030 rozszerzona o szeroki zestaw atrakcji województwa lubelskiego w 9 kategoriach, w tym rezerwaty przyrody z danych przestrzennych GDOŚ oraz najważniejsze obiekty turystyczne regionu.",
   "attractions": [
     {
       "id": "base/palac-radziejowice",
@@ -8710,7 +8710,1737 @@
       "source": "Mazowsze.travel / dane mapowe",
       "sourceUrl": "https://mazowsze.travel/",
       "region": "mazowieckie"
+    },
+    {
+      "id": "lubelskie/rezerwat-bachus",
+      "name": "Rezerwat przyrody Bachus",
+      "category": "reserve",
+      "lat": 51.307549,
+      "lon": 23.418512,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-bagno-serebryskie",
+      "name": "Rezerwat przyrody Bagno Serebryskie",
+      "category": "reserve",
+      "lat": 51.175046,
+      "lon": 23.526508,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-broczowka",
+      "name": "Rezerwat przyrody Broczówka",
+      "category": "reserve",
+      "lat": 50.868348,
+      "lon": 23.36853,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-brudzieniec",
+      "name": "Rezerwat przyrody Brudzieniec",
+      "category": "reserve",
+      "lat": 51.410759,
+      "lon": 23.611325,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-brzezno",
+      "name": "Rezerwat przyrody Brzeźno",
+      "category": "reserve",
+      "lat": 51.160356,
+      "lon": 23.598238,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-chmiel",
+      "name": "Rezerwat przyrody Chmiel",
+      "category": "reserve",
+      "lat": 51.059427,
+      "lon": 22.716736,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-chmielinne",
+      "name": "Rezerwat przyrody Chmielinne",
+      "category": "reserve",
+      "lat": 52.121128,
+      "lon": 23.042588,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-czapli-stog",
+      "name": "Rezerwat przyrody Czapli Stóg",
+      "category": "reserve",
+      "lat": 52.127598,
+      "lon": 23.487702,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-czapliniec-kolo-golebia",
+      "name": "Rezerwat przyrody Czapliniec koło Gołębia",
+      "category": "reserve",
+      "lat": 51.52714,
+      "lon": 21.91825,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-czapliniec-w-uroczysku-feliksowka",
+      "name": "Rezerwat przyrody Czapliniec w Uroczysku Feliksówka",
+      "category": "reserve",
+      "lat": 51.757837,
+      "lon": 22.529101,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-czarny-las",
+      "name": "Rezerwat przyrody Czarny Las",
+      "category": "reserve",
+      "lat": 51.717752,
+      "lon": 22.921908,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-czartowe-pole",
+      "name": "Rezerwat przyrody Czartowe Pole",
+      "category": "reserve",
+      "lat": 50.439533,
+      "lon": 23.077673,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-debry",
+      "name": "Rezerwat przyrody Debry",
+      "category": "reserve",
+      "lat": 50.555153,
+      "lon": 23.113638,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-dobryn",
+      "name": "Rezerwat przyrody Dobryń",
+      "category": "reserve",
+      "lat": 52.041264,
+      "lon": 23.43322,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-doly-szczeckie",
+      "name": "Rezerwat przyrody Doły Szczeckie",
+      "category": "reserve",
+      "lat": 50.819688,
+      "lon": 22.028127,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-gliniska",
+      "name": "Rezerwat przyrody Gliniska",
+      "category": "reserve",
+      "lat": 50.859678,
+      "lon": 23.635331,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-gleboka-dolina",
+      "name": "Rezerwat przyrody Głęboka Dolina",
+      "category": "reserve",
+      "lat": 50.901981,
+      "lon": 23.444247,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-hubale",
+      "name": "Rezerwat przyrody Hubale",
+      "category": "reserve",
+      "lat": 50.683264,
+      "lon": 23.189355,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-jalinka",
+      "name": "Rezerwat przyrody Jalinka",
+      "category": "reserve",
+      "lat": 50.262533,
+      "lon": 23.568308,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-jata",
+      "name": "Rezerwat przyrody Jata",
+      "category": "reserve",
+      "lat": 51.965575,
+      "lon": 22.225707,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-jezioro-brzeziczno",
+      "name": "Rezerwat przyrody Jezioro Brzeziczno",
+      "category": "reserve",
+      "lat": 51.384569,
+      "lon": 23.006637,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-jezioro-obradowskie",
+      "name": "Rezerwat przyrody Jezioro Obradowskie",
+      "category": "reserve",
+      "lat": 51.589265,
+      "lon": 22.874906,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-jezioro-swierszczow",
+      "name": "Rezerwat przyrody Jezioro Świerszczów",
+      "category": "reserve",
+      "lat": 51.33091,
+      "lon": 23.161358,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-kacze-blota",
+      "name": "Rezerwat przyrody Kacze Błota",
+      "category": "reserve",
+      "lat": 50.593629,
+      "lon": 22.559547,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-kania",
+      "name": "Rezerwat przyrody Kania",
+      "category": "reserve",
+      "lat": 51.956074,
+      "lon": 22.559123,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-kozie-gory",
+      "name": "Rezerwat przyrody Kozie Góry",
+      "category": "reserve",
+      "lat": 51.398871,
+      "lon": 22.59181,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-kra-jurajska",
+      "name": "Rezerwat przyrody Kra Jurajska",
+      "category": "reserve",
+      "lat": 51.953529,
+      "lon": 22.35608,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-krowia-wyspa",
+      "name": "Rezerwat przyrody Krowia Wyspa",
+      "category": "reserve",
+      "lat": 51.30502,
+      "lon": 21.889234,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-krolowa-droga",
+      "name": "Rezerwat przyrody Królowa Droga",
+      "category": "reserve",
+      "lat": 51.586935,
+      "lon": 22.957113,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-ksiezostany",
+      "name": "Rezerwat przyrody Księżostany",
+      "category": "reserve",
+      "lat": 50.61622,
+      "lon": 23.382584,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-kulak",
+      "name": "Rezerwat przyrody Kulak",
+      "category": "reserve",
+      "lat": 51.992486,
+      "lon": 21.963994,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-las-krolewski",
+      "name": "Rezerwat przyrody Las Królewski",
+      "category": "reserve",
+      "lat": 51.013798,
+      "lon": 22.756093,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-las-lipowy-w-uroczysku-bukowiec",
+      "name": "Rezerwat przyrody Las Lipowy w Uroczysku Bukowiec",
+      "category": "reserve",
+      "lat": 50.503073,
+      "lon": 23.631878,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-las-wagramski",
+      "name": "Rezerwat przyrody Las Wagramski",
+      "category": "reserve",
+      "lat": 51.905329,
+      "lon": 22.512499,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-lasy-janowskie",
+      "name": "Rezerwat przyrody Lasy Janowskie",
+      "category": "reserve",
+      "lat": 50.621067,
+      "lon": 22.453563,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-lasy-parczewskie",
+      "name": "Rezerwat przyrody Lasy Parczewskie",
+      "category": "reserve",
+      "lat": 51.54577,
+      "lon": 22.951218,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-liski",
+      "name": "Rezerwat przyrody Liski",
+      "category": "reserve",
+      "lat": 51.954895,
+      "lon": 22.816772,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-labunie",
+      "name": "Rezerwat przyrody Łabunie",
+      "category": "reserve",
+      "lat": 50.649349,
+      "lon": 23.417885,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-leg-debowy-kolo-janowa-podlaskiego",
+      "name": "Rezerwat przyrody Łęg Dębowy koło Janowa Podlaskiego",
+      "category": "reserve",
+      "lat": 52.21393,
+      "lon": 23.280147,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-leg-na-kepie-w-pulawach",
+      "name": "Rezerwat przyrody Łęg na Kępie w Puławach",
+      "category": "reserve",
+      "lat": 51.407235,
+      "lon": 21.959863,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-machnowska-gora",
+      "name": "Rezerwat przyrody Machnowska Góra",
+      "category": "reserve",
+      "lat": 50.371579,
+      "lon": 23.581579,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-magazyn",
+      "name": "Rezerwat przyrody Magazyn",
+      "category": "reserve",
+      "lat": 51.454564,
+      "lon": 23.624791,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-maloziemce",
+      "name": "Rezerwat przyrody Małoziemce",
+      "category": "reserve",
+      "lat": 51.368254,
+      "lon": 23.615175,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-marynopole",
+      "name": "Rezerwat przyrody Marynopole",
+      "category": "reserve",
+      "lat": 50.863028,
+      "lon": 22.057837,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-nad-tanwia",
+      "name": "Rezerwat przyrody Nad Tanwią",
+      "category": "reserve",
+      "lat": 50.39355,
+      "lon": 23.175813,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-natalin",
+      "name": "Rezerwat przyrody Natalin",
+      "category": "reserve",
+      "lat": 50.995665,
+      "lon": 22.05972,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-nowiny",
+      "name": "Rezerwat przyrody Nowiny",
+      "category": "reserve",
+      "lat": 50.442437,
+      "lon": 23.160115,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-obary",
+      "name": "Rezerwat przyrody Obary",
+      "category": "reserve",
+      "lat": 50.546305,
+      "lon": 22.610965,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-olszanka",
+      "name": "Rezerwat przyrody Olszanka",
+      "category": "reserve",
+      "lat": 51.049409,
+      "lon": 22.709656,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-omelno",
+      "name": "Rezerwat przyrody Omelno",
+      "category": "reserve",
+      "lat": 51.817583,
+      "lon": 22.750108,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-jezioro-orchowe",
+      "name": "Rezerwat przyrody Jezioro Orchowe",
+      "category": "reserve",
+      "lat": 51.488692,
+      "lon": 23.567786,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-piekielko-kolo-tomaszowa-lubelskiego",
+      "name": "Rezerwat przyrody Piekiełko Koło Tomaszowa Lubelskiego",
+      "category": "reserve",
+      "lat": 50.444342,
+      "lon": 23.463262,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-piskory",
+      "name": "Rezerwat przyrody Piskory",
+      "category": "reserve",
+      "lat": 51.516584,
+      "lon": 21.974252,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-podzamcze",
+      "name": "Rezerwat przyrody Podzamcze",
+      "category": "reserve",
+      "lat": 51.023291,
+      "lon": 22.533761,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-popowka",
+      "name": "Rezerwat przyrody Popówka",
+      "category": "reserve",
+      "lat": 50.75603,
+      "lon": 23.508454,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-przecinka",
+      "name": "Rezerwat przyrody Przecinka",
+      "category": "reserve",
+      "lat": 50.505329,
+      "lon": 23.501913,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-rogow",
+      "name": "Rezerwat przyrody Rogów",
+      "category": "reserve",
+      "lat": 50.796998,
+      "lon": 23.525598,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-roskosz",
+      "name": "Rezerwat przyrody Roskosz",
+      "category": "reserve",
+      "lat": 51.145625,
+      "lon": 23.655414,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-serniawy",
+      "name": "Rezerwat przyrody Serniawy",
+      "category": "reserve",
+      "lat": 51.329835,
+      "lon": 23.362945,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-siedliszcze",
+      "name": "Rezerwat przyrody Siedliszcze",
+      "category": "reserve",
+      "lat": 51.006655,
+      "lon": 23.821883,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-skarpa-dobrska",
+      "name": "Rezerwat przyrody Skarpa Dobrska",
+      "category": "reserve",
+      "lat": 51.283636,
+      "lon": 21.889447,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-skarpa-dobuzanska",
+      "name": "Rezerwat przyrody Skarpa Dobużańska",
+      "category": "reserve",
+      "lat": 50.580764,
+      "lon": 23.713724,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-skrzypny-ostrow",
+      "name": "Rezerwat przyrody Skrzypny Ostrów",
+      "category": "reserve",
+      "lat": 50.524165,
+      "lon": 23.424545,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-stary-las",
+      "name": "Rezerwat przyrody Stary Las",
+      "category": "reserve",
+      "lat": 52.231495,
+      "lon": 23.10924,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-stasin",
+      "name": "Rezerwat przyrody Stasin",
+      "category": "reserve",
+      "lat": 51.214828,
+      "lon": 22.505627,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-stawska-gora",
+      "name": "Rezerwat przyrody Stawska Góra",
+      "category": "reserve",
+      "lat": 51.206741,
+      "lon": 23.402993,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-susle-wzgorza",
+      "name": "Rezerwat przyrody Suśle Wzgórza",
+      "category": "reserve",
+      "lat": 50.482637,
+      "lon": 24.007372,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-szklarnia",
+      "name": "Rezerwat przyrody Szklarnia",
+      "category": "reserve",
+      "lat": 50.65731,
+      "lon": 22.418561,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-szum",
+      "name": "Rezerwat przyrody Szum",
+      "category": "reserve",
+      "lat": 50.511239,
+      "lon": 22.982692,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-szwajcaria-podlaska",
+      "name": "Rezerwat przyrody Szwajcaria Podlaska",
+      "category": "reserve",
+      "lat": 52.134134,
+      "lon": 23.51774,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-swiety-roch",
+      "name": "Rezerwat przyrody Święty Roch",
+      "category": "reserve",
+      "lat": 50.536974,
+      "lon": 23.184697,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-topor",
+      "name": "Rezerwat przyrody Topór",
+      "category": "reserve",
+      "lat": 52.019064,
+      "lon": 22.165164,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-torfowisko-przy-jeziorze-czarnym",
+      "name": "Rezerwat przyrody Torfowisko przy Jeziorze Czarnym",
+      "category": "reserve",
+      "lat": 51.50911,
+      "lon": 23.019829,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-torfowisko-sobowice",
+      "name": "Rezerwat przyrody Torfowisko Sobowice",
+      "category": "reserve",
+      "lat": 51.118862,
+      "lon": 23.392384,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-trzy-jeziora",
+      "name": "Rezerwat przyrody Trzy Jeziora",
+      "category": "reserve",
+      "lat": 51.406664,
+      "lon": 23.627044,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-warzewo",
+      "name": "Rezerwat przyrody Warzewo",
+      "category": "reserve",
+      "lat": 51.699674,
+      "lon": 23.240641,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-wieprzec",
+      "name": "Rezerwat przyrody Wieprzec",
+      "category": "reserve",
+      "lat": 50.665495,
+      "lon": 23.173182,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-wierzchowiska",
+      "name": "Rezerwat przyrody Wierzchowiska",
+      "category": "reserve",
+      "lat": 51.168012,
+      "lon": 22.71912,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-wodny-dol",
+      "name": "Rezerwat przyrody Wodny Dół",
+      "category": "reserve",
+      "lat": 50.986886,
+      "lon": 23.05634,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-wolwinow",
+      "name": "Rezerwat przyrody Wolwinów",
+      "category": "reserve",
+      "lat": 51.1164,
+      "lon": 23.513267,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-wygon-grabowiecki",
+      "name": "Rezerwat przyrody Wygon Grabowiecki",
+      "category": "reserve",
+      "lat": 50.801849,
+      "lon": 23.555551,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-zarosle",
+      "name": "Rezerwat przyrody Zarośle",
+      "category": "reserve",
+      "lat": 50.462086,
+      "lon": 23.318722,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-zmudz",
+      "name": "Rezerwat przyrody Żmudź",
+      "category": "reserve",
+      "lat": 51.00922,
+      "lon": 23.666903,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rezerwat-zolwiowe-blota",
+      "name": "Rezerwat przyrody Żółwiowe Błota",
+      "category": "reserve",
+      "lat": 51.442545,
+      "lon": 23.546973,
+      "source": "GDOŚ / OpenForestData",
+      "sourceUrl": "https://www.gov.pl/web/rdos-lublin/dane-i-metadane",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/zamek-w-lublinie",
+      "name": "Zamek w Lublinie",
+      "category": "castle",
+      "lat": 51.250528,
+      "lon": 22.571733,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/palac-zamoyskich-w-kozlowce",
+      "name": "Pałac Zamoyskich w Kozłówce",
+      "category": "castle",
+      "lat": 51.459608,
+      "lon": 22.489422,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/palac-czartoryskich-w-pulawach",
+      "name": "Pałac Czartoryskich w Puławach",
+      "category": "castle",
+      "lat": 51.412222,
+      "lon": 21.958889,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/palac-potockich-w-radzyniu-podlaskim",
+      "name": "Pałac Potockich w Radzyniu Podlaskim",
+      "category": "castle",
+      "lat": 51.782222,
+      "lon": 22.622222,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/zespol-palacowo-parkowy-radziwillow-w-bialej-podlaskiej",
+      "name": "Zespół pałacowo-parkowy Radziwiłłów w Białej Podlaskiej",
+      "category": "castle",
+      "lat": 52.031111,
+      "lon": 23.114167,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/palac-sanguszkow-w-lubartowie",
+      "name": "Pałac Sanguszków w Lubartowie",
+      "category": "castle",
+      "lat": 51.4607,
+      "lon": 22.6088,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/palac-jablonowskich-w-kocku",
+      "name": "Pałac Jabłonowskich w Kocku",
+      "category": "castle",
+      "lat": 51.6408,
+      "lon": 22.4466,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/palac-w-czemiernikach",
+      "name": "Pałac w Czemiernikach",
+      "category": "castle",
+      "lat": 51.6729,
+      "lon": 22.6373,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/palac-w-czumowie",
+      "name": "Pałac w Czumowie",
+      "category": "castle",
+      "lat": 50.7665,
+      "lon": 23.9496,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/palac-malachowskich-w-naleczowie",
+      "name": "Pałac Małachowskich w Nałęczowie",
+      "category": "castle",
+      "lat": 51.2853,
+      "lon": 22.2147,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/zamek-w-janowcu",
+      "name": "Zamek w Janowcu",
+      "category": "ruins",
+      "lat": 51.324514,
+      "lon": 21.893456,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/zamek-w-kazimierzu-dolnym",
+      "name": "Zamek w Kazimierzu Dolnym",
+      "category": "ruins",
+      "lat": 51.323611,
+      "lon": 21.948889,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/zamek-w-bochotnicy",
+      "name": "Zamek w Bochotnicy",
+      "category": "ruins",
+      "lat": 51.339167,
+      "lon": 21.987778,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/ruiny-zamku-w-krupem",
+      "name": "Ruiny zamku w Krupem",
+      "category": "ruins",
+      "lat": 50.9845,
+      "lon": 23.2722,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/ruiny-wiezy-w-bielawinie",
+      "name": "Ruiny wieży w Bieławinie",
+      "category": "ruins",
+      "lat": 51.1535,
+      "lon": 23.4928,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/ruiny-zamku-w-belzycach",
+      "name": "Ruiny zamku w Bełżycach",
+      "category": "ruins",
+      "lat": 51.1748,
+      "lon": 22.2794,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/brama-krakowska-w-lublinie",
+      "name": "Brama Krakowska w Lublinie",
+      "category": "historic",
+      "lat": 51.247572,
+      "lon": 22.566454,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/stare-miasto-w-lublinie",
+      "name": "Stare Miasto w Lublinie",
+      "category": "historic",
+      "lat": 51.2487,
+      "lon": 22.5687,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/plac-po-farze-w-lublinie",
+      "name": "Plac Po Farze w Lublinie",
+      "category": "historic",
+      "lat": 51.2494,
+      "lon": 22.5695,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/wieza-trynitarska-w-lublinie",
+      "name": "Wieża Trynitarska w Lublinie",
+      "category": "historic",
+      "lat": 51.2474,
+      "lon": 22.568,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/brama-grodzka-w-lublinie",
+      "name": "Brama Grodzka w Lublinie",
+      "category": "historic",
+      "lat": 51.2496,
+      "lon": 22.5701,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/archikatedra-lubelska",
+      "name": "Archikatedra Lubelska",
+      "category": "historic",
+      "lat": 51.2465,
+      "lon": 22.5685,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/kaplica-trojcy-swietej-w-lublinie",
+      "name": "Kaplica Trójcy Świętej w Lublinie",
+      "category": "historic",
+      "lat": 51.2506,
+      "lon": 22.5718,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/panstwowe-muzeum-na-majdanku",
+      "name": "Państwowe Muzeum na Majdanku",
+      "category": "museum",
+      "lat": 51.221667,
+      "lon": 22.599417,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-wsi-lubelskiej",
+      "name": "Muzeum Wsi Lubelskiej",
+      "category": "museum",
+      "lat": 51.260278,
+      "lon": 22.507222,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-narodowe-w-lublinie",
+      "name": "Muzeum Narodowe w Lublinie",
+      "category": "museum",
+      "lat": 51.250528,
+      "lon": 22.571733,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-historii-miasta-lublina",
+      "name": "Muzeum Historii Miasta Lublina",
+      "category": "museum",
+      "lat": 51.247572,
+      "lon": 22.566454,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/regionalne-muzeum-cebularza",
+      "name": "Regionalne Muzeum Cebularza",
+      "category": "museum",
+      "lat": 51.249,
+      "lon": 22.5685,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/piwnica-pod-fortuna",
+      "name": "Piwnica pod Fortuną",
+      "category": "museum",
+      "lat": 51.2485,
+      "lon": 22.5683,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/ogrod-botaniczny-umcs",
+      "name": "Ogród Botaniczny UMCS",
+      "category": "nature",
+      "lat": 51.2656,
+      "lon": 22.5164,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/zalew-zemborzycki",
+      "name": "Zalew Zemborzycki",
+      "category": "water",
+      "lat": 51.182,
+      "lon": 22.5484,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rynek-wielki-w-zamosciu",
+      "name": "Rynek Wielki w Zamościu",
+      "category": "historic",
+      "lat": 50.716944,
+      "lon": 23.252222,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/ratusz-w-zamosciu",
+      "name": "Ratusz w Zamościu",
+      "category": "historic",
+      "lat": 50.7171,
+      "lon": 23.2514,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/katedra-zmartwychwstania-panskiego-i-sw-tomasza-apostola-w-zamosciu",
+      "name": "Katedra Zmartwychwstania Pańskiego i św. Tomasza Apostoła w Zamościu",
+      "category": "historic",
+      "lat": 50.717,
+      "lon": 23.25,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/synagoga-w-zamosciu",
+      "name": "Synagoga w Zamościu",
+      "category": "historic",
+      "lat": 50.7193,
+      "lon": 23.2544,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rotunda-zamojska",
+      "name": "Rotunda Zamojska",
+      "category": "historic",
+      "lat": 50.713611,
+      "lon": 23.248889,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/twierdza-zamosc-bastion-vii",
+      "name": "Twierdza Zamość – Bastion VII",
+      "category": "historic",
+      "lat": 50.7184,
+      "lon": 23.2475,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-zamojskie-w-zamosciu",
+      "name": "Muzeum Zamojskie w Zamościu",
+      "category": "museum",
+      "lat": 50.720556,
+      "lon": 23.258611,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-fortyfikacji-i-broni-arsenal-w-zamosciu",
+      "name": "Muzeum Fortyfikacji i Broni Arsenał w Zamościu",
+      "category": "museum",
+      "lat": 50.716,
+      "lon": 23.2477,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/ogrod-zoologiczny-im-stefana-milera-w-zamosciu",
+      "name": "Ogród Zoologiczny im. Stefana Milera w Zamościu",
+      "category": "nature",
+      "lat": 50.7127,
+      "lon": 23.2393,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/zalew-zamojski",
+      "name": "Zalew Zamojski",
+      "category": "water",
+      "lat": 50.7075,
+      "lon": 23.254,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/rynek-w-kazimierzu-dolnym",
+      "name": "Rynek w Kazimierzu Dolnym",
+      "category": "historic",
+      "lat": 51.3191,
+      "lon": 21.9551,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/baszta-w-kazimierzu-dolnym",
+      "name": "Baszta w Kazimierzu Dolnym",
+      "category": "historic",
+      "lat": 51.3247,
+      "lon": 21.949,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/wzgorze-trzech-krzyzy-w-kazimierzu-dolnym",
+      "name": "Wzgórze Trzech Krzyży w Kazimierzu Dolnym",
+      "category": "nature",
+      "lat": 51.322222,
+      "lon": 21.952222,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/wawoz-korzeniowy-dol",
+      "name": "Wąwóz Korzeniowy Dół",
+      "category": "nature",
+      "lat": 51.3316,
+      "lon": 21.9638,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/kamienice-przybylow-w-kazimierzu-dolnym",
+      "name": "Kamienice Przybyłów w Kazimierzu Dolnym",
+      "category": "historic",
+      "lat": 51.3192,
+      "lon": 21.955,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/spichlerze-nad-wisla-w-kazimierzu-dolnym",
+      "name": "Spichlerze nad Wisłą w Kazimierzu Dolnym",
+      "category": "historic",
+      "lat": 51.326,
+      "lon": 21.9528,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/swiatynia-sybilli-w-pulawach",
+      "name": "Świątynia Sybilli w Puławach",
+      "category": "historic",
+      "lat": 51.4112,
+      "lon": 21.9625,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/dom-gotycki-w-pulawach",
+      "name": "Dom Gotycki w Puławach",
+      "category": "historic",
+      "lat": 51.4114,
+      "lon": 21.9617,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-czartoryskich-w-pulawach",
+      "name": "Muzeum Czartoryskich w Puławach",
+      "category": "museum",
+      "lat": 51.412256,
+      "lon": 21.959098,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/park-zdrojowy-w-naleczowie",
+      "name": "Park Zdrojowy w Nałęczowie",
+      "category": "nature",
+      "lat": 51.2851,
+      "lon": 22.2152,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-stefana-zeromskiego-w-naleczowie",
+      "name": "Muzeum Stefana Żeromskiego w Nałęczowie",
+      "category": "museum",
+      "lat": 51.2838,
+      "lon": 22.2162,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-boleslawa-prusa-w-naleczowie",
+      "name": "Muzeum Bolesława Prusa w Nałęczowie",
+      "category": "museum",
+      "lat": 51.2852,
+      "lon": 22.2149,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/chelmskie-podziemia-kredowe",
+      "name": "Chełmskie Podziemia Kredowe",
+      "category": "cave",
+      "lat": 51.1434,
+      "lon": 23.4715,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/bazylika-narodzenia-najswietszej-maryi-panny-w-chelmie",
+      "name": "Bazylika Narodzenia Najświętszej Maryi Panny w Chełmie",
+      "category": "historic",
+      "lat": 51.1368,
+      "lon": 23.477,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-ziemi-chelmskiej",
+      "name": "Muzeum Ziemi Chełmskiej",
+      "category": "museum",
+      "lat": 51.1428,
+      "lon": 23.4713,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-poludniowego-podlasia-w-bialej-podlaskiej",
+      "name": "Muzeum Południowego Podlasia w Białej Podlaskiej",
+      "category": "museum",
+      "lat": 52.0312,
+      "lon": 23.1142,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-ziemi-lukowskiej",
+      "name": "Muzeum Ziemi Łukowskiej",
+      "category": "museum",
+      "lat": 51.9278,
+      "lon": 22.3832,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-sil-powietrznych-w-deblinie",
+      "name": "Muzeum Sił Powietrznych w Dęblinie",
+      "category": "museum",
+      "lat": 51.5607,
+      "lon": 21.8465,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/twierdza-deblin",
+      "name": "Twierdza Dęblin",
+      "category": "historic",
+      "lat": 51.5679,
+      "lon": 21.8402,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-bylego-obozu-zaglady-w-sobiborze",
+      "name": "Muzeum Byłego Obozu Zagłady w Sobiborze",
+      "category": "museum",
+      "lat": 51.447,
+      "lon": 23.5975,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-miejsce-pamieci-w-belzcu",
+      "name": "Muzeum – Miejsce Pamięci w Bełżcu",
+      "category": "museum",
+      "lat": 50.3843,
+      "lon": 23.4381,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-zespol-synagogalny-we-wlodawie",
+      "name": "Muzeum – Zespół Synagogalny we Włodawie",
+      "category": "museum",
+      "lat": 51.5518,
+      "lon": 23.5489,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/wielka-synagoga-we-wlodawie",
+      "name": "Wielka Synagoga we Włodawie",
+      "category": "historic",
+      "lat": 51.5518,
+      "lon": 23.5489,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/jezioro-biale-w-okunince",
+      "name": "Jezioro Białe w Okunince",
+      "category": "water",
+      "lat": 51.5038,
+      "lon": 23.5393,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/kosciol-na-wodzie-w-zwierzyncu",
+      "name": "Kościół na wodzie w Zwierzyńcu",
+      "category": "historic",
+      "lat": 50.6134,
+      "lon": 22.9687,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/stawy-echo-w-zwierzyncu",
+      "name": "Stawy Echo w Zwierzyńcu",
+      "category": "water",
+      "lat": 50.6075,
+      "lon": 22.9781,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/bukowa-gora-punkt-widokowy-roztoczanskiego-parku-narodowego",
+      "name": "Bukowa Góra – punkt widokowy Roztoczańskiego Parku Narodowego",
+      "category": "nature",
+      "lat": 50.5922,
+      "lon": 22.995,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/florianka-roztoczanski-park-narodowy",
+      "name": "Florianka – Roztoczański Park Narodowy",
+      "category": "nature",
+      "lat": 50.5698,
+      "lon": 23.046,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/szumy-nad-tanwia",
+      "name": "Szumy nad Tanwią",
+      "category": "nature",
+      "lat": 50.3587,
+      "lon": 23.0964,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/zalew-w-krasnobrodzie",
+      "name": "Zalew w Krasnobrodzie",
+      "category": "water",
+      "lat": 50.543,
+      "lon": 23.2047,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/kaplica-na-wodzie-w-krasnobrodzie",
+      "name": "Kaplica na Wodzie w Krasnobrodzie",
+      "category": "historic",
+      "lat": 50.5453,
+      "lon": 23.2188,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-wsi-krasnobrodzkiej",
+      "name": "Muzeum Wsi Krasnobrodzkiej",
+      "category": "museum",
+      "lat": 50.5446,
+      "lon": 23.2137,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/zoom-natury-w-janowie-lubelskim",
+      "name": "Zoom Natury w Janowie Lubelskim",
+      "category": "nature",
+      "lat": 50.6956,
+      "lon": 22.4056,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/zalew-janowski",
+      "name": "Zalew Janowski",
+      "category": "water",
+      "lat": 50.6951,
+      "lon": 22.4043,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/zagroda-sitarska-w-bilgoraju",
+      "name": "Zagroda Sitarska w Biłgoraju",
+      "category": "museum",
+      "lat": 50.5423,
+      "lon": 22.7203,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-regionalne-w-krasnymstawie",
+      "name": "Muzeum Regionalne w Krasnymstawie",
+      "category": "museum",
+      "lat": 50.9841,
+      "lon": 23.1728,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-im-ks-stanislawa-staszica-w-hrubieszowie",
+      "name": "Muzeum im. ks. Stanisława Staszica w Hrubieszowie",
+      "category": "museum",
+      "lat": 50.8058,
+      "lon": 23.8914,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-regionalne-w-tomaszowie-lubelskim",
+      "name": "Muzeum Regionalne w Tomaszowie Lubelskim",
+      "category": "museum",
+      "lat": 50.4472,
+      "lon": 23.4163,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/muzeum-regionalne-w-lecznej",
+      "name": "Muzeum Regionalne w Łęcznej",
+      "category": "museum",
+      "lat": 51.3017,
+      "lon": 22.8814,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/jezioro-piaseczno",
+      "name": "Jezioro Piaseczno",
+      "category": "water",
+      "lat": 51.3995,
+      "lon": 22.948,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/jezioro-krasne",
+      "name": "Jezioro Krasne",
+      "category": "water",
+      "lat": 51.4324,
+      "lon": 22.9645,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/jezioro-zaglebocze",
+      "name": "Jezioro Zagłębocze",
+      "category": "water",
+      "lat": 51.4027,
+      "lon": 23.018,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/jezioro-firlej",
+      "name": "Jezioro Firlej",
+      "category": "water",
+      "lat": 51.558,
+      "lon": 22.5093,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/zalew-nielisz",
+      "name": "Zalew Nielisz",
+      "category": "water",
+      "lat": 50.797,
+      "lon": 23.04,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/jezioro-lukie-poleski-park-narodowy",
+      "name": "Jezioro Łukie – Poleski Park Narodowy",
+      "category": "water",
+      "lat": 51.409,
+      "lon": 23.11,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/jezioro-moszne-poleski-park-narodowy",
+      "name": "Jezioro Moszne – Poleski Park Narodowy",
+      "category": "water",
+      "lat": 51.449,
+      "lon": 23.106,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/sciezka-przyrodnicza-dab-dominik",
+      "name": "Ścieżka przyrodnicza Dąb Dominik",
+      "category": "nature",
+      "lat": 51.432,
+      "lon": 23.115,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
+    },
+    {
+      "id": "lubelskie/dab-bolko-w-hniszowie",
+      "name": "Dąb Bolko w Hniszowie",
+      "category": "nature",
+      "lat": 51.1847,
+      "lon": 23.8043,
+      "source": "Lubelskie.travel / Wikipedia / dane mapowe",
+      "sourceUrl": "https://lubelskie.travel/pl/",
+      "region": "lubelskie"
     }
   ],
-  "count": 875
+  "count": 1048
 }
