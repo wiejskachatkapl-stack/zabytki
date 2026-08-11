@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1049';
+  const APP_VERSION = 'v1050';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1049';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1050';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const ROUTE_MODE_KEY = 'tourmap_route_mode_v1';
   const ROUTE_MODES = {
@@ -36,7 +36,7 @@
   const NEARBY_FETCH_MIN_RADIUS = 12000;
   const NEARBY_REFRESH_DISTANCE = 2500;
   const NEARBY_REFRESH_TIME = 8 * 60 * 1000;
-  // v1049: lekki indeks przestrzenny ogranicza liczbę punktów sprawdzanych przez telefon.
+  // v1050: lekki indeks przestrzenny ogranicza liczbę punktów sprawdzanych przez telefon.
   const SPATIAL_CELL_DEGREES = 0.25;
   const PREVIEW_MIN_MOVE_METERS = 250;
   const PREVIEW_MIN_INTERVAL_MS = 30 * 1000;
