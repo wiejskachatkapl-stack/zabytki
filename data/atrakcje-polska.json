@@ -1,7 +1,7 @@
 {
-  "version": "v1026",
+  "version": "v1027",
   "updatedAt": "2026-08-11",
-  "description": "Statyczna baza atrakcji Polski rozszerzona o szeroki zestaw atrakcji województwa małopolskiego dla 9 kategorii aplikacji. Punkty własne użytkownika są nadal łączone lokalnie z bazą.",
+  "description": "Statyczna baza atrakcji Polski rozszerzona o Małopolskie i duży zestaw atrakcji województwa podkarpackiego dla 9 kategorii aplikacji. Punkty własne użytkownika są nadal łączone lokalnie z bazą.",
   "attractions": [
     {
       "id": "base/palac-radziejowice",
@@ -2350,7 +2350,2297 @@
       "source": "Mapy Małopolski / OpenStreetMap",
       "sourceUrl": "https://mapymalopolski.pl/strona-glowna/baza-wiedzy/opis-kompozycji-mapowych/gminy-ciekawe-miejsca/",
       "region": "małopolskie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-bagno-przecawskie",
+      "name": "Rezerwat przyrody Bagno Przecławskie",
+      "category": "reserve",
+      "lat": 50.186667,
+      "lon": 21.425,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-bobry-w-uhercach",
+      "name": "Rezerwat przyrody Bobry w Uhercach",
+      "category": "reserve",
+      "lat": 49.454167,
+      "lon": 22.394444,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-bor",
+      "name": "Rezerwat przyrody Bór",
+      "category": "reserve",
+      "lat": 50.131667,
+      "lon": 21.999167,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-broduszurki",
+      "name": "Rezerwat przyrody Broduszurki",
+      "category": "reserve",
+      "lat": 49.818056,
+      "lon": 22.360278,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-brzoza-czarna-w-reczpolu",
+      "name": "Rezerwat przyrody Brzoza Czarna w Reczpolu",
+      "category": "reserve",
+      "lat": 49.7925,
+      "lon": 22.598056,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-brzyska-wola",
+      "name": "Rezerwat przyrody Brzyska Wola",
+      "category": "reserve",
+      "lat": 50.3125,
+      "lon": 22.53,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-buczyna-w-cyrance-na-paskowyzu-kolbuszowskim",
+      "name": "Rezerwat przyrody Buczyna w Cyrance na Płaskowyżu Kolbuszowskim",
+      "category": "reserve",
+      "lat": 50.253056,
+      "lon": 21.598611,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-buczyna-w-wankowej",
+      "name": "Rezerwat przyrody Buczyna w Wańkowej",
+      "category": "reserve",
+      "lat": 49.506111,
+      "lon": 22.441111,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-bukowica",
+      "name": "Rezerwat przyrody Bukowica",
+      "category": "reserve",
+      "lat": 49.466667,
+      "lon": 21.945,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-bukowy-las",
+      "name": "Rezerwat przyrody Bukowy Las",
+      "category": "reserve",
+      "lat": 50.358333,
+      "lon": 23.256667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-chwaniow",
+      "name": "Rezerwat przyrody Chwaniów",
+      "category": "reserve",
+      "lat": 49.530833,
+      "lon": 22.563333,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-cisy-na-gorze-jawor",
+      "name": "Rezerwat przyrody Cisy na Górze Jawor",
+      "category": "reserve",
+      "lat": 49.293333,
+      "lon": 22.2875,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-cisy-w-malinowce",
+      "name": "Rezerwat przyrody Cisy w Malinówce",
+      "category": "reserve",
+      "lat": 49.702222,
+      "lon": 21.920833,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-cisy-w-nowej-wsi",
+      "name": "Rezerwat przyrody Cisy w Nowej Wsi",
+      "category": "reserve",
+      "lat": 49.5275,
+      "lon": 21.700556,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-cisy-w-serednicy",
+      "name": "Rezerwat przyrody Cisy w Serednicy",
+      "category": "reserve",
+      "lat": 49.4725,
+      "lon": 22.528333,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-dolina-jodowki",
+      "name": "Rezerwat przyrody Dolina Jodłówki",
+      "category": "reserve",
+      "lat": 50.733931,
+      "lon": 22.046162,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-dolina-smarkatej",
+      "name": "Rezerwat przyrody Dolina Smarkatej",
+      "category": "reserve",
+      "lat": 50.365833,
+      "lon": 21.670556,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-dyrbek",
+      "name": "Rezerwat przyrody Dyrbek",
+      "category": "reserve",
+      "lat": 49.515,
+      "lon": 22.418333,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-dziurkowiec",
+      "name": "Rezerwat przyrody Dziurkowiec",
+      "category": "reserve",
+      "lat": 49.103465,
+      "lon": 22.430556,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-golesz",
+      "name": "Rezerwat przyrody Golesz",
+      "category": "reserve",
+      "lat": 49.780556,
+      "lon": 21.439167,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-gooborze",
+      "name": "Rezerwat przyrody Gołoborze",
+      "category": "reserve",
+      "lat": 49.305,
+      "lon": 22.246667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-gora-chem",
+      "name": "Rezerwat przyrody Góra Chełm",
+      "category": "reserve",
+      "lat": 49.884167,
+      "lon": 21.561111,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-gora-sobien",
+      "name": "Rezerwat przyrody Góra Sobień",
+      "category": "reserve",
+      "lat": 49.526944,
+      "lon": 22.329167,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-grad-w-sredniej-wsi",
+      "name": "Rezerwat przyrody Grąd w Średniej Wsi",
+      "category": "reserve",
+      "lat": 49.427778,
+      "lon": 22.351667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-herby",
+      "name": "Rezerwat przyrody Herby",
+      "category": "reserve",
+      "lat": 49.852222,
+      "lon": 21.646667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-hulskie-im-stefana-myczkowskiego",
+      "name": "Rezerwat przyrody Hulskie im. Stefana Myczkowskiego",
+      "category": "reserve",
+      "lat": 49.255556,
+      "lon": 22.554167,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-husowka",
+      "name": "Rezerwat przyrody Husówka",
+      "category": "reserve",
+      "lat": 49.9625,
+      "lon": 22.315556,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-igieki",
+      "name": "Rezerwat przyrody Igiełki",
+      "category": "reserve",
+      "lat": 49.511111,
+      "lon": 21.643333,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-imielty-ug",
+      "name": "Rezerwat przyrody Imielty Ług",
+      "category": "reserve",
+      "lat": 50.662778,
+      "lon": 22.241667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-jamy",
+      "name": "Rezerwat przyrody Jamy",
+      "category": "reserve",
+      "lat": 49.8,
+      "lon": 22.774167,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-jastkowice",
+      "name": "Rezerwat przyrody Jastkowice",
+      "category": "reserve",
+      "lat": 50.634444,
+      "lon": 22.135556,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-jazwiana-gora",
+      "name": "Rezerwat przyrody Jaźwiana Góra",
+      "category": "reserve",
+      "lat": 50.348889,
+      "lon": 21.682222,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-jedlina",
+      "name": "Rezerwat przyrody Jedlina",
+      "category": "reserve",
+      "lat": 50.2125,
+      "lon": 23.221667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-kalwaria-pacawska",
+      "name": "Rezerwat przyrody Kalwaria Pacławska",
+      "category": "reserve",
+      "lat": 49.641667,
+      "lon": 22.708889,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-kamienne",
+      "name": "Rezerwat przyrody Kamienne",
+      "category": "reserve",
+      "lat": 50.111667,
+      "lon": 23.041111,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-kamien-nad-jasliskami",
+      "name": "Rezerwat przyrody Kamień nad Jaśliskami",
+      "category": "reserve",
+      "lat": 49.394444,
+      "lon": 21.816111,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-kamien-nad-rzepedzia",
+      "name": "Rezerwat przyrody Kamień nad Rzepedzią",
+      "category": "reserve",
+      "lat": 49.398333,
+      "lon": 22.050556,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-koacznia",
+      "name": "Rezerwat przyrody Kołacznia",
+      "category": "reserve",
+      "lat": 50.305556,
+      "lon": 22.266389,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-konskie-bota",
+      "name": "Rezerwat przyrody Końskie Błota",
+      "category": "reserve",
+      "lat": 50.24,
+      "lon": 21.536667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-kopystanka",
+      "name": "Rezerwat przyrody Kopystanka",
+      "category": "reserve",
+      "lat": 49.675556,
+      "lon": 22.626111,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-kozigarb",
+      "name": "Rezerwat przyrody Kozigarb",
+      "category": "reserve",
+      "lat": 49.798333,
+      "lon": 22.341944,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-koziniec",
+      "name": "Rezerwat przyrody Koziniec",
+      "category": "reserve",
+      "lat": 49.424444,
+      "lon": 22.426389,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-kretowki",
+      "name": "Rezerwat przyrody Kretówki",
+      "category": "reserve",
+      "lat": 49.713333,
+      "lon": 21.913333,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-krepak",
+      "name": "Rezerwat przyrody Krępak",
+      "category": "reserve",
+      "lat": 49.698056,
+      "lon": 22.534722,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-krywe",
+      "name": "Rezerwat przyrody Krywe",
+      "category": "reserve",
+      "lat": 49.266667,
+      "lon": 22.495833,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-las-klasztorny",
+      "name": "Rezerwat przyrody Las Klasztorny",
+      "category": "reserve",
+      "lat": 50.291667,
+      "lon": 22.383333,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-las-zapasny-pamieci-sieniawskich-lesnikow",
+      "name": "Rezerwat przyrody Las Zapaśny – Pamięci Sieniawskich Leśników",
+      "category": "reserve",
+      "lat": 50.284355,
+      "lon": 22.671941,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-leoncina",
+      "name": "Rezerwat przyrody Leoncina",
+      "category": "reserve",
+      "lat": 49.796667,
+      "lon": 22.664444,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-lisia-gora",
+      "name": "Rezerwat przyrody Lisia Góra",
+      "category": "reserve",
+      "lat": 50.01,
+      "lon": 21.989444,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-liwocz",
+      "name": "Rezerwat przyrody Liwocz",
+      "category": "reserve",
+      "lat": 49.803333,
+      "lon": 21.36,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-lupa",
+      "name": "Rezerwat przyrody Lupa",
+      "category": "reserve",
+      "lat": 50.201194,
+      "lon": 22.749,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-eka",
+      "name": "Rezerwat przyrody Łęka",
+      "category": "reserve",
+      "lat": 50.691389,
+      "lon": 22.154444,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-ysa-gora",
+      "name": "Rezerwat przyrody Łysa Góra",
+      "category": "reserve",
+      "lat": 49.568333,
+      "lon": 21.556667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-minokat",
+      "name": "Rezerwat przyrody Minokąt",
+      "category": "reserve",
+      "lat": 50.382778,
+      "lon": 23.369444,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-moczary",
+      "name": "Rezerwat przyrody Moczary",
+      "category": "reserve",
+      "lat": 50.045833,
+      "lon": 23.102778,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-modrzyna",
+      "name": "Rezerwat przyrody Modrzyna",
+      "category": "reserve",
+      "lat": 49.438333,
+      "lon": 21.680556,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-mojka",
+      "name": "Rezerwat przyrody Mójka",
+      "category": "reserve",
+      "lat": 49.845,
+      "lon": 22.103333,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-na-opalonym",
+      "name": "Rezerwat przyrody Na Opalonym",
+      "category": "reserve",
+      "lat": 49.571667,
+      "lon": 22.5875,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-na-oratyku",
+      "name": "Rezerwat przyrody Na Oratyku",
+      "category": "reserve",
+      "lat": 49.446667,
+      "lon": 22.701667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-nad-jeziorem-myczkowieckim",
+      "name": "Rezerwat przyrody Nad Jeziorem Myczkowieckim",
+      "category": "reserve",
+      "lat": 49.413889,
+      "lon": 22.421667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-nad-trzciancem",
+      "name": "Rezerwat przyrody Nad Trzciańcem",
+      "category": "reserve",
+      "lat": 49.573333,
+      "lon": 22.480556,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-olsza-kosa-w-steznicy",
+      "name": "Rezerwat przyrody Olsza kosa w Stężnicy",
+      "category": "reserve",
+      "lat": 49.330556,
+      "lon": 22.324722,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-olszyna-egowa-w-kalnicy",
+      "name": "Rezerwat przyrody Olszyna Łęgowa w Kalnicy",
+      "category": "reserve",
+      "lat": 49.187778,
+      "lon": 22.423333,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-olzy",
+      "name": "Rezerwat przyrody Olzy",
+      "category": "reserve",
+      "lat": 49.518611,
+      "lon": 21.932222,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-pateraki",
+      "name": "Rezerwat przyrody Pateraki",
+      "category": "reserve",
+      "lat": 50.352778,
+      "lon": 21.614444,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-pniow",
+      "name": "Rezerwat przyrody Pniów",
+      "category": "reserve",
+      "lat": 50.721667,
+      "lon": 21.8825,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-polanki",
+      "name": "Rezerwat przyrody Polanki",
+      "category": "reserve",
+      "lat": 49.551667,
+      "lon": 22.271667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-przadki-im-prof-henryka-swidzinskiego",
+      "name": "Rezerwat przyrody Prządki im. prof. Henryka Świdzińskiego",
+      "category": "reserve",
+      "lat": 49.741944,
+      "lon": 21.808333,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-przeom-houbli",
+      "name": "Rezerwat przyrody Przełom Hołubli",
+      "category": "reserve",
+      "lat": 49.813333,
+      "lon": 22.625833,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-przeom-jasioki",
+      "name": "Rezerwat przyrody Przełom Jasiołki",
+      "category": "reserve",
+      "lat": 49.457222,
+      "lon": 21.747222,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-przeom-osawy-pod-duszatynem",
+      "name": "Rezerwat przyrody Przełom Osławy pod Duszatynem",
+      "category": "reserve",
+      "lat": 49.318333,
+      "lon": 22.1,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-przeom-osawy-pod-mokrem",
+      "name": "Rezerwat przyrody Przełom Osławy pod Mokrem",
+      "category": "reserve",
+      "lat": 49.436667,
+      "lon": 22.165,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-przeom-sanu-pod-grodziskiem",
+      "name": "Rezerwat przyrody Przełom Sanu pod Grodziskiem",
+      "category": "reserve",
+      "lat": 49.424444,
+      "lon": 22.398889,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-przeom-strwiaza",
+      "name": "Rezerwat przyrody Przełom Strwiąża",
+      "category": "reserve",
+      "lat": 49.458508,
+      "lon": 22.635236,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-przysup",
+      "name": "Rezerwat przyrody Przysłup",
+      "category": "reserve",
+      "lat": 49.548333,
+      "lon": 22.349167,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-reberce",
+      "name": "Rezerwat przyrody Reberce",
+      "category": "reserve",
+      "lat": 49.656667,
+      "lon": 22.505,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-kamera",
+      "name": "Rezerwat przyrody Kamera",
+      "category": "reserve",
+      "lat": 49.905556,
+      "lon": 21.443333,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-targowisko",
+      "name": "Rezerwat przyrody Targowisko",
+      "category": "reserve",
+      "lat": 50.601944,
+      "lon": 22.175556,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-rezerwat-tysiaclecia-na-cergowej-gorze",
+      "name": "Rezerwat Tysiąclecia na Cergowej Górze",
+      "category": "reserve",
+      "lat": 49.533889,
+      "lon": 21.705,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-sine-wiry",
+      "name": "Rezerwat przyrody Sine Wiry",
+      "category": "reserve",
+      "lat": 49.261111,
+      "lon": 22.431667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-skarpa-jaksmanicka",
+      "name": "Rezerwat przyrody Skarpa Jaksmanicka",
+      "category": "reserve",
+      "lat": 49.756389,
+      "lon": 22.892778,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-sotwina",
+      "name": "Rezerwat przyrody Słotwina",
+      "category": "reserve",
+      "lat": 50.007778,
+      "lon": 21.194444,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-sochy",
+      "name": "Rezerwat przyrody Sochy",
+      "category": "reserve",
+      "lat": 50.619167,
+      "lon": 22.039167,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-sookija",
+      "name": "Rezerwat przyrody Sołokija",
+      "category": "reserve",
+      "lat": 50.222778,
+      "lon": 23.43,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-starzawa",
+      "name": "Rezerwat przyrody Starzawa",
+      "category": "reserve",
+      "lat": 49.887778,
+      "lon": 23.014444,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-suchy-uk",
+      "name": "Rezerwat przyrody Suchy Łuk",
+      "category": "reserve",
+      "lat": 50.233333,
+      "lon": 22.356667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-szachownica-kostkowata-w-stubnie",
+      "name": "Rezerwat przyrody Szachownica kostkowata w Stubnie",
+      "category": "reserve",
+      "lat": 49.898333,
+      "lon": 22.981667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-szachownica-w-krownikach",
+      "name": "Rezerwat przyrody Szachownica w Krównikach",
+      "category": "reserve",
+      "lat": 49.772778,
+      "lon": 22.851111,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-szwajcaria-ropczycka",
+      "name": "Rezerwat przyrody Szwajcaria Ropczycka",
+      "category": "reserve",
+      "lat": 50.0575,
+      "lon": 21.604444,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-sniezyca-wiosenna-w-dwerniczku",
+      "name": "Rezerwat przyrody Śnieżyca wiosenna w Dwerniczku",
+      "category": "reserve",
+      "lat": 49.206111,
+      "lon": 22.654722,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-torfy",
+      "name": "Rezerwat przyrody Torfy",
+      "category": "reserve",
+      "lat": 50.043889,
+      "lon": 21.295,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-turnica",
+      "name": "Rezerwat przyrody Turnica",
+      "category": "reserve",
+      "lat": 49.596667,
+      "lon": 22.635,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-wadernik",
+      "name": "Rezerwat przyrody Wadernik",
+      "category": "reserve",
+      "lat": 49.487778,
+      "lon": 21.629167,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-wielki-las",
+      "name": "Rezerwat przyrody Wielki Las",
+      "category": "reserve",
+      "lat": 49.966667,
+      "lon": 21.771667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-wilcze",
+      "name": "Rezerwat przyrody Wilcze",
+      "category": "reserve",
+      "lat": 49.845,
+      "lon": 22.025,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-winna-gora",
+      "name": "Rezerwat przyrody Winna Góra",
+      "category": "reserve",
+      "lat": 49.799056,
+      "lon": 22.770833,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-wisa-pod-zawichostem",
+      "name": "Rezerwat przyrody Wisła pod Zawichostem",
+      "category": "reserve",
+      "lat": 50.8125,
+      "lon": 21.865556,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-woronikowka",
+      "name": "Rezerwat przyrody Woronikówka",
+      "category": "reserve",
+      "lat": 49.286389,
+      "lon": 22.295556,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-wydrze",
+      "name": "Rezerwat przyrody Wydrze",
+      "category": "reserve",
+      "lat": 50.22,
+      "lon": 22.213889,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-zabocie",
+      "name": "Rezerwat przyrody Zabłocie",
+      "category": "reserve",
+      "lat": 50.155,
+      "lon": 21.841667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-zakole",
+      "name": "Rezerwat przyrody Zakole",
+      "category": "reserve",
+      "lat": 49.215556,
+      "lon": 22.742222,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-zmysowka",
+      "name": "Rezerwat przyrody Zmysłówka",
+      "category": "reserve",
+      "lat": 50.155,
+      "lon": 22.406667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-zwiezo-w-dolinie-olchowatego",
+      "name": "Rezerwat przyrody Zwiezło w dolinie Olchowatego",
+      "category": "reserve",
+      "lat": 49.313611,
+      "lon": 22.166667,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-zrodliska-jasioki",
+      "name": "Rezerwat przyrody Źródliska Jasiołki",
+      "category": "reserve",
+      "lat": 49.36,
+      "lon": 21.929167,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-zroda-tanwi",
+      "name": "Rezerwat przyrody Źródła Tanwi",
+      "category": "reserve",
+      "lat": 50.282222,
+      "lon": 23.353333,
+      "source": "GDOŚ CRFOP / Wikipedia",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kategoria:Rezerwaty_przyrody_w_wojew%C3%B3dztwie_podkarpackim",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rezerwat-mur-krzeczkowski",
+      "name": "Rezerwat przyrody Mur Krzeczkowski",
+      "category": "reserve",
+      "lat": 49.7588,
+      "lon": 22.6148,
+      "source": "RDOŚ Rzeszów / GDOŚ",
+      "sourceUrl": "https://www.gov.pl/web/rdos-rzeszow/pierwszy-nowy-rezerwat--mur-krzeczkowski",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/zamek-lubomirskich-w-rzeszowie",
+      "name": "Zamek Lubomirskich w Rzeszowie",
+      "category": "castle",
+      "lat": 50.03292,
+      "lon": 22.00061,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-zamek-w-ancucie",
+      "name": "Muzeum-Zamek w Łańcucie",
+      "category": "castle",
+      "lat": 50.06873,
+      "lon": 22.23396,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/zamek-w-krasiczynie",
+      "name": "Zamek w Krasiczynie",
+      "category": "castle",
+      "lat": 49.77676,
+      "lon": 22.65246,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/zamek-kazimierzowski-w-przemyslu",
+      "name": "Zamek Kazimierzowski w Przemyślu",
+      "category": "castle",
+      "lat": 49.78102,
+      "lon": 22.76789,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/zamek-krolewski-w-sanoku",
+      "name": "Zamek Królewski w Sanoku",
+      "category": "castle",
+      "lat": 49.56141,
+      "lon": 22.2052,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/zamek-w-baranowie-sandomierskim",
+      "name": "Zamek w Baranowie Sandomierskim",
+      "category": "castle",
+      "lat": 50.49958,
+      "lon": 21.54224,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/zamek-w-przecawiu",
+      "name": "Zamek w Przecławiu",
+      "category": "castle",
+      "lat": 50.19298,
+      "lon": 21.48211,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/zamek-dzikowski-w-tarnobrzegu",
+      "name": "Zamek Dzikowski w Tarnobrzegu",
+      "category": "castle",
+      "lat": 50.5737,
+      "lon": 21.67243,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/paac-w-sieniawie",
+      "name": "Pałac w Sieniawie",
+      "category": "castle",
+      "lat": 50.17755,
+      "lon": 22.6107,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/paac-krasickich-w-dubiecku",
+      "name": "Pałac Krasickich w Dubiecku",
+      "category": "castle",
+      "lat": 49.82634,
+      "lon": 22.39206,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/paac-dzieduszyckich-w-zarzeczu",
+      "name": "Pałac Dzieduszyckich w Zarzeczu",
+      "category": "castle",
+      "lat": 50.00955,
+      "lon": 22.53223,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/paac-osiow-w-narolu",
+      "name": "Pałac Łosiów w Narolu",
+      "category": "castle",
+      "lat": 50.34934,
+      "lon": 23.32678,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/paac-poninskich-w-horyncu-zdroju",
+      "name": "Pałac Ponińskich w Horyńcu-Zdroju",
+      "category": "castle",
+      "lat": 50.19087,
+      "lon": 23.36123,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/paac-mniszchow-w-dukli",
+      "name": "Pałac Mniszchów w Dukli",
+      "category": "castle",
+      "lat": 49.55404,
+      "lon": 21.68236,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/zamek-kmitow-w-lesku",
+      "name": "Zamek Kmitów w Lesku",
+      "category": "castle",
+      "lat": 49.46974,
+      "lon": 22.32913,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/paac-lubomirskich-w-boguchwale",
+      "name": "Pałac Lubomirskich w Boguchwale",
+      "category": "castle",
+      "lat": 49.98558,
+      "lon": 21.94474,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/paac-mycielskich-w-wisniowej",
+      "name": "Pałac Mycielskich w Wiśniowej",
+      "category": "castle",
+      "lat": 49.87755,
+      "lon": 21.6574,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/paac-skrzynskich-w-nozdrzcu",
+      "name": "Pałac Skrzyńskich w Nozdrzcu",
+      "category": "castle",
+      "lat": 49.77291,
+      "lon": 22.19804,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/ruiny-zamku-kamieniec-w-odrzykoniu",
+      "name": "Ruiny zamku Kamieniec w Odrzykoniu",
+      "category": "ruins",
+      "lat": 49.74485,
+      "lon": 21.784,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/ruiny-zamku-sobien",
+      "name": "Ruiny zamku Sobień",
+      "category": "ruins",
+      "lat": 49.52694,
+      "lon": 22.32917,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/ruiny-klasztoru-karmelitow-bosych-w-zagorzu",
+      "name": "Ruiny klasztoru Karmelitów Bosych w Zagórzu",
+      "category": "ruins",
+      "lat": 49.51483,
+      "lon": 22.26692,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/ruiny-zamku-w-wegierce",
+      "name": "Ruiny zamku w Węgierce",
+      "category": "ruins",
+      "lat": 49.9932,
+      "lon": 22.7646,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/ruiny-zamku-w-rybotyczach",
+      "name": "Ruiny zamku w Rybotyczach",
+      "category": "ruins",
+      "lat": 49.6575,
+      "lon": 22.6672,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/fort-xiii-san-rideau-w-bolestraszycach",
+      "name": "Fort XIII San Rideau w Bolestraszycach",
+      "category": "ruins",
+      "lat": 49.8169,
+      "lon": 22.8539,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/fort-i-salis-soglio-w-siedliskach",
+      "name": "Fort I Salis Soglio w Siedliskach",
+      "category": "ruins",
+      "lat": 49.7649,
+      "lon": 22.9081,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/fort-xv-borek-w-siedliskach",
+      "name": "Fort XV Borek w Siedliskach",
+      "category": "ruins",
+      "lat": 49.7539,
+      "lon": 22.9384,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/fort-werner-w-zurawicy",
+      "name": "Fort Werner w Żurawicy",
+      "category": "ruins",
+      "lat": 49.8305,
+      "lon": 22.7869,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/fort-etownia",
+      "name": "Fort Łętownia",
+      "category": "ruins",
+      "lat": 49.8199,
+      "lon": 22.6813,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/fort-dunkowiczki",
+      "name": "Fort Duńkowiczki",
+      "category": "ruins",
+      "lat": 49.8387,
+      "lon": 22.7207,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-budownictwa-ludowego-w-sanoku",
+      "name": "Muzeum Budownictwa Ludowego w Sanoku",
+      "category": "museum",
+      "lat": 49.57515,
+      "lon": 22.19367,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-historyczne-w-sanoku-galeria-beksinskiego",
+      "name": "Muzeum Historyczne w Sanoku – Galeria Beksińskiego",
+      "category": "museum",
+      "lat": 49.56139,
+      "lon": 22.20518,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/centrum-dziedzictwa-szka-w-krosnie",
+      "name": "Centrum Dziedzictwa Szkła w Krośnie",
+      "category": "museum",
+      "lat": 49.68863,
+      "lon": 21.77043,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-podkarpackie-w-krosnie",
+      "name": "Muzeum Podkarpackie w Krośnie",
+      "category": "museum",
+      "lat": 49.68953,
+      "lon": 21.76911,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-rzemiosa-w-krosnie",
+      "name": "Muzeum Rzemiosła w Krośnie",
+      "category": "museum",
+      "lat": 49.68997,
+      "lon": 21.76589,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/karpacka-troja-w-trzcinicy",
+      "name": "Karpacka Troja w Trzcinicy",
+      "category": "museum",
+      "lat": 49.74341,
+      "lon": 21.4343,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-przemysu-naftowego-i-gazowniczego-w-bobrce",
+      "name": "Muzeum Przemysłu Naftowego i Gazowniczego w Bóbrce",
+      "category": "museum",
+      "lat": 49.61555,
+      "lon": 21.70834,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-narodowe-ziemi-przemyskiej",
+      "name": "Muzeum Narodowe Ziemi Przemyskiej",
+      "category": "museum",
+      "lat": 49.78377,
+      "lon": 22.7705,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-dzwonow-i-fajek-w-przemyslu",
+      "name": "Muzeum Dzwonów i Fajek w Przemyślu",
+      "category": "museum",
+      "lat": 49.78274,
+      "lon": 22.76817,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-twierdzy-przemysl",
+      "name": "Muzeum Twierdzy Przemyśl",
+      "category": "museum",
+      "lat": 49.78398,
+      "lon": 22.77211,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-w-jarosawiu-kamienica-orsettich",
+      "name": "Muzeum w Jarosławiu Kamienica Orsettich",
+      "category": "museum",
+      "lat": 50.0166,
+      "lon": 22.67748,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-kultury-ludowej-w-kolbuszowej",
+      "name": "Muzeum Kultury Ludowej w Kolbuszowej",
+      "category": "museum",
+      "lat": 50.25332,
+      "lon": 21.77044,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-polakow-ratujacych-zydow-im-rodziny-ulmow-w-markowej",
+      "name": "Muzeum Polaków Ratujących Żydów im. Rodziny Ulmów w Markowej",
+      "category": "museum",
+      "lat": 50.02985,
+      "lon": 22.33077,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-regionalne-w-mielcu-jadernowka",
+      "name": "Muzeum Regionalne w Mielcu – Jadernówka",
+      "category": "museum",
+      "lat": 50.28832,
+      "lon": 21.42176,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-regionalne-w-debicy",
+      "name": "Muzeum Regionalne w Dębicy",
+      "category": "museum",
+      "lat": 50.05179,
+      "lon": 21.41125,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-regionalne-w-jasle",
+      "name": "Muzeum Regionalne w Jaśle",
+      "category": "museum",
+      "lat": 49.74564,
+      "lon": 21.47257,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-regionalne-w-brzozowie",
+      "name": "Muzeum Regionalne w Brzozowie",
+      "category": "museum",
+      "lat": 49.69471,
+      "lon": 22.01925,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-ziemi-lezajskiej",
+      "name": "Muzeum Ziemi Leżajskiej",
+      "category": "museum",
+      "lat": 50.26234,
+      "lon": 22.41813,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-regionalne-w-stalowej-woli",
+      "name": "Muzeum Regionalne w Stalowej Woli",
+      "category": "museum",
+      "lat": 50.56688,
+      "lon": 22.05852,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-centralnego-okregu-przemysowego-w-stalowej-woli",
+      "name": "Muzeum Centralnego Okręgu Przemysłowego w Stalowej Woli",
+      "category": "museum",
+      "lat": 50.56839,
+      "lon": 22.07098,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-dobranocek-w-rzeszowie",
+      "name": "Muzeum Dobranocek w Rzeszowie",
+      "category": "museum",
+      "lat": 50.03692,
+      "lon": 22.00698,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-okregowe-w-rzeszowie",
+      "name": "Muzeum Okręgowe w Rzeszowie",
+      "category": "museum",
+      "lat": 50.0363,
+      "lon": 22.00312,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-etnograficzne-w-rzeszowie",
+      "name": "Muzeum Etnograficzne w Rzeszowie",
+      "category": "museum",
+      "lat": 50.03729,
+      "lon": 22.00366,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-kultury-bojkow-w-myczkowie",
+      "name": "Muzeum Kultury Bojków w Myczkowie",
+      "category": "museum",
+      "lat": 49.3928,
+      "lon": 22.41416,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-przyrodnicze-bieszczadzkiego-parku-narodowego-w-ustrzykach-dolnych",
+      "name": "Muzeum Przyrodnicze Bieszczadzkiego Parku Narodowego w Ustrzykach Dolnych",
+      "category": "museum",
+      "lat": 49.43092,
+      "lon": 22.58705,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-gorzelnictwa-w-ancucie",
+      "name": "Muzeum Gorzelnictwa w Łańcucie",
+      "category": "museum",
+      "lat": 50.0666,
+      "lon": 22.2402,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-lalek-w-pilznie",
+      "name": "Muzeum Lalek w Pilźnie",
+      "category": "museum",
+      "lat": 49.97814,
+      "lon": 21.2918,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/osrodek-garncarski-w-medyni-gogowskiej",
+      "name": "Ośrodek Garncarski w Medyni Głogowskiej",
+      "category": "museum",
+      "lat": 50.14934,
+      "lon": 22.11744,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-parafialne-w-bliznem",
+      "name": "Muzeum Parafialne w Bliznem",
+      "category": "museum",
+      "lat": 49.75064,
+      "lon": 21.97339,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/muzeum-marii-konopnickiej-w-zarnowcu",
+      "name": "Muzeum Marii Konopnickiej w Żarnowcu",
+      "category": "museum",
+      "lat": 49.73196,
+      "lon": 21.72588,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/kamien-leski",
+      "name": "Kamień Leski",
+      "category": "nature",
+      "lat": 49.4596,
+      "lon": 22.36087,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/diabli-kamien-w-foluszu",
+      "name": "Diabli Kamień w Foluszu",
+      "category": "nature",
+      "lat": 49.61594,
+      "lon": 21.35342,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/skaki-przadki",
+      "name": "Skałki Prządki",
+      "category": "nature",
+      "lat": 49.74194,
+      "lon": 21.80833,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/wodospad-szepit-na-hylatym",
+      "name": "Wodospad Szepit na Hylatym",
+      "category": "nature",
+      "lat": 49.21894,
+      "lon": 22.55838,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/wodospad-na-potoku-hylaty",
+      "name": "Wodospad na potoku Hylaty",
+      "category": "nature",
+      "lat": 49.21973,
+      "lon": 22.55986,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/dab-poganin-w-weglowce",
+      "name": "Dąb Poganin w Węglówce",
+      "category": "nature",
+      "lat": 49.76779,
+      "lon": 21.74198,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/dab-chrzescijanin-w-januszkowicach",
+      "name": "Dąb Chrześcijanin w Januszkowicach",
+      "category": "nature",
+      "lat": 49.8272,
+      "lon": 21.5738,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/zroda-sanu-punkt-widokowy",
+      "name": "Źródła Sanu – punkt widokowy",
+      "category": "nature",
+      "lat": 49.0068,
+      "lon": 22.8657,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/chatka-puchatka-ii-na-pooninie-wetlinskiej",
+      "name": "Chatka Puchatka II na Połoninie Wetlińskiej",
+      "category": "pttk",
+      "lat": 49.15032,
+      "lon": 22.55448,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/bacowka-pttk-pod-maa-rawka",
+      "name": "Bacówka PTTK pod Małą Rawką",
+      "category": "pttk",
+      "lat": 49.10385,
+      "lon": 22.58684,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/schronisko-pttk-jaworzec",
+      "name": "Schronisko PTTK Jaworzec",
+      "category": "pttk",
+      "lat": 49.16016,
+      "lon": 22.38883,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/schronisko-pttk-kremenaros-w-ustrzykach-gornych",
+      "name": "Schronisko PTTK Kremenaros w Ustrzykach Górnych",
+      "category": "pttk",
+      "lat": 49.1062,
+      "lon": 22.65,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/bacowka-pttk-koliba-w-przysupie-carynskim",
+      "name": "Bacówka PTTK Koliba w Przysłupie Caryńskim",
+      "category": "pttk",
+      "lat": 49.13512,
+      "lon": 22.66832,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/schronisko-pttk-w-komanczy",
+      "name": "Schronisko PTTK w Komańczy",
+      "category": "pttk",
+      "lat": 49.33884,
+      "lon": 22.06424,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/jaskinia-nasiczne-ii",
+      "name": "Jaskinia Nasiczne II",
+      "category": "cave",
+      "lat": 49.179167,
+      "lon": 22.614167,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/jaskinia-sowianska-drwali",
+      "name": "Jaskinia Słowiańska-Drwali",
+      "category": "cave",
+      "lat": 49.5227,
+      "lon": 21.7126,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/lodowa-szczelina-na-cergowej",
+      "name": "Lodowa Szczelina na Cergowej",
+      "category": "cave",
+      "lat": 49.5348,
+      "lon": 21.7034,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/jaskinia-mroczna-w-kornutach",
+      "name": "Jaskinia Mroczna w Kornutach",
+      "category": "cave",
+      "lat": 49.5846,
+      "lon": 21.4541,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/szczelina-lipowicka",
+      "name": "Szczelina Lipowicka",
+      "category": "cave",
+      "lat": 49.5222,
+      "lon": 21.7008,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/jaskinia-sw-jana-na-cergowej",
+      "name": "Jaskinia św. Jana na Cergowej",
+      "category": "cave",
+      "lat": 49.5364,
+      "lon": 21.7046,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/jaskinia-jawornicka",
+      "name": "Jaskinia Jawornicka",
+      "category": "cave",
+      "lat": 49.5658,
+      "lon": 21.7305,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/koscio-wszystkich-swietych-w-bliznem-unesco",
+      "name": "Kościół Wszystkich Świętych w Bliznem – UNESCO",
+      "category": "historic",
+      "lat": 49.75064,
+      "lon": 21.97339,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/koscio-wniebowziecia-nmp-i-sw-michaa-archanioa-w-haczowie-unesco",
+      "name": "Kościół Wniebowzięcia NMP i św. Michała Archanioła w Haczowie – UNESCO",
+      "category": "historic",
+      "lat": 49.65942,
+      "lon": 21.88955,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/cerkiew-sw-paraskewy-w-radruzu-unesco",
+      "name": "Cerkiew św. Paraskewy w Radrużu – UNESCO",
+      "category": "historic",
+      "lat": 50.17285,
+      "lon": 23.39382,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/cerkiew-narodzenia-nmp-w-chotyncu-unesco",
+      "name": "Cerkiew Narodzenia NMP w Chotyńcu – UNESCO",
+      "category": "historic",
+      "lat": 49.95393,
+      "lon": 23.00267,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/cerkiew-sw-michaa-archanioa-w-smolniku-unesco",
+      "name": "Cerkiew św. Michała Archanioła w Smolniku – UNESCO",
+      "category": "historic",
+      "lat": 49.22908,
+      "lon": 22.69667,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/cerkiew-sw-michaa-archanioa-w-turzansku-unesco",
+      "name": "Cerkiew św. Michała Archanioła w Turzańsku – UNESCO",
+      "category": "historic",
+      "lat": 49.33464,
+      "lon": 22.12065,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/cerkiew-w-opience",
+      "name": "Cerkiew w Łopience",
+      "category": "historic",
+      "lat": 49.25918,
+      "lon": 22.36422,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/klasztor-oo-bernardynow-w-lezajsku",
+      "name": "Klasztor OO. Bernardynów w Leżajsku",
+      "category": "historic",
+      "lat": 50.26638,
+      "lon": 22.4072,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/kalwaria-pacawska-sanktuarium",
+      "name": "Kalwaria Pacławska – sanktuarium",
+      "category": "historic",
+      "lat": 49.63496,
+      "lon": 22.70677,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/podziemna-trasa-turystyczna-rzeszowskie-piwnice",
+      "name": "Podziemna Trasa Turystyczna – Rzeszowskie Piwnice",
+      "category": "historic",
+      "lat": 50.03778,
+      "lon": 22.00464,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rynek-w-rzeszowie",
+      "name": "Rynek w Rzeszowie",
+      "category": "historic",
+      "lat": 50.03782,
+      "lon": 22.00455,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rynek-w-przemyslu",
+      "name": "Rynek w Przemyślu",
+      "category": "historic",
+      "lat": 49.78321,
+      "lon": 22.76892,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rynek-w-jarosawiu",
+      "name": "Rynek w Jarosławiu",
+      "category": "historic",
+      "lat": 50.01657,
+      "lon": 22.67746,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rynek-w-krosnie",
+      "name": "Rynek w Krośnie",
+      "category": "historic",
+      "lat": 49.68872,
+      "lon": 21.77038,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rynek-w-sanoku",
+      "name": "Rynek w Sanoku",
+      "category": "historic",
+      "lat": 49.56093,
+      "lon": 22.20568,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rynek-w-lesku",
+      "name": "Rynek w Lesku",
+      "category": "historic",
+      "lat": 49.47019,
+      "lon": 22.3307,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rynek-w-przeworsku",
+      "name": "Rynek w Przeworsku",
+      "category": "historic",
+      "lat": 50.05924,
+      "lon": 22.49478,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/rynek-w-lezajsku",
+      "name": "Rynek w Leżajsku",
+      "category": "historic",
+      "lat": 50.26263,
+      "lon": 22.41973,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/bieszczadzka-kolejka-lesna-stacja-majdan",
+      "name": "Bieszczadzka Kolejka Leśna – stacja Majdan",
+      "category": "historic",
+      "lat": 49.1633,
+      "lon": 22.32847,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/bieszczadzkie-drezyny-rowerowe-uherce-mineralne",
+      "name": "Bieszczadzkie Drezyny Rowerowe – Uherce Mineralne",
+      "category": "historic",
+      "lat": 49.4667,
+      "lon": 22.4015,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/schron-kolejowy-stepina-cieszyna",
+      "name": "Schron kolejowy Stępina-Cieszyna",
+      "category": "historic",
+      "lat": 49.87857,
+      "lon": 21.58873,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/tunel-schronowy-w-strzyzowie",
+      "name": "Tunel schronowy w Strzyżowie",
+      "category": "historic",
+      "lat": 49.86861,
+      "lon": 21.79775,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/arboretum-w-bolestraszycach",
+      "name": "Arboretum w Bolestraszycach",
+      "category": "historic",
+      "lat": 49.81768,
+      "lon": 22.8535,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/fort-xii-werner-w-zurawicy",
+      "name": "Fort XII Werner w Żurawicy",
+      "category": "historic",
+      "lat": 49.82986,
+      "lon": 22.78812,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/wieza-widokowa-na-cergowej",
+      "name": "Wieża widokowa na Cergowej",
+      "category": "historic",
+      "lat": 49.5322,
+      "lon": 21.7018,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/cerkiew-w-komanczy",
+      "name": "Cerkiew w Komańczy",
+      "category": "historic",
+      "lat": 49.33971,
+      "lon": 22.06289,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/synagoga-w-lesku",
+      "name": "Synagoga w Lesku",
+      "category": "historic",
+      "lat": 49.46957,
+      "lon": 22.33087,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/cmentarz-zydowski-w-lesku",
+      "name": "Cmentarz żydowski w Lesku",
+      "category": "historic",
+      "lat": 49.47312,
+      "lon": 22.32906,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/zespo-klasztorny-karmelitow-w-zagorzu",
+      "name": "Zespół klasztorny Karmelitów w Zagórzu",
+      "category": "historic",
+      "lat": 49.51483,
+      "lon": 22.26692,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/jezioro-solinskie-zapora-w-solinie",
+      "name": "Jezioro Solińskie – Zapora w Solinie",
+      "category": "water",
+      "lat": 49.39612,
+      "lon": 22.45202,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/jezioro-myczkowieckie-zapora",
+      "name": "Jezioro Myczkowieckie – zapora",
+      "category": "water",
+      "lat": 49.43089,
+      "lon": 22.41046,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/jezioro-tarnobrzeskie",
+      "name": "Jezioro Tarnobrzeskie",
+      "category": "water",
+      "lat": 50.5591,
+      "lon": 21.6434,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/zalew-sieniawski-na-wisoku",
+      "name": "Zalew Sieniawski na Wisłoku",
+      "category": "water",
+      "lat": 49.4979,
+      "lon": 21.9315,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/zalew-ozanna",
+      "name": "Zalew Ożanna",
+      "category": "water",
+      "lat": 50.31124,
+      "lon": 22.6062,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/zalew-czyste-w-grodzisku-dolnym",
+      "name": "Zalew Czyste w Grodzisku Dolnym",
+      "category": "water",
+      "lat": 50.16582,
+      "lon": 22.46275,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/jeziorka-duszatynskie",
+      "name": "Jeziorka Duszatyńskie",
+      "category": "water",
+      "lat": 49.29554,
+      "lon": 22.12345,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/wodospad-szepit",
+      "name": "Wodospad Szepit",
+      "category": "water",
+      "lat": 49.21894,
+      "lon": 22.55838,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/wodospad-na-iwielce-w-iwli",
+      "name": "Wodospad na Iwielce w Iwli",
+      "category": "water",
+      "lat": 49.5106,
+      "lon": 21.6519,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/san-punkt-widokowy-w-sanoku",
+      "name": "San – punkt widokowy w Sanoku",
+      "category": "water",
+      "lat": 49.56005,
+      "lon": 22.2009,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/solina-kolej-gondolowa-i-panorama-jeziora",
+      "name": "Solina – kolej gondolowa i panorama jeziora",
+      "category": "water",
+      "lat": 49.39537,
+      "lon": 22.45228,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/polanczyk-przystan-nad-jeziorem-solinskim",
+      "name": "Polańczyk – przystań nad Jeziorem Solińskim",
+      "category": "water",
+      "lat": 49.3698,
+      "lon": 22.42054,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/myczkowce-ogrod-biblijny-i-brzeg-jeziora",
+      "name": "Myczkowce – Ogród Biblijny i brzeg jeziora",
+      "category": "water",
+      "lat": 49.43316,
+      "lon": 22.40442,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
+    },
+    {
+      "id": "podkarpackie/zrodla-tanwi-huta-zlomy",
+      "name": "Źródła Tanwi – Huta Złomy",
+      "category": "water",
+      "lat": 50.282222,
+      "lon": 23.353333,
+      "source": "Podkarpackie Travel / dane mapowe",
+      "sourceUrl": "https://podkarpackie.travel/",
+      "region": "podkarpackie"
     }
   ],
-  "count": 239
+  "count": 468
 }
