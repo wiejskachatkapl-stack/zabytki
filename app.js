@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1025';
+  const APP_VERSION = 'v1026';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1024';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1026';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;
@@ -80,6 +80,7 @@
   const routeClearButton = document.getElementById('routeClearButton');
   const osmStatus = document.getElementById('osmStatus');
   const mapModeBadge = document.getElementById('mapModeBadge');
+  const mapLegend = document.getElementById('mapLegend');
 
   const nearbyAlert = document.getElementById('nearbyAlert');
   const nearbyAlertIcon = document.getElementById('nearbyAlertIcon');
@@ -104,6 +105,8 @@
   let editingPointId = null;
   let currentMapMode = 'all';
   let editReturnMapMode = 'all';
+  // v1026: legenda jest filtrem widoku atrakcji. 'all' = wszystkie, null = żadna.
+  let activeAttractionFilter = 'all';
 
   let externalLayer = null;
   let osmAttractions = new Map();
@@ -506,6 +509,49 @@
     return attractions.filter((item) => distanceMeters(lat, lon, item.lat, item.lon) <= radius);
   }
 
+  function attractionMatchesActiveFilter(category) {
+    if (activeAttractionFilter === 'all') return true;
+    if (!activeAttractionFilter) return false;
+    return category === activeAttractionFilter;
+  }
+
+  function updateMapLegendUi() {
+    if (!mapLegend) return;
+    mapLegend.querySelectorAll('[data-map-filter]').forEach((button) => {
+      const value = button.dataset.mapFilter;
+      const active = activeAttractionFilter === value;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+  }
+
+  function refreshMarkersForActiveFilter() {
+    updateMapLegendUi();
+    renderStoredPoints();
+    // Uwaga: filtr legendy zmienia tylko widok. Alerty i obliczanie atrakcji
+    // przy trasie nadal korzystają z pełnej listy, żeby niczego nie przegapić.
+    if (currentMapMode === 'all') {
+      renderExternalAttractions([...osmAttractions.values()]);
+      const visibleExternal = [...osmAttractions.values()].filter((item) =>
+        !isOsmSaved(item.osmId) && attractionMatchesActiveFilter(item.category)
+      ).length;
+      const visibleMine = loadPoints().filter((point) => attractionMatchesActiveFilter(point.category)).length;
+      if (activeAttractionFilter === 'all') {
+        updateOsmStatus(`Baza atrakcji: ${osmAttractions.size} · moje: ${visibleMine}`);
+      } else if (!activeAttractionFilter) {
+        updateOsmStatus('Filtr atrakcji: widok wyłączony');
+      } else {
+        updateOsmStatus(`${CATEGORY_INFO[activeAttractionFilter]?.label || 'Atrakcje'}: ${visibleExternal + visibleMine} widocznych`);
+      }
+    }
+  }
+
+  function toggleAttractionFilter(value) {
+    if (value !== 'all' && !CATEGORY_INFO[value]) return;
+    activeAttractionFilter = activeAttractionFilter === value ? null : value;
+    refreshMarkersForActiveFilter();
+  }
+
   function externalPopupHtml(attraction) {
     const info = CATEGORY_INFO[attraction.category] || CATEGORY_INFO.castle;
     const saved = isOsmSaved(attraction.osmId);
@@ -547,6 +593,7 @@
 
     attractions.forEach((attraction) => {
       if (isOsmSaved(attraction.osmId)) return;
+      if (!attractionMatchesActiveFilter(attraction.category)) return;
 
       const marker = L.marker([attraction.lat, attraction.lon], {
         icon: createExternalCategoryIcon(attraction.category),
@@ -1306,6 +1353,7 @@
 
     loadPoints().forEach((point) => {
       if (!Number.isFinite(Number(point.lat)) || !Number.isFinite(Number(point.lon))) return;
+      if (!attractionMatchesActiveFilter(point.category)) return;
       const marker = L.marker([Number(point.lat), Number(point.lon)], {
         icon: createCategoryIcon(point.category),
         title: point.name || (CATEGORY_INFO[point.category]?.label ?? 'Miejsce'),
@@ -1899,6 +1947,11 @@
     }
   });
 
+  mapLegend?.querySelectorAll('[data-map-filter]').forEach((button) => {
+    button.addEventListener('click', () => toggleAttractionFilter(button.dataset.mapFilter));
+  });
+  updateMapLegendUi();
+
   routeButton?.addEventListener('click', showRoutePanel);
   routePanelClose?.addEventListener('click', hideRoutePanel);
   routeSearchButton?.addEventListener('click', searchRouteDestination);
@@ -1974,7 +2027,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1021', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1026', {
           scope: './',
           updateViaCache: 'none'
         });

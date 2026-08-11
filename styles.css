@@ -2512,3 +2512,56 @@ button {
     display: flex;
   }
 }
+
+
+/* v1026 — legenda działa jako filtr kategorii. Aktywny filtr jest zielony. */
+.map-legend .map-legend-item {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid rgba(22, 38, 27, 0.20);
+  color: #16261b;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color .16s ease, border-color .16s ease, box-shadow .16s ease, transform .12s ease;
+}
+
+.map-legend .map-legend-item:hover {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.map-legend .map-legend-item:active {
+  transform: translateY(1px);
+}
+
+.map-legend .map-legend-item.is-active {
+  color: #ffffff;
+  background: rgba(31, 137, 66, 0.92);
+  border-color: rgba(14, 101, 42, 0.95);
+  box-shadow: 0 2px 7px rgba(13, 89, 37, 0.28);
+}
+
+.map-legend .map-legend-all {
+  justify-content: center;
+  letter-spacing: .035em;
+}
+
+@media (max-width: 760px) {
+  /* 10 filtrów = trzy zwarte wiersze, bez przewijania. */
+  .map-legend {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .map-legend .map-legend-item {
+    min-height: 25px;
+  }
+
+  /* Usunięto z legendy „Moja pozycja” i „Trasa”, więc panel jest niższy. */
+  .map-screen .leaflet-top.leaflet-left {
+    top: max(170px, calc(164px + var(--safe-top)));
+  }
+
+  .location-message {
+    top: max(172px, calc(166px + var(--safe-top)));
+  }
+}
