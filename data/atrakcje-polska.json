@@ -1,7 +1,7 @@
 {
-  "version": "v1046",
+  "version": "v1047",
   "updatedAt": "2026-08-11",
-  "description": "Baza atrakcji Turystycznej Mapy Polski – rozszerzona o województwo wielkopolskie.",
+  "description": "Baza atrakcji Turystycznej Mapy Polski – rozszerzona o województwo lubuskie.",
   "attractions": [
     {
       "id": "base/palac-radziejowice",
@@ -21380,7 +21380,1907 @@
       "source": "Wielkopolska Travel / dane mapowe",
       "sourceUrl": "https://wielkopolska.travel/",
       "region": "wielkopolskie"
+    },
+    {
+      "id": "lubuskie/stary-rynek-w-zielonej-gorze",
+      "name": "Stary Rynek w Zielonej Górze",
+      "category": "historic",
+      "lat": 51.938,
+      "lon": 15.5054,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/ratusz-w-zielonej-gorze",
+      "name": "Ratusz w Zielonej Górze",
+      "category": "historic",
+      "lat": 51.9381,
+      "lon": 15.5051,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/konkatedra-sw-jadwigi-slaskiej-w-zielonej-gorze",
+      "name": "Konkatedra św. Jadwigi Śląskiej w Zielonej Górze",
+      "category": "historic",
+      "lat": 51.9393,
+      "lon": 15.5073,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/wieza-godowa-w-zielonej-gorze",
+      "name": "Wieża Głodowa w Zielonej Górze",
+      "category": "historic",
+      "lat": 51.9375,
+      "lon": 15.5067,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/palmiarnia-w-zielonej-gorze",
+      "name": "Palmiarnia w Zielonej Górze",
+      "category": "historic",
+      "lat": 51.9347,
+      "lon": 15.5148,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/park-winny-w-zielonej-gorze",
+      "name": "Park Winny w Zielonej Górze",
+      "category": "nature",
+      "lat": 51.935,
+      "lon": 15.5144,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-ziemi-lubuskiej-w-zielonej-gorze",
+      "name": "Muzeum Ziemi Lubuskiej w Zielonej Górze",
+      "category": "museum",
+      "lat": 51.942,
+      "lon": 15.505,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-etnograficzne-w-zielonej-gorze-ochli",
+      "name": "Muzeum Etnograficzne w Zielonej Górze-Ochli",
+      "category": "museum",
+      "lat": 51.8868,
+      "lon": 15.4648,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/planetarium-wenus-w-zielonej-gorze",
+      "name": "Planetarium Wenus w Zielonej Górze",
+      "category": "museum",
+      "lat": 51.9372,
+      "lon": 15.5098,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/centrum-przyrodnicze-w-zielonej-gorze",
+      "name": "Centrum Przyrodnicze w Zielonej Górze",
+      "category": "museum",
+      "lat": 51.9441,
+      "lon": 15.4931,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/wieza-braniborska-w-zielonej-gorze",
+      "name": "Wieża Braniborska w Zielonej Górze",
+      "category": "historic",
+      "lat": 51.9246,
+      "lon": 15.5112,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/park-piastowski-w-zielonej-gorze",
+      "name": "Park Piastowski w Zielonej Górze",
+      "category": "nature",
+      "lat": 51.9222,
+      "lon": 15.4968,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/ruiny-paacu-w-zatoniu",
+      "name": "Ruiny Pałacu w Zatoniu",
+      "category": "ruins",
+      "lat": 51.8708,
+      "lon": 15.5568,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/park-ksiazecy-w-zatoniu",
+      "name": "Park Książęcy w Zatoniu",
+      "category": "nature",
+      "lat": 51.8704,
+      "lon": 15.5578,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/paac-w-zaborze",
+      "name": "Pałac w Zaborze",
+      "category": "castle",
+      "lat": 51.9511,
+      "lon": 15.7181,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/lubuskie-centrum-winiarstwa-w-zaborze",
+      "name": "Lubuskie Centrum Winiarstwa w Zaborze",
+      "category": "museum",
+      "lat": 51.949,
+      "lon": 15.7161,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rezerwat-zimna-woda",
+      "name": "Rezerwat Zimna Woda",
+      "category": "reserve",
+      "lat": 51.855,
+      "lon": 15.534,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/katedra-wniebowziecia-nmp-w-gorzowie-wielkopolskim",
+      "name": "Katedra Wniebowzięcia NMP w Gorzowie Wielkopolskim",
+      "category": "historic",
+      "lat": 52.7317,
+      "lon": 15.237,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/bulwar-nadwarcianski-w-gorzowie-wielkopolskim",
+      "name": "Bulwar Nadwarciański w Gorzowie Wielkopolskim",
+      "category": "historic",
+      "lat": 52.7297,
+      "lon": 15.2385,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-lubuskie-im-jana-dekerta-zespo-willowo-ogrodowy",
+      "name": "Muzeum Lubuskie im. Jana Dekerta – Zespół Willowo-Ogrodowy",
+      "category": "museum",
+      "lat": 52.7339,
+      "lon": 15.2508,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/spichlerz-muzeum-lubuskie-w-gorzowie",
+      "name": "Spichlerz – Muzeum Lubuskie w Gorzowie",
+      "category": "museum",
+      "lat": 52.7316,
+      "lon": 15.2318,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/park-wiosny-ludow-w-gorzowie-wielkopolskim",
+      "name": "Park Wiosny Ludów w Gorzowie Wielkopolskim",
+      "category": "nature",
+      "lat": 52.7342,
+      "lon": 15.2323,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/estakada-kolejowa-w-gorzowie-wielkopolskim",
+      "name": "Estakada kolejowa w Gorzowie Wielkopolskim",
+      "category": "historic",
+      "lat": 52.7303,
+      "lon": 15.2225,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/studnia-czarownic-w-gorzowie-wielkopolskim",
+      "name": "Studnia Czarownic w Gorzowie Wielkopolskim",
+      "category": "historic",
+      "lat": 52.7333,
+      "lon": 15.2341,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/fontanna-pauckscha-w-gorzowie-wielkopolskim",
+      "name": "Fontanna Pauckscha w Gorzowie Wielkopolskim",
+      "category": "historic",
+      "lat": 52.733,
+      "lon": 15.236,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/park-siemiradzkiego-w-gorzowie-wielkopolskim",
+      "name": "Park Siemiradzkiego w Gorzowie Wielkopolskim",
+      "category": "nature",
+      "lat": 52.7394,
+      "lon": 15.2444,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/fragmenty-murow-miejskich-w-gorzowie-wielkopolskim",
+      "name": "Fragmenty murów miejskich w Gorzowie Wielkopolskim",
+      "category": "historic",
+      "lat": 52.7352,
+      "lon": 15.2379,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-grodu-santok",
+      "name": "Muzeum Grodu Santok",
+      "category": "museum",
+      "lat": 52.7376,
+      "lon": 15.4102,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/grodzisko-w-santoku",
+      "name": "Grodzisko w Santoku",
+      "category": "historic",
+      "lat": 52.7367,
+      "lon": 15.4146,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/zagroda-mynska-w-bogdancu",
+      "name": "Zagroda Młyńska w Bogdańcu",
+      "category": "museum",
+      "lat": 52.6879,
+      "lon": 15.0718,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/barlinecko-gorzowski-park-krajobrazowy",
+      "name": "Barlinecko-Gorzowski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 52.873,
+      "lon": 15.215,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-kodawskie",
+      "name": "Jezioro Kłodawskie",
+      "category": "water",
+      "lat": 52.786,
+      "lon": 15.21,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/figura-chrystusa-krola-w-swiebodzinie",
+      "name": "Figura Chrystusa Króla w Świebodzinie",
+      "category": "historic",
+      "lat": 52.2252,
+      "lon": 15.5467,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rynek-w-swiebodzinie",
+      "name": "Rynek w Świebodzinie",
+      "category": "historic",
+      "lat": 52.247,
+      "lon": 15.5339,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/ratusz-i-muzeum-regionalne-w-swiebodzinie",
+      "name": "Ratusz i Muzeum Regionalne w Świebodzinie",
+      "category": "museum",
+      "lat": 52.2471,
+      "lon": 15.5341,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/mury-miejskie-w-swiebodzinie",
+      "name": "Mury miejskie w Świebodzinie",
+      "category": "historic",
+      "lat": 52.246,
+      "lon": 15.5315,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-sw-michaa-archanioa-w-swiebodzinie",
+      "name": "Kościół św. Michała Archanioła w Świebodzinie",
+      "category": "historic",
+      "lat": 52.2493,
+      "lon": 15.5325,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/sanktuarium-matki-bozej-cierpliwie-suchajacej-w-rokitnie",
+      "name": "Sanktuarium Matki Bożej Cierpliwie Słuchającej w Rokitnie",
+      "category": "historic",
+      "lat": 52.552,
+      "lon": 15.695,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/opactwo-pocysterskie-w-goscikowie-paradyzu",
+      "name": "Opactwo pocysterskie w Gościkowie-Paradyżu",
+      "category": "historic",
+      "lat": 52.2922,
+      "lon": 15.5478,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-niesysz",
+      "name": "Jezioro Niesłysz",
+      "category": "water",
+      "lat": 52.23,
+      "lon": 15.39,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/zamek-joannitow-w-agowie",
+      "name": "Zamek Joannitów w Łagowie",
+      "category": "castle",
+      "lat": 52.3343,
+      "lon": 15.2933,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/brama-polska-w-agowie",
+      "name": "Brama Polska w Łagowie",
+      "category": "historic",
+      "lat": 52.3334,
+      "lon": 15.292,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/brama-marchijska-w-agowie",
+      "name": "Brama Marchijska w Łagowie",
+      "category": "historic",
+      "lat": 52.335,
+      "lon": 15.2946,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-sw-jana-chrzciciela-w-agowie",
+      "name": "Kościół św. Jana Chrzciciela w Łagowie",
+      "category": "historic",
+      "lat": 52.3341,
+      "lon": 15.2949,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/wiadukt-kolejowy-w-agowie",
+      "name": "Wiadukt kolejowy w Łagowie",
+      "category": "historic",
+      "lat": 52.3383,
+      "lon": 15.2903,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-agowskie",
+      "name": "Jezioro Łagowskie",
+      "category": "water",
+      "lat": 52.329,
+      "lon": 15.29,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-trzesniowskie-ciecz",
+      "name": "Jezioro Trześniowskie (Ciecz)",
+      "category": "water",
+      "lat": 52.345,
+      "lon": 15.299,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/agowsko-sulecinski-park-krajobrazowy",
+      "name": "Łagowsko-Sulęciński Park Krajobrazowy",
+      "category": "nature",
+      "lat": 52.35,
+      "lon": 15.26,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/nowy-zamek-w-lubniewicach",
+      "name": "Nowy Zamek w Lubniewicach",
+      "category": "castle",
+      "lat": 52.5157,
+      "lon": 15.2495,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/stary-zamek-w-lubniewicach",
+      "name": "Stary Zamek w Lubniewicach",
+      "category": "castle",
+      "lat": 52.5165,
+      "lon": 15.2511,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/park-miosci-im-michaliny-wisockiej-w-lubniewicach",
+      "name": "Park Miłości im. Michaliny Wisłockiej w Lubniewicach",
+      "category": "nature",
+      "lat": 52.516,
+      "lon": 15.247,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-matki-bozej-rozancowej-w-lubniewicach",
+      "name": "Kościół Matki Bożej Różańcowej w Lubniewicach",
+      "category": "historic",
+      "lat": 52.5168,
+      "lon": 15.2528,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-lubiaz",
+      "name": "Jezioro Lubiąż",
+      "category": "water",
+      "lat": 52.519,
+      "lon": 15.239,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-krajnik",
+      "name": "Jezioro Krajnik",
+      "category": "water",
+      "lat": 52.511,
+      "lon": 15.257,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/zamek-piastowski-w-miedzyrzeczu",
+      "name": "Zamek Piastowski w Międzyrzeczu",
+      "category": "castle",
+      "lat": 52.4466,
+      "lon": 15.5783,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-ziemi-miedzyrzeckiej-im-alfa-kowalskiego",
+      "name": "Muzeum Ziemi Międzyrzeckiej im. Alfa Kowalskiego",
+      "category": "museum",
+      "lat": 52.4465,
+      "lon": 15.5787,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/stary-rynek-w-miedzyrzeczu",
+      "name": "Stary Rynek w Międzyrzeczu",
+      "category": "historic",
+      "lat": 52.4454,
+      "lon": 15.5802,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-sw-jana-chrzciciela-w-miedzyrzeczu",
+      "name": "Kościół św. Jana Chrzciciela w Międzyrzeczu",
+      "category": "historic",
+      "lat": 52.4469,
+      "lon": 15.5815,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/miedzyrzecki-rejon-umocniony-pniewo",
+      "name": "Międzyrzecki Rejon Umocniony – Pniewo",
+      "category": "museum",
+      "lat": 52.3938,
+      "lon": 15.5068,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/petla-boryszynska-miedzyrzeckiego-rejonu-umocnionego",
+      "name": "Pętla Boryszyńska Międzyrzeckiego Rejonu Umocnionego",
+      "category": "historic",
+      "lat": 52.367,
+      "lon": 15.471,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rezerwat-nietoperek",
+      "name": "Rezerwat Nietoperek",
+      "category": "reserve",
+      "lat": 52.394,
+      "lon": 15.5,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rezerwat-nietoperek-ii",
+      "name": "Rezerwat Nietoperek II",
+      "category": "reserve",
+      "lat": 52.404,
+      "lon": 15.49,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-gebokie-koo-miedzyrzecza",
+      "name": "Jezioro Głębokie koło Międzyrzecza",
+      "category": "water",
+      "lat": 52.489,
+      "lon": 15.546,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-paklicko-wielkie",
+      "name": "Jezioro Paklicko Wielkie",
+      "category": "water",
+      "lat": 52.36,
+      "lon": 15.51,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/twierdza-kostrzyn",
+      "name": "Twierdza Kostrzyn",
+      "category": "ruins",
+      "lat": 52.5784,
+      "lon": 14.6386,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-twierdzy-kostrzyn",
+      "name": "Muzeum Twierdzy Kostrzyn",
+      "category": "museum",
+      "lat": 52.5788,
+      "lon": 14.6395,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/bastion-filip-w-kostrzynie-nad-odra",
+      "name": "Bastion Filip w Kostrzynie nad Odrą",
+      "category": "historic",
+      "lat": 52.5782,
+      "lon": 14.6366,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/brama-berlinska-w-kostrzynie-nad-odra",
+      "name": "Brama Berlińska w Kostrzynie nad Odrą",
+      "category": "historic",
+      "lat": 52.58,
+      "lon": 14.642,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/stare-miasto-kostrzyn-kostrzynskie-pompeje",
+      "name": "Stare Miasto Kostrzyn – Kostrzyńskie Pompeje",
+      "category": "ruins",
+      "lat": 52.578,
+      "lon": 14.64,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/park-narodowy-ujscie-warty",
+      "name": "Park Narodowy Ujście Warty",
+      "category": "nature",
+      "lat": 52.56,
+      "lon": 14.74,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/osrodek-muzealno-edukacyjny-ornitova-w-sonsku",
+      "name": "Ośrodek Muzealno-Edukacyjny Ornitova w Słońsku",
+      "category": "museum",
+      "lat": 52.5634,
+      "lon": 14.8068,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/ruiny-zamku-joannitow-w-sonsku",
+      "name": "Ruiny Zamku Joannitów w Słońsku",
+      "category": "ruins",
+      "lat": 52.5632,
+      "lon": 14.8041,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-matki-bozej-czestochowskiej-w-sonsku",
+      "name": "Kościół Matki Bożej Częstochowskiej w Słońsku",
+      "category": "historic",
+      "lat": 52.5627,
+      "lon": 14.806,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rzeczpospolita-ptasia-w-sonsku",
+      "name": "Rzeczpospolita Ptasia w Słońsku",
+      "category": "nature",
+      "lat": 52.567,
+      "lon": 14.817,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/sciezka-przyrodnicza-ptasim-szlakiem",
+      "name": "Ścieżka przyrodnicza Ptasim Szlakiem",
+      "category": "nature",
+      "lat": 52.557,
+      "lon": 14.802,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/wieza-widokowa-na-czarnowskiej-gorce",
+      "name": "Wieża widokowa na Czarnowskiej Górce",
+      "category": "nature",
+      "lat": 52.603,
+      "lon": 14.771,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/sciezka-spacerowa-torfianka",
+      "name": "Ścieżka spacerowa Torfianka",
+      "category": "nature",
+      "lat": 52.579,
+      "lon": 14.789,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/wieza-widokowa-olszynki",
+      "name": "Wieża widokowa Olszynki",
+      "category": "nature",
+      "lat": 52.545,
+      "lon": 14.851,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/przyrodniczy-ogrod-zmysow-w-chyrzynie",
+      "name": "Przyrodniczy Ogród Zmysłów w Chyrzynie",
+      "category": "nature",
+      "lat": 52.55,
+      "lon": 14.715,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rezerwat-lemierzyce",
+      "name": "Rezerwat Lemierzyce",
+      "category": "reserve",
+      "lat": 52.57,
+      "lon": 14.9,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/paac-ksiazecy-w-zaganiu",
+      "name": "Pałac Książęcy w Żaganiu",
+      "category": "castle",
+      "lat": 51.6157,
+      "lon": 15.3168,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/park-paacowy-w-zaganiu",
+      "name": "Park Pałacowy w Żaganiu",
+      "category": "nature",
+      "lat": 51.6137,
+      "lon": 15.319,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/zespo-poaugustianski-w-zaganiu",
+      "name": "Zespół poaugustiański w Żaganiu",
+      "category": "historic",
+      "lat": 51.6178,
+      "lon": 15.315,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-wniebowziecia-nmp-w-zaganiu",
+      "name": "Kościół Wniebowzięcia NMP w Żaganiu",
+      "category": "historic",
+      "lat": 51.6175,
+      "lon": 15.3157,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/wieza-koscioa-poewangelickiego-w-zaganiu",
+      "name": "Wieża kościoła poewangelickiego w Żaganiu",
+      "category": "historic",
+      "lat": 51.6162,
+      "lon": 15.3105,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-obozow-jenieckich-w-zaganiu",
+      "name": "Muzeum Obozów Jenieckich w Żaganiu",
+      "category": "museum",
+      "lat": 51.6005,
+      "lon": 15.305,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/tunel-harry-stalag-luft-iii",
+      "name": "Tunel Harry – Stalag Luft III",
+      "category": "historic",
+      "lat": 51.5998,
+      "lon": 15.3028,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/stary-rynek-w-zaganiu",
+      "name": "Stary Rynek w Żaganiu",
+      "category": "historic",
+      "lat": 51.6168,
+      "lon": 15.314,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/ratusz-w-zaganiu",
+      "name": "Ratusz w Żaganiu",
+      "category": "historic",
+      "lat": 51.617,
+      "lon": 15.3137,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-swietego-krzyza-w-zaganiu",
+      "name": "Kościół Świętego Krzyża w Żaganiu",
+      "category": "historic",
+      "lat": 51.6138,
+      "lon": 15.312,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/zamek-dewinow-bibersteinow-w-zarach",
+      "name": "Zamek Dewinów-Bibersteinów w Żarach",
+      "category": "castle",
+      "lat": 51.6407,
+      "lon": 15.1388,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/paac-promnitzow-w-zarach",
+      "name": "Pałac Promnitzów w Żarach",
+      "category": "castle",
+      "lat": 51.6403,
+      "lon": 15.1394,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rynek-w-zarach",
+      "name": "Rynek w Żarach",
+      "category": "historic",
+      "lat": 51.6428,
+      "lon": 15.1371,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/ratusz-w-zarach",
+      "name": "Ratusz w Żarach",
+      "category": "historic",
+      "lat": 51.6427,
+      "lon": 15.1373,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-pogranicza-slasko-uzyckiego-w-zarach",
+      "name": "Muzeum Pogranicza Śląsko-Łużyckiego w Żarach",
+      "category": "museum",
+      "lat": 51.6421,
+      "lon": 15.1378,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-najswietszego-serca-pana-jezusa-w-zarach",
+      "name": "Kościół Najświętszego Serca Pana Jezusa w Żarach",
+      "category": "historic",
+      "lat": 51.6438,
+      "lon": 15.1366,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/zielony-las-koo-zar",
+      "name": "Zielony Las koło Żar",
+      "category": "nature",
+      "lat": 51.614,
+      "lon": 15.117,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/wieza-widokowa-na-gorze-zarskiej",
+      "name": "Wieża widokowa na Górze Żarskiej",
+      "category": "nature",
+      "lat": 51.61,
+      "lon": 15.119,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/park-muzakowski-w-eknicy",
+      "name": "Park Mużakowski w Łęknicy",
+      "category": "nature",
+      "lat": 51.548,
+      "lon": 14.724,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/geopark-unesco-uk-muzakowa",
+      "name": "Geopark UNESCO Łuk Mużakowa",
+      "category": "nature",
+      "lat": 51.536,
+      "lon": 14.75,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/sciezka-geoturystyczna-dawna-kopalnia-babina",
+      "name": "Ścieżka geoturystyczna Dawna Kopalnia Babina",
+      "category": "nature",
+      "lat": 51.529,
+      "lon": 14.756,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/centrum-kulturalno-edukacyjne-geoparku-uk-muzakowa",
+      "name": "Centrum Kulturalno-Edukacyjne Geoparku Łuk Mużakowa",
+      "category": "museum",
+      "lat": 51.5415,
+      "lon": 14.735,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/park-krajobrazowy-uk-muzakowa",
+      "name": "Park Krajobrazowy Łuk Mużakowa",
+      "category": "nature",
+      "lat": 51.528,
+      "lon": 14.769,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/osrodek-kultury-uzyckiej-w-buczynach",
+      "name": "Ośrodek Kultury Łużyckiej w Buczynach",
+      "category": "museum",
+      "lat": 51.584,
+      "lon": 14.874,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/most-krolewski-w-parku-muzakowskim",
+      "name": "Most Królewski w Parku Mużakowskim",
+      "category": "historic",
+      "lat": 51.5487,
+      "lon": 14.7277,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/most-podwojny-w-parku-muzakowskim",
+      "name": "Most Podwójny w Parku Mużakowskim",
+      "category": "historic",
+      "lat": 51.551,
+      "lon": 14.7305,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-miejskie-w-nowej-soli",
+      "name": "Muzeum Miejskie w Nowej Soli",
+      "category": "museum",
+      "lat": 51.802,
+      "lon": 15.716,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/port-w-nowej-soli",
+      "name": "Port w Nowej Soli",
+      "category": "historic",
+      "lat": 51.7987,
+      "lon": 15.7197,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/most-podnoszony-w-nowej-soli",
+      "name": "Most podnoszony w Nowej Soli",
+      "category": "historic",
+      "lat": 51.8,
+      "lon": 15.719,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/magazyny-solne-w-nowej-soli",
+      "name": "Magazyny solne w Nowej Soli",
+      "category": "historic",
+      "lat": 51.8031,
+      "lon": 15.7169,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/sanktuarium-matki-bozej-klenickiej-w-otyniu",
+      "name": "Sanktuarium Matki Bożej Klenickiej w Otyniu",
+      "category": "historic",
+      "lat": 51.8478,
+      "lon": 15.7112,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/ruiny-zamku-i-klasztoru-jezuitow-w-otyniu",
+      "name": "Ruiny zamku i klasztoru jezuitów w Otyniu",
+      "category": "ruins",
+      "lat": 51.8484,
+      "lon": 15.7123,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/zamek-piastowski-w-kozuchowie",
+      "name": "Zamek Piastowski w Kożuchowie",
+      "category": "castle",
+      "lat": 51.7462,
+      "lon": 15.5948,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/mury-obronne-w-kozuchowie",
+      "name": "Mury obronne w Kożuchowie",
+      "category": "historic",
+      "lat": 51.7458,
+      "lon": 15.596,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/baszta-krosnienska-w-kozuchowie",
+      "name": "Baszta Krośnieńska w Kożuchowie",
+      "category": "historic",
+      "lat": 51.747,
+      "lon": 15.5929,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/lapidarium-w-kozuchowie",
+      "name": "Lapidarium w Kożuchowie",
+      "category": "museum",
+      "lat": 51.7491,
+      "lon": 15.5918,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-oczyszczenia-nmp-w-kozuchowie",
+      "name": "Kościół Oczyszczenia NMP w Kożuchowie",
+      "category": "historic",
+      "lat": 51.7464,
+      "lon": 15.597,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rynek-w-kozuchowie",
+      "name": "Rynek w Kożuchowie",
+      "category": "historic",
+      "lat": 51.746,
+      "lon": 15.5962,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rynek-w-bytomiu-odrzanskim",
+      "name": "Rynek w Bytomiu Odrzańskim",
+      "category": "historic",
+      "lat": 51.7305,
+      "lon": 15.8236,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/ratusz-w-bytomiu-odrzanskim",
+      "name": "Ratusz w Bytomiu Odrzańskim",
+      "category": "historic",
+      "lat": 51.7304,
+      "lon": 15.8237,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-sw-hieronima-w-bytomiu-odrzanskim",
+      "name": "Kościół św. Hieronima w Bytomiu Odrzańskim",
+      "category": "historic",
+      "lat": 51.7313,
+      "lon": 15.8244,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/promenada-nad-odra-w-bytomiu-odrzanskim",
+      "name": "Promenada nad Odrą w Bytomiu Odrzańskim",
+      "category": "historic",
+      "lat": 51.7278,
+      "lon": 15.8275,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/zamek-piastowski-w-krosnie-odrzanskim",
+      "name": "Zamek Piastowski w Krośnie Odrzańskim",
+      "category": "castle",
+      "lat": 52.0498,
+      "lon": 15.0966,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-w-zamku-piastowskim-w-krosnie-odrzanskim",
+      "name": "Muzeum w Zamku Piastowskim w Krośnie Odrzańskim",
+      "category": "museum",
+      "lat": 52.0499,
+      "lon": 15.0968,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/port-w-krosnie-odrzanskim",
+      "name": "Port w Krośnie Odrzańskim",
+      "category": "historic",
+      "lat": 52.052,
+      "lon": 15.093,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-sw-jadwigi-slaskiej-w-krosnie-odrzanskim",
+      "name": "Kościół św. Jadwigi Śląskiej w Krośnie Odrzańskim",
+      "category": "historic",
+      "lat": 52.0543,
+      "lon": 15.0997,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/stare-miasto-w-krosnie-odrzanskim",
+      "name": "Stare Miasto w Krośnie Odrzańskim",
+      "category": "historic",
+      "lat": 52.055,
+      "lon": 15.099,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/ruiny-fary-gubinskiej",
+      "name": "Ruiny Fary Gubińskiej",
+      "category": "ruins",
+      "lat": 51.9508,
+      "lon": 14.7288,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/baszta-ostrowska-w-gubinie",
+      "name": "Baszta Ostrowska w Gubinie",
+      "category": "historic",
+      "lat": 51.9514,
+      "lon": 14.7262,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/wieza-bramy-dziewiczej-w-gubinie",
+      "name": "Wieża Bramy Dziewiczej w Gubinie",
+      "category": "historic",
+      "lat": 51.9522,
+      "lon": 14.7303,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/ratusz-w-gubinie",
+      "name": "Ratusz w Gubinie",
+      "category": "historic",
+      "lat": 51.951,
+      "lon": 14.7296,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/wyspa-teatralna-w-gubinie",
+      "name": "Wyspa Teatralna w Gubinie",
+      "category": "historic",
+      "lat": 51.949,
+      "lon": 14.725,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/zamek-w-lubsku",
+      "name": "Zamek w Lubsku",
+      "category": "castle",
+      "lat": 51.7848,
+      "lon": 14.9688,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/ratusz-w-lubsku",
+      "name": "Ratusz w Lubsku",
+      "category": "historic",
+      "lat": 51.784,
+      "lon": 14.9716,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-nawiedzenia-nmp-w-lubsku",
+      "name": "Kościół Nawiedzenia NMP w Lubsku",
+      "category": "historic",
+      "lat": 51.7852,
+      "lon": 14.971,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/paac-bruhla-w-brodach",
+      "name": "Pałac Brühla w Brodach",
+      "category": "castle",
+      "lat": 51.7908,
+      "lon": 14.7748,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/park-paacowy-w-brodach",
+      "name": "Park Pałacowy w Brodach",
+      "category": "nature",
+      "lat": 51.7914,
+      "lon": 14.7765,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/paac-w-iowej",
+      "name": "Pałac w Iłowej",
+      "category": "castle",
+      "lat": 51.5011,
+      "lon": 15.1996,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/park-dworski-w-iowej",
+      "name": "Park Dworski w Iłowej",
+      "category": "nature",
+      "lat": 51.4998,
+      "lon": 15.2009,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/ogrod-japonski-w-iowej",
+      "name": "Ogród Japoński w Iłowej",
+      "category": "nature",
+      "lat": 51.4992,
+      "lon": 15.2017,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-ziemi-szprotawskiej",
+      "name": "Muzeum Ziemi Szprotawskiej",
+      "category": "museum",
+      "lat": 51.565,
+      "lon": 15.5361,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/ratusz-w-szprotawie",
+      "name": "Ratusz w Szprotawie",
+      "category": "historic",
+      "lat": 51.5653,
+      "lon": 15.536,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-wniebowziecia-nmp-w-szprotawie",
+      "name": "Kościół Wniebowzięcia NMP w Szprotawie",
+      "category": "historic",
+      "lat": 51.5659,
+      "lon": 15.5378,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/mury-miejskie-w-szprotawie",
+      "name": "Mury miejskie w Szprotawie",
+      "category": "historic",
+      "lat": 51.5642,
+      "lon": 15.5384,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/dab-chrobry-w-piotrowicach",
+      "name": "Dąb Chrobry w Piotrowicach",
+      "category": "nature",
+      "lat": 51.531,
+      "lon": 15.453,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rezerwat-buczyna-szprotawska",
+      "name": "Rezerwat Buczyna Szprotawska",
+      "category": "reserve",
+      "lat": 51.59,
+      "lon": 15.65,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-ziemi-wschowskiej",
+      "name": "Muzeum Ziemi Wschowskiej",
+      "category": "museum",
+      "lat": 51.8077,
+      "lon": 16.3168,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/lapidarium-rzezby-nagrobnej-we-wschowie",
+      "name": "Lapidarium Rzeźby Nagrobnej we Wschowie",
+      "category": "museum",
+      "lat": 51.8068,
+      "lon": 16.32,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/ratusz-we-wschowie",
+      "name": "Ratusz we Wschowie",
+      "category": "historic",
+      "lat": 51.8078,
+      "lon": 16.3164,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-farny-sw-stanisawa-we-wschowie",
+      "name": "Kościół farny św. Stanisława we Wschowie",
+      "category": "historic",
+      "lat": 51.8087,
+      "lon": 16.3158,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/klasztor-franciszkanow-we-wschowie",
+      "name": "Klasztor Franciszkanów we Wschowie",
+      "category": "historic",
+      "lat": 51.8062,
+      "lon": 16.3136,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/mury-miejskie-we-wschowie",
+      "name": "Mury miejskie we Wschowie",
+      "category": "historic",
+      "lat": 51.8082,
+      "lon": 16.3191,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/paac-w-sawie",
+      "name": "Pałac w Sławie",
+      "category": "castle",
+      "lat": 51.8762,
+      "lon": 16.0736,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/park-miejski-w-sawie",
+      "name": "Park Miejski w Sławie",
+      "category": "nature",
+      "lat": 51.8755,
+      "lon": 16.076,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rynek-w-sawie",
+      "name": "Rynek w Sławie",
+      "category": "historic",
+      "lat": 51.8767,
+      "lon": 16.0722,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-sw-michaa-archanioa-w-sawie",
+      "name": "Kościół św. Michała Archanioła w Sławie",
+      "category": "historic",
+      "lat": 51.876,
+      "lon": 16.0709,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-sawskie",
+      "name": "Jezioro Sławskie",
+      "category": "water",
+      "lat": 51.89,
+      "lon": 16.04,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/mury-miejskie-w-strzelcach-krajenskich",
+      "name": "Mury miejskie w Strzelcach Krajeńskich",
+      "category": "historic",
+      "lat": 52.8765,
+      "lon": 15.5286,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/brama-mynska-w-strzelcach-krajenskich",
+      "name": "Brama Młyńska w Strzelcach Krajeńskich",
+      "category": "historic",
+      "lat": 52.877,
+      "lon": 15.5301,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/kolegiata-matki-bozej-rozancowej-w-strzelcach-krajenskich",
+      "name": "Kolegiata Matki Bożej Różańcowej w Strzelcach Krajeńskich",
+      "category": "historic",
+      "lat": 52.8778,
+      "lon": 15.529,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-woldenberczykow-w-dobiegniewie",
+      "name": "Muzeum Woldenberczyków w Dobiegniewie",
+      "category": "museum",
+      "lat": 52.9676,
+      "lon": 15.7528,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-chrystusa-krola-w-dobiegniewie",
+      "name": "Kościół Chrystusa Króla w Dobiegniewie",
+      "category": "historic",
+      "lat": 52.9692,
+      "lon": 15.7535,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-osiek",
+      "name": "Jezioro Osiek",
+      "category": "water",
+      "lat": 52.94,
+      "lon": 15.79,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-lipie",
+      "name": "Jezioro Lipie",
+      "category": "water",
+      "lat": 52.97,
+      "lon": 15.805,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-puszczy-drawskiej-i-noteckiej-w-drezdenku",
+      "name": "Muzeum Puszczy Drawskiej i Noteckiej w Drezdenku",
+      "category": "museum",
+      "lat": 52.8396,
+      "lon": 15.8322,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/stare-miasto-w-drezdenku",
+      "name": "Stare Miasto w Drezdenku",
+      "category": "historic",
+      "lat": 52.839,
+      "lon": 15.831,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-przemienienia-panskiego-w-drezdenku",
+      "name": "Kościół Przemienienia Pańskiego w Drezdenku",
+      "category": "historic",
+      "lat": 52.8405,
+      "lon": 15.8319,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/cmentarz-zydowski-w-skwierzynie",
+      "name": "Cmentarz żydowski w Skwierzynie",
+      "category": "historic",
+      "lat": 52.5957,
+      "lon": 15.4937,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-sw-mikoaja-w-skwierzynie",
+      "name": "Kościół św. Mikołaja w Skwierzynie",
+      "category": "historic",
+      "lat": 52.5994,
+      "lon": 15.5074,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-dom-szewca-w-pszczewie",
+      "name": "Muzeum Dom Szewca w Pszczewie",
+      "category": "museum",
+      "lat": 52.4777,
+      "lon": 15.7818,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rynek-w-pszczewie",
+      "name": "Rynek w Pszczewie",
+      "category": "historic",
+      "lat": 52.4772,
+      "lon": 15.781,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-sw-marii-magdaleny-w-pszczewie",
+      "name": "Kościół św. Marii Magdaleny w Pszczewie",
+      "category": "historic",
+      "lat": 52.4784,
+      "lon": 15.783,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-pszczewskie",
+      "name": "Jezioro Pszczewskie",
+      "category": "water",
+      "lat": 52.476,
+      "lon": 15.79,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-chop",
+      "name": "Jezioro Chłop",
+      "category": "water",
+      "lat": 52.456,
+      "lon": 15.817,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-lubikowskie",
+      "name": "Jezioro Lubikowskie",
+      "category": "water",
+      "lat": 52.438,
+      "lon": 15.883,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/pszczewski-park-krajobrazowy",
+      "name": "Pszczewski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 52.47,
+      "lon": 15.82,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/mury-miejskie-w-osnie-lubuskim",
+      "name": "Mury miejskie w Ośnie Lubuskim",
+      "category": "historic",
+      "lat": 52.4533,
+      "lon": 14.87,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-sw-jakuba-apostoa-w-osnie-lubuskim",
+      "name": "Kościół św. Jakuba Apostoła w Ośnie Lubuskim",
+      "category": "historic",
+      "lat": 52.4548,
+      "lon": 14.8723,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/jezioro-reczynek",
+      "name": "Jezioro Reczynek",
+      "category": "water",
+      "lat": 52.449,
+      "lon": 14.864,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/koscio-sw-mikoaja-w-sulecinie",
+      "name": "Kościół św. Mikołaja w Sulęcinie",
+      "category": "historic",
+      "lat": 52.444,
+      "lon": 15.116,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rynek-w-sulecinie",
+      "name": "Rynek w Sulęcinie",
+      "category": "historic",
+      "lat": 52.4446,
+      "lon": 15.1169,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/gryzynski-park-krajobrazowy",
+      "name": "Gryżyński Park Krajobrazowy",
+      "category": "nature",
+      "lat": 52.185,
+      "lon": 15.31,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/krzesinski-park-krajobrazowy",
+      "name": "Krzesiński Park Krajobrazowy",
+      "category": "nature",
+      "lat": 52.09,
+      "lon": 14.82,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/wies-bociania-kopot",
+      "name": "Wieś bociania Kłopot",
+      "category": "nature",
+      "lat": 52.124,
+      "lon": 14.704,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/muzeum-bociana-biaego-w-kopocie",
+      "name": "Muzeum Bociana Białego w Kłopocie",
+      "category": "museum",
+      "lat": 52.1237,
+      "lon": 14.7038,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/drawienski-park-narodowy-czesc-lubuska",
+      "name": "Drawieński Park Narodowy – część lubuska",
+      "category": "nature",
+      "lat": 53.06,
+      "lon": 15.9,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rezerwat-dolina-ilanki",
+      "name": "Rezerwat Dolina Ilanki",
+      "category": "reserve",
+      "lat": 52.34,
+      "lon": 14.91,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rezerwat-buczyna-agowska",
+      "name": "Rezerwat Buczyna Łagowska",
+      "category": "reserve",
+      "lat": 52.36,
+      "lon": 15.28,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rezerwat-pawski-ug",
+      "name": "Rezerwat Pawski Ług",
+      "category": "reserve",
+      "lat": 52.26,
+      "lon": 15.52,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
+    },
+    {
+      "id": "lubuskie/rezerwat-debowy-ostrow",
+      "name": "Rezerwat Dębowy Ostrów",
+      "category": "reserve",
+      "lat": 52.13,
+      "lon": 15.37,
+      "source": "Lubuskie.pl / dane mapowe",
+      "sourceUrl": "https://lubuskie.pl/cms/97/atrakcje_lubuskie",
+      "region": "lubuskie"
     }
   ],
-  "count": 2142
+  "count": 2332
 }
