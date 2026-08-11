@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1036';
+  const APP_VERSION = 'v1037';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1036';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1037';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;
@@ -99,6 +99,10 @@
   const navigationRemainingTime = document.getElementById('navigationRemainingTime');
   const navigationVoiceButton = document.getElementById('navigationVoiceButton');
   const navigationStopButton = document.getElementById('navigationStopButton');
+  const navigationDestination = document.getElementById('navigationDestination');
+  const mapManeuverOverlay = document.getElementById('mapManeuverOverlay');
+  const mapManeuverArrow = document.getElementById('mapManeuverArrow');
+  const mapLanes = document.getElementById('mapLanes');
 
   const nearbyAlert = document.getElementById('nearbyAlert');
   const nearbyAlertIcon = document.getElementById('nearbyAlertIcon');
@@ -139,7 +143,7 @@
   let viewportFetchSequence = 0;
   let viewportRetryUsed = false;
   const viewportCache = new Map();
-  let osmEnabled = loadOsmEnabled();
+  let osmEnabled = true;
   let attractionDatabase = [];
   let attractionDatabaseLoaded = false;
   let attractionDatabasePromise = null;
@@ -170,7 +174,7 @@
   let routeSearchSequence = 0;
   let routeAlertedIds = new Set();
 
-  // v1036: nawigacja zakręt po zakręcie na podstawie kroków OSRM.
+  // v1037: nawigacja zintegrowana z panelem mapy + wizualizacja manewrów i pasów.
   let navigationActive = false;
   let navigationVoiceEnabled = true;
   let navigationSteps = [];
@@ -324,16 +328,12 @@
   }
 
   function loadOsmEnabled() {
-    try {
-      return localStorage.getItem(OSM_ENABLED_KEY) !== '0';
-    } catch (_) {
-      return true;
-    }
+    return true;
   }
 
   function saveOsmEnabled() {
     try {
-      localStorage.setItem(OSM_ENABLED_KEY, osmEnabled ? '1' : '0');
+      localStorage.setItem(OSM_ENABLED_KEY, '1');
     } catch (_) {}
   }
 
@@ -358,19 +358,10 @@
   }
 
   function setOsmEnabled(enabled, { fetchNow = true } = {}) {
-    osmEnabled = Boolean(enabled);
+    // v1037: baza atrakcji jest zawsze aktywna — nie ma już przełącznika BAZA ON/OFF.
+    osmEnabled = true;
     saveOsmEnabled();
     updateOsmButtonUi();
-
-    if (!osmEnabled) {
-      clearOsmAttractions();
-      hideAttractionPreview();
-      attractionPreviewItems = [];
-      setAttractionPreviewButton(null);
-      updateOsmStatus('Baza atrakcji: wyłączona');
-      return;
-    }
-
     updateOsmStatus('Baza atrakcji: włączona');
     if (lastMonitorPosition?.coords) updateAttractionPreview(lastMonitorPosition);
     if (fetchNow && currentMapMode === 'all' && !mapScreen?.hidden) {
@@ -1068,7 +1059,6 @@
       osmAttractions = new Map(routeAttractions.map((item) => [item.osmId, item]));
       renderExternalAttractions(routeAttractions);
       updateOsmStatus(`Atrakcje w pasie ${formatDistance(radius)} od trasy: ${routeAttractions.length} · alert ${formatDistance(getProximityRadiusMeters())}`);
-      if (mapModeBadge) mapModeBadge.textContent = `TRASA · ALERT ${formatDistance(radius).toUpperCase()}`;
       showLocationMessage(`Na trasie: ${routeAttractions.length} atrakcji w odległości do ${formatDistance(radius)} od przebiegu trasy.`);
       if (lastMonitorPosition) checkProximity(lastMonitorPosition);
     } catch (error) {
@@ -1217,6 +1207,71 @@
     return direction.charAt(0).toUpperCase() + direction.slice(1);
   }
 
+  function laneArrowForIndications(indications) {
+    const values = Array.isArray(indications) ? indications.map((item) => String(item).toLowerCase()) : [];
+    const priority = ['uturn', 'sharp left', 'left', 'slight left', 'straight', 'slight right', 'right', 'sharp right'];
+    const value = priority.find((candidate) => values.includes(candidate)) || values[0] || 'straight';
+    return {
+      'uturn': '↶',
+      'sharp left': '↙',
+      'left': '←',
+      'slight left': '↖',
+      'straight': '↑',
+      'slight right': '↗',
+      'right': '→',
+      'sharp right': '↘'
+    }[value] || '↑';
+  }
+
+  function laneGuidanceForStep(stepIndex) {
+    const current = navigationSteps[stepIndex];
+    const previous = navigationSteps[Math.max(0, stepIndex - 1)];
+    const candidates = [current, previous].filter(Boolean);
+    for (const step of candidates) {
+      const intersections = Array.isArray(step?.intersections) ? step.intersections : [];
+      const ordered = step === previous ? [...intersections].reverse() : intersections;
+      for (const intersection of ordered) {
+        if (Array.isArray(intersection?.lanes) && intersection.lanes.length) return intersection.lanes;
+      }
+    }
+    return [];
+  }
+
+  function hideManeuverOverlay() {
+    if (mapManeuverOverlay) mapManeuverOverlay.hidden = true;
+    if (mapLanes) {
+      mapLanes.hidden = true;
+      mapLanes.replaceChildren();
+    }
+  }
+
+  function updateManeuverOverlay(stepIndex, step, distanceToStep) {
+    if (!mapManeuverOverlay || !mapManeuverArrow || !navigationActive || navigationArrived) {
+      hideManeuverOverlay();
+      return;
+    }
+    const type = String(step?.maneuver?.type || '');
+    const distance = Number(distanceToStep);
+    if (!Number.isFinite(distance) || distance > 400 || type === 'arrive') {
+      hideManeuverOverlay();
+      return;
+    }
+
+    mapManeuverArrow.textContent = navigationArrowForStep(step);
+    if (mapLanes) {
+      mapLanes.replaceChildren();
+      const lanes = laneGuidanceForStep(stepIndex);
+      lanes.forEach((lane) => {
+        const laneEl = document.createElement('span');
+        laneEl.className = `map-lane${lane?.valid ? ' is-valid' : ' is-invalid'}`;
+        laneEl.textContent = laneArrowForIndications(lane?.indications);
+        mapLanes.append(laneEl);
+      });
+      mapLanes.hidden = lanes.length === 0;
+    }
+    mapManeuverOverlay.hidden = false;
+  }
+
   function buildNavigationRouteMetrics(coordinates, steps, routeDistance, routeDuration) {
     navigationRouteCumulative = [];
     let cumulative = 0;
@@ -1328,6 +1383,8 @@
     navigationLastStepIndex = -1;
     if ('speechSynthesis' in window) window.speechSynthesis.cancel();
     if (navigationPanel) navigationPanel.hidden = true;
+    if (navigationDestination) navigationDestination.textContent = '—';
+    hideManeuverOverlay();
     if (!keepRoute) clearRoute({ refreshMap: true });
   }
 
@@ -1339,10 +1396,11 @@
     navigationLastStepIndex = -1;
     navigationLastVoiceBucket = '';
     navigationLastSpokenKey = '';
+    navigationVoiceEnabled = true;
     mapAutoFollowEnabled = true;
     if (navigationPanel) navigationPanel.hidden = false;
+    if (navigationDestination) navigationDestination.textContent = routeDestination.name || 'Cel podróży';
     if (navigationKicker) navigationKicker.textContent = 'NAWIGACJA';
-    setNavigationVoiceUi();
     if (lastMonitorPosition?.coords) {
       const { latitude, longitude } = lastMonitorPosition.coords;
       mapProgrammaticMove = true;
@@ -1388,6 +1446,8 @@
       if (navigationArrow) navigationArrow.textContent = '●';
       if (navigationInstruction) navigationInstruction.textContent = 'Jesteś na miejscu';
       if (navigationRoad) navigationRoad.textContent = routeDestination.name || 'Cel podróży';
+      if (navigationDestination) navigationDestination.textContent = routeDestination.name || 'Cel podróży';
+      hideManeuverOverlay();
       if (navigationTurnDistance) navigationTurnDistance.textContent = '0 m';
       if (navigationRemainingDistance) navigationRemainingDistance.textContent = '0 m';
       if (navigationRemainingTime) navigationRemainingTime.textContent = '0 min';
@@ -1418,6 +1478,8 @@
     if (navigationTurnDistance) navigationTurnDistance.textContent = formatNavigationDistance(distanceToStep);
     if (navigationRemainingDistance) navigationRemainingDistance.textContent = formatNavigationDistance(remaining);
     if (navigationRemainingTime) navigationRemainingTime.textContent = formatRouteDuration(remainingTimeSeconds);
+    if (navigationDestination) navigationDestination.textContent = routeDestination.name || 'Cel podróży';
+    updateManeuverOverlay(stepIndex, step, distanceToStep);
 
     const voiceBucket = navigationVoiceBucket(distanceToStep);
     const voiceKey = `${stepIndex}:${voiceBucket}`;
@@ -1444,6 +1506,8 @@
       navigationRerouteInFlight = false;
       if ('speechSynthesis' in window) window.speechSynthesis.cancel();
       if (navigationPanel) navigationPanel.hidden = true;
+      if (navigationDestination) navigationDestination.textContent = '—';
+      hideManeuverOverlay();
     }
     routeActive = false;
     routeDestination = null;
@@ -1526,7 +1590,6 @@
       clearTimeout(viewportFetchTimer);
       externalLayer?.clearLayers();
       osmMarkerById = new Map();
-      if (mapModeBadge) mapModeBadge.textContent = `TRASA · ALERT ${formatDistance(getProximityRadiusMeters()).toUpperCase()}`;
 
       const distance = formatDistance(Number(route.distance));
       const duration = formatRouteDuration(Number(route.duration));
@@ -1697,7 +1760,7 @@
       showLocationMessage(
         keptCount
           ? `Nie udało się odświeżyć bazy. Zachowuję ${keptCount} wcześniej wczytanych punktów.`
-          : 'Nie udało się odczytać bazy atrakcji. Naciśnij BAZA, aby spróbować ponownie.',
+          : 'Nie udało się odczytać bazy atrakcji. Spróbuję ponownie automatycznie.',
         !keptCount
       );
     } finally {
@@ -2115,14 +2178,15 @@
     const mineOnly = currentMapMode === 'mine';
 
     if (mapModeBadge) {
-      mapModeBadge.textContent = mineOnly ? `MOJE MIEJSCA · ${loadPoints().length}` : 'MAPA';
-      mapModeBadge.classList.toggle('is-my-places', mineOnly);
+      mapModeBadge.textContent = `MOJE MIEJSCA · ${loadPoints().length}`;
+      mapModeBadge.classList.add('is-my-places');
+      mapModeBadge.hidden = !mineOnly;
     }
 
     if (mapLocationButton) mapLocationButton.hidden = mineOnly;
     if (routeButton) routeButton.hidden = mineOnly;
     if (proximityButton) proximityButton.hidden = true;
-    if (osmRefreshButton) osmRefreshButton.hidden = mineOnly;
+    if (osmRefreshButton) osmRefreshButton.hidden = true;
     if (attractionPreviewButton) attractionPreviewButton.hidden = mineOnly;
     updateOsmButtonUi();
     if (proximityRadiusWrap) proximityRadiusWrap.hidden = mineOnly;
@@ -2202,8 +2266,7 @@
       if (routeActive && osmEnabled) {
         renderExternalAttractions(routeAttractions);
         updateOsmStatus(`Atrakcje do ${formatDistance(getProximityRadiusMeters())} od trasy: ${routeAttractions.length} · alert aktywny`);
-        if (mapModeBadge) mapModeBadge.textContent = `TRASA · ALERT ${formatDistance(getProximityRadiusMeters()).toUpperCase()}`;
-      } else if (osmEnabled) {
+        } else if (osmEnabled) {
         // Baza jest lokalna, więc od razu pokaż atrakcje z aktualnie widocznego obszaru.
         // GPS niezależnie od tego będzie później aktualizował listę atrakcji w pobliżu.
         scheduleViewportAttractions(0);
@@ -2491,27 +2554,11 @@
     }
   });
   routeClearButton?.addEventListener('click', () => clearRoute({ refreshMap: true }));
-  navigationVoiceButton?.addEventListener('click', () => {
-    navigationVoiceEnabled = !navigationVoiceEnabled;
-    if (!navigationVoiceEnabled && 'speechSynthesis' in window) window.speechSynthesis.cancel();
-    setNavigationVoiceUi();
-    if (navigationVoiceEnabled && lastMonitorPosition?.coords && navigationActive) {
-      updateNavigationFromPosition(lastMonitorPosition, true);
-    }
-  });
   navigationStopButton?.addEventListener('click', () => {
     stopNavigation({ keepRoute: true });
     showLocationMessage('Nawigacja zakończona. Trasa pozostaje na mapie.');
   });
 
-  osmRefreshButton?.addEventListener('click', () => {
-    if (osmRefreshButton?.classList.contains('is-loading')) return;
-    if (osmEnabled) {
-      setOsmEnabled(false, { fetchNow: false });
-    } else {
-      setOsmEnabled(true, { fetchNow: true });
-    }
-  });
 
   proximityButton?.addEventListener('click', () => startProximityMonitoring(true));
 
@@ -2599,6 +2646,9 @@
     proximityRadius.value = String([5000, 10000, 15000, 20000].includes(savedRadius) ? savedRadius : 5000);
   }
 
+  osmEnabled = true;
+  saveOsmEnabled();
+
   setCategory(currentCategory);
   setEditCategory(editCategory);
   setProximityUi(false);
@@ -2608,7 +2658,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1036', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1037', {
           scope: './',
           updateViaCache: 'none'
         });

@@ -20,7 +20,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png?v=1002" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png?v=1002" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link rel="stylesheet" href="styles.css?v=1036" />
+  <link rel="stylesheet" href="styles.css?v=1037" />
 </head>
 <body>
   <main class="start-screen" aria-label="Turystyczna mapa Polski">
@@ -30,7 +30,7 @@
       <button class="main-button main-button-my-places" id="myPlacesButton" type="button">MOJE MIEJSCA</button>
     </div>
 
-    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1036</div>
+    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1037</div>
   </main>
 
   <section class="add-screen" id="addScreen" aria-label="Dodaj miejsce" hidden>
@@ -39,7 +39,7 @@
         <button class="add-back-button" id="addBackButton" type="button" aria-label="Wróć do ekranu startowego">← COFNIJ</button>
         <div class="add-title-wrap">
           <h1 class="add-title">Dodaj miejsce</h1>
-          <div class="add-version" aria-hidden="true">v1036</div>
+          <div class="add-version" aria-hidden="true">v1037</div>
         </div>
       </div>
 
@@ -130,7 +130,7 @@
         <button class="edit-back-button" id="editBackButton" type="button" aria-label="Wróć do mapy">← COFNIJ</button>
         <div class="edit-title-wrap">
           <h1 class="edit-title">Edytuj punkt</h1>
-          <div class="edit-version" aria-hidden="true">v1036</div>
+          <div class="edit-version" aria-hidden="true">v1037</div>
         </div>
       </div>
 
@@ -209,64 +209,43 @@
 
   <section class="map-screen" id="mapScreen" aria-label="Mapa Polski" hidden>
     <div id="map" class="map-container" aria-label="Interaktywna mapa OpenStreetMap"></div>
-    <div class="map-top-panel" id="mapTopPanel" aria-label="Sterowanie mapą i legenda">
+    <div class="map-top-panel" id="mapTopPanel" aria-label="Sterowanie mapą, legenda i nawigacja">
       <div class="map-toolbar-row">
         <button class="map-back-button" id="mapBackButton" type="button" aria-label="Wróć do ekranu startowego">← COFNIJ</button>
-        <div class="map-mode-badge" id="mapModeBadge" aria-live="polite">MAPA</div>
 
-        <div class="map-toolbar-actions">
-          <button class="map-location-button" id="mapLocationButton" type="button" aria-label="Wycentruj mapę na mojej lokalizacji" title="Wycentruj na mojej lokalizacji">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 8.25a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Zm0 5.5a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5Z"/>
-              <path d="M13 2.05V4.1a8.02 8.02 0 0 1 6.9 6.9h2.05v2H19.9a8.02 8.02 0 0 1-6.9 6.9v2.05h-2V19.9A8.02 8.02 0 0 1 4.1 13H2.05v-2H4.1A8.02 8.02 0 0 1 11 4.1V2.05h2ZM12 6a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/>
-            </svg>
-            <span>WYCENTRUJ</span>
-          </button>
+        <button class="route-button" id="routeButton" type="button" aria-label="Zaplanuj trasę" title="Zaplanuj trasę">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm10 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z"/>
+            <path d="M8 10h2.5a3.5 3.5 0 0 1 3.5 3.5V14h-2v-.5a1.5 1.5 0 0 0-1.5-1.5H8v-2Zm6 4h2v-3h-2v3Z"/>
+          </svg>
+          <span>TRASA</span>
+        </button>
 
-          <button class="osm-refresh-button is-active" id="osmRefreshButton" type="button" aria-pressed="true" aria-label="Baza atrakcji włączona" title="Baza atrakcji: włączona">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 3a9 9 0 1 0 9 9h-2a7 7 0 1 1-7-7V3Z"/>
-              <path d="M12 7a5 5 0 1 0 5 5h-2a3 3 0 1 1-3-3V7Z"/>
-              <path d="M12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/>
-              <path d="M13 3h8v8h-2V6.41l-5.3 5.3-1.4-1.42L17.59 5H13V3Z"/>
-            </svg>
-            <span>BAZA <small id="osmButtonState">ON</small></span>
-          </button>
-
-          <button class="route-button" id="routeButton" type="button" aria-label="Zaplanuj trasę" title="Zaplanuj trasę">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M7 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm10 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm0 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4Z"/>
-              <path d="M8 10h2.5a3.5 3.5 0 0 1 3.5 3.5V14h-2v-.5a1.5 1.5 0 0 0-1.5-1.5H8v-2Zm6 4h2v-3h-2v3Z"/>
-            </svg>
-            <span>TRASA</span>
-          </button>
-
-          <button class="proximity-button" id="proximityButton" type="button" aria-pressed="false" aria-label="Automatyczne śledzenie i alerty" title="Automatyczne śledzenie i alerty">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 3a9 9 0 1 0 9 9h-2a7 7 0 1 1-7-7V3Z"/>
-              <path d="M12 7a5 5 0 1 0 5 5h-2a3 3 0 1 1-3-3V7Z"/>
-              <path d="M12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/>
-              <path d="M13 3h8v8h-2V6.41l-5.3 5.3-1.4-1.42L17.59 5H13V3Z"/>
-            </svg>
-            <span>ALERTY</span>
-          </button>
-
-          <div class="proximity-radius-wrap" id="proximityRadiusWrap">
-            <label for="proximityRadius">ALERT</label>
-            <select id="proximityRadius" aria-label="Odległość ostrzegania o atrakcjach">
-              <option value="5000" selected>5 km</option>
-              <option value="10000">10 km</option>
-              <option value="15000">15 km</option>
-              <option value="20000">20 km</option>
-            </select>
-          </div>
+        <div class="proximity-radius-wrap" id="proximityRadiusWrap">
+          <label for="proximityRadius">ALERT</label>
+          <select id="proximityRadius" aria-label="Odległość ostrzegania o atrakcjach">
+            <option value="5000" selected>5 km</option>
+            <option value="10000">10 km</option>
+            <option value="15000">15 km</option>
+            <option value="20000">20 km</option>
+          </select>
         </div>
+
+        <button class="map-location-button" id="mapLocationButton" type="button" aria-label="Wycentruj mapę na mojej lokalizacji" title="Wycentruj na mojej lokalizacji">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 8.25a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Zm0 5.5a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5Z"/>
+            <path d="M13 2.05V4.1a8.02 8.02 0 0 1 6.9 6.9h2.05v2H19.9a8.02 8.02 0 0 1-6.9 6.9v2.05h-2V19.9A8.02 8.02 0 0 1 4.1 13H2.05v-2H4.1A8.02 8.02 0 0 1 11 4.1V2.05h2ZM12 6a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/>
+          </svg>
+          <span>WYCENTRUJ</span>
+        </button>
 
         <button class="attraction-preview-button" id="attractionPreviewButton" type="button" aria-haspopup="dialog" aria-controls="attractionPreviewOverlay" aria-label="Otwórz podgląd atrakcji w pobliżu">
           <span class="attraction-radar" aria-hidden="true"><span class="attraction-radar-dot"></span></span>
           <span class="attraction-preview-button-label">Podgląd atrakcji</span>
           <strong id="attractionPreviewCount" aria-live="polite">—</strong>
         </button>
+
+        <div class="map-mode-badge" id="mapModeBadge" aria-live="polite" hidden>MOJE MIEJSCA</div>
       </div>
 
       <div class="map-legend" id="mapLegend" aria-label="Filtr atrakcji na mapie">
@@ -281,6 +260,34 @@
         <button class="map-legend-item is-active" type="button" data-map-filter="historic" aria-pressed="true"><img src="assets/markers/historic.png?v=1024" alt="" aria-hidden="true" />Zabytkowe miejsce</button>
         <button class="map-legend-item is-active" type="button" data-map-filter="water" aria-pressed="true"><img src="assets/markers/water.png?v=1024" alt="" aria-hidden="true" />Atrakcja wodna</button>
       </div>
+
+      <section class="navigation-panel" id="navigationPanel" aria-label="Nawigacja" hidden>
+        <div class="navigation-destination-row">
+          <div class="navigation-destination-copy">
+            <span>CEL</span>
+            <strong id="navigationDestination">—</strong>
+          </div>
+          <button id="navigationStopButton" class="navigation-stop-button" type="button">ZAKOŃCZ</button>
+        </div>
+        <div class="navigation-stats">
+          <div><strong id="navigationRemainingDistance">—</strong><span>do celu</span></div>
+          <div><strong id="navigationRemainingTime">—</strong><span>czas</span></div>
+          <div><strong id="navigationTurnDistance">—</strong><span>do manewru</span></div>
+        </div>
+        <div class="navigation-main">
+          <div class="navigation-arrow" id="navigationArrow" aria-hidden="true">↑</div>
+          <div class="navigation-copy">
+            <span class="navigation-kicker" id="navigationKicker">NAWIGACJA</span>
+            <strong id="navigationInstruction">Jedź zgodnie z trasą</strong>
+            <span id="navigationRoad"></span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="map-maneuver-overlay" id="mapManeuverOverlay" hidden aria-hidden="true">
+      <div class="map-maneuver-arrow" id="mapManeuverArrow">↑</div>
+      <div class="map-lanes" id="mapLanes" hidden></div>
     </div>
 
     <section class="route-panel" id="routePanel" aria-label="Planowanie trasy" hidden>
@@ -302,26 +309,6 @@
       <div class="route-source">Trasa: OSRM / OpenStreetMap · wyszukiwanie celu: Nominatim</div>
     </section>
 
-    <section class="navigation-panel" id="navigationPanel" aria-label="Nawigacja" hidden>
-      <div class="navigation-main">
-        <div class="navigation-arrow" id="navigationArrow" aria-hidden="true">↑</div>
-        <div class="navigation-copy">
-          <span class="navigation-kicker" id="navigationKicker">NAWIGACJA</span>
-          <strong id="navigationInstruction">Jedź zgodnie z trasą</strong>
-          <span id="navigationRoad"></span>
-        </div>
-      </div>
-      <div class="navigation-stats">
-        <div><strong id="navigationTurnDistance">—</strong><span>do manewru</span></div>
-        <div><strong id="navigationRemainingDistance">—</strong><span>do celu</span></div>
-        <div><strong id="navigationRemainingTime">—</strong><span>pozostało</span></div>
-      </div>
-      <div class="navigation-actions">
-        <button id="navigationVoiceButton" type="button" aria-pressed="true">GŁOS ON</button>
-        <button id="navigationStopButton" type="button">ZAKOŃCZ</button>
-      </div>
-    </section>
-
     <div class="attraction-preview-overlay" id="attractionPreviewOverlay" hidden>
       <section class="attraction-preview-panel" role="dialog" aria-modal="true" aria-labelledby="attractionPreviewTitle">
         <div class="attraction-preview-head">
@@ -337,7 +324,7 @@
 
     <div class="osm-status" id="osmStatus" role="status" aria-live="polite" hidden></div>
     <div class="location-message" id="locationMessage" role="status" aria-live="polite" hidden></div>
-    <div class="map-version" aria-hidden="true">v1036</div>
+    <div class="map-version" aria-hidden="true">v1037</div>
   </section>
 
   <aside class="nearby-alert" id="nearbyAlert" role="alertdialog" aria-live="assertive" aria-label="Atrakcja w pobliżu" hidden>
@@ -355,6 +342,6 @@
   </aside>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="app.js?v=1036"></script>
+  <script src="app.js?v=1037"></script>
 </body>
 </html>
