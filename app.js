@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1035';
+  const APP_VERSION = 'v1036';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1035';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1036';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;
@@ -89,6 +89,17 @@
   const attractionPreviewSummary = document.getElementById('attractionPreviewSummary');
   const attractionPreviewList = document.getElementById('attractionPreviewList');
 
+  const navigationPanel = document.getElementById('navigationPanel');
+  const navigationKicker = document.getElementById('navigationKicker');
+  const navigationArrow = document.getElementById('navigationArrow');
+  const navigationInstruction = document.getElementById('navigationInstruction');
+  const navigationRoad = document.getElementById('navigationRoad');
+  const navigationTurnDistance = document.getElementById('navigationTurnDistance');
+  const navigationRemainingDistance = document.getElementById('navigationRemainingDistance');
+  const navigationRemainingTime = document.getElementById('navigationRemainingTime');
+  const navigationVoiceButton = document.getElementById('navigationVoiceButton');
+  const navigationStopButton = document.getElementById('navigationStopButton');
+
   const nearbyAlert = document.getElementById('nearbyAlert');
   const nearbyAlertIcon = document.getElementById('nearbyAlertIcon');
   const nearbyAlertTitle = document.getElementById('nearbyAlertTitle');
@@ -158,6 +169,21 @@
   let routeCoordinates = [];
   let routeSearchSequence = 0;
   let routeAlertedIds = new Set();
+
+  // v1036: nawigacja zakręt po zakręcie na podstawie kroków OSRM.
+  let navigationActive = false;
+  let navigationVoiceEnabled = true;
+  let navigationSteps = [];
+  let navigationRouteCumulative = [];
+  let navigationRouteDistance = 0;
+  let navigationRouteDuration = 0;
+  let navigationLastRouteIndex = 0;
+  let navigationLastStepIndex = -1;
+  let navigationLastVoiceBucket = '';
+  let navigationLastSpokenKey = '';
+  let navigationRerouteInFlight = false;
+  let navigationLastRerouteAt = 0;
+  let navigationArrived = false;
 
   if (versionElement) versionElement.textContent = APP_VERSION;
   updateOsmButtonUi();
@@ -730,7 +756,7 @@
         ${routeActive && Number.isFinite(Number(attraction.routeDistanceMeters))
           ? `<div class="place-popup-date">Od trasy: ${escapeHtml(formatDistance(Number(attraction.routeDistanceMeters)))}</div>`
           : ''}
-        <button class="place-popup-add-osm" type="button" data-route-osm-id="${escapeHtml(attraction.osmId)}">USTAW TRASĘ DO TEJ ATRAKCJI</button>
+        <button class="place-popup-add-osm" type="button" data-route-osm-id="${escapeHtml(attraction.osmId)}">PROWADŹ</button>
         <button class="place-popup-add-osm" type="button" data-wikipedia-query="${escapeHtml(attraction.name)}">WIKIPEDIA</button>
         ${
           saved
@@ -1099,7 +1125,7 @@
         name: result.display_name || result.name || 'Cel podróży',
         lat: Number(result.lat),
         lon: Number(result.lon)
-      }));
+      }, { startNavigation: true }));
       routeResults.append(button);
     });
   }
@@ -1132,7 +1158,293 @@
     }
   }
 
+
+  function formatNavigationDistance(meters) {
+    const value = Math.max(0, Number(meters) || 0);
+    if (value < 1000) return `${Math.max(10, Math.round(value / 10) * 10)} m`;
+    if (value < 10000) return `${(value / 1000).toFixed(1).replace('.', ',')} km`;
+    return `${Math.round(value / 1000)} km`;
+  }
+
+  function navigationArrowForStep(step) {
+    const type = String(step?.maneuver?.type || '');
+    const modifier = String(step?.maneuver?.modifier || '');
+    if (type.includes('roundabout') || type === 'rotary') return '↻';
+    if (type === 'arrive') return '●';
+    const arrows = {
+      'sharp left': '↙',
+      'left': '←',
+      'slight left': '↖',
+      'straight': '↑',
+      'slight right': '↗',
+      'right': '→',
+      'sharp right': '↘',
+      'uturn': '↶'
+    };
+    return arrows[modifier] || '↑';
+  }
+
+  function navigationInstructionForStep(step) {
+    const maneuver = step?.maneuver || {};
+    const type = String(maneuver.type || '');
+    const modifier = String(maneuver.modifier || '');
+    const exit = Number(maneuver.exit);
+    const direction = {
+      'sharp left': 'skręć ostro w lewo',
+      'left': 'skręć w lewo',
+      'slight left': 'skręć lekko w lewo',
+      'straight': 'jedź prosto',
+      'slight right': 'skręć lekko w prawo',
+      'right': 'skręć w prawo',
+      'sharp right': 'skręć ostro w prawo',
+      'uturn': 'zawróć'
+    }[modifier] || 'jedź dalej';
+
+    if (type === 'arrive') return 'Dotrzesz do celu';
+    if (type === 'depart') return direction === 'jedź dalej' ? 'Ruszaj trasą' : direction;
+    if (type === 'roundabout' || type === 'rotary' || type === 'roundabout turn') {
+      return Number.isFinite(exit) && exit > 0
+        ? `Na rondzie wybierz ${exit}. zjazd`
+        : 'Wjedź na rondo i jedź zgodnie z trasą';
+    }
+    if (type === 'exit roundabout' || type === 'exit rotary') return 'Zjedź z ronda';
+    if (type === 'merge') return modifier.includes('left') ? 'Włącz się do ruchu z lewej strony' : modifier.includes('right') ? 'Włącz się do ruchu z prawej strony' : 'Włącz się do ruchu';
+    if (type === 'fork') return modifier.includes('left') ? 'Na rozwidleniu trzymaj się lewej strony' : modifier.includes('right') ? 'Na rozwidleniu trzymaj się prawej strony' : 'Na rozwidleniu jedź zgodnie z trasą';
+    if (type === 'on ramp' || type === 'ramp') return modifier.includes('left') ? 'Wjedź na łącznicę w lewo' : modifier.includes('right') ? 'Wjedź na łącznicę w prawo' : 'Wjedź na łącznicę';
+    if (type === 'off ramp') return modifier.includes('left') ? 'Zjedź z drogi w lewo' : modifier.includes('right') ? 'Zjedź z drogi w prawo' : 'Zjedź z drogi';
+    if (type === 'end of road') return modifier.includes('left') ? 'Na końcu drogi skręć w lewo' : modifier.includes('right') ? 'Na końcu drogi skręć w prawo' : direction;
+    if (type === 'new name' || type === 'continue' || type === 'notification') return direction === 'jedź dalej' ? 'Kontynuuj jazdę' : direction;
+    return direction.charAt(0).toUpperCase() + direction.slice(1);
+  }
+
+  function buildNavigationRouteMetrics(coordinates, steps, routeDistance, routeDuration) {
+    navigationRouteCumulative = [];
+    let cumulative = 0;
+    coordinates.forEach((coord, index) => {
+      if (index > 0) {
+        const prev = coordinates[index - 1];
+        cumulative += distanceMeters(Number(prev[1]), Number(prev[0]), Number(coord[1]), Number(coord[0]));
+      }
+      navigationRouteCumulative.push(cumulative);
+    });
+    navigationRouteDistance = Number(routeDistance) || cumulative;
+    navigationRouteDuration = Number(routeDuration) || 0;
+    navigationLastRouteIndex = 0;
+
+    navigationSteps = (Array.isArray(steps) ? steps : []).map((step, stepIndex) => {
+      const location = step?.maneuver?.location;
+      let nearestIndex = 0;
+      let nearestDistance = Infinity;
+      if (Array.isArray(location) && location.length >= 2) {
+        const lon = Number(location[0]);
+        const lat = Number(location[1]);
+        coordinates.forEach((coord, index) => {
+          const d = distanceMeters(lat, lon, Number(coord[1]), Number(coord[0]));
+          if (d < nearestDistance) {
+            nearestDistance = d;
+            nearestIndex = index;
+          }
+        });
+      }
+      return {
+        ...step,
+        _stepIndex: stepIndex,
+        _routeIndex: nearestIndex,
+        _routeMeters: navigationRouteCumulative[nearestIndex] || 0
+      };
+    });
+  }
+
+  function findNearestNavigationRoutePosition(lat, lon) {
+    if (!routeCoordinates.length) return { index: 0, distance: Infinity, progress: 0 };
+
+    const testRange = (start, end, stride = 1) => {
+      let bestIndex = start;
+      let bestDistance = Infinity;
+      for (let i = start; i <= end; i += stride) {
+        const coord = routeCoordinates[i];
+        if (!coord) continue;
+        const d = distanceMeters(lat, lon, Number(coord[1]), Number(coord[0]));
+        if (d < bestDistance) {
+          bestDistance = d;
+          bestIndex = i;
+        }
+      }
+      return { index: bestIndex, distance: bestDistance };
+    };
+
+    const start = Math.max(0, navigationLastRouteIndex - 80);
+    const end = Math.min(routeCoordinates.length - 1, navigationLastRouteIndex + 550);
+    let best = testRange(start, end, 1);
+
+    if (best.distance > 700) {
+      const sampled = testRange(0, routeCoordinates.length - 1, Math.max(1, Math.floor(routeCoordinates.length / 700)));
+      const refineStart = Math.max(0, sampled.index - 20);
+      const refineEnd = Math.min(routeCoordinates.length - 1, sampled.index + 20);
+      best = testRange(refineStart, refineEnd, 1);
+    }
+
+    navigationLastRouteIndex = best.index;
+    return {
+      ...best,
+      progress: navigationRouteCumulative[best.index] || 0
+    };
+  }
+
+  function navigationVoiceBucket(distance) {
+    if (distance <= 70) return '70';
+    if (distance <= 180) return '180';
+    if (distance <= 450) return '450';
+    if (distance <= 1000) return '1000';
+    return 'far';
+  }
+
+  function speakNavigation(text) {
+    if (!navigationVoiceEnabled || !text || !('speechSynthesis' in window)) return;
+    try {
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = 'pl-PL';
+      utterance.rate = 1.0;
+      window.speechSynthesis.speak(utterance);
+    } catch (error) {
+      console.warn('Synteza mowy jest niedostępna:', error);
+    }
+  }
+
+  function setNavigationVoiceUi() {
+    if (!navigationVoiceButton) return;
+    navigationVoiceButton.textContent = navigationVoiceEnabled ? 'GŁOS ON' : 'GŁOS OFF';
+    navigationVoiceButton.classList.toggle('is-muted', !navigationVoiceEnabled);
+    navigationVoiceButton.setAttribute('aria-pressed', navigationVoiceEnabled ? 'true' : 'false');
+  }
+
+  function stopNavigation({ keepRoute = true } = {}) {
+    navigationActive = false;
+    navigationArrived = false;
+    navigationRerouteInFlight = false;
+    navigationLastSpokenKey = '';
+    navigationLastVoiceBucket = '';
+    navigationLastStepIndex = -1;
+    if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+    if (navigationPanel) navigationPanel.hidden = true;
+    if (!keepRoute) clearRoute({ refreshMap: true });
+  }
+
+  function startNavigation() {
+    if (!routeActive || !routeDestination || !routeCoordinates.length) return;
+    navigationActive = true;
+    navigationArrived = false;
+    navigationLastRouteIndex = 0;
+    navigationLastStepIndex = -1;
+    navigationLastVoiceBucket = '';
+    navigationLastSpokenKey = '';
+    mapAutoFollowEnabled = true;
+    if (navigationPanel) navigationPanel.hidden = false;
+    if (navigationKicker) navigationKicker.textContent = 'NAWIGACJA';
+    setNavigationVoiceUi();
+    if (lastMonitorPosition?.coords) {
+      const { latitude, longitude } = lastMonitorPosition.coords;
+      mapProgrammaticMove = true;
+      map?.panTo([latitude, longitude], { animate: true, duration: 0.35, noMoveStart: true });
+      mapProgrammaticMove = false;
+      updateNavigationFromPosition(lastMonitorPosition, true);
+    }
+  }
+
+  async function maybeRerouteNavigation(position, offRouteDistance) {
+    if (!navigationActive || navigationArrived || navigationRerouteInFlight || !routeDestination) return;
+    if (offRouteDistance < 180) return;
+    if (Date.now() - navigationLastRerouteAt < 20000) return;
+
+    navigationRerouteInFlight = true;
+    navigationLastRerouteAt = Date.now();
+    if (navigationKicker) navigationKicker.textContent = 'PRZELICZAM TRASĘ…';
+    try {
+      await planRouteToDestination(routeDestination, {
+        startNavigation: true,
+        recalculating: true
+      });
+    } finally {
+      navigationRerouteInFlight = false;
+      if (navigationActive && !navigationArrived && navigationKicker?.textContent === 'PRZELICZAM TRASĘ…') {
+        navigationKicker.textContent = 'NAWIGACJA';
+      }
+    }
+  }
+
+  function updateNavigationFromPosition(position, forceSpeak = false) {
+    if (!navigationActive || !position?.coords || !routeCoordinates.length || !routeDestination) return;
+
+    const lat = Number(position.coords.latitude);
+    const lon = Number(position.coords.longitude);
+    const nearest = findNearestNavigationRoutePosition(lat, lon);
+    const remaining = Math.max(0, navigationRouteDistance - nearest.progress);
+    const destinationDistance = distanceMeters(lat, lon, Number(routeDestination.lat), Number(routeDestination.lon));
+
+    if (destinationDistance <= 35 || remaining <= 25) {
+      navigationArrived = true;
+      if (navigationKicker) navigationKicker.textContent = 'CEL OSIĄGNIĘTY';
+      if (navigationArrow) navigationArrow.textContent = '●';
+      if (navigationInstruction) navigationInstruction.textContent = 'Jesteś na miejscu';
+      if (navigationRoad) navigationRoad.textContent = routeDestination.name || 'Cel podróży';
+      if (navigationTurnDistance) navigationTurnDistance.textContent = '0 m';
+      if (navigationRemainingDistance) navigationRemainingDistance.textContent = '0 m';
+      if (navigationRemainingTime) navigationRemainingTime.textContent = '0 min';
+      if (navigationLastSpokenKey !== 'arrived') {
+        navigationLastSpokenKey = 'arrived';
+        speakNavigation(`Jesteś na miejscu. ${routeDestination.name || ''}`.trim());
+      }
+      return;
+    }
+
+    let stepIndex = navigationSteps.findIndex((step) => {
+      if (step?.maneuver?.type === 'depart') return false;
+      return Number(step._routeMeters) > nearest.progress + 12;
+    });
+    if (stepIndex < 0) stepIndex = Math.max(0, navigationSteps.length - 1);
+    const step = navigationSteps[stepIndex];
+    const distanceToStep = Math.max(0, Number(step?._routeMeters || navigationRouteDistance) - nearest.progress);
+    const instruction = navigationInstructionForStep(step);
+    const road = String(step?.name || '').trim();
+    const remainingTimeSeconds = navigationRouteDistance > 0
+      ? navigationRouteDuration * (remaining / navigationRouteDistance)
+      : 0;
+
+    if (navigationKicker) navigationKicker.textContent = nearest.distance >= 180 ? 'POZA TRASĄ' : 'NAWIGACJA';
+    if (navigationArrow) navigationArrow.textContent = navigationArrowForStep(step);
+    if (navigationInstruction) navigationInstruction.textContent = instruction;
+    if (navigationRoad) navigationRoad.textContent = road || (routeDestination.name ? `Kierunek: ${routeDestination.name}` : '');
+    if (navigationTurnDistance) navigationTurnDistance.textContent = formatNavigationDistance(distanceToStep);
+    if (navigationRemainingDistance) navigationRemainingDistance.textContent = formatNavigationDistance(remaining);
+    if (navigationRemainingTime) navigationRemainingTime.textContent = formatRouteDuration(remainingTimeSeconds);
+
+    const voiceBucket = navigationVoiceBucket(distanceToStep);
+    const voiceKey = `${stepIndex}:${voiceBucket}`;
+    const shouldSpeak =
+      forceSpeak ||
+      stepIndex !== navigationLastStepIndex ||
+      (voiceBucket !== 'far' && voiceKey !== navigationLastSpokenKey && voiceBucket !== navigationLastVoiceBucket);
+
+    if (shouldSpeak) {
+      navigationLastSpokenKey = voiceKey;
+      navigationLastVoiceBucket = voiceBucket;
+      const distancePhrase = distanceToStep > 90 ? `Za ${formatNavigationDistance(distanceToStep)}, ` : '';
+      speakNavigation(`${distancePhrase}${instruction}${road ? `, ${road}` : ''}.`);
+    }
+    navigationLastStepIndex = stepIndex;
+
+    maybeRerouteNavigation(position, nearest.distance);
+  }
+
   function clearRoute({ refreshMap = true } = {}) {
+    if (navigationActive || (navigationPanel && !navigationPanel.hidden)) {
+      navigationActive = false;
+      navigationArrived = false;
+      navigationRerouteInFlight = false;
+      if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+      if (navigationPanel) navigationPanel.hidden = true;
+    }
     routeActive = false;
     routeDestination = null;
     routeAttractions = [];
@@ -1159,7 +1471,7 @@
     }
   }
 
-  async function planRouteToDestination(destination) {
+  async function planRouteToDestination(destination, { startNavigation: shouldStartNavigation = false, recalculating = false } = {}) {
     if (!map || !destination || !Number.isFinite(destination.lat) || !Number.isFinite(destination.lon)) return;
 
     let position = lastMonitorPosition;
@@ -1180,7 +1492,7 @@
     if (routeResults) routeResults.replaceChildren();
 
     try {
-      const url = `${OSRM_ROUTE_URL}/${startLon.toFixed(6)},${startLat.toFixed(6)};${destination.lon.toFixed(6)},${destination.lat.toFixed(6)}?overview=full&geometries=geojson&steps=false`;
+      const url = `${OSRM_ROUTE_URL}/${startLon.toFixed(6)},${startLat.toFixed(6)};${destination.lon.toFixed(6)},${destination.lat.toFixed(6)}?overview=full&geometries=geojson&steps=true`;
       const response = await fetch(url, { headers: { Accept: 'application/json' } });
       if (!response.ok) throw new Error(`OSRM HTTP ${response.status}`);
       const data = await response.json();
@@ -1205,7 +1517,10 @@
       routeActive = true;
       routeDestination = destination;
       routeCoordinates = coordinates;
-      routeAlertedIds = new Set();
+      if (!recalculating) routeAlertedIds = new Set();
+      const routeSteps = (Array.isArray(route.legs) ? route.legs : [])
+        .flatMap((leg) => Array.isArray(leg?.steps) ? leg.steps : []);
+      buildNavigationRouteMetrics(coordinates, routeSteps, Number(route.distance), Number(route.duration));
       if (routeClearButton) routeClearButton.hidden = false;
 
       clearTimeout(viewportFetchTimer);
@@ -1234,12 +1549,16 @@
         hideRoutePanel();
         startProximityMonitoring(false);
         checkProximity(position);
+        if (shouldStartNavigation || recalculating) startNavigation();
       } catch (error) {
         console.warn('Nie udało się odczytać atrakcji przy trasie:', error);
         routeAttractions = [];
         nearbyAttractions = [];
         updateOsmStatus('Atrakcje przy trasie: brak danych z bazy', true);
         setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Trasa działa, ale atrakcji nie udało się odczytać z bazy.`, true);
+        hideRoutePanel();
+        startProximityMonitoring(false);
+        if (shouldStartNavigation || recalculating) startNavigation();
       }
     } catch (error) {
       console.warn('Nie udało się wyznaczyć trasy:', error);
@@ -1425,6 +1744,7 @@
     setLocationButtonState('active');
     keepMonitoredPositionVisible(position);
     updateAttractionPreview(position);
+    if (navigationActive) updateNavigationFromPosition(position);
 
     const { latitude, longitude } = position.coords;
     const movedSinceFetch = lastNearbyFetchPosition
@@ -1506,7 +1826,7 @@
         <div class="place-popup-date">Dodano: ${escapeHtml(formatDisplayDate(point.date))}</div>
         <div class="place-popup-coords">${Number(point.lat).toFixed(6)}, ${Number(point.lon).toFixed(6)}</div>
         ${note ? `<div class="place-popup-note">${noteHtml(note)}</div>` : ''}
-        <button class="place-popup-edit" type="button" data-route-point-id="${escapeHtml(point.id)}">USTAW TRASĘ DO TEGO MIEJSCA</button>
+        <button class="place-popup-edit" type="button" data-route-point-id="${escapeHtml(point.id)}">PROWADŹ</button>
         <button class="place-popup-edit" type="button" data-wikipedia-query="${escapeHtml(title)}">WIKIPEDIA</button>
         <button class="place-popup-edit" type="button" data-edit-point-id="${escapeHtml(point.id)}">EDYTUJ</button>
       </div>
@@ -2113,7 +2433,7 @@
           name: attraction.name || 'Atrakcja',
           lat: Number(attraction.lat),
           lon: Number(attraction.lon)
-        });
+        }, { startNavigation: true });
       }
       return;
     }
@@ -2130,7 +2450,7 @@
           name: point.name || (CATEGORY_INFO[point.category]?.label ?? 'Moje miejsce'),
           lat: Number(point.lat),
           lon: Number(point.lon)
-        });
+        }, { startNavigation: true });
       }
       return;
     }
@@ -2171,6 +2491,18 @@
     }
   });
   routeClearButton?.addEventListener('click', () => clearRoute({ refreshMap: true }));
+  navigationVoiceButton?.addEventListener('click', () => {
+    navigationVoiceEnabled = !navigationVoiceEnabled;
+    if (!navigationVoiceEnabled && 'speechSynthesis' in window) window.speechSynthesis.cancel();
+    setNavigationVoiceUi();
+    if (navigationVoiceEnabled && lastMonitorPosition?.coords && navigationActive) {
+      updateNavigationFromPosition(lastMonitorPosition, true);
+    }
+  });
+  navigationStopButton?.addEventListener('click', () => {
+    stopNavigation({ keepRoute: true });
+    showLocationMessage('Nawigacja zakończona. Trasa pozostaje na mapie.');
+  });
 
   osmRefreshButton?.addEventListener('click', () => {
     if (osmRefreshButton?.classList.contains('is-loading')) return;
@@ -2224,7 +2556,7 @@
       name: item.attraction.name || (CATEGORY_INFO[item.attraction.category]?.label ?? 'Atrakcja'),
       lat: Number(item.attraction.lat),
       lon: Number(item.attraction.lon)
-    });
+    }, { startNavigation: true });
   });
 
   nearbyAlertShow?.addEventListener('click', () => {
@@ -2276,7 +2608,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1035', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1036', {
           scope: './',
           updateViaCache: 'none'
         });
