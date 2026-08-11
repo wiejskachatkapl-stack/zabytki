@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1050';
+  const APP_VERSION = 'v1051';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1050';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1051';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const ROUTE_MODE_KEY = 'tourmap_route_mode_v1';
   const ROUTE_MODES = {
@@ -115,6 +115,10 @@
   const routeSource = document.getElementById('routeSource');
   const osmStatus = document.getElementById('osmStatus');
   const mapModeBadge = document.getElementById('mapModeBadge');
+  const myPlacesTransfer = document.getElementById('myPlacesTransfer');
+  const exportMyPlacesButton = document.getElementById('exportMyPlacesButton');
+  const importMyPlacesButton = document.getElementById('importMyPlacesButton');
+  const importMyPlacesInput = document.getElementById('importMyPlacesInput');
   const mapLegend = document.getElementById('mapLegend');
   const attractionPreviewButton = document.getElementById('attractionPreviewButton');
   const attractionPreviewCount = document.getElementById('attractionPreviewCount');
@@ -277,6 +281,167 @@
 
   function savePoints(points) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(points));
+  }
+
+  function normalizeImportedPoint(raw, fallbackIndex = 0) {
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return null;
+    const lat = Number(raw.lat);
+    const lon = Number(raw.lon);
+    if (!Number.isFinite(lat) || lat < -90 || lat > 90 || !Number.isFinite(lon) || lon < -180 || lon > 180) return null;
+
+    const category = CATEGORY_INFO[raw.category] ? raw.category : 'historic';
+    const sourceId = String(raw.id || '').trim();
+    const id = sourceId || `import-${Date.now()}-${fallbackIndex}-${Math.random().toString(16).slice(2)}`;
+    const osmId = String(raw.osmId || '').trim();
+    const name = String(raw.name || CATEGORY_INFO[category].label).trim().slice(0, 100) || CATEGORY_INFO[category].label;
+    const note = String(raw.note || '').slice(0, 2000);
+    const date = /^\d{4}-\d{2}-\d{2}$/.test(String(raw.date || '')) ? String(raw.date) : localDateString();
+    const createdAt = String(raw.createdAt || '').trim() || new Date().toISOString();
+    const updatedAt = String(raw.updatedAt || '').trim() || createdAt;
+
+    return {
+      id,
+      ...(osmId ? { osmId } : {}),
+      name,
+      category,
+      date,
+      note,
+      lat,
+      lon,
+      source: String(raw.source || 'import').slice(0, 40),
+      createdAt,
+      updatedAt
+    };
+  }
+
+  function backupPointKey(point) {
+    if (point?.osmId) return `osm:${String(point.osmId)}`;
+    if (point?.id) return `id:${String(point.id)}`;
+    return `geo:${Number(point?.lat).toFixed(6)}:${Number(point?.lon).toFixed(6)}:${String(point?.name || '').trim().toLowerCase()}`;
+  }
+
+  function pointTimestamp(point) {
+    const value = Date.parse(String(point?.updatedAt || point?.createdAt || ''));
+    return Number.isFinite(value) ? value : 0;
+  }
+
+  async function exportMyPlaces() {
+    const places = loadPoints();
+    if (!places.length) {
+      showLocationMessage('Nie masz jeszcze miejsc do zapisania.');
+      return;
+    }
+
+    const payload = {
+      format: 'turystyczna-mapa-polski-my-places',
+      formatVersion: 1,
+      appVersion: APP_VERSION,
+      exportedAt: new Date().toISOString(),
+      count: places.length,
+      places
+    };
+    const json = JSON.stringify(payload, null, 2);
+    const now = new Date();
+    const stamp = `${localDateString(now)}_${String(now.getHours()).padStart(2, '0')}-${String(now.getMinutes()).padStart(2, '0')}`;
+    const filename = `moje-miejsca_${stamp}.json`;
+
+    try {
+      if (typeof File !== 'undefined' && navigator.share && navigator.canShare) {
+        const file = new File([json], filename, { type: 'application/json' });
+        if (navigator.canShare({ files: [file] })) {
+          await navigator.share({
+            title: 'Kopia moich miejsc',
+            text: `Kopia ${places.length} miejsc z aplikacji Mapa atrakcji Polski`,
+            files: [file]
+          });
+          showLocationMessage(`Kopia ${places.length} miejsc została przygotowana.`);
+          return;
+        }
+      }
+
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
+      showLocationMessage(`Zapisano kopię ${places.length} miejsc.`);
+    } catch (error) {
+      if (error?.name === 'AbortError') return;
+      console.error('Nie udało się zapisać kopii miejsc:', error);
+      showLocationMessage('Nie udało się zapisać pliku z miejscami.');
+    }
+  }
+
+  async function importMyPlacesFile(file) {
+    if (!file) return;
+    if (file.size > 10 * 1024 * 1024) {
+      showLocationMessage('Wybrany plik jest zbyt duży.');
+      return;
+    }
+
+    if (importMyPlacesButton) importMyPlacesButton.disabled = true;
+    try {
+      const text = await file.text();
+      const parsed = JSON.parse(text);
+      const rawPlaces = Array.isArray(parsed) ? parsed : parsed?.places;
+      if (!Array.isArray(rawPlaces)) throw new Error('Nieprawidłowy format kopii');
+
+      const imported = rawPlaces
+        .map((point, index) => normalizeImportedPoint(point, index))
+        .filter(Boolean);
+      if (!imported.length) throw new Error('Brak poprawnych miejsc w pliku');
+
+      const existing = loadPoints().map((point, index) => normalizeImportedPoint(point, index)).filter(Boolean);
+      const merged = new Map();
+      existing.forEach((point) => merged.set(backupPointKey(point), point));
+
+      let added = 0;
+      let updated = 0;
+      let skipped = 0;
+      imported.forEach((point) => {
+        const key = backupPointKey(point);
+        const current = merged.get(key);
+        if (!current) {
+          merged.set(key, point);
+          added += 1;
+          return;
+        }
+        if (pointTimestamp(point) > pointTimestamp(current)) {
+          merged.set(key, { ...current, ...point, id: current.id || point.id });
+          updated += 1;
+        } else {
+          skipped += 1;
+        }
+      });
+
+      const result = [...merged.values()];
+      savePoints(result);
+      migrateSavedPointsIntoUserDatabase();
+      if (attractionDatabaseLoaded) rebuildAttractionDatabase();
+      renderStoredPoints();
+
+      if (mapModeBadge) mapModeBadge.textContent = `MOJE MIEJSCA · ${result.length}`;
+      if (currentMapMode === 'mine' && map && result.length) {
+        const coords = result
+          .filter((point) => Number.isFinite(Number(point.lat)) && Number.isFinite(Number(point.lon)))
+          .map((point) => [Number(point.lat), Number(point.lon)]);
+        if (coords.length === 1) map.setView(coords[0], 15, { animate: true });
+        else if (coords.length > 1) map.fitBounds(coords, { padding: [28, 28], maxZoom: 13 });
+      }
+
+      showLocationMessage(`Wczytano kopię: dodano ${added}, zaktualizowano ${updated}, bez zmian ${skipped}. Razem: ${result.length}.`);
+    } catch (error) {
+      console.error('Nie udało się wczytać kopii miejsc:', error);
+      showLocationMessage('Nie udało się wczytać pliku. Wybierz kopię utworzoną przez tę aplikację.');
+    } finally {
+      if (importMyPlacesInput) importMyPlacesInput.value = '';
+      if (importMyPlacesButton) importMyPlacesButton.disabled = false;
+    }
   }
 
   function findPoint(id) {
@@ -2511,6 +2676,8 @@
       mapModeBadge.hidden = !mineOnly;
     }
 
+    if (myPlacesTransfer) myPlacesTransfer.hidden = !mineOnly;
+
     if (mapLocationButton) mapLocationButton.hidden = mineOnly;
     if (routeButton) routeButton.hidden = mineOnly;
     if (proximityButton) proximityButton.hidden = true;
@@ -2963,6 +3130,9 @@
 
   mapButton?.addEventListener('click', () => showMap({ mode: 'all' }));
   myPlacesButton?.addEventListener('click', showMyPlacesMap);
+  exportMyPlacesButton?.addEventListener('click', () => exportMyPlaces());
+  importMyPlacesButton?.addEventListener('click', () => importMyPlacesInput?.click());
+  importMyPlacesInput?.addEventListener('change', () => importMyPlacesFile(importMyPlacesInput.files?.[0]));
   mapBackButton?.addEventListener('click', hideMap);
   mapLocationButton?.addEventListener('click', centerOnCurrentLocation);
 
@@ -3003,7 +3173,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1040', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1051', {
           scope: './',
           updateViaCache: 'none'
         });
