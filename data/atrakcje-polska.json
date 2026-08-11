@@ -1,7 +1,7 @@
 {
-  "version": "v1041",
+  "version": "v1042",
   "updatedAt": "2026-08-11",
-  "description": "Statyczna baza atrakcji Polski rozszerzona o szeroki zestaw atrakcji województwa warmińsko-mazurskiego.",
+  "description": "Statyczna baza atrakcji Polski rozszerzona o szeroki zestaw atrakcji województwa podlaskiego.",
   "attractions": [
     {
       "id": "base/palac-radziejowice",
@@ -12900,7 +12900,1117 @@
       "source": "Wikipedia / dane mapowe",
       "sourceUrl": "https://pl.wikipedia.org/wiki/Wysoczyzna_Elbl%C4%85ska",
       "region": "warmińsko-mazurskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-antoniuk",
+      "name": "Rezerwat przyrody Antoniuk",
+      "category": "reserve",
+      "lat": 53.172222,
+      "lon": 23.136667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Antoniuk_(rezerwat_przyrody)",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/bagno-wizna-i",
+      "name": "Bagno Wizna I",
+      "category": "reserve",
+      "lat": 53.151111,
+      "lon": 22.462222,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bagno_Wizna_I",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-bagno-wizna-ii",
+      "name": "Rezerwat przyrody Bagno Wizna II",
+      "category": "reserve",
+      "lat": 53.132222,
+      "lon": 22.396111,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Bagno_Wizna_II",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-bobruczek",
+      "name": "Rezerwat przyrody Bobruczek",
+      "category": "reserve",
+      "lat": 54.206944,
+      "lon": 23.161667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Bobruczek",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-ciemny-kat",
+      "name": "Rezerwat przyrody Ciemny Kąt",
+      "category": "reserve",
+      "lat": 53.45,
+      "lon": 21.695833,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Ciemny_K%C4%85t",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-cmentarzysko-jacwingow",
+      "name": "Rezerwat przyrody Cmentarzysko Jaćwingów",
+      "category": "reserve",
+      "lat": 54.15,
+      "lon": 22.96,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Cmentarzysko_Ja%C4%87wing%C3%B3w",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-czapliniec-beda",
+      "name": "Rezerwat przyrody Czapliniec Bełda",
+      "category": "reserve",
+      "lat": 53.696111,
+      "lon": 22.658333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Czapliniec_Be%C5%82da",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-czarny-kat",
+      "name": "Rezerwat przyrody Czarny Kąt",
+      "category": "reserve",
+      "lat": 53.253333,
+      "lon": 21.680556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Czarny_K%C4%85t",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-czechy-orlanskie",
+      "name": "Rezerwat przyrody Czechy Orlańskie",
+      "category": "reserve",
+      "lat": 52.630833,
+      "lon": 23.484722,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Czechy_Orla%C5%84skie",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/obszar-ochrony-scisej-czerwone-bagno",
+      "name": "Obszar ochrony ścisłej Czerwone Bagno",
+      "category": "reserve",
+      "lat": 53.651944,
+      "lon": 22.834167,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Obszar_ochrony_%C5%9Bcis%C5%82ej_Czerwone_Bagno",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-debowe-gory",
+      "name": "Rezerwat przyrody Dębowe Góry",
+      "category": "reserve",
+      "lat": 53.105,
+      "lon": 22.089167,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_D%C4%99bowe_G%C3%B3ry",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-gazowisko-bachanowo-nad-czarna-hancza",
+      "name": "Rezerwat przyrody Głazowisko Bachanowo nad Czarną Hańczą",
+      "category": "reserve",
+      "lat": 54.235278,
+      "lon": 22.791389,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_G%C5%82azowisko_Bachanowo_nad_Czarn%C4%85_Ha%C5%84cz%C4%85",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-gazowisko-opuchowskie",
+      "name": "Rezerwat przyrody Głazowisko Łopuchowskie",
+      "category": "reserve",
+      "lat": 54.259167,
+      "lon": 22.836667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_G%C5%82azowisko_%C5%81opuchowskie",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-gorbacz",
+      "name": "Rezerwat przyrody Gorbacz",
+      "category": "reserve",
+      "lat": 53.0,
+      "lon": 23.7,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Gorbacz",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-gora-uszescie",
+      "name": "Rezerwat przyrody Góra Uszeście",
+      "category": "reserve",
+      "lat": 52.336111,
+      "lon": 23.053889,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_G%C3%B3ra_Usze%C5%9Bcie",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/gornianskie-aki",
+      "name": "Górniańskie Łąki",
+      "category": "reserve",
+      "lat": 52.713056,
+      "lon": 23.536944,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/G%C3%B3rnia%C5%84skie_%C5%81%C4%85ki",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-grabowka",
+      "name": "Rezerwat przyrody Grabówka",
+      "category": "reserve",
+      "lat": 52.973333,
+      "lon": 22.303333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Grab%C3%B3wka",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-grad-radziwiowski",
+      "name": "Rezerwat przyrody Grąd Radziwiłłowski",
+      "category": "reserve",
+      "lat": 52.386667,
+      "lon": 23.071667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Gr%C4%85d_Radziwi%C5%82%C5%82owski",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-jelonka",
+      "name": "Rezerwat przyrody Jelonka",
+      "category": "reserve",
+      "lat": 52.593611,
+      "lon": 23.368889,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jelonka",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-jezioro-hancza",
+      "name": "Rezerwat przyrody Jezioro Hańcza",
+      "category": "reserve",
+      "lat": 54.263333,
+      "lon": 22.811667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Jezioro_Ha%C5%84cza",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-kalinowo",
+      "name": "Rezerwat przyrody Kalinowo",
+      "category": "reserve",
+      "lat": 53.161111,
+      "lon": 22.153333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Kalinowo",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-kaniston",
+      "name": "Rezerwat przyrody Kaniston",
+      "category": "reserve",
+      "lat": 53.258333,
+      "lon": 21.736667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Kaniston",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-koryciny",
+      "name": "Rezerwat przyrody Koryciny",
+      "category": "reserve",
+      "lat": 52.669444,
+      "lon": 22.741667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Koryciny",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-las-zwierzyniecki",
+      "name": "Rezerwat przyrody Las Zwierzyniecki",
+      "category": "reserve",
+      "lat": 53.115556,
+      "lon": 23.165,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Las_Zwierzyniecki",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-lasy-naturalne-puszczy-biaowieskiej",
+      "name": "Rezerwat przyrody Lasy Naturalne Puszczy Białowieskiej",
+      "category": "reserve",
+      "lat": 52.716667,
+      "lon": 23.691667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Lasy_Naturalne_Puszczy_Bia%C5%82owieskiej",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-awski-las-i",
+      "name": "Rezerwat przyrody Ławski Las I",
+      "category": "reserve",
+      "lat": 53.491667,
+      "lon": 22.308333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_%C5%81awski_Las_I",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-awski-las-ii",
+      "name": "Rezerwat przyrody Ławski Las II",
+      "category": "reserve",
+      "lat": 53.473333,
+      "lon": 22.317778,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_%C5%81awski_Las_II",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-okiec",
+      "name": "Rezerwat przyrody Łokieć",
+      "category": "reserve",
+      "lat": 53.306944,
+      "lon": 21.765,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_%C5%81okie%C4%87",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-nietupa",
+      "name": "Rezerwat przyrody Nietupa",
+      "category": "reserve",
+      "lat": 53.186667,
+      "lon": 23.781111,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Nietupa",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-ostoja-bobrow-marycha",
+      "name": "Rezerwat przyrody Ostoja Bobrów Marycha",
+      "category": "reserve",
+      "lat": 54.150833,
+      "lon": 23.235833,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Ostoja_Bobr%C3%B3w_Marycha",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-rabinowka",
+      "name": "Rezerwat przyrody Rabinówka",
+      "category": "reserve",
+      "lat": 53.0425,
+      "lon": 23.670556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Rabin%C3%B3wka",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-ruda",
+      "name": "Rezerwat przyrody Ruda",
+      "category": "reserve",
+      "lat": 54.065556,
+      "lon": 22.680556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Ruda",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-rutka",
+      "name": "Rezerwat przyrody Rutka",
+      "category": "reserve",
+      "lat": 54.222778,
+      "lon": 22.845,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Rutka",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-rycerski-kierz",
+      "name": "Rezerwat przyrody Rycerski Kierz",
+      "category": "reserve",
+      "lat": 53.201667,
+      "lon": 22.053333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Rycerski_Kierz",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-sokole",
+      "name": "Rezerwat przyrody Sokóle",
+      "category": "reserve",
+      "lat": 52.42,
+      "lon": 23.080556,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Sok%C3%B3le",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-strabla",
+      "name": "Rezerwat przyrody Strabla",
+      "category": "reserve",
+      "lat": 52.901667,
+      "lon": 23.078611,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Strabla",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-szelagowka",
+      "name": "Rezerwat przyrody Szelągówka",
+      "category": "reserve",
+      "lat": 53.248889,
+      "lon": 22.673889,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Szel%C4%85g%C3%B3wka",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-uroczysko-dzierzbia",
+      "name": "Rezerwat przyrody Uroczysko Dzierzbia",
+      "category": "reserve",
+      "lat": 53.385833,
+      "lon": 22.108333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Uroczysko_Dzierzbia",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-wielki-dzia",
+      "name": "Rezerwat przyrody Wielki Dział",
+      "category": "reserve",
+      "lat": 53.101667,
+      "lon": 22.25,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Wielki_Dzia%C5%82",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/rezerwat-przyrody-witanowszczyzna",
+      "name": "Rezerwat przyrody Witanowszczyzna",
+      "category": "reserve",
+      "lat": 52.393889,
+      "lon": 23.233889,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rezerwat_przyrody_Witanowszczyzna",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/skansen-w-biaowiezy",
+      "name": "Skansen w Białowieży",
+      "category": "museum",
+      "lat": 52.702494,
+      "lon": 23.833281,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Skansen_w_Bia%C5%82owie%C5%BCy",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-wnetrz-paacowych-w-choroszczy",
+      "name": "Muzeum Wnętrz Pałacowych w Choroszczy",
+      "category": "museum",
+      "lat": 53.150219,
+      "lon": 22.977561,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Wn%C4%99trz_Pa%C5%82acowych_w_Choroszczy",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-rolnictwa-im-ks-krzysztofa-kluka-w-ciechanowcu",
+      "name": "Muzeum Rolnictwa im. ks. Krzysztofa Kluka w Ciechanowcu",
+      "category": "museum",
+      "lat": 52.682757,
+      "lon": 22.486694,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Rolnictwa_im._ks._Krzysztofa_Kluka_w_Ciechanowcu",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-ziemi-czyzewskiej-w-czyzewie",
+      "name": "Muzeum Ziemi Czyżewskiej w Czyżewie",
+      "category": "museum",
+      "lat": 52.799278,
+      "lon": 22.341611,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ziemi_Czy%C5%BCewskiej_w_Czy%C5%BCewie",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/nadbuzanski-park-historyczno-kulturowy-w-drohiczynie",
+      "name": "Nadbużański Park Historyczno-Kulturowy w Drohiczynie",
+      "category": "museum",
+      "lat": 52.40195,
+      "lon": 22.65776,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Nadbu%C5%BCa%C5%84ski_Park_Historyczno-Kulturowy_w_Drohiczynie",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-przyrody-w-drozdowie",
+      "name": "Muzeum Przyrody w Drozdowie",
+      "category": "museum",
+      "lat": 53.151944,
+      "lon": 22.17026,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Przyrody_w_Drozdowie",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-regionalne-w-lipsku",
+      "name": "Muzeum Regionalne w Lipsku",
+      "category": "museum",
+      "lat": 53.731832,
+      "lon": 23.402939,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Regionalne_w_Lipsku",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-diecezjalne-w-omzy",
+      "name": "Muzeum Diecezjalne w Łomży",
+      "category": "museum",
+      "lat": 53.176058,
+      "lon": 22.079129,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Diecezjalne_w_%C5%81om%C5%BCy",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-ponocno-mazowieckie-w-omzy",
+      "name": "Muzeum Północno-Mazowieckie w Łomży",
+      "category": "museum",
+      "lat": 53.177537,
+      "lon": 22.081234,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_P%C3%B3%C5%82nocno-Mazowieckie_w_%C5%81om%C5%BCy",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-w-mielniku",
+      "name": "Muzeum w Mielniku",
+      "category": "museum",
+      "lat": 52.329106,
+      "lon": 23.047672,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_w_Mielniku",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-i-osrodek-kultury-biaoruskiej-w-hajnowce",
+      "name": "Muzeum i Ośrodek Kultury Białoruskiej w Hajnówce",
+      "category": "museum",
+      "lat": 52.737832,
+      "lon": 23.586518,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_i_O%C5%9Brodek_Kultury_Bia%C5%82oruskiej_w_Hajn%C3%B3wce",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-ziemi-sejnenskiej",
+      "name": "Muzeum Ziemi Sejneńskiej",
+      "category": "museum",
+      "lat": 54.106111,
+      "lon": 23.347222,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ziemi_Sejne%C5%84skiej",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/osada-jacwiesko-pruska-w-oszkiniach",
+      "name": "Osada jaćwiesko-pruska w Oszkiniach",
+      "category": "museum",
+      "lat": 54.223714,
+      "lon": 23.198516,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Osada_ja%C4%87wiesko-pruska_w_Oszkiniach",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/podlaskie-muzeum-kultury-ludowej",
+      "name": "Podlaskie Muzeum Kultury Ludowej",
+      "category": "museum",
+      "lat": 53.175556,
+      "lon": 23.149167,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Podlaskie_Muzeum_Kultury_Ludowej",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/skansen-w-punsku",
+      "name": "Skansen w Puńsku",
+      "category": "museum",
+      "lat": 54.245179,
+      "lon": 23.193647,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Skansen_w_Pu%C5%84sku",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-kultury-materialnej-backauszczyna-w-ryboach",
+      "name": "Muzeum Kultury Materialnej „Baćkauszczyna” w Rybołach",
+      "category": "museum",
+      "lat": 52.935472,
+      "lon": 23.264639,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Kultury_Materialnej_%E2%80%9EBa%C4%87kauszczyna%E2%80%9D_w_Rybo%C5%82ach",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-regionalne-w-siemiatyczach",
+      "name": "Muzeum Regionalne w Siemiatyczach",
+      "category": "museum",
+      "lat": 52.4229,
+      "lon": 22.8652,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Regionalne_w_Siemiatyczach",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-ziemi-sokolskiej",
+      "name": "Muzeum Ziemi Sokólskiej",
+      "category": "museum",
+      "lat": 53.40618,
+      "lon": 23.49615,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ziemi_Sok%C3%B3lskiej",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/izba-pamieci-ks-jerzego-popieuszki-w-suchowoli",
+      "name": "Izba Pamięci ks. Jerzego Popiełuszki w Suchowoli",
+      "category": "museum",
+      "lat": 53.576667,
+      "lon": 23.101667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Izba_Pami%C4%99ci_ks._Jerzego_Popie%C5%82uszki_w_Suchowoli",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-ikon-w-supraslu",
+      "name": "Muzeum Ikon w Supraślu",
+      "category": "museum",
+      "lat": 53.211111,
+      "lon": 23.337944,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ikon_w_Supra%C5%9Blu",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-historii-i-tradycji-zonierzy-suwalszczyzny-w-suwakach",
+      "name": "Muzeum Historii i Tradycji Żołnierzy Suwalszczyzny w Suwałkach",
+      "category": "museum",
+      "lat": 54.085167,
+      "lon": 22.929368,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Historii_i_Tradycji_%C5%BBo%C5%82nierzy_Suwalszczyzny_w_Suwa%C5%82kach",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-pozarnictwa-w-szczuczynie",
+      "name": "Muzeum Pożarnictwa w Szczuczynie",
+      "category": "museum",
+      "lat": 53.564158,
+      "lon": 22.284436,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Po%C5%BCarnictwa_w_Szczuczynie",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-w-tykocinie",
+      "name": "Muzeum w Tykocinie",
+      "category": "museum",
+      "lat": 53.205583,
+      "lon": 22.767138,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_w_Tykocinie",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-sprzetu-rolniczego-w-wojewodzinie",
+      "name": "Muzeum Sprzętu Rolniczego w Wojewodzinie",
+      "category": "museum",
+      "lat": 53.616667,
+      "lon": 22.45,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Sprz%C4%99tu_Rolniczego_w_Wojewodzinie",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/biaowieski-park-narodowy",
+      "name": "Białowieski Park Narodowy",
+      "category": "nature",
+      "lat": 52.7045,
+      "lon": 23.847,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bia%C5%82owieski_Park_Narodowy",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/biebrzanski-park-narodowy",
+      "name": "Biebrzański Park Narodowy",
+      "category": "nature",
+      "lat": 53.4728,
+      "lon": 22.646,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Biebrza%C5%84ski_Park_Narodowy",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/narwianski-park-narodowy",
+      "name": "Narwiański Park Narodowy",
+      "category": "nature",
+      "lat": 53.087,
+      "lon": 22.8045,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Narwia%C5%84ski_Park_Narodowy",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/wigierski-park-narodowy",
+      "name": "Wigierski Park Narodowy",
+      "category": "nature",
+      "lat": 54.0889,
+      "lon": 23.0303,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wigierski_Park_Narodowy",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/suwalski-park-krajobrazowy",
+      "name": "Suwalski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 54.2589,
+      "lon": 22.894,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Suwalski_Park_Krajobrazowy",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/park-krajobrazowy-puszczy-knyszynskiej",
+      "name": "Park Krajobrazowy Puszczy Knyszyńskiej",
+      "category": "nature",
+      "lat": 53.23,
+      "lon": 23.46,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Park_Krajobrazowy_Puszczy_Knyszy%C5%84skiej",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/omzynski-park-krajobrazowy-doliny-narwi",
+      "name": "Łomżyński Park Krajobrazowy Doliny Narwi",
+      "category": "nature",
+      "lat": 53.151,
+      "lon": 22.171,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/%C5%81om%C5%BCy%C5%84ski_Park_Krajobrazowy_Doliny_Narwi",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/puszcza-biaowieska",
+      "name": "Puszcza Białowieska",
+      "category": "nature",
+      "lat": 52.73,
+      "lon": 23.85,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Puszcza_Bia%C5%82owieska",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/puszcza-augustowska",
+      "name": "Puszcza Augustowska",
+      "category": "nature",
+      "lat": 53.93,
+      "lon": 23.22,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Puszcza_Augustowska",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/silvarium-w-poczopku",
+      "name": "Silvarium w Poczopku",
+      "category": "nature",
+      "lat": 53.238,
+      "lon": 23.618,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Silvarium_w_Poczopku",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/kadka-sliwnowaniewo",
+      "name": "Kładka Śliwno–Waniewo",
+      "category": "nature",
+      "lat": 53.10475,
+      "lon": 22.79682,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/K%C5%82adka_%C5%9Aliwno-Waniewo",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/gora-cisowa",
+      "name": "Góra Cisowa",
+      "category": "nature",
+      "lat": 54.2575,
+      "lon": 22.898,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/G%C3%B3ra_Cisowa",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/paac-branickich-w-biaymstoku",
+      "name": "Pałac Branickich w Białymstoku",
+      "category": "castle",
+      "lat": 53.13043,
+      "lon": 23.16413,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_Branickich_w_Bia%C5%82ymstoku",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/zamek-w-tykocinie",
+      "name": "Zamek w Tykocinie",
+      "category": "castle",
+      "lat": 53.212386,
+      "lon": 22.771644,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Tykocinie",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/paac-buchholtzow-w-supraslu",
+      "name": "Pałac Buchholtzów w Supraślu",
+      "category": "castle",
+      "lat": 53.2118,
+      "lon": 23.3372,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_Buchholtz%C3%B3w_w_Supra%C5%9Blu",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/ruiny-paacu-paca-w-dowspudzie",
+      "name": "Ruiny Pałacu Paca w Dowspudzie",
+      "category": "ruins",
+      "lat": 53.981563,
+      "lon": 22.805721,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_Paca_w_Dowspudzie",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/gora-zamkowa-w-mielniku-ruiny-koscioa-zamkowego",
+      "name": "Góra Zamkowa w Mielniku – ruiny kościoła zamkowego",
+      "category": "ruins",
+      "lat": 52.330664,
+      "lon": 23.042319,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/G%C3%B3ra_Zamkowa_w_Mielniku",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/twierdza-osowiec",
+      "name": "Twierdza Osowiec",
+      "category": "historic",
+      "lat": 53.473611,
+      "lon": 22.659167,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Twierdza_Osowiec",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/pomnik-bitwy-pod-wizna-gora-strekowa",
+      "name": "Pomnik bitwy pod Wizną – Góra Strękowa",
+      "category": "historic",
+      "lat": 53.2092,
+      "lon": 22.4941,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bitwa_pod_Wizn%C4%85",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/monaster-zwiastowania-przenajswietszej-bogurodzicy-w-supraslu",
+      "name": "Monaster Zwiastowania Przenajświętszej Bogurodzicy w Supraślu",
+      "category": "historic",
+      "lat": 53.2107,
+      "lon": 23.3389,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Monaster_Zwiastowania_Przenaj%C5%9Bwi%C4%99tszej_Bogurodzicy_i_%C5%9Bw._Jana_Teologa_w_Supra%C5%9Blu",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/swieta-gora-grabarka",
+      "name": "Święta Góra Grabarka",
+      "category": "historic",
+      "lat": 52.416815,
+      "lon": 23.00572,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Grabarka-Klasztor",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/meczet-w-kruszynianach",
+      "name": "Meczet w Kruszynianach",
+      "category": "historic",
+      "lat": 53.177778,
+      "lon": 23.812778,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Meczet_w_Kruszynianach",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/meczet-w-bohonikach",
+      "name": "Meczet w Bohonikach",
+      "category": "historic",
+      "lat": 53.390833,
+      "lon": 23.591667,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Meczet_w_Bohonikach",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/pokamedulski-klasztor-w-wigrach",
+      "name": "Pokamedulski klasztor w Wigrach",
+      "category": "historic",
+      "lat": 54.069102,
+      "lon": 23.085557,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Klasztor_Kamedu%C5%82%C3%B3w_w_Wigrach",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/kraina-otwartych-okiennic-trzescianka",
+      "name": "Kraina Otwartych Okiennic – Trześcianka",
+      "category": "historic",
+      "lat": 52.8335,
+      "lon": 23.3705,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kraina_Otwartych_Okiennic",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/bazylika-nawiedzenia-nmp-w-sejnach",
+      "name": "Bazylika Nawiedzenia NMP w Sejnach",
+      "category": "historic",
+      "lat": 54.108,
+      "lon": 23.348,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bazylika_Nawiedzenia_Naj%C5%9Bwi%C4%99tszej_Maryi_Panny_w_Sejnach",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/sobor-swietej-trojcy-w-hajnowce",
+      "name": "Sobór Świętej Trójcy w Hajnówce",
+      "category": "historic",
+      "lat": 52.7368,
+      "lon": 23.5765,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Sob%C3%B3r_%C5%9Awi%C4%99tej_Tr%C3%B3jcy_w_Hajn%C3%B3wce",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/sobor-sw-mikoaja-w-biaymstoku",
+      "name": "Sobór św. Mikołaja w Białymstoku",
+      "category": "historic",
+      "lat": 53.133,
+      "lon": 23.1569,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Sob%C3%B3r_%C5%9Bw._Miko%C5%82aja_w_Bia%C5%82ymstoku",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/bazylika-archikatedralna-wniebowziecia-nmp-w-biaymstoku",
+      "name": "Bazylika archikatedralna Wniebowzięcia NMP w Białymstoku",
+      "category": "historic",
+      "lat": 53.1324,
+      "lon": 23.1646,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bazylika_archikatedralna_Wniebowzi%C4%99cia_Naj%C5%9Bwi%C4%99tszej_Maryi_Panny_w_Bia%C5%82ymstoku",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/katedra-sw-michaa-archanioa-w-omzy",
+      "name": "Katedra św. Michała Archanioła w Łomży",
+      "category": "historic",
+      "lat": 53.1783,
+      "lon": 22.0802,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Katedra_%C5%9Bw._Micha%C5%82a_Archanio%C5%82a_w_%C5%81om%C5%BCy",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/gora-zamkowa-w-drohiczynie",
+      "name": "Góra Zamkowa w Drohiczynie",
+      "category": "historic",
+      "lat": 52.3968,
+      "lon": 22.6528,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/G%C3%B3ra_Zamkowa_w_Drohiczynie",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/kana-augustowski",
+      "name": "Kanał Augustowski",
+      "category": "water",
+      "lat": 53.8425,
+      "lon": 22.9805,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kana%C5%82_Augustowski",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/jezioro-wigry",
+      "name": "Jezioro Wigry",
+      "category": "water",
+      "lat": 54.035,
+      "lon": 23.075,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wigry_(jezioro)",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/jezioro-necko",
+      "name": "Jezioro Necko",
+      "category": "water",
+      "lat": 53.858,
+      "lon": 22.9715,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Necko",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/jezioro-biae-augustowskie",
+      "name": "Jezioro Białe Augustowskie",
+      "category": "water",
+      "lat": 53.860972,
+      "lon": 23.066278,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bia%C5%82e_Augustowskie",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/jezioro-sajno",
+      "name": "Jezioro Sajno",
+      "category": "water",
+      "lat": 53.815,
+      "lon": 22.983333,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Sajno",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/jezioro-serwy",
+      "name": "Jezioro Serwy",
+      "category": "water",
+      "lat": 53.902,
+      "lon": 23.165,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Serwy_(jezioro)",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/jezioro-rajgrodzkie",
+      "name": "Jezioro Rajgrodzkie",
+      "category": "water",
+      "lat": 53.726,
+      "lon": 22.694,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_Rajgrodzkie",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/zalew-siemianowka",
+      "name": "Zalew Siemianówka",
+      "category": "water",
+      "lat": 52.95,
+      "lon": 23.825,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zbiornik_Siemian%C3%B3wka",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-pamieci-sybiru",
+      "name": "Muzeum Pamięci Sybiru",
+      "category": "museum",
+      "lat": 53.143581,
+      "lon": 23.174739,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Pami%C4%99ci_Sybiru",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-wojska-w-biaymstoku",
+      "name": "Muzeum Wojska w Białymstoku",
+      "category": "museum",
+      "lat": 53.132139,
+      "lon": 23.166523,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Wojska_w_Bia%C5%82ymstoku",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-okregowe-w-suwakach",
+      "name": "Muzeum Okręgowe w Suwałkach",
+      "category": "museum",
+      "lat": 54.104314,
+      "lon": 22.927558,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Okr%C4%99gowe_w_Suwa%C5%82kach",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-im-marii-konopnickiej-w-suwakach",
+      "name": "Muzeum im. Marii Konopnickiej w Suwałkach",
+      "category": "museum",
+      "lat": 54.1011,
+      "lon": 22.9295,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_im._Marii_Konopnickiej_w_Suwa%C5%82kach",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-wigier-w-starym-folwarku",
+      "name": "Muzeum Wigier w Starym Folwarku",
+      "category": "museum",
+      "lat": 54.0742,
+      "lon": 23.0728,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Wigier",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/muzeum-kanau-augustowskiego",
+      "name": "Muzeum Kanału Augustowskiego",
+      "category": "museum",
+      "lat": 53.8457,
+      "lon": 22.9818,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Kana%C5%82u_Augustowskiego",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/centrum-im-ludwika-zamenhofa-w-biaymstoku",
+      "name": "Centrum im. Ludwika Zamenhofa w Białymstoku",
+      "category": "museum",
+      "lat": 53.1343,
+      "lon": 23.1648,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Centrum_im._Ludwika_Zamenhofa_w_Bia%C5%82ymstoku",
+      "region": "podlaskie"
+    },
+    {
+      "id": "podlaskie/ratusz-w-biaymstoku-muzeum-podlaskie",
+      "name": "Ratusz w Białymstoku – Muzeum Podlaskie",
+      "category": "museum",
+      "lat": 53.1325,
+      "lon": 23.1596,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ratusz_w_Bia%C5%82ymstoku",
+      "region": "podlaskie"
     }
   ],
-  "count": 1294
+  "count": 1405
 }
