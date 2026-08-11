@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1031';
+  const APP_VERSION = 'v1032';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1031';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1032';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;
@@ -536,22 +536,35 @@
     if (!attractionPreviewButton || !attractionPreviewCount) return;
     const available = Number.isInteger(count) && count >= 0 && osmEnabled && currentMapMode === 'all';
     attractionPreviewCount.textContent = available ? String(count) : '—';
-    attractionPreviewButton.disabled = !available;
+    // v1032: przycisk zawsze daje się otworzyć na głównej mapie. Gdy GPS jeszcze
+    // nie ma pozycji, okno pokaże czytelny komunikat zamiast wyglądać jak zepsute.
+    attractionPreviewButton.disabled = currentMapMode !== 'all';
     attractionPreviewButton.classList.toggle('has-attractions', available && count > 0);
     attractionPreviewButton.setAttribute(
       'aria-label',
       available
         ? `Podgląd atrakcji: ${count}. Otwórz listę atrakcji w promieniu ${formatDistance(getProximityRadiusMeters())}.`
-        : 'Podgląd atrakcji. Czekam na lokalizację GPS.'
+        : 'Podgląd atrakcji. Otwórz okno podglądu.'
     );
     attractionPreviewButton.title = available
       ? `Atrakcje do ${formatDistance(getProximityRadiusMeters())} od Ciebie: ${count}`
-      : 'Czekam na lokalizację GPS';
+      : 'Otwórz podgląd atrakcji';
   }
 
   function renderAttractionPreviewList() {
     if (!attractionPreviewList || !attractionPreviewSummary) return;
     const radius = getProximityRadiusMeters();
+
+    if (!lastMonitorPosition?.coords) {
+      attractionPreviewSummary.textContent = `Promień: ${formatDistance(radius)} · czekam na GPS`;
+      attractionPreviewList.innerHTML = `
+        <div class="attraction-preview-empty">
+          Ustalam Twoją aktualną pozycję. Gdy GPS ją poda, tutaj pojawią się atrakcje znajdujące się w wybranym promieniu.
+        </div>
+      `;
+      return;
+    }
+
     attractionPreviewSummary.textContent = `Promień: ${formatDistance(radius)} · znaleziono: ${attractionPreviewItems.length}`;
 
     if (!attractionPreviewItems.length) {
@@ -620,9 +633,10 @@
   }
 
   function showAttractionPreview() {
-    if (!attractionPreviewOverlay || attractionPreviewButton?.disabled) return;
-    renderAttractionPreviewList();
+    if (!attractionPreviewOverlay || currentMapMode !== 'all') return;
     attractionPreviewOverlay.hidden = false;
+    renderAttractionPreviewList();
+    updateAttractionPreview(lastMonitorPosition).catch(() => {});
     attractionPreviewClose?.focus({ preventScroll: true });
   }
 
@@ -2143,6 +2157,12 @@
   attractionPreviewClose?.addEventListener('click', hideAttractionPreview);
   attractionPreviewOverlay?.addEventListener('click', (event) => {
     if (event.target === attractionPreviewOverlay) hideAttractionPreview();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && attractionPreviewOverlay && !attractionPreviewOverlay.hidden) {
+      hideAttractionPreview();
+      attractionPreviewButton?.focus({ preventScroll: true });
+    }
   });
   attractionPreviewList?.addEventListener('click', (event) => {
     const button = event.target.closest('[data-preview-route-id]');

@@ -2565,4 +2565,311 @@ button {
     top: max(172px, calc(166px + var(--safe-top)));
   }
 }
-\n\n/* v1031 — licznik i lista atrakcji w bieżącym promieniu alertu. */\n.map-top-panel .attraction-preview-button {\n  position: static;\n  flex: 0 0 auto;\n  min-height: 38px;\n  height: 38px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 6px;\n  padding: 0 10px;\n  border: 1px solid rgba(25, 68, 39, 0.34);\n  border-radius: 10px;\n  background: rgba(255, 255, 255, 0.76);\n  color: #17331f;\n  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.18);\n  font-family: Arial, Helvetica, sans-serif;\n  font-size: 10px;\n  font-weight: 800;\n  line-height: 1.05;\n  white-space: nowrap;\n  cursor: pointer;\n}\n\n.map-top-panel .attraction-preview-button strong {\n  min-width: 24px;\n  padding: 4px 7px;\n  border-radius: 999px;\n  background: rgba(22, 53, 31, 0.10);\n  color: #17331f;\n  font-size: 12px;\n  text-align: center;\n}\n\n.map-top-panel .attraction-preview-button.has-attractions {\n  border-color: rgba(16, 112, 46, 0.65);\n  background: rgba(229, 250, 234, 0.92);\n}\n\n.map-top-panel .attraction-preview-button.has-attractions strong {\n  background: #218a46;\n  color: #fff;\n}\n\n.map-top-panel .attraction-preview-button:disabled {\n  cursor: default;\n  opacity: 0.62;\n}\n\n.attraction-preview-overlay {\n  position: absolute;\n  z-index: 1450;\n  inset: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  padding: max(88px, calc(82px + var(--safe-top))) 14px max(14px, var(--safe-bottom));\n  background: rgba(11, 20, 14, 0.28);\n  backdrop-filter: blur(2px);\n  -webkit-backdrop-filter: blur(2px);\n}\n\n.attraction-preview-overlay[hidden] {\n  display: none !important;\n}\n\n.attraction-preview-panel {\n  width: min(680px, 100%);\n  max-height: min(72vh, 680px);\n  display: flex;\n  flex-direction: column;\n  overflow: hidden;\n  border: 1px solid rgba(255, 255, 255, 0.72);\n  border-radius: 18px;\n  background: rgba(249, 247, 238, 0.97);\n  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.34);\n  color: #16261b;\n  font-family: Arial, Helvetica, sans-serif;\n}\n\n.attraction-preview-head {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n  gap: 12px;\n  padding: 12px 14px;\n  border-bottom: 1px solid rgba(25, 55, 33, 0.15);\n  background: rgba(232, 241, 229, 0.96);\n}\n\n.attraction-preview-head > div {\n  min-width: 0;\n  display: grid;\n  gap: 3px;\n}\n\n.attraction-preview-head strong {\n  font-size: 14px;\n  letter-spacing: .04em;\n}\n\n.attraction-preview-head span {\n  font-size: 11px;\n  color: #45604c;\n}\n\n.attraction-preview-close {\n  flex: 0 0 36px;\n  width: 36px;\n  height: 36px;\n  border: 1px solid rgba(30, 57, 36, 0.22);\n  border-radius: 10px;\n  background: #fff;\n  color: #17331f;\n  font-size: 24px;\n  line-height: 1;\n  cursor: pointer;\n}\n\n.attraction-preview-list {\n  overflow-y: auto;\n  overscroll-behavior: contain;\n  padding: 8px;\n}\n\n.attraction-preview-row {\n  display: grid;\n  grid-template-columns: 38px minmax(0, 1fr) auto auto;\n  align-items: center;\n  gap: 9px;\n  padding: 8px 7px;\n  border-bottom: 1px solid rgba(29, 59, 37, 0.10);\n}\n\n.attraction-preview-row:last-child {\n  border-bottom: 0;\n}\n\n.attraction-preview-icon {\n  width: 34px;\n  height: 34px;\n  object-fit: contain;\n}\n\n.attraction-preview-copy {\n  min-width: 0;\n  display: grid;\n  gap: 2px;\n}\n\n.attraction-preview-copy strong {\n  overflow: hidden;\n  color: #17291d;\n  font-size: 12px;\n  line-height: 1.15;\n  text-overflow: ellipsis;\n  white-space: nowrap;\n}\n\n.attraction-preview-copy span {\n  color: #607064;\n  font-size: 10px;\n}\n\n.attraction-preview-distance {\n  min-width: 58px;\n  color: #24482f;\n  font-size: 11px;\n  font-weight: 800;\n  text-align: right;\n  white-space: nowrap;\n}\n\n.attraction-preview-route {\n  min-height: 34px;\n  padding: 0 10px;\n  border: 1px solid #176b38;\n  border-radius: 9px;\n  background: #218a46;\n  color: #fff;\n  font-size: 10px;\n  font-weight: 900;\n  letter-spacing: .03em;\n  cursor: pointer;\n}\n\n.attraction-preview-empty {\n  padding: 26px 18px;\n  color: #526359;\n  font-size: 12px;\n  line-height: 1.4;\n  text-align: center;\n}\n\n@media (max-width: 760px) {\n  .map-toolbar-row {\n    grid-template-columns: auto minmax(0, 1fr) auto;\n  }\n\n  .map-top-panel .attraction-preview-button {\n    grid-column: 3;\n    grid-row: 1;\n    justify-self: end;\n    min-height: 35px;\n    height: 35px;\n    padding: 0 7px;\n    gap: 4px;\n    font-size: 8.5px;\n  }\n\n  .map-top-panel .attraction-preview-button span {\n    display: inline-block;\n    max-width: 86px;\n    white-space: normal;\n    text-align: right;\n  }\n\n  .map-top-panel .attraction-preview-button strong {\n    min-width: 22px;\n    padding: 3px 6px;\n    font-size: 11px;\n  }\n\n  .attraction-preview-overlay {\n    align-items: flex-end;\n    padding: max(178px, calc(172px + var(--safe-top))) 7px max(7px, var(--safe-bottom));\n  }\n\n  .attraction-preview-panel {\n    max-height: 68vh;\n    border-radius: 16px 16px 10px 10px;\n  }\n\n  .attraction-preview-head {\n    padding: 10px 11px;\n  }\n\n  .attraction-preview-row {\n    grid-template-columns: 32px minmax(0, 1fr) auto;\n    gap: 7px;\n    padding: 7px 5px;\n  }\n\n  .attraction-preview-icon {\n    width: 30px;\n    height: 30px;\n  }\n\n  .attraction-preview-distance {\n    grid-column: 3;\n    grid-row: 1;\n  }\n\n  .attraction-preview-route {\n    grid-column: 2 / 4;\n    min-height: 32px;\n    width: 100%;\n  }\n}\n\n@media (max-width: 390px) {\n  .map-top-panel .attraction-preview-button span {\n    max-width: 70px;\n    font-size: 7.5px;\n  }\n\n  .map-top-panel .attraction-preview-button strong {\n    font-size: 10px;\n  }\n}\n
+
+/* v1032 — poprawiony, estetyczny podgląd atrakcji. */
+.map-top-panel .attraction-preview-button {
+  position: static;
+  flex: 0 0 auto;
+  min-height: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 0 8px 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 12px;
+  background: rgba(25, 88, 48, 0.88);
+  color: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.24);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: .025em;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+}
+
+.map-top-panel .attraction-preview-button:hover,
+.map-top-panel .attraction-preview-button:focus-visible {
+  background: rgba(18, 108, 53, 0.95);
+  box-shadow: 0 4px 13px rgba(0, 0, 0, 0.30);
+}
+
+.map-top-panel .attraction-preview-button:active {
+  transform: translateY(1px);
+}
+
+.attraction-preview-button-icon {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  fill: currentColor;
+}
+
+.attraction-preview-button-label {
+  display: inline-block;
+}
+
+.map-top-panel .attraction-preview-button strong {
+  display: inline-grid;
+  place-items: center;
+  min-width: 30px;
+  height: 28px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #17552e;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+  box-shadow: inset 0 0 0 1px rgba(22, 70, 39, 0.12);
+}
+
+.map-top-panel .attraction-preview-button.has-attractions {
+  background: rgba(20, 112, 55, 0.94);
+}
+
+.map-top-panel .attraction-preview-button.has-attractions strong {
+  background: #fff;
+  color: #11652f;
+}
+
+.map-top-panel .attraction-preview-button:disabled {
+  cursor: default;
+  opacity: .55;
+}
+
+/* Okno musi leżeć ponad mapą, panelem i kontrolkami Leaflet. */
+.attraction-preview-overlay {
+  position: fixed;
+  z-index: 5000;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(14px, var(--safe-top)) 14px max(14px, var(--safe-bottom));
+  background: rgba(8, 18, 11, 0.48);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+.attraction-preview-overlay[hidden] {
+  display: none !important;
+}
+
+.attraction-preview-panel {
+  width: min(720px, calc(100vw - 28px));
+  max-height: min(78vh, 720px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.86);
+  border-radius: 18px;
+  background: rgba(250, 249, 243, 0.98);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.42);
+  color: #16261b;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.attraction-preview-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 14px;
+  border-bottom: 1px solid rgba(25, 55, 33, 0.16);
+  background: rgba(226, 241, 228, 0.98);
+}
+
+.attraction-preview-head > div {
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+.attraction-preview-head strong {
+  color: #173b24;
+  font-size: 15px;
+  letter-spacing: .04em;
+}
+
+.attraction-preview-head span {
+  color: #45604c;
+  font-size: 11px;
+}
+
+.attraction-preview-close {
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(30, 57, 36, 0.24);
+  border-radius: 10px;
+  background: #fff;
+  color: #17331f;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.attraction-preview-list {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 8px 10px 10px;
+}
+
+.attraction-preview-row {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) 70px auto;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 7px;
+  border-bottom: 1px solid rgba(29, 59, 37, 0.11);
+}
+
+.attraction-preview-row:last-child {
+  border-bottom: 0;
+}
+
+.attraction-preview-icon {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+
+.attraction-preview-copy {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+}
+
+.attraction-preview-copy strong {
+  overflow: hidden;
+  color: #17291d;
+  font-size: 13px;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.attraction-preview-copy span {
+  color: #607064;
+  font-size: 10px;
+}
+
+.attraction-preview-distance {
+  color: #24482f;
+  font-size: 12px;
+  font-weight: 900;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.attraction-preview-route {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 1px solid #176b38;
+  border-radius: 9px;
+  background: #218a46;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .03em;
+  cursor: pointer;
+}
+
+.attraction-preview-empty {
+  padding: 30px 20px;
+  color: #526359;
+  font-size: 12px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .map-toolbar-row {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .map-top-panel .attraction-preview-button {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    min-height: 35px;
+    height: 35px;
+    gap: 5px;
+    padding: 0 5px 0 7px;
+    border-radius: 10px;
+  }
+
+  .attraction-preview-button-icon {
+    width: 17px;
+    height: 17px;
+    flex-basis: 17px;
+  }
+
+  .attraction-preview-button-label {
+    max-width: 72px;
+    font-size: 8.5px;
+    line-height: 1.05;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .map-top-panel .attraction-preview-button strong {
+    min-width: 25px;
+    height: 25px;
+    padding: 0 5px;
+    font-size: 11px;
+  }
+
+  .attraction-preview-overlay {
+    align-items: flex-end;
+    padding: max(8px, var(--safe-top)) 7px max(7px, var(--safe-bottom));
+  }
+
+  .attraction-preview-panel {
+    width: 100%;
+    max-height: 78vh;
+    border-radius: 17px 17px 10px 10px;
+  }
+
+  .attraction-preview-head {
+    padding: 10px 11px;
+  }
+
+  .attraction-preview-row {
+    grid-template-columns: 34px minmax(0, 1fr) auto;
+    gap: 7px;
+    padding: 8px 5px;
+  }
+
+  .attraction-preview-icon {
+    width: 31px;
+    height: 31px;
+  }
+
+  .attraction-preview-distance {
+    grid-column: 3;
+    grid-row: 1;
+    font-size: 11px;
+  }
+
+  .attraction-preview-route {
+    grid-column: 2 / 4;
+    min-height: 33px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  .attraction-preview-button-label {
+    display: none;
+  }
+
+  .map-top-panel .attraction-preview-button {
+    padding-left: 6px;
+  }
+}
