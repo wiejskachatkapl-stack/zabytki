@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1048';
+  const APP_VERSION = 'v1049';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1048';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1049';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const ROUTE_MODE_KEY = 'tourmap_route_mode_v1';
   const ROUTE_MODES = {
@@ -36,6 +36,13 @@
   const NEARBY_FETCH_MIN_RADIUS = 12000;
   const NEARBY_REFRESH_DISTANCE = 2500;
   const NEARBY_REFRESH_TIME = 8 * 60 * 1000;
+  // v1049: lekki indeks przestrzenny ogranicza liczbę punktów sprawdzanych przez telefon.
+  const SPATIAL_CELL_DEGREES = 0.25;
+  const PREVIEW_MIN_MOVE_METERS = 250;
+  const PREVIEW_MIN_INTERVAL_MS = 30 * 1000;
+  const ROUTE_SAMPLE_STEP_METERS = 450;
+  const CLUSTER_MAX_ZOOM = 8;
+  const CLUSTER_CELL_PX = 76;
   
   const CATEGORY_INFO = {
     castle: { label: 'Zamek', icon: 'assets/markers/castle.png?v=1007' },
@@ -176,6 +183,10 @@
   let attractionDatabase = [];
   let attractionDatabaseLoaded = false;
   let attractionDatabasePromise = null;
+  let attractionSpatialIndex = new Map();
+  let lastPreviewPosition = null;
+  let lastPreviewUpdateAt = 0;
+  const externalIconCache = new Map();
 
   let proximityWatchId = null;
   let proximityActive = false;
@@ -286,8 +297,10 @@
 
 
   function createExternalCategoryIcon(category) {
-    const info = CATEGORY_INFO[category] || CATEGORY_INFO.castle;
-    return L.icon({
+    const key = CATEGORY_INFO[category] ? category : 'castle';
+    if (externalIconCache.has(key)) return externalIconCache.get(key);
+    const info = CATEGORY_INFO[key];
+    const icon = L.icon({
       iconUrl: info.icon,
       iconSize: [40, 40],
       iconAnchor: [20, 38],
@@ -295,6 +308,8 @@
       tooltipAnchor: [0, -31],
       className: 'tourism-marker-icon osm-marker-icon'
     });
+    externalIconCache.set(key, icon);
+    return icon;
   }
 
   function loadAlertHistory() {
@@ -451,6 +466,39 @@
     };
   }
 
+  function spatialCellKey(lat, lon) {
+    return `${Math.floor(Number(lat) / SPATIAL_CELL_DEGREES)}:${Math.floor(Number(lon) / SPATIAL_CELL_DEGREES)}`;
+  }
+
+  function rebuildAttractionSpatialIndex() {
+    attractionSpatialIndex = new Map();
+    attractionDatabase.forEach((item) => {
+      const key = spatialCellKey(item.lat, item.lon);
+      if (!attractionSpatialIndex.has(key)) attractionSpatialIndex.set(key, []);
+      attractionSpatialIndex.get(key).push(item);
+    });
+  }
+
+  function getIndexedAttractionsForBox(south, west, north, east) {
+    if (!attractionSpatialIndex.size) return attractionDatabase;
+    const minLatCell = Math.floor(Number(south) / SPATIAL_CELL_DEGREES);
+    const maxLatCell = Math.floor(Number(north) / SPATIAL_CELL_DEGREES);
+    const minLonCell = Math.floor(Number(west) / SPATIAL_CELL_DEGREES);
+    const maxLonCell = Math.floor(Number(east) / SPATIAL_CELL_DEGREES);
+    const result = [];
+    for (let latCell = minLatCell; latCell <= maxLatCell; latCell += 1) {
+      for (let lonCell = minLonCell; lonCell <= maxLonCell; lonCell += 1) {
+        const items = attractionSpatialIndex.get(`${latCell}:${lonCell}`);
+        if (items?.length) result.push(...items);
+      }
+    }
+    return result;
+  }
+
+  function getSavedOsmIdSet() {
+    return new Set(loadPoints().map((point) => String(point.osmId || '')).filter(Boolean));
+  }
+
   function rebuildAttractionDatabase(baseItems = null) {
     const merged = new Map();
     const base = Array.isArray(baseItems) ? baseItems : attractionDatabase.filter((item) => !item.userAdded);
@@ -467,6 +515,7 @@
 
     attractionDatabase = [...merged.values()];
     attractionDatabaseLoaded = true;
+    rebuildAttractionSpatialIndex();
     return attractionDatabase;
   }
 
@@ -477,7 +526,7 @@
     attractionDatabasePromise = (async () => {
       let baseItems = [];
       try {
-        const response = await fetch(ATTRACTION_DB_URL, { cache: 'no-store', headers: { Accept: 'application/json' } });
+        const response = await fetch(ATTRACTION_DB_URL, { cache: 'default', headers: { Accept: 'application/json' } });
         if (!response.ok) throw new Error(`Baza HTTP ${response.status}`);
         const data = await response.json();
         baseItems = Array.isArray(data) ? data : (Array.isArray(data?.attractions) ? data.attractions : []);
@@ -571,14 +620,29 @@
   }
 
   async function getAttractionsInBounds(bounds) {
-    const attractions = await getDatabaseAttractions();
-    if (!bounds) return attractions;
-    return attractions.filter((item) => bounds.contains([item.lat, item.lon]));
+    await getDatabaseAttractions();
+    if (!bounds) return attractionDatabase;
+    const south = bounds.getSouth();
+    const west = bounds.getWest();
+    const north = bounds.getNorth();
+    const east = bounds.getEast();
+    return getIndexedAttractionsForBox(south, west, north, east)
+      .filter((item) => item.lat >= south && item.lat <= north && item.lon >= west && item.lon <= east);
   }
 
   async function getAttractionsNear(lat, lon, radius) {
-    const attractions = await getDatabaseAttractions();
-    return attractions.filter((item) => distanceMeters(lat, lon, item.lat, item.lon) <= radius);
+    await getDatabaseAttractions();
+    const radiusMeters = Math.max(0, Number(radius) || 0);
+    const latDelta = radiusMeters / 111320;
+    const lonScale = Math.max(0.2, Math.cos(Number(lat) * Math.PI / 180));
+    const lonDelta = radiusMeters / (111320 * lonScale);
+    const candidates = getIndexedAttractionsForBox(
+      Number(lat) - latDelta,
+      Number(lon) - lonDelta,
+      Number(lat) + latDelta,
+      Number(lon) + lonDelta
+    );
+    return candidates.filter((item) => distanceMeters(lat, lon, item.lat, item.lon) <= radiusMeters);
   }
 
   function formatPreviewDistanceKm(meters) {
@@ -665,9 +729,16 @@
       return;
     }
 
+    const now = Date.now();
+    const moved = lastPreviewPosition
+      ? distanceMeters(latitude, longitude, lastPreviewPosition.lat, lastPreviewPosition.lon)
+      : Infinity;
+    const overlayOpen = attractionPreviewOverlay && !attractionPreviewOverlay.hidden;
+    if (!overlayOpen && moved < PREVIEW_MIN_MOVE_METERS && now - lastPreviewUpdateAt < PREVIEW_MIN_INTERVAL_MS) return;
+
     try {
       const radius = getProximityRadiusMeters();
-      const attractions = await getDatabaseAttractions();
+      const attractions = await getAttractionsNear(latitude, longitude, radius);
       if (sequence !== attractionPreviewUpdateSequence) return;
 
       attractionPreviewItems = attractions
@@ -675,8 +746,9 @@
           attraction,
           distance: distanceMeters(latitude, longitude, Number(attraction.lat), Number(attraction.lon))
         }))
-        .filter((item) => item.distance <= radius)
         .sort((a, b) => a.distance - b.distance);
+      lastPreviewPosition = { lat: latitude, lon: longitude };
+      lastPreviewUpdateAt = now;
 
       setAttractionPreviewButton(attractionPreviewItems.length);
       if (attractionPreviewOverlay && !attractionPreviewOverlay.hidden) renderAttractionPreviewList();
@@ -760,9 +832,9 @@
     refreshMarkersForActiveFilter();
   }
 
-  function externalPopupHtml(attraction) {
+  function externalPopupHtml(attraction, savedOverride = null) {
     const info = CATEGORY_INFO[attraction.category] || CATEGORY_INFO.castle;
-    const saved = isOsmSaved(attraction.osmId);
+    const saved = savedOverride == null ? isOsmSaved(attraction.osmId) : Boolean(savedOverride);
     const sublabel =
       attraction.category === 'castle' && attraction.tags?.historic === 'manor'
         ? 'Pałac / dwór'
@@ -792,26 +864,112 @@
     `;
   }
 
+  function clusterAttractionsForCurrentZoom(attractions) {
+    if (!map || map.getZoom() > CLUSTER_MAX_ZOOM || attractions.length < 2) {
+      return attractions.map((attraction) => ({ type: 'attraction', key: String(attraction.osmId), attraction }));
+    }
+
+    const zoom = map.getZoom();
+    const groups = new Map();
+    attractions.forEach((attraction) => {
+      const projected = map.project([attraction.lat, attraction.lon], zoom);
+      const key = `${Math.floor(projected.x / CLUSTER_CELL_PX)}:${Math.floor(projected.y / CLUSTER_CELL_PX)}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(attraction);
+    });
+
+    const result = [];
+    groups.forEach((items, cellKey) => {
+      if (items.length === 1) {
+        const attraction = items[0];
+        result.push({ type: 'attraction', key: String(attraction.osmId), attraction });
+        return;
+      }
+      const lat = items.reduce((sum, item) => sum + Number(item.lat), 0) / items.length;
+      const lon = items.reduce((sum, item) => sum + Number(item.lon), 0) / items.length;
+      result.push({
+        type: 'cluster',
+        key: `cluster:${zoom}:${cellKey}`,
+        count: items.length,
+        lat,
+        lon,
+        items
+      });
+    });
+    return result;
+  }
+
+  function createClusterIcon(count) {
+    const size = count >= 100 ? 48 : count >= 20 ? 44 : 40;
+    return L.divIcon({
+      className: '',
+      iconSize: [size, size],
+      iconAnchor: [size / 2, size / 2],
+      html: `<div style="width:${size}px;height:${size}px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(25,91,169,.92);color:#fff;border:3px solid rgba(255,255,255,.95);box-shadow:0 2px 8px rgba(0,0,0,.35);font:bold ${count >= 100 ? 12 : 13}px system-ui,sans-serif;">${count}</div>`
+    });
+  }
+
   function renderExternalAttractions(attractions) {
     if (!map || !window.L) return;
     if (!externalLayer) externalLayer = L.layerGroup().addTo(map);
 
-    externalLayer.clearLayers();
-    osmMarkerById = new Map();
+    const savedIds = getSavedOsmIdSet();
+    const filtered = attractions.filter((attraction) =>
+      attraction?.osmId &&
+      !savedIds.has(String(attraction.osmId)) &&
+      attractionMatchesActiveFilter(attraction.category)
+    );
+    const renderItems = clusterAttractionsForCurrentZoom(filtered);
+    const desiredKeys = new Set(renderItems.map((item) => item.key));
 
-    attractions.forEach((attraction) => {
-      if (isOsmSaved(attraction.osmId)) return;
-      if (!attractionMatchesActiveFilter(attraction.category)) return;
+    // Grupy są bardzo lekkie, więc przy zmianie widoku odtwarzamy tylko je.
+    // Zwykłe markery są zachowywane i aktualizowane przyrostowo.
+    for (const [key, marker] of osmMarkerById.entries()) {
+      if (key.startsWith('cluster:')) {
+        externalLayer.removeLayer(marker);
+        osmMarkerById.delete(key);
+      }
+    }
 
-      const marker = L.marker([attraction.lat, attraction.lon], {
-        icon: createExternalCategoryIcon(attraction.category),
-        title: attraction.name,
-        riseOnHover: true,
-        opacity: 0.86
-      }).addTo(externalLayer);
+    for (const [key, marker] of osmMarkerById.entries()) {
+      if (!desiredKeys.has(key)) {
+        externalLayer.removeLayer(marker);
+        osmMarkerById.delete(key);
+      }
+    }
 
-      marker.bindPopup(externalPopupHtml(attraction), { maxWidth: 320, minWidth: 210 });
-      osmMarkerById.set(String(attraction.osmId), marker);
+    renderItems.forEach((item) => {
+      let marker = osmMarkerById.get(item.key);
+      if (item.type === 'cluster') {
+        if (!marker) {
+          marker = L.marker([item.lat, item.lon], {
+            icon: createClusterIcon(item.count),
+            title: `${item.count} atrakcji`,
+            riseOnHover: true
+          }).addTo(externalLayer);
+          marker.on('click', () => {
+            if (!map) return;
+            const latLngs = item.items.map((attraction) => [Number(attraction.lat), Number(attraction.lon)]);
+            const bounds = L.latLngBounds(latLngs);
+            const targetZoom = Math.min(CLUSTER_MAX_ZOOM + 1, map.getZoom() + 2);
+            if (bounds.isValid()) map.fitBounds(bounds, { padding: [30, 30], maxZoom: targetZoom, animate: true });
+          });
+          osmMarkerById.set(item.key, marker);
+        }
+        return;
+      }
+
+      const attraction = item.attraction;
+      if (!marker) {
+        marker = L.marker([attraction.lat, attraction.lon], {
+          icon: createExternalCategoryIcon(attraction.category),
+          title: attraction.name,
+          riseOnHover: true,
+          opacity: 0.86
+        }).addTo(externalLayer);
+        osmMarkerById.set(item.key, marker);
+      }
+      marker.bindPopup(externalPopupHtml(attraction, false), { maxWidth: 320, minWidth: 210 });
     });
   }
 
@@ -1064,16 +1222,56 @@
     return minimum;
   }
 
+  function simplifyRouteForAttractionSearch(routeCoordinates) {
+    if (!Array.isArray(routeCoordinates) || routeCoordinates.length <= 2) return routeCoordinates || [];
+    const result = [routeCoordinates[0]];
+    let last = routeCoordinates[0];
+    for (let index = 1; index < routeCoordinates.length - 1; index += 1) {
+      const current = routeCoordinates[index];
+      if (!Array.isArray(current) || !Array.isArray(last)) continue;
+      const moved = distanceMeters(Number(last[1]), Number(last[0]), Number(current[1]), Number(current[0]));
+      if (moved >= ROUTE_SAMPLE_STEP_METERS) {
+        result.push(current);
+        last = current;
+      }
+    }
+    result.push(routeCoordinates[routeCoordinates.length - 1]);
+    return result;
+  }
+
+  async function getRouteCandidateAttractions(routeCoordinates, radiusMeters) {
+    await getDatabaseAttractions();
+    const candidates = new Map();
+    const latDelta = radiusMeters / 111320;
+
+    routeCoordinates.forEach((coord) => {
+      if (!Array.isArray(coord) || coord.length < 2) return;
+      const lon = Number(coord[0]);
+      const lat = Number(coord[1]);
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
+      const lonDelta = radiusMeters / (111320 * Math.max(0.2, Math.cos(lat * Math.PI / 180)));
+      getIndexedAttractionsForBox(
+        lat - latDelta,
+        lon - lonDelta,
+        lat + latDelta,
+        lon + lonDelta
+      ).forEach((attraction) => candidates.set(String(attraction.osmId), attraction));
+    });
+
+    return [...candidates.values()];
+  }
+
   async function fetchRouteAttractions(routeCoordinates, radiusMeters = getProximityRadiusMeters()) {
     if (!Array.isArray(routeCoordinates) || routeCoordinates.length < 2) return [];
     const radius = Math.max(1000, Number(radiusMeters) || getProximityRadiusMeters());
-    const attractions = await getDatabaseAttractions();
+    const simplifiedRoute = simplifyRouteForAttractionSearch(routeCoordinates);
+    const attractions = await getRouteCandidateAttractions(simplifiedRoute, radius);
 
     return attractions
       .map((attraction) => ({
         ...attraction,
         routeDistanceMeters: routeDistanceToPointMeters(
-          routeCoordinates,
+          simplifiedRoute,
           Number(attraction.lat),
           Number(attraction.lon)
         )
@@ -1846,20 +2044,20 @@
     const radius = getProximityRadiusMeters();
     const { latitude, longitude } = position.coords;
 
-    const candidate = nearbyAttractions
-      .map((attraction) => ({
-        attraction,
-        distance: distanceMeters(latitude, longitude, attraction.lat, attraction.lon)
-      }))
-      .filter((item) => {
-        if (item.distance > radius) return false;
-        if (routeActive) return !routeAlertedIds.has(String(item.attraction.osmId));
-        return !wasAttractionAlertedRecently(item.attraction.osmId);
-      })
-      .sort((a, b) => a.distance - b.distance)[0];
+    let candidate = null;
+    let candidateDistance = Infinity;
+    for (const attraction of nearbyAttractions) {
+      if (routeActive && routeAlertedIds.has(String(attraction.osmId))) continue;
+      if (!routeActive && wasAttractionAlertedRecently(attraction.osmId)) continue;
+      const distance = distanceMeters(latitude, longitude, attraction.lat, attraction.lon);
+      if (distance <= radius && distance < candidateDistance) {
+        candidate = attraction;
+        candidateDistance = distance;
+      }
+    }
 
     if (candidate) {
-      showNearbyAttractionAlert(candidate.attraction, candidate.distance);
+      showNearbyAttractionAlert(candidate, candidateDistance);
     }
   }
 

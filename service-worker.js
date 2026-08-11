@@ -1,11 +1,11 @@
-const APP_VERSION = 'v1048';
+const APP_VERSION = 'v1049';
 const CACHE_NAME = `turystyczna-mapa-polski-${APP_VERSION}`;
 
 const APP_SHELL = [
   './',
   './index.html',
   './styles.css',
-  './app.js',
+  './app.js?v=1049',
   './manifest.webmanifest',
   './assets/bg-desktop.png',
   './assets/bg-mobile.png',
@@ -22,7 +22,7 @@ const APP_SHELL = [
   './assets/markers/reserve.png',
   './assets/markers/historic.png',
   './assets/markers/water.png',
-  './data/atrakcje-polska.json'
+  './data/atrakcje-polska.json?v=1049'
 ];
 
 self.addEventListener('install', (event) => {
@@ -50,12 +50,15 @@ self.addEventListener('fetch', (event) => {
   const requestUrl = new URL(event.request.url);
   if (requestUrl.origin !== self.location.origin) return;
 
+  // Dokument startowy sprawdzamy w sieci, aby nowa wersja PWA pojawiała się od razu.
   if (event.request.mode === 'navigate') {
     event.respondWith(
       fetch(event.request, { cache: 'no-store' })
         .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put('./index.html', copy));
+          if (response && response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put('./index.html', copy));
+          }
           return response;
         })
         .catch(() => caches.match('./index.html'))
@@ -63,15 +66,19 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
+  // v1049: pliki wersjonowane i grafiki są obsługiwane cache-first.
+  // Telefon nie pobiera i nie przetwarza ponownie tej samej dużej bazy przy każdym wejściu.
   event.respondWith(
-    fetch(event.request, { cache: 'no-store' })
-      .then((response) => {
-        if (response && response.ok) {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
-        }
-        return response;
+    caches.match(event.request)
+      .then((cached) => {
+        if (cached) return cached;
+        return fetch(event.request).then((response) => {
+          if (response && response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          }
+          return response;
+        });
       })
-      .catch(() => caches.match(event.request))
   );
 });
