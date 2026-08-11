@@ -1,7 +1,7 @@
 {
-  "version": "v1044",
+  "version": "v1045",
   "updatedAt": "2026-08-11",
-  "description": "Statyczna baza atrakcji Polski rozszerzona o szeroki zestaw atrakcji województwa zachodniopomorskiego.",
+  "description": "Statyczna baza atrakcji Polski rozszerzona o szeroki zestaw atrakcji województwa kujawsko-pomorskiego.",
   "attractions": [
     {
       "id": "base/palac-radziejowice",
@@ -16780,7 +16780,1907 @@
       "source": "Wikipedia / dane mapowe",
       "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_P%C4%99zinie",
       "region": "zachodniopomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/stare-miasto-w-toruniu",
+      "name": "Stare Miasto w Toruniu",
+      "category": "historic",
+      "lat": 53.0105,
+      "lon": 18.6049,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/ratusz-staromiejski-w-toruniu",
+      "name": "Ratusz Staromiejski w Toruniu",
+      "category": "historic",
+      "lat": 53.0107,
+      "lon": 18.6048,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/dom-mikoaja-kopernika-w-toruniu",
+      "name": "Dom Mikołaja Kopernika w Toruniu",
+      "category": "museum",
+      "lat": 53.0094,
+      "lon": 18.6041,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-torunskiego-piernika",
+      "name": "Muzeum Toruńskiego Piernika",
+      "category": "museum",
+      "lat": 53.0122,
+      "lon": 18.607,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/zywe-muzeum-piernika-w-toruniu",
+      "name": "Żywe Muzeum Piernika w Toruniu",
+      "category": "museum",
+      "lat": 53.0092,
+      "lon": 18.6032,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/planetarium-w-toruniu",
+      "name": "Planetarium w Toruniu",
+      "category": "museum",
+      "lat": 53.0117,
+      "lon": 18.6024,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-etnograficzne-w-toruniu",
+      "name": "Muzeum Etnograficzne w Toruniu",
+      "category": "museum",
+      "lat": 53.0143,
+      "lon": 18.6051,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-podroznikow-im-tonyego-halika",
+      "name": "Muzeum Podróżników im. Tony’ego Halika",
+      "category": "museum",
+      "lat": 53.0108,
+      "lon": 18.6029,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/centrum-nowoczesnosci-myn-wiedzy",
+      "name": "Centrum Nowoczesności Młyn Wiedzy",
+      "category": "museum",
+      "lat": 53.0227,
+      "lon": 18.6139,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/ruiny-zamku-krzyzackiego-w-toruniu",
+      "name": "Ruiny Zamku Krzyżackiego w Toruniu",
+      "category": "ruins",
+      "lat": 53.0097,
+      "lon": 18.6121,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/katedra-sw-janow-w-toruniu",
+      "name": "Katedra św. Janów w Toruniu",
+      "category": "historic",
+      "lat": 53.0094,
+      "lon": 18.6061,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/koscio-sw-jakuba-w-toruniu",
+      "name": "Kościół św. Jakuba w Toruniu",
+      "category": "historic",
+      "lat": 53.0116,
+      "lon": 18.6159,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/krzywa-wieza-w-toruniu",
+      "name": "Krzywa Wieża w Toruniu",
+      "category": "historic",
+      "lat": 53.0086,
+      "lon": 18.6006,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/dwor-artusa-w-toruniu",
+      "name": "Dwór Artusa w Toruniu",
+      "category": "historic",
+      "lat": 53.0104,
+      "lon": 18.6045,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/dom-eskenow-w-toruniu",
+      "name": "Dom Eskenów w Toruniu",
+      "category": "museum",
+      "lat": 53.0096,
+      "lon": 18.6084,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/brama-mostowa-w-toruniu",
+      "name": "Brama Mostowa w Toruniu",
+      "category": "historic",
+      "lat": 53.0079,
+      "lon": 18.6083,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/brama-klasztorna-w-toruniu",
+      "name": "Brama Klasztorna w Toruniu",
+      "category": "historic",
+      "lat": 53.0085,
+      "lon": 18.6019,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/brama-zeglarska-w-toruniu",
+      "name": "Brama Żeglarska w Toruniu",
+      "category": "historic",
+      "lat": 53.0084,
+      "lon": 18.6064,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/bulwar-filadelfijski-w-toruniu",
+      "name": "Bulwar Filadelfijski w Toruniu",
+      "category": "historic",
+      "lat": 53.0067,
+      "lon": 18.6065,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/fontanna-cosmopolis-w-toruniu",
+      "name": "Fontanna Cosmopolis w Toruniu",
+      "category": "historic",
+      "lat": 53.0126,
+      "lon": 18.6001,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/fort-iv-twierdzy-torun",
+      "name": "Fort IV Twierdzy Toruń",
+      "category": "historic",
+      "lat": 53.0406,
+      "lon": 18.6328,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/kepa-bazarowa-punkt-widokowy-na-torun",
+      "name": "Kępa Bazarowa – punkt widokowy na Toruń",
+      "category": "nature",
+      "lat": 53.0039,
+      "lon": 18.6057,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/ogrod-zoobotaniczny-w-toruniu",
+      "name": "Ogród Zoobotaniczny w Toruniu",
+      "category": "nature",
+      "lat": 53.0108,
+      "lon": 18.5845,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/wyspa-mynska-w-bydgoszczy",
+      "name": "Wyspa Młyńska w Bydgoszczy",
+      "category": "historic",
+      "lat": 53.1234,
+      "lon": 18.0008,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/wenecja-bydgoska",
+      "name": "Wenecja Bydgoska",
+      "category": "historic",
+      "lat": 53.1225,
+      "lon": 17.9979,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/myny-rothera",
+      "name": "Młyny Rothera",
+      "category": "museum",
+      "lat": 53.1236,
+      "lon": 18.0016,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/opera-nova-w-bydgoszczy",
+      "name": "Opera Nova w Bydgoszczy",
+      "category": "historic",
+      "lat": 53.125,
+      "lon": 18.0019,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/spichrze-nad-brda-w-bydgoszczy",
+      "name": "Spichrze nad Brdą w Bydgoszczy",
+      "category": "historic",
+      "lat": 53.1237,
+      "lon": 18.0061,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-myda-i-historii-brudu",
+      "name": "Muzeum Mydła i Historii Brudu",
+      "category": "museum",
+      "lat": 53.122,
+      "lon": 18.0027,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/exploseum-w-bydgoszczy",
+      "name": "Exploseum w Bydgoszczy",
+      "category": "museum",
+      "lat": 53.0899,
+      "lon": 18.0894,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/wieza-cisnien-muzeum-wodociagow",
+      "name": "Wieża Ciśnień – Muzeum Wodociągów",
+      "category": "museum",
+      "lat": 53.1194,
+      "lon": 17.9898,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-wojsk-ladowych-w-bydgoszczy",
+      "name": "Muzeum Wojsk Lądowych w Bydgoszczy",
+      "category": "museum",
+      "lat": 53.1412,
+      "lon": 18.0154,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-okregowe-im-leona-wyczokowskiego",
+      "name": "Muzeum Okręgowe im. Leona Wyczółkowskiego",
+      "category": "museum",
+      "lat": 53.1238,
+      "lon": 18.0047,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/stary-rynek-w-bydgoszczy",
+      "name": "Stary Rynek w Bydgoszczy",
+      "category": "historic",
+      "lat": 53.1228,
+      "lon": 18.0064,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/katedra-sw-marcina-i-mikoaja-w-bydgoszczy",
+      "name": "Katedra św. Marcina i Mikołaja w Bydgoszczy",
+      "category": "historic",
+      "lat": 53.1235,
+      "lon": 18.0049,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/bazylika-sw-wincentego-a-paulo-w-bydgoszczy",
+      "name": "Bazylika św. Wincentego à Paulo w Bydgoszczy",
+      "category": "historic",
+      "lat": 53.1307,
+      "lon": 18.0191,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/fontanna-potop-w-bydgoszczy",
+      "name": "Fontanna Potop w Bydgoszczy",
+      "category": "historic",
+      "lat": 53.1284,
+      "lon": 18.0129,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/kana-bydgoski",
+      "name": "Kanał Bydgoski",
+      "category": "water",
+      "lat": 53.1252,
+      "lon": 17.9434,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/sluza-miejska-w-bydgoszczy",
+      "name": "Śluza Miejska w Bydgoszczy",
+      "category": "historic",
+      "lat": 53.1242,
+      "lon": 17.9929,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/lesny-park-kultury-i-wypoczynku-myslecinek",
+      "name": "Leśny Park Kultury i Wypoczynku Myślęcinek",
+      "category": "nature",
+      "lat": 53.1627,
+      "lon": 18.0298,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/ogrod-botaniczny-ukw-w-bydgoszczy",
+      "name": "Ogród Botaniczny UKW w Bydgoszczy",
+      "category": "nature",
+      "lat": 53.1334,
+      "lon": 18.0219,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/dolina-smierci-w-bydgoszczy",
+      "name": "Dolina Śmierci w Bydgoszczy",
+      "category": "historic",
+      "lat": 53.1571,
+      "lon": 18.1467,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/paac-nowy-w-ostromecku",
+      "name": "Pałac Nowy w Ostromecku",
+      "category": "castle",
+      "lat": 53.1479,
+      "lon": 18.2086,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/paac-stary-w-ostromecku",
+      "name": "Pałac Stary w Ostromecku",
+      "category": "castle",
+      "lat": 53.1485,
+      "lon": 18.2102,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-wielka-kepa-ostromecka",
+      "name": "Rezerwat Wielka Kępa Ostromecka",
+      "category": "reserve",
+      "lat": 53.1532,
+      "lon": 18.1848,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-jezuickie",
+      "name": "Jezioro Jezuickie",
+      "category": "water",
+      "lat": 53.0333,
+      "lon": 18.0475,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/teznie-solankowe-w-ciechocinku",
+      "name": "Tężnie solankowe w Ciechocinku",
+      "category": "historic",
+      "lat": 52.8824,
+      "lon": 18.7864,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/park-zdrojowy-w-ciechocinku",
+      "name": "Park Zdrojowy w Ciechocinku",
+      "category": "nature",
+      "lat": 52.8793,
+      "lon": 18.7932,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/fontanna-grzybek-w-ciechocinku",
+      "name": "Fontanna Grzybek w Ciechocinku",
+      "category": "historic",
+      "lat": 52.8799,
+      "lon": 18.795,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/warzelnia-soli-w-ciechocinku",
+      "name": "Warzelnia Soli w Ciechocinku",
+      "category": "museum",
+      "lat": 52.887,
+      "lon": 18.7776,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/pijalnia-wod-mineralnych-w-ciechocinku",
+      "name": "Pijalnia Wód Mineralnych w Ciechocinku",
+      "category": "historic",
+      "lat": 52.8792,
+      "lon": 18.7937,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/teatr-letni-w-ciechocinku",
+      "name": "Teatr Letni w Ciechocinku",
+      "category": "historic",
+      "lat": 52.8795,
+      "lon": 18.797,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/cerkiew-sw-michaa-archanioa-w-ciechocinku",
+      "name": "Cerkiew św. Michała Archanioła w Ciechocinku",
+      "category": "historic",
+      "lat": 52.8774,
+      "lon": 18.794,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/dywany-kwiatowe-w-ciechocinku",
+      "name": "Dywany kwiatowe w Ciechocinku",
+      "category": "nature",
+      "lat": 52.8786,
+      "lon": 18.7975,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/ruiny-zamku-w-raciazku",
+      "name": "Ruiny zamku w Raciążku",
+      "category": "ruins",
+      "lat": 52.8568,
+      "lon": 18.8159,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/koscio-farny-w-nieszawie",
+      "name": "Kościół farny w Nieszawie",
+      "category": "historic",
+      "lat": 52.8342,
+      "lon": 18.9004,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-stanisawa-noakowskiego-w-nieszawie",
+      "name": "Muzeum Stanisława Noakowskiego w Nieszawie",
+      "category": "museum",
+      "lat": 52.8344,
+      "lon": 18.8993,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/teznia-solankowa-w-inowrocawiu",
+      "name": "Tężnia solankowa w Inowrocławiu",
+      "category": "historic",
+      "lat": 52.7907,
+      "lon": 18.244,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/park-solankowy-w-inowrocawiu",
+      "name": "Park Solankowy w Inowrocławiu",
+      "category": "nature",
+      "lat": 52.7922,
+      "lon": 18.2456,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-im-jana-kasprowicza-w-inowrocawiu",
+      "name": "Muzeum im. Jana Kasprowicza w Inowrocławiu",
+      "category": "museum",
+      "lat": 52.7959,
+      "lon": 18.2614,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/bazylika-mniejsza-imienia-nmp-w-inowrocawiu",
+      "name": "Bazylika Mniejsza Imienia NMP w Inowrocławiu",
+      "category": "historic",
+      "lat": 52.7998,
+      "lon": 18.2632,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rynek-w-inowrocawiu",
+      "name": "Rynek w Inowrocławiu",
+      "category": "historic",
+      "lat": 52.7955,
+      "lon": 18.2611,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/palmiarnia-inowrocawska",
+      "name": "Palmiarnia Inowrocławska",
+      "category": "nature",
+      "lat": 52.7895,
+      "lon": 18.2456,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/mysia-wieza-w-kruszwicy",
+      "name": "Mysia Wieża w Kruszwicy",
+      "category": "historic",
+      "lat": 52.6725,
+      "lon": 18.3306,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/kolegiata-sw-piotra-i-pawa-w-kruszwicy",
+      "name": "Kolegiata św. Piotra i Pawła w Kruszwicy",
+      "category": "historic",
+      "lat": 52.6746,
+      "lon": 18.329,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-gopo",
+      "name": "Jezioro Gopło",
+      "category": "water",
+      "lat": 52.642,
+      "lon": 18.347,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/nadgoplanski-park-tysiaclecia",
+      "name": "Nadgoplański Park Tysiąclecia",
+      "category": "nature",
+      "lat": 52.62,
+      "lon": 18.36,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-archeologiczne-w-kruszwicy",
+      "name": "Muzeum Archeologiczne w Kruszwicy",
+      "category": "museum",
+      "lat": 52.6727,
+      "lon": 18.33,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/paac-w-kobylnikach",
+      "name": "Pałac w Kobylnikach",
+      "category": "castle",
+      "lat": 52.6938,
+      "lon": 18.307,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/park-kulturowy-wietrzychowice",
+      "name": "Park Kulturowy Wietrzychowice",
+      "category": "historic",
+      "lat": 52.6378,
+      "lon": 18.8556,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/grobowce-kujawskie-w-sarnowie",
+      "name": "Grobowce kujawskie w Sarnowie",
+      "category": "historic",
+      "lat": 52.6009,
+      "lon": 18.8389,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-archeologiczne-i-etnograficzne-w-kobce",
+      "name": "Muzeum Archeologiczne i Etnograficzne w Kłóbce",
+      "category": "museum",
+      "lat": 52.5126,
+      "lon": 19.0567,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/skansen-w-kobce",
+      "name": "Skansen w Kłóbce",
+      "category": "museum",
+      "lat": 52.5123,
+      "lon": 19.0572,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-pakoskie",
+      "name": "Jezioro Pakoskie",
+      "category": "water",
+      "lat": 52.79,
+      "lon": 18.095,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-archeologiczne-w-biskupinie",
+      "name": "Muzeum Archeologiczne w Biskupinie",
+      "category": "museum",
+      "lat": 52.7887,
+      "lon": 17.7448,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-archeologiczny-biskupin",
+      "name": "Rezerwat archeologiczny Biskupin",
+      "category": "historic",
+      "lat": 52.7883,
+      "lon": 17.7442,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/zninska-kolej-waskotorowa",
+      "name": "Żnińska Kolej Wąskotorowa",
+      "category": "historic",
+      "lat": 52.846,
+      "lon": 17.719,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-kolei-waskotorowej-w-wenecji",
+      "name": "Muzeum Kolei Wąskotorowej w Wenecji",
+      "category": "museum",
+      "lat": 52.7991,
+      "lon": 17.7401,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/ruiny-zamku-diaba-weneckiego",
+      "name": "Ruiny zamku Diabła Weneckiego",
+      "category": "ruins",
+      "lat": 52.7987,
+      "lon": 17.7392,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/baszta-w-zninie",
+      "name": "Baszta w Żninie",
+      "category": "historic",
+      "lat": 52.8491,
+      "lon": 17.7193,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-ziemi-pauckiej-w-zninie",
+      "name": "Muzeum Ziemi Pałuckiej w Żninie",
+      "category": "museum",
+      "lat": 52.849,
+      "lon": 17.7191,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/paac-w-lubostroniu",
+      "name": "Pałac w Lubostroniu",
+      "category": "castle",
+      "lat": 52.9151,
+      "lon": 17.9198,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/koscio-sw-mikoaja-w-gasawie",
+      "name": "Kościół św. Mikołaja w Gąsawie",
+      "category": "historic",
+      "lat": 52.7682,
+      "lon": 17.755,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/pomnik-leszka-biaego-w-marcinkowie-gornym",
+      "name": "Pomnik Leszka Białego w Marcinkowie Górnym",
+      "category": "historic",
+      "lat": 52.7561,
+      "lon": 17.7683,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-zninskie-mae",
+      "name": "Jezioro Żnińskie Małe",
+      "category": "water",
+      "lat": 52.845,
+      "lon": 17.734,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-zninskie-duze",
+      "name": "Jezioro Żnińskie Duże",
+      "category": "water",
+      "lat": 52.856,
+      "lon": 17.69,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-biskupinskie",
+      "name": "Jezioro Biskupińskie",
+      "category": "water",
+      "lat": 52.79,
+      "lon": 17.748,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-rogowskie",
+      "name": "Jezioro Rogowskie",
+      "category": "water",
+      "lat": 52.721,
+      "lon": 17.652,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/zaurolandia-w-rogowie",
+      "name": "Zaurolandia w Rogowie",
+      "category": "museum",
+      "lat": 52.7271,
+      "lon": 17.6548,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/kamienioom-piechcin",
+      "name": "Kamieniołom Piechcin",
+      "category": "nature",
+      "lat": 52.806,
+      "lon": 18.056,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-ostrowieckie-koo-znina",
+      "name": "Jezioro Ostrowieckie koło Żnina",
+      "category": "water",
+      "lat": 52.78,
+      "lon": 17.61,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/stare-miasto-w-chemnie",
+      "name": "Stare Miasto w Chełmnie",
+      "category": "historic",
+      "lat": 53.3482,
+      "lon": 18.4255,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/ratusz-w-chemnie",
+      "name": "Ratusz w Chełmnie",
+      "category": "historic",
+      "lat": 53.3484,
+      "lon": 18.4252,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/mury-miejskie-w-chemnie",
+      "name": "Mury miejskie w Chełmnie",
+      "category": "historic",
+      "lat": 53.3472,
+      "lon": 18.4268,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/koscio-wniebowziecia-nmp-w-chemnie",
+      "name": "Kościół Wniebowzięcia NMP w Chełmnie",
+      "category": "historic",
+      "lat": 53.349,
+      "lon": 18.423,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/koscio-sw-jakuba-i-mikoaja-w-chemnie",
+      "name": "Kościół św. Jakuba i Mikołaja w Chełmnie",
+      "category": "historic",
+      "lat": 53.3502,
+      "lon": 18.4294,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/zespo-klasztorny-siostr-miosierdzia-w-chemnie",
+      "name": "Zespół klasztorny Sióstr Miłosierdzia w Chełmnie",
+      "category": "historic",
+      "lat": 53.3505,
+      "lon": 18.422,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-ziemi-cheminskiej",
+      "name": "Muzeum Ziemi Chełmińskiej",
+      "category": "museum",
+      "lat": 53.3484,
+      "lon": 18.4252,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/aweczka-zakochanych-w-chemnie",
+      "name": "Ławeczka Zakochanych w Chełmnie",
+      "category": "historic",
+      "lat": 53.3482,
+      "lon": 18.4247,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/punkt-widokowy-na-gorze-sw-wawrzynca",
+      "name": "Punkt widokowy na Górze św. Wawrzyńca",
+      "category": "nature",
+      "lat": 53.361,
+      "lon": 18.39,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/zespo-parkow-krajobrazowych-nad-dolna-wisa",
+      "name": "Zespół Parków Krajobrazowych nad Dolną Wisłą",
+      "category": "nature",
+      "lat": 53.43,
+      "lon": 18.51,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-ostrow-panienski",
+      "name": "Rezerwat Ostrów Panieński",
+      "category": "reserve",
+      "lat": 53.373,
+      "lon": 18.405,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-putowo",
+      "name": "Rezerwat Płutowo",
+      "category": "reserve",
+      "lat": 53.31,
+      "lon": 18.442,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-zbocza-putowskie",
+      "name": "Rezerwat Zbocza Płutowskie",
+      "category": "reserve",
+      "lat": 53.313,
+      "lon": 18.455,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-las-marianski",
+      "name": "Rezerwat Las Mariański",
+      "category": "reserve",
+      "lat": 53.382,
+      "lon": 18.46,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/spichlerze-nad-wisa-w-grudziadzu",
+      "name": "Spichlerze nad Wisłą w Grudziądzu",
+      "category": "historic",
+      "lat": 53.4938,
+      "lon": 18.7493,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/brama-wodna-w-grudziadzu",
+      "name": "Brama Wodna w Grudziądzu",
+      "category": "historic",
+      "lat": 53.4927,
+      "lon": 18.7508,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/ruiny-zamku-krzyzackiego-i-wieza-klimek",
+      "name": "Ruiny Zamku Krzyżackiego i Wieża Klimek",
+      "category": "ruins",
+      "lat": 53.4963,
+      "lon": 18.7473,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/cytadela-w-grudziadzu",
+      "name": "Cytadela w Grudziądzu",
+      "category": "historic",
+      "lat": 53.5065,
+      "lon": 18.7435,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-im-ks-dr-wadysawa-egi",
+      "name": "Muzeum im. ks. dr. Władysława Łęgi",
+      "category": "museum",
+      "lat": 53.4925,
+      "lon": 18.75,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rynek-w-grudziadzu",
+      "name": "Rynek w Grudziądzu",
+      "category": "historic",
+      "lat": 53.4928,
+      "lon": 18.7541,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/gora-zamkowa-w-grudziadzu",
+      "name": "Góra Zamkowa w Grudziądzu",
+      "category": "nature",
+      "lat": 53.4961,
+      "lon": 18.747,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-rudnickie-wielkie",
+      "name": "Jezioro Rudnickie Wielkie",
+      "category": "water",
+      "lat": 53.449,
+      "lon": 18.759,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/ruiny-zamku-krzyzackiego-w-swieciu",
+      "name": "Ruiny zamku krzyżackiego w Świeciu",
+      "category": "ruins",
+      "lat": 53.4154,
+      "lon": 18.4486,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/stare-miasto-w-swieciu",
+      "name": "Stare Miasto w Świeciu",
+      "category": "historic",
+      "lat": 53.4078,
+      "lon": 18.4468,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/koscio-farny-w-swieciu",
+      "name": "Kościół farny w Świeciu",
+      "category": "historic",
+      "lat": 53.4092,
+      "lon": 18.447,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-deczno",
+      "name": "Jezioro Deczno",
+      "category": "water",
+      "lat": 53.458,
+      "lon": 18.463,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-cisy-staropolskie-im-leona-wyczokowskiego",
+      "name": "Rezerwat Cisy Staropolskie im. Leona Wyczółkowskiego",
+      "category": "reserve",
+      "lat": 53.593,
+      "lon": 18.114,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/zamek-golubski",
+      "name": "Zamek Golubski",
+      "category": "castle",
+      "lat": 53.1128,
+      "lon": 19.0548,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/stare-miasto-w-golubiu",
+      "name": "Stare Miasto w Golubiu",
+      "category": "historic",
+      "lat": 53.1114,
+      "lon": 19.0525,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/dom-pod-kapturem-w-golubiu-dobrzyniu",
+      "name": "Dom Pod Kapturem w Golubiu-Dobrzyniu",
+      "category": "historic",
+      "lat": 53.1115,
+      "lon": 19.0521,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/koscio-sw-katarzyny-w-golubiu",
+      "name": "Kościół św. Katarzyny w Golubiu",
+      "category": "historic",
+      "lat": 53.1117,
+      "lon": 19.0529,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/wieza-zamkowa-w-brodnicy",
+      "name": "Wieża Zamkowa w Brodnicy",
+      "category": "historic",
+      "lat": 53.2594,
+      "lon": 19.3968,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-w-brodnicy-zamek",
+      "name": "Muzeum w Brodnicy – Zamek",
+      "category": "museum",
+      "lat": 53.2593,
+      "lon": 19.3967,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/paac-anny-wazowny-w-brodnicy",
+      "name": "Pałac Anny Wazówny w Brodnicy",
+      "category": "historic",
+      "lat": 53.2577,
+      "lon": 19.3973,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/brama-cheminska-w-brodnicy",
+      "name": "Brama Chełmińska w Brodnicy",
+      "category": "historic",
+      "lat": 53.257,
+      "lon": 19.3992,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rynek-w-brodnicy",
+      "name": "Rynek w Brodnicy",
+      "category": "historic",
+      "lat": 53.2576,
+      "lon": 19.4006,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/brodnicki-park-krajobrazowy",
+      "name": "Brodnicki Park Krajobrazowy",
+      "category": "nature",
+      "lat": 53.33,
+      "lon": 19.41,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-bachotek",
+      "name": "Jezioro Bachotek",
+      "category": "water",
+      "lat": 53.29,
+      "lon": 19.43,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-zbiczno",
+      "name": "Jezioro Zbiczno",
+      "category": "water",
+      "lat": 53.346,
+      "lon": 19.372,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-sosno",
+      "name": "Jezioro Sosno",
+      "category": "water",
+      "lat": 53.365,
+      "lon": 19.33,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-bachotek",
+      "name": "Rezerwat Bachotek",
+      "category": "reserve",
+      "lat": 53.302,
+      "lon": 19.443,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-mieliwo",
+      "name": "Rezerwat Mieliwo",
+      "category": "reserve",
+      "lat": 53.371,
+      "lon": 19.406,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-retno",
+      "name": "Rezerwat Retno",
+      "category": "reserve",
+      "lat": 53.345,
+      "lon": 19.457,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-streszek",
+      "name": "Rezerwat Stręszek",
+      "category": "reserve",
+      "lat": 53.378,
+      "lon": 19.358,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-okonek",
+      "name": "Rezerwat Okonek",
+      "category": "reserve",
+      "lat": 53.398,
+      "lon": 19.361,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/bazylika-katedralna-we-wocawku",
+      "name": "Bazylika katedralna we Włocławku",
+      "category": "historic",
+      "lat": 52.6574,
+      "lon": 19.0673,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-ziemi-kujawskiej-i-dobrzynskiej-we-wocawku",
+      "name": "Muzeum Ziemi Kujawskiej i Dobrzyńskiej we Włocławku",
+      "category": "museum",
+      "lat": 52.6558,
+      "lon": 19.0678,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-etnograficzne-we-wocawku",
+      "name": "Muzeum Etnograficzne we Włocławku",
+      "category": "museum",
+      "lat": 52.6578,
+      "lon": 19.064,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/bulwary-im-marszaka-pisudskiego-we-wocawku",
+      "name": "Bulwary im. Marszałka Piłsudskiego we Włocławku",
+      "category": "historic",
+      "lat": 52.658,
+      "lon": 19.0615,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/zapora-wodna-we-wocawku",
+      "name": "Zapora wodna we Włocławku",
+      "category": "historic",
+      "lat": 52.652,
+      "lon": 19.136,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-wocawskie",
+      "name": "Jezioro Włocławskie",
+      "category": "water",
+      "lat": 52.65,
+      "lon": 19.26,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/park-im-henryka-sienkiewicza-we-wocawku",
+      "name": "Park im. Henryka Sienkiewicza we Włocławku",
+      "category": "nature",
+      "lat": 52.6515,
+      "lon": 19.0615,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-diecezjalne-we-wocawku",
+      "name": "Muzeum Diecezjalne we Włocławku",
+      "category": "museum",
+      "lat": 52.657,
+      "lon": 19.0685,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/centrum-kultury-browar-b-we-wocawku",
+      "name": "Centrum Kultury Browar B. we Włocławku",
+      "category": "historic",
+      "lat": 52.6497,
+      "lon": 19.0668,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/skansen-w-kobce-kujawsko-dobrzynski-park-etnograficzny",
+      "name": "Skansen w Kłóbce – Kujawsko-Dobrzyński Park Etnograficzny",
+      "category": "museum",
+      "lat": 52.5125,
+      "lon": 19.057,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/zamek-w-radzikach-duzych",
+      "name": "Zamek w Radzikach Dużych",
+      "category": "ruins",
+      "lat": 53.1357,
+      "lon": 19.3888,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/osrodek-chopinowski-w-szafarni",
+      "name": "Ośrodek Chopinowski w Szafarni",
+      "category": "museum",
+      "lat": 53.1388,
+      "lon": 19.1717,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/punkt-widokowy-w-dobrzyniu-nad-wisa",
+      "name": "Punkt widokowy w Dobrzyniu nad Wisłą",
+      "category": "nature",
+      "lat": 52.636,
+      "lon": 19.318,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-ziemi-dobrzynskiej-w-rypinie",
+      "name": "Muzeum Ziemi Dobrzyńskiej w Rypinie",
+      "category": "museum",
+      "lat": 53.066,
+      "lon": 19.4091,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/klasztor-bernardynow-w-skepem",
+      "name": "Klasztor Bernardynów w Skępem",
+      "category": "historic",
+      "lat": 52.867,
+      "lon": 19.356,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-urszulewskie",
+      "name": "Jezioro Urszulewskie",
+      "category": "water",
+      "lat": 52.91,
+      "lon": 19.585,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/paac-w-kikole",
+      "name": "Pałac w Kikole",
+      "category": "castle",
+      "lat": 52.9088,
+      "lon": 19.1172,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-borow-tucholskich-w-tucholi",
+      "name": "Muzeum Borów Tucholskich w Tucholi",
+      "category": "museum",
+      "lat": 53.5868,
+      "lon": 17.8595,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/tucholski-park-krajobrazowy",
+      "name": "Tucholski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 53.69,
+      "lon": 17.93,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/akwedukt-w-fojutowie",
+      "name": "Akwedukt w Fojutowie",
+      "category": "historic",
+      "lat": 53.6325,
+      "lon": 18.023,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-dolina-rzeki-brdy",
+      "name": "Rezerwat Dolina Rzeki Brdy",
+      "category": "reserve",
+      "lat": 53.62,
+      "lon": 17.98,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-bagna-nad-stazka",
+      "name": "Rezerwat Bagna nad Stążką",
+      "category": "reserve",
+      "lat": 53.695,
+      "lon": 17.994,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-zroda-rzeki-stazki",
+      "name": "Rezerwat Źródła Rzeki Stążki",
+      "category": "reserve",
+      "lat": 53.65,
+      "lon": 17.855,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-cekcynskie-wielkie",
+      "name": "Jezioro Cekcyńskie Wielkie",
+      "category": "water",
+      "lat": 53.572,
+      "lon": 18.012,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-koronowskie",
+      "name": "Jezioro Koronowskie",
+      "category": "water",
+      "lat": 53.4,
+      "lon": 17.9,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/bazylika-wniebowziecia-nmp-w-koronowie",
+      "name": "Bazylika Wniebowzięcia NMP w Koronowie",
+      "category": "historic",
+      "lat": 53.3136,
+      "lon": 17.9388,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/myn-wodny-w-koronowie",
+      "name": "Młyn wodny w Koronowie",
+      "category": "historic",
+      "lat": 53.3114,
+      "lon": 17.9405,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/most-kolejki-waskotorowej-nad-brda-w-koronowie",
+      "name": "Most kolejki wąskotorowej nad Brdą w Koronowie",
+      "category": "historic",
+      "lat": 53.322,
+      "lon": 17.942,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-rozanna-deby",
+      "name": "Rezerwat Różanna Dęby",
+      "category": "reserve",
+      "lat": 53.37,
+      "lon": 17.96,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/zalew-koronowski",
+      "name": "Zalew Koronowski",
+      "category": "water",
+      "lat": 53.43,
+      "lon": 17.95,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-ziemi-krajenskiej-w-nakle-nad-notecia",
+      "name": "Muzeum Ziemi Krajeńskiej w Nakle nad Notecią",
+      "category": "museum",
+      "lat": 53.1423,
+      "lon": 17.601,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/kana-bydgoski-w-nakle-nad-notecia",
+      "name": "Kanał Bydgoski w Nakle nad Notecią",
+      "category": "water",
+      "lat": 53.139,
+      "lon": 17.59,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/dolina-noteci-koo-naka",
+      "name": "Dolina Noteci koło Nakła",
+      "category": "nature",
+      "lat": 53.125,
+      "lon": 17.59,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/paac-w-potulicach",
+      "name": "Pałac w Potulicach",
+      "category": "castle",
+      "lat": 53.1268,
+      "lon": 17.6943,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/krajenski-park-krajobrazowy",
+      "name": "Krajeński Park Krajobrazowy",
+      "category": "nature",
+      "lat": 53.46,
+      "lon": 17.5,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-sepolenskie",
+      "name": "Jezioro Sępoleńskie",
+      "category": "water",
+      "lat": 53.452,
+      "lon": 17.53,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-wiecborskie",
+      "name": "Jezioro Więcborskie",
+      "category": "water",
+      "lat": 53.35,
+      "lon": 17.49,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/ruiny-zamku-w-runowie-krajenskim",
+      "name": "Ruiny zamku w Runowie Krajeńskim",
+      "category": "ruins",
+      "lat": 53.3535,
+      "lon": 17.411,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-gaj-krajenski",
+      "name": "Rezerwat Gaj Krajeński",
+      "category": "reserve",
+      "lat": 53.42,
+      "lon": 17.47,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/solec-kujawski-jurapark",
+      "name": "Solec Kujawski – JuraPark",
+      "category": "museum",
+      "lat": 53.082,
+      "lon": 18.235,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-solca-im-ksiecia-przemysa",
+      "name": "Muzeum Solca im. księcia Przemysła",
+      "category": "museum",
+      "lat": 53.0802,
+      "lon": 18.225,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/zamek-bierzgowski",
+      "name": "Zamek Bierzgłowski",
+      "category": "castle",
+      "lat": 53.1015,
+      "lon": 18.4638,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/zamek-w-radzyniu-cheminskim",
+      "name": "Zamek w Radzyniu Chełmińskim",
+      "category": "ruins",
+      "lat": 53.3855,
+      "lon": 18.9382,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/zamek-w-rogoznie",
+      "name": "Zamek w Rogóźnie",
+      "category": "ruins",
+      "lat": 53.522,
+      "lon": 18.935,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/zamek-w-kowalewie-pomorskim-relikty",
+      "name": "Zamek w Kowalewie Pomorskim – relikty",
+      "category": "ruins",
+      "lat": 53.1542,
+      "lon": 18.898,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/koscio-sw-prokopa-w-strzelnie",
+      "name": "Kościół św. Prokopa w Strzelnie",
+      "category": "historic",
+      "lat": 52.6287,
+      "lon": 18.169,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/bazylika-swietej-trojcy-w-strzelnie",
+      "name": "Bazylika Świętej Trójcy w Strzelnie",
+      "category": "historic",
+      "lat": 52.6288,
+      "lon": 18.1694,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/muzeum-romanskie-w-strzelnie",
+      "name": "Muzeum Romańskie w Strzelnie",
+      "category": "museum",
+      "lat": 52.6286,
+      "lon": 18.1692,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/paac-w-lubrancu",
+      "name": "Pałac w Lubrańcu",
+      "category": "castle",
+      "lat": 52.5413,
+      "lon": 18.834,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-przyrody-balczewo",
+      "name": "Rezerwat przyrody Balczewo",
+      "category": "reserve",
+      "lat": 52.771,
+      "lon": 18.34,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/rezerwat-przyrody-ostnicowe-parowy-gruczna",
+      "name": "Rezerwat przyrody Ostnicowe Parowy Gruczna",
+      "category": "reserve",
+      "lat": 53.347,
+      "lon": 18.45,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/park-krajobrazowy-gory-osiowe",
+      "name": "Park Krajobrazowy Góry Łosiowe",
+      "category": "nature",
+      "lat": 53.56,
+      "lon": 18.77,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/gorzniensko-lidzbarski-park-krajobrazowy-czesc-kujawsko-pomorska",
+      "name": "Górznieńsko-Lidzbarski Park Krajobrazowy – część kujawsko-pomorska",
+      "category": "nature",
+      "lat": 53.21,
+      "lon": 19.64,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "kujawsko-pomorskie/jezioro-gorznienskie",
+      "name": "Jezioro Górznieńskie",
+      "category": "water",
+      "lat": 53.197,
+      "lon": 19.64,
+      "source": "Kujawsko-Pomorskie Travel / dane mapowe",
+      "sourceUrl": "https://kujawsko-pomorskie.travel/",
+      "region": "kujawsko-pomorskie"
     }
   ],
-  "count": 1682
+  "count": 1872
 }
