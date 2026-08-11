@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1022';
+  const APP_VERSION = 'v1023';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1022';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1023';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;

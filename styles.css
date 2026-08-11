@@ -2061,3 +2061,365 @@ button {
     left: max(8px, calc(6px + var(--safe-left)));
   }
 }
+
+/* v1023 — wspólny półprzezroczysty panel sterowania + legenda na mapie. */
+.map-top-panel {
+  position: absolute;
+  z-index: 1100;
+  top: max(8px, calc(6px + var(--safe-top)));
+  left: max(8px, calc(6px + var(--safe-left)));
+  right: max(8px, calc(6px + var(--safe-right)));
+  padding: 7px 8px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 16px;
+  background: rgba(247, 244, 232, 0.30); /* ok. 70% przeźroczystości */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.20);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+  pointer-events: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.map-toolbar-row {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+}
+
+.map-toolbar-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+}
+
+.map-top-panel .map-back-button,
+.map-top-panel .map-mode-badge,
+.map-top-panel .map-location-button,
+.map-top-panel .osm-refresh-button,
+.map-top-panel .route-button,
+.map-top-panel .proximity-button,
+.map-top-panel .proximity-radius-wrap,
+.map-top-panel .map-version {
+  position: static;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  transform: none;
+  margin: 0;
+}
+
+.map-top-panel .map-back-button,
+.map-top-panel .map-location-button,
+.map-top-panel .osm-refresh-button,
+.map-top-panel .route-button,
+.map-top-panel .proximity-button {
+  min-height: 38px;
+  height: 38px;
+  border-radius: 10px;
+  padding: 0 10px;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.20);
+  white-space: nowrap;
+}
+
+.map-top-panel .map-back-button {
+  flex: 0 0 auto;
+  border-width: 1px;
+}
+
+.map-top-panel .map-mode-badge {
+  flex: 0 0 auto;
+  max-width: 180px;
+  padding: 7px 10px;
+  border-radius: 10px;
+  font-size: 11px;
+  line-height: 1.1;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.18);
+}
+
+.map-top-panel .map-location-button {
+  min-width: 0;
+  width: auto;
+}
+
+.map-top-panel .map-location-button svg,
+.map-top-panel .osm-refresh-button svg,
+.map-top-panel .route-button svg,
+.map-top-panel .proximity-button svg {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+}
+
+.map-top-panel .proximity-button {
+  width: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 10px;
+}
+
+.map-top-panel .proximity-button span {
+  display: inline-block;
+}
+
+.map-top-panel .proximity-radius-wrap {
+  min-height: 38px;
+  height: 38px;
+  padding: 3px 7px 3px 9px;
+  gap: 5px;
+  border-radius: 10px;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.18);
+  font-size: 10px;
+}
+
+.map-top-panel .proximity-radius-wrap select {
+  min-width: 64px;
+  height: 27px;
+  font-size: 11px;
+}
+
+.map-top-panel .map-version {
+  flex: 0 0 auto;
+  padding: 4px 6px;
+  border-radius: 8px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.map-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(28, 43, 31, 0.22);
+  color: #16261b;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.map-legend-title {
+  padding: 4px 7px;
+  border-radius: 8px;
+  color: #fff7e6;
+  background: rgba(20, 41, 27, 0.82);
+  letter-spacing: 0.06em;
+}
+
+.map-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 24px;
+  padding: 2px 5px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.62);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.10);
+  white-space: nowrap;
+}
+
+.map-legend-item img {
+  width: 21px;
+  height: 21px;
+  object-fit: contain;
+}
+
+.legend-user-dot {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #1677ff;
+  box-shadow: 0 0 0 2px rgba(22, 119, 255, 0.28);
+}
+
+.legend-route-line {
+  width: 24px;
+  height: 0;
+  border-top: 4px solid #1d6bbd;
+  border-radius: 999px;
+}
+
+/* Kontrolki Leaflet i komunikaty zaczynają się pod panelem. */
+.map-screen .leaflet-top.leaflet-left {
+  top: max(124px, calc(118px + var(--safe-top)));
+}
+
+.location-message {
+  top: max(126px, calc(120px + var(--safe-top)));
+}
+
+.route-panel {
+  top: max(132px, calc(126px + var(--safe-top)));
+}
+
+@media (max-width: 760px) {
+  .map-top-panel {
+    padding: 6px;
+    border-radius: 13px;
+  }
+
+  .map-toolbar-row {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 5px;
+  }
+
+  .map-toolbar-actions {
+    grid-column: 1 / -1;
+    order: 4;
+    gap: 5px;
+    flex-wrap: nowrap;
+    justify-content: stretch;
+  }
+
+  .map-top-panel .map-back-button,
+  .map-top-panel .map-location-button,
+  .map-top-panel .osm-refresh-button,
+  .map-top-panel .route-button,
+  .map-top-panel .proximity-button {
+    min-height: 35px;
+    height: 35px;
+    padding: 0 7px;
+    font-size: 9.5px;
+    flex: 1 1 auto;
+  }
+
+  .map-top-panel .map-mode-badge {
+    justify-self: center;
+    max-width: 100%;
+    font-size: 10px;
+    padding: 6px 8px;
+  }
+
+  .map-top-panel .map-version {
+    justify-self: end;
+    font-size: 9px;
+  }
+
+  .map-top-panel .map-location-button svg,
+  .map-top-panel .osm-refresh-button svg,
+  .map-top-panel .route-button svg,
+  .map-top-panel .proximity-button svg {
+    width: 17px;
+    height: 17px;
+    flex-basis: 17px;
+  }
+
+  .map-top-panel .proximity-radius-wrap {
+    flex: 1 1 auto;
+    min-height: 35px;
+    height: 35px;
+    padding: 2px 5px;
+    font-size: 9px;
+  }
+
+  .map-top-panel .proximity-radius-wrap select {
+    min-width: 54px;
+    width: 100%;
+    height: 25px;
+    padding: 0 2px;
+    font-size: 10px;
+  }
+
+  .map-legend {
+    gap: 4px 5px;
+    margin-top: 5px;
+    padding-top: 4px;
+    font-size: 9px;
+    justify-content: flex-start;
+  }
+
+  .map-legend-title {
+    padding: 3px 5px;
+    font-size: 9px;
+  }
+
+  .map-legend-item {
+    min-height: 21px;
+    padding: 1px 4px;
+  }
+
+  .map-legend-item img {
+    width: 18px;
+    height: 18px;
+  }
+
+  .map-screen .leaflet-top.leaflet-left {
+    top: max(166px, calc(160px + var(--safe-top)));
+  }
+
+  .location-message {
+    top: max(168px, calc(162px + var(--safe-top)));
+  }
+
+  .route-panel {
+    top: auto;
+  }
+}
+
+@media (max-width: 390px) {
+  .map-top-panel .map-location-button span,
+  .map-top-panel .osm-refresh-button > span,
+  .map-top-panel .route-button span,
+  .map-top-panel .proximity-button span {
+    font-size: 0;
+  }
+
+  .map-top-panel .osm-refresh-button small {
+    font-size: 9px;
+    margin-left: 0;
+  }
+
+  .map-top-panel .map-location-button,
+  .map-top-panel .osm-refresh-button,
+  .map-top-panel .route-button,
+  .map-top-panel .proximity-button {
+    min-width: 38px;
+    padding: 0 6px;
+  }
+
+  .map-legend {
+    font-size: 8px;
+  }
+
+  .map-legend-item:nth-of-type(n+6) {
+    display: none;
+  }
+
+  .map-screen .leaflet-top.leaflet-left {
+    top: max(162px, calc(156px + var(--safe-top)));
+  }
+}
+
+@media (orientation: landscape) and (max-height: 520px) {
+  .map-top-panel {
+    top: max(4px, calc(2px + var(--safe-top)));
+    padding: 4px 6px;
+  }
+
+  .map-legend {
+    margin-top: 3px;
+    padding-top: 3px;
+  }
+
+  .map-screen .leaflet-top.leaflet-left {
+    top: max(102px, calc(96px + var(--safe-top)));
+  }
+
+  .route-panel {
+    top: max(108px, calc(102px + var(--safe-top)));
+  }
+}
