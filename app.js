@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1032';
+  const APP_VERSION = 'v1033';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1032';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1033';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;
@@ -62,6 +62,7 @@
   const deletePlaceButton = document.getElementById('deletePlaceButton');
 
   const mapScreen = document.getElementById('mapScreen');
+  const mapTopPanel = document.getElementById('mapTopPanel');
   const mapBackButton = document.getElementById('mapBackButton');
   const mapLocationButton = document.getElementById('mapLocationButton');
   const locationMessage = document.getElementById('locationMessage');
@@ -1525,6 +1526,17 @@
     }
   }
 
+  // v1033: mapa zaczyna się dopiero pod całym górnym panelem. Wysokość
+  // panelu jest mierzona dynamicznie, bo na telefonie legenda może mieć więcej wierszy.
+  function syncMapContentTop() {
+    if (!mapScreen || !mapTopPanel || mapScreen.hidden) return;
+    const screenRect = mapScreen.getBoundingClientRect();
+    const panelRect = mapTopPanel.getBoundingClientRect();
+    const top = Math.max(0, Math.ceil(panelRect.bottom - screenRect.top + 6));
+    mapScreen.style.setProperty('--map-content-top', `${top}px`);
+    requestAnimationFrame(() => map?.invalidateSize());
+  }
+
   function createMap() {
     if (map || !window.L) return;
 
@@ -1545,6 +1557,15 @@
       metric: true,
       position: 'bottomleft'
     }).addTo(map);
+
+    const signatureControl = L.control({ position: 'bottomleft' });
+    signatureControl.onAdd = () => {
+      const element = L.DomUtil.create('div', 'rn-app-signature');
+      element.textContent = 'Mariusz Gębka - RN APP 2026.';
+      element.setAttribute('aria-label', 'Mariusz Gębka - RN APP 2026.');
+      return element;
+    };
+    signatureControl.addTo(map);
 
     externalLayer = L.layerGroup().addTo(map);
     renderStoredPoints();
@@ -1803,6 +1824,7 @@
     if (addScreen) addScreen.hidden = true;
     if (editScreen) editScreen.hidden = true;
     mapScreen.hidden = false;
+    syncMapContentTop();
     createMap();
     renderStoredPoints();
 
@@ -2201,8 +2223,18 @@
   mapLocationButton?.addEventListener('click', centerOnCurrentLocation);
 
   window.addEventListener('resize', () => {
-    if (mapScreen && !mapScreen.hidden) map?.invalidateSize();
+    if (mapScreen && !mapScreen.hidden) {
+      syncMapContentTop();
+      map?.invalidateSize();
+    }
   });
+
+  if (mapTopPanel && typeof ResizeObserver !== 'undefined') {
+    const mapTopPanelObserver = new ResizeObserver(() => {
+      if (mapScreen && !mapScreen.hidden) syncMapContentTop();
+    });
+    mapTopPanelObserver.observe(mapTopPanel);
+  }
 
   if (dateInput && !dateInput.value) dateInput.value = localDateString();
 
@@ -2220,7 +2252,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1031', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1033', {
           scope: './',
           updateViaCache: 'none'
         });
