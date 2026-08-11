@@ -20,7 +20,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png?v=1002" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png?v=1002" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link rel="stylesheet" href="styles.css?v=1039" />
+  <link rel="stylesheet" href="styles.css?v=1040" />
 </head>
 <body>
   <main class="start-screen" aria-label="Turystyczna mapa Polski">
@@ -30,7 +30,7 @@
       <button class="main-button main-button-my-places" id="myPlacesButton" type="button">MOJE MIEJSCA</button>
     </div>
 
-    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1039</div>
+    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1040</div>
   </main>
 
   <section class="add-screen" id="addScreen" aria-label="Dodaj miejsce" hidden>
@@ -39,7 +39,7 @@
         <button class="add-back-button" id="addBackButton" type="button" aria-label="Wróć do ekranu startowego">← COFNIJ</button>
         <div class="add-title-wrap">
           <h1 class="add-title">Dodaj miejsce</h1>
-          <div class="add-version" aria-hidden="true">v1039</div>
+          <div class="add-version" aria-hidden="true">v1040</div>
         </div>
       </div>
 
@@ -130,7 +130,7 @@
         <button class="edit-back-button" id="editBackButton" type="button" aria-label="Wróć do mapy">← COFNIJ</button>
         <div class="edit-title-wrap">
           <h1 class="edit-title">Edytuj punkt</h1>
-          <div class="edit-version" aria-hidden="true">v1039</div>
+          <div class="edit-version" aria-hidden="true">v1040</div>
         </div>
       </div>
 
@@ -300,13 +300,6 @@
         </div>
         <button class="route-panel-close" id="routePanelClose" type="button" aria-label="Zamknij planowanie trasy">×</button>
       </div>
-      <div class="route-mode-label">Sposób poruszania się</div>
-      <div class="route-mode-selector" id="routeModeSelector" role="group" aria-label="Sposób poruszania się">
-        <button class="route-mode-button is-active" type="button" data-route-mode="car" aria-pressed="true"><span aria-hidden="true">🚗</span><strong>AUTO</strong></button>
-        <button class="route-mode-button" type="button" data-route-mode="foot" aria-pressed="false"><span aria-hidden="true">🚶</span><strong>PIESZO</strong></button>
-        <button class="route-mode-button" type="button" data-route-mode="hiking" aria-pressed="false"><span aria-hidden="true">🥾</span><strong>GÓRY</strong></button>
-        <button class="route-mode-button" type="button" data-route-mode="bike" aria-pressed="false"><span aria-hidden="true">🚲</span><strong>ROWER</strong></button>
-      </div>
       <label class="route-label" for="routeDestinationInput">Cel podróży</label>
       <div class="route-search-row">
         <input id="routeDestinationInput" class="route-destination-input" type="search" maxlength="120" autocomplete="off" placeholder="np. Zamek w Malborku, Zakopane..." />
@@ -317,6 +310,24 @@
       <button id="routeClearButton" class="route-clear-button" type="button" hidden>USUŃ TRASĘ</button>
       <div class="route-source" id="routeSource">Routing: OpenStreetMap.de / OSRM · wyszukiwanie celu: Nominatim</div>
     </section>
+
+    <div class="route-mode-overlay" id="routeModeOverlay" hidden>
+      <section class="route-mode-dialog" role="dialog" aria-modal="true" aria-labelledby="routeModeDialogTitle">
+        <div class="route-mode-dialog-head">
+          <div>
+            <strong id="routeModeDialogTitle">JAK CHCESZ JECHAĆ?</strong>
+            <span id="routeModeDestinationName">Wybierz sposób dotarcia do celu</span>
+          </div>
+          <button class="route-mode-close" id="routeModeClose" type="button" aria-label="Zamknij wybór rodzaju trasy">×</button>
+        </div>
+        <div class="route-mode-selector route-mode-selector-dialog" id="routeModeSelector" role="group" aria-label="Sposób poruszania się">
+          <button class="route-mode-button" type="button" data-route-mode="car" aria-pressed="false"><span aria-hidden="true">🚗</span><strong>AUTO</strong></button>
+          <button class="route-mode-button" type="button" data-route-mode="bike" aria-pressed="false"><span aria-hidden="true">🚲</span><strong>ROWER</strong></button>
+          <button class="route-mode-button" type="button" data-route-mode="foot" aria-pressed="false"><span aria-hidden="true">🚶</span><strong>PIESZO</strong></button>
+          <button class="route-mode-button" type="button" data-route-mode="hiking" aria-pressed="false"><span aria-hidden="true">🥾</span><strong>GÓRY</strong></button>
+        </div>
+      </section>
+    </div>
 
     <div class="attraction-preview-overlay" id="attractionPreviewOverlay" hidden>
       <section class="attraction-preview-panel" role="dialog" aria-modal="true" aria-labelledby="attractionPreviewTitle">
@@ -333,7 +344,7 @@
 
     <div class="osm-status" id="osmStatus" role="status" aria-live="polite" hidden></div>
     <div class="location-message" id="locationMessage" role="status" aria-live="polite" hidden></div>
-    <div class="map-version" aria-hidden="true">v1039</div>
+    <div class="map-version" aria-hidden="true">v1040</div>
   </section>
 
   <aside class="nearby-alert" id="nearbyAlert" role="alertdialog" aria-live="assertive" aria-label="Atrakcja w pobliżu" hidden>
@@ -351,6 +362,6 @@
   </aside>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="app.js?v=1039"></script>
+  <script src="app.js?v=1040"></script>
 </body>
 </html>

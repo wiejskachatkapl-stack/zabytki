@@ -1,5 +1,5 @@
 (() => {
-  const APP_VERSION = 'v1039';
+  const APP_VERSION = 'v1040';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
@@ -102,6 +102,9 @@
   const routeInfo = document.getElementById('routeInfo');
   const routeClearButton = document.getElementById('routeClearButton');
   const routeModeButtons = [...document.querySelectorAll('[data-route-mode]')];
+  const routeModeOverlay = document.getElementById('routeModeOverlay');
+  const routeModeClose = document.getElementById('routeModeClose');
+  const routeModeDestinationName = document.getElementById('routeModeDestinationName');
   const routeSource = document.getElementById('routeSource');
   const osmStatus = document.getElementById('osmStatus');
   const mapModeBadge = document.getElementById('mapModeBadge');
@@ -199,11 +202,13 @@
   let routeCoordinates = [];
   let routeSearchSequence = 0;
   let routeAlertedIds = new Set();
-  // v1039: wybrany tryb trasy jest zapamiętywany, a aktywna nawigacja zachowuje swój profil przy przeliczaniu.
+  // v1040: tryb wybierany po wskazaniu celu; aktywna nawigacja zachowuje profil przy przeliczaniu.
   let routeTravelMode = 'car';
   let activeRouteMode = 'car';
+  // v1040: cel oczekuje na wybór trybu dopiero po kliknięciu PROWADŹ / wskazaniu celu.
+  let pendingRouteDestination = null;
 
-  // v1039: nawigacja zintegrowana z panelem mapy + profile AUTO / PIESZO / GÓRY / ROWER.
+  // v1040: nawigacja zintegrowana z panelem mapy + profile AUTO / PIESZO / GÓRY / ROWER.
   let navigationActive = false;
   let navigationVoiceEnabled = true;
   let navigationSteps = [];
@@ -1127,11 +1132,8 @@
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
-    const meta = routeModeMeta(routeTravelMode);
     if (routeSource) {
-      routeSource.textContent = routeTravelMode === 'hiking'
-        ? 'GÓRY: profil pieszy OpenStreetMap.de / OSRM · wyszukiwanie: Nominatim'
-        : `${meta.label}: OpenStreetMap.de / OSRM · wyszukiwanie: Nominatim`;
+      routeSource.textContent = 'Routing: OpenStreetMap.de / OSRM · sposób poruszania wybierzesz po wskazaniu celu';
     }
   }
 
@@ -1139,6 +1141,34 @@
     routeTravelMode = normalizeRouteMode(mode);
     if (persist) localStorage.setItem(ROUTE_MODE_KEY, routeTravelMode);
     updateRouteModeUi();
+  }
+
+  function showRouteModeChooser(destination) {
+    if (!destination || !Number.isFinite(Number(destination.lat)) || !Number.isFinite(Number(destination.lon))) return;
+    pendingRouteDestination = {
+      name: String(destination.name || 'Cel podróży'),
+      lat: Number(destination.lat),
+      lon: Number(destination.lon)
+    };
+    updateRouteModeUi();
+    if (routeModeDestinationName) routeModeDestinationName.textContent = pendingRouteDestination.name;
+    if (routeModeOverlay) routeModeOverlay.hidden = false;
+    const activeButton = routeModeButtons.find((button) => normalizeRouteMode(button.dataset.routeMode) === routeTravelMode) || routeModeButtons[0];
+    requestAnimationFrame(() => activeButton?.focus({ preventScroll: true }));
+  }
+
+  function hideRouteModeChooser({ clearPending = true } = {}) {
+    if (routeModeOverlay) routeModeOverlay.hidden = true;
+    if (clearPending) pendingRouteDestination = null;
+  }
+
+  function startPendingRouteWithMode(mode) {
+    if (!pendingRouteDestination) return;
+    const destination = { ...pendingRouteDestination };
+    setRouteTravelMode(mode);
+    hideRouteModeChooser();
+    if (routeDestinationInput) routeDestinationInput.value = destination.name || '';
+    planRouteToDestination(destination, { startNavigation: true, mode: routeTravelMode });
   }
 
   function updateNavigationModeUi() {
@@ -1192,11 +1222,11 @@
       button.className = 'route-result-button';
       button.setAttribute('role', 'listitem');
       button.textContent = result.display_name || result.name || 'Wybrany cel';
-      button.addEventListener('click', () => planRouteToDestination({
+      button.addEventListener('click', () => showRouteModeChooser({
         name: result.display_name || result.name || 'Cel podróży',
         lat: Number(result.lat),
         lon: Number(result.lon)
-      }, { startNavigation: true, mode: routeTravelMode }));
+      }));
       routeResults.append(button);
     });
   }
@@ -2592,11 +2622,11 @@
       if (attraction) {
         map?.closePopup();
         if (routeDestinationInput) routeDestinationInput.value = attraction.name || '';
-        planRouteToDestination({
+        showRouteModeChooser({
           name: attraction.name || 'Atrakcja',
           lat: Number(attraction.lat),
           lon: Number(attraction.lon)
-        }, { startNavigation: true, mode: routeTravelMode });
+        });
       }
       return;
     }
@@ -2609,11 +2639,11 @@
       if (point) {
         map?.closePopup();
         if (routeDestinationInput) routeDestinationInput.value = point.name || '';
-        planRouteToDestination({
+        showRouteModeChooser({
           name: point.name || (CATEGORY_INFO[point.category]?.label ?? 'Moje miejsce'),
           lat: Number(point.lat),
           lon: Number(point.lon)
-        }, { startNavigation: true, mode: routeTravelMode });
+        });
       }
       return;
     }
@@ -2645,7 +2675,11 @@
   updateMapLegendUi();
 
   routeModeButtons.forEach((button) => {
-    button.addEventListener('click', () => setRouteTravelMode(button.dataset.routeMode));
+    button.addEventListener('click', () => startPendingRouteWithMode(button.dataset.routeMode));
+  });
+  routeModeClose?.addEventListener('click', () => hideRouteModeChooser());
+  routeModeOverlay?.addEventListener('click', (event) => {
+    if (event.target === routeModeOverlay) hideRouteModeChooser();
   });
 
   routeButton?.addEventListener('click', showRoutePanel);
@@ -2688,7 +2722,12 @@
     if (event.target === attractionPreviewOverlay) hideAttractionPreview();
   });
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && attractionPreviewOverlay && !attractionPreviewOverlay.hidden) {
+    if (event.key !== 'Escape') return;
+    if (routeModeOverlay && !routeModeOverlay.hidden) {
+      hideRouteModeChooser();
+      return;
+    }
+    if (attractionPreviewOverlay && !attractionPreviewOverlay.hidden) {
       hideAttractionPreview();
       attractionPreviewButton?.focus({ preventScroll: true });
     }
@@ -2703,11 +2742,11 @@
 
     hideAttractionPreview();
     if (routeDestinationInput) routeDestinationInput.value = item.attraction.name || '';
-    planRouteToDestination({
+    showRouteModeChooser({
       name: item.attraction.name || (CATEGORY_INFO[item.attraction.category]?.label ?? 'Atrakcja'),
       lat: Number(item.attraction.lat),
       lon: Number(item.attraction.lon)
-    }, { startNavigation: true, mode: routeTravelMode });
+    });
   });
 
   nearbyAlertShow?.addEventListener('click', () => {
@@ -2766,7 +2805,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1039', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1040', {
           scope: './',
           updateViaCache: 'none'
         });
