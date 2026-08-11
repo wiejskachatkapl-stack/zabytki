@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1034';
+  const APP_VERSION = 'v1035';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1034';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1035';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;
@@ -143,10 +143,12 @@
   let currentNearbyAlertId = null;
   let nearbyAlertTimer = null;
 
-  // v1022: automatyczne przesuwanie mapy działa tylko po świadomym użyciu WYCENTRUJ.
-  // Każde ręczne przesunięcie lub zoom natychmiast je wyłącza.
+  // v1035: WYCENTRUJ włącza śledzenie widoku. Ręczne przesunięcie mapy je wyłącza,
+  // ale ręczna zmiana zoomu NIE wyłącza śledzenia. Dzięki temu użytkownik może
+  // oddalić mapę, a pozycja wróci do środka dopiero przy dojściu do krawędzi.
   let mapAutoFollowEnabled = false;
   let mapProgrammaticMove = false;
+  let mapAutoRecenterInProgress = false;
 
   let routeLayer = null;
   let routeDestinationMarker = null;
@@ -1391,23 +1393,30 @@
     const lon = Number(position.coords.longitude);
     if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
 
-    // Podczas jazdy nie zmieniamy samoczynnie skali mapy. Przesuwamy ją tylko
-    // wtedy, gdy niebieski punkt zbliża się do krawędzi, aby pozostawał widoczny.
+    // v1035: skala mapy pozostaje dokładnie taka, jak ustawił ją użytkownik.
+    // Kropka może swobodnie przesuwać się po ekranie, ale po dojściu do strefy
+    // przy krawędzi mapa przesuwa się tak, aby bieżąca pozycja wróciła do środka.
     const point = map.latLngToContainerPoint([lat, lon]);
     const size = map.getSize();
-    const marginX = Math.min(FOLLOW_EDGE_MARGIN_PX, Math.max(48, size.x * 0.22));
-    const marginY = Math.min(FOLLOW_EDGE_MARGIN_PX, Math.max(48, size.y * 0.22));
-    const outsideSafeArea =
-      point.x < marginX ||
-      point.x > size.x - marginX ||
-      point.y < marginY ||
-      point.y > size.y - marginY;
+    const marginX = Math.min(FOLLOW_EDGE_MARGIN_PX, Math.max(40, size.x * 0.14));
+    const marginY = Math.min(FOLLOW_EDGE_MARGIN_PX, Math.max(40, size.y * 0.14));
+    const reachedEdgeZone =
+      point.x <= marginX ||
+      point.x >= size.x - marginX ||
+      point.y <= marginY ||
+      point.y >= size.y - marginY;
 
-    if (outsideSafeArea) {
-      mapProgrammaticMove = true;
-      map.panTo([lat, lon], { animate: true, duration: 0.35, noMoveStart: true });
-      mapProgrammaticMove = false;
-    }
+    if (!reachedEdgeZone || mapAutoRecenterInProgress) return;
+
+    mapAutoRecenterInProgress = true;
+    const releaseRecenter = () => {
+      mapAutoRecenterInProgress = false;
+    };
+
+    map.once('moveend', releaseRecenter);
+    map.panTo([lat, lon], { animate: true, duration: 0.4, noMoveStart: true });
+    // Zabezpieczenie na wypadek, gdyby konkretna przeglądarka nie wysłała moveend.
+    setTimeout(releaseRecenter, 700);
   }
 
   function handleMonitoredPosition(position) {
@@ -1584,14 +1593,15 @@
     externalLayer = L.layerGroup().addTo(map);
     renderStoredPoints();
 
-    // Ręczne ruszenie mapy oznacza: użytkownik chce oglądać inne miejsce.
-    // GPS nadal działa i alerty nadal są liczone, ale mapa nie wraca sama do pozycji.
+    // Ręczne PRZESUNIĘCIE mapy oznacza: użytkownik chce oglądać inne miejsce.
+    // Wtedy śledzenie widoku wyłączamy do kolejnego WYCENTRUJ. Sam zoom nie wyłącza
+    // śledzenia — można oddalić mapę i nadal jechać z kropką wracającą ze skraju do środka.
     const pauseAutoFollowFromUser = () => {
       if (mapProgrammaticMove) return;
       mapAutoFollowEnabled = false;
+      mapAutoRecenterInProgress = false;
     };
     map.on('dragstart', pauseAutoFollowFromUser);
-    map.on('zoomstart', pauseAutoFollowFromUser);
 
     map.on('moveend zoomend', () => scheduleViewportAttractions());
     scheduleViewportAttractions(250);
@@ -2266,7 +2276,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1034', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1035', {
           scope: './',
           updateViaCache: 'none'
         });
