@@ -1,7 +1,7 @@
 {
-  "version": "v1048",
+  "version": "v1050",
   "updatedAt": "2026-08-11",
-  "description": "Baza atrakcji Turystycznej Mapy Polski – rozszerzona o województwo łódzkie.",
+  "description": "Baza atrakcji Turystycznej Mapy Polski – uzupełniona o województwa śląskie, dolnośląskie i opolskie; zachowuje optymalizacje v1049.",
   "attractions": [
     {
       "id": "base/palac-radziejowice",
@@ -46,7 +46,8 @@
       "lat": 50.453247,
       "lon": 19.553378,
       "source": "Wikipedia",
-      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_Ogrodzieniec"
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_Ogrodzieniec",
+      "region": "śląskie"
     },
     {
       "id": "base/olsztyn-jura",
@@ -55,7 +56,8 @@
       "lat": 50.749664,
       "lon": 19.27413,
       "source": "Wikipedia",
-      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Olsztynie_%28wojew%C3%B3dztwo_%C5%9Bl%C4%85skie%29"
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Olsztynie_%28wojew%C3%B3dztwo_%C5%9Bl%C4%85skie%29",
+      "region": "śląskie"
     },
     {
       "id": "base/bobolice",
@@ -64,7 +66,8 @@
       "lat": 50.613329,
       "lon": 19.492988,
       "source": "Wikipedia",
-      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Bobolicach"
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Bobolicach",
+      "region": "śląskie"
     },
     {
       "id": "base/czorsztyn",
@@ -26000,7 +26003,4727 @@
       "source": "Łódzkie Travel / dane mapowe",
       "sourceUrl": "https://lodzkie.travel/",
       "region": "łódzkie"
+    },
+    {
+      "id": "śląskie/muzeum-slaskie-w-katowicach",
+      "name": "Muzeum Śląskie w Katowicach",
+      "category": "museum",
+      "lat": 50.266044,
+      "lon": 19.021972,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-historii-katowic",
+      "name": "Muzeum Historii Katowic",
+      "category": "museum",
+      "lat": 50.267809,
+      "lon": 19.01938,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/galeria-szyb-wilson",
+      "name": "Galeria Szyb Wilson",
+      "category": "museum",
+      "lat": 50.263911,
+      "lon": 19.023921,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-historii-komputerow-i-informatyki",
+      "name": "Muzeum Historii Komputerów i Informatyki",
+      "category": "museum",
+      "lat": 50.266317,
+      "lon": 19.023373,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/spodek-w-katowicach",
+      "name": "Spodek w Katowicach",
+      "category": "historic",
+      "lat": 50.265032,
+      "lon": 19.02222,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/strefa-kultury-w-katowicach",
+      "name": "Strefa Kultury w Katowicach",
+      "category": "historic",
+      "lat": 50.265646,
+      "lon": 19.021105,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/narodowa-orkiestra-symfoniczna-polskiego-radia-w-katowicach-nospr",
+      "name": "Narodowa Orkiestra Symfoniczna Polskiego Radia w Katowicach (NOSPR)",
+      "category": "historic",
+      "lat": 50.265167,
+      "lon": 19.023075,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/osiedle-nikiszowiec",
+      "name": "Osiedle Nikiszowiec",
+      "category": "historic",
+      "lat": 50.26658,
+      "lon": 19.02536,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/osiedle-giszowiec",
+      "name": "Osiedle Giszowiec",
+      "category": "historic",
+      "lat": 50.262078,
+      "lon": 19.020653,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/archikatedra-chrystusa-krola-w-katowicach",
+      "name": "Archikatedra Chrystusa Króla w Katowicach",
+      "category": "historic",
+      "lat": 50.26443,
+      "lon": 19.021022,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/wieza-spadochronowa-w-parku-kosciuszki",
+      "name": "Wieża spadochronowa w Parku Kościuszki",
+      "category": "historic",
+      "lat": 50.266701,
+      "lon": 19.021634,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/dolina-trzech-stawow",
+      "name": "Dolina Trzech Stawów",
+      "category": "nature",
+      "lat": 50.266619,
+      "lon": 19.02321,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/park-kosciuszki-w-katowicach",
+      "name": "Park Kościuszki w Katowicach",
+      "category": "nature",
+      "lat": 50.264914,
+      "lon": 19.024448,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/bajka-pana-kleksa",
+      "name": "Bajka Pana Kleksa",
+      "category": "museum",
+      "lat": 50.265056,
+      "lon": 19.021186,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/tauron-park-slaski",
+      "name": "Tauron Park Śląski",
+      "category": "nature",
+      "lat": 50.299944,
+      "lon": 18.952588,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/slaski-ogrod-zoologiczny-w-chorzowie",
+      "name": "Śląski Ogród Zoologiczny w Chorzowie",
+      "category": "nature",
+      "lat": 50.29551,
+      "lon": 18.953596,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/planetarium-slaski-park-nauki",
+      "name": "Planetarium – Śląski Park Nauki",
+      "category": "museum",
+      "lat": 50.296019,
+      "lon": 18.951892,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-gornoslaski-park-etnograficzny-w-chorzowie",
+      "name": "Muzeum Górnośląski Park Etnograficzny w Chorzowie",
+      "category": "museum",
+      "lat": 50.296066,
+      "lon": 18.957491,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/stadion-slaski",
+      "name": "Stadion Śląski",
+      "category": "historic",
+      "lat": 50.295,
+      "lon": 18.957846,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/gornoslaskie-koleje-waskotorowe-stacja-chorzow",
+      "name": "Górnośląskie Koleje Wąskotorowe – stacja Chorzów",
+      "category": "historic",
+      "lat": 50.29798,
+      "lon": 18.953832,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/legendia-slaskie-wesoe-miasteczko",
+      "name": "Legendia – Śląskie Wesołe Miasteczko",
+      "category": "historic",
+      "lat": 50.298354,
+      "lon": 18.953061,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/kopalnia-guido",
+      "name": "Kopalnia Guido",
+      "category": "museum",
+      "lat": 50.323066,
+      "lon": 18.785707,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/sztolnia-krolowa-luiza-strefa-wilhelmina",
+      "name": "Sztolnia Królowa Luiza – Strefa Wilhelmina",
+      "category": "museum",
+      "lat": 50.322793,
+      "lon": 18.783013,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-gornictwa-weglowego-w-zabrzu",
+      "name": "Muzeum Górnictwa Węglowego w Zabrzu",
+      "category": "museum",
+      "lat": 50.323734,
+      "lon": 18.783802,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/szyb-maciej",
+      "name": "Szyb Maciej",
+      "category": "museum",
+      "lat": 50.326523,
+      "lon": 18.788564,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/wieza-cisnien-w-zabrzu-carboneum",
+      "name": "Wieża ciśnień w Zabrzu – Carboneum",
+      "category": "museum",
+      "lat": 50.32257,
+      "lon": 18.78517,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/dom-muzyki-i-tanca-w-zabrzu",
+      "name": "Dom Muzyki i Tańca w Zabrzu",
+      "category": "historic",
+      "lat": 50.323403,
+      "lon": 18.787051,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/radiostacja-gliwice",
+      "name": "Radiostacja Gliwice",
+      "category": "historic",
+      "lat": 50.292905,
+      "lon": 18.670498,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rynek-w-gliwicach",
+      "name": "Rynek w Gliwicach",
+      "category": "historic",
+      "lat": 50.295033,
+      "lon": 18.675718,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/ratusz-w-gliwicach",
+      "name": "Ratusz w Gliwicach",
+      "category": "historic",
+      "lat": 50.296316,
+      "lon": 18.670787,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/katedra-sw-apostoow-piotra-i-pawa-w-gliwicach",
+      "name": "Katedra św. Apostołów Piotra i Pawła w Gliwicach",
+      "category": "historic",
+      "lat": 50.295292,
+      "lon": 18.667651,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/willa-caro-muzeum-w-gliwicach",
+      "name": "Willa Caro – Muzeum w Gliwicach",
+      "category": "museum",
+      "lat": 50.292007,
+      "lon": 18.675554,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zamek-piastowski-w-gliwicach",
+      "name": "Zamek Piastowski w Gliwicach",
+      "category": "museum",
+      "lat": 50.293778,
+      "lon": 18.667238,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/oddzia-odlewnictwa-artystycznego-muzeum-w-gliwicach",
+      "name": "Oddział Odlewnictwa Artystycznego Muzeum w Gliwicach",
+      "category": "museum",
+      "lat": 50.294867,
+      "lon": 18.67291,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/palmiarnia-miejska-w-gliwicach",
+      "name": "Palmiarnia Miejska w Gliwicach",
+      "category": "nature",
+      "lat": 50.295276,
+      "lon": 18.672811,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/marina-gliwice",
+      "name": "Marina Gliwice",
+      "category": "water",
+      "lat": 50.295473,
+      "lon": 18.670392,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/opera-slaska-w-bytomiu",
+      "name": "Opera Śląska w Bytomiu",
+      "category": "historic",
+      "lat": 50.350109,
+      "lon": 18.919122,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rynek-w-bytomiu",
+      "name": "Rynek w Bytomiu",
+      "category": "historic",
+      "lat": 50.350633,
+      "lon": 18.916909,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/elektrociepownia-szombierki",
+      "name": "Elektrociepłownia Szombierki",
+      "category": "historic",
+      "lat": 50.346743,
+      "lon": 18.911751,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-gornoslaskie-w-bytomiu",
+      "name": "Muzeum Górnośląskie w Bytomiu",
+      "category": "museum",
+      "lat": 50.350713,
+      "lon": 18.919023,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zabie-doy",
+      "name": "Żabie Doły",
+      "category": "reserve",
+      "lat": 50.345499,
+      "lon": 18.912379,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zabytkowa-kopalnia-srebra",
+      "name": "Zabytkowa Kopalnia Srebra",
+      "category": "museum",
+      "lat": 50.445758,
+      "lon": 18.861756,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/sztolnia-czarnego-pstraga",
+      "name": "Sztolnia Czarnego Pstrąga",
+      "category": "museum",
+      "lat": 50.44529,
+      "lon": 18.859866,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rynek-w-tarnowskich-gorach",
+      "name": "Rynek w Tarnowskich Górach",
+      "category": "historic",
+      "lat": 50.44429,
+      "lon": 18.863813,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/park-repecki",
+      "name": "Park Repecki",
+      "category": "nature",
+      "lat": 50.444238,
+      "lon": 18.856608,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zamek-w-pszczynie",
+      "name": "Zamek w Pszczynie",
+      "category": "castle",
+      "lat": 49.982698,
+      "lon": 18.953019,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/pokazowa-zagroda-zubrow-w-pszczynie",
+      "name": "Pokazowa Zagroda Żubrów w Pszczynie",
+      "category": "nature",
+      "lat": 49.980361,
+      "lon": 18.950986,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/park-zamkowy-w-pszczynie",
+      "name": "Park Zamkowy w Pszczynie",
+      "category": "nature",
+      "lat": 49.982458,
+      "lon": 18.954939,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/skansen-zagroda-wsi-pszczynskiej",
+      "name": "Skansen Zagroda Wsi Pszczyńskiej",
+      "category": "museum",
+      "lat": 49.980912,
+      "lon": 18.952008,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-prasy-slaskiej-w-pszczynie",
+      "name": "Muzeum Prasy Śląskiej w Pszczynie",
+      "category": "museum",
+      "lat": 49.982128,
+      "lon": 18.952656,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rynek-w-pszczynie",
+      "name": "Rynek w Pszczynie",
+      "category": "historic",
+      "lat": 49.981359,
+      "lon": 18.952059,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zamek-ksiazat-sukowskich-w-bielsku-biaej",
+      "name": "Zamek książąt Sułkowskich w Bielsku-Białej",
+      "category": "castle",
+      "lat": 49.824247,
+      "lon": 19.051032,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/stara-fabryka-w-bielsku-biaej",
+      "name": "Stara Fabryka w Bielsku-Białej",
+      "category": "museum",
+      "lat": 49.819448,
+      "lon": 19.050947,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/dom-tkacza-w-bielsku-biaej",
+      "name": "Dom Tkacza w Bielsku-Białej",
+      "category": "museum",
+      "lat": 49.825365,
+      "lon": 19.04876,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/interaktywne-centrum-bajki-i-animacji-oko",
+      "name": "Interaktywne Centrum Bajki i Animacji OKO",
+      "category": "museum",
+      "lat": 49.820574,
+      "lon": 19.046234,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rynek-w-bielsku-biaej",
+      "name": "Rynek w Bielsku-Białej",
+      "category": "historic",
+      "lat": 49.82042,
+      "lon": 19.049369,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/katedra-sw-mikoaja-w-bielsku-biaej",
+      "name": "Katedra św. Mikołaja w Bielsku-Białej",
+      "category": "historic",
+      "lat": 49.824799,
+      "lon": 19.043223,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/szyndzielnia",
+      "name": "Szyndzielnia",
+      "category": "nature",
+      "lat": 49.7725,
+      "lon": 18.9992,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/kolej-gondolowa-na-szyndzielnie",
+      "name": "Kolej Gondolowa na Szyndzielnię",
+      "category": "nature",
+      "lat": 49.824445,
+      "lon": 19.048069,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/wzgorze-zamkowe-w-cieszynie",
+      "name": "Wzgórze Zamkowe w Cieszynie",
+      "category": "historic",
+      "lat": 49.751003,
+      "lon": 18.635188,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rotunda-sw-mikoaja-w-cieszynie",
+      "name": "Rotunda św. Mikołaja w Cieszynie",
+      "category": "historic",
+      "lat": 49.745855,
+      "lon": 18.63017,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/wieza-piastowska-w-cieszynie",
+      "name": "Wieża Piastowska w Cieszynie",
+      "category": "historic",
+      "lat": 49.751146,
+      "lon": 18.629049,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rynek-w-cieszynie",
+      "name": "Rynek w Cieszynie",
+      "category": "historic",
+      "lat": 49.748599,
+      "lon": 18.63071,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/browar-zamkowy-cieszyn",
+      "name": "Browar Zamkowy Cieszyn",
+      "category": "historic",
+      "lat": 49.751623,
+      "lon": 18.636984,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-slaska-cieszynskiego-paac-larischow",
+      "name": "Muzeum Śląska Cieszyńskiego – Pałac Larischów",
+      "category": "museum",
+      "lat": 49.751104,
+      "lon": 18.635907,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-drukarstwa-w-cieszynie",
+      "name": "Muzeum Drukarstwa w Cieszynie",
+      "category": "museum",
+      "lat": 49.748028,
+      "lon": 18.635513,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rezydencja-prezydenta-rp-zamek-w-wisle",
+      "name": "Rezydencja Prezydenta RP – Zamek w Wiśle",
+      "category": "castle",
+      "lat": 49.652187,
+      "lon": 18.860737,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-beskidzkie-im-a-podzorskiego-w-wisle",
+      "name": "Muzeum Beskidzkie im. A. Podżorskiego w Wiśle",
+      "category": "museum",
+      "lat": 49.652884,
+      "lon": 18.858374,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/skocznia-narciarska-im-adama-maysza-w-wisle-malince",
+      "name": "Skocznia narciarska im. Adama Małysza w Wiśle Malince",
+      "category": "historic",
+      "lat": 49.655884,
+      "lon": 18.856563,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/barania-gora",
+      "name": "Barania Góra",
+      "category": "nature",
+      "lat": 49.6114,
+      "lon": 18.9803,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/wielki-stozek",
+      "name": "Wielki Stożek",
+      "category": "nature",
+      "lat": 49.6054,
+      "lon": 18.8252,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/wodospad-na-wisece",
+      "name": "Wodospad na Wisełce",
+      "category": "nature",
+      "lat": 49.651747,
+      "lon": 18.86002,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/jezioro-czernianskie-i-zapora-w-wisle",
+      "name": "Jezioro Czerniańskie i zapora w Wiśle",
+      "category": "water",
+      "lat": 49.651958,
+      "lon": 18.863539,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/kolej-krzesekowa-na-czantorie",
+      "name": "Kolej krzesełkowa na Czantorię",
+      "category": "nature",
+      "lat": 49.721465,
+      "lon": 18.798893,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/lesny-park-niespodzianek-w-ustroniu",
+      "name": "Leśny Park Niespodzianek w Ustroniu",
+      "category": "nature",
+      "lat": 49.719193,
+      "lon": 18.804484,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rownica",
+      "name": "Równica",
+      "category": "nature",
+      "lat": 49.7196,
+      "lon": 18.857,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/bulwary-nad-wisa-i-amfiteatr-w-ustroniu",
+      "name": "Bulwary nad Wisłą i amfiteatr w Ustroniu",
+      "category": "nature",
+      "lat": 49.718703,
+      "lon": 18.803001,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zespo-uzdrowiskowy-w-ustroniu",
+      "name": "Zespół Uzdrowiskowy w Ustroniu",
+      "category": "historic",
+      "lat": 49.719078,
+      "lon": 18.802169,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/skrzyczne",
+      "name": "Skrzyczne",
+      "category": "nature",
+      "lat": 49.6848,
+      "lon": 19.03,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/malinowska-skaa",
+      "name": "Malinowska Skała",
+      "category": "nature",
+      "lat": 49.6807,
+      "lon": 18.9977,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/kolej-gondolowa-na-hale-skrzyczenska",
+      "name": "Kolej Gondolowa na Halę Skrzyczeńską",
+      "category": "nature",
+      "lat": 49.718087,
+      "lon": 19.041035,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/sanktuarium-matki-bozej-krolowej-polski-na-gorce",
+      "name": "Sanktuarium Matki Bożej Królowej Polski na Górce",
+      "category": "historic",
+      "lat": 49.718231,
+      "lon": 19.033629,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zamek-komorowskich-w-zywcu",
+      "name": "Zamek Komorowskich w Żywcu",
+      "category": "castle",
+      "lat": 49.687042,
+      "lon": 19.188874,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/paac-habsburgow-w-zywcu",
+      "name": "Pałac Habsburgów w Żywcu",
+      "category": "castle",
+      "lat": 49.686297,
+      "lon": 19.190848,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-browaru-zywiec",
+      "name": "Muzeum Browaru Żywiec",
+      "category": "museum",
+      "lat": 49.683614,
+      "lon": 19.192679,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-miejskie-w-zywcu",
+      "name": "Muzeum Miejskie w Żywcu",
+      "category": "museum",
+      "lat": 49.686928,
+      "lon": 19.194807,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rynek-w-zywcu",
+      "name": "Rynek w Żywcu",
+      "category": "historic",
+      "lat": 49.686836,
+      "lon": 19.194607,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/park-zamkowy-w-zywcu",
+      "name": "Park Zamkowy w Żywcu",
+      "category": "nature",
+      "lat": 49.684549,
+      "lon": 19.192009,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/jezioro-zywieckie",
+      "name": "Jezioro Żywieckie",
+      "category": "water",
+      "lat": 49.733,
+      "lon": 19.191,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/okiennik-wielki",
+      "name": "Okiennik Wielki",
+      "category": "nature",
+      "lat": 50.5716,
+      "lon": 19.4186,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/grod-na-gorze-birow-w-podzamczu",
+      "name": "Gród na Górze Birów w Podzamczu",
+      "category": "historic",
+      "lat": 50.454115,
+      "lon": 19.55221,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zamek-ogrodzieniec-w-podzamczu",
+      "name": "Zamek Ogrodzieniec w Podzamczu",
+      "category": "ruins",
+      "lat": 50.453247,
+      "lon": 19.553378,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/ruiny-zamku-w-mirowie",
+      "name": "Ruiny Zamku w Mirowie",
+      "category": "ruins",
+      "lat": 50.616585,
+      "lon": 19.472626,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rezerwat-gora-zborow",
+      "name": "Rezerwat Góra Zborów",
+      "category": "reserve",
+      "lat": 50.5748,
+      "lon": 19.5018,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/jaskinia-geboka",
+      "name": "Jaskinia Głęboka",
+      "category": "cave",
+      "lat": 50.575,
+      "lon": 19.5003,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/skay-rzedkowickie",
+      "name": "Skały Rzędkowickie",
+      "category": "nature",
+      "lat": 50.5925,
+      "lon": 19.5,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zamek-pilcza-i-rezerwat-smolen",
+      "name": "Zamek Pilcza i Rezerwat Smoleń",
+      "category": "ruins",
+      "lat": 50.4357,
+      "lon": 19.6746,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/pustynia-bedowska",
+      "name": "Pustynia Błędowska",
+      "category": "nature",
+      "lat": 50.3377,
+      "lon": 19.4846,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/dworek-krasinskiego-w-zotym-potoku-muzeum-regionalne",
+      "name": "Dworek Krasińskiego w Złotym Potoku – Muzeum Regionalne",
+      "category": "museum",
+      "lat": 50.70789,
+      "lon": 19.436384,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/stary-myn-muzeum-dawnych-rzemios",
+      "name": "Stary Młyn – Muzeum Dawnych Rzemiosł",
+      "category": "historic",
+      "lat": 50.70698,
+      "lon": 19.434526,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rezerwat-parkowe",
+      "name": "Rezerwat Parkowe",
+      "category": "reserve",
+      "lat": 50.6945,
+      "lon": 19.4166,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/brama-twardowskiego-w-zotym-potoku",
+      "name": "Brama Twardowskiego w Złotym Potoku",
+      "category": "nature",
+      "lat": 50.6937,
+      "lon": 19.421,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/pustynia-siedlecka",
+      "name": "Pustynia Siedlecka",
+      "category": "nature",
+      "lat": 50.7007,
+      "lon": 19.336,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/sanktuarium-nmp-na-jasnej-gorze-w-czestochowie",
+      "name": "Sanktuarium NMP na Jasnej Górze w Częstochowie",
+      "category": "historic",
+      "lat": 50.809477,
+      "lon": 19.119363,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/aleja-najswietszej-maryi-panny-w-czestochowie",
+      "name": "Aleja Najświętszej Maryi Panny w Częstochowie",
+      "category": "historic",
+      "lat": 50.813513,
+      "lon": 19.11859,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/ratusz-w-czestochowie",
+      "name": "Ratusz w Częstochowie",
+      "category": "historic",
+      "lat": 50.809134,
+      "lon": 19.120144,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-czestochowskie",
+      "name": "Muzeum Częstochowskie",
+      "category": "museum",
+      "lat": 50.809417,
+      "lon": 19.123651,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rezerwat-archeologiczny-kultury-uzyckiej-w-czestochowie-rakowie",
+      "name": "Rezerwat Archeologiczny Kultury Łużyckiej w Częstochowie Rakowie",
+      "category": "museum",
+      "lat": 50.809274,
+      "lon": 19.116043,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/park-im-stanisawa-staszica-w-czestochowie",
+      "name": "Park im. Stanisława Staszica w Częstochowie",
+      "category": "nature",
+      "lat": 50.812173,
+      "lon": 19.119287,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/park-3-maja-w-czestochowie",
+      "name": "Park 3 Maja w Częstochowie",
+      "category": "nature",
+      "lat": 50.809777,
+      "lon": 19.123558,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zamek-w-bedzinie",
+      "name": "Zamek w Będzinie",
+      "category": "castle",
+      "lat": 50.32394,
+      "lon": 19.124694,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/paac-mieroszewskich-w-bedzinie",
+      "name": "Pałac Mieroszewskich w Będzinie",
+      "category": "castle",
+      "lat": 50.324785,
+      "lon": 19.12787,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/podziemia-bedzinskie",
+      "name": "Podziemia Będzińskie",
+      "category": "museum",
+      "lat": 50.32878,
+      "lon": 19.121658,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/ruiny-zamku-biskupow-krakowskich-w-siewierzu",
+      "name": "Ruiny zamku biskupów krakowskich w Siewierzu",
+      "category": "ruins",
+      "lat": 50.465837,
+      "lon": 19.228635,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zamek-piastowski-w-raciborzu",
+      "name": "Zamek Piastowski w Raciborzu",
+      "category": "castle",
+      "lat": 50.093703,
+      "lon": 18.215869,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-w-raciborzu",
+      "name": "Muzeum w Raciborzu",
+      "category": "museum",
+      "lat": 50.089744,
+      "lon": 18.222273,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/arboretum-bramy-morawskiej",
+      "name": "Arboretum Bramy Morawskiej",
+      "category": "nature",
+      "lat": 50.093425,
+      "lon": 18.216358,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rezerwat-ezczok",
+      "name": "Rezerwat Łężczok",
+      "category": "reserve",
+      "lat": 50.142,
+      "lon": 18.232,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zamek-w-tworkowie",
+      "name": "Zamek w Tworkowie",
+      "category": "ruins",
+      "lat": 50.007182,
+      "lon": 18.235459,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/graniczne-meandry-odry",
+      "name": "Graniczne Meandry Odry",
+      "category": "nature",
+      "lat": 49.9335,
+      "lon": 18.314,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zabytkowa-kopalnia-ignacy",
+      "name": "Zabytkowa Kopalnia Ignacy",
+      "category": "museum",
+      "lat": 50.096477,
+      "lon": 18.537658,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zalew-rybnicki",
+      "name": "Zalew Rybnicki",
+      "category": "water",
+      "lat": 50.111,
+      "lon": 18.523,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/rynek-w-rybniku",
+      "name": "Rynek w Rybniku",
+      "category": "historic",
+      "lat": 50.099492,
+      "lon": 18.539205,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-tyskich-browarow-ksiazecych",
+      "name": "Muzeum Tyskich Browarów Książęcych",
+      "category": "museum",
+      "lat": 50.135851,
+      "lon": 18.967562,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-miejskie-w-tychach",
+      "name": "Muzeum Miejskie w Tychach",
+      "category": "museum",
+      "lat": 50.13873,
+      "lon": 18.962451,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/jezioro-paprocanskie",
+      "name": "Jezioro Paprocańskie",
+      "category": "water",
+      "lat": 50.135504,
+      "lon": 18.963453,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/park-grodek-w-jaworznie",
+      "name": "Park Gródek w Jaworznie",
+      "category": "nature",
+      "lat": 50.205145,
+      "lon": 19.271283,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/geosfera-w-jaworznie",
+      "name": "GEOsfera w Jaworznie",
+      "category": "nature",
+      "lat": 50.202853,
+      "lon": 19.274554,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/diving-marina-koparki",
+      "name": "Diving Marina Koparki",
+      "category": "water",
+      "lat": 50.203548,
+      "lon": 19.271317,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zamek-w-toszku",
+      "name": "Zamek w Toszku",
+      "category": "castle",
+      "lat": 50.455375,
+      "lon": 18.520916,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zamek-w-chudowie",
+      "name": "Zamek w Chudowie",
+      "category": "ruins",
+      "lat": 50.222168,
+      "lon": 18.775555,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zespo-paacowo-parkowy-ballestremow-w-pawniowicach",
+      "name": "Zespół Pałacowo-Parkowy Ballestremów w Pławniowicach",
+      "category": "castle",
+      "lat": 50.387562,
+      "lon": 18.478171,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/paac-w-koszecinie",
+      "name": "Pałac w Koszęcinie",
+      "category": "castle",
+      "lat": 50.637382,
+      "lon": 18.840309,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/pocysterski-zespo-klasztorno-paacowy-w-rudach",
+      "name": "Pocysterski zespół klasztorno-pałacowy w Rudach",
+      "category": "castle",
+      "lat": 50.191372,
+      "lon": 18.451294,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/kolej-waskotorowa-w-rudach",
+      "name": "Kolej Wąskotorowa w Rudach",
+      "category": "historic",
+      "lat": 50.192104,
+      "lon": 18.452666,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/centrum-koronki-koniakowskiej",
+      "name": "Centrum Koronki Koniakowskiej",
+      "category": "museum",
+      "lat": 49.548901,
+      "lon": 18.951574,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/centrum-pasterskie-w-koniakowie",
+      "name": "Centrum Pasterskie w Koniakowie",
+      "category": "museum",
+      "lat": 49.550979,
+      "lon": 18.952899,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/chata-kawuloka-w-istebnej",
+      "name": "Chata Kawuloka w Istebnej",
+      "category": "museum",
+      "lat": 49.565415,
+      "lon": 18.906519,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/trojstyk-granic-w-jaworzynce-trzycatku",
+      "name": "Trójstyk granic w Jaworzynce-Trzycatku",
+      "category": "nature",
+      "lat": 49.5171,
+      "lon": 18.851,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/geopark-glinka",
+      "name": "Geopark Glinka",
+      "category": "nature",
+      "lat": 49.481017,
+      "lon": 19.142009,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zywiecki-park-etnograficzny-w-slemieniu",
+      "name": "Żywiecki Park Etnograficzny w Ślemieniu",
+      "category": "museum",
+      "lat": 49.715955,
+      "lon": 19.369831,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-stara-chaupa-w-milowce",
+      "name": "Muzeum Stara Chałupa w Milówce",
+      "category": "museum",
+      "lat": 49.55735,
+      "lon": 19.086997,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/uzdrowisko-goczakowice-zdroj",
+      "name": "Uzdrowisko Goczałkowice-Zdrój",
+      "category": "historic",
+      "lat": 49.946364,
+      "lon": 18.972615,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/ogrody-kapias",
+      "name": "Ogrody Kapias",
+      "category": "nature",
+      "lat": 49.943628,
+      "lon": 18.971703,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/jezioro-goczakowickie",
+      "name": "Jezioro Goczałkowickie",
+      "category": "water",
+      "lat": 49.943474,
+      "lon": 18.971008,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/slaski-ogrod-botaniczny-w-mikoowie",
+      "name": "Śląski Ogród Botaniczny w Mikołowie",
+      "category": "nature",
+      "lat": 50.171689,
+      "lon": 18.907355,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-ognia-w-zorach",
+      "name": "Muzeum Ognia w Żorach",
+      "category": "museum",
+      "lat": 50.044344,
+      "lon": 18.696732,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/park-rozrywki-twinpigs",
+      "name": "Park Rozrywki Twinpigs",
+      "category": "historic",
+      "lat": 50.044517,
+      "lon": 18.697888,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/centralne-muzeum-pozarnictwa",
+      "name": "Centralne Muzeum Pożarnictwa",
+      "category": "museum",
+      "lat": 50.210507,
+      "lon": 19.170552,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/muzeum-chleba-szkoy-i-ciekawostek",
+      "name": "Muzeum Chleba, Szkoły i Ciekawostek",
+      "category": "museum",
+      "lat": 50.401263,
+      "lon": 18.901323,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/bazylika-nmp-i-sw-bartomieja-w-piekarach-slaskich",
+      "name": "Bazylika NMP i św. Bartłomieja w Piekarach Śląskich",
+      "category": "historic",
+      "lat": 50.379148,
+      "lon": 18.927836,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/park-w-swierklancu",
+      "name": "Park w Świerklańcu",
+      "category": "nature",
+      "lat": 50.44316,
+      "lon": 18.951748,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/pojezierze-palowickie",
+      "name": "Pojezierze Palowickie",
+      "category": "water",
+      "lat": 50.065,
+      "lon": 18.732,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/zalew-porajski",
+      "name": "Zalew Porajski",
+      "category": "water",
+      "lat": 50.676,
+      "lon": 19.218,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "śląskie/jeziora-pogoria",
+      "name": "Jeziora Pogoria",
+      "category": "water",
+      "lat": 50.3425,
+      "lon": 19.227,
+      "source": "Śląskie.travel / dane lokalizacyjne",
+      "sourceUrl": "https://www.slaskie.travel/",
+      "region": "śląskie"
+    },
+    {
+      "id": "dolnośląskie/rynek-we-wrocawiu",
+      "name": "Rynek we Wrocławiu",
+      "category": "historic",
+      "lat": 51.10923,
+      "lon": 17.035125,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/ratusz-we-wrocawiu",
+      "name": "Ratusz we Wrocławiu",
+      "category": "historic",
+      "lat": 51.107044,
+      "lon": 17.035347,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/ostrow-tumski-we-wrocawiu",
+      "name": "Ostrów Tumski we Wrocławiu",
+      "category": "historic",
+      "lat": 51.107261,
+      "lon": 17.042073,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/archikatedra-sw-jana-chrzciciela-we-wrocawiu",
+      "name": "Archikatedra św. Jana Chrzciciela we Wrocławiu",
+      "category": "historic",
+      "lat": 51.11039,
+      "lon": 17.038458,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/most-tumski",
+      "name": "Most Tumski",
+      "category": "historic",
+      "lat": 51.10915,
+      "lon": 17.035475,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/most-grunwaldzki",
+      "name": "Most Grunwaldzki",
+      "category": "historic",
+      "lat": 51.105286,
+      "lon": 17.037595,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/uniwersytet-wrocawski-gmach-gowny",
+      "name": "Uniwersytet Wrocławski – Gmach Główny",
+      "category": "historic",
+      "lat": 51.109934,
+      "lon": 17.042512,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/aula-leopoldina",
+      "name": "Aula Leopoldina",
+      "category": "historic",
+      "lat": 51.109024,
+      "lon": 17.04238,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zakad-narodowy-im-ossolinskich",
+      "name": "Zakład Narodowy im. Ossolińskich",
+      "category": "historic",
+      "lat": 51.107793,
+      "lon": 17.034404,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/synagoga-pod-biaym-bocianem",
+      "name": "Synagoga Pod Białym Bocianem",
+      "category": "historic",
+      "lat": 51.10899,
+      "lon": 17.036731,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/dzielnica-czterech-wyznan",
+      "name": "Dzielnica Czterech Wyznań",
+      "category": "historic",
+      "lat": 51.108426,
+      "lon": 17.04038,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/hala-stulecia",
+      "name": "Hala Stulecia",
+      "category": "historic",
+      "lat": 51.110772,
+      "lon": 17.036537,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/pergola-przy-hali-stulecia",
+      "name": "Pergola przy Hali Stulecia",
+      "category": "historic",
+      "lat": 51.110602,
+      "lon": 17.041323,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/panorama-racawicka",
+      "name": "Panorama Racławicka",
+      "category": "museum",
+      "lat": 51.110319,
+      "lon": 17.038321,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-narodowe-we-wrocawiu",
+      "name": "Muzeum Narodowe we Wrocławiu",
+      "category": "museum",
+      "lat": 51.108596,
+      "lon": 17.03482,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/hydropolis",
+      "name": "Hydropolis",
+      "category": "museum",
+      "lat": 51.110577,
+      "lon": 17.034067,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/centrum-historii-zajezdnia",
+      "name": "Centrum Historii Zajezdnia",
+      "category": "museum",
+      "lat": 51.109636,
+      "lon": 17.037896,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-pana-tadeusza",
+      "name": "Muzeum Pana Tadeusza",
+      "category": "museum",
+      "lat": 51.10634,
+      "lon": 17.035389,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-archeologiczne-we-wrocawiu",
+      "name": "Muzeum Archeologiczne we Wrocławiu",
+      "category": "museum",
+      "lat": 51.109597,
+      "lon": 17.036664,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/kolejkowo-wrocaw",
+      "name": "Kolejkowo Wrocław",
+      "category": "museum",
+      "lat": 51.107004,
+      "lon": 17.034813,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/ogrod-japonski-we-wrocawiu",
+      "name": "Ogród Japoński we Wrocławiu",
+      "category": "nature",
+      "lat": 51.109586,
+      "lon": 17.035598,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/ogrod-botaniczny-uniwersytetu-wrocawskiego",
+      "name": "Ogród Botaniczny Uniwersytetu Wrocławskiego",
+      "category": "nature",
+      "lat": 51.108477,
+      "lon": 17.034296,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zoo-wrocaw-i-afrykarium",
+      "name": "Zoo Wrocław i Afrykarium",
+      "category": "nature",
+      "lat": 51.105397,
+      "lon": 17.038891,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/park-szczytnicki",
+      "name": "Park Szczytnicki",
+      "category": "nature",
+      "lat": 51.108525,
+      "lon": 17.041487,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/narodowe-forum-muzyki",
+      "name": "Narodowe Forum Muzyki",
+      "category": "historic",
+      "lat": 51.106187,
+      "lon": 17.042137,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/punkt-widokowy-sky-tower",
+      "name": "Punkt widokowy Sky Tower",
+      "category": "historic",
+      "lat": 51.110775,
+      "lon": 17.036095,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/swiatynia-wang",
+      "name": "Świątynia Wang",
+      "category": "historic",
+      "lat": 50.776656,
+      "lon": 15.759507,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zapora-na-omnicy",
+      "name": "Zapora na Łomnicy",
+      "category": "historic",
+      "lat": 50.779477,
+      "lon": 15.757547,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/sniezka",
+      "name": "Śnieżka",
+      "category": "nature",
+      "lat": 50.736,
+      "lon": 15.7397,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/kocio-maego-stawu-i-schronisko-samotnia",
+      "name": "Kocioł Małego Stawu i Schronisko Samotnia",
+      "category": "nature",
+      "lat": 50.749,
+      "lon": 15.7027,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/karkonoski-park-narodowy",
+      "name": "Karkonoski Park Narodowy",
+      "category": "nature",
+      "lat": 50.769,
+      "lon": 15.666,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/wodospad-kamienczyka",
+      "name": "Wodospad Kamieńczyka",
+      "category": "nature",
+      "lat": 50.8144,
+      "lon": 15.4965,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/wodospad-szklarki",
+      "name": "Wodospad Szklarki",
+      "category": "nature",
+      "lat": 50.834,
+      "lon": 15.555,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/szrenica",
+      "name": "Szrenica",
+      "category": "nature",
+      "lat": 50.7927,
+      "lon": 15.5138,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/chybotek",
+      "name": "Chybotek",
+      "category": "nature",
+      "lat": 50.8336,
+      "lon": 15.5901,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zoty-widok-w-szklarskiej-porebie",
+      "name": "Złoty Widok w Szklarskiej Porębie",
+      "category": "nature",
+      "lat": 50.8349,
+      "lon": 15.575,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/lesna-huta-w-szklarskiej-porebie",
+      "name": "Leśna Huta w Szklarskiej Porębie",
+      "category": "museum",
+      "lat": 50.825057,
+      "lon": 15.527617,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-mineralogiczne-w-szklarskiej-porebie",
+      "name": "Muzeum Mineralogiczne w Szklarskiej Porębie",
+      "category": "museum",
+      "lat": 50.827336,
+      "lon": 15.528049,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/dom-carla-i-gerharta-hauptmannow",
+      "name": "Dom Carla i Gerharta Hauptmannów",
+      "category": "museum",
+      "lat": 50.825992,
+      "lon": 15.523261,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/rynek-w-jeleniej-gorze",
+      "name": "Rynek w Jeleniej Górze",
+      "category": "historic",
+      "lat": 50.901438,
+      "lon": 15.721976,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/ratusz-w-jeleniej-gorze",
+      "name": "Ratusz w Jeleniej Górze",
+      "category": "historic",
+      "lat": 50.901972,
+      "lon": 15.718002,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/bazylika-sw-erazma-i-pankracego-w-jeleniej-gorze",
+      "name": "Bazylika św. Erazma i Pankracego w Jeleniej Górze",
+      "category": "historic",
+      "lat": 50.901686,
+      "lon": 15.720304,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-karkonoskie-w-jeleniej-gorze",
+      "name": "Muzeum Karkonoskie w Jeleniej Górze",
+      "category": "museum",
+      "lat": 50.903499,
+      "lon": 15.715214,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/time-gates-bramy-czasu",
+      "name": "Time Gates – Bramy Czasu",
+      "category": "museum",
+      "lat": 50.904564,
+      "lon": 15.723242,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/park-zdrojowy-w-cieplicach",
+      "name": "Park Zdrojowy w Cieplicach",
+      "category": "historic",
+      "lat": 50.864738,
+      "lon": 15.689228,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/paac-schaffgotschow-w-cieplicach",
+      "name": "Pałac Schaffgotschów w Cieplicach",
+      "category": "historic",
+      "lat": 50.866303,
+      "lon": 15.686474,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/termy-cieplickie",
+      "name": "Termy Cieplickie",
+      "category": "historic",
+      "lat": 50.865281,
+      "lon": 15.684709,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-chojnik",
+      "name": "Zamek Chojnik",
+      "category": "ruins",
+      "lat": 50.844493,
+      "lon": 15.644117,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/sztolnie-kowary",
+      "name": "Sztolnie Kowary",
+      "category": "museum",
+      "lat": 50.793494,
+      "lon": 15.838134,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/park-miniatur-zabytkow-dolnego-slaska-w-kowarach",
+      "name": "Park Miniatur Zabytków Dolnego Śląska w Kowarach",
+      "category": "museum",
+      "lat": 50.792987,
+      "lon": 15.83349,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/rudawski-park-krajobrazowy",
+      "name": "Rudawski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 50.856,
+      "lon": 15.925,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/sokolik",
+      "name": "Sokolik",
+      "category": "nature",
+      "lat": 50.8681,
+      "lon": 15.879,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/krzyzna-gora",
+      "name": "Krzyżna Góra",
+      "category": "nature",
+      "lat": 50.867,
+      "lon": 15.878,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/kolorowe-jeziorka",
+      "name": "Kolorowe Jeziorka",
+      "category": "nature",
+      "lat": 50.829,
+      "lon": 15.974,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/stog-izerski",
+      "name": "Stóg Izerski",
+      "category": "nature",
+      "lat": 50.8948,
+      "lon": 15.3107,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/wieza-sky-walk-w-swieradowie-zdroju",
+      "name": "Wieża Sky Walk w Świeradowie-Zdroju",
+      "category": "nature",
+      "lat": 50.909858,
+      "lon": 15.343438,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/dom-zdrojowy-w-swieradowie-zdroju",
+      "name": "Dom Zdrojowy w Świeradowie-Zdroju",
+      "category": "historic",
+      "lat": 50.912005,
+      "lon": 15.346118,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/hala-izerska",
+      "name": "Hala Izerska",
+      "category": "nature",
+      "lat": 50.8503,
+      "lon": 15.342,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/polana-jakuszycka",
+      "name": "Polana Jakuszycka",
+      "category": "nature",
+      "lat": 50.830361,
+      "lon": 15.52709,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/paac-wojanow",
+      "name": "Pałac Wojanów",
+      "category": "castle",
+      "lat": 50.87386,
+      "lon": 15.816215,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/paac-omnica",
+      "name": "Pałac Łomnica",
+      "category": "castle",
+      "lat": 50.874308,
+      "lon": 15.806268,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/paac-karpniki",
+      "name": "Pałac Karpniki",
+      "category": "castle",
+      "lat": 50.851986,
+      "lon": 15.855547,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/paac-w-bukowcu",
+      "name": "Pałac w Bukowcu",
+      "category": "castle",
+      "lat": 50.824479,
+      "lon": 15.818603,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/paac-paulinum",
+      "name": "Pałac Paulinum",
+      "category": "castle",
+      "lat": 50.903054,
+      "lon": 15.717438,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-ksiaz",
+      "name": "Zamek Książ",
+      "category": "castle",
+      "lat": 50.843333,
+      "lon": 16.295227,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/palmiarnia-w-wabrzychu",
+      "name": "Palmiarnia w Wałbrzychu",
+      "category": "nature",
+      "lat": 50.769578,
+      "lon": 16.28469,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/stara-kopalnia-w-wabrzychu",
+      "name": "Stara Kopalnia w Wałbrzychu",
+      "category": "museum",
+      "lat": 50.768486,
+      "lon": 16.281282,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-porcelany-w-wabrzychu",
+      "name": "Muzeum Porcelany w Wałbrzychu",
+      "category": "museum",
+      "lat": 50.774014,
+      "lon": 16.28485,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/gora-chemiec",
+      "name": "Góra Chełmiec",
+      "category": "nature",
+      "lat": 50.771656,
+      "lon": 16.2824,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/park-zdrojowy-w-szczawnie-zdroju",
+      "name": "Park Zdrojowy w Szczawnie-Zdroju",
+      "category": "historic",
+      "lat": 50.801259,
+      "lon": 16.252989,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/pijalnia-wod-mineralnych-w-szczawnie-zdroju",
+      "name": "Pijalnia Wód Mineralnych w Szczawnie-Zdroju",
+      "category": "historic",
+      "lat": 50.806143,
+      "lon": 16.25614,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-grodno",
+      "name": "Zamek Grodno",
+      "category": "castle",
+      "lat": 50.747102,
+      "lon": 16.409229,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/podziemne-miasto-osowka",
+      "name": "Podziemne Miasto Osówka",
+      "category": "museum",
+      "lat": 50.6694,
+      "lon": 16.4189,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/kompleks-riese-wodarz",
+      "name": "Kompleks Riese – Włodarz",
+      "category": "museum",
+      "lat": 50.6971,
+      "lon": 16.415,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/kompleks-riese-rzeczka",
+      "name": "Kompleks Riese – Rzeczka",
+      "category": "museum",
+      "lat": 50.6678,
+      "lon": 16.4468,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/wielka-sowa",
+      "name": "Wielka Sowa",
+      "category": "nature",
+      "lat": 50.6807,
+      "lon": 16.4856,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/twierdza-srebrna-gora",
+      "name": "Twierdza Srebrna Góra",
+      "category": "historic",
+      "lat": 50.5731,
+      "lon": 16.6451,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/paac-jedlinka",
+      "name": "Pałac Jedlinka",
+      "category": "historic",
+      "lat": 50.719168,
+      "lon": 16.348998,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/park-zdrojowy-w-jedlinie-zdroju",
+      "name": "Park Zdrojowy w Jedlinie-Zdroju",
+      "category": "historic",
+      "lat": 50.722527,
+      "lon": 16.347499,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/twierdza-kodzko",
+      "name": "Twierdza Kłodzko",
+      "category": "historic",
+      "lat": 50.435139,
+      "lon": 16.663643,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/most-gotycki-na-mynowce-w-kodzku",
+      "name": "Most gotycki na Młynówce w Kłodzku",
+      "category": "historic",
+      "lat": 50.433403,
+      "lon": 16.665431,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/rynek-w-kodzku",
+      "name": "Rynek w Kłodzku",
+      "category": "historic",
+      "lat": 50.435785,
+      "lon": 16.660044,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/podziemna-trasa-turystyczna-w-kodzku",
+      "name": "Podziemna Trasa Turystyczna w Kłodzku",
+      "category": "museum",
+      "lat": 50.433136,
+      "lon": 16.663435,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/park-narodowy-gor-stoowych",
+      "name": "Park Narodowy Gór Stołowych",
+      "category": "nature",
+      "lat": 50.474,
+      "lon": 16.365,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/bedne-skay",
+      "name": "Błędne Skały",
+      "category": "nature",
+      "lat": 50.4828,
+      "lon": 16.2871,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/szczeliniec-wielki",
+      "name": "Szczeliniec Wielki",
+      "category": "nature",
+      "lat": 50.4849,
+      "lon": 16.3392,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/kaplica-czaszek-w-czermnej",
+      "name": "Kaplica Czaszek w Czermnej",
+      "category": "historic",
+      "lat": 50.442769,
+      "lon": 16.241695,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/park-zdrojowy-w-kudowie-zdroju",
+      "name": "Park Zdrojowy w Kudowie-Zdroju",
+      "category": "historic",
+      "lat": 50.441121,
+      "lon": 16.244922,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-zabawek-w-kudowie-zdroju",
+      "name": "Muzeum Zabawek w Kudowie-Zdroju",
+      "category": "museum",
+      "lat": 50.441117,
+      "lon": 16.246501,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/skansen-kultury-ludowej-pogorza-sudeckiego-w-pstraznej",
+      "name": "Skansen Kultury Ludowej Pogórza Sudeckiego w Pstrążnej",
+      "category": "museum",
+      "lat": 50.443324,
+      "lon": 16.242657,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-papiernictwa-w-dusznikach-zdroju",
+      "name": "Muzeum Papiernictwa w Dusznikach-Zdroju",
+      "category": "museum",
+      "lat": 50.401327,
+      "lon": 16.391227,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/dworek-chopina-w-dusznikach-zdroju",
+      "name": "Dworek Chopina w Dusznikach-Zdroju",
+      "category": "historic",
+      "lat": 50.405246,
+      "lon": 16.393657,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/park-zdrojowy-w-dusznikach-zdroju",
+      "name": "Park Zdrojowy w Dusznikach-Zdroju",
+      "category": "historic",
+      "lat": 50.404207,
+      "lon": 16.394623,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/park-zdrojowy-w-polanicy-zdroju",
+      "name": "Park Zdrojowy w Polanicy-Zdroju",
+      "category": "historic",
+      "lat": 50.400831,
+      "lon": 16.515763,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/pijalnia-wielka-pieniawa",
+      "name": "Pijalnia Wielka Pieniawa",
+      "category": "historic",
+      "lat": 50.403336,
+      "lon": 16.515988,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zakad-przyrodoleczniczy-zdroj-wojciech",
+      "name": "Zakład Przyrodoleczniczy Zdrój Wojciech",
+      "category": "historic",
+      "lat": 50.341285,
+      "lon": 16.879194,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/rynek-w-ladku-zdroju",
+      "name": "Rynek w Lądku-Zdroju",
+      "category": "historic",
+      "lat": 50.344202,
+      "lon": 16.878936,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/arboretum-w-ladku-zdroju",
+      "name": "Arboretum w Lądku-Zdroju",
+      "category": "nature",
+      "lat": 50.341408,
+      "lon": 16.883048,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/jaskinia-niedzwiedzia-w-kletnie",
+      "name": "Jaskinia Niedźwiedzia w Kletnie",
+      "category": "cave",
+      "lat": 50.2345,
+      "lon": 16.8416,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/snieznik",
+      "name": "Śnieżnik",
+      "category": "nature",
+      "lat": 50.2072,
+      "lon": 16.8493,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zalew-w-starej-morawie",
+      "name": "Zalew w Starej Morawie",
+      "category": "nature",
+      "lat": 50.2782,
+      "lon": 16.898,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/czarna-gora-resort",
+      "name": "Czarna Góra Resort",
+      "category": "nature",
+      "lat": 50.296334,
+      "lon": 16.877251,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/kopalnia-uranu-w-kletnie",
+      "name": "Kopalnia Uranu w Kletnie",
+      "category": "museum",
+      "lat": 50.293108,
+      "lon": 16.877511,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/kopalnia-zota-w-zotym-stoku",
+      "name": "Kopalnia Złota w Złotym Stoku",
+      "category": "museum",
+      "lat": 50.446688,
+      "lon": 16.878407,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/sredniowieczna-osada-gornicza-w-zotym-stoku",
+      "name": "Średniowieczna Osada Górnicza w Złotym Stoku",
+      "category": "museum",
+      "lat": 50.444592,
+      "lon": 16.875895,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/lesny-park-przygody-skalisko",
+      "name": "Leśny Park Przygody Skalisko",
+      "category": "nature",
+      "lat": 50.445761,
+      "lon": 16.878685,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/sanktuarium-w-wambierzycach",
+      "name": "Sanktuarium w Wambierzycach",
+      "category": "historic",
+      "lat": 50.492598,
+      "lon": 16.447757,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/skalne-grzyby",
+      "name": "Skalne Grzyby",
+      "category": "nature",
+      "lat": 50.486,
+      "lon": 16.397,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/bazylika-nawiedzenia-nmp-w-bardzie",
+      "name": "Bazylika Nawiedzenia NMP w Bardzie",
+      "category": "historic",
+      "lat": 50.50235,
+      "lon": 16.74106,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/kamienny-most-w-bardzie",
+      "name": "Kamienny Most w Bardzie",
+      "category": "historic",
+      "lat": 50.505509,
+      "lon": 16.740632,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/obryw-skalny-i-punkt-widokowy-nad-bardem",
+      "name": "Obryw Skalny i punkt widokowy nad Bardem",
+      "category": "nature",
+      "lat": 50.503009,
+      "lon": 16.736034,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/krzywa-wieza-w-zabkowicach-slaskich",
+      "name": "Krzywa Wieża w Ząbkowicach Śląskich",
+      "category": "historic",
+      "lat": 50.591651,
+      "lon": 16.811838,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/rynek-w-zabkowicach-slaskich",
+      "name": "Rynek w Ząbkowicach Śląskich",
+      "category": "historic",
+      "lat": 50.587619,
+      "lon": 16.813962,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/ruiny-zamku-ksiazecego-w-zabkowicach-slaskich",
+      "name": "Ruiny Zamku Książęcego w Ząbkowicach Śląskich",
+      "category": "ruins",
+      "lat": 50.588497,
+      "lon": 16.812036,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/paac-marianny-oranskiej-w-kamiencu-zabkowickim",
+      "name": "Pałac Marianny Orańskiej w Kamieńcu Ząbkowickim",
+      "category": "castle",
+      "lat": 50.523527,
+      "lon": 16.878572,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-miedzylesie",
+      "name": "Zamek Międzylesie",
+      "category": "castle",
+      "lat": 50.148251,
+      "lon": 16.670219,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-gornictwa-w-nowej-rudzie",
+      "name": "Muzeum Górnictwa w Nowej Rudzie",
+      "category": "museum",
+      "lat": 50.577241,
+      "lon": 16.502027,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-sarny",
+      "name": "Zamek Sarny",
+      "category": "castle",
+      "lat": 50.580755,
+      "lon": 16.500229,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-ceramiki-w-bolesawcu",
+      "name": "Muzeum Ceramiki w Bolesławcu",
+      "category": "museum",
+      "lat": 51.262937,
+      "lon": 15.572462,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/rynek-w-bolesawcu",
+      "name": "Rynek w Bolesławcu",
+      "category": "historic",
+      "lat": 51.266609,
+      "lon": 15.570253,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/wiadukt-kolejowy-w-bolesawcu",
+      "name": "Wiadukt kolejowy w Bolesławcu",
+      "category": "historic",
+      "lat": 51.26519,
+      "lon": 15.57109,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-kliczkow",
+      "name": "Zamek Kliczków",
+      "category": "castle",
+      "lat": 51.335581,
+      "lon": 15.432335,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-czocha",
+      "name": "Zamek Czocha",
+      "category": "castle",
+      "lat": 51.033171,
+      "lon": 15.302571,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-grodziec",
+      "name": "Zamek Grodziec",
+      "category": "castle",
+      "lat": 51.175516,
+      "lon": 15.757247,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-bolkow",
+      "name": "Zamek Bolków",
+      "category": "castle",
+      "lat": 50.920571,
+      "lon": 16.10667,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-swiny",
+      "name": "Zamek Świny",
+      "category": "ruins",
+      "lat": 50.941593,
+      "lon": 16.094959,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-ksiazecy-w-olesnicy",
+      "name": "Zamek Książęcy w Oleśnicy",
+      "category": "castle",
+      "lat": 51.212246,
+      "lon": 17.384445,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-ksiazat-gogowskich",
+      "name": "Zamek Książąt Głogowskich",
+      "category": "castle",
+      "lat": 51.660799,
+      "lon": 16.084456,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/kolegiata-wniebowziecia-nmp-w-gogowie",
+      "name": "Kolegiata Wniebowzięcia NMP w Głogowie",
+      "category": "historic",
+      "lat": 51.661881,
+      "lon": 16.081832,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/wieza-ratuszowa-w-gogowie",
+      "name": "Wieża Ratuszowa w Głogowie",
+      "category": "historic",
+      "lat": 51.665811,
+      "lon": 16.085036,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-piastowski-w-legnicy",
+      "name": "Zamek Piastowski w Legnicy",
+      "category": "castle",
+      "lat": 51.209803,
+      "lon": 16.158043,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-miedzi-w-legnicy",
+      "name": "Muzeum Miedzi w Legnicy",
+      "category": "museum",
+      "lat": 51.205223,
+      "lon": 16.159154,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/katedra-sw-apostoow-piotra-i-pawa-w-legnicy",
+      "name": "Katedra św. Apostołów Piotra i Pawła w Legnicy",
+      "category": "historic",
+      "lat": 51.206853,
+      "lon": 16.155399,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/rynek-w-legnicy",
+      "name": "Rynek w Legnicy",
+      "category": "historic",
+      "lat": 51.206055,
+      "lon": 16.155647,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/koscio-pokoju-w-jaworze",
+      "name": "Kościół Pokoju w Jaworze",
+      "category": "historic",
+      "lat": 51.048884,
+      "lon": 16.195351,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/rynek-w-jaworze",
+      "name": "Rynek w Jaworze",
+      "category": "historic",
+      "lat": 51.053241,
+      "lon": 16.192235,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-piastowski-w-jaworze",
+      "name": "Zamek Piastowski w Jaworze",
+      "category": "castle",
+      "lat": 51.053368,
+      "lon": 16.192426,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-regionalne-w-jaworze",
+      "name": "Muzeum Regionalne w Jaworze",
+      "category": "museum",
+      "lat": 51.05109,
+      "lon": 16.193139,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/koscio-pokoju-w-swidnicy",
+      "name": "Kościół Pokoju w Świdnicy",
+      "category": "historic",
+      "lat": 50.845807,
+      "lon": 16.489161,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/katedra-sw-stanisawa-i-wacawa-w-swidnicy",
+      "name": "Katedra św. Stanisława i Wacława w Świdnicy",
+      "category": "historic",
+      "lat": 50.846622,
+      "lon": 16.491776,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/rynek-w-swidnicy",
+      "name": "Rynek w Świdnicy",
+      "category": "historic",
+      "lat": 50.843158,
+      "lon": 16.489787,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-dawnego-kupiectwa-w-swidnicy",
+      "name": "Muzeum Dawnego Kupiectwa w Świdnicy",
+      "category": "museum",
+      "lat": 50.846524,
+      "lon": 16.484357,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/bazylika-sw-apostoow-piotra-i-pawa-w-strzegomiu",
+      "name": "Bazylika św. Apostołów Piotra i Pawła w Strzegomiu",
+      "category": "historic",
+      "lat": 50.96325,
+      "lon": 16.35133,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/opactwo-pocysterskie-w-krzeszowie",
+      "name": "Opactwo Pocysterskie w Krzeszowie",
+      "category": "historic",
+      "lat": 50.735042,
+      "lon": 16.06023,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/podziemia-arado-w-kamiennej-gorze",
+      "name": "Podziemia Arado w Kamiennej Górze",
+      "category": "museum",
+      "lat": 50.78286,
+      "lon": 16.034219,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/domy-tkaczy-dwunastu-apostoow-w-chemsku-slaskim",
+      "name": "Domy Tkaczy Dwunastu Apostołów w Chełmsku Śląskim",
+      "category": "historic",
+      "lat": 50.6682,
+      "lon": 16.071382,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/gora-sleza",
+      "name": "Góra Ślęża",
+      "category": "nature",
+      "lat": 50.8645,
+      "lon": 16.7087,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/gora-radunia",
+      "name": "Góra Radunia",
+      "category": "nature",
+      "lat": 50.8494,
+      "lon": 16.7178,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/slezanski-park-krajobrazowy",
+      "name": "Ślężański Park Krajobrazowy",
+      "category": "nature",
+      "lat": 50.896702,
+      "lon": 16.743382,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-slezanskie-w-sobotce",
+      "name": "Muzeum Ślężańskie w Sobótce",
+      "category": "museum",
+      "lat": 50.896399,
+      "lon": 16.742297,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/opactwo-cystersow-w-henrykowie",
+      "name": "Opactwo Cystersów w Henrykowie",
+      "category": "historic",
+      "lat": 50.656663,
+      "lon": 17.011829,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/arboretum-wojsawice",
+      "name": "Arboretum Wojsławice",
+      "category": "nature",
+      "lat": 50.709866,
+      "lon": 16.850394,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/opactwo-cystersow-w-lubiazu",
+      "name": "Opactwo Cystersów w Lubiążu",
+      "category": "historic",
+      "lat": 51.262405,
+      "lon": 16.47085,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/stawy-milickie",
+      "name": "Stawy Milickie",
+      "category": "nature",
+      "lat": 51.52,
+      "lon": 17.33,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/dolina-baryczy",
+      "name": "Dolina Baryczy",
+      "category": "nature",
+      "lat": 51.518,
+      "lon": 17.275,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/paac-maltzanow-w-miliczu",
+      "name": "Pałac Maltzanów w Miliczu",
+      "category": "castle",
+      "lat": 51.527907,
+      "lon": 17.275879,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/bazylika-sw-jadwigi-i-sw-bartomieja-w-trzebnicy",
+      "name": "Bazylika św. Jadwigi i św. Bartłomieja w Trzebnicy",
+      "category": "historic",
+      "lat": 51.31215,
+      "lon": 17.064954,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/kopalnia-zota-aurelia-w-zotoryi",
+      "name": "Kopalnia Złota Aurelia w Złotoryi",
+      "category": "museum",
+      "lat": 51.126433,
+      "lon": 15.916346,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-zota-w-zotoryi",
+      "name": "Muzeum Złota w Złotoryi",
+      "category": "museum",
+      "lat": 51.124729,
+      "lon": 15.915127,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/rynek-w-zotoryi",
+      "name": "Rynek w Złotoryi",
+      "category": "historic",
+      "lat": 51.123064,
+      "lon": 15.919231,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/baszta-kowalska-w-zotoryi",
+      "name": "Baszta Kowalska w Złotoryi",
+      "category": "historic",
+      "lat": 51.12559,
+      "lon": 15.918685,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/wilcza-gora",
+      "name": "Wilcza Góra",
+      "category": "nature",
+      "lat": 51.1137,
+      "lon": 15.8985,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/rynek-w-lwowku-slaskim",
+      "name": "Rynek w Lwówku Śląskim",
+      "category": "historic",
+      "lat": 51.109568,
+      "lon": 15.589282,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/ratusz-w-lwowku-slaskim",
+      "name": "Ratusz w Lwówku Śląskim",
+      "category": "historic",
+      "lat": 51.109602,
+      "lon": 15.589428,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/ostrzyca-proboszczowicka",
+      "name": "Ostrzyca Proboszczowicka",
+      "category": "nature",
+      "lat": 51.0338,
+      "lon": 15.7545,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/organy-wielisawskie",
+      "name": "Organy Wielisławskie",
+      "category": "nature",
+      "lat": 51.0874,
+      "lon": 15.8797,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/skansen-gorniczo-hutniczy-w-leszczynie",
+      "name": "Skansen Górniczo-Hutniczy w Leszczynie",
+      "category": "museum",
+      "lat": 51.124974,
+      "lon": 15.917175,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/park-krajobrazowy-chemy",
+      "name": "Park Krajobrazowy Chełmy",
+      "category": "nature",
+      "lat": 51.121391,
+      "lon": 15.919776,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/rynek-w-oawie",
+      "name": "Rynek w Oławie",
+      "category": "historic",
+      "lat": 50.946362,
+      "lon": 17.290193,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/koscio-matki-bozej-pocieszenia-w-oawie",
+      "name": "Kościół Matki Bożej Pocieszenia w Oławie",
+      "category": "historic",
+      "lat": 50.947106,
+      "lon": 17.289174,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/rynek-w-niemczy",
+      "name": "Rynek w Niemczy",
+      "category": "historic",
+      "lat": 50.716092,
+      "lon": 16.832111,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/przemkowski-park-krajobrazowy",
+      "name": "Przemkowski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 51.525517,
+      "lon": 15.786914,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-historyczne-w-lubinie",
+      "name": "Muzeum Historyczne w Lubinie",
+      "category": "museum",
+      "lat": 51.398061,
+      "lon": 16.1991,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/rynek-w-polkowicach",
+      "name": "Rynek w Polkowicach",
+      "category": "historic",
+      "lat": 51.501191,
+      "lon": 16.072811,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/muzeum-regionalne-w-chojnowie",
+      "name": "Muzeum Regionalne w Chojnowie",
+      "category": "museum",
+      "lat": 51.271503,
+      "lon": 15.937488,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/ruiny-zamku-w-prochowicach",
+      "name": "Ruiny zamku w Prochowicach",
+      "category": "ruins",
+      "lat": 51.271406,
+      "lon": 16.368217,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/paac-krobielowice",
+      "name": "Pałac Krobielowice",
+      "category": "castle",
+      "lat": 50.998501,
+      "lon": 16.748956,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "dolnośląskie/zamek-topacz",
+      "name": "Zamek Topacz",
+      "category": "castle",
+      "lat": 51.034782,
+      "lon": 16.994955,
+      "source": "Dolny Śląsk Travel / dane lokalizacyjne",
+      "sourceUrl": "https://dolnyslask.travel/",
+      "region": "dolnośląskie"
+    },
+    {
+      "id": "opolskie/rynek-w-opolu",
+      "name": "Rynek w Opolu",
+      "category": "historic",
+      "lat": 50.673579,
+      "lon": 17.92466,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/ratusz-w-opolu",
+      "name": "Ratusz w Opolu",
+      "category": "historic",
+      "lat": 50.674484,
+      "lon": 17.919385,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/wieza-piastowska-w-opolu",
+      "name": "Wieża Piastowska w Opolu",
+      "category": "historic",
+      "lat": 50.677039,
+      "lon": 17.917956,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zamek-gorny-w-opolu",
+      "name": "Zamek Górny w Opolu",
+      "category": "historic",
+      "lat": 50.676495,
+      "lon": 17.920786,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/katedra-podwyzszenia-krzyza-swietego-w-opolu",
+      "name": "Katedra Podwyższenia Krzyża Świętego w Opolu",
+      "category": "historic",
+      "lat": 50.675215,
+      "lon": 17.922269,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/koscio-franciszkanow-w-opolu",
+      "name": "Kościół Franciszkanów w Opolu",
+      "category": "historic",
+      "lat": 50.673079,
+      "lon": 17.921233,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/amfiteatr-tysiaclecia-narodowe-centrum-polskiej-piosenki",
+      "name": "Amfiteatr Tysiąclecia – Narodowe Centrum Polskiej Piosenki",
+      "category": "historic",
+      "lat": 50.675357,
+      "lon": 17.922885,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-polskiej-piosenki-w-opolu",
+      "name": "Muzeum Polskiej Piosenki w Opolu",
+      "category": "museum",
+      "lat": 50.677364,
+      "lon": 17.925707,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-slaska-opolskiego",
+      "name": "Muzeum Śląska Opolskiego",
+      "category": "museum",
+      "lat": 50.674886,
+      "lon": 17.918491,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/galeria-muzeum-slaska-opolskiego-w-opolu",
+      "name": "Galeria Muzeum Śląska Opolskiego w Opolu",
+      "category": "museum",
+      "lat": 50.677105,
+      "lon": 17.917593,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/galeria-sztuki-wspoczesnej-w-opolu",
+      "name": "Galeria Sztuki Współczesnej w Opolu",
+      "category": "museum",
+      "lat": 50.675517,
+      "lon": 17.917223,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-diecezjalne-w-opolu",
+      "name": "Muzeum Diecezjalne w Opolu",
+      "category": "museum",
+      "lat": 50.67329,
+      "lon": 17.922507,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-politechniki-opolskiej-i-lamp-rentgenowskich",
+      "name": "Muzeum Politechniki Opolskiej i Lamp Rentgenowskich",
+      "category": "museum",
+      "lat": 50.676685,
+      "lon": 17.924419,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/kamienica-czynszowa-w-opolu",
+      "name": "Kamienica Czynszowa w Opolu",
+      "category": "museum",
+      "lat": 50.673428,
+      "lon": 17.924953,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-uniwersytetu-opolskiego",
+      "name": "Muzeum Uniwersytetu Opolskiego",
+      "category": "museum",
+      "lat": 50.672408,
+      "lon": 17.920313,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/centrum-dokumentacyjno-wystawiennicze-niemcow-w-polsce",
+      "name": "Centrum Dokumentacyjno-Wystawiennicze Niemców w Polsce",
+      "category": "museum",
+      "lat": 50.677693,
+      "lon": 17.925558,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/ogrod-zoologiczny-w-opolu",
+      "name": "Ogród Zoologiczny w Opolu",
+      "category": "nature",
+      "lat": 50.67789,
+      "lon": 17.92326,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/wyspa-bolko-w-opolu",
+      "name": "Wyspa Bolko w Opolu",
+      "category": "nature",
+      "lat": 50.6572,
+      "lon": 17.921,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/park-nadodrzanski-w-opolu",
+      "name": "Park Nadodrzański w Opolu",
+      "category": "nature",
+      "lat": 50.677963,
+      "lon": 17.925787,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/park-800-lecia-w-opolu",
+      "name": "Park 800-lecia w Opolu",
+      "category": "nature",
+      "lat": 50.672328,
+      "lon": 17.922841,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/kamionka-bolko-w-opolu",
+      "name": "Kamionka Bolko w Opolu",
+      "category": "nature",
+      "lat": 50.651,
+      "lon": 17.933,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/kamionka-piast-w-opolu",
+      "name": "Kamionka Piast w Opolu",
+      "category": "nature",
+      "lat": 50.657,
+      "lon": 17.898,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-wsi-opolskiej",
+      "name": "Muzeum Wsi Opolskiej",
+      "category": "museum",
+      "lat": 50.673961,
+      "lon": 17.917605,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zamek-piastow-slaskich-w-brzegu",
+      "name": "Zamek Piastów Śląskich w Brzegu",
+      "category": "castle",
+      "lat": 50.857931,
+      "lon": 17.470828,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/rynek-w-brzegu",
+      "name": "Rynek w Brzegu",
+      "category": "historic",
+      "lat": 50.863349,
+      "lon": 17.470178,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/ratusz-w-brzegu",
+      "name": "Ratusz w Brzegu",
+      "category": "historic",
+      "lat": 50.859117,
+      "lon": 17.463803,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/koscio-sw-mikoaja-w-brzegu",
+      "name": "Kościół św. Mikołaja w Brzegu",
+      "category": "historic",
+      "lat": 50.863687,
+      "lon": 17.468924,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/koscio-podwyzszenia-krzyza-swietego-w-brzegu",
+      "name": "Kościół Podwyższenia Krzyża Świętego w Brzegu",
+      "category": "historic",
+      "lat": 50.859546,
+      "lon": 17.466476,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-piastow-slaskich-w-brzegu",
+      "name": "Muzeum Piastów Śląskich w Brzegu",
+      "category": "museum",
+      "lat": 50.861216,
+      "lon": 17.464836,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/rynek-w-nysie",
+      "name": "Rynek w Nysie",
+      "category": "historic",
+      "lat": 50.471523,
+      "lon": 17.336971,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/bazylika-sw-jakuba-i-sw-agnieszki-w-nysie",
+      "name": "Bazylika św. Jakuba i św. Agnieszki w Nysie",
+      "category": "historic",
+      "lat": 50.472293,
+      "lon": 17.328874,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/fontanna-trytona-w-nysie",
+      "name": "Fontanna Trytona w Nysie",
+      "category": "historic",
+      "lat": 50.476536,
+      "lon": 17.332444,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/wieza-ziebicka-w-nysie",
+      "name": "Wieża Ziębicka w Nysie",
+      "category": "historic",
+      "lat": 50.472959,
+      "lon": 17.331229,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/twierdza-nysa-fort-prusy",
+      "name": "Twierdza Nysa – Fort Prusy",
+      "category": "historic",
+      "lat": 50.472842,
+      "lon": 17.333737,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/twierdza-nysa-fort-ii",
+      "name": "Twierdza Nysa – Fort II",
+      "category": "historic",
+      "lat": 50.471915,
+      "lon": 17.336779,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-biskupi-w-nysie",
+      "name": "Pałac Biskupi w Nysie",
+      "category": "castle",
+      "lat": 50.47323,
+      "lon": 17.335294,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/dwor-biskupi-w-nysie",
+      "name": "Dwór Biskupi w Nysie",
+      "category": "castle",
+      "lat": 50.47532,
+      "lon": 17.33536,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/carolinum-w-nysie",
+      "name": "Carolinum w Nysie",
+      "category": "castle",
+      "lat": 50.473632,
+      "lon": 17.335253,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-powiatowe-w-nysie",
+      "name": "Muzeum Powiatowe w Nysie",
+      "category": "museum",
+      "lat": 50.476903,
+      "lon": 17.331469,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/jezioro-nyskie",
+      "name": "Jezioro Nyskie",
+      "category": "water",
+      "lat": 50.445,
+      "lon": 17.28,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/park-miejski-w-nysie",
+      "name": "Park Miejski w Nysie",
+      "category": "nature",
+      "lat": 50.473257,
+      "lon": 17.331594,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/mury-obronne-w-paczkowie",
+      "name": "Mury obronne w Paczkowie",
+      "category": "historic",
+      "lat": 50.461396,
+      "lon": 17.009152,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/rynek-w-paczkowie",
+      "name": "Rynek w Paczkowie",
+      "category": "historic",
+      "lat": 50.460793,
+      "lon": 17.006731,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/ratusz-w-paczkowie",
+      "name": "Ratusz w Paczkowie",
+      "category": "historic",
+      "lat": 50.464002,
+      "lon": 17.010744,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/koscio-sw-jana-ewangelisty-w-paczkowie",
+      "name": "Kościół św. Jana Ewangelisty w Paczkowie",
+      "category": "historic",
+      "lat": 50.465809,
+      "lon": 17.008768,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/legendarny-dom-kata-w-paczkowie",
+      "name": "Legendarny Dom Kata w Paczkowie",
+      "category": "historic",
+      "lat": 50.462169,
+      "lon": 17.002171,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-gazownictwa-w-paczkowie",
+      "name": "Muzeum Gazownictwa w Paczkowie",
+      "category": "museum",
+      "lat": 50.462026,
+      "lon": 17.005302,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/metamuzeum-motoryzacji-w-paczkowie",
+      "name": "Metamuzeum Motoryzacji w Paczkowie",
+      "category": "museum",
+      "lat": 50.461789,
+      "lon": 17.008436,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zamek-w-otmuchowie",
+      "name": "Zamek w Otmuchowie",
+      "category": "castle",
+      "lat": 50.46308,
+      "lon": 17.173036,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/rynek-w-otmuchowie",
+      "name": "Rynek w Otmuchowie",
+      "category": "historic",
+      "lat": 50.468463,
+      "lon": 17.172929,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/ratusz-w-otmuchowie",
+      "name": "Ratusz w Otmuchowie",
+      "category": "historic",
+      "lat": 50.463569,
+      "lon": 17.169483,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/jezioro-otmuchowskie",
+      "name": "Jezioro Otmuchowskie",
+      "category": "water",
+      "lat": 50.458,
+      "lon": 17.121,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/wieza-woka-w-prudniku",
+      "name": "Wieża Woka w Prudniku",
+      "category": "historic",
+      "lat": 50.323463,
+      "lon": 17.577872,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/rynek-w-prudniku",
+      "name": "Rynek w Prudniku",
+      "category": "historic",
+      "lat": 50.320212,
+      "lon": 17.57869,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/willa-frankla-w-prudniku",
+      "name": "Willa Fränkla w Prudniku",
+      "category": "historic",
+      "lat": 50.320732,
+      "lon": 17.578279,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-ziemi-prudnickiej",
+      "name": "Muzeum Ziemi Prudnickiej",
+      "category": "museum",
+      "lat": 50.323108,
+      "lon": 17.575008,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/centrum-tradycji-tkackich-w-prudniku",
+      "name": "Centrum Tradycji Tkackich w Prudniku",
+      "category": "museum",
+      "lat": 50.319931,
+      "lon": 17.577719,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/rynek-w-guchoazach",
+      "name": "Rynek w Głuchołazach",
+      "category": "historic",
+      "lat": 50.312556,
+      "lon": 17.381772,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/park-zdrojowy-im-v-priessnitza-i-teznia-w-guchoazach",
+      "name": "Park Zdrojowy im. V. Priessnitza i tężnia w Głuchołazach",
+      "category": "historic",
+      "lat": 50.314761,
+      "lon": 17.381493,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/biskupia-kopa",
+      "name": "Biskupia Kopa",
+      "category": "nature",
+      "lat": 50.256,
+      "lon": 17.428,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/park-krajobrazowy-gory-opawskie",
+      "name": "Park Krajobrazowy Góry Opawskie",
+      "category": "nature",
+      "lat": 50.282,
+      "lon": 17.452,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zamek-moszna",
+      "name": "Zamek Moszna",
+      "category": "castle",
+      "lat": 50.440637,
+      "lon": 17.765867,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/fabryka-robotow-w-mosznej",
+      "name": "Fabryka Robotów w Mosznej",
+      "category": "museum",
+      "lat": 50.43689,
+      "lon": 17.767316,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zamek-oppersdorffow-w-gogowku",
+      "name": "Zamek Oppersdorffów w Głogówku",
+      "category": "castle",
+      "lat": 50.354005,
+      "lon": 17.865448,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-regionalne-w-gogowku",
+      "name": "Muzeum Regionalne w Głogówku",
+      "category": "museum",
+      "lat": 50.35383,
+      "lon": 17.861854,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/rynek-w-gogowku",
+      "name": "Rynek w Głogówku",
+      "category": "historic",
+      "lat": 50.351433,
+      "lon": 17.862062,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zamek-w-krapkowicach",
+      "name": "Zamek w Krapkowicach",
+      "category": "castle",
+      "lat": 50.472822,
+      "lon": 17.966485,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/baszta-w-krapkowicach",
+      "name": "Baszta w Krapkowicach",
+      "category": "museum",
+      "lat": 50.477624,
+      "lon": 17.96124,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/ruiny-zamku-w-otmecie",
+      "name": "Ruiny zamku w Otmęcie",
+      "category": "historic",
+      "lat": 50.47559,
+      "lon": 17.968175,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/gora-swietej-anny-geopark",
+      "name": "Góra Świętej Anny – geopark",
+      "category": "nature",
+      "lat": 50.4544,
+      "lon": 18.1669,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/park-krajobrazowy-gora-swietej-anny",
+      "name": "Park Krajobrazowy Góra Świętej Anny",
+      "category": "nature",
+      "lat": 50.453,
+      "lon": 18.166,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/sanktuarium-sw-anny-na-gorze-swietej-anny",
+      "name": "Sanktuarium św. Anny na Górze Świętej Anny",
+      "category": "historic",
+      "lat": 50.455535,
+      "lon": 18.168437,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/pomnik-czynu-powstanczego",
+      "name": "Pomnik Czynu Powstańczego",
+      "category": "historic",
+      "lat": 50.454889,
+      "lon": 18.169168,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/amfiteatr-na-gorze-swietej-anny",
+      "name": "Amfiteatr na Górze Świętej Anny",
+      "category": "historic",
+      "lat": 50.453173,
+      "lon": 18.164581,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-czynu-powstanczego-w-gorze-swietej-anny",
+      "name": "Muzeum Czynu Powstańczego w Górze Świętej Anny",
+      "category": "museum",
+      "lat": 50.456155,
+      "lon": 18.164501,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-krzyza-swietego-w-gorze-swietej-anny",
+      "name": "Muzeum Krzyża Świętego w Górze Świętej Anny",
+      "category": "museum",
+      "lat": 50.452967,
+      "lon": 18.163586,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-blechhammer-w-kedzierzynie-kozlu",
+      "name": "Muzeum Blechhammer w Kędzierzynie-Koźlu",
+      "category": "museum",
+      "lat": 50.346969,
+      "lon": 18.222951,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-ziemi-kozielskiej",
+      "name": "Muzeum Ziemi Kozielskiej",
+      "category": "museum",
+      "lat": 50.348457,
+      "lon": 18.229894,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/twierdza-kozle-pozostaosci-fortyfikacji",
+      "name": "Twierdza Koźle – pozostałości fortyfikacji",
+      "category": "historic",
+      "lat": 50.336564,
+      "lon": 18.145964,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/rynek-w-kozlu",
+      "name": "Rynek w Koźlu",
+      "category": "historic",
+      "lat": 50.335314,
+      "lon": 18.14424,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/centrum-ochrony-bioroznorodnosci-w-kedzierzynie-kozlu",
+      "name": "Centrum Ochrony Bioróżnorodności w Kędzierzynie-Koźlu",
+      "category": "nature",
+      "lat": 50.349028,
+      "lon": 18.222795,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/park-orderu-usmiechu-w-kedzierzynie-kozlu",
+      "name": "Park Orderu Uśmiechu w Kędzierzynie-Koźlu",
+      "category": "nature",
+      "lat": 50.350267,
+      "lon": 18.223878,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zelazny-most-wiszacy-w-ozimku",
+      "name": "Żelazny most wiszący w Ozimku",
+      "category": "historic",
+      "lat": 50.67778,
+      "lon": 18.216348,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-hutnictwa-doliny-maej-panwi-w-ozimku",
+      "name": "Muzeum Hutnictwa Doliny Małej Panwi w Ozimku",
+      "category": "museum",
+      "lat": 50.679977,
+      "lon": 18.215374,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/jurapark-krasiejow-park-nauki-i-ewolucji-czowieka",
+      "name": "Jurapark Krasiejów – Park Nauki i Ewolucji Człowieka",
+      "category": "museum",
+      "lat": 50.652751,
+      "lon": 18.272989,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/jezioro-turawskie",
+      "name": "Jezioro Turawskie",
+      "category": "water",
+      "lat": 50.725,
+      "lon": 18.123,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/jezioro-srebrne-w-osowcu",
+      "name": "Jezioro Srebrne w Osowcu",
+      "category": "water",
+      "lat": 50.73889,
+      "lon": 18.088499,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/kraina-jezior-turawskich",
+      "name": "Kraina Jezior Turawskich",
+      "category": "nature",
+      "lat": 50.742707,
+      "lon": 18.085499,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zamek-ksiazecy-w-niemodlinie",
+      "name": "Zamek Książęcy w Niemodlinie",
+      "category": "castle",
+      "lat": 50.640256,
+      "lon": 17.621707,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/bory-niemodlinskie",
+      "name": "Bory Niemodlińskie",
+      "category": "nature",
+      "lat": 50.584,
+      "lon": 17.7,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zespo-przyrodniczo-krajobrazowy-lipno",
+      "name": "Zespół przyrodniczo-krajobrazowy Lipno",
+      "category": "nature",
+      "lat": 50.647,
+      "lon": 17.627,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-w-tuowicach",
+      "name": "Pałac w Tułowicach",
+      "category": "castle",
+      "lat": 50.595507,
+      "lon": 17.651123,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/stara-fabryka-tuowice",
+      "name": "Stara Fabryka Tułowice",
+      "category": "museum",
+      "lat": 50.596041,
+      "lon": 17.656564,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zamek-w-dabrowie",
+      "name": "Zamek w Dąbrowie",
+      "category": "castle",
+      "lat": 50.683977,
+      "lon": 17.750934,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/park-zamkowy-w-dabrowie",
+      "name": "Park Zamkowy w Dąbrowie",
+      "category": "nature",
+      "lat": 50.682061,
+      "lon": 17.745657,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-w-kamieniu-slaskim",
+      "name": "Pałac w Kamieniu Śląskim",
+      "category": "castle",
+      "lat": 50.543065,
+      "lon": 18.077354,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/izba-tradycji-w-kamieniu-slaskim",
+      "name": "Izba Tradycji w Kamieniu Śląskim",
+      "category": "museum",
+      "lat": 50.548442,
+      "lon": 18.080036,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-w-izbicku",
+      "name": "Pałac w Izbicku",
+      "category": "castle",
+      "lat": 50.570124,
+      "lon": 18.151366,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-w-lewinie-brzeskim",
+      "name": "Pałac w Lewinie Brzeskim",
+      "category": "castle",
+      "lat": 50.746481,
+      "lon": 17.617837,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-w-osiowie",
+      "name": "Pałac w Łosiowie",
+      "category": "castle",
+      "lat": 50.793799,
+      "lon": 17.566712,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-w-sulisawiu",
+      "name": "Pałac w Sulisławiu",
+      "category": "castle",
+      "lat": 50.818066,
+      "lon": 17.377869,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-w-dobrej",
+      "name": "Pałac w Dobrej",
+      "category": "castle",
+      "lat": 50.42045,
+      "lon": 17.81128,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/ruiny-paacu-w-kopicach",
+      "name": "Ruiny Pałacu w Kopicach",
+      "category": "ruins",
+      "lat": 50.682031,
+      "lon": 17.442337,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zamek-w-rogowie-opolskim",
+      "name": "Zamek w Rogowie Opolskim",
+      "category": "castle",
+      "lat": 50.535975,
+      "lon": 17.940705,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/ruiny-zamku-w-strzelcach-opolskich",
+      "name": "Ruiny zamku w Strzelcach Opolskich",
+      "category": "ruins",
+      "lat": 50.509644,
+      "lon": 18.303379,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/park-renardow-w-strzelcach-opolskich",
+      "name": "Park Renardów w Strzelcach Opolskich",
+      "category": "historic",
+      "lat": 50.510635,
+      "lon": 18.300946,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/rynek-w-strzelcach-opolskich",
+      "name": "Rynek w Strzelcach Opolskich",
+      "category": "historic",
+      "lat": 50.510788,
+      "lon": 18.301061,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zamek-w-namysowie",
+      "name": "Zamek w Namysłowie",
+      "category": "castle",
+      "lat": 51.076081,
+      "lon": 17.724951,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/rynek-w-namysowie",
+      "name": "Rynek w Namysłowie",
+      "category": "historic",
+      "lat": 51.07454,
+      "lon": 17.723573,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/baszta-prochowa-w-namysowie",
+      "name": "Baszta Prochowa w Namysłowie",
+      "category": "historic",
+      "lat": 51.0754,
+      "lon": 17.719672,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-im-jana-dzierzona-w-kluczborku",
+      "name": "Muzeum im. Jana Dzierżona w Kluczborku",
+      "category": "museum",
+      "lat": 50.972919,
+      "lon": 18.217485,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/rynek-w-kluczborku",
+      "name": "Rynek w Kluczborku",
+      "category": "historic",
+      "lat": 50.972125,
+      "lon": 18.218968,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/pasieka-zarodowa-w-maciejowie",
+      "name": "Pasieka Zarodowa w Maciejowie",
+      "category": "nature",
+      "lat": 50.992263,
+      "lon": 18.284584,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/oleskie-muzeum-regionalne-w-olesnie",
+      "name": "Oleskie Muzeum Regionalne w Oleśnie",
+      "category": "museum",
+      "lat": 50.875988,
+      "lon": 18.422585,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/koscio-sw-anny-w-olesnie",
+      "name": "Kościół św. Anny w Oleśnie",
+      "category": "historic",
+      "lat": 50.877623,
+      "lon": 18.417348,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/rynek-w-olesnie",
+      "name": "Rynek w Oleśnie",
+      "category": "historic",
+      "lat": 50.873689,
+      "lon": 18.421456,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zabytkowy-park-w-pokoju",
+      "name": "Zabytkowy Park w Pokoju",
+      "category": "nature",
+      "lat": 50.904127,
+      "lon": 17.838231,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/ogrod-botaniczny-w-zagwizdziu",
+      "name": "Ogród Botaniczny w Zagwiździu",
+      "category": "nature",
+      "lat": 50.841245,
+      "lon": 17.956027,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/stobrawski-park-krajobrazowy",
+      "name": "Stobrawski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 50.93,
+      "lon": 17.79,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/centrum-edukacji-lesno-przyrodniczej-nadlesnictwa-zawadzkie",
+      "name": "Centrum Edukacji Leśno-Przyrodniczej Nadleśnictwa Zawadzkie",
+      "category": "nature",
+      "lat": 50.606911,
+      "lon": 18.482118,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/centrum-bioroznorodnosci-im-leopolda-cassirera-w-gogolinie",
+      "name": "Centrum Bioróżnorodności im. Leopolda Cassirera w Gogolinie",
+      "category": "nature",
+      "lat": 50.494713,
+      "lon": 18.02208,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/pomnik-karolinki-i-karlika-w-gogolinie",
+      "name": "Pomnik Karolinki i Karlika w Gogolinie",
+      "category": "historic",
+      "lat": 50.490889,
+      "lon": 18.021144,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/centralne-muzeum-jencow-wojennych-w-ambinowicach",
+      "name": "Centralne Muzeum Jeńców Wojennych w Łambinowicach",
+      "category": "museum",
+      "lat": 50.542421,
+      "lon": 17.55724,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-kowalstwa-w-proszkowie",
+      "name": "Muzeum Kowalstwa w Prószkowie",
+      "category": "museum",
+      "lat": 50.573986,
+      "lon": 17.871784,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/muzeum-regionalne-w-dobrodzieniu",
+      "name": "Muzeum Regionalne w Dobrodzieniu",
+      "category": "museum",
+      "lat": 50.725968,
+      "lon": 18.441516,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/izba-regionalna-historii-lokalnej-w-kolonowskiem",
+      "name": "Izba Regionalna Historii Lokalnej w Kolonowskiem",
+      "category": "museum",
+      "lat": 50.655037,
+      "lon": 18.383245,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zabytkowy-park-w-sawiecicach",
+      "name": "Zabytkowy Park w Sławięcicach",
+      "category": "nature",
+      "lat": 50.370274,
+      "lon": 18.318887,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/ruiny-zamku-w-ujezdzie",
+      "name": "Ruiny zamku w Ujeździe",
+      "category": "ruins",
+      "lat": 50.387341,
+      "lon": 18.346841,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-w-wiekszycach",
+      "name": "Pałac w Większycach",
+      "category": "castle",
+      "lat": 50.337306,
+      "lon": 18.102555,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-w-zyrowej",
+      "name": "Pałac w Żyrowej",
+      "category": "castle",
+      "lat": 50.44028,
+      "lon": 18.156185,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-w-polskiej-cerekwi",
+      "name": "Pałac w Polskiej Cerekwi",
+      "category": "castle",
+      "lat": 50.229309,
+      "lon": 18.128478,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-w-biechowie",
+      "name": "Pałac w Biechowie",
+      "category": "castle",
+      "lat": 50.514878,
+      "lon": 17.288966,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-w-pawowicach",
+      "name": "Pałac w Pawłowicach",
+      "category": "castle",
+      "lat": 50.745363,
+      "lon": 18.120435,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-w-rozkochowie",
+      "name": "Pałac w Rozkochowie",
+      "category": "castle",
+      "lat": 50.409967,
+      "lon": 17.831437,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-w-rysiowicach",
+      "name": "Pałac w Rysiowicach",
+      "category": "castle",
+      "lat": 50.767008,
+      "lon": 17.428041,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/paac-we-wronowie",
+      "name": "Pałac we Wronowie",
+      "category": "castle",
+      "lat": 50.80847,
+      "lon": 17.736857,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/ruiny-zamku-w-zakrzowie",
+      "name": "Ruiny zamku w Zakrzowie",
+      "category": "ruins",
+      "lat": 50.451758,
+      "lon": 18.032995,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/zamek-bozejow",
+      "name": "Zamek Bożejów",
+      "category": "castle",
+      "lat": 51.04197,
+      "lon": 18.276227,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
+    },
+    {
+      "id": "opolskie/rezerwat-przyrody-staw-nowokuznicki",
+      "name": "Rezerwat przyrody Staw Nowokuźnicki",
+      "category": "reserve",
+      "lat": 50.642217,
+      "lon": 17.622349,
+      "source": "VisitOpolskie / dane lokalizacyjne",
+      "sourceUrl": "https://www.visitopolskie.pl/",
+      "region": "opolskie"
     }
   ],
-  "count": 2604
+  "count": 3076
 }
