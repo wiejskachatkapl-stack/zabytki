@@ -1,5 +1,5 @@
 (() => {
-  const APP_VERSION = 'v1024';
+  const APP_VERSION = 'v1025';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';

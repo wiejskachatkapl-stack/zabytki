@@ -2425,7 +2425,7 @@ button {
 }
 
 
-/* v1024 — 4 nowe kategorie atrakcji. Na telefonie siatka 3×3 i przewijana legenda, aby wszystkie pozycje były dostępne. */
+/* v1024 — 4 nowe kategorie atrakcji. Na telefonie siatka 3×3. */
 @media (max-width: 760px) {
   .category-grid,
   .edit-category-grid {
@@ -2441,28 +2441,74 @@ button {
     width: clamp(42px, 12vw, 54px);
     height: clamp(42px, 12vw, 54px);
   }
+}
 
+/* v1025 — legenda bez przewijania: wszystkie 12 pól w stałych 3 rzędach po 4. */
+@media (max-width: 760px) {
   .map-legend {
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .map-legend::-webkit-scrollbar {
-    display: none;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 3px;
+    justify-content: stretch;
+    align-items: stretch;
+    overflow: visible;
+    font-size: 8px;
   }
 
   .map-legend-title,
   .map-legend-item {
-    flex: 0 0 auto;
+    min-width: 0;
+    width: 100%;
+    min-height: 24px;
+    padding: 2px 3px;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.05;
+  }
+
+  .map-legend-title {
+    display: flex;
+    align-items: center;
+  }
+
+  .map-legend-item {
+    display: flex;
+  }
+
+  .map-legend-item img {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+  }
+
+  .legend-user-dot {
+    flex: 0 0 10px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .legend-route-line {
+    flex: 0 0 18px;
+    width: 18px;
+  }
+
+  .map-screen .leaflet-top.leaflet-left {
+    top: max(184px, calc(178px + var(--safe-top)));
+  }
+
+  .location-message {
+    top: max(186px, calc(180px + var(--safe-top)));
   }
 }
 
 @media (max-width: 390px) {
+  .map-legend {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    font-size: 7.5px;
+  }
+
   .map-legend-item:nth-of-type(n+6) {
-    display: inline-flex;
+    display: flex;
   }
 }
