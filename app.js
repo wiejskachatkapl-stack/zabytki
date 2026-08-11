@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1021';
+  const APP_VERSION = 'v1022';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1021';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1022';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;
@@ -122,6 +122,11 @@
   let lastNearbyFetchPosition = null;
   let lastNearbyFetchAt = 0;
   let currentNearbyAlertId = null;
+
+  // v1022: automatyczne przesuwanie mapy działa tylko po świadomym użyciu WYCENTRUJ.
+  // Każde ręczne przesunięcie lub zoom natychmiast je wyłącza.
+  let mapAutoFollowEnabled = false;
+  let mapProgrammaticMove = false;
 
   let routeLayer = null;
   let routeDestinationMarker = null;
@@ -1170,7 +1175,7 @@
   }
 
   function keepMonitoredPositionVisible(position) {
-    if (!map || mapScreen?.hidden || currentMapMode !== 'all' || !position?.coords) return;
+    if (!map || mapScreen?.hidden || currentMapMode !== 'all' || !position?.coords || !mapAutoFollowEnabled) return;
 
     const lat = Number(position.coords.latitude);
     const lon = Number(position.coords.longitude);
@@ -1189,7 +1194,9 @@
       point.y > size.y - marginY;
 
     if (outsideSafeArea) {
+      mapProgrammaticMove = true;
       map.panTo([lat, lon], { animate: true, duration: 0.35, noMoveStart: true });
+      mapProgrammaticMove = false;
     }
   }
 
@@ -1336,6 +1343,15 @@
     externalLayer = L.layerGroup().addTo(map);
     renderStoredPoints();
 
+    // Ręczne ruszenie mapy oznacza: użytkownik chce oglądać inne miejsce.
+    // GPS nadal działa i alerty nadal są liczone, ale mapa nie wraca sama do pozycji.
+    const pauseAutoFollowFromUser = () => {
+      if (mapProgrammaticMove) return;
+      mapAutoFollowEnabled = false;
+    };
+    map.on('dragstart', pauseAutoFollowFromUser);
+    map.on('zoomstart', pauseAutoFollowFromUser);
+
     map.on('moveend zoomend', () => scheduleViewportAttractions());
     scheduleViewportAttractions(250);
   }
@@ -1419,7 +1435,10 @@
       }
 
       const { latitude, longitude, accuracy } = position.coords;
+      mapAutoFollowEnabled = true;
+      mapProgrammaticMove = true;
       map.setView([latitude, longitude], 15, { animate: true });
+      mapProgrammaticMove = false;
       setLocationButtonState('active');
       showLocationMessage(`Wycentrowano na Twojej pozycji (dokładność ok. ${Math.round(accuracy || 0)} m).`);
     } catch (error) {
@@ -1565,6 +1584,9 @@
 
   function showMap(options = {}) {
     if (!mapScreen || !startScreen) return;
+    // Wejście na mapę nie odbiera użytkownikowi kontroli. Śledzenie widoku
+    // zostanie włączone dopiero po naciśnięciu WYCENTRUJ.
+    mapAutoFollowEnabled = false;
     applyMapMode(options.mode || 'all');
     startScreen.hidden = true;
     if (addScreen) addScreen.hidden = true;
