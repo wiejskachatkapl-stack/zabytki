@@ -3078,3 +3078,261 @@ button {
     top: calc(var(--map-content-top) + 6px) !important;
   }
 }
+
+
+/* v1034 — radar także na telefonie, 5 s dla komunikatów, podpis pogrubiony,
+   telefon poziomo: 1/4 panel po lewej + 3/4 mapa po prawej. */
+.map-screen {
+  --map-content-left: 0px;
+}
+
+.map-screen > .map-container {
+  left: var(--map-content-left) !important;
+  width: auto !important;
+}
+
+/* Podpis autora: nadal kursywa, ale wyraźnie pogrubiona. */
+.rn-app-signature {
+  font-style: italic !important;
+  font-weight: 900 !important;
+  letter-spacing: .015em;
+  color: rgba(18, 31, 21, .92);
+}
+
+/* Telefon: wymuszamy nowy radar niezależnie od starszych reguł responsywnych. */
+@media (max-width: 760px) {
+  .map-top-panel .attraction-preview-button {
+    min-width: 82px !important;
+    min-height: 39px !important;
+    height: 39px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    padding: 3px 6px 3px 4px !important;
+    border: 1px solid rgba(148, 255, 177, .94) !important;
+    border-radius: 999px !important;
+    background: rgba(5, 39, 18, .96) !important;
+    box-shadow:
+      0 0 0 2px rgba(66, 222, 106, .14),
+      0 0 13px rgba(55, 226, 99, .23),
+      0 3px 10px rgba(0, 0, 0, .28) !important;
+    overflow: visible !important;
+  }
+
+  .map-top-panel .attraction-preview-button.has-attractions {
+    box-shadow:
+      0 0 0 3px rgba(68, 241, 115, .20),
+      0 0 18px rgba(65, 245, 116, .38),
+      0 3px 10px rgba(0, 0, 0, .30) !important;
+  }
+
+  .attraction-radar {
+    display: block !important;
+    width: 30px !important;
+    height: 30px !important;
+    flex: 0 0 30px !important;
+    border-width: 2px !important;
+    box-shadow:
+      inset 0 0 10px rgba(84, 255, 124, .34),
+      0 0 8px rgba(82, 255, 125, .25) !important;
+  }
+
+  .attraction-preview-button-label {
+    display: none !important;
+  }
+
+  .map-top-panel .attraction-preview-button strong {
+    min-width: 30px !important;
+    height: 29px !important;
+    padding: 0 6px !important;
+    border-radius: 999px !important;
+    font-size: 12px !important;
+    color: #07471f !important;
+    background: #eaffee !important;
+  }
+}
+
+/* Widok telefonu obróconego poziomo: panel sterowania jest boczny, mapa nie jest pod nim. */
+@media (orientation: landscape) and (max-height: 650px) {
+  .map-screen {
+    --map-content-top: 0px;
+  }
+
+  .map-top-panel {
+    top: max(4px, var(--safe-top)) !important;
+    right: auto !important;
+    bottom: max(4px, var(--safe-bottom)) !important;
+    left: max(4px, var(--safe-left)) !important;
+    width: calc(25vw - 8px) !important;
+    height: auto !important;
+    max-height: none !important;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 5px !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+  }
+
+  .map-toolbar-row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    grid-auto-flow: row;
+    gap: 4px !important;
+    align-items: center;
+  }
+
+  .map-top-panel .map-back-button {
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0 !important;
+    min-height: 30px !important;
+    height: 30px !important;
+    padding: 0 6px !important;
+    font-size: 8.5px !important;
+  }
+
+  .map-top-panel .attraction-preview-button {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    min-width: 65px !important;
+    min-height: 30px !important;
+    height: 30px !important;
+    padding: 1px 4px !important;
+  }
+
+  .map-top-panel .attraction-preview-button .attraction-radar {
+    width: 24px !important;
+    height: 24px !important;
+    flex-basis: 24px !important;
+  }
+
+  .map-top-panel .attraction-preview-button strong {
+    min-width: 24px !important;
+    height: 23px !important;
+    padding: 0 4px !important;
+    font-size: 10px !important;
+  }
+
+  .map-top-panel .map-mode-badge {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: stretch;
+    max-width: none !important;
+    padding: 4px 5px !important;
+    font-size: 8px !important;
+    text-align: center;
+  }
+
+  .map-toolbar-actions {
+    grid-column: 1 / -1 !important;
+    grid-row: 3;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 3px !important;
+    width: 100%;
+  }
+
+  .map-top-panel .map-location-button,
+  .map-top-panel .osm-refresh-button,
+  .map-top-panel .route-button,
+  .map-top-panel .proximity-button,
+  .map-top-panel .proximity-radius-wrap {
+    min-width: 0 !important;
+    width: 100% !important;
+    min-height: 29px !important;
+    height: 29px !important;
+    padding: 0 4px !important;
+    font-size: 7.5px !important;
+    gap: 3px !important;
+  }
+
+  .map-top-panel .map-location-button svg,
+  .map-top-panel .osm-refresh-button svg,
+  .map-top-panel .route-button svg,
+  .map-top-panel .proximity-button svg {
+    width: 14px !important;
+    height: 14px !important;
+    flex-basis: 14px !important;
+  }
+
+  .map-top-panel .proximity-radius-wrap label {
+    font-size: 7px;
+  }
+
+  .map-top-panel .proximity-radius-wrap select {
+    min-width: 0 !important;
+    width: 100% !important;
+    height: 22px !important;
+    font-size: 8px !important;
+  }
+
+  .map-legend {
+    flex: 1 1 auto;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: minmax(22px, auto);
+    align-content: start;
+    gap: 3px !important;
+    margin-top: 4px !important;
+    padding-top: 4px !important;
+    overflow: hidden !important;
+    font-size: 7px !important;
+  }
+
+  .map-legend .map-legend-item,
+  .map-legend .map-legend-all {
+    display: flex !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    min-height: 22px !important;
+    padding: 1px 2px !important;
+    gap: 2px !important;
+    justify-content: flex-start !important;
+    white-space: normal !important;
+    line-height: 1.02 !important;
+    text-align: left !important;
+  }
+
+  .map-legend .map-legend-item img {
+    width: 14px !important;
+    height: 14px !important;
+    flex: 0 0 14px !important;
+  }
+
+  .map-screen > .map-container {
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: var(--map-content-left) !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .location-message {
+    top: max(8px, var(--safe-top)) !important;
+    left: 62.5vw !important;
+    max-width: min(390px, calc(72vw - 24px)) !important;
+  }
+
+  .route-panel {
+    top: max(8px, var(--safe-top)) !important;
+    right: max(8px, var(--safe-right)) !important;
+    bottom: max(8px, var(--safe-bottom)) !important;
+    left: calc(var(--map-content-left) + 8px) !important;
+    width: auto !important;
+    max-height: none !important;
+  }
+
+  .nearby-alert {
+    left: 62.5vw !important;
+    width: min(640px, calc(74vw - 18px)) !important;
+  }
+
+  .map-version {
+    top: max(6px, var(--safe-top)) !important;
+    right: max(6px, var(--safe-right)) !important;
+    font-size: 9px !important;
+  }
+}

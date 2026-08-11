@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1033';
+  const APP_VERSION = 'v1034';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1033';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1034';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;
@@ -141,6 +141,7 @@
   let lastNearbyFetchPosition = null;
   let lastNearbyFetchAt = 0;
   let currentNearbyAlertId = null;
+  let nearbyAlertTimer = null;
 
   // v1022: automatyczne przesuwanie mapy działa tylko po świadomym użyciu WYCENTRUJ.
   // Każde ręczne przesunięcie lub zoom natychmiast je wyłącza.
@@ -1296,6 +1297,8 @@
   }
 
   function hideNearbyAlert() {
+    clearTimeout(nearbyAlertTimer);
+    nearbyAlertTimer = null;
     if (nearbyAlert) nearbyAlert.hidden = true;
     currentNearbyAlertId = null;
   }
@@ -1318,6 +1321,8 @@
       markAttractionAlerted(attraction.osmId);
     }
     nearbyAlert.hidden = false;
+    clearTimeout(nearbyAlertTimer);
+    nearbyAlertTimer = setTimeout(() => hideNearbyAlert(), 5000);
   }
 
   function checkProximity(position) {
@@ -1526,14 +1531,23 @@
     }
   }
 
-  // v1033: mapa zaczyna się dopiero pod całym górnym panelem. Wysokość
-  // panelu jest mierzona dynamicznie, bo na telefonie legenda może mieć więcej wierszy.
+  // v1034: w pionie mapa zaczyna się pod całym panelem. Na telefonie w poziomie
+  // panel staje po lewej (ok. 1/4 ekranu), a mapa zajmuje prawą część (ok. 3/4).
   function syncMapContentTop() {
     if (!mapScreen || !mapTopPanel || mapScreen.hidden) return;
     const screenRect = mapScreen.getBoundingClientRect();
     const panelRect = mapTopPanel.getBoundingClientRect();
-    const top = Math.max(0, Math.ceil(panelRect.bottom - screenRect.top + 6));
-    mapScreen.style.setProperty('--map-content-top', `${top}px`);
+    const sidePanelLayout = window.matchMedia('(orientation: landscape) and (max-height: 650px)').matches;
+
+    if (sidePanelLayout) {
+      const left = Math.max(0, Math.ceil(panelRect.right - screenRect.left + 6));
+      mapScreen.style.setProperty('--map-content-top', '0px');
+      mapScreen.style.setProperty('--map-content-left', `${left}px`);
+    } else {
+      const top = Math.max(0, Math.ceil(panelRect.bottom - screenRect.top + 6));
+      mapScreen.style.setProperty('--map-content-top', `${top}px`);
+      mapScreen.style.setProperty('--map-content-left', '0px');
+    }
     requestAnimationFrame(() => map?.invalidateSize());
   }
 
@@ -1591,7 +1605,7 @@
     locationMessage.hidden = false;
     locationMessageTimer = setTimeout(() => {
       locationMessage.hidden = true;
-    }, 3500);
+    }, 5000);
   }
 
   function showAddMessage(text, isError = false) {
@@ -2252,7 +2266,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1033', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1034', {
           scope: './',
           updateViaCache: 'none'
         });
