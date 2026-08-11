@@ -20,7 +20,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png?v=1002" />
   <link rel="icon" type="image/png" sizes="512x512" href="assets/icons/icon-512.png?v=1002" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-  <link rel="stylesheet" href="styles.css?v=1026" />
+  <link rel="stylesheet" href="styles.css?v=1031" />
 </head>
 <body>
   <main class="start-screen" aria-label="Turystyczna mapa Polski">
@@ -30,7 +30,7 @@
       <button class="main-button main-button-my-places" id="myPlacesButton" type="button">MOJE MIEJSCA</button>
     </div>
 
-    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1030</div>
+    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1031</div>
   </main>
 
   <section class="add-screen" id="addScreen" aria-label="Dodaj miejsce" hidden>
@@ -39,7 +39,7 @@
         <button class="add-back-button" id="addBackButton" type="button" aria-label="Wróć do ekranu startowego">← COFNIJ</button>
         <div class="add-title-wrap">
           <h1 class="add-title">Dodaj miejsce</h1>
-          <div class="add-version" aria-hidden="true">v1030</div>
+          <div class="add-version" aria-hidden="true">v1031</div>
         </div>
       </div>
 
@@ -130,7 +130,7 @@
         <button class="edit-back-button" id="editBackButton" type="button" aria-label="Wróć do mapy">← COFNIJ</button>
         <div class="edit-title-wrap">
           <h1 class="edit-title">Edytuj punkt</h1>
-          <div class="edit-version" aria-hidden="true">v1030</div>
+          <div class="edit-version" aria-hidden="true">v1031</div>
         </div>
       </div>
 
@@ -262,7 +262,10 @@
           </div>
         </div>
 
-        <div class="map-version" aria-hidden="true">v1030</div>
+        <button class="attraction-preview-button" id="attractionPreviewButton" type="button" aria-haspopup="dialog" aria-controls="attractionPreviewOverlay" disabled>
+          <span>Podgląd atrakcji:</span>
+          <strong id="attractionPreviewCount" aria-live="polite">—</strong>
+        </button>
       </div>
 
       <div class="map-legend" id="mapLegend" aria-label="Filtr atrakcji na mapie">
@@ -298,9 +301,22 @@
       <div class="route-source">Trasa: OSRM / OpenStreetMap · wyszukiwanie celu: Nominatim</div>
     </section>
 
+    <div class="attraction-preview-overlay" id="attractionPreviewOverlay" hidden>
+      <section class="attraction-preview-panel" role="dialog" aria-modal="true" aria-labelledby="attractionPreviewTitle">
+        <div class="attraction-preview-head">
+          <div>
+            <strong id="attractionPreviewTitle">PODGLĄD ATRAKCJI</strong>
+            <span id="attractionPreviewSummary">Czekam na lokalizację GPS…</span>
+          </div>
+          <button class="attraction-preview-close" id="attractionPreviewClose" type="button" aria-label="Zamknij podgląd atrakcji">×</button>
+        </div>
+        <div class="attraction-preview-list" id="attractionPreviewList" aria-live="polite"></div>
+      </section>
+    </div>
+
     <div class="osm-status" id="osmStatus" role="status" aria-live="polite" hidden></div>
     <div class="location-message" id="locationMessage" role="status" aria-live="polite" hidden></div>
-    <div class="map-version" aria-hidden="true">v1030</div>
+    <div class="map-version" aria-hidden="true">v1031</div>
   </section>
 
   <aside class="nearby-alert" id="nearbyAlert" role="alertdialog" aria-live="assertive" aria-label="Atrakcja w pobliżu" hidden>
@@ -318,6 +334,6 @@
   </aside>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="app.js?v=1030"></script>
+  <script src="app.js?v=1031"></script>
 </body>
 </html>

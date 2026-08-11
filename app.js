@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1030';
+  const APP_VERSION = 'v1031';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1030';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1031';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;
@@ -81,6 +81,12 @@
   const osmStatus = document.getElementById('osmStatus');
   const mapModeBadge = document.getElementById('mapModeBadge');
   const mapLegend = document.getElementById('mapLegend');
+  const attractionPreviewButton = document.getElementById('attractionPreviewButton');
+  const attractionPreviewCount = document.getElementById('attractionPreviewCount');
+  const attractionPreviewOverlay = document.getElementById('attractionPreviewOverlay');
+  const attractionPreviewClose = document.getElementById('attractionPreviewClose');
+  const attractionPreviewSummary = document.getElementById('attractionPreviewSummary');
+  const attractionPreviewList = document.getElementById('attractionPreviewList');
 
   const nearbyAlert = document.getElementById('nearbyAlert');
   const nearbyAlertIcon = document.getElementById('nearbyAlertIcon');
@@ -108,6 +114,10 @@
   // v1030: legenda pozwala zaznaczyć kilka kategorii jednocześnie.
   const CATEGORY_KEYS = Object.keys(CATEGORY_INFO);
   let activeAttractionFilters = new Set(CATEGORY_KEYS);
+
+  // v1031: aktywny podgląd wszystkich atrakcji w ustawionym promieniu od GPS.
+  let attractionPreviewItems = [];
+  let attractionPreviewUpdateSequence = 0;
 
   let externalLayer = null;
   let osmAttractions = new Map();
@@ -324,11 +334,15 @@
 
     if (!osmEnabled) {
       clearOsmAttractions();
+      hideAttractionPreview();
+      attractionPreviewItems = [];
+      setAttractionPreviewButton(null);
       updateOsmStatus('Baza atrakcji: wyłączona');
       return;
     }
 
     updateOsmStatus('Baza atrakcji: włączona');
+    if (lastMonitorPosition?.coords) updateAttractionPreview(lastMonitorPosition);
     if (fetchNow && currentMapMode === 'all' && !mapScreen?.hidden) {
       refreshOsmManually();
     }
@@ -338,7 +352,9 @@
     if (!osmStatus) return;
     osmStatus.textContent = text;
     osmStatus.classList.toggle('is-error', isError);
-    osmStatus.hidden = !text;
+    // v1031: bieżący licznik atrakcji jest w górnym przycisku „Podgląd atrakcji”.
+    // Dolny status zostawiamy wyłącznie dla rzeczywistych błędów.
+    osmStatus.hidden = !text || !isError;
   }
 
   function loadUserAttractionDb() {
@@ -508,6 +524,110 @@
   async function getAttractionsNear(lat, lon, radius) {
     const attractions = await getDatabaseAttractions();
     return attractions.filter((item) => distanceMeters(lat, lon, item.lat, item.lon) <= radius);
+  }
+
+  function formatPreviewDistanceKm(meters) {
+    if (!Number.isFinite(Number(meters))) return '—';
+    const km = Math.max(0, Number(meters)) / 1000;
+    return `${km.toFixed(km < 10 ? 1 : 0)} km`;
+  }
+
+  function setAttractionPreviewButton(count = null) {
+    if (!attractionPreviewButton || !attractionPreviewCount) return;
+    const available = Number.isInteger(count) && count >= 0 && osmEnabled && currentMapMode === 'all';
+    attractionPreviewCount.textContent = available ? String(count) : '—';
+    attractionPreviewButton.disabled = !available;
+    attractionPreviewButton.classList.toggle('has-attractions', available && count > 0);
+    attractionPreviewButton.setAttribute(
+      'aria-label',
+      available
+        ? `Podgląd atrakcji: ${count}. Otwórz listę atrakcji w promieniu ${formatDistance(getProximityRadiusMeters())}.`
+        : 'Podgląd atrakcji. Czekam na lokalizację GPS.'
+    );
+    attractionPreviewButton.title = available
+      ? `Atrakcje do ${formatDistance(getProximityRadiusMeters())} od Ciebie: ${count}`
+      : 'Czekam na lokalizację GPS';
+  }
+
+  function renderAttractionPreviewList() {
+    if (!attractionPreviewList || !attractionPreviewSummary) return;
+    const radius = getProximityRadiusMeters();
+    attractionPreviewSummary.textContent = `Promień: ${formatDistance(radius)} · znaleziono: ${attractionPreviewItems.length}`;
+
+    if (!attractionPreviewItems.length) {
+      attractionPreviewList.innerHTML = `
+        <div class="attraction-preview-empty">
+          W promieniu ${escapeHtml(formatDistance(radius))} nie ma obecnie atrakcji zapisanych w bazie.
+        </div>
+      `;
+      return;
+    }
+
+    attractionPreviewList.innerHTML = attractionPreviewItems.map(({ attraction, distance }) => {
+      const info = CATEGORY_INFO[attraction.category] || CATEGORY_INFO.castle;
+      return `
+        <article class="attraction-preview-row">
+          <img class="attraction-preview-icon" src="${info.icon}" alt="" aria-hidden="true" />
+          <div class="attraction-preview-copy">
+            <strong>${escapeHtml(attraction.name || info.label)}</strong>
+            <span>${escapeHtml(info.label)}</span>
+          </div>
+          <div class="attraction-preview-distance">${escapeHtml(formatPreviewDistanceKm(distance))}</div>
+          <button class="attraction-preview-route" type="button" data-preview-route-id="${escapeHtml(attraction.osmId)}">PROWADŹ</button>
+        </article>
+      `;
+    }).join('');
+  }
+
+  async function updateAttractionPreview(position = lastMonitorPosition) {
+    const sequence = ++attractionPreviewUpdateSequence;
+
+    if (!osmEnabled || currentMapMode !== 'all' || !position?.coords) {
+      attractionPreviewItems = [];
+      setAttractionPreviewButton(null);
+      if (attractionPreviewOverlay && !attractionPreviewOverlay.hidden) renderAttractionPreviewList();
+      return;
+    }
+
+    const latitude = Number(position.coords.latitude);
+    const longitude = Number(position.coords.longitude);
+    if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
+      attractionPreviewItems = [];
+      setAttractionPreviewButton(null);
+      return;
+    }
+
+    try {
+      const radius = getProximityRadiusMeters();
+      const attractions = await getDatabaseAttractions();
+      if (sequence !== attractionPreviewUpdateSequence) return;
+
+      attractionPreviewItems = attractions
+        .map((attraction) => ({
+          attraction,
+          distance: distanceMeters(latitude, longitude, Number(attraction.lat), Number(attraction.lon))
+        }))
+        .filter((item) => item.distance <= radius)
+        .sort((a, b) => a.distance - b.distance);
+
+      setAttractionPreviewButton(attractionPreviewItems.length);
+      if (attractionPreviewOverlay && !attractionPreviewOverlay.hidden) renderAttractionPreviewList();
+    } catch (error) {
+      console.warn('Nie udało się zaktualizować podglądu atrakcji:', error);
+      attractionPreviewItems = [];
+      setAttractionPreviewButton(null);
+    }
+  }
+
+  function showAttractionPreview() {
+    if (!attractionPreviewOverlay || attractionPreviewButton?.disabled) return;
+    renderAttractionPreviewList();
+    attractionPreviewOverlay.hidden = false;
+    attractionPreviewClose?.focus({ preventScroll: true });
+  }
+
+  function hideAttractionPreview() {
+    if (attractionPreviewOverlay) attractionPreviewOverlay.hidden = true;
   }
 
   function allAttractionFiltersActive() {
@@ -1275,6 +1395,7 @@
     updateMonitoredLocationVisual(position);
     setLocationButtonState('active');
     keepMonitoredPositionVisible(position);
+    updateAttractionPreview(position);
 
     const { latitude, longitude } = position.coords;
     const movedSinceFetch = lastNearbyFetchPosition
@@ -1499,6 +1620,7 @@
         position = await getCurrentPosition();
         lastMonitorPosition = position;
         updateMonitoredLocationVisual(position);
+        updateAttractionPreview(position);
         if (!routeActive) {
           lastNearbyFetchAt = 0;
           refreshNearbyAttractions(position);
@@ -1622,12 +1744,16 @@
     if (routeButton) routeButton.hidden = mineOnly;
     if (proximityButton) proximityButton.hidden = true;
     if (osmRefreshButton) osmRefreshButton.hidden = mineOnly;
+    if (attractionPreviewButton) attractionPreviewButton.hidden = mineOnly;
     updateOsmButtonUi();
     if (proximityRadiusWrap) proximityRadiusWrap.hidden = mineOnly;
     if (osmStatus) osmStatus.hidden = true;
 
     if (mineOnly) {
       hideRoutePanel();
+      hideAttractionPreview();
+      attractionPreviewItems = [];
+      setAttractionPreviewButton(null);
       clearTimeout(viewportFetchTimer);
       viewportFetchSequence += 1;
       osmAttractions = new Map();
@@ -1706,6 +1832,9 @@
         updateOsmStatus('Baza atrakcji: wyłączona');
       }
       startProximityMonitoring(true);
+      if (osmEnabled && lastMonitorPosition?.coords) {
+        updateAttractionPreview(lastMonitorPosition);
+      }
       if (osmEnabled && lastMonitorPosition?.coords && !routeActive) {
         lastNearbyFetchAt = 0;
         refreshNearbyAttractions(lastMonitorPosition);
@@ -1717,6 +1846,7 @@
     if (!mapScreen || !startScreen) return;
     stopProximityMonitoring(false);
     hideRoutePanel();
+    hideAttractionPreview();
     mapScreen.hidden = true;
     startScreen.hidden = false;
   }
@@ -1996,6 +2126,7 @@
   proximityRadius?.addEventListener('change', () => {
     const radius = getProximityRadiusMeters();
     localStorage.setItem(PROXIMITY_RADIUS_KEY, String(radius));
+    if (lastMonitorPosition?.coords) updateAttractionPreview(lastMonitorPosition);
 
     if (proximityActive) {
       showLocationMessage(`Odległość alertu: ${formatDistance(radius)}.`);
@@ -2006,6 +2137,28 @@
         refreshNearbyAttractions(lastMonitorPosition);
       }
     }
+  });
+
+  attractionPreviewButton?.addEventListener('click', showAttractionPreview);
+  attractionPreviewClose?.addEventListener('click', hideAttractionPreview);
+  attractionPreviewOverlay?.addEventListener('click', (event) => {
+    if (event.target === attractionPreviewOverlay) hideAttractionPreview();
+  });
+  attractionPreviewList?.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-preview-route-id]');
+    if (!button) return;
+    const item = attractionPreviewItems.find(
+      (entry) => String(entry.attraction.osmId) === String(button.dataset.previewRouteId)
+    );
+    if (!item) return;
+
+    hideAttractionPreview();
+    if (routeDestinationInput) routeDestinationInput.value = item.attraction.name || '';
+    planRouteToDestination({
+      name: item.attraction.name || (CATEGORY_INFO[item.attraction.category]?.label ?? 'Atrakcja'),
+      lat: Number(item.attraction.lat),
+      lon: Number(item.attraction.lon)
+    });
   });
 
   nearbyAlertShow?.addEventListener('click', () => {
@@ -2041,12 +2194,13 @@
   setCategory(currentCategory);
   setEditCategory(editCategory);
   setProximityUi(false);
+  setAttractionPreviewButton(null);
 
   // PWA: rejestracja Service Workera i szybkie wykrywanie nowej wersji.
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1026', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1031', {
           scope: './',
           updateViaCache: 'none'
         });
