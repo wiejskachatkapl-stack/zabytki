@@ -1,5 +1,5 @@
 (() => {
-  const APP_VERSION = 'v1037';
+  const APP_VERSION = 'v1038';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
@@ -102,6 +102,7 @@
   const navigationDestination = document.getElementById('navigationDestination');
   const mapManeuverOverlay = document.getElementById('mapManeuverOverlay');
   const mapManeuverArrow = document.getElementById('mapManeuverArrow');
+  const mapManeuverDistance = document.getElementById('mapManeuverDistance');
   const mapLanes = document.getElementById('mapLanes');
 
   const nearbyAlert = document.getElementById('nearbyAlert');
@@ -174,7 +175,7 @@
   let routeSearchSequence = 0;
   let routeAlertedIds = new Set();
 
-  // v1037: nawigacja zintegrowana z panelem mapy + wizualizacja manewrów i pasów.
+  // v1038: nawigacja zintegrowana z panelem mapy + wizualizacja manewrów i pasów.
   let navigationActive = false;
   let navigationVoiceEnabled = true;
   let navigationSteps = [];
@@ -358,7 +359,7 @@
   }
 
   function setOsmEnabled(enabled, { fetchNow = true } = {}) {
-    // v1037: baza atrakcji jest zawsze aktywna — nie ma już przełącznika BAZA ON/OFF.
+    // v1038: baza atrakcji jest zawsze aktywna — nie ma już przełącznika BAZA ON/OFF.
     osmEnabled = true;
     saveOsmEnabled();
     updateOsmButtonUi();
@@ -1239,6 +1240,7 @@
 
   function hideManeuverOverlay() {
     if (mapManeuverOverlay) mapManeuverOverlay.hidden = true;
+    if (mapManeuverDistance) mapManeuverDistance.textContent = '0 m';
     if (mapLanes) {
       mapLanes.hidden = true;
       mapLanes.replaceChildren();
@@ -1258,6 +1260,9 @@
     }
 
     mapManeuverArrow.textContent = navigationArrowForStep(step);
+    if (mapManeuverDistance) {
+      mapManeuverDistance.textContent = `${Math.max(0, Math.round(distance))} m`;
+    }
     if (mapLanes) {
       mapLanes.replaceChildren();
       const lanes = laneGuidanceForStep(stepIndex);
@@ -1374,7 +1379,7 @@
     navigationVoiceButton.setAttribute('aria-pressed', navigationVoiceEnabled ? 'true' : 'false');
   }
 
-  function stopNavigation({ keepRoute = true } = {}) {
+  function stopNavigation({ keepRoute = false } = {}) {
     navigationActive = false;
     navigationArrived = false;
     navigationRerouteInFlight = false;
@@ -2555,8 +2560,8 @@
   });
   routeClearButton?.addEventListener('click', () => clearRoute({ refreshMap: true }));
   navigationStopButton?.addEventListener('click', () => {
-    stopNavigation({ keepRoute: true });
-    showLocationMessage('Nawigacja zakończona. Trasa pozostaje na mapie.');
+    stopNavigation({ keepRoute: false });
+    showLocationMessage('Nawigacja zakończona. Trasa usunięta z mapy.');
   });
 
 

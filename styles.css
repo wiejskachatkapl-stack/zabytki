@@ -3548,7 +3548,7 @@ button {
 }
 
 
-/* v1037 — uproszczony panel mapy, baza zawsze ON, nawigacja w kontenerze,
+/* v1038 — uproszczony panel mapy, baza zawsze ON, nawigacja w kontenerze,
    ostrzeżenie graficzne od 400 m oraz pasy ruchu, jeżeli OSRM je zwraca. */
 .map-top-panel .osm-refresh-button,
 .map-top-panel .proximity-button { display: none !important; }
@@ -3640,6 +3640,11 @@ button {
   box-shadow: 0 8px 26px rgba(0,0,0,.34), 0 0 0 4px rgba(35,174,82,.22);
   font-family: Arial, Helvetica, sans-serif; font-size: 56px; font-weight: 900; line-height: 1;
 }
+.map-maneuver-distance {
+  min-width: 72px; padding: 5px 12px; border: 2px solid rgba(255,255,255,.96); border-radius: 999px;
+  background: rgba(15, 84, 43, .96); color: #fff; box-shadow: 0 5px 18px rgba(0,0,0,.28);
+  font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 900; line-height: 1; text-align: center;
+}
 .map-lanes {
   display: flex; align-items: stretch; gap: 4px; padding: 5px;
   border: 2px solid rgba(255,255,255,.94); border-radius: 13px;
@@ -3678,6 +3683,7 @@ button {
   .map-top-panel .navigation-copy strong { font-size: 11px !important; }
   .map-maneuver-overlay { top: calc(var(--map-content-top, 0px) + 10px); }
   .map-maneuver-arrow { width: 68px; height: 68px; border-radius: 18px; font-size: 49px; }
+  .map-maneuver-distance { min-width: 64px; padding: 4px 10px; font-size: 17px; }
   .map-lane { width: 30px; height: 38px; font-size: 22px; }
 }
 
@@ -3727,5 +3733,6 @@ button {
   .map-top-panel .navigation-copy > span:last-child { font-size: 7px !important; }
   .map-maneuver-overlay { top: 10px; left: 62.5%; }
   .map-maneuver-arrow { width: 64px; height: 64px; border-radius: 17px; font-size: 46px; }
+  .map-maneuver-distance { min-width: 60px; padding: 3px 9px; font-size: 16px; }
   .map-lane { width: 28px; height: 36px; font-size: 21px; }
 }
