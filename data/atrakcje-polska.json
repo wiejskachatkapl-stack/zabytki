@@ -1,7 +1,7 @@
 {
-  "version": "v1045",
+  "version": "v1046",
   "updatedAt": "2026-08-11",
-  "description": "Statyczna baza atrakcji Polski rozszerzona o szeroki zestaw atrakcji województwa kujawsko-pomorskiego.",
+  "description": "Baza atrakcji Turystycznej Mapy Polski – rozszerzona o województwo wielkopolskie.",
   "attractions": [
     {
       "id": "base/palac-radziejowice",
@@ -18680,7 +18680,2707 @@
       "source": "Kujawsko-Pomorskie Travel / dane mapowe",
       "sourceUrl": "https://kujawsko-pomorskie.travel/",
       "region": "kujawsko-pomorskie"
+    },
+    {
+      "id": "wielkopolskie/stary-rynek-w-poznaniu",
+      "name": "Stary Rynek w Poznaniu",
+      "category": "historic",
+      "lat": 52.4081,
+      "lon": 16.9342,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/ratusz-w-poznaniu",
+      "name": "Ratusz w Poznaniu",
+      "category": "historic",
+      "lat": 52.4082,
+      "lon": 16.9341,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/poznanskie-kozioki",
+      "name": "Poznańskie Koziołki",
+      "category": "historic",
+      "lat": 52.4083,
+      "lon": 16.9341,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-historii-miasta-poznania-ratusz",
+      "name": "Muzeum Historii Miasta Poznania – Ratusz",
+      "category": "museum",
+      "lat": 52.4082,
+      "lon": 16.934,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-instrumentow-muzycznych-w-poznaniu",
+      "name": "Muzeum Instrumentów Muzycznych w Poznaniu",
+      "category": "museum",
+      "lat": 52.408,
+      "lon": 16.9347,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-powstania-wielkopolskiego-19181919",
+      "name": "Muzeum Powstania Wielkopolskiego 1918–1919",
+      "category": "museum",
+      "lat": 52.4086,
+      "lon": 16.9331,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-archeologiczne-w-poznaniu",
+      "name": "Muzeum Archeologiczne w Poznaniu",
+      "category": "museum",
+      "lat": 52.4071,
+      "lon": 16.9344,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-gorkow-w-poznaniu",
+      "name": "Pałac Górków w Poznaniu",
+      "category": "historic",
+      "lat": 52.4072,
+      "lon": 16.9345,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/fara-poznanska",
+      "name": "Fara Poznańska",
+      "category": "historic",
+      "lat": 52.4069,
+      "lon": 16.9348,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/katedra-poznanska",
+      "name": "Katedra Poznańska",
+      "category": "historic",
+      "lat": 52.4117,
+      "lon": 16.9483,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/ostrow-tumski-w-poznaniu",
+      "name": "Ostrów Tumski w Poznaniu",
+      "category": "historic",
+      "lat": 52.4113,
+      "lon": 16.9473,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/brama-poznania-ichot",
+      "name": "Brama Poznania ICHOT",
+      "category": "museum",
+      "lat": 52.4127,
+      "lon": 16.9512,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/koscio-najswietszej-marii-panny-in-summo",
+      "name": "Kościół Najświętszej Marii Panny in Summo",
+      "category": "historic",
+      "lat": 52.4119,
+      "lon": 16.947,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/zamek-krolewski-w-poznaniu",
+      "name": "Zamek Królewski w Poznaniu",
+      "category": "castle",
+      "lat": 52.4094,
+      "lon": 16.9316,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-sztuk-uzytkowych-w-zamku-krolewskim",
+      "name": "Muzeum Sztuk Użytkowych w Zamku Królewskim",
+      "category": "museum",
+      "lat": 52.4094,
+      "lon": 16.9316,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/biblioteka-raczynskich",
+      "name": "Biblioteka Raczyńskich",
+      "category": "historic",
+      "lat": 52.4082,
+      "lon": 16.9271,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-narodowe-w-poznaniu",
+      "name": "Muzeum Narodowe w Poznaniu",
+      "category": "museum",
+      "lat": 52.4088,
+      "lon": 16.9287,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/bazar-poznanski",
+      "name": "Bazar Poznański",
+      "category": "historic",
+      "lat": 52.4072,
+      "lon": 16.9293,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/zamek-cesarski-w-poznaniu",
+      "name": "Zamek Cesarski w Poznaniu",
+      "category": "castle",
+      "lat": 52.4074,
+      "lon": 16.9193,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/centrum-kultury-zamek",
+      "name": "Centrum Kultury ZAMEK",
+      "category": "historic",
+      "lat": 52.4074,
+      "lon": 16.9193,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/centrum-szyfrow-enigma",
+      "name": "Centrum Szyfrów Enigma",
+      "category": "museum",
+      "lat": 52.4078,
+      "lon": 16.9188,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/pomnik-poznanskiego-czerwca-1956",
+      "name": "Pomnik Poznańskiego Czerwca 1956",
+      "category": "historic",
+      "lat": 52.4068,
+      "lon": 16.9197,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/palmiarnia-poznanska",
+      "name": "Palmiarnia Poznańska",
+      "category": "nature",
+      "lat": 52.4023,
+      "lon": 16.8991,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/park-wilsona-w-poznaniu",
+      "name": "Park Wilsona w Poznaniu",
+      "category": "nature",
+      "lat": 52.4025,
+      "lon": 16.9003,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/stare-zoo-w-poznaniu",
+      "name": "Stare Zoo w Poznaniu",
+      "category": "nature",
+      "lat": 52.4077,
+      "lon": 16.9054,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/park-cytadela-w-poznaniu",
+      "name": "Park Cytadela w Poznaniu",
+      "category": "nature",
+      "lat": 52.4215,
+      "lon": 16.9355,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-uzbrojenia-w-poznaniu",
+      "name": "Muzeum Uzbrojenia w Poznaniu",
+      "category": "museum",
+      "lat": 52.4231,
+      "lon": 16.9338,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-armii-poznan",
+      "name": "Muzeum Armii Poznań",
+      "category": "museum",
+      "lat": 52.4237,
+      "lon": 16.9354,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/fort-vii-colomb-w-poznaniu",
+      "name": "Fort VII Colomb w Poznaniu",
+      "category": "historic",
+      "lat": 52.414,
+      "lon": 16.8829,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-martyrologii-wielkopolan-fort-vii",
+      "name": "Muzeum Martyrologii Wielkopolan – Fort VII",
+      "category": "museum",
+      "lat": 52.414,
+      "lon": 16.8829,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-maltanskie",
+      "name": "Jezioro Maltańskie",
+      "category": "water",
+      "lat": 52.4059,
+      "lon": 16.9733,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/termy-maltanskie",
+      "name": "Termy Maltańskie",
+      "category": "historic",
+      "lat": 52.4055,
+      "lon": 16.985,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/kolejka-parkowa-maltanka",
+      "name": "Kolejka Parkowa Maltanka",
+      "category": "historic",
+      "lat": 52.4071,
+      "lon": 16.9607,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/nowe-zoo-w-poznaniu",
+      "name": "Nowe Zoo w Poznaniu",
+      "category": "nature",
+      "lat": 52.401,
+      "lon": 17.0007,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/kopiec-wolnosci-w-poznaniu",
+      "name": "Kopiec Wolności w Poznaniu",
+      "category": "historic",
+      "lat": 52.4036,
+      "lon": 16.9905,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rezerwat-meteoryt-morasko",
+      "name": "Rezerwat Meteoryt Morasko",
+      "category": "reserve",
+      "lat": 52.4884,
+      "lon": 16.9013,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/gora-moraska",
+      "name": "Góra Moraska",
+      "category": "nature",
+      "lat": 52.4872,
+      "lon": 16.904,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-rusaka-w-poznaniu",
+      "name": "Jezioro Rusałka w Poznaniu",
+      "category": "water",
+      "lat": 52.4263,
+      "lon": 16.8816,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-strzeszynskie",
+      "name": "Jezioro Strzeszyńskie",
+      "category": "water",
+      "lat": 52.4553,
+      "lon": 16.8393,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/szachty-w-poznaniu",
+      "name": "Szachty w Poznaniu",
+      "category": "nature",
+      "lat": 52.3631,
+      "lon": 16.8942,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/wieza-widokowa-na-szachtach",
+      "name": "Wieża widokowa na Szachtach",
+      "category": "nature",
+      "lat": 52.3627,
+      "lon": 16.893,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-bambrow-poznanskich",
+      "name": "Muzeum Bambrów Poznańskich",
+      "category": "museum",
+      "lat": 52.4059,
+      "lon": 16.9363,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rogalowe-muzeum-poznania",
+      "name": "Rogalowe Muzeum Poznania",
+      "category": "museum",
+      "lat": 52.408,
+      "lon": 16.9351,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-pyry",
+      "name": "Muzeum Pyry",
+      "category": "museum",
+      "lat": 52.4073,
+      "lon": 16.937,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/stary-browar",
+      "name": "Stary Browar",
+      "category": "historic",
+      "lat": 52.4011,
+      "lon": 16.9274,
+      "source": "Visit Poznań / dane mapowe",
+      "sourceUrl": "https://visitpoznan.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/zamek-w-korniku",
+      "name": "Zamek w Kórniku",
+      "category": "castle",
+      "lat": 52.2432,
+      "lon": 17.0891,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/arboretum-kornickie",
+      "name": "Arboretum Kórnickie",
+      "category": "nature",
+      "lat": 52.2438,
+      "lon": 17.087,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-korniku",
+      "name": "Rynek w Kórniku",
+      "category": "historic",
+      "lat": 52.2449,
+      "lon": 17.0897,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/promenada-nad-jeziorem-kornickim",
+      "name": "Promenada nad Jeziorem Kórnickim",
+      "category": "water",
+      "lat": 52.2425,
+      "lon": 17.0938,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-w-rogalinie",
+      "name": "Pałac w Rogalinie",
+      "category": "castle",
+      "lat": 52.2337,
+      "lon": 16.9353,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/park-paacowy-w-rogalinie",
+      "name": "Park pałacowy w Rogalinie",
+      "category": "nature",
+      "lat": 52.2344,
+      "lon": 16.9362,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/deby-rogalinskie",
+      "name": "Dęby Rogalińskie",
+      "category": "nature",
+      "lat": 52.2315,
+      "lon": 16.9388,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/koscio-sw-marcelina-i-mauzoleum-raczynskich-w-rogalinie",
+      "name": "Kościół św. Marcelina i Mauzoleum Raczyńskich w Rogalinie",
+      "category": "historic",
+      "lat": 52.2328,
+      "lon": 16.9328,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/wielkopolski-park-narodowy",
+      "name": "Wielkopolski Park Narodowy",
+      "category": "nature",
+      "lat": 52.286,
+      "lon": 16.797,
+      "source": "Wielkopolski Park Narodowy / dane mapowe",
+      "sourceUrl": "https://wpn.gov.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-goreckie",
+      "name": "Jezioro Góreckie",
+      "category": "water",
+      "lat": 52.269,
+      "lon": 16.797,
+      "source": "Wielkopolski Park Narodowy / dane mapowe",
+      "sourceUrl": "https://wpn.gov.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/wyspa-zamkowa-na-jeziorze-goreckim",
+      "name": "Wyspa Zamkowa na Jeziorze Góreckim",
+      "category": "ruins",
+      "lat": 52.2716,
+      "lon": 16.797,
+      "source": "Wielkopolski Park Narodowy / dane mapowe",
+      "sourceUrl": "https://wpn.gov.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/ruiny-zamku-klaudyny-potockiej",
+      "name": "Ruiny zamku Klaudyny Potockiej",
+      "category": "ruins",
+      "lat": 52.2717,
+      "lon": 16.7969,
+      "source": "Wielkopolski Park Narodowy / dane mapowe",
+      "sourceUrl": "https://wpn.gov.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/osowa-gora",
+      "name": "Osowa Góra",
+      "category": "nature",
+      "lat": 52.2459,
+      "lon": 16.8448,
+      "source": "Wielkopolski Park Narodowy / dane mapowe",
+      "sourceUrl": "https://wpn.gov.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-kocioek",
+      "name": "Jezioro Kociołek",
+      "category": "water",
+      "lat": 52.2655,
+      "lon": 16.8001,
+      "source": "Wielkopolski Park Narodowy / dane mapowe",
+      "sourceUrl": "https://wpn.gov.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-skrzynka",
+      "name": "Jezioro Skrzynka",
+      "category": "water",
+      "lat": 52.2815,
+      "lon": 16.7923,
+      "source": "Wielkopolski Park Narodowy / dane mapowe",
+      "sourceUrl": "https://wpn.gov.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-budzynskie",
+      "name": "Jezioro Budzyńskie",
+      "category": "water",
+      "lat": 52.2787,
+      "lon": 16.834,
+      "source": "Wielkopolski Park Narodowy / dane mapowe",
+      "sourceUrl": "https://wpn.gov.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-przyrodnicze-wielkopolskiego-parku-narodowego-w-jeziorach",
+      "name": "Muzeum Przyrodnicze Wielkopolskiego Parku Narodowego w Jeziorach",
+      "category": "museum",
+      "lat": 52.2669,
+      "lon": 16.7989,
+      "source": "Wielkopolski Park Narodowy / dane mapowe",
+      "sourceUrl": "https://wpn.gov.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-narodowe-rolnictwa-w-szreniawie",
+      "name": "Muzeum Narodowe Rolnictwa w Szreniawie",
+      "category": "museum",
+      "lat": 52.315,
+      "lon": 16.8007,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-przyrodniczo-owieckie-w-uzarzewie",
+      "name": "Muzeum Przyrodniczo-Łowieckie w Uzarzewie",
+      "category": "museum",
+      "lat": 52.453,
+      "lon": 17.126,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-martyrologiczne-w-zabikowie",
+      "name": "Muzeum Martyrologiczne w Żabikowie",
+      "category": "museum",
+      "lat": 52.365,
+      "lon": 16.877,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-pracownia-literacka-arkadego-fiedlera-w-puszczykowie",
+      "name": "Muzeum-Pracownia Literacka Arkadego Fiedlera w Puszczykowie",
+      "category": "museum",
+      "lat": 52.2837,
+      "lon": 16.8475,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/puszcza-zielonka",
+      "name": "Puszcza Zielonka",
+      "category": "nature",
+      "lat": 52.555,
+      "lon": 17.1,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/park-krajobrazowy-puszcza-zielonka",
+      "name": "Park Krajobrazowy Puszcza Zielonka",
+      "category": "nature",
+      "lat": 52.563,
+      "lon": 17.118,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/dziewicza-gora",
+      "name": "Dziewicza Góra",
+      "category": "nature",
+      "lat": 52.4878,
+      "lon": 17.0645,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/wieza-widokowa-na-dziewiczej-gorze",
+      "name": "Wieża widokowa na Dziewiczej Górze",
+      "category": "nature",
+      "lat": 52.4879,
+      "lon": 17.0646,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/park-krajobrazowy-promno",
+      "name": "Park Krajobrazowy Promno",
+      "category": "nature",
+      "lat": 52.472,
+      "lon": 17.292,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-debiniec",
+      "name": "Jezioro Dębiniec",
+      "category": "water",
+      "lat": 52.462,
+      "lon": 17.283,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/grod-pobiedziska",
+      "name": "Gród Pobiedziska",
+      "category": "museum",
+      "lat": 52.4817,
+      "lon": 17.286,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/skansen-miniatur-szlaku-piastowskiego",
+      "name": "Skansen Miniatur Szlaku Piastowskiego",
+      "category": "museum",
+      "lat": 52.4747,
+      "lon": 17.2768,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-biezdruchowo",
+      "name": "Jezioro Biezdruchowo",
+      "category": "water",
+      "lat": 52.478,
+      "lon": 17.29,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-w-owinskach",
+      "name": "Pałac w Owińskach",
+      "category": "castle",
+      "lat": 52.511,
+      "lon": 16.9815,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/park-orientacji-przestrzennej-w-owinskach",
+      "name": "Park Orientacji Przestrzennej w Owińskach",
+      "category": "nature",
+      "lat": 52.5118,
+      "lon": 16.9824,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/deli-park-w-trzebawiu",
+      "name": "Deli Park w Trzebawiu",
+      "category": "nature",
+      "lat": 52.2965,
+      "lon": 16.743,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/tarnowskie-termy",
+      "name": "Tarnowskie Termy",
+      "category": "historic",
+      "lat": 52.4663,
+      "lon": 16.6733,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-lusowskie",
+      "name": "Jezioro Lusowskie",
+      "category": "water",
+      "lat": 52.438,
+      "lon": 16.704,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-niepruszewskie",
+      "name": "Jezioro Niepruszewskie",
+      "category": "water",
+      "lat": 52.369,
+      "lon": 16.605,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/katedra-gnieznienska",
+      "name": "Katedra Gnieźnieńska",
+      "category": "historic",
+      "lat": 52.5361,
+      "lon": 17.5952,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/drzwi-gnieznienskie",
+      "name": "Drzwi Gnieźnieńskie",
+      "category": "historic",
+      "lat": 52.5361,
+      "lon": 17.5952,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-archidiecezji-gnieznienskiej",
+      "name": "Muzeum Archidiecezji Gnieźnieńskiej",
+      "category": "museum",
+      "lat": 52.5364,
+      "lon": 17.5945,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-poczatkow-panstwa-polskiego-w-gnieznie",
+      "name": "Muzeum Początków Państwa Polskiego w Gnieźnie",
+      "category": "museum",
+      "lat": 52.5319,
+      "lon": 17.5884,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-gnieznie",
+      "name": "Rynek w Gnieźnie",
+      "category": "historic",
+      "lat": 52.5352,
+      "lon": 17.5985,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/koscio-sw-jana-chrzciciela-w-gnieznie",
+      "name": "Kościół św. Jana Chrzciciela w Gnieźnie",
+      "category": "historic",
+      "lat": 52.538,
+      "lon": 17.6004,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/parowozownia-gniezno",
+      "name": "Parowozownia Gniezno",
+      "category": "historic",
+      "lat": 52.5229,
+      "lon": 17.605,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-jelonek-w-gnieznie",
+      "name": "Jezioro Jelonek w Gnieźnie",
+      "category": "water",
+      "lat": 52.5314,
+      "lon": 17.5852,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/ostrow-lednicki",
+      "name": "Ostrów Lednicki",
+      "category": "historic",
+      "lat": 52.5283,
+      "lon": 17.373,
+      "source": "Muzeum Pierwszych Piastów na Lednicy / dane mapowe",
+      "sourceUrl": "https://www.lednicamuzeum.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/palatium-na-ostrowie-lednickim",
+      "name": "Palatium na Ostrowie Lednickim",
+      "category": "ruins",
+      "lat": 52.5284,
+      "lon": 17.3727,
+      "source": "Muzeum Pierwszych Piastów na Lednicy / dane mapowe",
+      "sourceUrl": "https://www.lednicamuzeum.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-pierwszych-piastow-na-lednicy",
+      "name": "Muzeum Pierwszych Piastów na Lednicy",
+      "category": "museum",
+      "lat": 52.529,
+      "lon": 17.3829,
+      "source": "Muzeum Pierwszych Piastów na Lednicy / dane mapowe",
+      "sourceUrl": "https://www.lednicamuzeum.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/wielkopolski-park-etnograficzny-w-dziekanowicach",
+      "name": "Wielkopolski Park Etnograficzny w Dziekanowicach",
+      "category": "museum",
+      "lat": 52.5267,
+      "lon": 17.3998,
+      "source": "Muzeum Pierwszych Piastów na Lednicy / dane mapowe",
+      "sourceUrl": "https://www.lednicamuzeum.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-lednica",
+      "name": "Jezioro Lednica",
+      "category": "water",
+      "lat": 52.545,
+      "lon": 17.381,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rezerwat-archeologiczny-grod-w-gieczu",
+      "name": "Rezerwat Archeologiczny Gród w Gieczu",
+      "category": "museum",
+      "lat": 52.3217,
+      "lon": 17.3708,
+      "source": "Muzeum Pierwszych Piastów na Lednicy / dane mapowe",
+      "sourceUrl": "https://www.lednicamuzeum.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/grod-w-gieczu",
+      "name": "Gród w Gieczu",
+      "category": "ruins",
+      "lat": 52.3217,
+      "lon": 17.3708,
+      "source": "Muzeum Pierwszych Piastów na Lednicy / dane mapowe",
+      "sourceUrl": "https://www.lednicamuzeum.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rezerwat-archeologiczny-grod-w-grzybowie",
+      "name": "Rezerwat Archeologiczny Gród w Grzybowie",
+      "category": "museum",
+      "lat": 52.3206,
+      "lon": 17.69,
+      "source": "Muzeum Pierwszych Piastów na Lednicy / dane mapowe",
+      "sourceUrl": "https://www.lednicamuzeum.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/grod-w-grzybowie",
+      "name": "Gród w Grzybowie",
+      "category": "ruins",
+      "lat": 52.3206,
+      "lon": 17.69,
+      "source": "Muzeum Pierwszych Piastów na Lednicy / dane mapowe",
+      "sourceUrl": "https://www.lednicamuzeum.pl/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/bazylika-wniebowziecia-nmp-w-trzemesznie",
+      "name": "Bazylika Wniebowzięcia NMP w Trzemesznie",
+      "category": "historic",
+      "lat": 52.5613,
+      "lon": 17.8237,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/klasztor-pocysterski-w-ladzie-nad-warta",
+      "name": "Klasztor pocysterski w Lądzie nad Wartą",
+      "category": "historic",
+      "lat": 52.2142,
+      "lon": 17.8942,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-regionalne-ziemi-pyzdrskiej-w-pyzdrach",
+      "name": "Muzeum Regionalne Ziemi Pyzdrskiej w Pyzdrach",
+      "category": "museum",
+      "lat": 52.1705,
+      "lon": 17.6908,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-pyzdrach",
+      "name": "Rynek w Pyzdrach",
+      "category": "historic",
+      "lat": 52.1703,
+      "lon": 17.6914,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/nadwarcianski-park-krajobrazowy",
+      "name": "Nadwarciański Park Krajobrazowy",
+      "category": "nature",
+      "lat": 52.157,
+      "lon": 17.79,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-w-miosawiu",
+      "name": "Pałac w Miłosławiu",
+      "category": "castle",
+      "lat": 52.2046,
+      "lon": 17.4882,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/park-im-koscielskich-w-miosawiu",
+      "name": "Park im. Kościelskich w Miłosławiu",
+      "category": "nature",
+      "lat": 52.204,
+      "lon": 17.489,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-regionalne-im-dzieci-wrzesinskich",
+      "name": "Muzeum Regionalne im. Dzieci Wrzesińskich",
+      "category": "museum",
+      "lat": 52.3254,
+      "lon": 17.5655,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/koscio-farny-we-wrzesni",
+      "name": "Kościół farny we Wrześni",
+      "category": "historic",
+      "lat": 52.325,
+      "lon": 17.5659,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-regionalne-w-supcy",
+      "name": "Muzeum Regionalne w Słupcy",
+      "category": "museum",
+      "lat": 52.2875,
+      "lon": 17.8719,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-supeckie",
+      "name": "Jezioro Słupeckie",
+      "category": "water",
+      "lat": 52.298,
+      "lon": 17.862,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/klasztor-cystersow-w-wagrowcu",
+      "name": "Klasztor cystersów w Wągrowcu",
+      "category": "historic",
+      "lat": 52.8056,
+      "lon": 17.2057,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/skrzyzowanie-rzek-weny-i-nielby",
+      "name": "Skrzyżowanie rzek Wełny i Nielby",
+      "category": "nature",
+      "lat": 52.8145,
+      "lon": 17.2075,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-durowskie",
+      "name": "Jezioro Durowskie",
+      "category": "water",
+      "lat": 52.823,
+      "lon": 17.197,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-regionalne-w-wagrowcu",
+      "name": "Muzeum Regionalne w Wągrowcu",
+      "category": "museum",
+      "lat": 52.8092,
+      "lon": 17.2025,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-gowny-w-kaliszu",
+      "name": "Rynek Główny w Kaliszu",
+      "category": "historic",
+      "lat": 51.7616,
+      "lon": 18.091,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/ratusz-w-kaliszu",
+      "name": "Ratusz w Kaliszu",
+      "category": "historic",
+      "lat": 51.7617,
+      "lon": 18.0911,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/bazylika-kolegiacka-wniebowziecia-nmp-sanktuarium-sw-jozefa-w-kaliszu",
+      "name": "Bazylika kolegiacka Wniebowzięcia NMP – Sanktuarium św. Józefa w Kaliszu",
+      "category": "historic",
+      "lat": 51.7643,
+      "lon": 18.0891,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/katedra-sw-mikoaja-w-kaliszu",
+      "name": "Katedra św. Mikołaja w Kaliszu",
+      "category": "historic",
+      "lat": 51.7604,
+      "lon": 18.0869,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-okregowe-ziemi-kaliskiej",
+      "name": "Muzeum Okręgowe Ziemi Kaliskiej",
+      "category": "museum",
+      "lat": 51.7575,
+      "lon": 18.0871,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rezerwat-archeologiczny-zawodzie",
+      "name": "Rezerwat Archeologiczny Zawodzie",
+      "category": "museum",
+      "lat": 51.7487,
+      "lon": 18.0933,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/park-miejski-w-kaliszu",
+      "name": "Park Miejski w Kaliszu",
+      "category": "nature",
+      "lat": 51.7618,
+      "lon": 18.1006,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/most-kamienny-w-kaliszu",
+      "name": "Most Kamienny w Kaliszu",
+      "category": "historic",
+      "lat": 51.7611,
+      "lon": 18.0854,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/baszta-dorotka-w-kaliszu",
+      "name": "Baszta Dorotka w Kaliszu",
+      "category": "historic",
+      "lat": 51.7648,
+      "lon": 18.0898,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/teatr-im-wojciecha-bogusawskiego-w-kaliszu",
+      "name": "Teatr im. Wojciecha Bogusławskiego w Kaliszu",
+      "category": "historic",
+      "lat": 51.7591,
+      "lon": 18.0933,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/zamek-w-gouchowie",
+      "name": "Zamek w Gołuchowie",
+      "category": "castle",
+      "lat": 51.8505,
+      "lon": 17.9281,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-zamek-w-gouchowie",
+      "name": "Muzeum Zamek w Gołuchowie",
+      "category": "museum",
+      "lat": 51.8505,
+      "lon": 17.9281,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/park-arboretum-w-gouchowie",
+      "name": "Park-Arboretum w Gołuchowie",
+      "category": "nature",
+      "lat": 51.8518,
+      "lon": 17.9304,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/pokazowa-zagroda-zwierzat-w-gouchowie",
+      "name": "Pokazowa Zagroda Zwierząt w Gołuchowie",
+      "category": "nature",
+      "lat": 51.8428,
+      "lon": 17.922,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-lesnictwa-w-gouchowie",
+      "name": "Muzeum Leśnictwa w Gołuchowie",
+      "category": "museum",
+      "lat": 51.8499,
+      "lon": 17.9271,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-w-dobrzycy",
+      "name": "Pałac w Dobrzycy",
+      "category": "castle",
+      "lat": 51.8658,
+      "lon": 17.603,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-ziemianstwa-w-dobrzycy",
+      "name": "Muzeum Ziemiaństwa w Dobrzycy",
+      "category": "museum",
+      "lat": 51.8658,
+      "lon": 17.603,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/park-paacowy-w-dobrzycy",
+      "name": "Park pałacowy w Dobrzycy",
+      "category": "nature",
+      "lat": 51.865,
+      "lon": 17.604,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-mysliwski-ksiazat-radziwiow-w-antoninie",
+      "name": "Pałac Myśliwski Książąt Radziwiłłów w Antoninie",
+      "category": "castle",
+      "lat": 51.5128,
+      "lon": 17.8519,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/koscio-sw-antoniego-padewskiego-w-antoninie",
+      "name": "Kościół św. Antoniego Padewskiego w Antoninie",
+      "category": "historic",
+      "lat": 51.5135,
+      "lon": 17.8504,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-historii-przemysu-w-opatowku",
+      "name": "Muzeum Historii Przemysłu w Opatówku",
+      "category": "museum",
+      "lat": 51.7395,
+      "lon": 18.2133,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-opatowku",
+      "name": "Rynek w Opatówku",
+      "category": "historic",
+      "lat": 51.739,
+      "lon": 18.215,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-lipskich-w-lewkowie",
+      "name": "Pałac Lipskich w Lewkowie",
+      "category": "castle",
+      "lat": 51.7008,
+      "lon": 17.7979,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-w-lewkowie-zespo-paacowo-parkowy",
+      "name": "Muzeum w Lewkowie – Zespół Pałacowo-Parkowy",
+      "category": "museum",
+      "lat": 51.7008,
+      "lon": 17.7979,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/konkatedra-sw-stanisawa-biskupa-w-ostrowie-wielkopolskim",
+      "name": "Konkatedra św. Stanisława Biskupa w Ostrowie Wielkopolskim",
+      "category": "historic",
+      "lat": 51.6486,
+      "lon": 17.8164,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/ratusz-w-ostrowie-wielkopolskim",
+      "name": "Ratusz w Ostrowie Wielkopolskim",
+      "category": "historic",
+      "lat": 51.6481,
+      "lon": 17.815,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-miasta-ostrowa-wielkopolskiego",
+      "name": "Muzeum Miasta Ostrowa Wielkopolskiego",
+      "category": "museum",
+      "lat": 51.6481,
+      "lon": 17.815,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/park-miejski-w-ostrowie-wielkopolskim",
+      "name": "Park Miejski w Ostrowie Wielkopolskim",
+      "category": "nature",
+      "lat": 51.6497,
+      "lon": 17.8101,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/zalew-piaski-szczygliczka",
+      "name": "Zalew Piaski-Szczygliczka",
+      "category": "water",
+      "lat": 51.672,
+      "lon": 17.837,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rezerwat-wydymacz",
+      "name": "Rezerwat Wydymacz",
+      "category": "reserve",
+      "lat": 51.505,
+      "lon": 17.848,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/dolina-baryczy-czesc-wielkopolska",
+      "name": "Dolina Baryczy – część wielkopolska",
+      "category": "nature",
+      "lat": 51.505,
+      "lon": 17.65,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-koninie",
+      "name": "Rynek w Koninie",
+      "category": "historic",
+      "lat": 52.2104,
+      "lon": 18.2518,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/sup-koninski",
+      "name": "Słup Koniński",
+      "category": "historic",
+      "lat": 52.2108,
+      "lon": 18.2512,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/koscio-sw-bartomieja-w-koninie",
+      "name": "Kościół św. Bartłomieja w Koninie",
+      "category": "historic",
+      "lat": 52.2109,
+      "lon": 18.2525,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-okregowe-w-koninie-gosawice",
+      "name": "Muzeum Okręgowe w Koninie – Gosławice",
+      "category": "museum",
+      "lat": 52.2901,
+      "lon": 18.268,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/zamek-w-gosawicach",
+      "name": "Zamek w Gosławicach",
+      "category": "castle",
+      "lat": 52.2901,
+      "lon": 18.268,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/skansen-etnograficzny-w-gosawicach",
+      "name": "Skansen Etnograficzny w Gosławicach",
+      "category": "museum",
+      "lat": 52.2908,
+      "lon": 18.2673,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-gosawskie",
+      "name": "Jezioro Gosławskie",
+      "category": "water",
+      "lat": 52.298,
+      "lon": 18.27,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-patnowskie",
+      "name": "Jezioro Pątnowskie",
+      "category": "water",
+      "lat": 52.322,
+      "lon": 18.25,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/bazylika-matki-bozej-lichenskiej",
+      "name": "Bazylika Matki Bożej Licheńskiej",
+      "category": "historic",
+      "lat": 52.3234,
+      "lon": 18.3574,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/wieza-widokowa-bazyliki-w-licheniu",
+      "name": "Wieża widokowa Bazyliki w Licheniu",
+      "category": "historic",
+      "lat": 52.3236,
+      "lon": 18.3577,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-lichenskie",
+      "name": "Jezioro Licheńskie",
+      "category": "water",
+      "lat": 52.309,
+      "lon": 18.343,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/brama-napoleona-w-slesinie",
+      "name": "Brama Napoleona w Ślesinie",
+      "category": "historic",
+      "lat": 52.3704,
+      "lon": 18.3059,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-slesinskie",
+      "name": "Jezioro Ślesińskie",
+      "category": "water",
+      "lat": 52.377,
+      "lon": 18.318,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/wielka-petla-wielkopolski-odcinek-koninski",
+      "name": "Wielka Pętla Wielkopolski – odcinek koniński",
+      "category": "water",
+      "lat": 52.292,
+      "lon": 18.3,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/nadwarcianski-park-krajobrazowy-okolice-konina",
+      "name": "Nadwarciański Park Krajobrazowy – okolice Konina",
+      "category": "nature",
+      "lat": 52.17,
+      "lon": 18.05,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/ruiny-zamku-krolewskiego-w-kole",
+      "name": "Ruiny Zamku Królewskiego w Kole",
+      "category": "ruins",
+      "lat": 52.1877,
+      "lon": 18.6213,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-technik-ceramicznych-w-kole",
+      "name": "Muzeum Technik Ceramicznych w Kole",
+      "category": "museum",
+      "lat": 52.2004,
+      "lon": 18.6381,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/ratusz-w-kole",
+      "name": "Ratusz w Kole",
+      "category": "historic",
+      "lat": 52.2015,
+      "lon": 18.6389,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/koscio-podwyzszenia-krzyza-swietego-w-kole",
+      "name": "Kościół Podwyższenia Krzyża Świętego w Kole",
+      "category": "historic",
+      "lat": 52.2012,
+      "lon": 18.6374,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-byego-niemieckiego-obozu-zagady-kulmhof-w-chemnie-nad-nerem",
+      "name": "Muzeum byłego niemieckiego Obozu Zagłady Kulmhof w Chełmnie nad Nerem",
+      "category": "museum",
+      "lat": 52.1555,
+      "lon": 18.7217,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/kopalnia-soli-kodawa",
+      "name": "Kopalnia Soli Kłodawa",
+      "category": "museum",
+      "lat": 52.254,
+      "lon": 18.913,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/koscio-najswietszego-serca-pana-jezusa-w-turku",
+      "name": "Kościół Najświętszego Serca Pana Jezusa w Turku",
+      "category": "historic",
+      "lat": 52.0154,
+      "lon": 18.5,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-miasta-turku-im-jozefa-mehoffera",
+      "name": "Muzeum Miasta Turku im. Józefa Mehoffera",
+      "category": "museum",
+      "lat": 52.015,
+      "lon": 18.5008,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-turku",
+      "name": "Rynek w Turku",
+      "category": "historic",
+      "lat": 52.0151,
+      "lon": 18.5006,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/zbiornik-przykona",
+      "name": "Zbiornik Przykona",
+      "category": "water",
+      "lat": 51.988,
+      "lon": 18.632,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/klasztor-pobernardynski-w-kazimierzu-biskupim",
+      "name": "Klasztor pobernardyński w Kazimierzu Biskupim",
+      "category": "historic",
+      "lat": 52.311,
+      "lon": 18.165,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-mikorzynskie",
+      "name": "Jezioro Mikorzyńskie",
+      "category": "water",
+      "lat": 52.351,
+      "lon": 18.294,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-wasosko-mikorzynskie",
+      "name": "Jezioro Wąsosko-Mikorzyńskie",
+      "category": "water",
+      "lat": 52.344,
+      "lon": 18.29,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-lesznie",
+      "name": "Rynek w Lesznie",
+      "category": "historic",
+      "lat": 51.8412,
+      "lon": 16.5748,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/ratusz-w-lesznie",
+      "name": "Ratusz w Lesznie",
+      "category": "historic",
+      "lat": 51.8412,
+      "lon": 16.5748,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-okregowe-w-lesznie",
+      "name": "Muzeum Okręgowe w Lesznie",
+      "category": "museum",
+      "lat": 51.8408,
+      "lon": 16.5759,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/dawna-synagoga-w-lesznie",
+      "name": "Dawna Synagoga w Lesznie",
+      "category": "historic",
+      "lat": 51.843,
+      "lon": 16.5756,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/bazylika-sw-mikoaja-w-lesznie",
+      "name": "Bazylika św. Mikołaja w Lesznie",
+      "category": "historic",
+      "lat": 51.84,
+      "lon": 16.5717,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/wieza-cisnien-w-lesznie",
+      "name": "Wieża ciśnień w Lesznie",
+      "category": "historic",
+      "lat": 51.8441,
+      "lon": 16.5703,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/zamek-w-rydzynie",
+      "name": "Zamek w Rydzynie",
+      "category": "castle",
+      "lat": 51.7863,
+      "lon": 16.668,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-rydzynie",
+      "name": "Rynek w Rydzynie",
+      "category": "historic",
+      "lat": 51.7861,
+      "lon": 16.6663,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/koscio-sw-stanisawa-w-rydzynie",
+      "name": "Kościół św. Stanisława w Rydzynie",
+      "category": "historic",
+      "lat": 51.7865,
+      "lon": 16.6653,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/zamek-w-osiecznej",
+      "name": "Zamek w Osiecznej",
+      "category": "castle",
+      "lat": 51.904,
+      "lon": 16.678,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-mynarstwa-i-rolnictwa-w-osiecznej",
+      "name": "Muzeum Młynarstwa i Rolnictwa w Osiecznej",
+      "category": "museum",
+      "lat": 51.906,
+      "lon": 16.676,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-oniewskie",
+      "name": "Jezioro Łoniewskie",
+      "category": "water",
+      "lat": 51.908,
+      "lon": 16.673,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/swieta-gora-w-gostyniu",
+      "name": "Święta Góra w Gostyniu",
+      "category": "historic",
+      "lat": 51.8662,
+      "lon": 17.0433,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/bazylika-na-swietej-gorze",
+      "name": "Bazylika na Świętej Górze",
+      "category": "historic",
+      "lat": 51.8662,
+      "lon": 17.0433,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-w-gostyniu",
+      "name": "Muzeum w Gostyniu",
+      "category": "museum",
+      "lat": 51.8803,
+      "lon": 17.0122,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-gostyniu",
+      "name": "Rynek w Gostyniu",
+      "category": "historic",
+      "lat": 51.882,
+      "lon": 17.0125,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/skansen-filmowy-soplicowo-w-cichowie",
+      "name": "Skansen Filmowy Soplicowo w Cichowie",
+      "category": "museum",
+      "lat": 51.99,
+      "lon": 16.979,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-w-pepowie",
+      "name": "Pałac w Pępowie",
+      "category": "castle",
+      "lat": 51.765,
+      "lon": 17.13,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-stolarstwa-i-biskupizny-w-krobi",
+      "name": "Muzeum Stolarstwa i Biskupizny w Krobi",
+      "category": "museum",
+      "lat": 51.7754,
+      "lon": 16.983,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-rawiczu",
+      "name": "Rynek w Rawiczu",
+      "category": "historic",
+      "lat": 51.6093,
+      "lon": 16.8587,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/ratusz-w-rawiczu",
+      "name": "Ratusz w Rawiczu",
+      "category": "historic",
+      "lat": 51.6093,
+      "lon": 16.8587,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-ziemi-rawickiej",
+      "name": "Muzeum Ziemi Rawickiej",
+      "category": "museum",
+      "lat": 51.6093,
+      "lon": 16.8587,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/planty-jana-pawa-ii-w-rawiczu",
+      "name": "Planty Jana Pawła II w Rawiczu",
+      "category": "nature",
+      "lat": 51.6108,
+      "lon": 16.857,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/ratusz-w-sarnowie",
+      "name": "Ratusz w Sarnowie",
+      "category": "historic",
+      "lat": 51.5818,
+      "lon": 16.891,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-w-pakosawiu",
+      "name": "Pałac w Pakosławiu",
+      "category": "castle",
+      "lat": 51.614,
+      "lon": 17.057,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/park-krajobrazowy-im-gen-dezyderego-chapowskiego",
+      "name": "Park Krajobrazowy im. gen. Dezyderego Chłapowskiego",
+      "category": "nature",
+      "lat": 52.05,
+      "lon": 16.75,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-w-turwi",
+      "name": "Pałac w Turwi",
+      "category": "castle",
+      "lat": 52.061,
+      "lon": 16.819,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-regionalne-w-koscianie",
+      "name": "Muzeum Regionalne w Kościanie",
+      "category": "museum",
+      "lat": 52.0882,
+      "lon": 16.645,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-koscianie",
+      "name": "Rynek w Kościanie",
+      "category": "historic",
+      "lat": 52.0887,
+      "lon": 16.6461,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/wieza-cisnien-w-koscianie",
+      "name": "Wieża ciśnień w Kościanie",
+      "category": "historic",
+      "lat": 52.0857,
+      "lon": 16.6404,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-woniesc",
+      "name": "Jezioro Wonieść",
+      "category": "water",
+      "lat": 52.01,
+      "lon": 16.7,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-okregowe-im-stanisawa-staszica-w-pile",
+      "name": "Muzeum Okręgowe im. Stanisława Staszica w Pile",
+      "category": "museum",
+      "lat": 53.1517,
+      "lon": 16.738,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-stanisawa-staszica-w-pile",
+      "name": "Muzeum Stanisława Staszica w Pile",
+      "category": "museum",
+      "lat": 53.1504,
+      "lon": 16.737,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/wyspa-w-pile",
+      "name": "Wyspa w Pile",
+      "category": "nature",
+      "lat": 53.1483,
+      "lon": 16.733,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/park-na-wyspie-w-pile",
+      "name": "Park na Wyspie w Pile",
+      "category": "nature",
+      "lat": 53.1485,
+      "lon": 16.7334,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-potki",
+      "name": "Jezioro Płotki",
+      "category": "water",
+      "lat": 53.196,
+      "lon": 16.789,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-piaszczyste-w-pile",
+      "name": "Jezioro Piaszczyste w Pile",
+      "category": "water",
+      "lat": 53.186,
+      "lon": 16.772,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rezerwat-kuznik",
+      "name": "Rezerwat Kuźnik",
+      "category": "reserve",
+      "lat": 53.176,
+      "lon": 16.714,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/dolina-gwdy-w-pile",
+      "name": "Dolina Gwdy w Pile",
+      "category": "nature",
+      "lat": 53.153,
+      "lon": 16.733,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-chodziezy",
+      "name": "Rynek w Chodzieży",
+      "category": "historic",
+      "lat": 52.992,
+      "lon": 16.919,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-regionalne-w-chodziezy",
+      "name": "Muzeum Regionalne w Chodzieży",
+      "category": "museum",
+      "lat": 52.9918,
+      "lon": 16.9196,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-miejskie-w-chodziezy",
+      "name": "Jezioro Miejskie w Chodzieży",
+      "category": "water",
+      "lat": 52.989,
+      "lon": 16.928,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-strzeleckie-w-chodziezy",
+      "name": "Jezioro Strzeleckie w Chodzieży",
+      "category": "water",
+      "lat": 52.998,
+      "lon": 16.922,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-karczewnik",
+      "name": "Jezioro Karczewnik",
+      "category": "water",
+      "lat": 52.981,
+      "lon": 16.917,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-margoninskie",
+      "name": "Jezioro Margonińskie",
+      "category": "water",
+      "lat": 52.971,
+      "lon": 17.094,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-czarnkowie",
+      "name": "Rynek w Czarnkowie",
+      "category": "historic",
+      "lat": 52.9022,
+      "lon": 16.5646,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-ziemi-czarnkowskiej",
+      "name": "Muzeum Ziemi Czarnkowskiej",
+      "category": "museum",
+      "lat": 52.903,
+      "lon": 16.565,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/marina-na-noteci-w-czarnkowie",
+      "name": "Marina na Noteci w Czarnkowie",
+      "category": "water",
+      "lat": 52.904,
+      "lon": 16.56,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/puszcza-notecka",
+      "name": "Puszcza Notecka",
+      "category": "nature",
+      "lat": 52.77,
+      "lon": 16.4,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/sierakowski-park-krajobrazowy",
+      "name": "Sierakowski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 52.65,
+      "lon": 16.08,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/zamek-opalinskich-w-sierakowie",
+      "name": "Zamek Opalińskich w Sierakowie",
+      "category": "castle",
+      "lat": 52.6514,
+      "lon": 16.0819,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-zamek-opalinskich-w-sierakowie",
+      "name": "Muzeum Zamek Opalińskich w Sierakowie",
+      "category": "museum",
+      "lat": 52.6514,
+      "lon": 16.0819,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-jaroszewskie",
+      "name": "Jezioro Jaroszewskie",
+      "category": "water",
+      "lat": 52.664,
+      "lon": 16.081,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-lutomskie",
+      "name": "Jezioro Lutomskie",
+      "category": "water",
+      "lat": 52.626,
+      "lon": 16.086,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rezerwat-buki-nad-jeziorem-lutomskim",
+      "name": "Rezerwat Buki nad Jeziorem Lutomskim",
+      "category": "reserve",
+      "lat": 52.621,
+      "lon": 16.075,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-chrzypskie",
+      "name": "Jezioro Chrzypskie",
+      "category": "water",
+      "lat": 52.628,
+      "lon": 16.227,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-miedzychodzie",
+      "name": "Rynek w Międzychodzie",
+      "category": "historic",
+      "lat": 52.598,
+      "lon": 15.896,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-miejskie-w-miedzychodzie",
+      "name": "Jezioro Miejskie w Międzychodzie",
+      "category": "water",
+      "lat": 52.604,
+      "lon": 15.895,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/centrum-edukacji-regionalnej-i-przyrodniczej-w-mniszkach",
+      "name": "Centrum Edukacji Regionalnej i Przyrodniczej w Mniszkach",
+      "category": "museum",
+      "lat": 52.555,
+      "lon": 15.98,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/osrodek-edukacji-przyrodniczej-w-chalinie",
+      "name": "Ośrodek Edukacji Przyrodniczej w Chalinie",
+      "category": "museum",
+      "lat": 52.621,
+      "lon": 16.015,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rezerwat-kolno-miedzychodzkie",
+      "name": "Rezerwat Kolno Międzychodzkie",
+      "category": "reserve",
+      "lat": 52.61,
+      "lon": 15.918,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/drawienski-park-narodowy-czesc-wielkopolska",
+      "name": "Drawieński Park Narodowy – część wielkopolska",
+      "category": "nature",
+      "lat": 53.025,
+      "lon": 15.92,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/notecki-park-krajobrazowy",
+      "name": "Notecki Park Krajobrazowy",
+      "category": "nature",
+      "lat": 52.85,
+      "lon": 16.25,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rezerwat-wilcze-boto",
+      "name": "Rezerwat Wilcze Błoto",
+      "category": "reserve",
+      "lat": 52.76,
+      "lon": 16.25,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/zamek-w-szamotuach",
+      "name": "Zamek w Szamotułach",
+      "category": "castle",
+      "lat": 52.6158,
+      "lon": 16.5773,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-zamek-gorkow-w-szamotuach",
+      "name": "Muzeum Zamek Górków w Szamotułach",
+      "category": "museum",
+      "lat": 52.6158,
+      "lon": 16.5773,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/baszta-halszki-w-szamotuach",
+      "name": "Baszta Halszki w Szamotułach",
+      "category": "historic",
+      "lat": 52.6162,
+      "lon": 16.5768,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-szamotuach",
+      "name": "Rynek w Szamotułach",
+      "category": "historic",
+      "lat": 52.612,
+      "lon": 16.577,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-regionalne-w-grodzisku-wielkopolskim",
+      "name": "Muzeum Regionalne w Grodzisku Wielkopolskim",
+      "category": "museum",
+      "lat": 52.2278,
+      "lon": 16.3657,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-grodzisku-wielkopolskim",
+      "name": "Rynek w Grodzisku Wielkopolskim",
+      "category": "historic",
+      "lat": 52.2279,
+      "lon": 16.365,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-wikliniarstwa-i-chmielarstwa-w-nowym-tomyslu",
+      "name": "Muzeum Wikliniarstwa i Chmielarstwa w Nowym Tomyślu",
+      "category": "museum",
+      "lat": 52.315,
+      "lon": 16.126,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/najwiekszy-kosz-wiklinowy-w-nowym-tomyslu",
+      "name": "Największy kosz wiklinowy w Nowym Tomyślu",
+      "category": "historic",
+      "lat": 52.3144,
+      "lon": 16.128,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-w-wasowie",
+      "name": "Pałac w Wąsowie",
+      "category": "castle",
+      "lat": 52.357,
+      "lon": 16.235,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rezerwat-urbanowo",
+      "name": "Rezerwat Urbanowo",
+      "category": "reserve",
+      "lat": 52.25,
+      "lon": 16.15,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-zbaszynskie",
+      "name": "Jezioro Zbąszyńskie",
+      "category": "water",
+      "lat": 52.244,
+      "lon": 15.909,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-ziemi-zbaszynskiej-i-regionu-koza",
+      "name": "Muzeum Ziemi Zbąszyńskiej i Regionu Kozła",
+      "category": "museum",
+      "lat": 52.251,
+      "lon": 15.923,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-zbaszyniu",
+      "name": "Rynek w Zbąszyniu",
+      "category": "historic",
+      "lat": 52.2504,
+      "lon": 15.924,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-w-smieowie-muzeum-adama-mickiewicza",
+      "name": "Pałac w Śmiełowie – Muzeum Adama Mickiewicza",
+      "category": "museum",
+      "lat": 52.1113,
+      "lon": 17.5718,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/park-paacowy-w-smieowie",
+      "name": "Park pałacowy w Śmiełowie",
+      "category": "nature",
+      "lat": 52.1118,
+      "lon": 17.573,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/zerkowsko-czeszewski-park-krajobrazowy",
+      "name": "Żerkowsko-Czeszewski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 52.116,
+      "lon": 17.55,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rezerwat-czeszewski-las",
+      "name": "Rezerwat Czeszewski Las",
+      "category": "reserve",
+      "lat": 52.13,
+      "lon": 17.505,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-w-winnej-gorze",
+      "name": "Pałac w Winnej Górze",
+      "category": "castle",
+      "lat": 52.202,
+      "lon": 17.441,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-generaa-jana-henryka-dabrowskiego-w-winnej-gorze",
+      "name": "Muzeum Generała Jana Henryka Dąbrowskiego w Winnej Górze",
+      "category": "museum",
+      "lat": 52.202,
+      "lon": 17.441,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-ziemi-sredzkiej-dwor-w-koszutach",
+      "name": "Muzeum Ziemi Średzkiej Dwór w Koszutach",
+      "category": "museum",
+      "lat": 52.245,
+      "lon": 17.191,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/kolegiata-wniebowziecia-nmp-w-srodzie-wielkopolskiej",
+      "name": "Kolegiata Wniebowzięcia NMP w Środzie Wielkopolskiej",
+      "category": "historic",
+      "lat": 52.228,
+      "lon": 17.276,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/sredzka-kolej-powiatowa",
+      "name": "Średzka Kolej Powiatowa",
+      "category": "historic",
+      "lat": 52.229,
+      "lon": 17.28,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rezerwat-sniezycowy-jar",
+      "name": "Rezerwat Śnieżycowy Jar",
+      "category": "reserve",
+      "lat": 52.611,
+      "lon": 16.954,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-w-objezierzu",
+      "name": "Pałac w Objezierzu",
+      "category": "castle",
+      "lat": 52.676,
+      "lon": 16.748,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-mynarstwa-w-jaraczu",
+      "name": "Muzeum Młynarstwa w Jaraczu",
+      "category": "museum",
+      "lat": 52.711,
+      "lon": 16.826,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/zamek-w-goanczy",
+      "name": "Zamek w Gołańczy",
+      "category": "castle",
+      "lat": 52.943,
+      "lon": 17.299,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/ruiny-zamku-w-goanczy",
+      "name": "Ruiny zamku w Gołańczy",
+      "category": "ruins",
+      "lat": 52.943,
+      "lon": 17.299,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-kaliszanskie",
+      "name": "Jezioro Kaliszańskie",
+      "category": "water",
+      "lat": 52.82,
+      "lon": 17.21,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-kobyleckie",
+      "name": "Jezioro Kobyleckie",
+      "category": "water",
+      "lat": 52.82,
+      "lon": 17.25,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/paac-w-czerniejewie",
+      "name": "Pałac w Czerniejewie",
+      "category": "castle",
+      "lat": 52.426,
+      "lon": 17.489,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rynek-w-czerniejewie",
+      "name": "Rynek w Czerniejewie",
+      "category": "historic",
+      "lat": 52.4262,
+      "lon": 17.4895,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/muzeum-regionalne-w-rogoznie",
+      "name": "Muzeum Regionalne w Rogoźnie",
+      "category": "museum",
+      "lat": 52.7522,
+      "lon": 16.9917,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/jezioro-rogozinskie",
+      "name": "Jezioro Rogozińskie",
+      "category": "water",
+      "lat": 52.755,
+      "lon": 16.995,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
+    },
+    {
+      "id": "wielkopolskie/rezerwat-buczyna",
+      "name": "Rezerwat Buczyna",
+      "category": "reserve",
+      "lat": 52.67,
+      "lon": 17.02,
+      "source": "Wielkopolska Travel / dane mapowe",
+      "sourceUrl": "https://wielkopolska.travel/",
+      "region": "wielkopolskie"
     }
   ],
-  "count": 1872
+  "count": 2142
 }
