@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1026';
+  const APP_VERSION = 'v1027';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1026';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1027';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;
@@ -105,8 +105,9 @@
   let editingPointId = null;
   let currentMapMode = 'all';
   let editReturnMapMode = 'all';
-  // v1026: legenda jest filtrem widoku atrakcji. 'all' = wszystkie, null = żadna.
-  let activeAttractionFilter = 'all';
+  // v1027: legenda pozwala zaznaczyć kilka kategorii jednocześnie.
+  const CATEGORY_KEYS = Object.keys(CATEGORY_INFO);
+  let activeAttractionFilters = new Set(CATEGORY_KEYS);
 
   let externalLayer = null;
   let osmAttractions = new Map();
@@ -509,17 +510,20 @@
     return attractions.filter((item) => distanceMeters(lat, lon, item.lat, item.lon) <= radius);
   }
 
+  function allAttractionFiltersActive() {
+    return CATEGORY_KEYS.every((key) => activeAttractionFilters.has(key));
+  }
+
   function attractionMatchesActiveFilter(category) {
-    if (activeAttractionFilter === 'all') return true;
-    if (!activeAttractionFilter) return false;
-    return category === activeAttractionFilter;
+    return activeAttractionFilters.has(category);
   }
 
   function updateMapLegendUi() {
     if (!mapLegend) return;
+    const allActive = allAttractionFiltersActive();
     mapLegend.querySelectorAll('[data-map-filter]').forEach((button) => {
       const value = button.dataset.mapFilter;
-      const active = activeAttractionFilter === value;
+      const active = value === 'all' ? allActive : activeAttractionFilters.has(value);
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
@@ -528,27 +532,42 @@
   function refreshMarkersForActiveFilter() {
     updateMapLegendUi();
     renderStoredPoints();
-    // Uwaga: filtr legendy zmienia tylko widok. Alerty i obliczanie atrakcji
-    // przy trasie nadal korzystają z pełnej listy, żeby niczego nie przegapić.
+    // Filtr legendy zmienia tylko to, co widać na mapie. Alerty i obliczanie
+    // atrakcji przy trasie nadal korzystają z pełnej bazy, żeby niczego nie przegapić.
     if (currentMapMode === 'all') {
       renderExternalAttractions([...osmAttractions.values()]);
       const visibleExternal = [...osmAttractions.values()].filter((item) =>
         !isOsmSaved(item.osmId) && attractionMatchesActiveFilter(item.category)
       ).length;
       const visibleMine = loadPoints().filter((point) => attractionMatchesActiveFilter(point.category)).length;
-      if (activeAttractionFilter === 'all') {
+      const selectedCount = activeAttractionFilters.size;
+      if (allAttractionFiltersActive()) {
         updateOsmStatus(`Baza atrakcji: ${osmAttractions.size} · moje: ${visibleMine}`);
-      } else if (!activeAttractionFilter) {
+      } else if (selectedCount === 0) {
         updateOsmStatus('Filtr atrakcji: widok wyłączony');
       } else {
-        updateOsmStatus(`${CATEGORY_INFO[activeAttractionFilter]?.label || 'Atrakcje'}: ${visibleExternal + visibleMine} widocznych`);
+        updateOsmStatus(`Wybrane kategorie: ${selectedCount} · ${visibleExternal + visibleMine} widocznych`);
       }
     }
   }
 
   function toggleAttractionFilter(value) {
-    if (value !== 'all' && !CATEGORY_INFO[value]) return;
-    activeAttractionFilter = activeAttractionFilter === value ? null : value;
+    if (value === 'all') {
+      activeAttractionFilters = allAttractionFiltersActive() ? new Set() : new Set(CATEGORY_KEYS);
+      refreshMarkersForActiveFilter();
+      return;
+    }
+    if (!CATEGORY_INFO[value]) return;
+
+    // Gdy aktualnie włączone są WSZYSTKIE, pierwszy wybór kategorii przełącza
+    // mapę na samą tę kategorię. Następne kliknięcia dodają/odejmują kolejne.
+    if (allAttractionFiltersActive()) {
+      activeAttractionFilters = new Set([value]);
+    } else if (activeAttractionFilters.has(value)) {
+      activeAttractionFilters.delete(value);
+    } else {
+      activeAttractionFilters.add(value);
+    }
     refreshMarkersForActiveFilter();
   }
 
