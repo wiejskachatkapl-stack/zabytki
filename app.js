@@ -1,15 +1,14 @@
 (() => {
-  const APP_VERSION = 'v1020';
+  const APP_VERSION = 'v1021';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1020';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1021';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const OSRM_ROUTE_URL = 'https://router.project-osrm.org/route/v1/driving';
   const FOLLOW_EDGE_MARGIN_PX = 92;
-  const ROUTE_DRIVE_ZOOM = 14;
   const ROUTE_DISPLAY_RADIUS = 20000;
   const ALERT_COOLDOWN_MS = 12 * 60 * 60 * 1000;
   const NEARBY_FETCH_MIN_RADIUS = 12000;
@@ -520,6 +519,7 @@
           ? `<div class="place-popup-date">Od trasy: ${escapeHtml(formatDistance(Number(attraction.routeDistanceMeters)))}</div>`
           : ''}
         <button class="place-popup-add-osm" type="button" data-route-osm-id="${escapeHtml(attraction.osmId)}">USTAW TRASĘ DO TEJ ATRAKCJI</button>
+        <button class="place-popup-add-osm" type="button" data-wikipedia-query="${escapeHtml(attraction.name)}">WIKIPEDIA</button>
         ${
           saved
             ? '<div class="osm-saved-badge">TEN PUNKT JEST JUŻ W TWOICH MIEJSCACH</div>'
@@ -1005,7 +1005,8 @@
       const routeRadius = getProximityRadiusMeters();
       setRouteInfo(`${destination.name} · ${distance} · około ${duration}. Szukam atrakcji do ${formatDistance(routeRadius)} od przebiegu trasy…`);
 
-      map.fitBounds(routeLayer.getBounds(), { padding: [45, 45], animate: true });
+      // v1021: wyznaczenie trasy nie może samoczynnie zmieniać skali ani środka mapy.
+      // Tylko przycisk WYCENTRUJ ustawia jednorazowo zoom na bieżącej pozycji.
 
       try {
         routeAttractions = await fetchRouteAttractions(coordinates, routeRadius);
@@ -1016,15 +1017,9 @@
         setRouteInfo(`${destination.name} · ${distance} · około ${duration} · atrakcji do ${formatDistance(routeRadius)} od trasy: ${routeAttractions.length}. Alert podczas jazdy: ${formatDistance(routeRadius)}.`);
         showLocationMessage(`Trasa gotowa · ${routeAttractions.length} atrakcji w zasięgu do ${formatDistance(routeRadius)} od trasy. Alerty podczas jazdy są aktywne.`);
         // Po wyznaczeniu trasy odsłaniamy mapę i znaczniki atrakcji.
+        // Nie zmieniamy zoomu ani środka — użytkownik steruje skalą ręcznie.
         hideRoutePanel();
         startProximityMonitoring(false);
-
-        // Po pokazaniu całej trasy przejdź do widoku jazdy przy bieżącej pozycji.
-        setTimeout(() => {
-          if (!routeActive || !map || !lastMonitorPosition?.coords) return;
-          const { latitude, longitude } = lastMonitorPosition.coords;
-          map.setView([latitude, longitude], Math.max(map.getZoom(), ROUTE_DRIVE_ZOOM), { animate: true });
-        }, 1200);
         checkProximity(position);
       } catch (error) {
         console.warn('Nie udało się odczytać atrakcji przy trasie:', error);
@@ -1285,6 +1280,7 @@
         <div class="place-popup-coords">${Number(point.lat).toFixed(6)}, ${Number(point.lon).toFixed(6)}</div>
         ${note ? `<div class="place-popup-note">${noteHtml(note)}</div>` : ''}
         <button class="place-popup-edit" type="button" data-route-point-id="${escapeHtml(point.id)}">USTAW TRASĘ DO TEGO MIEJSCA</button>
+        <button class="place-popup-edit" type="button" data-wikipedia-query="${escapeHtml(title)}">WIKIPEDIA</button>
         <button class="place-popup-edit" type="button" data-edit-point-id="${escapeHtml(point.id)}">EDYTUJ</button>
       </div>
     `;
@@ -1809,6 +1805,19 @@
   deletePlaceButton?.addEventListener('click', deleteEditedPoint);
 
   document.addEventListener('click', (event) => {
+    const wikipediaButton = event.target.closest('[data-wikipedia-query]');
+    if (wikipediaButton) {
+      event.preventDefault();
+      event.stopPropagation();
+      const query = String(wikipediaButton.dataset.wikipediaQuery || '').trim();
+      if (query) {
+        const url = `https://pl.wikipedia.org/w/index.php?search=${encodeURIComponent(query)}`;
+        const wikipediaWindow = window.open(url, '_blank', 'noopener,noreferrer');
+        if (wikipediaWindow) wikipediaWindow.opener = null;
+      }
+      return;
+    }
+
     const routeOsmButton = event.target.closest('[data-route-osm-id]');
     if (routeOsmButton) {
       event.preventDefault();
@@ -1939,7 +1948,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1019', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1021', {
           scope: './',
           updateViaCache: 'none'
         });
