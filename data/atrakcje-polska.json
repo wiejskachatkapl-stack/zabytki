@@ -1,7 +1,7 @@
 {
-  "version": "v1042",
+  "version": "v1043",
   "updatedAt": "2026-08-11",
-  "description": "Statyczna baza atrakcji Polski rozszerzona o szeroki zestaw atrakcji województwa podlaskiego.",
+  "description": "Statyczna baza atrakcji Polski rozszerzona o szeroki zestaw atrakcji województwa pomorskiego.",
   "attractions": [
     {
       "id": "base/palac-radziejowice",
@@ -14010,7 +14010,1287 @@
       "source": "Wikipedia / dane mapowe",
       "sourceUrl": "https://pl.wikipedia.org/wiki/Ratusz_w_Bia%C5%82ymstoku",
       "region": "podlaskie"
+    },
+    {
+      "id": "pomorskie/europejskie-centrum-solidarnosci",
+      "name": "Europejskie Centrum Solidarności",
+      "category": "museum",
+      "lat": 54.3614,
+      "lon": 18.6498,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Europejskie_Centrum_Solidarno%C5%9Bci",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-bursztynu-w-gdansku",
+      "name": "Muzeum Bursztynu w Gdańsku",
+      "category": "museum",
+      "lat": 54.3532,
+      "lon": 18.6464,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Bursztynu_w_Gda%C5%84sku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/narodowe-muzeum-morskie-spichlerze-na-oowiance",
+      "name": "Narodowe Muzeum Morskie – Spichlerze na Ołowiance",
+      "category": "museum",
+      "lat": 54.3518,
+      "lon": 18.659,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Narodowe_Muzeum_Morskie_w_Gda%C5%84sku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/statek-muzeum-sodek",
+      "name": "Statek-muzeum Sołdek",
+      "category": "museum",
+      "lat": 54.3515,
+      "lon": 18.6586,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/So%C5%82dek",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/spichlerz-bekitny-baranek",
+      "name": "Spichlerz Błękitny Baranek",
+      "category": "museum",
+      "lat": 54.347,
+      "lon": 18.6598,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/B%C5%82%C4%99kitny_Baranek",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/dwor-artusa-w-gdansku",
+      "name": "Dwór Artusa w Gdańsku",
+      "category": "historic",
+      "lat": 54.3485,
+      "lon": 18.6532,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dw%C3%B3r_Artusa_w_Gda%C5%84sku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/ratusz-gownego-miasta-w-gdansku",
+      "name": "Ratusz Głównego Miasta w Gdańsku",
+      "category": "historic",
+      "lat": 54.3484,
+      "lon": 18.6529,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ratusz_G%C5%82%C3%B3wnego_Miasta_w_Gda%C5%84sku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/fontanna-neptuna-w-gdansku",
+      "name": "Fontanna Neptuna w Gdańsku",
+      "category": "historic",
+      "lat": 54.3485,
+      "lon": 18.6531,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Fontanna_Neptuna_w_Gda%C5%84sku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/dugi-targ-w-gdansku",
+      "name": "Długi Targ w Gdańsku",
+      "category": "historic",
+      "lat": 54.3482,
+      "lon": 18.653,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/D%C5%82ugi_Targ",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/zuraw-nad-motawa",
+      "name": "Żuraw nad Motławą",
+      "category": "historic",
+      "lat": 54.3508,
+      "lon": 18.6577,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/%C5%BBuraw_w_Gda%C5%84sku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/ulica-mariacka-w-gdansku",
+      "name": "Ulica Mariacka w Gdańsku",
+      "category": "historic",
+      "lat": 54.3506,
+      "lon": 18.6554,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ulica_Mariacka_w_Gda%C5%84sku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/zota-brama-w-gdansku",
+      "name": "Złota Brama w Gdańsku",
+      "category": "historic",
+      "lat": 54.349,
+      "lon": 18.648,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Z%C5%82ota_Brama_w_Gda%C5%84sku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/zielona-brama-w-gdansku",
+      "name": "Zielona Brama w Gdańsku",
+      "category": "historic",
+      "lat": 54.348,
+      "lon": 18.6558,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zielona_Brama_w_Gda%C5%84sku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/wielki-myn-w-gdansku",
+      "name": "Wielki Młyn w Gdańsku",
+      "category": "historic",
+      "lat": 54.3531,
+      "lon": 18.6463,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wielki_M%C5%82yn_w_Gda%C5%84sku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/bazylika-mariacka-w-gdansku",
+      "name": "Bazylika Mariacka w Gdańsku",
+      "category": "historic",
+      "lat": 54.3503,
+      "lon": 18.6531,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bazylika_Mariacka_Wniebowzi%C4%99cia_Naj%C5%9Bwi%C4%99tszej_Maryi_Panny_w_Gda%C5%84sku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/archikatedra-oliwska",
+      "name": "Archikatedra Oliwska",
+      "category": "historic",
+      "lat": 54.4102,
+      "lon": 18.5591,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bazylika_archikatedralna_w_Gda%C5%84sku-Oliwie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/park-oliwski",
+      "name": "Park Oliwski",
+      "category": "nature",
+      "lat": 54.4094,
+      "lon": 18.5575,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Park_Oliwski",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/westerplatte",
+      "name": "Westerplatte",
+      "category": "historic",
+      "lat": 54.407,
+      "lon": 18.6747,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Westerplatte",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/twierdza-wisoujscie",
+      "name": "Twierdza Wisłoujście",
+      "category": "historic",
+      "lat": 54.3956,
+      "lon": 18.6804,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Twierdza_Wis%C5%82ouj%C5%9Bcie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/hevelianum",
+      "name": "Hevelianum",
+      "category": "museum",
+      "lat": 54.3544,
+      "lon": 18.6398,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Hevelianum",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/gdanski-ogrod-zoologiczny",
+      "name": "Gdański Ogród Zoologiczny",
+      "category": "nature",
+      "lat": 54.4122,
+      "lon": 18.5349,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Gda%C5%84ski_Ogr%C3%B3d_Zoologiczny",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/molo-w-brzeznie",
+      "name": "Molo w Brzeźnie",
+      "category": "historic",
+      "lat": 54.414,
+      "lon": 18.6254,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Molo_w_Gda%C5%84sku_Brze%C5%BAnie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/wzgorze-pachoek",
+      "name": "Wzgórze Pachołek",
+      "category": "nature",
+      "lat": 54.4145,
+      "lon": 18.5576,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pacho%C5%82ek_(wzg%C3%B3rze)",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/rezerwat-przyrody-ptasi-raj",
+      "name": "Rezerwat przyrody Ptasi Raj",
+      "category": "reserve",
+      "lat": 54.3658,
+      "lon": 18.789,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ptasi_Raj",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/rezerwat-przyrody-mewia-acha",
+      "name": "Rezerwat przyrody Mewia Łacha",
+      "category": "reserve",
+      "lat": 54.3547,
+      "lon": 18.9489,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Mewia_%C5%81acha",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/wyspa-sobieszewska",
+      "name": "Wyspa Sobieszewska",
+      "category": "nature",
+      "lat": 54.339,
+      "lon": 18.833,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wyspa_Sobieszewska",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/dar-pomorza",
+      "name": "Dar Pomorza",
+      "category": "museum",
+      "lat": 54.5188,
+      "lon": 18.551,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dar_Pomorza",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/orp-byskawica",
+      "name": "ORP Błyskawica",
+      "category": "museum",
+      "lat": 54.5186,
+      "lon": 18.5507,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/ORP_B%C5%82yskawica",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-marynarki-wojennej-w-gdyni",
+      "name": "Muzeum Marynarki Wojennej w Gdyni",
+      "category": "museum",
+      "lat": 54.5181,
+      "lon": 18.5501,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Marynarki_Wojennej_w_Gdyni",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/akwarium-gdynskie",
+      "name": "Akwarium Gdyńskie",
+      "category": "museum",
+      "lat": 54.5167,
+      "lon": 18.5531,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Akwarium_Gdy%C5%84skie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-emigracji-w-gdyni",
+      "name": "Muzeum Emigracji w Gdyni",
+      "category": "museum",
+      "lat": 54.5322,
+      "lon": 18.5447,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Emigracji_w_Gdyni",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/centrum-nauki-experyment",
+      "name": "Centrum Nauki Experyment",
+      "category": "museum",
+      "lat": 54.503,
+      "lon": 18.5302,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Centrum_Nauki_Experyment_w_Gdyni",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/klif-orowski",
+      "name": "Klif Orłowski",
+      "category": "nature",
+      "lat": 54.4777,
+      "lon": 18.5672,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Klif_Or%C5%82owski",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/molo-w-orowie",
+      "name": "Molo w Orłowie",
+      "category": "historic",
+      "lat": 54.4793,
+      "lon": 18.5679,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Molo_w_Or%C5%82owie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/kamienna-gora-w-gdyni",
+      "name": "Kamienna Góra w Gdyni",
+      "category": "nature",
+      "lat": 54.514,
+      "lon": 18.5367,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kamienna_G%C3%B3ra_(Gdynia)",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/torpedownia-w-babich-doach",
+      "name": "Torpedownia w Babich Dołach",
+      "category": "ruins",
+      "lat": 54.5848,
+      "lon": 18.5785,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Torpedownia_w_Babich_Do%C5%82ach",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/rezerwat-przyrody-kepa-redowska",
+      "name": "Rezerwat przyrody Kępa Redłowska",
+      "category": "reserve",
+      "lat": 54.492,
+      "lon": 18.563,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/K%C4%99pa_Red%C5%82owska",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/molo-w-sopocie",
+      "name": "Molo w Sopocie",
+      "category": "historic",
+      "lat": 54.4474,
+      "lon": 18.5756,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Molo_w_Sopocie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/krzywy-domek",
+      "name": "Krzywy Domek",
+      "category": "historic",
+      "lat": 54.4445,
+      "lon": 18.5687,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Krzywy_Domek",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/opera-lesna",
+      "name": "Opera Leśna",
+      "category": "historic",
+      "lat": 54.445,
+      "lon": 18.5486,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Opera_Le%C5%9Bna",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/latarnia-morska-sopot",
+      "name": "Latarnia Morska Sopot",
+      "category": "historic",
+      "lat": 54.446,
+      "lon": 18.5741,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Latarnia_Morska_Sopot",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/grodzisko-w-sopocie",
+      "name": "Grodzisko w Sopocie",
+      "category": "museum",
+      "lat": 54.4522,
+      "lon": 18.5615,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Grodzisko_w_Sopocie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-sopotu",
+      "name": "Muzeum Sopotu",
+      "category": "museum",
+      "lat": 54.4389,
+      "lon": 18.5751,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Sopotu",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/ysa-gora-w-sopocie",
+      "name": "Łysa Góra w Sopocie",
+      "category": "nature",
+      "lat": 54.4447,
+      "lon": 18.5354,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/%C5%81ysa_G%C3%B3ra_(Sopot)",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-ziemi-puckiej",
+      "name": "Muzeum Ziemi Puckiej",
+      "category": "museum",
+      "lat": 54.7205,
+      "lon": 18.4088,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ziemi_Puckiej_im._Floriana_Ceynowy",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/molo-w-pucku",
+      "name": "Molo w Pucku",
+      "category": "historic",
+      "lat": 54.7188,
+      "lon": 18.4135,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Molo_w_Pucku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/latarnia-morska-rozewie",
+      "name": "Latarnia Morska Rozewie",
+      "category": "historic",
+      "lat": 54.8314,
+      "lon": 18.3367,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Latarnia_Morska_Rozewie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/latarnia-morska-hel",
+      "name": "Latarnia Morska Hel",
+      "category": "historic",
+      "lat": 54.6083,
+      "lon": 18.801,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Latarnia_Morska_Hel",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-ryboowstwa-w-helu",
+      "name": "Muzeum Rybołówstwa w Helu",
+      "category": "museum",
+      "lat": 54.6085,
+      "lon": 18.8024,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Rybo%C5%82%C3%B3wstwa_w_Helu",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-obrony-wybrzeza-w-helu",
+      "name": "Muzeum Obrony Wybrzeża w Helu",
+      "category": "museum",
+      "lat": 54.6045,
+      "lon": 18.8127,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Obrony_Wybrze%C5%BCa",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/fokarium-stacji-morskiej-w-helu",
+      "name": "Fokarium Stacji Morskiej w Helu",
+      "category": "nature",
+      "lat": 54.6088,
+      "lon": 18.8026,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Fokarium_w_Helu",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/cypel-helski",
+      "name": "Cypel Helski",
+      "category": "nature",
+      "lat": 54.6008,
+      "lon": 18.8188,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Cypel_Helski",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/molo-w-juracie",
+      "name": "Molo w Juracie",
+      "category": "historic",
+      "lat": 54.6794,
+      "lon": 18.7167,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Molo_w_Juracie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/latarnia-morska-jastarnia",
+      "name": "Latarnia Morska Jastarnia",
+      "category": "historic",
+      "lat": 54.7007,
+      "lon": 18.678,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Latarnia_Morska_Jastarnia",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/osrodek-oporu-jastarnia",
+      "name": "Ośrodek Oporu Jastarnia",
+      "category": "historic",
+      "lat": 54.696,
+      "lon": 18.644,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/O%C5%9Brodek_Oporu_Jastarnia",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/rezerwat-przyrody-beka",
+      "name": "Rezerwat przyrody Beka",
+      "category": "reserve",
+      "lat": 54.652,
+      "lon": 18.452,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Beka_(rezerwat_przyrody)",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/cypel-rewski",
+      "name": "Cypel Rewski",
+      "category": "nature",
+      "lat": 54.633,
+      "lon": 18.51,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Cypel_Rewski",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/rezerwat-przyrody-sone-aki",
+      "name": "Rezerwat przyrody Słone Łąki",
+      "category": "reserve",
+      "lat": 54.784,
+      "lon": 18.415,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/S%C5%82one_%C5%81%C4%85ki",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/centrum-edukacji-i-promocji-regionu-w-szymbarku",
+      "name": "Centrum Edukacji i Promocji Regionu w Szymbarku",
+      "category": "museum",
+      "lat": 54.2159,
+      "lon": 18.102,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Centrum_Edukacji_i_Promocji_Regionu_w_Szymbarku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/wieza-widokowa-na-wiezycy",
+      "name": "Wieża widokowa na Wieżycy",
+      "category": "nature",
+      "lat": 54.2228,
+      "lon": 18.1298,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wie%C5%BCyca_(Pojezierze_Kaszubskie)",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/kaszubski-park-etnograficzny-we-wdzydzach",
+      "name": "Kaszubski Park Etnograficzny we Wdzydzach",
+      "category": "museum",
+      "lat": 54.0107,
+      "lon": 17.9266,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kaszubski_Park_Etnograficzny",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-hymnu-narodowego-w-bedominie",
+      "name": "Muzeum Hymnu Narodowego w Będominie",
+      "category": "museum",
+      "lat": 54.1267,
+      "lon": 17.9575,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Hymnu_Narodowego_w_B%C4%99dominie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-kolejnictwa-w-koscierzynie",
+      "name": "Muzeum Kolejnictwa w Kościerzynie",
+      "category": "museum",
+      "lat": 54.1212,
+      "lon": 17.9765,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Kolejnictwa_w_Ko%C5%9Bcierzynie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-ziemi-koscierskiej",
+      "name": "Muzeum Ziemi Kościerskiej",
+      "category": "museum",
+      "lat": 54.1228,
+      "lon": 17.9813,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ziemi_Ko%C5%9Bcierskiej",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-kaszubskie-w-kartuzach",
+      "name": "Muzeum Kaszubskie w Kartuzach",
+      "category": "museum",
+      "lat": 54.3344,
+      "lon": 18.1971,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Kaszubskie_im._Franciszka_Tredera_w_Kartuzach",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/kolegiata-wniebowziecia-nmp-w-kartuzach",
+      "name": "Kolegiata Wniebowzięcia NMP w Kartuzach",
+      "category": "historic",
+      "lat": 54.334,
+      "lon": 18.1912,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kolegiata_Wniebowzi%C4%99cia_Naj%C5%9Bwi%C4%99tszej_Maryi_Panny_w_Kartuzach",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-ceramiki-kaszubskiej-neclow-w-chmielnie",
+      "name": "Muzeum Ceramiki Kaszubskiej Neclów w Chmielnie",
+      "category": "museum",
+      "lat": 54.3258,
+      "lon": 18.0992,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ceramiki_Kaszubskiej_Necl%C3%B3w",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/kamienne-kregi-w-wesiorach",
+      "name": "Kamienne Kręgi w Węsiorach",
+      "category": "historic",
+      "lat": 54.2209,
+      "lon": 17.845,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kamienne_kr%C4%99gi_w_W%C4%99siorach",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/kamienne-kregi-w-odrach",
+      "name": "Kamienne Kręgi w Odrach",
+      "category": "historic",
+      "lat": 53.8919,
+      "lon": 17.995,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kamienne_kr%C4%99gi_w_Odrach",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/park-narodowy-bory-tucholskie",
+      "name": "Park Narodowy Bory Tucholskie",
+      "category": "nature",
+      "lat": 53.827,
+      "lon": 17.533,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Park_Narodowy_%E2%80%9EBory_Tucholskie%E2%80%9D",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/kaszubski-park-krajobrazowy",
+      "name": "Kaszubski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 54.27,
+      "lon": 18.06,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kaszubski_Park_Krajobrazowy",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/wdzydzki-park-krajobrazowy",
+      "name": "Wdzydzki Park Krajobrazowy",
+      "category": "nature",
+      "lat": 54.02,
+      "lon": 17.95,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wdzydzki_Park_Krajobrazowy",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/zaborski-park-krajobrazowy",
+      "name": "Zaborski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 53.86,
+      "lon": 17.62,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zaborski_Park_Krajobrazowy",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/trojmiejski-park-krajobrazowy",
+      "name": "Trójmiejski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 54.45,
+      "lon": 18.48,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Tr%C3%B3jmiejski_Park_Krajobrazowy",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/park-krajobrazowy-dolina-supi",
+      "name": "Park Krajobrazowy Dolina Słupi",
+      "category": "nature",
+      "lat": 54.29,
+      "lon": 17.12,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Park_Krajobrazowy_Dolina_S%C5%82upi",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/nadmorski-park-krajobrazowy",
+      "name": "Nadmorski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 54.76,
+      "lon": 18.31,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Nadmorski_Park_Krajobrazowy",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/jezioro-wdzydze",
+      "name": "Jezioro Wdzydze",
+      "category": "water",
+      "lat": 53.982,
+      "lon": 17.93,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wdzydze_(jezioro)",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/jezioro-radunskie-gorne",
+      "name": "Jezioro Raduńskie Górne",
+      "category": "water",
+      "lat": 54.23,
+      "lon": 18.03,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Radu%C5%84skie_G%C3%B3rne",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/jezioro-radunskie-dolne",
+      "name": "Jezioro Raduńskie Dolne",
+      "category": "water",
+      "lat": 54.29,
+      "lon": 18.1,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Radu%C5%84skie_Dolne",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/jezioro-ostrzyckie",
+      "name": "Jezioro Ostrzyckie",
+      "category": "water",
+      "lat": 54.21,
+      "lon": 18.11,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_Ostrzyckie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/jezioro-charzykowskie",
+      "name": "Jezioro Charzykowskie",
+      "category": "water",
+      "lat": 53.73,
+      "lon": 17.5,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_Charzykowskie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/jezioro-zarnowieckie",
+      "name": "Jezioro Żarnowieckie",
+      "category": "water",
+      "lat": 54.74,
+      "lon": 18.06,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_%C5%BBarnowieckie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/jezioro-borzechowskie-wielkie",
+      "name": "Jezioro Borzechowskie Wielkie",
+      "category": "water",
+      "lat": 53.85,
+      "lon": 18.18,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_Borzechowskie_Wielkie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/zamek-w-bytowie",
+      "name": "Zamek w Bytowie",
+      "category": "castle",
+      "lat": 54.1699,
+      "lon": 17.4913,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Bytowie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/zamek-w-gniewie",
+      "name": "Zamek w Gniewie",
+      "category": "castle",
+      "lat": 53.8379,
+      "lon": 18.8289,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Gniewie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/zamek-w-kwidzynie",
+      "name": "Zamek w Kwidzynie",
+      "category": "castle",
+      "lat": 53.7356,
+      "lon": 18.9316,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Kwidzynie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/zamek-w-sztumie",
+      "name": "Zamek w Sztumie",
+      "category": "castle",
+      "lat": 53.9216,
+      "lon": 19.0305,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Sztumie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/zamek-w-leborku",
+      "name": "Zamek w Lęborku",
+      "category": "castle",
+      "lat": 54.5397,
+      "lon": 17.75,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_L%C4%99borku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/zamek-w-czuchowie",
+      "name": "Zamek w Człuchowie",
+      "category": "castle",
+      "lat": 53.6668,
+      "lon": 17.358,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Cz%C5%82uchowie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/bazylika-katedralna-w-pelplinie",
+      "name": "Bazylika katedralna w Pelplinie",
+      "category": "historic",
+      "lat": 53.9284,
+      "lon": 18.6973,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bazylika_katedralna_Wniebowzi%C4%99cia_Naj%C5%9Bwi%C4%99tszej_Maryi_Panny_w_Pelplinie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-diecezjalne-w-pelplinie",
+      "name": "Muzeum Diecezjalne w Pelplinie",
+      "category": "museum",
+      "lat": 53.9287,
+      "lon": 18.6964,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Diecezjalne_w_Pelplinie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-wisy-w-tczewie",
+      "name": "Muzeum Wisły w Tczewie",
+      "category": "museum",
+      "lat": 54.0873,
+      "lon": 18.7995,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Wis%C5%82y_w_Tczewie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/mosty-tczewskie",
+      "name": "Mosty Tczewskie",
+      "category": "historic",
+      "lat": 54.0934,
+      "lon": 18.8115,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Mosty_w_Tczewie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-ziemi-kociewskiej-w-starogardzie-gdanskim",
+      "name": "Muzeum Ziemi Kociewskiej w Starogardzie Gdańskim",
+      "category": "museum",
+      "lat": 53.9645,
+      "lon": 18.5326,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ziemi_Kociewskiej_w_Starogardzie_Gda%C5%84skim",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/grodzisko-owidz",
+      "name": "Grodzisko Owidz",
+      "category": "historic",
+      "lat": 53.9897,
+      "lon": 18.574,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Grodzisko_Owidz",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-historyczno-etnograficzne-w-chojnicach",
+      "name": "Muzeum Historyczno-Etnograficzne w Chojnicach",
+      "category": "museum",
+      "lat": 53.695,
+      "lon": 17.557,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Historyczno-Etnograficzne_w_Chojnicach",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/brama-czuchowska-w-chojnicach",
+      "name": "Brama Człuchowska w Chojnicach",
+      "category": "historic",
+      "lat": 53.6951,
+      "lon": 17.5569,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Brama_Cz%C5%82uchowska_w_Chojnicach",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-regionalne-w-czuchowie",
+      "name": "Muzeum Regionalne w Człuchowie",
+      "category": "museum",
+      "lat": 53.6668,
+      "lon": 17.358,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Regionalne_w_Cz%C5%82uchowie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/zuawski-park-historyczny-w-nowym-dworze-gdanskim",
+      "name": "Żuławski Park Historyczny w Nowym Dworze Gdańskim",
+      "category": "museum",
+      "lat": 54.2158,
+      "lon": 19.1183,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/%C5%BBu%C5%82awski_Park_Historyczny",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/zuawska-kolej-dojazdowa",
+      "name": "Żuławska Kolej Dojazdowa",
+      "category": "historic",
+      "lat": 54.2146,
+      "lon": 19.116,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/%C5%BBu%C5%82awska_Kolej_Dojazdowa",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/koscio-najswietszego-serca-pana-jezusa-w-stegnie",
+      "name": "Kościół Najświętszego Serca Pana Jezusa w Stegnie",
+      "category": "historic",
+      "lat": 54.3274,
+      "lon": 19.1136,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ko%C5%9Bci%C3%B3%C5%82_Naj%C5%9Bwi%C4%99tszego_Serca_Pana_Jezusa_w_Stegnie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/latarnia-morska-krynica-morska",
+      "name": "Latarnia Morska Krynica Morska",
+      "category": "historic",
+      "lat": 54.3811,
+      "lon": 19.4388,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Latarnia_Morska_Krynica_Morska",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/wielbadzi-garb",
+      "name": "Wielbłądzi Garb",
+      "category": "nature",
+      "lat": 54.3699,
+      "lon": 19.435,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wielb%C5%82%C4%85dzi_Garb",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/park-krajobrazowy-mierzeja-wislana",
+      "name": "Park Krajobrazowy Mierzeja Wiślana",
+      "category": "nature",
+      "lat": 54.36,
+      "lon": 19.25,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Park_Krajobrazowy_Mierzeja_Wi%C5%9Blana",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-zalewu-wislanego-w-katach-rybackich",
+      "name": "Muzeum Zalewu Wiślanego w Kątach Rybackich",
+      "category": "museum",
+      "lat": 54.3389,
+      "lon": 19.2369,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Zalewu_Wi%C5%9Blanego",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/rezerwat-przyrody-katy-rybackie",
+      "name": "Rezerwat przyrody Kąty Rybackie",
+      "category": "reserve",
+      "lat": 54.335,
+      "lon": 19.24,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/K%C4%85ty_Rybackie_(rezerwat_przyrody)",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/sowinski-park-narodowy",
+      "name": "Słowiński Park Narodowy",
+      "category": "nature",
+      "lat": 54.66,
+      "lon": 17.21,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/S%C5%82owi%C5%84ski_Park_Narodowy",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/ruchome-wydmy-wydma-acka",
+      "name": "Ruchome Wydmy – Wydma Łącka",
+      "category": "nature",
+      "lat": 54.754,
+      "lon": 17.429,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wydma_%C5%81%C4%85cka",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/latarnia-morska-czopino",
+      "name": "Latarnia Morska Czołpino",
+      "category": "historic",
+      "lat": 54.7204,
+      "lon": 17.2421,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Latarnia_Morska_Czo%C5%82pino",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-wsi-sowinskiej-w-klukach",
+      "name": "Muzeum Wsi Słowińskiej w Klukach",
+      "category": "museum",
+      "lat": 54.6804,
+      "lon": 17.3345,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Wsi_S%C5%82owi%C5%84skiej_w_Klukach",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/latarnia-morska-stilo",
+      "name": "Latarnia Morska Stilo",
+      "category": "historic",
+      "lat": 54.7906,
+      "lon": 17.7397,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Latarnia_Morska_Stilo",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/jezioro-ebsko",
+      "name": "Jezioro Łebsko",
+      "category": "water",
+      "lat": 54.7,
+      "lon": 17.38,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/%C5%81ebsko",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/jezioro-gardno",
+      "name": "Jezioro Gardno",
+      "category": "water",
+      "lat": 54.65,
+      "lon": 17.12,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Gardno_(jezioro)",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/rowoko-wieza-widokowa",
+      "name": "Rowokół – wieża widokowa",
+      "category": "nature",
+      "lat": 54.6636,
+      "lon": 17.2103,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rowok%C3%B3%C5%82",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/zamek-ksiazat-pomorskich-w-supsku",
+      "name": "Zamek Książąt Pomorskich w Słupsku",
+      "category": "castle",
+      "lat": 54.4636,
+      "lon": 17.0303,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_Ksi%C4%85%C5%BC%C4%85t_Pomorskich_w_S%C5%82upsku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-pomorza-srodkowego-w-supsku",
+      "name": "Muzeum Pomorza Środkowego w Słupsku",
+      "category": "museum",
+      "lat": 54.4636,
+      "lon": 17.0303,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Pomorza_%C5%9Arodkowego_w_S%C5%82upsku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/baszta-czarownic-w-supsku",
+      "name": "Baszta Czarownic w Słupsku",
+      "category": "historic",
+      "lat": 54.4644,
+      "lon": 17.0311,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Baszta_Czarownic_w_S%C5%82upsku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/ratusz-w-supsku",
+      "name": "Ratusz w Słupsku",
+      "category": "historic",
+      "lat": 54.4654,
+      "lon": 17.0281,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ratusz_w_S%C5%82upsku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/latarnia-morska-ustka",
+      "name": "Latarnia Morska Ustka",
+      "category": "historic",
+      "lat": 54.5894,
+      "lon": 16.8567,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Latarnia_Morska_Ustka",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/bunkry-bluchera-w-ustce",
+      "name": "Bunkry Blüchera w Ustce",
+      "category": "historic",
+      "lat": 54.5882,
+      "lon": 16.8488,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bunkry_Bl%C3%BCchera_w_Ustce",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-ziemi-usteckiej",
+      "name": "Muzeum Ziemi Usteckiej",
+      "category": "museum",
+      "lat": 54.5816,
+      "lon": 16.8611,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ziemi_Usteckiej",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-w-leborku",
+      "name": "Muzeum w Lęborku",
+      "category": "museum",
+      "lat": 54.5395,
+      "lon": 17.7484,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_w_L%C4%99borku",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/kalwaria-wejherowska",
+      "name": "Kalwaria Wejherowska",
+      "category": "historic",
+      "lat": 54.605,
+      "lon": 18.239,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kalwaria_Wejherowska",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-pismiennictwa-i-muzyki-kaszubsko-pomorskiej",
+      "name": "Muzeum Piśmiennictwa i Muzyki Kaszubsko-Pomorskiej",
+      "category": "museum",
+      "lat": 54.6039,
+      "lon": 18.2381,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Pi%C5%9Bmiennictwa_i_Muzyki_Kaszubsko-Pomorskiej_w_Wejherowie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/muzeum-piasnickie-w-wejherowie",
+      "name": "Muzeum Piaśnickie w Wejherowie",
+      "category": "museum",
+      "lat": 54.6042,
+      "lon": 18.2384,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Pia%C5%9Bnickie_w_Wejherowie",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/rezerwat-przyrody-darzlubskie-buki",
+      "name": "Rezerwat przyrody Darżlubskie Buki",
+      "category": "reserve",
+      "lat": 54.716,
+      "lon": 18.3,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dar%C5%BClubskie_Buki",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/rezerwat-przyrody-piasnickie-aki",
+      "name": "Rezerwat przyrody Piaśnickie Łąki",
+      "category": "reserve",
+      "lat": 54.784,
+      "lon": 18.07,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pia%C5%9Bnickie_%C5%81%C4%85ki",
+      "region": "pomorskie"
+    },
+    {
+      "id": "pomorskie/rezerwat-przyrody-bielawa",
+      "name": "Rezerwat przyrody Bielawa",
+      "category": "reserve",
+      "lat": 54.755,
+      "lon": 18.24,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bielawa_(rezerwat_przyrody)",
+      "region": "pomorskie"
     }
   ],
-  "count": 1405
+  "count": 1533
 }
