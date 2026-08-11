@@ -1,7 +1,7 @@
 {
-  "version": "v1043",
+  "version": "v1044",
   "updatedAt": "2026-08-11",
-  "description": "Statyczna baza atrakcji Polski rozszerzona o szeroki zestaw atrakcji województwa pomorskiego.",
+  "description": "Statyczna baza atrakcji Polski rozszerzona o szeroki zestaw atrakcji województwa zachodniopomorskiego.",
   "attractions": [
     {
       "id": "base/palac-radziejowice",
@@ -15290,7 +15290,1497 @@
       "source": "Wikipedia / dane mapowe",
       "sourceUrl": "https://pl.wikipedia.org/wiki/Bielawa_(rezerwat_przyrody)",
       "region": "pomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/way-chrobrego-w-szczecinie",
+      "name": "Wały Chrobrego w Szczecinie",
+      "category": "historic",
+      "lat": 53.4326,
+      "lon": 14.5614,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wa%C5%82y_Chrobrego",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/zamek-ksiazat-pomorskich-w-szczecinie",
+      "name": "Zamek Książąt Pomorskich w Szczecinie",
+      "category": "castle",
+      "lat": 53.4256,
+      "lon": 14.5608,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_Ksi%C4%85%C5%BC%C4%85t_Pomorskich_w_Szczecinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-narodowe-w-szczecinie-way-chrobrego",
+      "name": "Muzeum Narodowe w Szczecinie – Wały Chrobrego",
+      "category": "museum",
+      "lat": 53.4319,
+      "lon": 14.5622,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Narodowe_w_Szczecinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/centrum-dialogu-przeomy",
+      "name": "Centrum Dialogu Przełomy",
+      "category": "museum",
+      "lat": 53.428,
+      "lon": 14.5546,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Centrum_Dialogu_Prze%C5%82omy",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-techniki-i-komunikacji-w-szczecinie",
+      "name": "Muzeum Techniki i Komunikacji w Szczecinie",
+      "category": "museum",
+      "lat": 53.4476,
+      "lon": 14.543,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Techniki_i_Komunikacji_%E2%80%93_Zajezdnia_Sztuki_w_Szczecinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-historii-szczecina-ratusz-staromiejski",
+      "name": "Muzeum Historii Szczecina – Ratusz Staromiejski",
+      "category": "museum",
+      "lat": 53.424,
+      "lon": 14.5602,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ratusz_Staromiejski_w_Szczecinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/bazylika-archikatedralna-sw-jakuba-w-szczecinie",
+      "name": "Bazylika Archikatedralna św. Jakuba w Szczecinie",
+      "category": "historic",
+      "lat": 53.4242,
+      "lon": 14.5546,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bazylika_archikatedralna_%C5%9Bw._Jakuba_w_Szczecinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/brama-krolewska-w-szczecinie",
+      "name": "Brama Królewska w Szczecinie",
+      "category": "historic",
+      "lat": 53.428,
+      "lon": 14.5551,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Brama_Kr%C3%B3lewska_w_Szczecinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/brama-portowa-w-szczecinie",
+      "name": "Brama Portowa w Szczecinie",
+      "category": "historic",
+      "lat": 53.4227,
+      "lon": 14.5509,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Brama_Portowa_w_Szczecinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/czerwony-ratusz-w-szczecinie",
+      "name": "Czerwony Ratusz w Szczecinie",
+      "category": "historic",
+      "lat": 53.4201,
+      "lon": 14.5523,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Czerwony_Ratusz_w_Szczecinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/willa-lentza-w-szczecinie",
+      "name": "Willa Lentza w Szczecinie",
+      "category": "historic",
+      "lat": 53.4419,
+      "lon": 14.5344,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Willa_Lentza",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/paac-pod-globusem",
+      "name": "Pałac pod Globusem",
+      "category": "historic",
+      "lat": 53.43,
+      "lon": 14.5517,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pa%C5%82ac_pod_Globusem",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/filharmonia-im-mieczysawa-karowicza-w-szczecinie",
+      "name": "Filharmonia im. Mieczysława Karłowicza w Szczecinie",
+      "category": "historic",
+      "lat": 53.429,
+      "lon": 14.5554,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Filharmonia_im._Mieczys%C5%82awa_Kar%C5%82owicza_w_Szczecinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/trafo-trafostacja-sztuki",
+      "name": "TRAFO Trafostacja Sztuki",
+      "category": "museum",
+      "lat": 53.4225,
+      "lon": 14.5574,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/TRAFO_Trafostacja_Sztuki_w_Szczecinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jasne-bonia",
+      "name": "Jasne Błonia",
+      "category": "nature",
+      "lat": 53.441,
+      "lon": 14.539,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jasne_B%C5%82onia_im._Jana_Paw%C5%82a_II",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/park-kasprowicza-w-szczecinie",
+      "name": "Park Kasprowicza w Szczecinie",
+      "category": "nature",
+      "lat": 53.4454,
+      "lon": 14.5325,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Park_Kasprowicza_w_Szczecinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/rozanka-ogrod-rozany-w-szczecinie",
+      "name": "Różanka – Ogród Różany w Szczecinie",
+      "category": "nature",
+      "lat": 53.4502,
+      "lon": 14.5227,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/R%C3%B3%C5%BCanka_(Szczecin)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-szmaragdowe-w-szczecinie",
+      "name": "Jezioro Szmaragdowe w Szczecinie",
+      "category": "water",
+      "lat": 53.3774,
+      "lon": 14.6252,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_Szmaragdowe_(Szczecin)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/puszcza-bukowa",
+      "name": "Puszcza Bukowa",
+      "category": "nature",
+      "lat": 53.337,
+      "lon": 14.661,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Puszcza_Bukowa",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/puszcza-wkrzanska",
+      "name": "Puszcza Wkrzańska",
+      "category": "nature",
+      "lat": 53.525,
+      "lon": 14.43,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Puszcza_Wkrza%C5%84ska",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-dabie",
+      "name": "Jezioro Dąbie",
+      "category": "water",
+      "lat": 53.49,
+      "lon": 14.66,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/D%C4%85bie_(jezioro)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/wieza-bismarcka-w-szczecinie",
+      "name": "Wieża Bismarcka w Szczecinie",
+      "category": "historic",
+      "lat": 53.4865,
+      "lon": 14.6024,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wie%C5%BCa_Bismarcka_w_Szczecinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/szczecinskie-podziemne-trasy-turystyczne",
+      "name": "Szczecińskie Podziemne Trasy Turystyczne",
+      "category": "historic",
+      "lat": 53.4183,
+      "lon": 14.5478,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Schron_przeciwlotniczy_w_Szczecinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/asztownia-w-szczecinie",
+      "name": "Łasztownia w Szczecinie",
+      "category": "historic",
+      "lat": 53.4278,
+      "lon": 14.5685,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/%C5%81asztownia",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/dzwigozaury-na-asztowni",
+      "name": "Dźwigozaury na Łasztowni",
+      "category": "historic",
+      "lat": 53.428,
+      "lon": 14.5694,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/D%C5%BAwigozaury",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/park-krajobrazowy-dolina-dolnej-odry",
+      "name": "Park Krajobrazowy Dolina Dolnej Odry",
+      "category": "nature",
+      "lat": 53.25,
+      "lon": 14.5,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Park_Krajobrazowy_Dolina_Dolnej_Odry",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/krzywy-las-w-nowym-czarnowie",
+      "name": "Krzywy Las w Nowym Czarnowie",
+      "category": "nature",
+      "lat": 53.2142,
+      "lon": 14.4752,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Krzywy_Las",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/stawa-myny",
+      "name": "Stawa Młyny",
+      "category": "historic",
+      "lat": 53.9167,
+      "lon": 14.2734,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Stawa_M%C5%82yny",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/latarnia-morska-swinoujscie",
+      "name": "Latarnia Morska Świnoujście",
+      "category": "historic",
+      "lat": 53.9153,
+      "lon": 14.2847,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Latarnia_Morska_%C5%9Awinouj%C5%9Bcie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/fort-gerharda",
+      "name": "Fort Gerharda",
+      "category": "historic",
+      "lat": 53.9166,
+      "lon": 14.2887,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Fort_Gerharda",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/fort-zachodni-w-swinoujsciu",
+      "name": "Fort Zachodni w Świnoujściu",
+      "category": "historic",
+      "lat": 53.9131,
+      "lon": 14.2704,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Fort_Zachodni_w_%C5%9Awinouj%C5%9Bciu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/fort-anioa-w-swinoujsciu",
+      "name": "Fort Anioła w Świnoujściu",
+      "category": "historic",
+      "lat": 53.9107,
+      "lon": 14.2638,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Fort_Anio%C5%82a_w_%C5%9Awinouj%C5%9Bciu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/podziemne-miasto-na-wyspie-wolin",
+      "name": "Podziemne Miasto na wyspie Wolin",
+      "category": "museum",
+      "lat": 53.9015,
+      "lon": 14.324,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Podziemne_Miasto_na_wyspie_Wolin",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-obrony-wybrzeza-w-swinoujsciu",
+      "name": "Muzeum Obrony Wybrzeża w Świnoujściu",
+      "category": "museum",
+      "lat": 53.9166,
+      "lon": 14.2887,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Obrony_Wybrze%C5%BCa_w_%C5%9Awinouj%C5%9Bciu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-ryboowstwa-morskiego-w-swinoujsciu",
+      "name": "Muzeum Rybołówstwa Morskiego w Świnoujściu",
+      "category": "museum",
+      "lat": 53.9097,
+      "lon": 14.2486,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Rybo%C5%82%C3%B3wstwa_Morskiego_w_%C5%9Awinouj%C5%9Bciu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/falochron-zachodni-w-swinoujsciu",
+      "name": "Falochron Zachodni w Świnoujściu",
+      "category": "historic",
+      "lat": 53.9188,
+      "lon": 14.2737,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Falochron_Zachodni_w_%C5%9Awinouj%C5%9Bciu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/park-zdrojowy-w-swinoujsciu",
+      "name": "Park Zdrojowy w Świnoujściu",
+      "category": "nature",
+      "lat": 53.91,
+      "lon": 14.26,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Park_Zdrojowy_w_%C5%9Awinouj%C5%9Bciu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/karsiborska-kepa",
+      "name": "Karsiborska Kępa",
+      "category": "reserve",
+      "lat": 53.854,
+      "lon": 14.328,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Karsiborska_K%C4%99pa",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/rezerwat-przyrody-karsiborskie-paprocie",
+      "name": "Rezerwat przyrody Karsiborskie Paprocie",
+      "category": "reserve",
+      "lat": 53.859,
+      "lon": 14.323,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Karsiborskie_Paprocie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/wyspa-karsibor",
+      "name": "Wyspa Karsibór",
+      "category": "nature",
+      "lat": 53.855,
+      "lon": 14.34,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Karsib%C3%B3r_(wyspa)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-wicko-wielkie",
+      "name": "Jezioro Wicko Wielkie",
+      "category": "water",
+      "lat": 53.868,
+      "lon": 14.444,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wicko_Wielkie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/wolinski-park-narodowy",
+      "name": "Woliński Park Narodowy",
+      "category": "nature",
+      "lat": 53.93,
+      "lon": 14.5,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Woli%C5%84ski_Park_Narodowy",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/zagroda-pokazowa-zubrow-w-miedzyzdrojach",
+      "name": "Zagroda Pokazowa Żubrów w Międzyzdrojach",
+      "category": "nature",
+      "lat": 53.94,
+      "lon": 14.485,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zagroda_Pokazowa_%C5%BBubr%C3%B3w_w_Woli%C5%84skim_Parku_Narodowym",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/kawcza-gora",
+      "name": "Kawcza Góra",
+      "category": "nature",
+      "lat": 53.9385,
+      "lon": 14.4619,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kawcza_G%C3%B3ra",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/gosan-punkt-widokowy",
+      "name": "Gosań – punkt widokowy",
+      "category": "nature",
+      "lat": 53.9627,
+      "lon": 14.4975,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Gosa%C5%84",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-turkusowe-w-wapnicy",
+      "name": "Jezioro Turkusowe w Wapnicy",
+      "category": "water",
+      "lat": 53.8946,
+      "lon": 14.4386,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_Turkusowe_(Wapnica)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/wzgorze-zielonka",
+      "name": "Wzgórze Zielonka",
+      "category": "nature",
+      "lat": 53.89,
+      "lon": 14.4405,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zielonka_(Woli%C5%84ski_Park_Narodowy)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-przyrodnicze-wolinskiego-parku-narodowego",
+      "name": "Muzeum Przyrodnicze Wolińskiego Parku Narodowego",
+      "category": "museum",
+      "lat": 53.929,
+      "lon": 14.4504,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Przyrodnicze_Woli%C5%84skiego_Parku_Narodowego",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/molo-w-miedzyzdrojach",
+      "name": "Molo w Międzyzdrojach",
+      "category": "historic",
+      "lat": 53.9315,
+      "lon": 14.4445,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Molo_w_Mi%C4%99dzyzdrojach",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/promenada-gwiazd-w-miedzyzdrojach",
+      "name": "Promenada Gwiazd w Międzyzdrojach",
+      "category": "historic",
+      "lat": 53.9335,
+      "lon": 14.447,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Promenada_Gwiazd_w_Mi%C4%99dzyzdrojach",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/grodzisko-w-lubinie",
+      "name": "Grodzisko w Lubinie",
+      "category": "historic",
+      "lat": 53.8667,
+      "lon": 14.4375,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Grodzisko_w_Lubinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-regionalne-im-andrzeja-kaubego-w-wolinie",
+      "name": "Muzeum Regionalne im. Andrzeja Kaubego w Wolinie",
+      "category": "museum",
+      "lat": 53.8428,
+      "lon": 14.6148,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Regionalne_im._Andrzeja_Kaubego_w_Wolinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/centrum-sowian-i-wikingow-w-wolinie",
+      "name": "Centrum Słowian i Wikingów w Wolinie",
+      "category": "museum",
+      "lat": 53.8388,
+      "lon": 14.612,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Centrum_S%C5%82owian_i_Wiking%C3%B3w",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/wzgorze-wisielcow-w-wolinie",
+      "name": "Wzgórze Wisielców w Wolinie",
+      "category": "historic",
+      "lat": 53.846,
+      "lon": 14.606,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wzg%C3%B3rze_Wisielc%C3%B3w",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/katedra-sw-jana-chrzciciela-w-kamieniu-pomorskim",
+      "name": "Katedra św. Jana Chrzciciela w Kamieniu Pomorskim",
+      "category": "historic",
+      "lat": 53.9694,
+      "lon": 14.7724,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Konkatedra_%C5%9Bw._Jana_Chrzciciela_w_Kamieniu_Pomorskim",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-historii-ziemi-kamienskiej",
+      "name": "Muzeum Historii Ziemi Kamieńskiej",
+      "category": "museum",
+      "lat": 53.9693,
+      "lon": 14.7714,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Historii_Ziemi_Kamie%C5%84skiej",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/gaz-krolewski-w-kamieniu-pomorskim",
+      "name": "Głaz Królewski w Kamieniu Pomorskim",
+      "category": "nature",
+      "lat": 53.9715,
+      "lon": 14.7755,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/G%C5%82az_Kr%C3%B3lewski",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/zalew-kamienski",
+      "name": "Zalew Kamieński",
+      "category": "water",
+      "lat": 53.985,
+      "lon": 14.72,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zalew_Kamie%C5%84ski",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/ruiny-koscioa-na-klifie-w-trzesaczu",
+      "name": "Ruiny kościoła na klifie w Trzęsaczu",
+      "category": "ruins",
+      "lat": 54.0752,
+      "lon": 14.991,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ruiny_ko%C5%9Bcio%C5%82a_w_Trz%C4%99saczu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/platforma-widokowa-w-trzesaczu",
+      "name": "Platforma widokowa w Trzęsaczu",
+      "category": "nature",
+      "lat": 54.0751,
+      "lon": 14.9912,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Trz%C4%99sacz",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-multimedialne-w-trzesaczu",
+      "name": "Muzeum Multimedialne w Trzęsaczu",
+      "category": "museum",
+      "lat": 54.0746,
+      "lon": 14.9918,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Trz%C4%99sacz",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/latarnia-morska-niechorze",
+      "name": "Latarnia Morska Niechorze",
+      "category": "historic",
+      "lat": 54.0951,
+      "lon": 15.0647,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Latarnia_Morska_Niechorze",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-ryboowstwa-morskiego-w-niechorzu",
+      "name": "Muzeum Rybołówstwa Morskiego w Niechorzu",
+      "category": "museum",
+      "lat": 54.0962,
+      "lon": 15.08,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Rybo%C5%82%C3%B3wstwa_Morskiego_w_Niechorzu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/nadmorska-kolej-waskotorowa",
+      "name": "Nadmorska Kolej Wąskotorowa",
+      "category": "historic",
+      "lat": 54.074,
+      "lon": 14.996,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Nadmorska_Kolej_W%C4%85skotorowa",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/rezerwat-przyrody-jezioro-liwia-uza",
+      "name": "Rezerwat przyrody Jezioro Liwia Łuża",
+      "category": "reserve",
+      "lat": 54.08,
+      "lon": 15.09,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_Liwia_%C5%81u%C5%BCa",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/platforma-widokowa-w-rewalu",
+      "name": "Platforma widokowa w Rewalu",
+      "category": "nature",
+      "lat": 54.0827,
+      "lon": 15.0135,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Rewal",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/batycki-krzyz-nadziei-w-pustkowie",
+      "name": "Bałtycki Krzyż Nadziei w Pustkowie",
+      "category": "historic",
+      "lat": 54.0789,
+      "lon": 14.9643,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ba%C5%82tycki_Krzy%C5%BC_Nadziei",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/latarnia-morska-koobrzeg",
+      "name": "Latarnia Morska Kołobrzeg",
+      "category": "historic",
+      "lat": 54.1867,
+      "lon": 15.5546,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Latarnia_Morska_w_Ko%C5%82obrzegu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/molo-w-koobrzegu",
+      "name": "Molo w Kołobrzegu",
+      "category": "historic",
+      "lat": 54.1888,
+      "lon": 15.5706,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Molo_w_Ko%C5%82obrzegu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/bazylika-konkatedralna-wniebowziecia-nmp-w-koobrzegu",
+      "name": "Bazylika konkatedralna Wniebowzięcia NMP w Kołobrzegu",
+      "category": "historic",
+      "lat": 54.1768,
+      "lon": 15.5774,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bazylika_konkatedralna_Wniebowzi%C4%99cia_Naj%C5%9Bwi%C4%99tszej_Maryi_Panny_w_Ko%C5%82obrzegu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-oreza-polskiego-w-koobrzegu",
+      "name": "Muzeum Oręża Polskiego w Kołobrzegu",
+      "category": "museum",
+      "lat": 54.1754,
+      "lon": 15.5762,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Or%C4%99%C5%BCa_Polskiego_w_Ko%C5%82obrzegu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-miasta-koobrzeg",
+      "name": "Muzeum Miasta Kołobrzeg",
+      "category": "museum",
+      "lat": 54.1761,
+      "lon": 15.5754,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Or%C4%99%C5%BCa_Polskiego_w_Ko%C5%82obrzegu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/baszta-lontowa-w-koobrzegu",
+      "name": "Baszta Lontowa w Kołobrzegu",
+      "category": "historic",
+      "lat": 54.1759,
+      "lon": 15.5812,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Baszta_Lontowa_w_Ko%C5%82obrzegu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/ratusz-w-koobrzegu",
+      "name": "Ratusz w Kołobrzegu",
+      "category": "historic",
+      "lat": 54.1762,
+      "lon": 15.5777,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ratusz_w_Ko%C5%82obrzegu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/pomnik-zaslubin-polski-z-morzem",
+      "name": "Pomnik Zaślubin Polski z Morzem",
+      "category": "historic",
+      "lat": 54.187,
+      "lon": 15.558,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pomnik_Za%C5%9Blubin_Polski_z_Morzem_w_Ko%C5%82obrzegu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/skansen-morski-w-koobrzegu",
+      "name": "Skansen Morski w Kołobrzegu",
+      "category": "museum",
+      "lat": 54.181,
+      "lon": 15.5604,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Skansen_Morski_w_Ko%C5%82obrzegu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/bindaz-grabowy-w-koobrzegu",
+      "name": "Bindaż grabowy w Kołobrzegu",
+      "category": "nature",
+      "lat": 54.1817,
+      "lon": 15.5735,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Binda%C5%BC_w_Ko%C5%82obrzegu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/ekpark-wschodni-w-koobrzegu",
+      "name": "Ekpark Wschodni w Kołobrzegu",
+      "category": "nature",
+      "lat": 54.194,
+      "lon": 15.637,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ekpark_Wschodni",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-lotnictwa-i-techniki-militarnej-w-rogowie",
+      "name": "Muzeum Lotnictwa i Techniki Militarnej w Rogowie",
+      "category": "museum",
+      "lat": 54.1594,
+      "lon": 15.335,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Lotnictwa_i_Techniki_Militarnej_w_Rogowie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-w-koszalinie",
+      "name": "Muzeum w Koszalinie",
+      "category": "museum",
+      "lat": 54.191,
+      "lon": 16.1817,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_w_Koszalinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/zagroda-jamnenska",
+      "name": "Zagroda Jamneńska",
+      "category": "museum",
+      "lat": 54.2328,
+      "lon": 16.1319,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zagroda_Jamne%C5%84ska",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/katedra-niepokalanego-poczecia-nmp-w-koszalinie",
+      "name": "Katedra Niepokalanego Poczęcia NMP w Koszalinie",
+      "category": "historic",
+      "lat": 54.1894,
+      "lon": 16.1817,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Katedra_Niepokalanego_Pocz%C4%99cia_Naj%C5%9Bwi%C4%99tszej_Maryi_Panny_w_Koszalinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/gora-chemska-wieza-widokowa",
+      "name": "Góra Chełmska – wieża widokowa",
+      "category": "nature",
+      "lat": 54.2102,
+      "lon": 16.2478,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/G%C3%B3ra_Che%C5%82mska_(Koszalin)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/sanktuarium-matki-bozej-trzykroc-przedziwnej-na-gorze-chemskiej",
+      "name": "Sanktuarium Matki Bożej Trzykroć Przedziwnej na Górze Chełmskiej",
+      "category": "historic",
+      "lat": 54.2106,
+      "lon": 16.2466,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/G%C3%B3ra_Che%C5%82mska_(Koszalin)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/park-ksiazat-pomorskich-w-koszalinie",
+      "name": "Park Książąt Pomorskich w Koszalinie",
+      "category": "nature",
+      "lat": 54.1912,
+      "lon": 16.1859,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Park_Ksi%C4%85%C5%BC%C4%85t_Pomorskich_w_Koszalinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-jamno",
+      "name": "Jezioro Jamno",
+      "category": "water",
+      "lat": 54.26,
+      "lon": 16.15,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jamno_(jezioro)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/promenada-przyjazni-w-mielnie",
+      "name": "Promenada Przyjaźni w Mielnie",
+      "category": "historic",
+      "lat": 54.2606,
+      "lon": 16.0604,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Mielno",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/pomnik-morsa-w-mielnie",
+      "name": "Pomnik Morsa w Mielnie",
+      "category": "historic",
+      "lat": 54.2612,
+      "lon": 16.061,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pomnik_Morsa_w_Mielnie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/kana-jamnenski",
+      "name": "Kanał Jamneński",
+      "category": "water",
+      "lat": 54.2838,
+      "lon": 16.132,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kana%C5%82_Jamne%C5%84ski",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/zamek-ksiazat-pomorskich-w-darowie",
+      "name": "Zamek Książąt Pomorskich w Darłowie",
+      "category": "castle",
+      "lat": 54.4212,
+      "lon": 16.4105,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_Ksi%C4%85%C5%BC%C4%85t_Pomorskich_w_Dar%C5%82owie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/latarnia-morska-darowo",
+      "name": "Latarnia Morska Darłowo",
+      "category": "historic",
+      "lat": 54.4409,
+      "lon": 16.3778,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Latarnia_Morska_Dar%C5%82owo",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/brama-wysoka-w-darowie",
+      "name": "Brama Wysoka w Darłowie",
+      "category": "historic",
+      "lat": 54.4205,
+      "lon": 16.4142,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Brama_Wysoka_w_Dar%C5%82owie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/koscio-mariacki-w-darowie",
+      "name": "Kościół Mariacki w Darłowie",
+      "category": "historic",
+      "lat": 54.4216,
+      "lon": 16.4118,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ko%C5%9Bci%C3%B3%C5%82_Matki_Bo%C5%BCej_Cz%C4%99stochowskiej_w_Dar%C5%82owie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/pomnik-rybaka-w-darowie",
+      "name": "Pomnik Rybaka w Darłowie",
+      "category": "historic",
+      "lat": 54.421,
+      "lon": 16.4123,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Pomnik_Rybaka_w_Dar%C5%82owie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-bukowo",
+      "name": "Jezioro Bukowo",
+      "category": "water",
+      "lat": 54.34,
+      "lon": 16.26,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bukowo_(jezioro)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-kopan",
+      "name": "Jezioro Kopań",
+      "category": "water",
+      "lat": 54.45,
+      "lon": 16.48,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kopa%C5%84_(jezioro)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/rezerwat-przyrody-sowinskie-bota",
+      "name": "Rezerwat przyrody Słowińskie Błota",
+      "category": "reserve",
+      "lat": 54.34,
+      "lon": 16.56,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/S%C5%82owi%C5%84skie_B%C5%82ota",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/drawski-park-krajobrazowy",
+      "name": "Drawski Park Krajobrazowy",
+      "category": "nature",
+      "lat": 53.58,
+      "lon": 16.15,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Drawski_Park_Krajobrazowy",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-drawsko",
+      "name": "Jezioro Drawsko",
+      "category": "water",
+      "lat": 53.59,
+      "lon": 16.19,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Drawsko_(jezioro)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/ruiny-zamku-drahim-w-starym-drawsku",
+      "name": "Ruiny zamku Drahim w Starym Drawsku",
+      "category": "ruins",
+      "lat": 53.602,
+      "lon": 16.177,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_Drahim",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/wyspa-bielawa-na-jeziorze-drawsko",
+      "name": "Wyspa Bielawa na jeziorze Drawsko",
+      "category": "nature",
+      "lat": 53.579,
+      "lon": 16.209,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bielawa_(wyspa)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/koscio-swietej-trojcy-w-czaplinku",
+      "name": "Kościół Świętej Trójcy w Czaplinku",
+      "category": "historic",
+      "lat": 53.5584,
+      "lon": 16.2326,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ko%C5%9Bci%C3%B3%C5%82_%C5%9Awi%C4%99tej_Tr%C3%B3jcy_w_Czaplinku",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/dolina-pieciu-jezior",
+      "name": "Dolina Pięciu Jezior",
+      "category": "reserve",
+      "lat": 53.69,
+      "lon": 16.16,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dolina_Pi%C4%99ciu_Jezior",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/szwajcaria-poczynska",
+      "name": "Szwajcaria Połczyńska",
+      "category": "nature",
+      "lat": 53.7,
+      "lon": 16.12,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Szwajcaria_Po%C5%82czy%C5%84ska",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/park-zdrojowy-w-poczynie-zdroju",
+      "name": "Park Zdrojowy w Połczynie-Zdroju",
+      "category": "nature",
+      "lat": 53.764,
+      "lon": 16.093,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Park_Zdrojowy_w_Po%C5%82czynie-Zdroju",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/zamek-ksiazat-pomorskich-w-szczecinku",
+      "name": "Zamek Książąt Pomorskich w Szczecinku",
+      "category": "castle",
+      "lat": 53.7078,
+      "lon": 16.6921,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_Ksi%C4%85%C5%BC%C4%85t_Pomorskich_w_Szczecinku",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-regionalne-w-szczecinku",
+      "name": "Muzeum Regionalne w Szczecinku",
+      "category": "museum",
+      "lat": 53.71,
+      "lon": 16.6992,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Regionalne_w_Szczecinku",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-trzesiecko",
+      "name": "Jezioro Trzesiecko",
+      "category": "water",
+      "lat": 53.699,
+      "lon": 16.694,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Trzesiecko",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/mysia-wyspa-na-jeziorze-trzesiecko",
+      "name": "Mysia Wyspa na jeziorze Trzesiecko",
+      "category": "nature",
+      "lat": 53.6818,
+      "lon": 16.676,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Mysia_Wyspa_(Szczecinek)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-wielimie",
+      "name": "Jezioro Wielimie",
+      "category": "water",
+      "lat": 53.753,
+      "lon": 16.723,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wielimie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/rezerwat-przyrody-bagno-ciemino",
+      "name": "Rezerwat przyrody Bagno Ciemino",
+      "category": "reserve",
+      "lat": 53.7,
+      "lon": 16.55,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Bagno_Ciemino",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/drawienski-park-narodowy",
+      "name": "Drawieński Park Narodowy",
+      "category": "nature",
+      "lat": 53.125,
+      "lon": 15.95,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Drawie%C5%84ski_Park_Narodowy",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/elektrownia-wodna-kamienna",
+      "name": "Elektrownia Wodna Kamienna",
+      "category": "historic",
+      "lat": 53.108,
+      "lon": 15.968,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Elektrownia_wodna_Kamienna",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/stara-wegornia-na-pocicznej",
+      "name": "Stara Węgornia na Płocicznej",
+      "category": "historic",
+      "lat": 53.072,
+      "lon": 15.928,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Stara_W%C4%99gornia",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/wydrzy-gaz-w-drawienskim-parku-narodowym",
+      "name": "Wydrzy Głaz w Drawieńskim Parku Narodowym",
+      "category": "nature",
+      "lat": 53.114,
+      "lon": 15.937,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Wydrzy_G%C5%82az",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-ostrowieckie",
+      "name": "Jezioro Ostrowieckie",
+      "category": "water",
+      "lat": 53.1,
+      "lon": 15.935,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_Ostrowieckie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/ruiny-zamku-w-drawnie",
+      "name": "Ruiny zamku w Drawnie",
+      "category": "ruins",
+      "lat": 53.2188,
+      "lon": 15.7582,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_Drawnie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-dubie-w-drawnie",
+      "name": "Jezioro Dubie w Drawnie",
+      "category": "water",
+      "lat": 53.22,
+      "lon": 15.765,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Dubie_(jezioro)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/kolegiata-najswietszej-marii-panny-krolowej-swiata-w-stargardzie",
+      "name": "Kolegiata Najświętszej Marii Panny Królowej Świata w Stargardzie",
+      "category": "historic",
+      "lat": 53.3365,
+      "lon": 15.0497,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kolegiata_Naj%C5%9Bwi%C4%99tszej_Marii_Panny_Kr%C3%B3lowej_%C5%9Awiata_w_Stargardzie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/brama-mynska-w-stargardzie",
+      "name": "Brama Młyńska w Stargardzie",
+      "category": "historic",
+      "lat": 53.339,
+      "lon": 15.046,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Brama_M%C5%82y%C5%84ska_w_Stargardzie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/brama-pyrzycka-w-stargardzie",
+      "name": "Brama Pyrzycka w Stargardzie",
+      "category": "historic",
+      "lat": 53.333,
+      "lon": 15.047,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Brama_Pyrzycka_w_Stargardzie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/baszta-morze-czerwone-w-stargardzie",
+      "name": "Baszta Morze Czerwone w Stargardzie",
+      "category": "historic",
+      "lat": 53.3312,
+      "lon": 15.0508,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Baszta_Morze_Czerwone",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-archeologiczno-historyczne-w-stargardzie",
+      "name": "Muzeum Archeologiczno-Historyczne w Stargardzie",
+      "category": "museum",
+      "lat": 53.3361,
+      "lon": 15.0494,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Archeologiczno-Historyczne_w_Stargardzie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/mury-obronne-w-pyrzycach",
+      "name": "Mury obronne w Pyrzycach",
+      "category": "historic",
+      "lat": 53.143,
+      "lon": 14.893,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Mury_obronne_w_Pyrzycach",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/koscio-wniebowziecia-nmp-w-pyrzycach",
+      "name": "Kościół Wniebowzięcia NMP w Pyrzycach",
+      "category": "historic",
+      "lat": 53.1436,
+      "lon": 14.8937,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ko%C5%9Bci%C3%B3%C5%82_Wniebowzi%C4%99cia_Naj%C5%9Bwi%C4%99tszej_Maryi_Panny_w_Pyrzycach",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/gora-czcibora",
+      "name": "Góra Czcibora",
+      "category": "historic",
+      "lat": 52.8625,
+      "lon": 14.1907,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/G%C3%B3ra_Czcibora",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-regionalne-w-cedyni",
+      "name": "Muzeum Regionalne w Cedyni",
+      "category": "museum",
+      "lat": 52.8797,
+      "lon": 14.201,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Regionalne_w_Cedyni",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/cedynski-park-krajobrazowy",
+      "name": "Cedyński Park Krajobrazowy",
+      "category": "nature",
+      "lat": 52.9,
+      "lon": 14.22,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Cedy%C5%84ski_Park_Krajobrazowy",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/most-europejski-w-siekierkach",
+      "name": "Most Europejski w Siekierkach",
+      "category": "historic",
+      "lat": 52.8128,
+      "lon": 14.2219,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Most_kolejowy_w_Siekierkach",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/koscio-mariacki-w-chojnie",
+      "name": "Kościół Mariacki w Chojnie",
+      "category": "historic",
+      "lat": 52.9635,
+      "lon": 14.427,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ko%C5%9Bci%C3%B3%C5%82_Mariacki_w_Chojnie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/ratusz-w-chojnie",
+      "name": "Ratusz w Chojnie",
+      "category": "historic",
+      "lat": 52.9639,
+      "lon": 14.4256,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Ratusz_w_Chojnie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/brama-barnkowska-w-chojnie",
+      "name": "Brama Barnkowska w Chojnie",
+      "category": "historic",
+      "lat": 52.9608,
+      "lon": 14.4255,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Brama_Barnkowska",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/brama-swiecka-w-chojnie",
+      "name": "Brama Świecka w Chojnie",
+      "category": "historic",
+      "lat": 52.9667,
+      "lon": 14.4305,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Brama_%C5%9Awiecka",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-pojezierza-mysliborskiego",
+      "name": "Muzeum Pojezierza Myśliborskiego",
+      "category": "museum",
+      "lat": 52.923,
+      "lon": 14.867,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Pojezierza_My%C5%9Bliborskiego",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/kolegiata-sw-jana-chrzciciela-w-mysliborzu",
+      "name": "Kolegiata św. Jana Chrzciciela w Myśliborzu",
+      "category": "historic",
+      "lat": 52.9225,
+      "lon": 14.865,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Kolegiata_%C5%9Bw._Jana_Chrzciciela_w_My%C5%9Bliborzu",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-mysliborskie",
+      "name": "Jezioro Myśliborskie",
+      "category": "water",
+      "lat": 52.92,
+      "lon": 14.845,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_My%C5%9Bliborskie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/barlinecko-gorzowski-park-krajobrazowy-czesc-zachodniopomorska",
+      "name": "Barlinecko-Gorzowski Park Krajobrazowy – część zachodniopomorska",
+      "category": "nature",
+      "lat": 53.0,
+      "lon": 15.15,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Barlinecko-Gorzowski_Park_Krajobrazowy",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-barlineckie",
+      "name": "Jezioro Barlineckie",
+      "category": "water",
+      "lat": 52.992,
+      "lon": 15.21,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Jezioro_Barlineckie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-regionalne-w-barlinku",
+      "name": "Muzeum Regionalne w Barlinku",
+      "category": "museum",
+      "lat": 52.9943,
+      "lon": 15.2188,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Regionalne_w_Barlinku",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/muzeum-ziemi-waeckiej",
+      "name": "Muzeum Ziemi Wałeckiej",
+      "category": "museum",
+      "lat": 53.2728,
+      "lon": 16.4685,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Muzeum_Ziemi_Wa%C5%82eckiej",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/skansen-fortyfikacyjny-grupa-warowna-cegielnia",
+      "name": "Skansen Fortyfikacyjny Grupa Warowna Cegielnia",
+      "category": "museum",
+      "lat": 53.296,
+      "lon": 16.431,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Grupa_Warowna_Cegielnia",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-radun",
+      "name": "Jezioro Raduń",
+      "category": "water",
+      "lat": 53.278,
+      "lon": 16.472,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Radu%C5%84_(jezioro)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-bytyn-wielki",
+      "name": "Jezioro Bytyń Wielki",
+      "category": "water",
+      "lat": 53.215,
+      "lon": 16.12,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Byty%C5%84_Wielki",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/inski-park-krajobrazowy",
+      "name": "Iński Park Krajobrazowy",
+      "category": "nature",
+      "lat": 53.44,
+      "lon": 15.55,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/I%C5%84ski_Park_Krajobrazowy",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/jezioro-insko",
+      "name": "Jezioro Ińsko",
+      "category": "water",
+      "lat": 53.433,
+      "lon": 15.55,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/I%C5%84sko_(jezioro)",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/wieza-widokowa-w-insku",
+      "name": "Wieża widokowa w Ińsku",
+      "category": "nature",
+      "lat": 53.436,
+      "lon": 15.5515,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/I%C5%84sko",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/zamek-w-swidwinie",
+      "name": "Zamek w Świdwinie",
+      "category": "castle",
+      "lat": 53.7735,
+      "lon": 15.776,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_%C5%9Awidwinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/brama-kamienna-w-swidwinie",
+      "name": "Brama Kamienna w Świdwinie",
+      "category": "historic",
+      "lat": 53.7753,
+      "lon": 15.774,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Brama_Kamienna_w_%C5%9Awidwinie",
+      "region": "zachodniopomorskie"
+    },
+    {
+      "id": "zachodniopomorskie/zamek-w-pezinie",
+      "name": "Zamek w Pęzinie",
+      "category": "castle",
+      "lat": 53.329,
+      "lon": 15.19,
+      "source": "Wikipedia / dane mapowe",
+      "sourceUrl": "https://pl.wikipedia.org/wiki/Zamek_w_P%C4%99zinie",
+      "region": "zachodniopomorskie"
     }
   ],
-  "count": 1533
+  "count": 1682
 }
