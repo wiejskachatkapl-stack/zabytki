@@ -1,7 +1,7 @@
 {
-  "version": "v1027",
+  "version": "v1028",
   "updatedAt": "2026-08-11",
-  "description": "Statyczna baza atrakcji Polski rozszerzona o Małopolskie i duży zestaw atrakcji województwa podkarpackiego dla 9 kategorii aplikacji. Punkty własne użytkownika są nadal łączone lokalnie z bazą.",
+  "description": "Lokalna baza atrakcji Polski. W v1028 rozszerzona o szeroki zestaw atrakcji województwa świętokrzyskiego w 9 kategoriach; baza działa bez Overpass podczas korzystania z aplikacji.",
   "attractions": [
     {
       "id": "base/palac-radziejowice",
@@ -4640,7 +4640,1727 @@
       "source": "Podkarpackie Travel / dane mapowe",
       "sourceUrl": "https://podkarpackie.travel/",
       "region": "podkarpackie"
+    },
+    {
+      "id": "świętokrzyskie/zamek-krolewski-w-checinach",
+      "name": "Zamek Królewski w Chęcinach",
+      "category": "castle",
+      "lat": 50.79773,
+      "lon": 20.46056,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zamek-krolewski-w-sandomierzu",
+      "name": "Zamek Królewski w Sandomierzu",
+      "category": "castle",
+      "lat": 50.67763,
+      "lon": 21.74724,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zamek-w-szydowie",
+      "name": "Zamek w Szydłowie",
+      "category": "castle",
+      "lat": 50.59166,
+      "lon": 21.00278,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/paac-w-kurozwekach",
+      "name": "Pałac w Kurozwękach",
+      "category": "castle",
+      "lat": 50.59032,
+      "lon": 21.1087,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/paac-wielopolskich-w-chrobrzu",
+      "name": "Pałac Wielopolskich w Chrobrzu",
+      "category": "castle",
+      "lat": 50.42809,
+      "lon": 20.55472,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/paac-tarnowskich-w-konskich",
+      "name": "Pałac Tarnowskich w Końskich",
+      "category": "castle",
+      "lat": 51.19115,
+      "lon": 20.40644,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/paac-w-czyzowie-szlacheckim",
+      "name": "Pałac w Czyżowie Szlacheckim",
+      "category": "castle",
+      "lat": 50.77252,
+      "lon": 21.78714,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/paac-w-modliszewicach",
+      "name": "Pałac w Modliszewicach",
+      "category": "castle",
+      "lat": 51.19373,
+      "lon": 20.35115,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/paac-w-podzamczu-piekoszowskim",
+      "name": "Pałac w Podzamczu Piekoszowskim",
+      "category": "castle",
+      "lat": 50.87688,
+      "lon": 20.44602,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/paac-wielopolskich-w-pinczowie",
+      "name": "Pałac Wielopolskich w Pińczowie",
+      "category": "castle",
+      "lat": 50.52022,
+      "lon": 20.52766,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/ruiny-zamku-krzyztopor-w-ujezdzie",
+      "name": "Ruiny zamku Krzyżtopór w Ujeździe",
+      "category": "ruins",
+      "lat": 50.71354,
+      "lon": 21.31457,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/ruiny-zamku-w-bodzentynie",
+      "name": "Ruiny zamku w Bodzentynie",
+      "category": "ruins",
+      "lat": 50.94148,
+      "lon": 20.95736,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/ruiny-zamku-w-fakowie",
+      "name": "Ruiny zamku w Fałkowie",
+      "category": "ruins",
+      "lat": 51.1363,
+      "lon": 20.10684,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/ruiny-zamku-w-rytwianach",
+      "name": "Ruiny zamku w Rytwianach",
+      "category": "ruins",
+      "lat": 50.52745,
+      "lon": 21.20155,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/ruiny-zamku-w-mokrsko-gornym",
+      "name": "Ruiny zamku w Mokrsko Górnym",
+      "category": "ruins",
+      "lat": 50.72441,
+      "lon": 20.42677,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/ruiny-zboru-arianskiego-w-peczelicach",
+      "name": "Ruiny zboru ariańskiego w Pęczelicach",
+      "category": "ruins",
+      "lat": 50.38628,
+      "lon": 20.7938,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/ruiny-paacu-tarow-w-podzamczu-piekoszowskim",
+      "name": "Ruiny pałacu Tarłów w Podzamczu Piekoszowskim",
+      "category": "ruins",
+      "lat": 50.87728,
+      "lon": 20.44569,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/ruiny-fortalicji-w-sobkowie",
+      "name": "Ruiny fortalicji w Sobkowie",
+      "category": "ruins",
+      "lat": 50.69906,
+      "lon": 20.45092,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/ruiny-zamku-w-konarach",
+      "name": "Ruiny zamku w Konarach",
+      "category": "ruins",
+      "lat": 50.78305,
+      "lon": 21.22833,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/ruiny-dawnej-huty-w-samsonowie",
+      "name": "Ruiny dawnej huty w Samsonowie",
+      "category": "ruins",
+      "lat": 50.98967,
+      "lon": 20.66361,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-narodowe-w-kielcach-paac-biskupow-krakowskich",
+      "name": "Muzeum Narodowe w Kielcach – Pałac Biskupów Krakowskich",
+      "category": "museum",
+      "lat": 50.86944,
+      "lon": 20.62725,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-historii-kielc",
+      "name": "Muzeum Historii Kielc",
+      "category": "museum",
+      "lat": 50.87041,
+      "lon": 20.62525,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-zabawek-i-zabawy-w-kielcach",
+      "name": "Muzeum Zabawek i Zabawy w Kielcach",
+      "category": "museum",
+      "lat": 50.87028,
+      "lon": 20.63408,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-stefana-zeromskiego-w-kielcach",
+      "name": "Muzeum Stefana Żeromskiego w Kielcach",
+      "category": "museum",
+      "lat": 50.8697,
+      "lon": 20.62885,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/centrum-geoedukacji-w-kielcach",
+      "name": "Centrum Geoedukacji w Kielcach",
+      "category": "museum",
+      "lat": 50.8551,
+      "lon": 20.65025,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-geologiczne-w-kielcach",
+      "name": "Muzeum Geologiczne w Kielcach",
+      "category": "museum",
+      "lat": 50.87084,
+      "lon": 20.63915,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-wsi-kieleckiej-park-etnograficzny-w-tokarni",
+      "name": "Muzeum Wsi Kieleckiej – Park Etnograficzny w Tokarni",
+      "category": "museum",
+      "lat": 50.76515,
+      "lon": 20.43839,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-henryka-sienkiewicza-w-oblegorku",
+      "name": "Muzeum Henryka Sienkiewicza w Oblęgorku",
+      "category": "museum",
+      "lat": 50.99749,
+      "lon": 20.47657,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-mineraow-i-skamieniaosci-w-swietej-katarzynie",
+      "name": "Muzeum Minerałów i Skamieniałości w Świętej Katarzynie",
+      "category": "museum",
+      "lat": 50.90252,
+      "lon": 20.87931,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-starozytnego-hutnictwa-swietokrzyskiego-w-nowej-supi",
+      "name": "Muzeum Starożytnego Hutnictwa Świętokrzyskiego w Nowej Słupi",
+      "category": "museum",
+      "lat": 50.86428,
+      "lon": 21.08951,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/park-legend-w-nowej-supi",
+      "name": "Park Legend w Nowej Słupi",
+      "category": "museum",
+      "lat": 50.86218,
+      "lon": 21.09112,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-przyrody-i-techniki-ekomuzeum-w-starachowicach",
+      "name": "Muzeum Przyrody i Techniki Ekomuzeum w Starachowicach",
+      "category": "museum",
+      "lat": 51.04026,
+      "lon": 21.07148,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-im-ora-biaego-w-skarzysku-kamiennej",
+      "name": "Muzeum im. Orła Białego w Skarżysku-Kamiennej",
+      "category": "museum",
+      "lat": 51.10605,
+      "lon": 20.87648,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-zagebia-staropolskiego-w-sielpi",
+      "name": "Muzeum Zagłębia Staropolskiego w Sielpi",
+      "category": "museum",
+      "lat": 51.11129,
+      "lon": 20.35163,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-regionalne-pttk-w-konskich",
+      "name": "Muzeum Regionalne PTTK w Końskich",
+      "category": "museum",
+      "lat": 51.19033,
+      "lon": 20.40674,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-archeologiczne-i-rezerwat-krzemionki",
+      "name": "Muzeum Archeologiczne i Rezerwat Krzemionki",
+      "category": "museum",
+      "lat": 50.97365,
+      "lon": 21.49442,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zywe-muzeum-porcelany-w-cmielowie",
+      "name": "Żywe Muzeum Porcelany w Ćmielowie",
+      "category": "museum",
+      "lat": 50.89021,
+      "lon": 21.51484,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-historyczno-archeologiczne-w-ostrowcu-swietokrzyskim",
+      "name": "Muzeum Historyczno-Archeologiczne w Ostrowcu Świętokrzyskim",
+      "category": "museum",
+      "lat": 50.93986,
+      "lon": 21.38626,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-okregowe-w-sandomierzu",
+      "name": "Muzeum Okręgowe w Sandomierzu",
+      "category": "museum",
+      "lat": 50.6777,
+      "lon": 21.74727,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/dom-dugosza-muzeum-diecezjalne-w-sandomierzu",
+      "name": "Dom Długosza – Muzeum Diecezjalne w Sandomierzu",
+      "category": "museum",
+      "lat": 50.67775,
+      "lon": 21.74938,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-zamkowe-w-sandomierzu",
+      "name": "Muzeum Zamkowe w Sandomierzu",
+      "category": "museum",
+      "lat": 50.67763,
+      "lon": 21.74723,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-regionalne-w-pinczowie",
+      "name": "Muzeum Regionalne w Pińczowie",
+      "category": "museum",
+      "lat": 50.52057,
+      "lon": 20.52621,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-archeologiczne-w-wislicy",
+      "name": "Muzeum Archeologiczne w Wiślicy",
+      "category": "museum",
+      "lat": 50.34884,
+      "lon": 20.67406,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-im-przypkowskich-w-jedrzejowie",
+      "name": "Muzeum im. Przypkowskich w Jędrzejowie",
+      "category": "museum",
+      "lat": 50.63953,
+      "lon": 20.30446,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/dworek-mikoaja-reja-w-nagowicach",
+      "name": "Dworek Mikołaja Reja w Nagłowicach",
+      "category": "museum",
+      "lat": 50.6783,
+      "lon": 20.10579,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/europejskie-centrum-bajki-w-pacanowie",
+      "name": "Europejskie Centrum Bajki w Pacanowie",
+      "category": "museum",
+      "lat": 50.40037,
+      "lon": 21.04164,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/swietokrzyski-sztetl-w-chmielniku",
+      "name": "Świętokrzyski Sztetl w Chmielniku",
+      "category": "museum",
+      "lat": 50.6143,
+      "lon": 20.75246,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/muzeum-geodezji-i-kartografii-w-opatowie",
+      "name": "Muzeum Geodezji i Kartografii w Opatowie",
+      "category": "museum",
+      "lat": 50.8015,
+      "lon": 21.4243,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/podziemna-trasa-turystyczna-w-opatowie",
+      "name": "Podziemna Trasa Turystyczna w Opatowie",
+      "category": "museum",
+      "lat": 50.80187,
+      "lon": 21.42426,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/podziemna-trasa-turystyczna-w-sandomierzu",
+      "name": "Podziemna Trasa Turystyczna w Sandomierzu",
+      "category": "museum",
+      "lat": 50.6794,
+      "lon": 21.74855,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/dab-bartek-w-zagnansku",
+      "name": "Dąb Bartek w Zagnańsku",
+      "category": "nature",
+      "lat": 50.98043,
+      "lon": 20.66357,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/sosna-na-szczudach-w-weeczu",
+      "name": "Sosna na szczudłach w Wełeczu",
+      "category": "nature",
+      "lat": 50.48525,
+      "lon": 20.69042,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/gooborze-na-ysej-gorze",
+      "name": "Gołoborze na Łysej Górze",
+      "category": "nature",
+      "lat": 50.8611,
+      "lon": 21.05029,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zrodeko-sw-franciszka-w-swietej-katarzynie",
+      "name": "Źródełko św. Franciszka w Świętej Katarzynie",
+      "category": "nature",
+      "lat": 50.89372,
+      "lon": 20.88472,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/kamienny-pielgrzym-emeryk-w-nowej-supi",
+      "name": "Kamienny Pielgrzym Emeryk w Nowej Słupi",
+      "category": "nature",
+      "lat": 50.86285,
+      "lon": 21.0913,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/skaa-pieko-w-niekaniu",
+      "name": "Skała Piekło w Niekłaniu",
+      "category": "nature",
+      "lat": 51.18195,
+      "lon": 20.66442,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/gora-miedzianka-punkt-widokowy",
+      "name": "Góra Miedzianka – punkt widokowy",
+      "category": "nature",
+      "lat": 50.84388,
+      "lon": 20.36032,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/ysica-najwyzszy-szczyt-gor-swietokrzyskich",
+      "name": "Łysica – najwyższy szczyt Gór Świętokrzyskich",
+      "category": "nature",
+      "lat": 50.89186,
+      "lon": 20.89691,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/ysa-gora-swiety-krzyz",
+      "name": "Łysa Góra – Święty Krzyż",
+      "category": "nature",
+      "lat": 50.85984,
+      "lon": 21.05238,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/gory-pieprzowe-punkt-widokowy",
+      "name": "Góry Pieprzowe – punkt widokowy",
+      "category": "nature",
+      "lat": 50.69479,
+      "lon": 21.78754,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/dom-wycieczkowy-pttk-w-swietej-katarzynie",
+      "name": "Dom Wycieczkowy PTTK w Świętej Katarzynie",
+      "category": "pttk",
+      "lat": 50.90317,
+      "lon": 20.87954,
+      "source": "PTTK",
+      "sourceUrl": "https://pttk.pl/accommodations/dom-wycieczkowy-swieta-katarzyna/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/jaskinia-raj",
+      "name": "Jaskinia Raj",
+      "category": "cave",
+      "lat": 50.82283,
+      "lon": 20.50077,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/jaskinia-pieko-pod-skibami",
+      "name": "Jaskinia Piekło pod Skibami",
+      "category": "cave",
+      "lat": 50.80365,
+      "lon": 20.42187,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/jaskinia-zbojecka-w-agowie",
+      "name": "Jaskinia Zbójecka w Łagowie",
+      "category": "cave",
+      "lat": 50.77305,
+      "lon": 21.08348,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/jaskinie-na-kadzielni-podziemna-trasa-turystyczna",
+      "name": "Jaskinie na Kadzielni – Podziemna Trasa Turystyczna",
+      "category": "cave",
+      "lat": 50.86002,
+      "lon": 20.61728,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/chelosiowa-jama-i-jaskinia-jaworznicka",
+      "name": "Chelosiowa Jama i Jaskinia Jaworznicka",
+      "category": "cave",
+      "lat": 50.84869,
+      "lon": 20.47713,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/jaskinia-zbojecka-w-rezerwacie-gora-miedzianka",
+      "name": "Jaskinia Zbójecka w rezerwacie Góra Miedzianka",
+      "category": "cave",
+      "lat": 50.84502,
+      "lon": 20.36018,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-kadzielnia",
+      "name": "Rezerwat przyrody Kadzielnia",
+      "category": "reserve",
+      "lat": 50.8603,
+      "lon": 20.6172,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-wietrznia-im-zbigniewa-rubinowskiego",
+      "name": "Rezerwat przyrody Wietrznia im. Zbigniewa Rubinowskiego",
+      "category": "reserve",
+      "lat": 50.85542,
+      "lon": 20.64845,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-slichowice-im-jana-czarnockiego",
+      "name": "Rezerwat przyrody Ślichowice im. Jana Czarnockiego",
+      "category": "reserve",
+      "lat": 50.88968,
+      "lon": 20.59095,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-karczowka",
+      "name": "Rezerwat przyrody Karczówka",
+      "category": "reserve",
+      "lat": 50.86882,
+      "lon": 20.59395,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-biesak-biaogon",
+      "name": "Rezerwat przyrody Biesak-Białogon",
+      "category": "reserve",
+      "lat": 50.83888,
+      "lon": 20.58666,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-barcza",
+      "name": "Rezerwat przyrody Barcza",
+      "category": "reserve",
+      "lat": 50.9924,
+      "lon": 20.7482,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-gora-zelejowa",
+      "name": "Rezerwat przyrody Góra Zelejowa",
+      "category": "reserve",
+      "lat": 50.81026,
+      "lon": 20.43761,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-gora-miedzianka",
+      "name": "Rezerwat przyrody Góra Miedzianka",
+      "category": "reserve",
+      "lat": 50.84348,
+      "lon": 20.36003,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-milechowy",
+      "name": "Rezerwat przyrody Milechowy",
+      "category": "reserve",
+      "lat": 50.7762,
+      "lon": 20.33835,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-gora-rzepka",
+      "name": "Rezerwat przyrody Góra Rzepka",
+      "category": "reserve",
+      "lat": 50.79793,
+      "lon": 20.484,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-moczydo",
+      "name": "Rezerwat przyrody Moczydło",
+      "category": "reserve",
+      "lat": 50.8274,
+      "lon": 20.4081,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-gora-zakowa",
+      "name": "Rezerwat przyrody Góra Żakowa",
+      "category": "reserve",
+      "lat": 50.83132,
+      "lon": 20.43818,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-perzowa-gora",
+      "name": "Rezerwat przyrody Perzowa Góra",
+      "category": "reserve",
+      "lat": 50.97035,
+      "lon": 20.4699,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-kregi-kamienne",
+      "name": "Rezerwat przyrody Kręgi Kamienne",
+      "category": "reserve",
+      "lat": 50.98195,
+      "lon": 20.7397,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-dalejow",
+      "name": "Rezerwat przyrody Dalejów",
+      "category": "reserve",
+      "lat": 51.0287,
+      "lon": 20.7677,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-swinia-gora",
+      "name": "Rezerwat przyrody Świnia Góra",
+      "category": "reserve",
+      "lat": 51.03372,
+      "lon": 20.72948,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-skaki-pieko-pod-niekaniem",
+      "name": "Rezerwat przyrody Skałki Piekło pod Niekłaniem",
+      "category": "reserve",
+      "lat": 51.18165,
+      "lon": 20.66389,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-piekieko-szkuckie",
+      "name": "Rezerwat przyrody Piekiełko Szkuckie",
+      "category": "reserve",
+      "lat": 51.2172,
+      "lon": 20.29352,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-gagaty-sotykowskie",
+      "name": "Rezerwat przyrody Gagaty Sołtykowskie",
+      "category": "reserve",
+      "lat": 51.1668,
+      "lon": 20.69005,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-rosochacz",
+      "name": "Rezerwat przyrody Rosochacz",
+      "category": "reserve",
+      "lat": 51.05033,
+      "lon": 21.09657,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-wykus",
+      "name": "Rezerwat przyrody Wykus",
+      "category": "reserve",
+      "lat": 51.04974,
+      "lon": 20.99806,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-kamien-michniowski",
+      "name": "Rezerwat przyrody Kamień Michniowski",
+      "category": "reserve",
+      "lat": 51.01348,
+      "lon": 20.81262,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-lisiny-bodzechowskie",
+      "name": "Rezerwat przyrody Lisiny Bodzechowskie",
+      "category": "reserve",
+      "lat": 50.90672,
+      "lon": 21.43755,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-ulow",
+      "name": "Rezerwat przyrody Ulów",
+      "category": "reserve",
+      "lat": 50.94794,
+      "lon": 21.42112,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-krzemionki-opatowskie",
+      "name": "Rezerwat przyrody Krzemionki Opatowskie",
+      "category": "reserve",
+      "lat": 50.97326,
+      "lon": 21.49366,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-skorocice",
+      "name": "Rezerwat przyrody Skorocice",
+      "category": "reserve",
+      "lat": 50.421,
+      "lon": 20.67402,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-skotniki-gorne",
+      "name": "Rezerwat przyrody Skotniki Górne",
+      "category": "reserve",
+      "lat": 50.40562,
+      "lon": 20.6718,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-przeslin",
+      "name": "Rezerwat przyrody Przęślin",
+      "category": "reserve",
+      "lat": 50.40915,
+      "lon": 20.6979,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-gory-wschodnie",
+      "name": "Rezerwat przyrody Góry Wschodnie",
+      "category": "reserve",
+      "lat": 50.4255,
+      "lon": 20.70708,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-winiary-zagojskie",
+      "name": "Rezerwat przyrody Winiary Zagojskie",
+      "category": "reserve",
+      "lat": 50.41285,
+      "lon": 20.74473,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-owczary",
+      "name": "Rezerwat przyrody Owczary",
+      "category": "reserve",
+      "lat": 50.40073,
+      "lon": 20.78935,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-grabowiec",
+      "name": "Rezerwat przyrody Grabowiec",
+      "category": "reserve",
+      "lat": 50.43343,
+      "lon": 20.75537,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-krzyzanowice",
+      "name": "Rezerwat przyrody Krzyżanowice",
+      "category": "reserve",
+      "lat": 50.45507,
+      "lon": 20.52674,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-polana-polichno",
+      "name": "Rezerwat przyrody Polana Polichno",
+      "category": "reserve",
+      "lat": 50.46012,
+      "lon": 20.59142,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-pieczyska",
+      "name": "Rezerwat przyrody Pieczyska",
+      "category": "reserve",
+      "lat": 50.45324,
+      "lon": 20.67112,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-wroni-do",
+      "name": "Rezerwat przyrody Wroni Dół",
+      "category": "reserve",
+      "lat": 50.47425,
+      "lon": 20.63011,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-lubcza",
+      "name": "Rezerwat przyrody Lubcza",
+      "category": "reserve",
+      "lat": 50.5437,
+      "lon": 20.4689,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-cisow-im-prof-zygmunta-czubinskiego",
+      "name": "Rezerwat przyrody Cisów im. prof. Zygmunta Czubińskiego",
+      "category": "reserve",
+      "lat": 50.7411,
+      "lon": 20.86443,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-biae-ugi",
+      "name": "Rezerwat przyrody Białe Ługi",
+      "category": "reserve",
+      "lat": 50.71187,
+      "lon": 20.94837,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-zamczysko",
+      "name": "Rezerwat przyrody Zamczysko",
+      "category": "reserve",
+      "lat": 50.72145,
+      "lon": 20.83655,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-sopiec",
+      "name": "Rezerwat przyrody Słopiec",
+      "category": "reserve",
+      "lat": 50.80716,
+      "lon": 20.77916,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-mae-gooborze",
+      "name": "Rezerwat przyrody Małe Gołoborze",
+      "category": "reserve",
+      "lat": 50.85855,
+      "lon": 21.22405,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-szczytniak",
+      "name": "Rezerwat przyrody Szczytniak",
+      "category": "reserve",
+      "lat": 50.86427,
+      "lon": 21.27306,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-gora-jeleniowska",
+      "name": "Rezerwat przyrody Góra Jeleniowska",
+      "category": "reserve",
+      "lat": 50.87912,
+      "lon": 21.26352,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-wawoz-w-skaach",
+      "name": "Rezerwat przyrody Wąwóz w Skałach",
+      "category": "reserve",
+      "lat": 50.88442,
+      "lon": 21.28692,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-gory-pieprzowe",
+      "name": "Rezerwat przyrody Góry Pieprzowe",
+      "category": "reserve",
+      "lat": 50.69705,
+      "lon": 21.78834,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-zielonka",
+      "name": "Rezerwat przyrody Zielonka",
+      "category": "reserve",
+      "lat": 50.77744,
+      "lon": 21.73726,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-murawy-dobromierskie",
+      "name": "Rezerwat przyrody Murawy Dobromierskie",
+      "category": "reserve",
+      "lat": 50.93738,
+      "lon": 19.83332,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-oleszno",
+      "name": "Rezerwat przyrody Oleszno",
+      "category": "reserve",
+      "lat": 50.89425,
+      "lon": 20.0166,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-bukowa-gora",
+      "name": "Rezerwat przyrody Bukowa Góra",
+      "category": "reserve",
+      "lat": 50.99042,
+      "lon": 20.71236,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rezerwat-przyrody-chemowa-gora",
+      "name": "Rezerwat przyrody Chełmowa Góra",
+      "category": "reserve",
+      "lat": 50.87598,
+      "lon": 21.17872,
+      "source": "RDOŚ Kielce / dane mapowe",
+      "sourceUrl": "https://www.gov.pl/web/rdos-kielce/rezerwaty-przyrody",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/bazylika-katedralna-wniebowziecia-nmp-w-kielcach",
+      "name": "Bazylika katedralna Wniebowzięcia NMP w Kielcach",
+      "category": "historic",
+      "lat": 50.86966,
+      "lon": 20.62826,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/paac-biskupow-krakowskich-w-kielcach",
+      "name": "Pałac Biskupów Krakowskich w Kielcach",
+      "category": "historic",
+      "lat": 50.86943,
+      "lon": 20.62722,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/klasztor-na-karczowce-w-kielcach",
+      "name": "Klasztor na Karczówce w Kielcach",
+      "category": "historic",
+      "lat": 50.86972,
+      "lon": 20.59276,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/klasztor-bernardynek-w-swietej-katarzynie",
+      "name": "Klasztor Bernardynek w Świętej Katarzynie",
+      "category": "historic",
+      "lat": 50.90221,
+      "lon": 20.88007,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/swiety-krzyz-klasztor-i-bazylika",
+      "name": "Święty Krzyż – klasztor i bazylika",
+      "category": "historic",
+      "lat": 50.85959,
+      "lon": 21.05212,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/osada-sredniowieczna-w-hucie-szklanej",
+      "name": "Osada Średniowieczna w Hucie Szklanej",
+      "category": "historic",
+      "lat": 50.86272,
+      "lon": 21.01348,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/opactwo-cystersow-w-wachocku",
+      "name": "Opactwo Cystersów w Wąchocku",
+      "category": "historic",
+      "lat": 51.0732,
+      "lon": 21.01403,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zabytkowy-zakad-hutniczy-w-nietulisku-duzym",
+      "name": "Zabytkowy zakład hutniczy w Nietulisku Dużym",
+      "category": "historic",
+      "lat": 50.99386,
+      "lon": 21.2417,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rynek-i-stare-miasto-w-sandomierzu",
+      "name": "Rynek i Stare Miasto w Sandomierzu",
+      "category": "historic",
+      "lat": 50.6791,
+      "lon": 21.74816,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/brama-opatowska-w-sandomierzu",
+      "name": "Brama Opatowska w Sandomierzu",
+      "category": "historic",
+      "lat": 50.68103,
+      "lon": 21.74807,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/bazylika-katedralna-w-sandomierzu",
+      "name": "Bazylika katedralna w Sandomierzu",
+      "category": "historic",
+      "lat": 50.67808,
+      "lon": 21.74946,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/koscio-sw-jakuba-w-sandomierzu",
+      "name": "Kościół św. Jakuba w Sandomierzu",
+      "category": "historic",
+      "lat": 50.67549,
+      "lon": 21.74566,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/wawoz-krolowej-jadwigi-w-sandomierzu",
+      "name": "Wąwóz Królowej Jadwigi w Sandomierzu",
+      "category": "historic",
+      "lat": 50.67304,
+      "lon": 21.7436,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/kolegiata-sw-marcina-w-opatowie",
+      "name": "Kolegiata św. Marcina w Opatowie",
+      "category": "historic",
+      "lat": 50.80101,
+      "lon": 21.42533,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/brama-warszawska-w-opatowie",
+      "name": "Brama Warszawska w Opatowie",
+      "category": "historic",
+      "lat": 50.80242,
+      "lon": 21.42337,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/klasztor-bernardynow-w-opatowie",
+      "name": "Klasztor Bernardynów w Opatowie",
+      "category": "historic",
+      "lat": 50.79798,
+      "lon": 21.4214,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/bazylika-narodzenia-nmp-w-wislicy",
+      "name": "Bazylika Narodzenia NMP w Wiślicy",
+      "category": "historic",
+      "lat": 50.34876,
+      "lon": 20.67423,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/grodzisko-w-wislicy",
+      "name": "Grodzisko w Wiślicy",
+      "category": "historic",
+      "lat": 50.35049,
+      "lon": 20.66965,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/grodzisko-w-stradowie",
+      "name": "Grodzisko w Stradowie",
+      "category": "historic",
+      "lat": 50.3568,
+      "lon": 20.48254,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/opactwo-cystersow-w-jedrzejowie",
+      "name": "Opactwo Cystersów w Jędrzejowie",
+      "category": "historic",
+      "lat": 50.62844,
+      "lon": 20.29881,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/synagoga-stara-w-pinczowie",
+      "name": "Synagoga Stara w Pińczowie",
+      "category": "historic",
+      "lat": 50.52065,
+      "lon": 20.52842,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/kaplica-sw-anny-w-pinczowie",
+      "name": "Kaplica św. Anny w Pińczowie",
+      "category": "historic",
+      "lat": 50.51685,
+      "lon": 20.52987,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zespo-klasztorny-kameduow-w-rytwianach",
+      "name": "Zespół klasztorny Kamedułów w Rytwianach",
+      "category": "historic",
+      "lat": 50.53156,
+      "lon": 21.20771,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/synagoga-w-szydowie",
+      "name": "Synagoga w Szydłowie",
+      "category": "historic",
+      "lat": 50.5912,
+      "lon": 21.00038,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/koscio-wszystkich-swietych-w-szydowie",
+      "name": "Kościół Wszystkich Świętych w Szydłowie",
+      "category": "historic",
+      "lat": 50.59278,
+      "lon": 21.00401,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/mury-miejskie-w-szydowie",
+      "name": "Mury miejskie w Szydłowie",
+      "category": "historic",
+      "lat": 50.59197,
+      "lon": 21.0021,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/opactwo-cystersow-w-koprzywnicy",
+      "name": "Opactwo Cystersów w Koprzywnicy",
+      "category": "historic",
+      "lat": 50.59384,
+      "lon": 21.58284,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/koscio-sw-trojcy-w-tarowie",
+      "name": "Kościół św. Trójcy w Tarłowie",
+      "category": "historic",
+      "lat": 51.00124,
+      "lon": 21.7147,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/koscio-sw-jana-chrzciciela-w-skalbmierzu",
+      "name": "Kościół św. Jana Chrzciciela w Skalbmierzu",
+      "category": "historic",
+      "lat": 50.31945,
+      "lon": 20.39923,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/kolegiata-sw-mikoaja-w-konskich",
+      "name": "Kolegiata św. Mikołaja w Końskich",
+      "category": "historic",
+      "lat": 51.19171,
+      "lon": 20.40794,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zespo-paacowo-parkowy-w-konskich",
+      "name": "Zespół pałacowo-parkowy w Końskich",
+      "category": "historic",
+      "lat": 51.19095,
+      "lon": 20.40596,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/sanktuarium-matki-bozej-ostrobramskiej-w-skarzysku-kamiennej",
+      "name": "Sanktuarium Matki Bożej Ostrobramskiej w Skarżysku-Kamiennej",
+      "category": "historic",
+      "lat": 51.11165,
+      "lon": 20.88634,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/sanktuarium-w-kakowie-godowie",
+      "name": "Sanktuarium w Kałkowie-Godowie",
+      "category": "historic",
+      "lat": 51.02141,
+      "lon": 21.19698,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/koscio-i-klasztor-cysterski-w-wachocku",
+      "name": "Kościół i klasztor cysterski w Wąchocku",
+      "category": "historic",
+      "lat": 51.07317,
+      "lon": 21.01407,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rynek-i-zabytkowa-zabudowa-nowego-korczyna",
+      "name": "Rynek i zabytkowa zabudowa Nowego Korczyna",
+      "category": "historic",
+      "lat": 50.30067,
+      "lon": 20.80713,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rynek-w-opatowie",
+      "name": "Rynek w Opatowie",
+      "category": "historic",
+      "lat": 50.8017,
+      "lon": 21.4242,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rynek-w-szydowie",
+      "name": "Rynek w Szydłowie",
+      "category": "historic",
+      "lat": 50.59155,
+      "lon": 21.00194,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/rynek-w-bodzentynie",
+      "name": "Rynek w Bodzentynie",
+      "category": "historic",
+      "lat": 50.9411,
+      "lon": 20.9563,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-chancza",
+      "name": "Zalew Chańcza",
+      "category": "water",
+      "lat": 50.65043,
+      "lon": 21.05559,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-sielpia",
+      "name": "Zalew Sielpia",
+      "category": "water",
+      "lat": 51.10765,
+      "lon": 20.35446,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-cedzyna",
+      "name": "Zalew Cedzyna",
+      "category": "water",
+      "lat": 50.87193,
+      "lon": 20.73105,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-rejow",
+      "name": "Zalew Rejów",
+      "category": "water",
+      "lat": 51.09684,
+      "lon": 20.84656,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-brody",
+      "name": "Zalew Brody",
+      "category": "water",
+      "lat": 51.02275,
+      "lon": 21.21828,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-wiory",
+      "name": "Zalew Wióry",
+      "category": "water",
+      "lat": 50.8953,
+      "lon": 21.19314,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-borkow",
+      "name": "Zalew Borków",
+      "category": "water",
+      "lat": 50.74157,
+      "lon": 20.82437,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-w-morawicy",
+      "name": "Zalew w Morawicy",
+      "category": "water",
+      "lat": 50.74628,
+      "lon": 20.62063,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-w-strawczynie",
+      "name": "Zalew w Strawczynie",
+      "category": "water",
+      "lat": 50.94227,
+      "lon": 20.42161,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-lubianka-w-starachowicach",
+      "name": "Zalew Lubianka w Starachowicach",
+      "category": "water",
+      "lat": 51.0229,
+      "lon": 21.08714,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-w-wachocku",
+      "name": "Zalew w Wąchocku",
+      "category": "water",
+      "lat": 51.07573,
+      "lon": 21.00475,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-bolmin",
+      "name": "Zalew Bolmin",
+      "category": "water",
+      "lat": 50.79793,
+      "lon": 20.34732,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-radzanow-koo-buska-zdroju",
+      "name": "Zalew Radzanów koło Buska-Zdroju",
+      "category": "water",
+      "lat": 50.43862,
+      "lon": 20.73138,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-pinczowski",
+      "name": "Zalew Pińczowski",
+      "category": "water",
+      "lat": 50.51957,
+      "lon": 20.52063,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/zalew-wilkow",
+      "name": "Zalew Wilków",
+      "category": "water",
+      "lat": 50.90102,
+      "lon": 20.8517,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
+    },
+    {
+      "id": "świętokrzyskie/nad-nida-przystan-kajakowa-w-pinczowie",
+      "name": "Nad Nidą – przystań kajakowa w Pińczowie",
+      "category": "water",
+      "lat": 50.5186,
+      "lon": 20.52433,
+      "source": "Świętokrzyskie Travel / dane mapowe",
+      "sourceUrl": "https://swietokrzyskie.travel/",
+      "region": "świętokrzyskie"
     }
   ],
-  "count": 468
+  "count": 640
 }
