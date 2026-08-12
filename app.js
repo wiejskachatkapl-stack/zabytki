@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1052';
+  const APP_VERSION = 'v1053';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1052';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1053';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const ROUTE_MODE_KEY = 'tourmap_route_mode_v1';
   const ROUTE_MODES = {
@@ -236,7 +236,11 @@
   let navigationLastSpokenKey = '';
   let navigationRerouteInFlight = false;
   let navigationLastRerouteAt = 0;
+  let navigationOffRouteFixes = 0;
   let navigationArrived = false;
+  let navigationVisibleRouteIndex = 0;
+  let navigationLastRoutePaintPosition = null;
+  let routeAttractionRefreshSequence = 0;
 
   if (versionElement) versionElement.textContent = APP_VERSION;
   updateOsmButtonUi();
@@ -1479,10 +1483,12 @@
 
   function routeOffRouteThreshold(mode = activeRouteMode) {
     const value = normalizeRouteMode(mode);
-    if (value === 'hiking') return 45;
-    if (value === 'foot') return 60;
-    if (value === 'bike') return 100;
-    return 180;
+    // v1053: szybsza reakcja na zjazd z trasy. Próg i tak jest później
+    // powiększany o bieżącą dokładność GPS, aby nie przeliczać trasy od szumu lokalizacji.
+    if (value === 'hiking') return 25;
+    if (value === 'foot') return 35;
+    if (value === 'bike') return 55;
+    return 70;
   }
 
   function routeArrivalThreshold(mode = activeRouteMode) {
@@ -1630,10 +1636,18 @@
     return `${Math.round(value / 1000)} km`;
   }
 
+  function isRoundaboutManeuver(step) {
+    const type = String(step?.maneuver?.type || '').toLowerCase();
+    return type === 'roundabout' || type === 'rotary';
+  }
+
   function navigationArrowForStep(step) {
-    const type = String(step?.maneuver?.type || '');
-    const modifier = String(step?.maneuver?.modifier || '');
-    if (type.includes('roundabout') || type === 'rotary') return '↻';
+    const type = String(step?.maneuver?.type || '').toLowerCase();
+    const modifier = String(step?.maneuver?.modifier || '').toLowerCase();
+    const exit = Number(step?.maneuver?.exit);
+    if (isRoundaboutManeuver(step)) {
+      return Number.isFinite(exit) && exit > 0 ? `↻ ${exit}` : '↻';
+    }
     if (type === 'arrive') return '●';
     const arrows = {
       'sharp left': '↙',
@@ -1648,10 +1662,25 @@
     return arrows[modifier] || '↑';
   }
 
+  function roundaboutManeuverSvg(step) {
+    const exit = Number(step?.maneuver?.exit);
+    const exitLabel = Number.isFinite(exit) && exit > 0
+      ? `<text x="50" y="58" text-anchor="middle" font-size="30" font-weight="900" fill="currentColor">${Math.round(exit)}</text>`
+      : '';
+    return `
+      <svg class="roundabout-nav-svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+        <path d="M50 91 L50 77" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
+        <circle cx="50" cy="47" r="28" fill="none" stroke="currentColor" stroke-width="10"/>
+        <path d="M68 23 L84 23 L79 38" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+        ${exitLabel}
+      </svg>
+    `;
+  }
+
   function navigationInstructionForStep(step) {
     const maneuver = step?.maneuver || {};
-    const type = String(maneuver.type || '');
-    const modifier = String(maneuver.modifier || '');
+    const type = String(maneuver.type || '').toLowerCase();
+    const modifier = String(maneuver.modifier || '').toLowerCase();
     const exit = Number(maneuver.exit);
     const walking = isWalkingRouteMode(activeRouteMode);
     const continueText = walking ? 'idź dalej' : 'jedź dalej';
@@ -1671,12 +1700,20 @@
       if (direction === continueText) return walking ? 'Ruszaj pieszo zgodnie z trasą' : 'Ruszaj zgodnie z trasą';
       return direction;
     }
-    if (type === 'roundabout' || type === 'rotary' || type === 'roundabout turn') {
+    if (type === 'roundabout' || type === 'rotary') {
       return Number.isFinite(exit) && exit > 0
         ? `Na rondzie wybierz ${exit}. zjazd`
-        : 'Wjedź na rondo i poruszaj się zgodnie z trasą';
+        : 'Wjedź na rondo i jedź zgodnie z trasą';
     }
-    if (type === 'exit roundabout' || type === 'exit rotary') return 'Zjedź z ronda';
+    // OSRM opisuje "roundabout turn" jako zwykły skręt na małym rondzie.
+    // Nie pokazujemy już dla niego dużej ikony pełnego ronda.
+    if (type === 'roundabout turn') {
+      return direction === continueText ? 'Przejedź przez małe rondo zgodnie z trasą' : `Na małym rondzie ${direction}`;
+    }
+    if (type === 'exit roundabout' || type === 'exit rotary') {
+      if (modifier && modifier !== 'straight') return `Zjedź z ronda i ${direction}`;
+      return 'Zjedź z ronda';
+    }
     if (type === 'merge') return modifier.includes('left') ? 'Włącz się do ruchu z lewej strony' : modifier.includes('right') ? 'Włącz się do ruchu z prawej strony' : 'Włącz się do ruchu';
     if (type === 'fork') return modifier.includes('left') ? 'Na rozwidleniu trzymaj się lewej strony' : modifier.includes('right') ? 'Na rozwidleniu trzymaj się prawej strony' : 'Na rozwidleniu poruszaj się zgodnie z trasą';
     if (type === 'on ramp' || type === 'ramp') return modifier.includes('left') ? 'Wjedź na łącznicę w lewo' : modifier.includes('right') ? 'Wjedź na łącznicę w prawo' : 'Wjedź na łącznicę';
@@ -1686,6 +1723,21 @@
       return direction === continueText ? (walking ? 'Kontynuuj marsz' : 'Kontynuuj jazdę') : direction;
     }
     return direction.charAt(0).toUpperCase() + direction.slice(1);
+  }
+
+  function navigationRoadTextForStep(step) {
+    const parts = [];
+    const name = String(step?.name || '').trim();
+    const ref = String(step?.ref || '').trim();
+    const rotaryName = String(step?.rotary_name || '').trim();
+    const destinations = String(step?.destinations || '').trim();
+
+    if (name) parts.push(name);
+    if (ref && !parts.some((item) => item.toLowerCase() === ref.toLowerCase())) parts.push(ref);
+    if (rotaryName && !parts.some((item) => item.toLowerCase() === rotaryName.toLowerCase())) parts.push(rotaryName);
+    if (destinations) parts.push(`kierunek ${destinations}`);
+
+    return parts.join(' · ');
   }
 
   function laneArrowForIndications(indications) {
@@ -1707,15 +1759,21 @@
   function laneGuidanceForStep(stepIndex) {
     const current = navigationSteps[stepIndex];
     const previous = navigationSteps[Math.max(0, stepIndex - 1)];
-    const candidates = [current, previous].filter(Boolean);
+    const next = navigationSteps[Math.min(navigationSteps.length - 1, stepIndex + 1)];
+    const candidates = [current, previous, next].filter(Boolean);
+    let firstLaneSet = null;
+
     for (const step of candidates) {
       const intersections = Array.isArray(step?.intersections) ? step.intersections : [];
       const ordered = step === previous ? [...intersections].reverse() : intersections;
       for (const intersection of ordered) {
-        if (Array.isArray(intersection?.lanes) && intersection.lanes.length) return intersection.lanes;
+        const lanes = Array.isArray(intersection?.lanes) ? intersection.lanes : [];
+        if (!lanes.length) continue;
+        if (!firstLaneSet) firstLaneSet = lanes;
+        if (lanes.some((lane) => lane?.valid === true)) return lanes;
       }
     }
-    return [];
+    return firstLaneSet || [];
   }
 
   function hideManeuverOverlay() {
@@ -1724,6 +1782,8 @@
     if (mapLanes) {
       mapLanes.hidden = true;
       mapLanes.replaceChildren();
+      mapLanes.classList.remove('is-direction-only');
+      mapLanes.removeAttribute('title');
     }
   }
 
@@ -1732,30 +1792,54 @@
       hideManeuverOverlay();
       return;
     }
-    const type = String(step?.maneuver?.type || '');
+    const type = String(step?.maneuver?.type || '').toLowerCase();
     const distance = Number(distanceToStep);
-    if (!Number.isFinite(distance) || distance > 400 || type === 'arrive') {
+    if (!Number.isFinite(distance) || distance > 450 || type === 'arrive') {
       hideManeuverOverlay();
       return;
     }
 
-    mapManeuverArrow.textContent = navigationArrowForStep(step);
+    if (isRoundaboutManeuver(step)) {
+      mapManeuverArrow.innerHTML = roundaboutManeuverSvg(step);
+    } else {
+      mapManeuverArrow.textContent = navigationArrowForStep(step);
+    }
+
     if (mapManeuverDistance) {
       mapManeuverDistance.textContent = `${Math.max(0, Math.round(distance))} m`;
     }
+
     if (mapLanes) {
       mapLanes.replaceChildren();
+      mapLanes.classList.remove('is-direction-only');
       const lanes = isWalkingRouteMode(activeRouteMode) ? [] : laneGuidanceForStep(stepIndex);
-      lanes.forEach((lane) => {
-        const laneEl = document.createElement('span');
-        laneEl.className = `map-lane${lane?.valid ? ' is-valid' : ' is-invalid'}`;
-        laneEl.textContent = laneArrowForIndications(lane?.indications);
-        mapLanes.append(laneEl);
-      });
-      mapLanes.hidden = lanes.length === 0;
+
+      if (lanes.length) {
+        lanes.forEach((lane) => {
+          const laneEl = document.createElement('span');
+          laneEl.className = `map-lane${lane?.valid ? ' is-valid' : ' is-invalid'}`;
+          laneEl.textContent = laneArrowForIndications(lane?.indications);
+          mapLanes.append(laneEl);
+        });
+        mapLanes.title = 'Pasy ruchu z danych OSM/OSRM. Wyróżniony pas jest zalecany.';
+        mapLanes.hidden = false;
+      } else if (!isWalkingRouteMode(activeRouteMode)) {
+        // Gdy OSM nie ma danych turn:lanes, nie zgadujemy liczby pasów.
+        // Pokazujemy jedynie czytelny schemat kierunku manewru.
+        const directionEl = document.createElement('span');
+        directionEl.className = 'map-lane is-valid is-direction-only';
+        directionEl.textContent = navigationArrowForStep(step);
+        mapLanes.classList.add('is-direction-only');
+        mapLanes.title = 'Brak danych o liczbie pasów w OSM – pokazano tylko zalecany kierunek.';
+        mapLanes.append(directionEl);
+        mapLanes.hidden = false;
+      } else {
+        mapLanes.hidden = true;
+      }
     }
     mapManeuverOverlay.hidden = false;
   }
+
 
   function buildNavigationRouteMetrics(coordinates, steps, routeDistance, routeDuration) {
     navigationRouteCumulative = [];
@@ -1770,6 +1854,8 @@
     navigationRouteDistance = Number(routeDistance) || cumulative;
     navigationRouteDuration = Number(routeDuration) || 0;
     navigationLastRouteIndex = 0;
+    navigationVisibleRouteIndex = 0;
+    navigationLastRoutePaintPosition = null;
 
     navigationSteps = (Array.isArray(steps) ? steps : []).map((step, stepIndex) => {
       const location = step?.maneuver?.location;
@@ -1796,39 +1882,107 @@
   }
 
   function findNearestNavigationRoutePosition(lat, lon) {
-    if (!routeCoordinates.length) return { index: 0, distance: Infinity, progress: 0 };
+    if (!routeCoordinates.length) return { index: 0, distance: Infinity, progress: 0, segmentT: 0 };
 
-    const testRange = (start, end, stride = 1) => {
-      let bestIndex = start;
+    const earthRadius = 6371000;
+    const toRad = (value) => value * Math.PI / 180;
+    const refLat = toRad(Number(lat));
+    const cosLat = Math.cos(refLat);
+
+    const testSegments = (startIndex, endIndex) => {
+      let bestIndex = Math.max(0, startIndex);
       let bestDistance = Infinity;
-      for (let i = start; i <= end; i += stride) {
-        const coord = routeCoordinates[i];
-        if (!coord) continue;
-        const d = distanceMeters(lat, lon, Number(coord[1]), Number(coord[0]));
-        if (d < bestDistance) {
-          bestDistance = d;
+      let bestProgress = navigationRouteCumulative[bestIndex] || 0;
+      let bestT = 0;
+
+      const safeStart = Math.max(0, startIndex);
+      const safeEnd = Math.min(routeCoordinates.length - 2, endIndex);
+      for (let i = safeStart; i <= safeEnd; i += 1) {
+        const a = routeCoordinates[i];
+        const b = routeCoordinates[i + 1];
+        if (!a || !b) continue;
+
+        const ax = toRad(Number(a[0]) - Number(lon)) * earthRadius * cosLat;
+        const ay = toRad(Number(a[1]) - Number(lat)) * earthRadius;
+        const bx = toRad(Number(b[0]) - Number(lon)) * earthRadius * cosLat;
+        const by = toRad(Number(b[1]) - Number(lat)) * earthRadius;
+        const vx = bx - ax;
+        const vy = by - ay;
+        const lengthSquared = vx * vx + vy * vy;
+        const t = lengthSquared > 0
+          ? Math.max(0, Math.min(1, -(ax * vx + ay * vy) / lengthSquared))
+          : 0;
+        const closestX = ax + t * vx;
+        const closestY = ay + t * vy;
+        const distance = Math.hypot(closestX, closestY);
+
+        if (distance < bestDistance) {
+          const segmentMeters = Math.max(
+            0,
+            Number(navigationRouteCumulative[i + 1] || 0) - Number(navigationRouteCumulative[i] || 0)
+          );
+          bestDistance = distance;
           bestIndex = i;
+          bestT = t;
+          bestProgress = Number(navigationRouteCumulative[i] || 0) + segmentMeters * t;
         }
       }
-      return { index: bestIndex, distance: bestDistance };
+
+      return { index: bestIndex, distance: bestDistance, progress: bestProgress, segmentT: bestT };
     };
 
-    const start = Math.max(0, navigationLastRouteIndex - 80);
-    const end = Math.min(routeCoordinates.length - 1, navigationLastRouteIndex + 550);
-    let best = testRange(start, end, 1);
+    const start = Math.max(0, navigationLastRouteIndex - 70);
+    const end = Math.min(routeCoordinates.length - 2, navigationLastRouteIndex + 500);
+    let best = testSegments(start, end);
 
-    if (best.distance > 700) {
-      const sampled = testRange(0, routeCoordinates.length - 1, Math.max(1, Math.floor(routeCoordinates.length / 700)));
-      const refineStart = Math.max(0, sampled.index - 20);
-      const refineEnd = Math.min(routeCoordinates.length - 1, sampled.index + 20);
-      best = testRange(refineStart, refineEnd, 1);
+    if (best.distance > 500 && routeCoordinates.length > 2) {
+      let sampledIndex = 0;
+      let sampledDistance = Infinity;
+      const stride = Math.max(1, Math.floor(routeCoordinates.length / 500));
+      for (let i = 0; i < routeCoordinates.length; i += stride) {
+        const coord = routeCoordinates[i];
+        const d = distanceMeters(lat, lon, Number(coord[1]), Number(coord[0]));
+        if (d < sampledDistance) {
+          sampledDistance = d;
+          sampledIndex = i;
+        }
+      }
+      best = testSegments(Math.max(0, sampledIndex - 35), Math.min(routeCoordinates.length - 2, sampledIndex + 35));
     }
 
-    navigationLastRouteIndex = best.index;
-    return {
-      ...best,
-      progress: navigationRouteCumulative[best.index] || 0
-    };
+    navigationLastRouteIndex = Math.max(0, best.index);
+    return best;
+  }
+
+  function updateVisibleRouteProgress(lat, lon, nearest, force = false) {
+    if (!routeLayer || typeof routeLayer.setLatLngs !== 'function' || !routeCoordinates.length || !nearest) return;
+
+    const lastPaint = navigationLastRoutePaintPosition;
+    const movedSincePaint = lastPaint
+      ? distanceMeters(lat, lon, lastPaint.lat, lastPaint.lon)
+      : Infinity;
+    const progressed = Number(nearest.index) > navigationVisibleRouteIndex;
+
+    if (!force && !progressed && movedSincePaint < 12) return;
+
+    // Trasa już przejechana znika. Nigdy nie dokładamy ponownie punktów za samochodem.
+    const futureIndex = Math.min(
+      routeCoordinates.length - 1,
+      Math.max(navigationVisibleRouteIndex, Number(nearest.index) + 1)
+    );
+    const remaining = [[lat, lon]];
+    for (let i = futureIndex; i < routeCoordinates.length; i += 1) {
+      const coord = routeCoordinates[i];
+      remaining.push([Number(coord[1]), Number(coord[0])]);
+    }
+
+    if (remaining.length < 2 && routeDestination) {
+      remaining.push([Number(routeDestination.lat), Number(routeDestination.lon)]);
+    }
+
+    routeLayer.setLatLngs(remaining);
+    navigationVisibleRouteIndex = futureIndex;
+    navigationLastRoutePaintPosition = { lat, lon };
   }
 
   function navigationVoiceBucket(distance) {
@@ -1866,6 +2020,9 @@
     navigationLastSpokenKey = '';
     navigationLastVoiceBucket = '';
     navigationLastStepIndex = -1;
+    navigationOffRouteFixes = 0;
+    navigationVisibleRouteIndex = 0;
+    navigationLastRoutePaintPosition = null;
     if ('speechSynthesis' in window) window.speechSynthesis.cancel();
     if (navigationPanel) navigationPanel.hidden = true;
     if (navigationDestination) navigationDestination.textContent = '—';
@@ -1875,13 +2032,17 @@
 
   function startNavigation() {
     if (!routeActive || !routeDestination || !routeCoordinates.length) return;
+    const wasAlreadyNavigating = navigationActive;
     navigationActive = true;
     navigationArrived = false;
     navigationLastRouteIndex = 0;
     navigationLastStepIndex = -1;
     navigationLastVoiceBucket = '';
     navigationLastSpokenKey = '';
-    navigationVoiceEnabled = true;
+    navigationOffRouteFixes = 0;
+    navigationVisibleRouteIndex = 0;
+    navigationLastRoutePaintPosition = null;
+    if (!wasAlreadyNavigating) navigationVoiceEnabled = true;
     mapAutoFollowEnabled = true;
     if (navigationPanel) navigationPanel.hidden = false;
     if (navigationDestination) navigationDestination.textContent = routeDestination.name || 'Cel podróży';
@@ -1889,21 +2050,44 @@
     if (navigationKicker) navigationKicker.textContent = `NAWIGACJA · ${routeModeMeta(activeRouteMode).label}`;
     if (lastMonitorPosition?.coords) {
       const { latitude, longitude } = lastMonitorPosition.coords;
-      mapProgrammaticMove = true;
-      map?.panTo([latitude, longitude], { animate: true, duration: 0.35, noMoveStart: true });
-      mapProgrammaticMove = false;
+      if (!wasAlreadyNavigating) {
+        mapProgrammaticMove = true;
+        map?.panTo([latitude, longitude], { animate: true, duration: 0.25, noMoveStart: true });
+        mapProgrammaticMove = false;
+      }
+      // Przy przeliczeniu od razu aktualizujemy nową trasę i manewr bez animacji/pauzy.
       updateNavigationFromPosition(lastMonitorPosition, true);
     }
   }
 
+
   async function maybeRerouteNavigation(position, offRouteDistance) {
-    if (!navigationActive || navigationArrived || navigationRerouteInFlight || !routeDestination) return;
-    if (offRouteDistance < routeOffRouteThreshold(activeRouteMode)) return;
-    if (Date.now() - navigationLastRerouteAt < 20000) return;
+    if (!navigationActive || navigationArrived || !routeDestination || !position?.coords) return;
+
+    const accuracy = Math.max(0, Number(position.coords.accuracy) || 0);
+    const baseThreshold = routeOffRouteThreshold(activeRouteMode);
+    const effectiveThreshold = Math.max(baseThreshold, accuracy * 1.35);
+
+    if (offRouteDistance < effectiveThreshold) {
+      navigationOffRouteFixes = 0;
+      return;
+    }
+
+    navigationOffRouteFixes += 1;
+    if (navigationRerouteInFlight) return;
+
+    const farOffRoute = offRouteDistance >= effectiveThreshold * 1.8;
+    if (!farOffRoute && navigationOffRouteFixes < 2) return;
+
+    // v1053: po realnym zjechaniu z trasy reagujemy po 2 pewnych odczytach GPS
+    // (lub natychmiast przy dużym odchyleniu), zamiast czekać 20 sekund.
+    if (Date.now() - navigationLastRerouteAt < 4500) return;
 
     navigationRerouteInFlight = true;
+    navigationOffRouteFixes = 0;
     navigationLastRerouteAt = Date.now();
     if (navigationKicker) navigationKicker.textContent = 'PRZELICZAM TRASĘ…';
+
     try {
       await planRouteToDestination(routeDestination, {
         startNavigation: true,
@@ -1953,12 +2137,17 @@
     const step = navigationSteps[stepIndex];
     const distanceToStep = Math.max(0, Number(step?._routeMeters || navigationRouteDistance) - nearest.progress);
     const instruction = navigationInstructionForStep(step);
-    const road = String(step?.name || '').trim();
+    const road = navigationRoadTextForStep(step);
+    updateVisibleRouteProgress(lat, lon, nearest, forceSpeak);
     const remainingTimeSeconds = navigationRouteDistance > 0
       ? navigationRouteDuration * (remaining / navigationRouteDistance)
       : 0;
 
-    if (navigationKicker) navigationKicker.textContent = nearest.distance >= routeOffRouteThreshold(activeRouteMode) ? `POZA TRASĄ · ${routeModeMeta(activeRouteMode).label}` : `NAWIGACJA · ${routeModeMeta(activeRouteMode).label}`;
+    const currentOffRouteThreshold = Math.max(
+      routeOffRouteThreshold(activeRouteMode),
+      Math.max(0, Number(position.coords.accuracy) || 0) * 1.35
+    );
+    if (navigationKicker) navigationKicker.textContent = nearest.distance >= currentOffRouteThreshold ? `POZA TRASĄ · ${routeModeMeta(activeRouteMode).label}` : `NAWIGACJA · ${routeModeMeta(activeRouteMode).label}`;
     if (navigationArrow) navigationArrow.textContent = navigationArrowForStep(step);
     if (navigationInstruction) navigationInstruction.textContent = instruction;
     if (navigationRoad) navigationRoad.textContent = road || (routeDestination.name ? `Kierunek: ${routeDestination.name}` : '');
@@ -2002,6 +2191,10 @@
     routeCoordinates = [];
     nearbyAttractions = [];
     routeAlertedIds = new Set();
+    routeAttractionRefreshSequence += 1;
+    navigationVisibleRouteIndex = 0;
+    navigationLastRoutePaintPosition = null;
+    navigationOffRouteFixes = 0;
 
     if (map && routeLayer) map.removeLayer(routeLayer);
     routeLayer = null;
@@ -2019,6 +2212,38 @@
         lastNearbyFetchAt = 0;
         refreshNearbyAttractions(lastMonitorPosition);
       }
+    }
+  }
+
+  async function refreshActiveRouteAttractions(coordinates, radius, context) {
+    const sequence = ++routeAttractionRefreshSequence;
+    try {
+      const attractions = await fetchRouteAttractions(coordinates, radius);
+      if (
+        sequence !== routeAttractionRefreshSequence ||
+        !routeActive ||
+        routeCoordinates !== coordinates
+      ) return;
+
+      routeAttractions = attractions;
+      nearbyAttractions = attractions;
+      osmAttractions = new Map(attractions.map((item) => [item.osmId, item]));
+      renderExternalAttractions(attractions);
+      updateOsmStatus(`Atrakcje do ${formatDistance(radius)} od trasy: ${attractions.length} · alert aktywny`);
+      setRouteInfo(
+        `${context.icon} ${context.label} · ${context.destinationName} · ${context.distance} · około ${context.duration} · atrakcji do ${formatDistance(radius)} od trasy: ${attractions.length}. Alert: ${formatDistance(radius)}.`
+      );
+      if (lastMonitorPosition?.coords) checkProximity(lastMonitorPosition);
+    } catch (error) {
+      if (sequence !== routeAttractionRefreshSequence || routeCoordinates !== coordinates) return;
+      console.warn('Nie udało się odczytać atrakcji przy trasie:', error);
+      routeAttractions = [];
+      nearbyAttractions = [];
+      updateOsmStatus('Atrakcje przy trasie: brak danych z bazy', true);
+      setRouteInfo(
+        `${context.icon} ${context.label} · ${context.destinationName} · ${context.distance} · około ${context.duration}. Trasa działa, ale atrakcji nie udało się odczytać z bazy.`,
+        true
+      );
     }
   }
 
@@ -2043,82 +2268,99 @@
 
     const startLat = Number(position.coords.latitude);
     const startLon = Number(position.coords.longitude);
-    setRouteInfo(`Wyznaczam trasę · ${requestedModeMeta.icon} ${requestedModeMeta.label}…`);
+    setRouteInfo(recalculating
+      ? 'Przeliczam trasę…'
+      : `Wyznaczam trasę · ${requestedModeMeta.icon} ${requestedModeMeta.label}…`
+    );
     if (routeResults) routeResults.replaceChildren();
 
     try {
       const url = `${requestedModeMeta.endpoint}/${startLon.toFixed(6)},${startLat.toFixed(6)};${destination.lon.toFixed(6)},${destination.lat.toFixed(6)}?overview=full&geometries=geojson&steps=true&annotations=false`;
-      const response = await fetch(url, { headers: { Accept: 'application/json' } });
+      const response = await fetch(url, {
+        headers: { Accept: 'application/json' },
+        cache: 'no-store'
+      });
       if (!response.ok) throw new Error(`OSRM HTTP ${response.status}`);
       const data = await response.json();
       const route = data?.routes?.[0];
       const coordinates = route?.geometry?.coordinates;
       if (!route || !Array.isArray(coordinates) || coordinates.length < 2) throw new Error('Brak trasy');
 
+      // v1053: zwykła polilinia może być błyskawicznie skracana w czasie jazdy.
+      // Przejechany fragment znika zamiast pozostawać za znacznikiem GPS.
       if (routeLayer) map.removeLayer(routeLayer);
-      routeLayer = L.geoJSON(route.geometry, {
-        style: {
+      routeLayer = L.polyline(
+        coordinates.map((coord) => [Number(coord[1]), Number(coord[0])]),
+        {
           color: '#1f6fd5',
           weight: 6,
-          opacity: 0.86
+          opacity: 0.9,
+          lineCap: 'round',
+          lineJoin: 'round'
         }
-      }).addTo(map);
+      ).addTo(map);
 
-      if (routeDestinationMarker) map.removeLayer(routeDestinationMarker);
-      routeDestinationMarker = L.marker([destination.lat, destination.lon], {
-        title: destination.name || 'Cel podróży'
-      }).addTo(map).bindPopup(`<strong>${escapeHtml(destination.name || 'Cel podróży')}</strong><br>Cel podróży`);
+      if (!recalculating || !routeDestinationMarker) {
+        if (routeDestinationMarker) map.removeLayer(routeDestinationMarker);
+        routeDestinationMarker = L.marker([destination.lat, destination.lon], {
+          title: destination.name || 'Cel podróży'
+        }).addTo(map).bindPopup(`<strong>${escapeHtml(destination.name || 'Cel podróży')}</strong><br>Cel podróży`);
+      }
 
       routeActive = true;
       routeDestination = destination;
       activeRouteMode = requestedMode;
       updateNavigationModeUi();
       routeCoordinates = coordinates;
+      routeAttractions = [];
+      nearbyAttractions = [];
       if (!recalculating) routeAlertedIds = new Set();
+
       const routeSteps = (Array.isArray(route.legs) ? route.legs : [])
         .flatMap((leg) => Array.isArray(leg?.steps) ? leg.steps : []);
       buildNavigationRouteMetrics(coordinates, routeSteps, Number(route.distance), Number(route.duration));
       if (routeClearButton) routeClearButton.hidden = false;
 
       clearTimeout(viewportFetchTimer);
-      externalLayer?.clearLayers();
-      osmMarkerById = new Map();
+      if (!recalculating) {
+        externalLayer?.clearLayers();
+        osmMarkerById = new Map();
+      }
 
       const distance = formatDistance(Number(route.distance));
       const duration = formatRouteDuration(Number(route.duration));
       const routeRadius = getProximityRadiusMeters();
-      setRouteInfo(`${requestedModeMeta.icon} ${requestedModeMeta.label} · ${destination.name} · ${distance} · około ${duration}. Szukam atrakcji do ${formatDistance(routeRadius)} od przebiegu trasy…`);
 
-      // v1021: wyznaczenie trasy nie może samoczynnie zmieniać skali ani środka mapy.
-      // Tylko przycisk WYCENTRUJ ustawia jednorazowo zoom na bieżącej pozycji.
+      // Najważniejsze przy przeliczeniu: nowa geometria i wskazówki mają wejść natychmiast.
+      // Szukanie atrakcji przy trasie wykonujemy dopiero w tle i nie blokujemy nawigacji.
+      setRouteInfo(`${requestedModeMeta.icon} ${requestedModeMeta.label} · ${destination.name} · ${distance} · około ${duration}. Aktualizuję atrakcje w tle…`);
+      hideRoutePanel();
+      startProximityMonitoring(false);
 
-      try {
-        routeAttractions = await fetchRouteAttractions(coordinates, routeRadius);
-        nearbyAttractions = routeAttractions;
-        osmAttractions = new Map(routeAttractions.map((item) => [item.osmId, item]));
-        renderExternalAttractions(routeAttractions);
-        updateOsmStatus(`Atrakcje do ${formatDistance(getProximityRadiusMeters())} od trasy: ${routeAttractions.length} · alert aktywny`);
-        setRouteInfo(`${requestedModeMeta.icon} ${requestedModeMeta.label} · ${destination.name} · ${distance} · około ${duration} · atrakcji do ${formatDistance(routeRadius)} od trasy: ${routeAttractions.length}. Alert: ${formatDistance(routeRadius)}.`);
-        showLocationMessage(`Trasa gotowa · ${routeAttractions.length} atrakcji w zasięgu do ${formatDistance(routeRadius)} od trasy. Alerty są aktywne.`);
-        // Po wyznaczeniu trasy odsłaniamy mapę i znaczniki atrakcji.
-        // Nie zmieniamy zoomu ani środka — użytkownik steruje skalą ręcznie.
-        hideRoutePanel();
-        startProximityMonitoring(false);
-        checkProximity(position);
-        if (shouldStartNavigation || recalculating) startNavigation();
-      } catch (error) {
-        console.warn('Nie udało się odczytać atrakcji przy trasie:', error);
-        routeAttractions = [];
-        nearbyAttractions = [];
-        updateOsmStatus('Atrakcje przy trasie: brak danych z bazy', true);
-        setRouteInfo(`${requestedModeMeta.icon} ${requestedModeMeta.label} · ${destination.name} · ${distance} · około ${duration}. Trasa działa, ale atrakcji nie udało się odczytać z bazy.`, true);
-        hideRoutePanel();
-        startProximityMonitoring(false);
-        if (shouldStartNavigation || recalculating) startNavigation();
+      if (shouldStartNavigation || recalculating) {
+        startNavigation();
+      } else if (position?.coords) {
+        const nearest = findNearestNavigationRoutePosition(startLat, startLon);
+        updateVisibleRouteProgress(startLat, startLon, nearest, true);
+      }
+
+      refreshActiveRouteAttractions(coordinates, routeRadius, {
+        icon: requestedModeMeta.icon,
+        label: requestedModeMeta.label,
+        destinationName: destination.name,
+        distance,
+        duration
+      });
+
+      if (!recalculating) {
+        showLocationMessage('Trasa gotowa. Nawigacja działa, a atrakcje przy trasie są aktualizowane w tle.');
       }
     } catch (error) {
       console.warn('Nie udało się wyznaczyć trasy:', error);
       setRouteInfo(`Nie udało się wyznaczyć trasy w trybie ${requestedModeMeta.label}.`, true);
+      if (recalculating && navigationActive && navigationKicker) {
+        navigationKicker.textContent = `NAWIGACJA · ${routeModeMeta(activeRouteMode).label}`;
+      }
     }
   }
 
@@ -2349,8 +2591,8 @@
       handleMonitoredLocationError,
       {
         enableHighAccuracy: true,
-        timeout: 20000,
-        maximumAge: 5000
+        timeout: 12000,
+        maximumAge: 1000
       }
     );
   }
@@ -3173,7 +3415,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1052', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1053', {
           scope: './',
           updateViaCache: 'none'
         });
