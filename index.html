@@ -57,7 +57,7 @@
       .my-places-transfer-button { min-height: 38px; }
     }
   
-    /* v1062: czytelniejsze wskazówki ronda i awaryjny kierunek, gdy OSM nie ma danych o pasach. */
+    /* v1063: czytelniejsze wskazówki ronda i awaryjny kierunek, gdy OSM nie ma danych o pasach. */
     .roundabout-nav-svg {
       display: block;
       width: 100%;
@@ -88,7 +88,7 @@
     }
 
 
-    /* v1062: kompaktowy panel manewru podobny do klasycznej nawigacji samochodowej. */
+    /* v1063: kompaktowy panel manewru podobny do klasycznej nawigacji samochodowej. */
     .map-maneuver-overlay[hidden] { display: none !important; }
     .map-maneuver-overlay {
       position: absolute !important;
@@ -158,7 +158,7 @@
       margin-top: 8px !important; padding-top: 7px !important; border-top: 1px solid rgba(255,255,255,.28) !important;
     }
 
-    /* v1062: strzałka na mapie jest bieżącą pozycją i obraca się zgodnie z kierunkiem jazdy. */
+    /* v1063: strzałka na mapie jest bieżącą pozycją i obraca się zgodnie z kierunkiem jazdy. */
     .navigation-position-icon { background: transparent !important; border: 0 !important; }
     .navigation-position-arrow {
       width: 48px; height: 48px; transform-origin: 50% 50%;
@@ -178,7 +178,7 @@
     }
 
 
-    /* v1062: uproszczony interfejs podczas aktywnej nawigacji. */
+    /* v1063: uproszczony interfejs podczas aktywnej nawigacji. */
     .navigation-attractions-wrap[hidden],
     .navigation-attractions-overlay[hidden] { display: none !important; }
     .navigation-attractions-wrap {
@@ -292,7 +292,7 @@
     }
     .map-screen.is-navigating #navigationPanel .navigation-stats strong { font-size: 20px; }
 
-    /* v1062: jedna informacja o manewrze - zielona tablica na mapie. */
+    /* v1063: jedna informacja o manewrze - zielona tablica na mapie. */
     .map-maneuver-overlay .map-lanes.is-direction-only { display: none !important; }
 
     @media (orientation: landscape) and (max-height: 650px) {
@@ -307,7 +307,7 @@
     }
 
 
-    /* v1062: kategorie są zawsze schowane pod jednym przyciskiem ATRAKCJE. */
+    /* v1063: kategorie są zawsze schowane pod jednym przyciskiem ATRAKCJE. */
     #mapLegend { display: none !important; }
     #navigationAttractionsWrap,
     #navigationAttractionsWrap[hidden] {
@@ -315,7 +315,7 @@
       width: 100%;
     }
 
-    /* v1062: panel atrakcji na trasie w prawym górnym rogu - tylko poziomo. */
+    /* v1063: panel atrakcji na trasie w prawym górnym rogu - tylko poziomo. */
     .route-attractions-status-panel[hidden] { display: none !important; }
     .route-attractions-status-panel { display: none; }
     @media (orientation: landscape) {
@@ -440,7 +440,7 @@
     }
 
 
-    /* ===== v1062: nawigacja czytelniejsza, jeden panel manewru + radar atrakcji ===== */
+    /* ===== v1063: nawigacja czytelniejsza, jeden panel manewru + radar atrakcji ===== */
 
     /* Informacja o manewrze jest tylko raz - w lewym panelu. */
     .map-maneuver-overlay,
@@ -807,7 +807,7 @@
     }
 
 
-    /* ===== v1062: kompaktowy panel, klikalne atrakcje i tryb jazdy "kierunek do góry" ===== */
+    /* ===== v1063: kompaktowy panel, klikalne atrakcje i tryb jazdy "kierunek do góry" ===== */
     .route-attraction-status-row {
       width: 100%;
       border: 1px solid rgba(255,255,255,.24);
@@ -1015,7 +1015,7 @@
 
 
 
-    /* ===== v1062: jeden komunikat nawigacyjny + odległość zamiast pola KIERUNEK ===== */
+    /* ===== v1063: jeden komunikat nawigacyjny + odległość zamiast pola KIERUNEK ===== */
     .map-maneuver-overlay,
     .map-maneuver-overlay:not([hidden]) {
       display: none !important;
@@ -1081,7 +1081,7 @@
       }
     }
 
-    /* ===== v1062: delikatniejszy, bardziej szklany wygląd przycisków ===== */
+    /* ===== v1063: delikatniejszy, bardziej szklany wygląd przycisków ===== */
     .map-back-button,
     .route-button,
     .map-location-button,
@@ -1226,7 +1226,7 @@
     }
 
   
-    /* ===== v1062: styl profesjonalnej nawigacji samochodowej ===== */
+    /* ===== v1063: styl profesjonalnej nawigacji samochodowej ===== */
     :root {
       --nav-glass-dark: rgba(12, 25, 21, .92);
       --nav-glass-mid: rgba(19, 45, 36, .90);
@@ -1413,7 +1413,7 @@
 
   
 
-    /* ===== v1062: stabilny tryb jazdy + większe manewry bez przepełnienia ===== */
+    /* ===== v1063: stabilny tryb jazdy + większe manewry bez przepełnienia ===== */
     /* W czasie jazdy ATRAKCJE zajmują mniej miejsca w bocznym panelu. */
     .map-screen.is-navigating #navigationAttractionsWrap {
       width: 72% !important;
@@ -1538,7 +1538,7 @@
       <button class="main-button main-button-my-places" id="myPlacesButton" type="button">MOJE MIEJSCA</button>
     </div>
 
-    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1062</div>
+    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1063</div>
   </main>
 
   <section class="add-screen" id="addScreen" aria-label="Dodaj miejsce" hidden>
@@ -1547,7 +1547,7 @@
         <button class="add-back-button" id="addBackButton" type="button" aria-label="Wróć do ekranu startowego">← COFNIJ</button>
         <div class="add-title-wrap">
           <h1 class="add-title">Dodaj miejsce</h1>
-          <div class="add-version" aria-hidden="true">v1062</div>
+          <div class="add-version" aria-hidden="true">v1063</div>
         </div>
       </div>
 
@@ -1638,7 +1638,7 @@
         <button class="edit-back-button" id="editBackButton" type="button" aria-label="Wróć do mapy">← COFNIJ</button>
         <div class="edit-title-wrap">
           <h1 class="edit-title">Edytuj punkt</h1>
-          <div class="edit-version" aria-hidden="true">v1062</div>
+          <div class="edit-version" aria-hidden="true">v1063</div>
         </div>
       </div>
 
@@ -1944,7 +1944,7 @@
 
     <div class="osm-status" id="osmStatus" role="status" aria-live="polite" hidden></div>
     <div class="location-message" id="locationMessage" role="status" aria-live="polite" hidden></div>
-    <div class="map-version" aria-hidden="true">v1062</div>
+    <div class="map-version" aria-hidden="true">v1063</div>
   </section>
 
   <aside class="nearby-alert" id="nearbyAlert" role="alertdialog" aria-live="assertive" aria-label="Atrakcja w pobliżu" hidden>
@@ -1963,6 +1963,6 @@
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script src="https://cdn.jsdelivr.net/npm/leaflet-rotate@0.2.8/dist/leaflet-rotate.js"></script>
-  <script src="app.js?v=1058"></script>
+  <script src="app.js?v=1063"></script>
 </body>
 </html>
