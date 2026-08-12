@@ -57,7 +57,7 @@
       .my-places-transfer-button { min-height: 38px; }
     }
   
-    /* v1059: czytelniejsze wskazówki ronda i awaryjny kierunek, gdy OSM nie ma danych o pasach. */
+    /* v1060: czytelniejsze wskazówki ronda i awaryjny kierunek, gdy OSM nie ma danych o pasach. */
     .roundabout-nav-svg {
       display: block;
       width: 100%;
@@ -88,7 +88,7 @@
     }
 
 
-    /* v1059: kompaktowy panel manewru podobny do klasycznej nawigacji samochodowej. */
+    /* v1060: kompaktowy panel manewru podobny do klasycznej nawigacji samochodowej. */
     .map-maneuver-overlay[hidden] { display: none !important; }
     .map-maneuver-overlay {
       position: absolute !important;
@@ -158,7 +158,7 @@
       margin-top: 8px !important; padding-top: 7px !important; border-top: 1px solid rgba(255,255,255,.28) !important;
     }
 
-    /* v1059: strzałka na mapie jest bieżącą pozycją i obraca się zgodnie z kierunkiem jazdy. */
+    /* v1060: strzałka na mapie jest bieżącą pozycją i obraca się zgodnie z kierunkiem jazdy. */
     .navigation-position-icon { background: transparent !important; border: 0 !important; }
     .navigation-position-arrow {
       width: 48px; height: 48px; transform-origin: 50% 50%;
@@ -178,7 +178,7 @@
     }
 
 
-    /* v1059: uproszczony interfejs podczas aktywnej nawigacji. */
+    /* v1060: uproszczony interfejs podczas aktywnej nawigacji. */
     .navigation-attractions-wrap[hidden],
     .navigation-attractions-overlay[hidden] { display: none !important; }
     .navigation-attractions-wrap {
@@ -292,7 +292,7 @@
     }
     .map-screen.is-navigating #navigationPanel .navigation-stats strong { font-size: 20px; }
 
-    /* v1059: jedna informacja o manewrze - zielona tablica na mapie. */
+    /* v1060: jedna informacja o manewrze - zielona tablica na mapie. */
     .map-maneuver-overlay .map-lanes.is-direction-only { display: none !important; }
 
     @media (orientation: landscape) and (max-height: 650px) {
@@ -307,7 +307,7 @@
     }
 
 
-    /* v1059: kategorie są zawsze schowane pod jednym przyciskiem ATRAKCJE. */
+    /* v1060: kategorie są zawsze schowane pod jednym przyciskiem ATRAKCJE. */
     #mapLegend { display: none !important; }
     #navigationAttractionsWrap,
     #navigationAttractionsWrap[hidden] {
@@ -315,7 +315,7 @@
       width: 100%;
     }
 
-    /* v1059: panel atrakcji na trasie w prawym górnym rogu - tylko poziomo. */
+    /* v1060: panel atrakcji na trasie w prawym górnym rogu - tylko poziomo. */
     .route-attractions-status-panel[hidden] { display: none !important; }
     .route-attractions-status-panel { display: none; }
     @media (orientation: landscape) {
@@ -440,7 +440,7 @@
     }
 
 
-    /* ===== v1059: nawigacja czytelniejsza, jeden panel manewru + radar atrakcji ===== */
+    /* ===== v1060: nawigacja czytelniejsza, jeden panel manewru + radar atrakcji ===== */
 
     /* Informacja o manewrze jest tylko raz - w lewym panelu. */
     .map-maneuver-overlay,
@@ -807,7 +807,7 @@
     }
 
 
-    /* ===== v1059: kompaktowy panel, klikalne atrakcje i tryb jazdy "kierunek do góry" ===== */
+    /* ===== v1060: kompaktowy panel, klikalne atrakcje i tryb jazdy "kierunek do góry" ===== */
     .route-attraction-status-row {
       width: 100%;
       border: 1px solid rgba(255,255,255,.24);
@@ -1015,7 +1015,7 @@
 
 
 
-    /* ===== v1059: jeden komunikat nawigacyjny + odległość zamiast pola KIERUNEK ===== */
+    /* ===== v1060: jeden komunikat nawigacyjny + odległość zamiast pola KIERUNEK ===== */
     .map-maneuver-overlay,
     .map-maneuver-overlay:not([hidden]) {
       display: none !important;
@@ -1080,7 +1080,152 @@
         font-size: 9px !important;
       }
     }
-</style>
+
+    /* ===== v1060: delikatniejszy, bardziej szklany wygląd przycisków ===== */
+    .map-back-button,
+    .route-button,
+    .map-location-button,
+    .navigation-attractions-button,
+    .navigation-stop-button,
+    .navigation-attractions-close,
+    .navigation-attractions-filter,
+    .route-attractions-radar-button,
+    .nearest-attraction-button,
+    .route-attractions-status-close,
+    .my-places-transfer-button {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px !important;
+      border: 1px solid rgba(255,255,255,.34) !important;
+      background: linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(34,116,71,.92) 14%, rgba(15,60,40,.90) 100%) !important;
+      color: #f7fffb !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.23), inset 0 -10px 18px rgba(0,0,0,.14), 0 8px 18px rgba(0,0,0,.16) !important;
+      backdrop-filter: blur(10px) saturate(118%);
+      -webkit-backdrop-filter: blur(10px) saturate(118%);
+      text-shadow: 0 1px 0 rgba(0,0,0,.18);
+      font-weight: 800 !important;
+      letter-spacing: .02em !important;
+      transition: transform .16s ease, box-shadow .16s ease, filter .16s ease;
+    }
+    .map-back-button::before,
+    .route-button::before,
+    .map-location-button::before,
+    .navigation-attractions-button::before,
+    .navigation-stop-button::before,
+    .navigation-attractions-close::before,
+    .navigation-attractions-filter::before,
+    .route-attractions-radar-button::before,
+    .nearest-attraction-button::before,
+    .route-attractions-status-close::before,
+    .my-places-transfer-button::before {
+      content: '';
+      position: absolute;
+      inset: 1px 1px auto 1px;
+      height: 48%;
+      border-radius: inherit;
+      background: linear-gradient(180deg, rgba(255,255,255,.28), rgba(255,255,255,.05));
+      pointer-events: none;
+      opacity: .88;
+    }
+    .map-back-button:hover, .route-button:hover, .map-location-button:hover,
+    .navigation-attractions-button:hover, .navigation-stop-button:hover,
+    .navigation-attractions-filter:hover, .route-attractions-radar-button:hover,
+    .nearest-attraction-button:hover, .my-places-transfer-button:hover {
+      filter: brightness(1.04);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.25), inset 0 -12px 20px rgba(0,0,0,.12), 0 10px 20px rgba(0,0,0,.18) !important;
+    }
+    .map-back-button:active, .route-button:active, .map-location-button:active,
+    .navigation-attractions-button:active, .navigation-stop-button:active,
+    .navigation-attractions-filter:active, .route-attractions-radar-button:active,
+    .nearest-attraction-button:active, .my-places-transfer-button:active {
+      transform: translateY(1px) scale(.992);
+      box-shadow: inset 0 2px 8px rgba(0,0,0,.18), 0 4px 10px rgba(0,0,0,.14) !important;
+    }
+    .route-button, .map-location-button, .navigation-attractions-button, .map-back-button {
+      font-weight: 800 !important;
+    }
+    .navigation-stop-button {
+      background: linear-gradient(180deg, rgba(255,255,255,.14) 0%, rgba(156,42,42,.90) 14%, rgba(112,22,22,.92) 100%) !important;
+    }
+    .navigation-attractions-filter.is-active,
+    .navigation-attractions-filter[aria-pressed="true"] {
+      background: linear-gradient(180deg, rgba(255,255,255,.14) 0%, rgba(38,140,80,.92) 14%, rgba(23,97,57,.92) 100%) !important;
+      color: #fff !important;
+    }
+    .proximity-radius-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 14px !important;
+      border: 1px solid rgba(255,255,255,.34) !important;
+      background: linear-gradient(180deg, rgba(255,255,255,.12) 0%, rgba(34,116,71,.92) 14%, rgba(15,60,40,.90) 100%) !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.23), inset 0 -10px 18px rgba(0,0,0,.14), 0 8px 18px rgba(0,0,0,.16) !important;
+      backdrop-filter: blur(10px) saturate(118%);
+      -webkit-backdrop-filter: blur(10px) saturate(118%);
+    }
+    .proximity-radius-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 1px 1px auto 1px;
+      height: 48%;
+      border-radius: inherit;
+      background: linear-gradient(180deg, rgba(255,255,255,.25), rgba(255,255,255,.04));
+      pointer-events: none;
+      opacity: .9;
+    }
+    .proximity-radius-wrap label {
+      font-weight: 800 !important;
+      color: rgba(255,255,255,.92) !important;
+      letter-spacing: .02em !important;
+      text-shadow: 0 1px 0 rgba(0,0,0,.18);
+    }
+    .proximity-radius-wrap select {
+      border-radius: 12px !important;
+      border: 1px solid rgba(255,255,255,.34) !important;
+      background: rgba(255,255,255,.92) !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.6), 0 2px 8px rgba(0,0,0,.08);
+      font-weight: 700 !important;
+      color: #173325 !important;
+    }
+    /* Dwa mini-przyciski po prawej u góry - 50% przezroczystości tła. */
+    @media (orientation: landscape) {
+      .route-attractions-radar-button,
+      .nearest-attraction-button {
+        background: linear-gradient(180deg, rgba(255,255,255,.10) 0%, rgba(24,88,57,.50) 18%, rgba(10,45,29,.50) 100%) !important;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.18), inset 0 -8px 16px rgba(0,0,0,.10), 0 6px 16px rgba(0,0,0,.14) !important;
+      }
+    }
+    /* Panel następnego manewru - bez dodatkowego podpisu, lżejszy wygląd. */
+    .map-screen.is-navigating #navigationPanel .navigation-main {
+      background: linear-gradient(180deg, rgba(255,255,255,.08) 0%, rgba(13,56,39,.92) 14%, rgba(8,38,27,.90) 100%) !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 8px 20px rgba(0,0,0,.18) !important;
+      border: 1px solid rgba(255,255,255,.22) !important;
+    }
+    .map-screen.is-navigating #navigationPanel .navigation-kicker {
+      color: rgba(255,255,255,.72) !important;
+      font-weight: 700 !important;
+      letter-spacing: .07em !important;
+    }
+    .map-screen.is-navigating #navigationPanel .navigation-maneuver-distance {
+      display: inline-flex !important;
+      align-items: baseline !important;
+      gap: 0 !important;
+      margin-top: 8px !important;
+      padding: 5px 10px !important;
+      border-radius: 999px !important;
+      border: 1px solid rgba(255,255,255,.18) !important;
+      background: rgba(255,255,255,.10) !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.10) !important;
+    }
+    .map-screen.is-navigating #navigationPanel .navigation-maneuver-distance span {
+      display: none !important;
+    }
+    .map-screen.is-navigating #navigationPanel .navigation-maneuver-distance .navigation-next-distance {
+      font-size: 19px !important;
+      letter-spacing: .01em !important;
+      color: #fff !important;
+    }
+
+  </style>
 </head>
 <body>
   <main class="start-screen" aria-label="Turystyczna mapa Polski">
@@ -1090,7 +1235,7 @@
       <button class="main-button main-button-my-places" id="myPlacesButton" type="button">MOJE MIEJSCA</button>
     </div>
 
-    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1059</div>
+    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1060</div>
   </main>
 
   <section class="add-screen" id="addScreen" aria-label="Dodaj miejsce" hidden>
@@ -1099,7 +1244,7 @@
         <button class="add-back-button" id="addBackButton" type="button" aria-label="Wróć do ekranu startowego">← COFNIJ</button>
         <div class="add-title-wrap">
           <h1 class="add-title">Dodaj miejsce</h1>
-          <div class="add-version" aria-hidden="true">v1059</div>
+          <div class="add-version" aria-hidden="true">v1060</div>
         </div>
       </div>
 
@@ -1190,7 +1335,7 @@
         <button class="edit-back-button" id="editBackButton" type="button" aria-label="Wróć do mapy">← COFNIJ</button>
         <div class="edit-title-wrap">
           <h1 class="edit-title">Edytuj punkt</h1>
-          <div class="edit-version" aria-hidden="true">v1059</div>
+          <div class="edit-version" aria-hidden="true">v1060</div>
         </div>
       </div>
 
@@ -1354,7 +1499,7 @@
             <span id="navigationRoad"></span>
             <div class="navigation-maneuver-distance" aria-label="Odległość do następnego manewru">
               <strong class="navigation-next-distance" id="navigationTurnDistance">—</strong>
-              <span>DO MANEWRU</span>
+              
             </div>
             <div class="map-lanes navigation-lanes" id="mapLanes" hidden></div>
           </div>
@@ -1496,7 +1641,7 @@
 
     <div class="osm-status" id="osmStatus" role="status" aria-live="polite" hidden></div>
     <div class="location-message" id="locationMessage" role="status" aria-live="polite" hidden></div>
-    <div class="map-version" aria-hidden="true">v1059</div>
+    <div class="map-version" aria-hidden="true">v1060</div>
   </section>
 
   <aside class="nearby-alert" id="nearbyAlert" role="alertdialog" aria-live="assertive" aria-label="Atrakcja w pobliżu" hidden>
