@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1053';
+  const APP_VERSION = 'v1054';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1053';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1054';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const ROUTE_MODE_KEY = 'tourmap_route_mode_v1';
   const ROUTE_MODES = {
@@ -31,6 +31,8 @@
     }
   };
   const FOLLOW_EDGE_MARGIN_PX = 92;
+  const NAVIGATION_CAR_ZOOM = 18;
+  const NAVIGATION_OTHER_ZOOM = 17;
   const ROUTE_DISPLAY_RADIUS = 20000;
   const ALERT_COOLDOWN_MS = 12 * 60 * 60 * 1000;
   const NEARBY_FETCH_MIN_RADIUS = 12000;
@@ -142,6 +144,9 @@
   const mapManeuverOverlay = document.getElementById('mapManeuverOverlay');
   const mapManeuverArrow = document.getElementById('mapManeuverArrow');
   const mapManeuverDistance = document.getElementById('mapManeuverDistance');
+  const mapManeuverInstruction = document.getElementById('mapManeuverInstruction');
+  const mapManeuverRoadRef = document.getElementById('mapManeuverRoadRef');
+  const mapManeuverRoad = document.getElementById('mapManeuverRoad');
   const mapLanes = document.getElementById('mapLanes');
 
   const nearbyAlert = document.getElementById('nearbyAlert');
@@ -154,6 +159,7 @@
 
   let map = null;
   let userLocationMarker = null;
+  let userLocationMarkerMode = 'dot';
   let userAccuracyCircle = null;
   let locationMessageTimer = null;
   let addMessageTimer = null;
@@ -209,6 +215,7 @@
   let mapProgrammaticMove = false;
   let mapAutoRecenterInProgress = false;
 
+  let routeOutlineLayer = null;
   let routeLayer = null;
   let routeDestinationMarker = null;
   let routeActive = false;
@@ -240,6 +247,7 @@
   let navigationArrived = false;
   let navigationVisibleRouteIndex = 0;
   let navigationLastRoutePaintPosition = null;
+  let navigationHeadingDegrees = 0;
   let routeAttractionRefreshSequence = 0;
 
   if (versionElement) versionElement.textContent = APP_VERSION;
@@ -1662,16 +1670,40 @@
     return arrows[modifier] || '↑';
   }
 
+  function maneuverIconSvg(step) {
+    if (isRoundaboutManeuver(step)) return roundaboutManeuverSvg(step);
+    const type = String(step?.maneuver?.type || '').toLowerCase();
+    const modifier = String(step?.maneuver?.modifier || '').toLowerCase();
+    if (type === 'arrive') {
+      return `<svg class="maneuver-nav-svg" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="17" fill="currentColor"/></svg>`;
+    }
+    const left = modifier.includes('left');
+    const right = modifier.includes('right');
+    const slight = modifier.includes('slight');
+    const sharp = modifier.includes('sharp');
+    const uturn = modifier === 'uturn';
+    if (uturn) {
+      return `<svg class="maneuver-nav-svg" viewBox="0 0 100 100" aria-hidden="true"><path d="M66 88 V49 C66 28 35 28 35 50 V61"/><path d="M20 48 L35 63 L50 48"/></svg>`;
+    }
+    if (left || right) {
+      const flip = left ? 'translate(100 0) scale(-1 1)' : '';
+      const path = slight ? 'M35 88 V64 Q35 49 50 43 L78 31' : sharp ? 'M35 88 V58 Q35 38 55 38 H82' : 'M35 88 V55 Q35 35 55 35 H82';
+      return `<svg class="maneuver-nav-svg" viewBox="0 0 100 100" aria-hidden="true"><g transform="${flip}"><path d="${path}"/><path d="M69 20 L84 31 L69 43"/></g></svg>`;
+    }
+    return `<svg class="maneuver-nav-svg" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 88 V19"/><path d="M35 34 L50 18 L65 34"/></svg>`;
+  }
+
   function roundaboutManeuverSvg(step) {
     const exit = Number(step?.maneuver?.exit);
     const exitLabel = Number.isFinite(exit) && exit > 0
-      ? `<text x="50" y="58" text-anchor="middle" font-size="30" font-weight="900" fill="currentColor">${Math.round(exit)}</text>`
+      ? `<text x="50" y="55" text-anchor="middle" font-size="24" font-weight="900" fill="currentColor">${Math.round(exit)}</text>`
       : '';
     return `
-      <svg class="roundabout-nav-svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-        <path d="M50 91 L50 77" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round"/>
-        <circle cx="50" cy="47" r="28" fill="none" stroke="currentColor" stroke-width="10"/>
-        <path d="M68 23 L84 23 L79 38" fill="none" stroke="currentColor" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg class="maneuver-nav-svg roundabout-nav-svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+        <path d="M50 92 V74"/>
+        <circle cx="50" cy="49" r="24"/>
+        <path d="M70 37 Q77 29 87 27"/>
+        <path d="M76 18 L88 27 L79 39"/>
         ${exitLabel}
       </svg>
     `;
@@ -1779,6 +1811,13 @@
   function hideManeuverOverlay() {
     if (mapManeuverOverlay) mapManeuverOverlay.hidden = true;
     if (mapManeuverDistance) mapManeuverDistance.textContent = '0 m';
+    if (mapManeuverInstruction) mapManeuverInstruction.textContent = '';
+    if (mapManeuverRoad) mapManeuverRoad.textContent = '';
+    if (mapManeuverRoadRef) {
+      mapManeuverRoadRef.textContent = '';
+      mapManeuverRoadRef.hidden = true;
+      mapManeuverRoadRef.className = 'map-maneuver-road-ref';
+    }
     if (mapLanes) {
       mapLanes.hidden = true;
       mapLanes.replaceChildren();
@@ -1794,19 +1833,25 @@
     }
     const type = String(step?.maneuver?.type || '').toLowerCase();
     const distance = Number(distanceToStep);
-    if (!Number.isFinite(distance) || distance > 450 || type === 'arrive') {
+    if (!Number.isFinite(distance) || distance > 1200 || type === 'arrive') {
       hideManeuverOverlay();
       return;
     }
 
-    if (isRoundaboutManeuver(step)) {
-      mapManeuverArrow.innerHTML = roundaboutManeuverSvg(step);
-    } else {
-      mapManeuverArrow.textContent = navigationArrowForStep(step);
-    }
+    mapManeuverArrow.innerHTML = maneuverIconSvg(step);
+    if (mapManeuverDistance) mapManeuverDistance.textContent = formatNavigationDistance(distance);
+    if (mapManeuverInstruction) mapManeuverInstruction.textContent = navigationInstructionForStep(step);
 
-    if (mapManeuverDistance) {
-      mapManeuverDistance.textContent = `${Math.max(0, Math.round(distance))} m`;
+    const roadName = String(step?.name || step?.rotary_name || '').trim();
+    const roadRef = String(step?.ref || '').trim();
+    const destinations = String(step?.destinations || '').trim();
+    if (mapManeuverRoadRef) {
+      mapManeuverRoadRef.hidden = !roadRef;
+      mapManeuverRoadRef.textContent = roadRef;
+      mapManeuverRoadRef.className = `map-maneuver-road-ref${/^A\d+/i.test(roadRef) ? ' is-motorway' : ''}`;
+    }
+    if (mapManeuverRoad) {
+      mapManeuverRoad.textContent = roadName || (destinations ? `kierunek ${destinations}` : '');
     }
 
     if (mapLanes) {
@@ -1824,8 +1869,6 @@
         mapLanes.title = 'Pasy ruchu z danych OSM/OSRM. Wyróżniony pas jest zalecany.';
         mapLanes.hidden = false;
       } else if (!isWalkingRouteMode(activeRouteMode)) {
-        // Gdy OSM nie ma danych turn:lanes, nie zgadujemy liczby pasów.
-        // Pokazujemy jedynie czytelny schemat kierunku manewru.
         const directionEl = document.createElement('span');
         directionEl.className = 'map-lane is-valid is-direction-only';
         directionEl.textContent = navigationArrowForStep(step);
@@ -1963,14 +2006,22 @@
       : Infinity;
     const progressed = Number(nearest.index) > navigationVisibleRouteIndex;
 
-    if (!force && !progressed && movedSincePaint < 12) return;
+    if (!force && !progressed && movedSincePaint < 10) return;
 
-    // Trasa już przejechana znika. Nigdy nie dokładamy ponownie punktów za samochodem.
+    const segmentIndex = Math.max(0, Math.min(routeCoordinates.length - 2, Number(nearest.index) || 0));
+    const a = routeCoordinates[segmentIndex];
+    const b = routeCoordinates[Math.min(routeCoordinates.length - 1, segmentIndex + 1)] || a;
+    const t = Math.max(0, Math.min(1, Number(nearest.segmentT) || 0));
+    const snappedLon = Number(a?.[0]) + (Number(b?.[0]) - Number(a?.[0])) * t;
+    const snappedLat = Number(a?.[1]) + (Number(b?.[1]) - Number(a?.[1])) * t;
+
+    // v1054: linia zaczyna się w punkcie trasy najbliższym pozycji, a nie w surowym GPS.
+    // Dzięki temu nie powstaje niebieski łącznik/ogon od strzałki do drogi.
     const futureIndex = Math.min(
       routeCoordinates.length - 1,
-      Math.max(navigationVisibleRouteIndex, Number(nearest.index) + 1)
+      Math.max(navigationVisibleRouteIndex, segmentIndex + 1)
     );
-    const remaining = [[lat, lon]];
+    const remaining = [[snappedLat, snappedLon]];
     for (let i = futureIndex; i < routeCoordinates.length; i += 1) {
       const coord = routeCoordinates[i];
       remaining.push([Number(coord[1]), Number(coord[0])]);
@@ -1980,10 +2031,12 @@
       remaining.push([Number(routeDestination.lat), Number(routeDestination.lon)]);
     }
 
+    routeOutlineLayer?.setLatLngs?.(remaining);
     routeLayer.setLatLngs(remaining);
     navigationVisibleRouteIndex = futureIndex;
     navigationLastRoutePaintPosition = { lat, lon };
   }
+
 
   function navigationVoiceBucket(distance) {
     if (distance <= 70) return '70';
@@ -2027,6 +2080,7 @@
     if (navigationPanel) navigationPanel.hidden = true;
     if (navigationDestination) navigationDestination.textContent = '—';
     hideManeuverOverlay();
+    if (lastMonitorPosition?.coords) updateMonitoredLocationVisual(lastMonitorPosition);
     if (!keepRoute) clearRoute({ refreshMap: true });
   }
 
@@ -2052,9 +2106,10 @@
       const { latitude, longitude } = lastMonitorPosition.coords;
       if (!wasAlreadyNavigating) {
         mapProgrammaticMove = true;
-        map?.panTo([latitude, longitude], { animate: true, duration: 0.25, noMoveStart: true });
+        map?.setView([latitude, longitude], navigationZoomForMode(activeRouteMode), { animate: true });
         mapProgrammaticMove = false;
       }
+      updateMonitoredLocationVisual(lastMonitorPosition);
       // Przy przeliczeniu od razu aktualizujemy nową trasę i manewr bez animacji/pauzy.
       updateNavigationFromPosition(lastMonitorPosition, true);
     }
@@ -2108,6 +2163,7 @@
     const lat = Number(position.coords.latitude);
     const lon = Number(position.coords.longitude);
     const nearest = findNearestNavigationRoutePosition(lat, lon);
+    applyNavigationMarkerHeading(position, nearest, forceSpeak);
     const remaining = Math.max(0, navigationRouteDistance - nearest.progress);
     const destinationDistance = distanceMeters(lat, lon, Number(routeDestination.lat), Number(routeDestination.lon));
 
@@ -2148,7 +2204,7 @@
       Math.max(0, Number(position.coords.accuracy) || 0) * 1.35
     );
     if (navigationKicker) navigationKicker.textContent = nearest.distance >= currentOffRouteThreshold ? `POZA TRASĄ · ${routeModeMeta(activeRouteMode).label}` : `NAWIGACJA · ${routeModeMeta(activeRouteMode).label}`;
-    if (navigationArrow) navigationArrow.textContent = navigationArrowForStep(step);
+    if (navigationArrow) navigationArrow.innerHTML = maneuverIconSvg(step);
     if (navigationInstruction) navigationInstruction.textContent = instruction;
     if (navigationRoad) navigationRoad.textContent = road || (routeDestination.name ? `Kierunek: ${routeDestination.name}` : '');
     if (navigationTurnDistance) navigationTurnDistance.textContent = formatNavigationDistance(distanceToStep);
@@ -2184,6 +2240,7 @@
       if (navigationPanel) navigationPanel.hidden = true;
       if (navigationDestination) navigationDestination.textContent = '—';
       hideManeuverOverlay();
+      if (lastMonitorPosition?.coords) updateMonitoredLocationVisual(lastMonitorPosition);
     }
     routeActive = false;
     routeDestination = null;
@@ -2196,6 +2253,8 @@
     navigationLastRoutePaintPosition = null;
     navigationOffRouteFixes = 0;
 
+    if (map && routeOutlineLayer) map.removeLayer(routeOutlineLayer);
+    routeOutlineLayer = null;
     if (map && routeLayer) map.removeLayer(routeLayer);
     routeLayer = null;
     if (map && routeDestinationMarker) map.removeLayer(routeDestinationMarker);
@@ -2288,17 +2347,25 @@
 
       // v1053: zwykła polilinia może być błyskawicznie skracana w czasie jazdy.
       // Przejechany fragment znika zamiast pozostawać za znacznikiem GPS.
+      if (routeOutlineLayer) map.removeLayer(routeOutlineLayer);
       if (routeLayer) map.removeLayer(routeLayer);
-      routeLayer = L.polyline(
-        coordinates.map((coord) => [Number(coord[1]), Number(coord[0])]),
-        {
-          color: '#1f6fd5',
-          weight: 6,
-          opacity: 0.9,
-          lineCap: 'round',
-          lineJoin: 'round'
-        }
-      ).addTo(map);
+      const routeLatLngs = coordinates.map((coord) => [Number(coord[1]), Number(coord[0])]);
+      routeOutlineLayer = L.polyline(routeLatLngs, {
+        color: '#ffffff',
+        weight: 10,
+        opacity: 0.92,
+        lineCap: 'round',
+        lineJoin: 'round',
+        interactive: false
+      }).addTo(map);
+      routeLayer = L.polyline(routeLatLngs, {
+        color: '#1f6fd5',
+        weight: 6,
+        opacity: 0.96,
+        lineCap: 'round',
+        lineJoin: 'round',
+        interactive: false
+      }).addTo(map);
 
       if (!recalculating || !routeDestinationMarker) {
         if (routeDestinationMarker) map.removeLayer(routeDestinationMarker);
@@ -2382,6 +2449,69 @@
     if (proximityRadiusWrap) proximityRadiusWrap.classList.toggle('is-active', proximityActive);
   }
 
+  function navigationZoomForMode(mode = activeRouteMode) {
+    return mode === 'car' ? NAVIGATION_CAR_ZOOM : NAVIGATION_OTHER_ZOOM;
+  }
+
+  function bearingDegrees(lat1, lon1, lat2, lon2) {
+    const toRad = (value) => Number(value) * Math.PI / 180;
+    const toDeg = (value) => value * 180 / Math.PI;
+    const phi1 = toRad(lat1);
+    const phi2 = toRad(lat2);
+    const dLon = toRad(Number(lon2) - Number(lon1));
+    const y = Math.sin(dLon) * Math.cos(phi2);
+    const x = Math.cos(phi1) * Math.sin(phi2) - Math.sin(phi1) * Math.cos(phi2) * Math.cos(dLon);
+    return (toDeg(Math.atan2(y, x)) + 360) % 360;
+  }
+
+  function routeHeadingFromNearest(nearest) {
+    if (!routeCoordinates.length || !nearest) return null;
+    const startIndex = Math.max(0, Math.min(routeCoordinates.length - 2, Number(nearest.index) || 0));
+    const a = routeCoordinates[startIndex];
+    let endIndex = Math.min(routeCoordinates.length - 1, startIndex + 1);
+    let b = routeCoordinates[endIndex];
+    while (endIndex < routeCoordinates.length - 1 && a && b && distanceMeters(Number(a[1]), Number(a[0]), Number(b[1]), Number(b[0])) < 20) {
+      endIndex += 1;
+      b = routeCoordinates[endIndex];
+    }
+    if (!a || !b) return null;
+    return bearingDegrees(Number(a[1]), Number(a[0]), Number(b[1]), Number(b[0]));
+  }
+
+  function smoothHeading(nextHeading, force = false) {
+    const next = ((Number(nextHeading) % 360) + 360) % 360;
+    if (!Number.isFinite(next)) return navigationHeadingDegrees;
+    if (force || !Number.isFinite(navigationHeadingDegrees)) {
+      navigationHeadingDegrees = next;
+      return next;
+    }
+    const delta = ((next - navigationHeadingDegrees + 540) % 360) - 180;
+    navigationHeadingDegrees = (navigationHeadingDegrees + delta * 0.42 + 360) % 360;
+    return navigationHeadingDegrees;
+  }
+
+  function navigationPositionIcon() {
+    return L.divIcon({
+      className: 'navigation-position-icon',
+      html: `<div class="navigation-position-arrow"><svg viewBox="0 0 48 48" aria-hidden="true"><path class="navigation-position-arrow-outline" d="M24 3 L42 43 L24 34 L6 43 Z"/><path class="navigation-position-arrow-fill" d="M24 7 L38 39 L24 31 L10 39 Z"/></svg></div>`,
+      iconSize: [48, 48],
+      iconAnchor: [24, 24]
+    });
+  }
+
+  function applyNavigationMarkerHeading(position, nearest = null, force = false) {
+    if (!navigationActive || userLocationMarkerMode !== 'arrow' || !userLocationMarker) return;
+    const gpsHeading = Number(position?.coords?.heading);
+    const speed = Number(position?.coords?.speed);
+    let heading = Number.isFinite(gpsHeading) && gpsHeading >= 0 && (!Number.isFinite(speed) || speed > 0.6)
+      ? gpsHeading
+      : routeHeadingFromNearest(nearest);
+    if (!Number.isFinite(heading)) heading = navigationHeadingDegrees || 0;
+    const smoothed = smoothHeading(heading, force);
+    const element = userLocationMarker.getElement?.()?.querySelector('.navigation-position-arrow');
+    if (element) element.style.transform = `rotate(${smoothed.toFixed(1)}deg)`;
+  }
+
   function updateMonitoredLocationVisual(position) {
     if (!map || !position?.coords) return;
     const { latitude, longitude, accuracy } = position.coords;
@@ -2389,20 +2519,35 @@
 
     if (userAccuracyCircle) {
       userAccuracyCircle.setLatLng(latlng).setRadius(Math.max(accuracy || 5, 5));
+      userAccuracyCircle.setStyle({ opacity: navigationActive ? 0.3 : 0.55, fillOpacity: navigationActive ? 0.05 : 0.12 });
     } else {
       userAccuracyCircle = L.circle(latlng, {
         radius: Math.max(accuracy || 5, 5),
         color: '#2f80ed',
         weight: 1,
-        opacity: 0.55,
+        opacity: navigationActive ? 0.3 : 0.55,
         fillColor: '#2f80ed',
-        fillOpacity: 0.12,
+        fillOpacity: navigationActive ? 0.05 : 0.12,
         interactive: false
       }).addTo(map);
     }
 
+    const desiredMode = navigationActive ? 'arrow' : 'dot';
+    if (userLocationMarker && userLocationMarkerMode !== desiredMode) {
+      map.removeLayer(userLocationMarker);
+      userLocationMarker = null;
+    }
+
     if (userLocationMarker) {
       userLocationMarker.setLatLng(latlng);
+    } else if (desiredMode === 'arrow') {
+      userLocationMarker = L.marker(latlng, {
+        icon: navigationPositionIcon(),
+        keyboard: false,
+        interactive: false,
+        zIndexOffset: 1400
+      }).addTo(map);
+      userLocationMarkerMode = 'arrow';
     } else {
       userLocationMarker = L.circleMarker(latlng, {
         radius: 8,
@@ -2411,9 +2556,13 @@
         fillColor: '#1677ff',
         fillOpacity: 1
       }).addTo(map);
+      userLocationMarkerMode = 'dot';
       userLocationMarker.bindTooltip('Twoja lokalizacja', { direction: 'top', offset: [0, -8] });
     }
+
+    if (navigationActive) applyNavigationMarkerHeading(position, null, false);
   }
+
 
   function hideNearbyAlert() {
     clearTimeout(nearbyAlertTimer);
@@ -2510,13 +2659,15 @@
     const lon = Number(position.coords.longitude);
     if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
 
-    // v1035: skala mapy pozostaje dokładnie taka, jak ustawił ją użytkownik.
-    // Kropka może swobodnie przesuwać się po ekranie, ale po dojściu do strefy
-    // przy krawędzi mapa przesuwa się tak, aby bieżąca pozycja wróciła do środka.
     const point = map.latLngToContainerPoint([lat, lon]);
     const size = map.getSize();
-    const marginX = Math.min(FOLLOW_EDGE_MARGIN_PX, Math.max(40, size.x * 0.14));
-    const marginY = Math.min(FOLLOW_EDGE_MARGIN_PX, Math.max(40, size.y * 0.14));
+    const navFollow = navigationActive;
+    const marginX = navFollow
+      ? Math.max(70, size.x * 0.27)
+      : Math.min(FOLLOW_EDGE_MARGIN_PX, Math.max(40, size.x * 0.14));
+    const marginY = navFollow
+      ? Math.max(60, size.y * 0.25)
+      : Math.min(FOLLOW_EDGE_MARGIN_PX, Math.max(40, size.y * 0.14));
     const reachedEdgeZone =
       point.x <= marginX ||
       point.x >= size.x - marginX ||
@@ -2526,15 +2677,14 @@
     if (!reachedEdgeZone || mapAutoRecenterInProgress) return;
 
     mapAutoRecenterInProgress = true;
-    const releaseRecenter = () => {
-      mapAutoRecenterInProgress = false;
-    };
-
+    const releaseRecenter = () => { mapAutoRecenterInProgress = false; };
     map.once('moveend', releaseRecenter);
-    map.panTo([lat, lon], { animate: true, duration: 0.4, noMoveStart: true });
-    // Zabezpieczenie na wypadek, gdyby konkretna przeglądarka nie wysłała moveend.
-    setTimeout(releaseRecenter, 700);
+    mapProgrammaticMove = true;
+    map.panTo([lat, lon], { animate: true, duration: navFollow ? 0.2 : 0.4, noMoveStart: true });
+    mapProgrammaticMove = false;
+    setTimeout(releaseRecenter, navFollow ? 420 : 700);
   }
+
 
   function handleMonitoredPosition(position) {
     lastMonitorPosition = position;
@@ -2807,10 +2957,13 @@
       const { latitude, longitude, accuracy } = position.coords;
       mapAutoFollowEnabled = true;
       mapProgrammaticMove = true;
-      map.setView([latitude, longitude], 15, { animate: true });
+      map.setView([latitude, longitude], navigationActive ? navigationZoomForMode(activeRouteMode) : 15, { animate: true });
       mapProgrammaticMove = false;
       setLocationButtonState('active');
-      showLocationMessage(`Wycentrowano na Twojej pozycji (dokładność ok. ${Math.round(accuracy || 0)} m).`);
+      showLocationMessage(navigationActive
+        ? `Widok nawigacji wycentrowany blisko drogi (dokładność GPS ok. ${Math.round(accuracy || 0)} m).`
+        : `Wycentrowano na Twojej pozycji (dokładność ok. ${Math.round(accuracy || 0)} m).`
+      );
     } catch (error) {
       setLocationButtonState('idle');
       showLocationMessage(geolocationErrorText(error), true);
@@ -2947,6 +3100,7 @@
       if (map && userLocationMarker) {
         map.removeLayer(userLocationMarker);
         userLocationMarker = null;
+        userLocationMarkerMode = 'dot';
       }
       if (map && userAccuracyCircle) {
         map.removeLayer(userAccuracyCircle);
@@ -3415,7 +3569,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1053', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1054', {
           scope: './',
           updateViaCache: 'none'
         });

@@ -46,12 +46,18 @@
     }
     .my-places-transfer-button:active { transform: translateY(1px); }
     .my-places-transfer-button:disabled { opacity: .55; cursor: default; }
+    @media (max-width: 480px) {
+      .map-maneuver-overlay { left: calc(var(--map-content-left, 0px) + 70px) !important; width: calc(100vw - var(--map-content-left, 0px) - 82px) !important; max-width: calc(100% - var(--map-content-left, 0px) - 82px) !important; }
+      .map-maneuver-arrow { flex-basis: 56px !important; width: 56px !important; height: 56px !important; }
+      .map-maneuver-instruction { font-size: 17px; }
+    }
+
     @media (orientation: landscape) and (max-height: 650px) {
       .my-places-transfer { flex-direction: column; }
       .my-places-transfer-button { min-height: 38px; }
     }
   
-    /* v1053: czytelniejsze wskazówki ronda i awaryjny kierunek, gdy OSM nie ma danych o pasach. */
+    /* v1054: czytelniejsze wskazówki ronda i awaryjny kierunek, gdy OSM nie ma danych o pasach. */
     .roundabout-nav-svg {
       display: block;
       width: 100%;
@@ -80,6 +86,97 @@
       padding-inline: 8px;
       border-style: dashed;
     }
+
+
+    /* v1054: kompaktowy panel manewru podobny do klasycznej nawigacji samochodowej. */
+    .map-maneuver-overlay[hidden] { display: none !important; }
+    .map-maneuver-overlay {
+      position: absolute !important;
+      display: block !important;
+      z-index: 1200 !important;
+      top: calc(var(--map-content-top, 0px) + 12px) !important;
+      left: calc(var(--map-content-left, 0px) + 84px) !important;
+      right: auto !important;
+      bottom: auto !important;
+      transform: none !important;
+      width: min(330px, calc(100vw - var(--map-content-left, 0px) - 96px)) !important;
+      max-width: calc(100% - var(--map-content-left, 0px) - 96px) !important;
+      height: auto !important;
+      padding: 10px 12px 9px !important;
+      border: 2px solid rgba(255,255,255,.75) !important;
+      border-radius: 16px !important;
+      background: rgba(12, 91, 78, .96) !important;
+      color: #fff !important;
+      box-shadow: 0 4px 14px rgba(0,0,0,.28) !important;
+      pointer-events: none;
+    }
+    .map-maneuver-main { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .map-maneuver-arrow {
+      flex: 0 0 66px !important;
+      width: 66px !important;
+      height: 66px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 52px !important;
+      line-height: 1 !important;
+      color: #fff !important;
+      background: transparent !important;
+      border: 0 !important;
+      box-shadow: none !important;
+    }
+    .map-maneuver-copy { min-width: 0; flex: 1 1 auto; }
+    .map-maneuver-distance {
+      font-size: 23px !important;
+      line-height: 1 !important;
+      font-weight: 900 !important;
+      margin: 0 0 4px !important;
+      color: #fff !important;
+      background: transparent !important;
+      padding: 0 !important;
+      border: 0 !important;
+    }
+    .map-maneuver-instruction { display: block; font-size: 19px; line-height: 1.08; font-weight: 900; }
+    .map-maneuver-road-row { display: flex; align-items: center; gap: 7px; margin-top: 5px; min-height: 22px; }
+    .map-maneuver-road-ref {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-width: 31px; min-height: 20px; padding: 1px 5px;
+      border: 2px solid rgba(255,255,255,.9); border-radius: 4px;
+      background: #b52d36; color: #fff; font-size: 12px; font-weight: 900; line-height: 1;
+    }
+    .map-maneuver-road-ref[hidden] { display: none !important; }
+    .map-maneuver-road-ref.is-motorway { background: #16784b; }
+    .map-maneuver-road { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; font-weight: 800; }
+    .maneuver-nav-svg {
+      width: 100%; height: 100%; display: block; overflow: visible; color: currentColor;
+      fill: none; stroke: currentColor; stroke-width: 9; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .maneuver-nav-svg text { stroke: none; }
+    .roundabout-nav-svg { max-width: none; max-height: none; }
+    .navigation-arrow .maneuver-nav-svg { width: 52px; height: 52px; margin: auto; }
+    .map-maneuver-overlay .map-lanes {
+      margin-top: 8px !important; padding-top: 7px !important; border-top: 1px solid rgba(255,255,255,.28) !important;
+    }
+
+    /* v1054: strzałka na mapie jest bieżącą pozycją i obraca się zgodnie z kierunkiem jazdy. */
+    .navigation-position-icon { background: transparent !important; border: 0 !important; }
+    .navigation-position-arrow {
+      width: 48px; height: 48px; transform-origin: 50% 50%;
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,.42));
+      transition: transform .18s linear;
+    }
+    .navigation-position-arrow svg { display: block; width: 48px; height: 48px; overflow: visible; }
+    .navigation-position-arrow-outline { fill: #fff; stroke: #fff; stroke-width: 5; stroke-linejoin: round; }
+    .navigation-position-arrow-fill { fill: #1976e8; stroke: #1976e8; stroke-width: 1; stroke-linejoin: round; }
+
+    @media (orientation: landscape) and (max-height: 650px) {
+      .map-maneuver-overlay { width: min(315px, calc(100vw - var(--map-content-left, 0px) - 96px)) !important; }
+      .map-maneuver-arrow { flex-basis: 58px !important; width: 58px !important; height: 58px !important; }
+      .map-maneuver-distance { font-size: 21px !important; }
+      .map-maneuver-instruction { font-size: 17px; }
+      .navigation-position-arrow, .navigation-position-arrow svg { width: 44px; height: 44px; }
+    }
+
 </style>
 </head>
 <body>
@@ -90,7 +187,7 @@
       <button class="main-button main-button-my-places" id="myPlacesButton" type="button">MOJE MIEJSCA</button>
     </div>
 
-    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1053</div>
+    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1054</div>
   </main>
 
   <section class="add-screen" id="addScreen" aria-label="Dodaj miejsce" hidden>
@@ -99,7 +196,7 @@
         <button class="add-back-button" id="addBackButton" type="button" aria-label="Wróć do ekranu startowego">← COFNIJ</button>
         <div class="add-title-wrap">
           <h1 class="add-title">Dodaj miejsce</h1>
-          <div class="add-version" aria-hidden="true">v1053</div>
+          <div class="add-version" aria-hidden="true">v1054</div>
         </div>
       </div>
 
@@ -190,7 +287,7 @@
         <button class="edit-back-button" id="editBackButton" type="button" aria-label="Wróć do mapy">← COFNIJ</button>
         <div class="edit-title-wrap">
           <h1 class="edit-title">Edytuj punkt</h1>
-          <div class="edit-version" aria-hidden="true">v1053</div>
+          <div class="edit-version" aria-hidden="true">v1054</div>
         </div>
       </div>
 
@@ -353,8 +450,17 @@
     </div>
 
     <div class="map-maneuver-overlay" id="mapManeuverOverlay" hidden aria-hidden="true">
-      <div class="map-maneuver-arrow" id="mapManeuverArrow">↑</div>
-      <div class="map-maneuver-distance" id="mapManeuverDistance">0 m</div>
+      <div class="map-maneuver-main">
+        <div class="map-maneuver-arrow" id="mapManeuverArrow">↑</div>
+        <div class="map-maneuver-copy">
+          <div class="map-maneuver-distance" id="mapManeuverDistance">0 m</div>
+          <strong class="map-maneuver-instruction" id="mapManeuverInstruction"></strong>
+          <div class="map-maneuver-road-row">
+            <span class="map-maneuver-road-ref" id="mapManeuverRoadRef" hidden></span>
+            <span class="map-maneuver-road" id="mapManeuverRoad"></span>
+          </div>
+        </div>
+      </div>
       <div class="map-lanes" id="mapLanes" hidden></div>
     </div>
 
@@ -410,7 +516,7 @@
 
     <div class="osm-status" id="osmStatus" role="status" aria-live="polite" hidden></div>
     <div class="location-message" id="locationMessage" role="status" aria-live="polite" hidden></div>
-    <div class="map-version" aria-hidden="true">v1053</div>
+    <div class="map-version" aria-hidden="true">v1054</div>
   </section>
 
   <aside class="nearby-alert" id="nearbyAlert" role="alertdialog" aria-live="assertive" aria-label="Atrakcja w pobliżu" hidden>
