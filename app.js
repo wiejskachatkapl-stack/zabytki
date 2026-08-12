@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1061';
+  const APP_VERSION = 'v1062';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1061';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1062';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const ROUTE_MODE_KEY = 'tourmap_route_mode_v1';
   const ROUTE_MODES = {
@@ -31,7 +31,7 @@
     }
   };
   const FOLLOW_EDGE_MARGIN_PX = 92;
-  const NAVIGATION_CAR_ZOOM = 18;
+  const NAVIGATION_CAR_ZOOM = 17;
   const NAVIGATION_OTHER_ZOOM = 17;
   const ROUTE_DISPLAY_RADIUS = 20000;
   const ALERT_COOLDOWN_MS = 12 * 60 * 60 * 1000;
@@ -3003,18 +3003,48 @@
     return (toDeg(Math.atan2(y, x)) + 360) % 360;
   }
 
+  function routePointAtProgress(progressMeters) {
+    if (!routeCoordinates.length || !navigationRouteCumulative.length) return null;
+    const target = Math.max(0, Math.min(Number(progressMeters) || 0, navigationRouteCumulative[navigationRouteCumulative.length - 1] || 0));
+
+    let low = 0;
+    let high = navigationRouteCumulative.length - 1;
+    while (low < high) {
+      const mid = Math.floor((low + high) / 2);
+      if (Number(navigationRouteCumulative[mid] || 0) < target) low = mid + 1;
+      else high = mid;
+    }
+
+    const endIndex = Math.max(1, low);
+    const startIndex = Math.max(0, endIndex - 1);
+    const a = routeCoordinates[startIndex];
+    const b = routeCoordinates[endIndex] || a;
+    if (!a || !b) return null;
+    const startMeters = Number(navigationRouteCumulative[startIndex] || 0);
+    const endMeters = Number(navigationRouteCumulative[endIndex] || startMeters);
+    const span = Math.max(0.01, endMeters - startMeters);
+    const ratio = Math.max(0, Math.min(1, (target - startMeters) / span));
+    return [
+      Number(a[1]) + (Number(b[1]) - Number(a[1])) * ratio,
+      Number(a[0]) + (Number(b[0]) - Number(a[0])) * ratio
+    ];
+  }
+
   function routeHeadingFromNearest(nearest) {
     if (!routeCoordinates.length || !nearest) return null;
-    const startIndex = Math.max(0, Math.min(routeCoordinates.length - 2, Number(nearest.index) || 0));
-    const a = routeCoordinates[startIndex];
-    let endIndex = Math.min(routeCoordinates.length - 1, startIndex + 1);
-    let b = routeCoordinates[endIndex];
-    while (endIndex < routeCoordinates.length - 1 && a && b && distanceMeters(Number(a[1]), Number(a[0]), Number(b[1]), Number(b[0])) < 20) {
-      endIndex += 1;
-      b = routeCoordinates[endIndex];
-    }
-    if (!a || !b) return null;
-    return bearingDegrees(Number(a[1]), Number(a[0]), Number(b[1]), Number(b[0]));
+    const snapped = navigationSnappedLatLng(nearest);
+    if (!snapped) return null;
+
+    // Kierunek wyliczamy z punktu przed samochodem, a nie z jednego krótkiego
+    // segmentu geometrii. To usuwa drobne, szybkie skoki kierunku na mapie.
+    const currentProgress = Math.max(0, Number(nearest.progress) || 0);
+    const maneuverClose = Number.isFinite(navigationCurrentManeuverDistance) && navigationCurrentManeuverDistance < 180;
+    const lookAhead = maneuverClose ? 24 : 48;
+    const ahead = routePointAtProgress(currentProgress + lookAhead);
+    if (!ahead) return null;
+    const distanceAhead = distanceMeters(Number(snapped[0]), Number(snapped[1]), Number(ahead[0]), Number(ahead[1]));
+    if (distanceAhead < 4) return null;
+    return bearingDegrees(Number(snapped[0]), Number(snapped[1]), Number(ahead[0]), Number(ahead[1]));
   }
 
   function smoothHeading(nextHeading, force = false) {
@@ -3024,8 +3054,15 @@
       navigationHeadingDegrees = next;
       return next;
     }
+
     const delta = ((next - navigationHeadingDegrees + 540) % 360) - 180;
-    navigationHeadingDegrees = (navigationHeadingDegrees + delta * 0.42 + 360) % 360;
+    // Profesjonalniejszy efekt: mniejsza reakcja na pojedynczy skok GPS/geometrii,
+    // ale bez opóźniania prawdziwego zakrętu. Maksymalny obrót na jeden fix GPS
+    // ograniczamy, dzięki czemu mapa nie przeskakuje o 90/180 stopni naraz.
+    const gain = Math.abs(delta) > 55 ? 0.18 : 0.24;
+    const maxStep = force ? 32 : 12;
+    const step = Math.max(-maxStep, Math.min(maxStep, delta * gain));
+    navigationHeadingDegrees = (navigationHeadingDegrees + step + 360) % 360;
     return navigationHeadingDegrees;
   }
 
@@ -3073,13 +3110,17 @@
 
     if (map && typeof map.setBearing === 'function') {
       try {
+        // leaflet-rotate obraca pane mapy o podany kąt. Aby kierunek jazdy
+        // (np. 90° = wschód) znalazł się na górze ekranu, mapa musi zostać
+        // obrócona przeciwnie: -heading, czyli 360-heading.
+        const targetBearing = (360 - smoothed) % 360;
         const previous = Number.isFinite(navigationLastMapBearing)
           ? navigationLastMapBearing
           : Number(map.getBearing?.() || 0);
-        const delta = signedBearingDelta(previous, smoothed);
-        if (force || !Number.isFinite(delta) || Math.abs(delta) >= 1.2) {
-          map.setBearing(smoothed);
-          navigationLastMapBearing = smoothed;
+        const delta = signedBearingDelta(previous, targetBearing);
+        if (force || !Number.isFinite(delta) || Math.abs(delta) >= 0.45) {
+          map.setBearing(targetBearing);
+          navigationLastMapBearing = targetBearing;
         }
         mapRotated = true;
       } catch (error) {
@@ -3089,6 +3130,7 @@
 
     if (userLocationMarkerMode === 'arrow' && userLocationMarker) {
       const element = userLocationMarker.getElement?.()?.querySelector('.navigation-position-arrow');
+      // Przy obróconej mapie strzałka zawsze wskazuje idealnie w górę.
       if (element) element.style.transform = `rotate(${mapRotated ? 0 : smoothed.toFixed(1)}deg)`;
     }
     return smoothed;
@@ -3270,7 +3312,7 @@
 
   function navigationNeedsDetailZoom(stepIndex, step, distanceToStep) {
     if (activeRouteMode !== 'car' || !step || !Number.isFinite(Number(distanceToStep))) return false;
-    if (Number(distanceToStep) > 330) return false;
+    if (Number(distanceToStep) > 260) return false;
     if (isRoundaboutManeuver(step)) return true;
     if (navigationStepLaneCount(stepIndex) >= 2) return true;
     if (navigationStepRoadChoices(step) >= 4) return true;
@@ -3284,7 +3326,7 @@
     const index = navigationLastStepIndex >= 0 ? navigationLastStepIndex : 0;
     const step = navigationSteps[index];
     return navigationNeedsDetailZoom(index, step, navigationCurrentManeuverDistance)
-      ? Math.min(20, map?.getMaxZoom?.() || 20)
+      ? Math.min(18.5, map?.getMaxZoom?.() || 18.5)
       : base;
   }
 
@@ -3300,16 +3342,31 @@
     const lon = Number(followed?.lng ?? rawLon);
     if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
 
-    // W trybie nawigacji pozycja jest stale wyśrodkowana, kierunek jazdy pozostaje u góry,
-    // a przed rondem / złożonym skrzyżowaniem automatycznie włączamy dokładniejszy zoom.
+    // W trybie nawigacji jedziemy zawsze "do góry". Kamera jest lekko przesunięta
+    // przed pojazd, aby na ekranie było więcej drogi przed nami, a ruch mapy jest
+    // animowany zamiast wykonywać twardy setView przy każdym odczycie GPS.
     if (navigationActive) {
       if (mapAutoRecenterInProgress) return;
       const targetZoom = navigationFollowZoom();
+      const detailView = targetZoom > navigationZoomForMode(activeRouteMode) + 0.2;
+      const cameraAheadMeters = detailView ? 18 : 42;
+      const ahead = routePointAtProgress(navigationCurrentProgress + cameraAheadMeters);
+      const cameraLat = Number(ahead?.[0] ?? lat);
+      const cameraLon = Number(ahead?.[1] ?? lon);
+      const currentZoom = Number(map.getZoom?.() ?? targetZoom);
+      const zoomChanged = Math.abs(currentZoom - targetZoom) >= 0.25;
+
       mapAutoRecenterInProgress = true;
+      const releaseRecenter = () => { mapAutoRecenterInProgress = false; };
+      map.once('moveend', releaseRecenter);
       mapProgrammaticMove = true;
-      map.setView([lat, lon], targetZoom, { animate: false, noMoveStart: true });
+      if (zoomChanged) {
+        map.setView([cameraLat, cameraLon], targetZoom, { animate: true, duration: 0.28, noMoveStart: true });
+      } else {
+        map.panTo([cameraLat, cameraLon], { animate: true, duration: 0.34, easeLinearity: 0.22, noMoveStart: true });
+      }
       mapProgrammaticMove = false;
-      requestAnimationFrame(() => { mapAutoRecenterInProgress = false; });
+      setTimeout(releaseRecenter, 520);
       return;
     }
 
@@ -3491,6 +3548,8 @@
       attributionControl: true,
       minZoom: 3,
       maxZoom: 20,
+      zoomSnap: 0.5,
+      zoomDelta: 0.5,
       rotate: true,
       rotateControl: false,
       touchRotate: false,
@@ -4261,7 +4320,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1061', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1062', {
           scope: './',
           updateViaCache: 'none'
         });
