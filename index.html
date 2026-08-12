@@ -57,7 +57,7 @@
       .my-places-transfer-button { min-height: 38px; }
     }
   
-    /* v1054: czytelniejsze wskazówki ronda i awaryjny kierunek, gdy OSM nie ma danych o pasach. */
+    /* v1055: czytelniejsze wskazówki ronda i awaryjny kierunek, gdy OSM nie ma danych o pasach. */
     .roundabout-nav-svg {
       display: block;
       width: 100%;
@@ -88,7 +88,7 @@
     }
 
 
-    /* v1054: kompaktowy panel manewru podobny do klasycznej nawigacji samochodowej. */
+    /* v1055: kompaktowy panel manewru podobny do klasycznej nawigacji samochodowej. */
     .map-maneuver-overlay[hidden] { display: none !important; }
     .map-maneuver-overlay {
       position: absolute !important;
@@ -158,7 +158,7 @@
       margin-top: 8px !important; padding-top: 7px !important; border-top: 1px solid rgba(255,255,255,.28) !important;
     }
 
-    /* v1054: strzałka na mapie jest bieżącą pozycją i obraca się zgodnie z kierunkiem jazdy. */
+    /* v1055: strzałka na mapie jest bieżącą pozycją i obraca się zgodnie z kierunkiem jazdy. */
     .navigation-position-icon { background: transparent !important; border: 0 !important; }
     .navigation-position-arrow {
       width: 48px; height: 48px; transform-origin: 50% 50%;
@@ -177,6 +177,135 @@
       .navigation-position-arrow, .navigation-position-arrow svg { width: 44px; height: 44px; }
     }
 
+
+    /* v1055: uproszczony interfejs podczas aktywnej nawigacji. */
+    .navigation-attractions-wrap[hidden],
+    .navigation-attractions-overlay[hidden] { display: none !important; }
+    .navigation-attractions-wrap {
+      width: 100%;
+      margin-top: 8px;
+    }
+    .navigation-attractions-button {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 11px;
+      background: rgba(29, 111, 64, .96);
+      color: #fff;
+      font: inherit;
+      font-weight: 900;
+      letter-spacing: .035em;
+      cursor: pointer;
+    }
+    .navigation-attractions-button:active { transform: translateY(1px); }
+
+    .navigation-attractions-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 3200;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      background: rgba(5, 15, 9, .58);
+    }
+    .navigation-attractions-dialog {
+      width: min(520px, 96vw);
+      max-height: min(680px, 92vh);
+      overflow: auto;
+      border: 2px solid rgba(255,255,255,.72);
+      border-radius: 18px;
+      background: rgba(226, 235, 221, .98);
+      box-shadow: 0 12px 34px rgba(0,0,0,.38);
+      padding: 12px;
+      color: #13261a;
+    }
+    .navigation-attractions-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .navigation-attractions-head strong {
+      font-size: 18px;
+      font-weight: 900;
+    }
+    .navigation-attractions-close {
+      min-width: 42px;
+      min-height: 38px;
+      border: 0;
+      border-radius: 10px;
+      background: #193d2a;
+      color: #fff;
+      font: inherit;
+      font-size: 20px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+    .navigation-attractions-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 7px;
+    }
+    .navigation-attractions-filter {
+      min-height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 7px;
+      border: 2px solid #1f6d3b;
+      border-radius: 10px;
+      padding: 5px 8px;
+      background: #e8efe6;
+      color: #173220;
+      font: inherit;
+      font-weight: 800;
+      text-align: left;
+      cursor: pointer;
+    }
+    .navigation-attractions-filter img { width: 25px; height: 31px; object-fit: contain; flex: 0 0 auto; }
+    .navigation-attractions-filter.is-active { background: #299454; color: #fff; }
+    .navigation-attractions-filter.navigation-attractions-all {
+      grid-column: 1 / -1;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* Podczas jazdy legenda znika. Zostaje jeden przycisk ATRAKCJE i większe pole nawigacji. */
+    .map-screen.is-navigating #mapLegend { display: none !important; }
+    .map-screen.is-navigating #navigationAttractionsWrap { display: block !important; }
+    .map-screen.is-navigating #navigationPanel {
+      display: block !important;
+      margin-top: 8px !important;
+      min-height: 132px;
+      padding-bottom: 11px;
+    }
+    .map-screen.is-navigating #navigationPanel .navigation-main { display: none !important; }
+    .map-screen.is-navigating #navigationPanel .navigation-stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+    .map-screen.is-navigating #navigationPanel .navigation-stats > div:nth-child(3) { display: none !important; }
+    .map-screen.is-navigating #navigationPanel .navigation-destination-copy strong {
+      font-size: 18px;
+      line-height: 1.05;
+    }
+    .map-screen.is-navigating #navigationPanel .navigation-stats strong { font-size: 20px; }
+
+    /* v1055: jedna informacja o manewrze - zielona tablica na mapie. */
+    .map-maneuver-overlay .map-lanes.is-direction-only { display: none !important; }
+
+    @media (orientation: landscape) and (max-height: 650px) {
+      .navigation-attractions-wrap { margin-top: 5px; }
+      .navigation-attractions-button { min-height: 36px; }
+      .map-screen.is-navigating #navigationPanel { min-height: 110px; margin-top: 5px !important; padding: 7px !important; }
+      .map-screen.is-navigating #navigationPanel .navigation-destination-copy strong { font-size: 16px; }
+      .map-screen.is-navigating #navigationPanel .navigation-stats strong { font-size: 18px; }
+      .navigation-attractions-dialog { width: min(500px, 90vw); max-height: 88vh; }
+      .navigation-attractions-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .navigation-attractions-filter.navigation-attractions-all { grid-column: 1 / -1; }
+    }
+
 </style>
 </head>
 <body>
@@ -187,7 +316,7 @@
       <button class="main-button main-button-my-places" id="myPlacesButton" type="button">MOJE MIEJSCA</button>
     </div>
 
-    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1054</div>
+    <div class="app-version" id="appVersion" aria-label="Wersja aplikacji">v1055</div>
   </main>
 
   <section class="add-screen" id="addScreen" aria-label="Dodaj miejsce" hidden>
@@ -196,7 +325,7 @@
         <button class="add-back-button" id="addBackButton" type="button" aria-label="Wróć do ekranu startowego">← COFNIJ</button>
         <div class="add-title-wrap">
           <h1 class="add-title">Dodaj miejsce</h1>
-          <div class="add-version" aria-hidden="true">v1054</div>
+          <div class="add-version" aria-hidden="true">v1055</div>
         </div>
       </div>
 
@@ -287,7 +416,7 @@
         <button class="edit-back-button" id="editBackButton" type="button" aria-label="Wróć do mapy">← COFNIJ</button>
         <div class="edit-title-wrap">
           <h1 class="edit-title">Edytuj punkt</h1>
-          <div class="edit-version" aria-hidden="true">v1054</div>
+          <div class="edit-version" aria-hidden="true">v1055</div>
         </div>
       </div>
 
@@ -424,6 +553,10 @@
         <button class="map-legend-item is-active" type="button" data-map-filter="water" aria-pressed="true"><img src="assets/markers/water.png?v=1024" alt="" aria-hidden="true" />Atrakcja wodna</button>
       </div>
 
+      <div class="navigation-attractions-wrap" id="navigationAttractionsWrap" hidden>
+        <button class="navigation-attractions-button" id="navigationAttractionsButton" type="button" aria-haspopup="dialog" aria-controls="navigationAttractionsOverlay">ATRAKCJE</button>
+      </div>
+
       <section class="navigation-panel" id="navigationPanel" aria-label="Nawigacja" hidden>
         <div class="navigation-destination-row">
           <div class="navigation-destination-copy">
@@ -445,6 +578,27 @@
             <strong id="navigationInstruction">Jedź zgodnie z trasą</strong>
             <span id="navigationRoad"></span>
           </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="navigation-attractions-overlay" id="navigationAttractionsOverlay" hidden>
+      <section class="navigation-attractions-dialog" role="dialog" aria-modal="true" aria-labelledby="navigationAttractionsTitle">
+        <div class="navigation-attractions-head">
+          <strong id="navigationAttractionsTitle">ATRAKCJE NA MAPIE</strong>
+          <button class="navigation-attractions-close" id="navigationAttractionsClose" type="button" aria-label="Zamknij wybór atrakcji">×</button>
+        </div>
+        <div class="navigation-attractions-grid" id="navigationAttractionsGrid">
+          <button class="navigation-attractions-filter navigation-attractions-all is-active" type="button" data-navigation-filter="all" aria-pressed="true">WSZYSTKIE</button>
+          <button class="navigation-attractions-filter is-active" type="button" data-navigation-filter="castle" aria-pressed="true"><img src="assets/markers/castle.png?v=1007" alt="" aria-hidden="true" />Zamek</button>
+          <button class="navigation-attractions-filter is-active" type="button" data-navigation-filter="ruins" aria-pressed="true"><img src="assets/markers/ruins.png?v=1007" alt="" aria-hidden="true" />Ruiny</button>
+          <button class="navigation-attractions-filter is-active" type="button" data-navigation-filter="museum" aria-pressed="true"><img src="assets/markers/museum.png?v=1007" alt="" aria-hidden="true" />Muzeum</button>
+          <button class="navigation-attractions-filter is-active" type="button" data-navigation-filter="nature" aria-pressed="true"><img src="assets/markers/nature.png?v=1007" alt="" aria-hidden="true" />Pomnik przyrody</button>
+          <button class="navigation-attractions-filter is-active" type="button" data-navigation-filter="pttk" aria-pressed="true"><img src="assets/markers/pttk.png?v=1007" alt="" aria-hidden="true" />Schronisko PTTK</button>
+          <button class="navigation-attractions-filter is-active" type="button" data-navigation-filter="cave" aria-pressed="true"><img src="assets/markers/cave.png?v=1024" alt="" aria-hidden="true" />Jaskinia</button>
+          <button class="navigation-attractions-filter is-active" type="button" data-navigation-filter="reserve" aria-pressed="true"><img src="assets/markers/reserve.png?v=1024" alt="" aria-hidden="true" />Rezerwat przyrody</button>
+          <button class="navigation-attractions-filter is-active" type="button" data-navigation-filter="historic" aria-pressed="true"><img src="assets/markers/historic.png?v=1024" alt="" aria-hidden="true" />Zabytkowe miejsce</button>
+          <button class="navigation-attractions-filter is-active" type="button" data-navigation-filter="water" aria-pressed="true"><img src="assets/markers/water.png?v=1024" alt="" aria-hidden="true" />Atrakcja wodna</button>
         </div>
       </section>
     </div>
@@ -516,7 +670,7 @@
 
     <div class="osm-status" id="osmStatus" role="status" aria-live="polite" hidden></div>
     <div class="location-message" id="locationMessage" role="status" aria-live="polite" hidden></div>
-    <div class="map-version" aria-hidden="true">v1054</div>
+    <div class="map-version" aria-hidden="true">v1055</div>
   </section>
 
   <aside class="nearby-alert" id="nearbyAlert" role="alertdialog" aria-live="assertive" aria-label="Atrakcja w pobliżu" hidden>
@@ -534,6 +688,6 @@
   </aside>
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script src="app.js?v=1053"></script>
+  <script src="app.js?v=1055"></script>
 </body>
 </html>

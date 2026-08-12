@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1054';
+  const APP_VERSION = 'v1055';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1054';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1055';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const ROUTE_MODE_KEY = 'tourmap_route_mode_v1';
   const ROUTE_MODES = {
@@ -122,6 +122,11 @@
   const importMyPlacesButton = document.getElementById('importMyPlacesButton');
   const importMyPlacesInput = document.getElementById('importMyPlacesInput');
   const mapLegend = document.getElementById('mapLegend');
+  const navigationAttractionsWrap = document.getElementById('navigationAttractionsWrap');
+  const navigationAttractionsButton = document.getElementById('navigationAttractionsButton');
+  const navigationAttractionsOverlay = document.getElementById('navigationAttractionsOverlay');
+  const navigationAttractionsClose = document.getElementById('navigationAttractionsClose');
+  const navigationAttractionsGrid = document.getElementById('navigationAttractionsGrid');
   const attractionPreviewButton = document.getElementById('attractionPreviewButton');
   const attractionPreviewCount = document.getElementById('attractionPreviewCount');
   const attractionPreviewOverlay = document.getElementById('attractionPreviewOverlay');
@@ -957,10 +962,15 @@
   }
 
   function updateMapLegendUi() {
-    if (!mapLegend) return;
     const allActive = allAttractionFiltersActive();
-    mapLegend.querySelectorAll('[data-map-filter]').forEach((button) => {
+    mapLegend?.querySelectorAll('[data-map-filter]').forEach((button) => {
       const value = button.dataset.mapFilter;
+      const active = value === 'all' ? allActive : activeAttractionFilters.has(value);
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', active ? 'true' : 'false');
+    });
+    navigationAttractionsGrid?.querySelectorAll('[data-navigation-filter]').forEach((button) => {
+      const value = button.dataset.navigationFilter;
       const active = value === 'all' ? allActive : activeAttractionFilters.has(value);
       button.classList.toggle('is-active', active);
       button.setAttribute('aria-pressed', active ? 'true' : 'false');
@@ -1833,7 +1843,7 @@
     }
     const type = String(step?.maneuver?.type || '').toLowerCase();
     const distance = Number(distanceToStep);
-    if (!Number.isFinite(distance) || distance > 1200 || type === 'arrive') {
+    if (!Number.isFinite(distance) || distance > 400 || type === 'arrive') {
       hideManeuverOverlay();
       return;
     }
@@ -2015,7 +2025,7 @@
     const snappedLon = Number(a?.[0]) + (Number(b?.[0]) - Number(a?.[0])) * t;
     const snappedLat = Number(a?.[1]) + (Number(b?.[1]) - Number(a?.[1])) * t;
 
-    // v1054: linia zaczyna się w punkcie trasy najbliższym pozycji, a nie w surowym GPS.
+    // v1055: linia zaczyna się w punkcie trasy najbliższym pozycji, a nie w surowym GPS.
     // Dzięki temu nie powstaje niebieski łącznik/ogon od strzałki do drogi.
     const futureIndex = Math.min(
       routeCoordinates.length - 1,
@@ -2066,6 +2076,39 @@
     navigationVoiceButton.setAttribute('aria-pressed', navigationVoiceEnabled ? 'true' : 'false');
   }
 
+  function setNavigationLayout(active) {
+    mapScreen?.classList.toggle('is-navigating', Boolean(active));
+    if (navigationAttractionsWrap) navigationAttractionsWrap.hidden = !active;
+    if (!active) hideNavigationAttractions();
+    syncMapContentTop();
+    requestAnimationFrame(() => map?.invalidateSize?.());
+  }
+
+  function showNavigationAttractions() {
+    if (!navigationActive || !navigationAttractionsOverlay) return;
+    updateMapLegendUi();
+    navigationAttractionsOverlay.hidden = false;
+    requestAnimationFrame(() => navigationAttractionsClose?.focus({ preventScroll: true }));
+  }
+
+  function hideNavigationAttractions() {
+    if (navigationAttractionsOverlay) navigationAttractionsOverlay.hidden = true;
+  }
+
+  function navigateDirectlyTo(destination) {
+    if (!destination || !Number.isFinite(Number(destination.lat)) || !Number.isFinite(Number(destination.lon))) return;
+    const target = {
+      name: String(destination.name || 'Atrakcja'),
+      lat: Number(destination.lat),
+      lon: Number(destination.lon)
+    };
+    map?.closePopup();
+    hideAttractionPreview();
+    hideNavigationAttractions();
+    if (routeDestinationInput) routeDestinationInput.value = target.name;
+    planRouteToDestination(target, { startNavigation: true, mode: routeTravelMode });
+  }
+
   function stopNavigation({ keepRoute = false } = {}) {
     navigationActive = false;
     navigationArrived = false;
@@ -2078,6 +2121,7 @@
     navigationLastRoutePaintPosition = null;
     if ('speechSynthesis' in window) window.speechSynthesis.cancel();
     if (navigationPanel) navigationPanel.hidden = true;
+    setNavigationLayout(false);
     if (navigationDestination) navigationDestination.textContent = '—';
     hideManeuverOverlay();
     if (lastMonitorPosition?.coords) updateMonitoredLocationVisual(lastMonitorPosition);
@@ -2099,6 +2143,7 @@
     if (!wasAlreadyNavigating) navigationVoiceEnabled = true;
     mapAutoFollowEnabled = true;
     if (navigationPanel) navigationPanel.hidden = false;
+    setNavigationLayout(true);
     if (navigationDestination) navigationDestination.textContent = routeDestination.name || 'Cel podróży';
     updateNavigationModeUi();
     if (navigationKicker) navigationKicker.textContent = `NAWIGACJA · ${routeModeMeta(activeRouteMode).label}`;
@@ -2238,6 +2283,7 @@
       navigationRerouteInFlight = false;
       if ('speechSynthesis' in window) window.speechSynthesis.cancel();
       if (navigationPanel) navigationPanel.hidden = true;
+      setNavigationLayout(false);
       if (navigationDestination) navigationDestination.textContent = '—';
       hideManeuverOverlay();
       if (lastMonitorPosition?.coords) updateMonitoredLocationVisual(lastMonitorPosition);
@@ -3381,9 +3427,7 @@
       event.stopPropagation();
       const attraction = getOsmAttractionById(routeOsmButton.dataset.routeOsmId);
       if (attraction) {
-        map?.closePopup();
-        if (routeDestinationInput) routeDestinationInput.value = attraction.name || '';
-        showRouteModeChooser({
+        navigateDirectlyTo({
           name: attraction.name || 'Atrakcja',
           lat: Number(attraction.lat),
           lon: Number(attraction.lon)
@@ -3398,9 +3442,7 @@
       event.stopPropagation();
       const point = findPoint(routePointButton.dataset.routePointId);
       if (point) {
-        map?.closePopup();
-        if (routeDestinationInput) routeDestinationInput.value = point.name || '';
-        showRouteModeChooser({
+        navigateDirectlyTo({
           name: point.name || (CATEGORY_INFO[point.category]?.label ?? 'Moje miejsce'),
           lat: Number(point.lat),
           lon: Number(point.lon)
@@ -3434,6 +3476,14 @@
     button.addEventListener('click', () => toggleAttractionFilter(button.dataset.mapFilter));
   });
   updateMapLegendUi();
+  navigationAttractionsGrid?.querySelectorAll('[data-navigation-filter]').forEach((button) => {
+    button.addEventListener('click', () => toggleAttractionFilter(button.dataset.navigationFilter));
+  });
+  navigationAttractionsButton?.addEventListener('click', showNavigationAttractions);
+  navigationAttractionsClose?.addEventListener('click', hideNavigationAttractions);
+  navigationAttractionsOverlay?.addEventListener('click', (event) => {
+    if (event.target === navigationAttractionsOverlay) hideNavigationAttractions();
+  });
 
   routeModeButtons.forEach((button) => {
     button.addEventListener('click', () => startPendingRouteWithMode(button.dataset.routeMode));
@@ -3488,6 +3538,11 @@
       hideRouteModeChooser();
       return;
     }
+    if (navigationAttractionsOverlay && !navigationAttractionsOverlay.hidden) {
+      hideNavigationAttractions();
+      navigationAttractionsButton?.focus({ preventScroll: true });
+      return;
+    }
     if (attractionPreviewOverlay && !attractionPreviewOverlay.hidden) {
       hideAttractionPreview();
       attractionPreviewButton?.focus({ preventScroll: true });
@@ -3501,9 +3556,7 @@
     );
     if (!item) return;
 
-    hideAttractionPreview();
-    if (routeDestinationInput) routeDestinationInput.value = item.attraction.name || '';
-    showRouteModeChooser({
+    navigateDirectlyTo({
       name: item.attraction.name || (CATEGORY_INFO[item.attraction.category]?.label ?? 'Atrakcja'),
       lat: Number(item.attraction.lat),
       lon: Number(item.attraction.lon)
@@ -3569,7 +3622,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1054', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1055', {
           scope: './',
           updateViaCache: 'none'
         });

@@ -1,11 +1,11 @@
-const APP_VERSION = 'v1054';
+const APP_VERSION = 'v1055';
 const CACHE_NAME = `turystyczna-mapa-polski-${APP_VERSION}`;
 
 const APP_SHELL = [
   './',
   './index.html',
   './styles.css',
-  './app.js?v=1054',
+  './app.js?v=1055',
   './manifest.webmanifest',
   './assets/bg-desktop.png',
   './assets/bg-mobile.png',
@@ -22,7 +22,7 @@ const APP_SHELL = [
   './assets/markers/reserve.png',
   './assets/markers/historic.png',
   './assets/markers/water.png',
-  './data/atrakcje-polska.json?v=1054'
+  './data/atrakcje-polska.json?v=1055'
 ];
 
 self.addEventListener('install', (event) => {
@@ -66,7 +66,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // v1054: pliki wersjonowane i grafiki są obsługiwane cache-first.
+  // v1055: pliki wersjonowane i grafiki są obsługiwane cache-first.
   // Telefon nie pobiera i nie przetwarza ponownie tej samej dużej bazy przy każdym wejściu.
   event.respondWith(
     caches.match(event.request)
