@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1055';
+  const APP_VERSION = 'v1056';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1055';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1056';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const ROUTE_MODE_KEY = 'tourmap_route_mode_v1';
   const ROUTE_MODES = {
@@ -153,6 +153,11 @@
   const mapManeuverRoadRef = document.getElementById('mapManeuverRoadRef');
   const mapManeuverRoad = document.getElementById('mapManeuverRoad');
   const mapLanes = document.getElementById('mapLanes');
+  const routeAttractionsStatusPanel = document.getElementById('routeAttractionsStatusPanel');
+  const routeAttractionsStatusCount = document.getElementById('routeAttractionsStatusCount');
+  const routeAttractionsStatusRadius = document.getElementById('routeAttractionsStatusRadius');
+  const routeAttractionsStatusSummary = document.getElementById('routeAttractionsStatusSummary');
+  const routeAttractionsStatusList = document.getElementById('routeAttractionsStatusList');
 
   const nearbyAlert = document.getElementById('nearbyAlert');
   const nearbyAlertIcon = document.getElementById('nearbyAlertIcon');
@@ -254,6 +259,9 @@
   let navigationLastRoutePaintPosition = null;
   let navigationHeadingDegrees = 0;
   let routeAttractionRefreshSequence = 0;
+  let navigationCurrentProgress = 0;
+  let routeAttractionsPanelSignature = '';
+  const ROUTE_ATTRACTION_PASSED_TOLERANCE_METERS = 35;
 
   if (versionElement) versionElement.textContent = APP_VERSION;
   updateOsmButtonUi();
@@ -900,6 +908,7 @@
       attractionPreviewItems = [];
       setAttractionPreviewButton(null);
       if (attractionPreviewOverlay && !attractionPreviewOverlay.hidden) renderAttractionPreviewList();
+      updateRouteAttractionsStatusPanel(position);
       return;
     }
 
@@ -916,7 +925,9 @@
       ? distanceMeters(latitude, longitude, lastPreviewPosition.lat, lastPreviewPosition.lon)
       : Infinity;
     const overlayOpen = attractionPreviewOverlay && !attractionPreviewOverlay.hidden;
-    if (!overlayOpen && moved < PREVIEW_MIN_MOVE_METERS && now - lastPreviewUpdateAt < PREVIEW_MIN_INTERVAL_MS) return;
+    const previewMoveThreshold = routeActive ? 80 : PREVIEW_MIN_MOVE_METERS;
+    const previewTimeThreshold = routeActive ? 8000 : PREVIEW_MIN_INTERVAL_MS;
+    if (!overlayOpen && moved < previewMoveThreshold && now - lastPreviewUpdateAt < previewTimeThreshold) return;
 
     try {
       const radius = getProximityRadiusMeters();
@@ -934,6 +945,7 @@
 
       setAttractionPreviewButton(attractionPreviewItems.length);
       if (attractionPreviewOverlay && !attractionPreviewOverlay.hidden) renderAttractionPreviewList();
+      updateRouteAttractionsStatusPanel(position);
     } catch (error) {
       console.warn('Nie udało się zaktualizować podglądu atrakcji:', error);
       attractionPreviewItems = [];
@@ -1375,20 +1387,25 @@
     return hours ? `${hours} h ${minutes} min` : `${minutes} min`;
   }
 
-  function routeDistanceToPointMeters(routeCoordinates, pointLat, pointLon) {
-    if (!Array.isArray(routeCoordinates) || routeCoordinates.length < 2) return Infinity;
+  function routeProjectionToPoint(routeCoordinates, pointLat, pointLon) {
+    if (!Array.isArray(routeCoordinates) || routeCoordinates.length < 2) {
+      return { distanceMeters: Infinity, progressMeters: 0, totalMeters: 0, progressRatio: 0 };
+    }
 
     const earthRadius = 6371000;
     const toRad = (value) => value * Math.PI / 180;
     const refLat = toRad(Number(pointLat));
     const cosLat = Math.cos(refLat);
     let minimum = Infinity;
+    let bestProgress = 0;
+    let cumulative = 0;
 
     for (let index = 1; index < routeCoordinates.length; index += 1) {
       const a = routeCoordinates[index - 1];
       const b = routeCoordinates[index];
       if (!Array.isArray(a) || !Array.isArray(b)) continue;
 
+      const segmentMeters = distanceMeters(Number(a[1]), Number(a[0]), Number(b[1]), Number(b[0]));
       const ax = toRad(Number(a[0]) - Number(pointLon)) * earthRadius * cosLat;
       const ay = toRad(Number(a[1]) - Number(pointLat)) * earthRadius;
       const bx = toRad(Number(b[0]) - Number(pointLon)) * earthRadius * cosLat;
@@ -1402,11 +1419,23 @@
       const closestX = ax + t * vx;
       const closestY = ay + t * vy;
       const distance = Math.hypot(closestX, closestY);
-      if (distance < minimum) minimum = distance;
-      if (minimum < 1) return minimum;
+      if (distance < minimum) {
+        minimum = distance;
+        bestProgress = cumulative + segmentMeters * t;
+      }
+      cumulative += segmentMeters;
     }
 
-    return minimum;
+    return {
+      distanceMeters: minimum,
+      progressMeters: bestProgress,
+      totalMeters: cumulative,
+      progressRatio: cumulative > 0 ? Math.max(0, Math.min(1, bestProgress / cumulative)) : 0
+    };
+  }
+
+  function routeDistanceToPointMeters(routeCoordinates, pointLat, pointLon) {
+    return routeProjectionToPoint(routeCoordinates, pointLat, pointLon).distanceMeters;
   }
 
   function simplifyRouteForAttractionSearch(routeCoordinates) {
@@ -1455,16 +1484,124 @@
     const attractions = await getRouteCandidateAttractions(simplifiedRoute, radius);
 
     return attractions
-      .map((attraction) => ({
-        ...attraction,
-        routeDistanceMeters: routeDistanceToPointMeters(
+      .map((attraction) => {
+        const projection = routeProjectionToPoint(
           simplifiedRoute,
           Number(attraction.lat),
           Number(attraction.lon)
-        )
-      }))
+        );
+        return {
+          ...attraction,
+          routeDistanceMeters: projection.distanceMeters,
+          routeProgressRatio: projection.progressRatio
+        };
+      })
       .filter((attraction) => attraction.routeDistanceMeters <= radius)
       .sort((a, b) => a.routeDistanceMeters - b.routeDistanceMeters);
+  }
+
+  function hideRouteAttractionsStatusPanel() {
+    if (routeAttractionsStatusPanel) routeAttractionsStatusPanel.hidden = true;
+    routeAttractionsPanelSignature = '';
+  }
+
+  function routeAttractionProjectedMeters(attraction) {
+    const ratio = Number(attraction?.routeProgressRatio);
+    if (!Number.isFinite(ratio) || navigationRouteDistance <= 0) return null;
+    return Math.max(0, Math.min(navigationRouteDistance, ratio * navigationRouteDistance));
+  }
+
+  function updateRouteAttractionsStatusPanel(position = lastMonitorPosition, { force = false } = {}) {
+    if (!routeAttractionsStatusPanel || !routeAttractionsStatusList) return;
+    if (currentMapMode !== 'all' || !routeActive) {
+      hideRouteAttractionsStatusPanel();
+      return;
+    }
+
+    const radius = getProximityRadiusMeters();
+    const routeById = new Map();
+    routeAttractions.forEach((attraction) => {
+      if (attraction?.osmId) routeById.set(String(attraction.osmId), { ...attraction, onRoute: true, currentDistance: null });
+    });
+
+    attractionPreviewItems.forEach((item) => {
+      const attraction = item?.attraction;
+      if (!attraction?.osmId) return;
+      const id = String(attraction.osmId);
+      const existing = routeById.get(id);
+      if (existing) {
+        existing.currentDistance = Number(item.distance);
+      } else {
+        routeById.set(id, { ...attraction, onRoute: false, currentDistance: Number(item.distance) });
+      }
+    });
+
+    const currentProgress = navigationActive ? navigationCurrentProgress : 0;
+    const items = [...routeById.values()].map((attraction) => {
+      const projected = attraction.onRoute ? routeAttractionProjectedMeters(attraction) : null;
+      const passed = Boolean(
+        attraction.onRoute &&
+        navigationActive &&
+        Number.isFinite(projected) &&
+        projected < currentProgress - ROUTE_ATTRACTION_PASSED_TOLERANCE_METERS
+      );
+      return { attraction, projected, passed };
+    });
+
+    items.sort((a, b) => {
+      if (a.passed !== b.passed) return a.passed ? 1 : -1;
+      const aNear = Number.isFinite(a.attraction.currentDistance);
+      const bNear = Number.isFinite(b.attraction.currentDistance);
+      if (aNear !== bNear) return aNear ? -1 : 1;
+      if (aNear && bNear) return a.attraction.currentDistance - b.attraction.currentDistance;
+      if (Number.isFinite(a.projected) && Number.isFinite(b.projected)) {
+        return a.passed ? b.projected - a.projected : a.projected - b.projected;
+      }
+      return String(a.attraction.name || '').localeCompare(String(b.attraction.name || ''), 'pl');
+    });
+
+    const nearbyCount = attractionPreviewItems.length;
+    if (routeAttractionsStatusCount) routeAttractionsStatusCount.textContent = String(routeAttractions.length);
+    if (routeAttractionsStatusRadius) routeAttractionsStatusRadius.textContent = formatDistance(radius);
+    if (routeAttractionsStatusSummary) {
+      routeAttractionsStatusSummary.textContent = `W pobliżu teraz: ${nearbyCount} · razem w panelu: ${items.length}`;
+    }
+    routeAttractionsStatusPanel.hidden = false;
+
+    const signature = items.map(({ attraction, passed }) => {
+      const nearBucket = Number.isFinite(attraction.currentDistance) ? Math.round(attraction.currentDistance / 100) : -1;
+      return `${attraction.osmId}:${passed ? 1 : 0}:${nearBucket}:${attraction.onRoute ? 1 : 0}`;
+    }).join('|') + `#${routeAttractions.length}:${nearbyCount}:${radius}`;
+    if (!force && signature === routeAttractionsPanelSignature) return;
+    routeAttractionsPanelSignature = signature;
+
+    if (!items.length) {
+      routeAttractionsStatusList.innerHTML = `<div class="route-attractions-status-empty">Brak atrakcji w ustawionym promieniu.</div>`;
+      return;
+    }
+
+    routeAttractionsStatusList.innerHTML = items.map(({ attraction, passed }) => {
+      const info = CATEGORY_INFO[attraction.category] || CATEGORY_INFO.castle;
+      const meta = [];
+      if (Number.isFinite(attraction.currentDistance) && attraction.currentDistance <= radius) {
+        meta.push(`teraz ${formatDistance(attraction.currentDistance)}`);
+      }
+      if (attraction.onRoute && Number.isFinite(Number(attraction.routeDistanceMeters))) {
+        meta.push(`${formatDistance(Number(attraction.routeDistanceMeters))} od trasy`);
+      }
+      if (!meta.length) meta.push(attraction.onRoute ? 'przy trasie' : 'w pobliżu');
+      const statusLabel = passed ? 'MINIĘTA' : (attraction.onRoute ? 'PRZED TOBĄ' : 'BLISKO');
+      return `
+        <article class="route-attraction-status-row ${passed ? 'is-passed' : 'is-ahead'}">
+          <img src="${info.icon}" alt="" aria-hidden="true" />
+          <div class="route-attraction-status-copy">
+            <strong>${escapeHtml(attraction.name || info.label)}</strong>
+            <span>${escapeHtml(info.label)} · ${escapeHtml(meta.join(' · '))}</span>
+          </div>
+          <span class="route-attraction-status-state">${statusLabel}</span>
+        </article>
+      `;
+    }).join('');
   }
 
   async function refreshRouteAttractionsForRadius({ showStatus = true } = {}) {
@@ -1480,6 +1617,7 @@
       updateOsmStatus(`Atrakcje w pasie ${formatDistance(radius)} od trasy: ${routeAttractions.length} · alert ${formatDistance(getProximityRadiusMeters())}`);
       showLocationMessage(`Na trasie: ${routeAttractions.length} atrakcji w odległości do ${formatDistance(radius)} od przebiegu trasy.`);
       if (lastMonitorPosition) checkProximity(lastMonitorPosition);
+      updateRouteAttractionsStatusPanel(lastMonitorPosition, { force: true });
     } catch (error) {
       console.warn('Nie udało się odczytać atrakcji przy trasie:', error);
       updateOsmStatus('Atrakcje przy trasie: nie udało się odczytać bazy', true);
@@ -1909,6 +2047,7 @@
     navigationLastRouteIndex = 0;
     navigationVisibleRouteIndex = 0;
     navigationLastRoutePaintPosition = null;
+    navigationCurrentProgress = 0;
 
     navigationSteps = (Array.isArray(steps) ? steps : []).map((step, stepIndex) => {
       const location = step?.maneuver?.location;
@@ -2025,7 +2164,7 @@
     const snappedLon = Number(a?.[0]) + (Number(b?.[0]) - Number(a?.[0])) * t;
     const snappedLat = Number(a?.[1]) + (Number(b?.[1]) - Number(a?.[1])) * t;
 
-    // v1055: linia zaczyna się w punkcie trasy najbliższym pozycji, a nie w surowym GPS.
+    // v1056: linia zaczyna się w punkcie trasy najbliższym pozycji, a nie w surowym GPS.
     // Dzięki temu nie powstaje niebieski łącznik/ogon od strzałki do drogi.
     const futureIndex = Math.min(
       routeCoordinates.length - 1,
@@ -2078,14 +2217,15 @@
 
   function setNavigationLayout(active) {
     mapScreen?.classList.toggle('is-navigating', Boolean(active));
-    if (navigationAttractionsWrap) navigationAttractionsWrap.hidden = !active;
+    // v1056: ATRAKCJE są dostępne stale, nie tylko podczas aktywnej nawigacji.
+    if (navigationAttractionsWrap) navigationAttractionsWrap.hidden = false;
     if (!active) hideNavigationAttractions();
     syncMapContentTop();
     requestAnimationFrame(() => map?.invalidateSize?.());
   }
 
   function showNavigationAttractions() {
-    if (!navigationActive || !navigationAttractionsOverlay) return;
+    if (!navigationAttractionsOverlay || mapScreen?.hidden) return;
     updateMapLegendUi();
     navigationAttractionsOverlay.hidden = false;
     requestAnimationFrame(() => navigationAttractionsClose?.focus({ preventScroll: true }));
@@ -2208,6 +2348,7 @@
     const lat = Number(position.coords.latitude);
     const lon = Number(position.coords.longitude);
     const nearest = findNearestNavigationRoutePosition(lat, lon);
+    navigationCurrentProgress = Math.max(0, Number(nearest.progress) || 0);
     applyNavigationMarkerHeading(position, nearest, forceSpeak);
     const remaining = Math.max(0, navigationRouteDistance - nearest.progress);
     const destinationDistance = distanceMeters(lat, lon, Number(routeDestination.lat), Number(routeDestination.lon));
@@ -2227,6 +2368,7 @@
         navigationLastSpokenKey = 'arrived';
         speakNavigation(`Jesteś na miejscu. ${routeDestination.name || ''}`.trim());
       }
+      updateRouteAttractionsStatusPanel(position, { force: true });
       return;
     }
 
@@ -2257,6 +2399,7 @@
     if (navigationRemainingTime) navigationRemainingTime.textContent = formatRouteDuration(remainingTimeSeconds);
     if (navigationDestination) navigationDestination.textContent = routeDestination.name || 'Cel podróży';
     updateManeuverOverlay(stepIndex, step, distanceToStep);
+    updateRouteAttractionsStatusPanel(position);
 
     const voiceBucket = navigationVoiceBucket(distanceToStep);
     const voiceKey = `${stepIndex}:${voiceBucket}`;
@@ -2298,6 +2441,8 @@
     navigationVisibleRouteIndex = 0;
     navigationLastRoutePaintPosition = null;
     navigationOffRouteFixes = 0;
+    navigationCurrentProgress = 0;
+    hideRouteAttractionsStatusPanel();
 
     if (map && routeOutlineLayer) map.removeLayer(routeOutlineLayer);
     routeOutlineLayer = null;
@@ -2339,11 +2484,13 @@
         `${context.icon} ${context.label} · ${context.destinationName} · ${context.distance} · około ${context.duration} · atrakcji do ${formatDistance(radius)} od trasy: ${attractions.length}. Alert: ${formatDistance(radius)}.`
       );
       if (lastMonitorPosition?.coords) checkProximity(lastMonitorPosition);
+      updateRouteAttractionsStatusPanel(lastMonitorPosition, { force: true });
     } catch (error) {
       if (sequence !== routeAttractionRefreshSequence || routeCoordinates !== coordinates) return;
       console.warn('Nie udało się odczytać atrakcji przy trasie:', error);
       routeAttractions = [];
       nearbyAttractions = [];
+      updateRouteAttractionsStatusPanel(lastMonitorPosition, { force: true });
       updateOsmStatus('Atrakcje przy trasie: brak danych z bazy', true);
       setRouteInfo(
         `${context.icon} ${context.label} · ${context.destinationName} · ${context.distance} · około ${context.duration}. Trasa działa, ale atrakcji nie udało się odczytać z bazy.`,
@@ -2427,11 +2574,13 @@
       routeCoordinates = coordinates;
       routeAttractions = [];
       nearbyAttractions = [];
+      routeAttractionsPanelSignature = '';
       if (!recalculating) routeAlertedIds = new Set();
 
       const routeSteps = (Array.isArray(route.legs) ? route.legs : [])
         .flatMap((leg) => Array.isArray(leg?.steps) ? leg.steps : []);
       buildNavigationRouteMetrics(coordinates, routeSteps, Number(route.distance), Number(route.duration));
+      updateRouteAttractionsStatusPanel(position, { force: true });
       if (routeClearButton) routeClearButton.hidden = false;
 
       clearTimeout(viewportFetchTimer);
@@ -2739,6 +2888,7 @@
     keepMonitoredPositionVisible(position);
     updateAttractionPreview(position);
     if (navigationActive) updateNavigationFromPosition(position);
+    else if (routeActive) updateRouteAttractionsStatusPanel(position);
 
     const { latitude, longitude } = position.coords;
     const movedSinceFetch = lastNearbyFetchPosition
@@ -3127,6 +3277,8 @@
     updateOsmButtonUi();
     if (proximityRadiusWrap) proximityRadiusWrap.hidden = mineOnly;
     if (osmStatus) osmStatus.hidden = true;
+    if (mineOnly) hideRouteAttractionsStatusPanel();
+    else if (routeActive) updateRouteAttractionsStatusPanel(lastMonitorPosition, { force: true });
 
     if (mineOnly) {
       hideRoutePanel();
@@ -3202,6 +3354,7 @@
       updateOsmButtonUi();
       if (routeActive && osmEnabled) {
         renderExternalAttractions(routeAttractions);
+        updateRouteAttractionsStatusPanel(lastMonitorPosition, { force: true });
         updateOsmStatus(`Atrakcje do ${formatDistance(getProximityRadiusMeters())} od trasy: ${routeAttractions.length} · alert aktywny`);
         } else if (osmEnabled) {
         // Baza jest lokalna, więc od razu pokaż atrakcje z aktualnie widocznego obszaru.
@@ -3515,6 +3668,7 @@
     const radius = getProximityRadiusMeters();
     localStorage.setItem(PROXIMITY_RADIUS_KEY, String(radius));
     if (lastMonitorPosition?.coords) updateAttractionPreview(lastMonitorPosition);
+    if (routeActive) updateRouteAttractionsStatusPanel(lastMonitorPosition, { force: true });
 
     if (proximityActive) {
       showLocationMessage(`Odległość alertu: ${formatDistance(radius)}.`);
@@ -3622,7 +3776,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1055', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1056', {
           scope: './',
           updateViaCache: 'none'
         });
