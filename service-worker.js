@@ -1,4 +1,4 @@
-const APP_VERSION = 'v1058';
+const APP_VERSION = 'v1059';
 const CACHE_NAME = `turystyczna-mapa-polski-${APP_VERSION}`;
 
 const APP_SHELL = [
@@ -66,7 +66,7 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // v1058: pliki wersjonowane i grafiki są obsługiwane cache-first.
+  // v1059: pliki wersjonowane i grafiki są obsługiwane cache-first.
   // Telefon nie pobiera i nie przetwarza ponownie tej samej dużej bazy przy każdym wejściu.
   event.respondWith(
     caches.match(event.request)
