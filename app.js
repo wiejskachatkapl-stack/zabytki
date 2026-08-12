@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1060';
+  const APP_VERSION = 'v1061';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1060';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1061';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const ROUTE_MODE_KEY = 'tourmap_route_mode_v1';
   const ROUTE_MODES = {
@@ -2328,13 +2328,13 @@
         mapLanes.title = 'Pasy ruchu z danych OSM/OSRM. Wyróżniony pas jest zalecany.';
         mapLanes.hidden = false;
       } else {
-        // v1060: gdy OSM nie ma danych o pasach nie pokazujemy dodatkowego pola
+        // v1061: gdy OSM nie ma danych o pasach nie pokazujemy dodatkowego pola
         // „KIERUNEK”. Kierunek jest już czytelny z głównej ikony manewru.
         mapLanes.hidden = true;
         mapLanes.removeAttribute('title');
       }
     }
-    // v1060: główna informacja o manewrze jest tylko raz — w lewym panelu nawigacji.
+    // v1061: główna informacja o manewrze jest tylko raz — w lewym panelu nawigacji.
     mapManeuverOverlay.hidden = true;
   }
 
@@ -4261,7 +4261,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1060', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1061', {
           scope: './',
           updateViaCache: 'none'
         });
