@@ -1,11 +1,11 @@
 (() => {
-  const APP_VERSION = 'v1056';
+  const APP_VERSION = 'v1057';
   const STORAGE_KEY = 'tourmap_points_v1';
   const PROXIMITY_RADIUS_KEY = 'tourmap_proximity_radius_v1';
   const ALERT_HISTORY_KEY = 'tourmap_alert_history_v1';
   const OSM_ENABLED_KEY = 'tourmap_osm_enabled_v1';
   const USER_DB_KEY = 'tourmap_user_attraction_db_v1';
-  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1056';
+  const ATTRACTION_DB_URL = 'data/atrakcje-polska.json?v=1057';
   const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search';
   const ROUTE_MODE_KEY = 'tourmap_route_mode_v1';
   const ROUTE_MODES = {
@@ -153,7 +153,14 @@
   const mapManeuverRoadRef = document.getElementById('mapManeuverRoadRef');
   const mapManeuverRoad = document.getElementById('mapManeuverRoad');
   const mapLanes = document.getElementById('mapLanes');
+  const routeAttractionsMiniControls = document.getElementById('routeAttractionsMiniControls');
+  const routeAttractionsRadarButton = document.getElementById('routeAttractionsRadarButton');
+  const routeAttractionsRadarCount = document.getElementById('routeAttractionsRadarCount');
+  const nearestAttractionButton = document.getElementById('nearestAttractionButton');
+  const nearestAttractionIcon = document.getElementById('nearestAttractionIcon');
+  const nearestAttractionDistance = document.getElementById('nearestAttractionDistance');
   const routeAttractionsStatusPanel = document.getElementById('routeAttractionsStatusPanel');
+  const routeAttractionsStatusClose = document.getElementById('routeAttractionsStatusClose');
   const routeAttractionsStatusCount = document.getElementById('routeAttractionsStatusCount');
   const routeAttractionsStatusRadius = document.getElementById('routeAttractionsStatusRadius');
   const routeAttractionsStatusSummary = document.getElementById('routeAttractionsStatusSummary');
@@ -261,6 +268,9 @@
   let routeAttractionRefreshSequence = 0;
   let navigationCurrentProgress = 0;
   let routeAttractionsPanelSignature = '';
+  let routeAttractionsPanelExpanded = false;
+  let nearestRouteAttractionForMini = null;
+  let navigationMatchedLatLng = null;
   const ROUTE_ATTRACTION_PASSED_TOLERANCE_METERS = 35;
 
   if (versionElement) versionElement.textContent = APP_VERSION;
@@ -925,8 +935,8 @@
       ? distanceMeters(latitude, longitude, lastPreviewPosition.lat, lastPreviewPosition.lon)
       : Infinity;
     const overlayOpen = attractionPreviewOverlay && !attractionPreviewOverlay.hidden;
-    const previewMoveThreshold = routeActive ? 80 : PREVIEW_MIN_MOVE_METERS;
-    const previewTimeThreshold = routeActive ? 8000 : PREVIEW_MIN_INTERVAL_MS;
+    const previewMoveThreshold = routeActive ? 35 : PREVIEW_MIN_MOVE_METERS;
+    const previewTimeThreshold = routeActive ? 3000 : PREVIEW_MIN_INTERVAL_MS;
     if (!overlayOpen && moved < previewMoveThreshold && now - lastPreviewUpdateAt < previewTimeThreshold) return;
 
     try {
@@ -1501,7 +1511,10 @@
   }
 
   function hideRouteAttractionsStatusPanel() {
+    routeAttractionsPanelExpanded = false;
     if (routeAttractionsStatusPanel) routeAttractionsStatusPanel.hidden = true;
+    if (routeAttractionsMiniControls) routeAttractionsMiniControls.hidden = true;
+    nearestRouteAttractionForMini = null;
     routeAttractionsPanelSignature = '';
   }
 
@@ -1509,6 +1522,87 @@
     const ratio = Number(attraction?.routeProgressRatio);
     if (!Number.isFinite(ratio) || navigationRouteDistance <= 0) return null;
     return Math.max(0, Math.min(navigationRouteDistance, ratio * navigationRouteDistance));
+  }
+
+  function setRouteAttractionsPanelExpanded(expanded) {
+    routeAttractionsPanelExpanded = Boolean(expanded) && routeActive && currentMapMode === 'all';
+    if (routeAttractionsStatusPanel) routeAttractionsStatusPanel.hidden = !routeAttractionsPanelExpanded;
+    routeAttractionsRadarButton?.setAttribute('aria-expanded', routeAttractionsPanelExpanded ? 'true' : 'false');
+    if (routeAttractionsPanelExpanded) updateRouteAttractionsStatusPanel(lastMonitorPosition, { force: true });
+  }
+
+  function toggleRouteAttractionsPanel() {
+    setRouteAttractionsPanelExpanded(!routeAttractionsPanelExpanded);
+  }
+
+  function focusNearestRouteAttraction() {
+    const attraction = nearestRouteAttractionForMini;
+    if (!attraction || !map) {
+      showLocationMessage(`Brak atrakcji w promieniu ${formatDistance(getProximityRadiusMeters())}.`);
+      return;
+    }
+
+    mapProgrammaticMove = true;
+    map.setView(
+      [Number(attraction.lat), Number(attraction.lon)],
+      Math.max(16, Math.min(18, map.getZoom() || 16)),
+      { animate: true }
+    );
+    mapProgrammaticMove = false;
+
+    const marker = osmMarkerById.get(String(attraction.osmId));
+    if (marker?.openPopup) {
+      setTimeout(() => marker.openPopup(), 220);
+    } else {
+      const info = CATEGORY_INFO[attraction.category] || CATEGORY_INFO.castle;
+      const distance = Number.isFinite(Number(attraction.currentDistance))
+        ? formatDistance(Number(attraction.currentDistance))
+        : '';
+      showLocationMessage(`${info.label}: ${attraction.name || info.label}${distance ? ` · ${distance}` : ''}`);
+    }
+  }
+
+  function updateRouteAttractionsMiniUi(items, radius) {
+    if (!routeAttractionsMiniControls) return;
+    routeAttractionsMiniControls.hidden = false;
+
+    if (routeAttractionsRadarCount) routeAttractionsRadarCount.textContent = String(routeAttractions.length);
+    routeAttractionsRadarButton?.setAttribute(
+      'aria-label',
+      `Atrakcje na trasie: ${routeAttractions.length}. Kliknij, aby ${routeAttractionsPanelExpanded ? 'zwinąć' : 'rozwinąć'} listę.`
+    );
+    routeAttractionsRadarButton?.setAttribute('aria-expanded', routeAttractionsPanelExpanded ? 'true' : 'false');
+
+    const nearestItem = items
+      .filter(({ attraction }) => Number.isFinite(Number(attraction.currentDistance)) && Number(attraction.currentDistance) <= radius)
+      .sort((a, b) => Number(a.attraction.currentDistance) - Number(b.attraction.currentDistance))[0] || null;
+
+    nearestRouteAttractionForMini = nearestItem?.attraction || null;
+    if (nearestAttractionButton) {
+      nearestAttractionButton.disabled = !nearestRouteAttractionForMini;
+      nearestAttractionButton.classList.toggle('is-empty', !nearestRouteAttractionForMini);
+    }
+
+    if (nearestRouteAttractionForMini) {
+      const info = CATEGORY_INFO[nearestRouteAttractionForMini.category] || CATEGORY_INFO.castle;
+      const distance = Number(nearestRouteAttractionForMini.currentDistance);
+      if (nearestAttractionIcon) nearestAttractionIcon.src = info.icon;
+      if (nearestAttractionDistance) nearestAttractionDistance.textContent = formatDistance(distance);
+      if (nearestAttractionButton) {
+        nearestAttractionButton.title = `${nearestRouteAttractionForMini.name || info.label} · ${formatDistance(distance)}`;
+        nearestAttractionButton.setAttribute(
+          'aria-label',
+          `Najbliższa atrakcja: ${nearestRouteAttractionForMini.name || info.label}, ${formatDistance(distance)}`
+        );
+      }
+    } else {
+      if (nearestAttractionIcon) nearestAttractionIcon.src = CATEGORY_INFO.castle.icon;
+      if (nearestAttractionDistance) nearestAttractionDistance.textContent = `>${formatDistance(radius)}`;
+      if (nearestAttractionButton) {
+        nearestAttractionButton.title = 'Brak atrakcji w ustawionym promieniu';
+        nearestAttractionButton.setAttribute('aria-label', 'Brak atrakcji w ustawionym promieniu');
+      }
+    }
   }
 
   function updateRouteAttractionsStatusPanel(position = lastMonitorPosition, { force = false } = {}) {
@@ -1520,8 +1614,20 @@
 
     const radius = getProximityRadiusMeters();
     const routeById = new Map();
+    const posLat = Number(position?.coords?.latitude);
+    const posLon = Number(position?.coords?.longitude);
+    const hasPosition = Number.isFinite(posLat) && Number.isFinite(posLon);
+
     routeAttractions.forEach((attraction) => {
-      if (attraction?.osmId) routeById.set(String(attraction.osmId), { ...attraction, onRoute: true, currentDistance: null });
+      if (!attraction?.osmId) return;
+      const currentDistance = hasPosition
+        ? distanceMeters(posLat, posLon, Number(attraction.lat), Number(attraction.lon))
+        : null;
+      routeById.set(String(attraction.osmId), {
+        ...attraction,
+        onRoute: true,
+        currentDistance: Number.isFinite(currentDistance) ? currentDistance : null
+      });
     });
 
     attractionPreviewItems.forEach((item) => {
@@ -1550,8 +1656,8 @@
 
     items.sort((a, b) => {
       if (a.passed !== b.passed) return a.passed ? 1 : -1;
-      const aNear = Number.isFinite(a.attraction.currentDistance);
-      const bNear = Number.isFinite(b.attraction.currentDistance);
+      const aNear = Number.isFinite(a.attraction.currentDistance) && a.attraction.currentDistance <= radius;
+      const bNear = Number.isFinite(b.attraction.currentDistance) && b.attraction.currentDistance <= radius;
       if (aNear !== bNear) return aNear ? -1 : 1;
       if (aNear && bNear) return a.attraction.currentDistance - b.attraction.currentDistance;
       if (Number.isFinite(a.projected) && Number.isFinite(b.projected)) {
@@ -1560,18 +1666,23 @@
       return String(a.attraction.name || '').localeCompare(String(b.attraction.name || ''), 'pl');
     });
 
-    const nearbyCount = attractionPreviewItems.length;
+    const nearbyCount = items.filter(
+      ({ attraction }) => Number.isFinite(Number(attraction.currentDistance)) && Number(attraction.currentDistance) <= radius
+    ).length;
+
+    updateRouteAttractionsMiniUi(items, radius);
+
     if (routeAttractionsStatusCount) routeAttractionsStatusCount.textContent = String(routeAttractions.length);
     if (routeAttractionsStatusRadius) routeAttractionsStatusRadius.textContent = formatDistance(radius);
     if (routeAttractionsStatusSummary) {
       routeAttractionsStatusSummary.textContent = `W pobliżu teraz: ${nearbyCount} · razem w panelu: ${items.length}`;
     }
-    routeAttractionsStatusPanel.hidden = false;
+    routeAttractionsStatusPanel.hidden = !routeAttractionsPanelExpanded;
 
     const signature = items.map(({ attraction, passed }) => {
       const nearBucket = Number.isFinite(attraction.currentDistance) ? Math.round(attraction.currentDistance / 100) : -1;
       return `${attraction.osmId}:${passed ? 1 : 0}:${nearBucket}:${attraction.onRoute ? 1 : 0}`;
-    }).join('|') + `#${routeAttractions.length}:${nearbyCount}:${radius}`;
+    }).join('|') + `#${routeAttractions.length}:${nearbyCount}:${radius}:${routeAttractionsPanelExpanded ? 1 : 0}`;
     if (!force && signature === routeAttractionsPanelSignature) return;
     routeAttractionsPanelSignature = signature;
 
@@ -1672,6 +1783,7 @@
     if (!destination || !Number.isFinite(Number(destination.lat)) || !Number.isFinite(Number(destination.lon))) return;
     pendingRouteDestination = {
       name: String(destination.name || 'Cel podróży'),
+      fullName: String(destination.fullName || destination.name || 'Cel podróży'),
       lat: Number(destination.lat),
       lon: Number(destination.lon)
     };
@@ -1720,13 +1832,48 @@
       startProximityMonitoring(false);
       setRouteInfo('Ustalam Twoją lokalizację startową…');
     } else if (!routeActive) {
-      setRouteInfo('Wpisz cel podróży i wybierz go z listy.');
+      setRouteInfo('Wpisz dokładny adres albo nazwę miejsca i wybierz wynik z listy.');
     }
   }
 
   function hideRoutePanel() {
     if (routePanel) routePanel.hidden = true;
     if (routeResults) routeResults.replaceChildren();
+  }
+
+  function conciseRouteResultName(result) {
+    const address = result?.address && typeof result.address === 'object' ? result.address : {};
+    const road = String(
+      address.road ||
+      address.pedestrian ||
+      address.residential ||
+      address.living_street ||
+      address.footway ||
+      ''
+    ).trim();
+    const houseNumber = String(address.house_number || '').trim();
+    const locality = String(
+      address.city ||
+      address.town ||
+      address.village ||
+      address.municipality ||
+      address.hamlet ||
+      ''
+    ).trim();
+    const objectName = String(result?.name || '').trim();
+
+    if (road) {
+      const street = `${road}${houseNumber ? ` ${houseNumber}` : ''}`.trim();
+      return locality && !street.toLowerCase().includes(locality.toLowerCase())
+        ? `${street}, ${locality}`
+        : street;
+    }
+    if (objectName) {
+      return locality && !objectName.toLowerCase().includes(locality.toLowerCase())
+        ? `${objectName}, ${locality}`
+        : objectName;
+    }
+    return String(result?.display_name || 'Cel podróży').trim();
   }
 
   function renderRouteSearchResults(results) {
@@ -1736,19 +1883,22 @@
     if (!results.length) {
       const empty = document.createElement('div');
       empty.className = 'route-result-empty';
-      empty.textContent = 'Nie znaleziono takiego celu w Polsce.';
+      empty.textContent = 'Nie znaleziono takiego miejsca lub adresu w Polsce.';
       routeResults.append(empty);
       return;
     }
 
     results.forEach((result) => {
+      const shortName = conciseRouteResultName(result);
+      const fullName = String(result.display_name || shortName || 'Cel podróży').trim();
       const button = document.createElement('button');
       button.type = 'button';
       button.className = 'route-result-button';
       button.setAttribute('role', 'listitem');
-      button.textContent = result.display_name || result.name || 'Wybrany cel';
+      button.innerHTML = `<strong>${escapeHtml(shortName)}</strong><span>${escapeHtml(fullName)}</span>`;
       button.addEventListener('click', () => showRouteModeChooser({
-        name: result.display_name || result.name || 'Cel podróży',
+        name: shortName || fullName || 'Cel podróży',
+        fullName,
         lat: Number(result.lat),
         lon: Number(result.lon)
       }));
@@ -1769,13 +1919,13 @@
     if (routeResults) routeResults.replaceChildren();
 
     try {
-      const url = `${NOMINATIM_URL}?format=jsonv2&limit=5&countrycodes=pl&accept-language=pl&q=${encodeURIComponent(query)}`;
+      const url = `${NOMINATIM_URL}?format=jsonv2&addressdetails=1&dedupe=1&limit=6&countrycodes=pl&accept-language=pl&q=${encodeURIComponent(query)}`;
       const response = await fetch(url, { headers: { Accept: 'application/json' } });
       if (!response.ok) throw new Error(`Nominatim HTTP ${response.status}`);
       const results = await response.json();
       if (sequence !== routeSearchSequence) return;
       renderRouteSearchResults(Array.isArray(results) ? results : []);
-      setRouteInfo(results?.length ? 'Wybierz właściwy cel z listy.' : 'Nie znaleziono celu.', !results?.length);
+      setRouteInfo(results?.length ? 'Wybierz właściwy adres lub miejsce z listy.' : 'Nie znaleziono celu.', !results?.length);
     } catch (error) {
       console.warn('Nie udało się wyszukać celu:', error);
       setRouteInfo('Wyszukiwanie celu jest chwilowo niedostępne.', true);
@@ -1792,15 +1942,62 @@
     return `${Math.round(value / 1000)} km`;
   }
 
+  function signedBearingDelta(fromBearing, toBearing) {
+    const from = Number(fromBearing);
+    const to = Number(toBearing);
+    if (!Number.isFinite(from) || !Number.isFinite(to)) return null;
+    return ((to - from + 540) % 360) - 180;
+  }
+
+  function inferMiniRoundaboutExit(step) {
+    const intersection = Array.isArray(step?.intersections) ? step.intersections[0] : null;
+    const bearings = Array.isArray(intersection?.bearings) ? intersection.bearings.map(Number) : [];
+    const entries = Array.isArray(intersection?.entry) ? intersection.entry : [];
+    const outIndex = Number(intersection?.out);
+    const inIndex = Number(intersection?.in);
+    const bearingBefore = Number(step?.maneuver?.bearing_before);
+
+    if (!bearings.length || !Number.isInteger(outIndex) || outIndex < 0 || outIndex >= bearings.length || !Number.isFinite(bearingBefore)) {
+      return null;
+    }
+
+    const candidates = bearings
+      .map((bearing, index) => {
+        const delta = signedBearingDelta(bearingBefore, bearing);
+        const canUse = entries.length ? entries[index] !== false : true;
+        const isIncoming = Number.isInteger(inIndex) && index === inIndex;
+        const isUTurn = Number.isFinite(delta) && Math.abs(Math.abs(delta) - 180) < 24;
+        const orderScore = Number.isFinite(delta) ? (90 - delta + 360) % 360 : 999;
+        return { index, canUse, isIncoming, isUTurn, orderScore };
+      })
+      .filter((item) => item.canUse && !item.isIncoming && !item.isUTurn)
+      .sort((a, b) => a.orderScore - b.orderScore);
+
+    const selectedIndex = candidates.findIndex((item) => item.index === outIndex);
+    return selectedIndex >= 0 ? selectedIndex + 1 : null;
+  }
+
+  function roundaboutExitNumber(step) {
+    const explicit = Number(step?.maneuver?.exit ?? step?._roundaboutExit);
+    if (Number.isFinite(explicit) && explicit > 0) return Math.round(explicit);
+    const type = String(step?.maneuver?.type || '').toLowerCase();
+    if (type === 'roundabout turn') return inferMiniRoundaboutExit(step);
+    return null;
+  }
+
   function isRoundaboutManeuver(step) {
     const type = String(step?.maneuver?.type || '').toLowerCase();
-    return type === 'roundabout' || type === 'rotary';
+    return type === 'roundabout' ||
+      type === 'rotary' ||
+      type === 'roundabout turn' ||
+      type === 'exit roundabout' ||
+      type === 'exit rotary';
   }
 
   function navigationArrowForStep(step) {
     const type = String(step?.maneuver?.type || '').toLowerCase();
     const modifier = String(step?.maneuver?.modifier || '').toLowerCase();
-    const exit = Number(step?.maneuver?.exit);
+    const exit = roundaboutExitNumber(step);
     if (isRoundaboutManeuver(step)) {
       return Number.isFinite(exit) && exit > 0 ? `↻ ${exit}` : '↻';
     }
@@ -1822,36 +2019,80 @@
     if (isRoundaboutManeuver(step)) return roundaboutManeuverSvg(step);
     const type = String(step?.maneuver?.type || '').toLowerCase();
     const modifier = String(step?.maneuver?.modifier || '').toLowerCase();
+
     if (type === 'arrive') {
       return `<svg class="maneuver-nav-svg" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="17" fill="currentColor"/></svg>`;
     }
+
+    if (modifier === 'uturn') {
+      return `<svg class="maneuver-nav-svg" viewBox="0 0 100 100" aria-hidden="true">
+        <path d="M64 90 V54 C64 32 36 31 36 53 V65"/>
+        <path d="M20 51 L36 67 L52 51"/>
+      </svg>`;
+    }
+
     const left = modifier.includes('left');
     const right = modifier.includes('right');
-    const slight = modifier.includes('slight');
-    const sharp = modifier.includes('sharp');
-    const uturn = modifier === 'uturn';
-    if (uturn) {
-      return `<svg class="maneuver-nav-svg" viewBox="0 0 100 100" aria-hidden="true"><path d="M66 88 V49 C66 28 35 28 35 50 V61"/><path d="M20 48 L35 63 L50 48"/></svg>`;
-    }
     if (left || right) {
-      const flip = left ? 'translate(100 0) scale(-1 1)' : '';
-      const path = slight ? 'M35 88 V64 Q35 49 50 43 L78 31' : sharp ? 'M35 88 V58 Q35 38 55 38 H82' : 'M35 88 V55 Q35 35 55 35 H82';
-      return `<svg class="maneuver-nav-svg" viewBox="0 0 100 100" aria-hidden="true"><g transform="${flip}"><path d="${path}"/><path d="M69 20 L84 31 L69 43"/></g></svg>`;
+      const mirror = right ? 'translate(100 0) scale(-1 1)' : '';
+      const slight = modifier.includes('slight');
+      const sharp = modifier.includes('sharp');
+      const turnPath = slight
+        ? 'M62 91 V58 C62 46 55 38 44 33 L18 21'
+        : sharp
+          ? 'M62 91 V57 C62 39 52 28 34 28 H14'
+          : 'M62 91 V56 C62 39 52 29 35 29 H14';
+      const headPath = slight
+        ? 'M30 15 L15 21 L23 35'
+        : 'M29 14 L14 29 L29 44';
+      return `<svg class="maneuver-nav-svg" viewBox="0 0 100 100" aria-hidden="true">
+        <g transform="${mirror}">
+          <path d="${turnPath}"/>
+          <path d="${headPath}"/>
+        </g>
+      </svg>`;
     }
-    return `<svg class="maneuver-nav-svg" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 88 V19"/><path d="M35 34 L50 18 L65 34"/></svg>`;
+
+    return `<svg class="maneuver-nav-svg" viewBox="0 0 100 100" aria-hidden="true">
+      <path d="M50 91 V18"/>
+      <path d="M35 34 L50 18 L65 34"/>
+    </svg>`;
   }
 
   function roundaboutManeuverSvg(step) {
-    const exit = Number(step?.maneuver?.exit);
+    const exit = roundaboutExitNumber(step);
+    const before = Number(step?.maneuver?.bearing_before);
+    const after = Number(step?.maneuver?.bearing_after);
+    const modifier = String(step?.maneuver?.modifier || '').toLowerCase();
+    let delta = signedBearingDelta(before, after);
+    if (!Number.isFinite(delta)) {
+      delta = modifier.includes('right') ? 90 : modifier.includes('left') ? -90 : 0;
+    }
+
+    const angle = (delta - 90) * Math.PI / 180;
+    const innerRadius = 25;
+    const outerRadius = 39;
+    const x1 = 50 + Math.cos(angle) * innerRadius;
+    const y1 = 49 + Math.sin(angle) * innerRadius;
+    const x2 = 50 + Math.cos(angle) * outerRadius;
+    const y2 = 49 + Math.sin(angle) * outerRadius;
+    const arrowAngle = Math.atan2(y2 - y1, x2 - x1);
+    const headLen = 11;
+    const headSpread = 0.7;
+    const hx1 = x2 - Math.cos(arrowAngle - headSpread) * headLen;
+    const hy1 = y2 - Math.sin(arrowAngle - headSpread) * headLen;
+    const hx2 = x2 - Math.cos(arrowAngle + headSpread) * headLen;
+    const hy2 = y2 - Math.sin(arrowAngle + headSpread) * headLen;
     const exitLabel = Number.isFinite(exit) && exit > 0
-      ? `<text x="50" y="55" text-anchor="middle" font-size="24" font-weight="900" fill="currentColor">${Math.round(exit)}</text>`
+      ? `<text x="50" y="56" text-anchor="middle" font-size="24" font-weight="900" fill="currentColor">${exit}</text>`
       : '';
+
     return `
       <svg class="maneuver-nav-svg roundabout-nav-svg" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
-        <path d="M50 92 V74"/>
-        <circle cx="50" cy="49" r="24"/>
-        <path d="M70 37 Q77 29 87 27"/>
-        <path d="M76 18 L88 27 L79 39"/>
+        <path d="M50 94 V74"/>
+        <circle cx="50" cy="49" r="25"/>
+        <path d="M${x1.toFixed(1)} ${y1.toFixed(1)} L${x2.toFixed(1)} ${y2.toFixed(1)}"/>
+        <path d="M${hx1.toFixed(1)} ${hy1.toFixed(1)} L${x2.toFixed(1)} ${y2.toFixed(1)} L${hx2.toFixed(1)} ${hy2.toFixed(1)}"/>
         ${exitLabel}
       </svg>
     `;
@@ -1861,7 +2102,7 @@
     const maneuver = step?.maneuver || {};
     const type = String(maneuver.type || '').toLowerCase();
     const modifier = String(maneuver.modifier || '').toLowerCase();
-    const exit = Number(maneuver.exit);
+    const exit = roundaboutExitNumber(step);
     const walking = isWalkingRouteMode(activeRouteMode);
     const continueText = walking ? 'idź dalej' : 'jedź dalej';
     const direction = {
@@ -1880,17 +2121,12 @@
       if (direction === continueText) return walking ? 'Ruszaj pieszo zgodnie z trasą' : 'Ruszaj zgodnie z trasą';
       return direction;
     }
-    if (type === 'roundabout' || type === 'rotary') {
-      return Number.isFinite(exit) && exit > 0
-        ? `Na rondzie wybierz ${exit}. zjazd`
-        : 'Wjedź na rondo i jedź zgodnie z trasą';
-    }
-    // OSRM opisuje "roundabout turn" jako zwykły skręt na małym rondzie.
-    // Nie pokazujemy już dla niego dużej ikony pełnego ronda.
-    if (type === 'roundabout turn') {
-      return direction === continueText ? 'Przejedź przez małe rondo zgodnie z trasą' : `Na małym rondzie ${direction}`;
+    if (type === 'roundabout' || type === 'rotary' || type === 'roundabout turn') {
+      if (Number.isFinite(exit) && exit > 0) return `Na rondzie wybierz ${exit}. zjazd`;
+      return direction === continueText ? 'Przejedź przez rondo zgodnie z trasą' : `Na rondzie ${direction}`;
     }
     if (type === 'exit roundabout' || type === 'exit rotary') {
+      if (Number.isFinite(exit) && exit > 0) return `Na rondzie wybierz ${exit}. zjazd`;
       if (modifier && modifier !== 'straight') return `Zjedź z ronda i ${direction}`;
       return 'Zjedź z ronda';
     }
@@ -1906,18 +2142,19 @@
   }
 
   function navigationRoadTextForStep(step) {
-    const parts = [];
-    const name = String(step?.name || '').trim();
     const ref = String(step?.ref || '').trim();
-    const rotaryName = String(step?.rotary_name || '').trim();
+    const name = String(step?.name || step?.rotary_name || '').trim();
     const destinations = String(step?.destinations || '').trim();
+    if (ref) return ref.split(';')[0].trim();
+    if (name) return name;
+    if (destinations) return destinations.split(';')[0].trim();
+    return '';
+  }
 
-    if (name) parts.push(name);
-    if (ref && !parts.some((item) => item.toLowerCase() === ref.toLowerCase())) parts.push(ref);
-    if (rotaryName && !parts.some((item) => item.toLowerCase() === rotaryName.toLowerCase())) parts.push(rotaryName);
-    if (destinations) parts.push(`kierunek ${destinations}`);
-
-    return parts.join(' · ');
+  function navigationVoiceRoadRefForStep(step) {
+    const ref = String(step?.ref || '').trim();
+    if (!ref) return '';
+    return ref.split(';')[0].trim();
   }
 
   function laneArrowForIndications(indications) {
@@ -2028,7 +2265,8 @@
         mapLanes.hidden = true;
       }
     }
-    mapManeuverOverlay.hidden = false;
+    // v1057: główna informacja o manewrze jest tylko raz — w lewym panelu nawigacji.
+    mapManeuverOverlay.hidden = true;
   }
 
 
@@ -2070,6 +2308,22 @@
         _routeIndex: nearestIndex,
         _routeMeters: navigationRouteCumulative[nearestIndex] || 0
       };
+    });
+
+    // Zachowujemy numer zjazdu także dla osobnego kroku "exit roundabout".
+    let lastRoundaboutExit = null;
+    navigationSteps.forEach((step) => {
+      const type = String(step?.maneuver?.type || '').toLowerCase();
+      if (type === 'roundabout' || type === 'rotary' || type === 'roundabout turn') {
+        const exit = roundaboutExitNumber(step);
+        step._roundaboutExit = Number.isFinite(exit) ? exit : null;
+        lastRoundaboutExit = step._roundaboutExit;
+      } else if (type === 'exit roundabout' || type === 'exit rotary') {
+        step._roundaboutExit = lastRoundaboutExit;
+        lastRoundaboutExit = null;
+      } else if (type !== 'notification' && type !== 'new name') {
+        lastRoundaboutExit = null;
+      }
     });
   }
 
@@ -2146,6 +2400,19 @@
     return best;
   }
 
+  function navigationSnappedLatLng(nearest) {
+    if (!nearest || !routeCoordinates.length) return null;
+    const segmentIndex = Math.max(0, Math.min(routeCoordinates.length - 2, Number(nearest.index) || 0));
+    const a = routeCoordinates[segmentIndex];
+    const b = routeCoordinates[Math.min(routeCoordinates.length - 1, segmentIndex + 1)] || a;
+    if (!a || !b) return null;
+    const t = Math.max(0, Math.min(1, Number(nearest.segmentT) || 0));
+    return [
+      Number(a[1]) + (Number(b[1]) - Number(a[1])) * t,
+      Number(a[0]) + (Number(b[0]) - Number(a[0])) * t
+    ];
+  }
+
   function updateVisibleRouteProgress(lat, lon, nearest, force = false) {
     if (!routeLayer || typeof routeLayer.setLatLngs !== 'function' || !routeCoordinates.length || !nearest) return;
 
@@ -2164,7 +2431,7 @@
     const snappedLon = Number(a?.[0]) + (Number(b?.[0]) - Number(a?.[0])) * t;
     const snappedLat = Number(a?.[1]) + (Number(b?.[1]) - Number(a?.[1])) * t;
 
-    // v1056: linia zaczyna się w punkcie trasy najbliższym pozycji, a nie w surowym GPS.
+    // v1057: linia zaczyna się w punkcie trasy najbliższym pozycji, a nie w surowym GPS.
     // Dzięki temu nie powstaje niebieski łącznik/ogon od strzałki do drogi.
     const futureIndex = Math.min(
       routeCoordinates.length - 1,
@@ -2217,7 +2484,7 @@
 
   function setNavigationLayout(active) {
     mapScreen?.classList.toggle('is-navigating', Boolean(active));
-    // v1056: ATRAKCJE są dostępne stale, nie tylko podczas aktywnej nawigacji.
+    // v1057: ATRAKCJE są dostępne stale, nie tylko podczas aktywnej nawigacji.
     if (navigationAttractionsWrap) navigationAttractionsWrap.hidden = false;
     if (!active) hideNavigationAttractions();
     syncMapContentTop();
@@ -2294,8 +2561,7 @@
         map?.setView([latitude, longitude], navigationZoomForMode(activeRouteMode), { animate: true });
         mapProgrammaticMove = false;
       }
-      updateMonitoredLocationVisual(lastMonitorPosition);
-      // Przy przeliczeniu od razu aktualizujemy nową trasę i manewr bez animacji/pauzy.
+      // Przy przeliczeniu od razu aktualizujemy nową trasę, pozycję dopasowaną do drogi i manewr.
       updateNavigationFromPosition(lastMonitorPosition, true);
     }
   }
@@ -2349,6 +2615,7 @@
     const lon = Number(position.coords.longitude);
     const nearest = findNearestNavigationRoutePosition(lat, lon);
     navigationCurrentProgress = Math.max(0, Number(nearest.progress) || 0);
+    updateMonitoredLocationVisual(position, nearest);
     applyNavigationMarkerHeading(position, nearest, forceSpeak);
     const remaining = Math.max(0, navigationRouteDistance - nearest.progress);
     const destinationDistance = distanceMeters(lat, lon, Number(routeDestination.lat), Number(routeDestination.lon));
@@ -2393,7 +2660,7 @@
     if (navigationKicker) navigationKicker.textContent = nearest.distance >= currentOffRouteThreshold ? `POZA TRASĄ · ${routeModeMeta(activeRouteMode).label}` : `NAWIGACJA · ${routeModeMeta(activeRouteMode).label}`;
     if (navigationArrow) navigationArrow.innerHTML = maneuverIconSvg(step);
     if (navigationInstruction) navigationInstruction.textContent = instruction;
-    if (navigationRoad) navigationRoad.textContent = road || (routeDestination.name ? `Kierunek: ${routeDestination.name}` : '');
+    if (navigationRoad) navigationRoad.textContent = road || '';
     if (navigationTurnDistance) navigationTurnDistance.textContent = formatNavigationDistance(distanceToStep);
     if (navigationRemainingDistance) navigationRemainingDistance.textContent = formatNavigationDistance(remaining);
     if (navigationRemainingTime) navigationRemainingTime.textContent = formatRouteDuration(remainingTimeSeconds);
@@ -2412,7 +2679,8 @@
       navigationLastSpokenKey = voiceKey;
       navigationLastVoiceBucket = voiceBucket;
       const distancePhrase = distanceToStep > 90 ? `Za ${formatNavigationDistance(distanceToStep)}, ` : '';
-      speakNavigation(`${distancePhrase}${instruction}${road ? `, ${road}` : ''}.`);
+      const voiceRoadRef = navigationVoiceRoadRefForStep(step);
+      speakNavigation(`${distancePhrase}${instruction}${voiceRoadRef ? `, droga ${voiceRoadRef}` : ''}.`);
     }
     navigationLastStepIndex = stepIndex;
 
@@ -2454,7 +2722,7 @@
     if (routeClearButton) routeClearButton.hidden = true;
     if (routeDestinationInput) routeDestinationInput.value = '';
     if (routeResults) routeResults.replaceChildren();
-    setRouteInfo('Wpisz cel podróży i wybierz go z listy.');
+    setRouteInfo('Wpisz dokładny adres albo nazwę miejsca i wybierz wynik z listy.');
 
     if (refreshMap && currentMapMode === 'all') {
       scheduleViewportAttractions(150);
@@ -2688,9 +2956,15 @@
   function navigationPositionIcon() {
     return L.divIcon({
       className: 'navigation-position-icon',
-      html: `<div class="navigation-position-arrow"><svg viewBox="0 0 48 48" aria-hidden="true"><path class="navigation-position-arrow-outline" d="M24 3 L42 43 L24 34 L6 43 Z"/><path class="navigation-position-arrow-fill" d="M24 7 L38 39 L24 31 L10 39 Z"/></svg></div>`,
-      iconSize: [48, 48],
-      iconAnchor: [24, 24]
+      html: `<div class="navigation-position-arrow">
+        <svg viewBox="0 0 52 52" aria-hidden="true">
+          <path class="navigation-position-arrow-outline" d="M26 3 C28 3 29.4 4.2 30.4 6.4 L47.4 42 C49.2 45.8 45.2 49.2 41.7 47.3 L26 39.2 L10.3 47.3 C6.8 49.2 2.8 45.8 4.6 42 L21.6 6.4 C22.6 4.2 24 3 26 3 Z"/>
+          <path class="navigation-position-arrow-fill" d="M26 8 L43.2 43.8 L26 34.9 L8.8 43.8 Z"/>
+          <path class="navigation-position-arrow-highlight" d="M26 8 L26 34.9 L8.8 43.8 Z"/>
+        </svg>
+      </div>`,
+      iconSize: [52, 52],
+      iconAnchor: [26, 26]
     });
   }
 
@@ -2707,22 +2981,36 @@
     if (element) element.style.transform = `rotate(${smoothed.toFixed(1)}deg)`;
   }
 
-  function updateMonitoredLocationVisual(position) {
+  function updateMonitoredLocationVisual(position, nearest = null) {
     if (!map || !position?.coords) return;
     const { latitude, longitude, accuracy } = position.coords;
-    const latlng = [latitude, longitude];
+    const rawLatLng = [Number(latitude), Number(longitude)];
+
+    // Podczas aktywnej nawigacji strzałka jest przyciągana do wyznaczonej drogi,
+    // jeżeli GPS pozostaje w rozsądnej odległości od trasy. Dzięki temu na rondach
+    // i równoległych jezdniach strzałka nie "pływa" obok niebieskiej linii.
+    let markerLatLng = rawLatLng;
+    navigationMatchedLatLng = null;
+    if (navigationActive && nearest) {
+      const snapLimit = Math.max(45, Math.min(85, routeOffRouteThreshold(activeRouteMode) * 0.95));
+      const snapped = navigationSnappedLatLng(nearest);
+      if (snapped && Number(nearest.distance) <= snapLimit) {
+        markerLatLng = snapped;
+        navigationMatchedLatLng = snapped;
+      }
+    }
 
     if (userAccuracyCircle) {
-      userAccuracyCircle.setLatLng(latlng).setRadius(Math.max(accuracy || 5, 5));
-      userAccuracyCircle.setStyle({ opacity: navigationActive ? 0.3 : 0.55, fillOpacity: navigationActive ? 0.05 : 0.12 });
+      userAccuracyCircle.setLatLng(rawLatLng).setRadius(Math.max(accuracy || 5, 5));
+      userAccuracyCircle.setStyle({ opacity: navigationActive ? 0.18 : 0.55, fillOpacity: navigationActive ? 0.025 : 0.12 });
     } else {
-      userAccuracyCircle = L.circle(latlng, {
+      userAccuracyCircle = L.circle(rawLatLng, {
         radius: Math.max(accuracy || 5, 5),
         color: '#2f80ed',
         weight: 1,
-        opacity: navigationActive ? 0.3 : 0.55,
+        opacity: navigationActive ? 0.18 : 0.55,
         fillColor: '#2f80ed',
-        fillOpacity: navigationActive ? 0.05 : 0.12,
+        fillOpacity: navigationActive ? 0.025 : 0.12,
         interactive: false
       }).addTo(map);
     }
@@ -2734,9 +3022,9 @@
     }
 
     if (userLocationMarker) {
-      userLocationMarker.setLatLng(latlng);
+      userLocationMarker.setLatLng(markerLatLng);
     } else if (desiredMode === 'arrow') {
-      userLocationMarker = L.marker(latlng, {
+      userLocationMarker = L.marker(markerLatLng, {
         icon: navigationPositionIcon(),
         keyboard: false,
         interactive: false,
@@ -2744,7 +3032,7 @@
       }).addTo(map);
       userLocationMarkerMode = 'arrow';
     } else {
-      userLocationMarker = L.circleMarker(latlng, {
+      userLocationMarker = L.circleMarker(markerLatLng, {
         radius: 8,
         color: '#ffffff',
         weight: 3,
@@ -2755,9 +3043,8 @@
       userLocationMarker.bindTooltip('Twoja lokalizacja', { direction: 'top', offset: [0, -8] });
     }
 
-    if (navigationActive) applyNavigationMarkerHeading(position, null, false);
+    if (navigationActive) applyNavigationMarkerHeading(position, nearest, false);
   }
-
 
   function hideNearbyAlert() {
     clearTimeout(nearbyAlertTimer);
@@ -2850,8 +3137,13 @@
   function keepMonitoredPositionVisible(position) {
     if (!map || mapScreen?.hidden || currentMapMode !== 'all' || !position?.coords || !mapAutoFollowEnabled) return;
 
-    const lat = Number(position.coords.latitude);
-    const lon = Number(position.coords.longitude);
+    const rawLat = Number(position.coords.latitude);
+    const rawLon = Number(position.coords.longitude);
+    const followed = navigationActive && userLocationMarker?.getLatLng
+      ? userLocationMarker.getLatLng()
+      : null;
+    const lat = Number(followed?.lat ?? rawLat);
+    const lon = Number(followed?.lng ?? rawLon);
     if (!Number.isFinite(lat) || !Number.isFinite(lon)) return;
 
     const point = map.latLngToContainerPoint([lat, lon]);
@@ -2883,12 +3175,17 @@
 
   function handleMonitoredPosition(position) {
     lastMonitorPosition = position;
-    updateMonitoredLocationVisual(position);
     setLocationButtonState('active');
+
+    if (navigationActive) {
+      updateNavigationFromPosition(position);
+    } else {
+      updateMonitoredLocationVisual(position);
+      if (routeActive) updateRouteAttractionsStatusPanel(position);
+    }
+
     keepMonitoredPositionVisible(position);
     updateAttractionPreview(position);
-    if (navigationActive) updateNavigationFromPosition(position);
-    else if (routeActive) updateRouteAttractionsStatusPanel(position);
 
     const { latitude, longitude } = position.coords;
     const movedSinceFetch = lastNearbyFetchPosition
@@ -3151,9 +3448,12 @@
       }
 
       const { latitude, longitude, accuracy } = position.coords;
+      const matched = navigationActive && userLocationMarker?.getLatLng ? userLocationMarker.getLatLng() : null;
+      const centerLat = Number(matched?.lat ?? latitude);
+      const centerLon = Number(matched?.lng ?? longitude);
       mapAutoFollowEnabled = true;
       mapProgrammaticMove = true;
-      map.setView([latitude, longitude], navigationActive ? navigationZoomForMode(activeRouteMode) : 15, { animate: true });
+      map.setView([centerLat, centerLon], navigationActive ? navigationZoomForMode(activeRouteMode) : 15, { animate: true });
       mapProgrammaticMove = false;
       setLocationButtonState('active');
       showLocationMessage(navigationActive
@@ -3634,6 +3934,9 @@
   });
   navigationAttractionsButton?.addEventListener('click', showNavigationAttractions);
   navigationAttractionsClose?.addEventListener('click', hideNavigationAttractions);
+  routeAttractionsRadarButton?.addEventListener('click', toggleRouteAttractionsPanel);
+  routeAttractionsStatusClose?.addEventListener('click', () => setRouteAttractionsPanelExpanded(false));
+  nearestAttractionButton?.addEventListener('click', focusNearestRouteAttraction);
   navigationAttractionsOverlay?.addEventListener('click', (event) => {
     if (event.target === navigationAttractionsOverlay) hideNavigationAttractions();
   });
@@ -3776,7 +4079,7 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', async () => {
       try {
-        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1056', {
+        const registration = await navigator.serviceWorker.register('./service-worker.js?v=1057', {
           scope: './',
           updateViaCache: 'none'
         });
